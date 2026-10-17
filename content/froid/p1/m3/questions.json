@@ -1,0 +1,155 @@
+[
+  {
+    "id": "p1-m3-q01",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelle est la première mesure à envisager avant des travaux en hauteur ?",
+      "en": "What is the first measure to consider before working at height?"
+    },
+    "explanation": {
+      "fr": "Dans la mesure du possible, on évite de travailler en hauteur.",
+      "en": "Whenever possible, avoid working at height."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Éviter de travailler en hauteur si c'est possible",
+          "en": "Avoid working at height if possible"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Travailler plus vite",
+          "en": "Work faster"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Travailler seul",
+          "en": "Work alone"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m3-q02",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "La protection collective doit être privilégiée sur la protection individuelle.",
+      "en": "Collective protection should be preferred over personal protection."
+    },
+    "explanation": {
+      "fr": "On privilégie toujours les mesures qui protègent tout le monde.",
+      "en": "Measures that protect everyone always come first."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m3-e01",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quels facteurs l'employeur doit-il évaluer avant des travaux en hauteur ?",
+      "en": "Which factors must the employer assess before work at height?"
+    },
+    "explanation": {
+      "fr": "La hauteur, la durée et la fréquence de la tâche, et l'état de la surface de travail.",
+      "en": "The height, how long and how often the task lasts, and the condition of the work surface."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La hauteur",
+          "en": "The height"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "L'état de la surface de travail",
+          "en": "The condition of the work surface"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La couleur de l'échelle",
+          "en": "The colour of the ladder"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m3-e02",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Qui doit effectuer des travaux en hauteur ?",
+      "en": "Who should carry out work at height?"
+    },
+    "explanation": {
+      "fr": "Des personnes compétentes, qui ont les connaissances et l'expérience nécessaires.",
+      "en": "Competent people with the necessary knowledge and experience."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Des personnes compétentes et équipées",
+          "en": "Competent, properly equipped people"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "N'importe quel volontaire",
+          "en": "Any volunteer"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le client",
+          "en": "The customer"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

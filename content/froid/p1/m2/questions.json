@@ -1,0 +1,155 @@
+[
+  {
+    "id": "p1-m2-q01",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quand est-il recommandé de rédiger un rapport circonstancié ?",
+      "en": "When is it recommended to write a detailed report?"
+    },
+    "explanation": {
+      "fr": "Le cours recommande un rapport à la fin de tout exercice de travaux pratiques.",
+      "en": "The course recommends a report at the end of every practical exercise."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "À la fin de tout exercice de travaux pratiques",
+          "en": "At the end of every practical exercise"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Seulement en cas d'accident",
+          "en": "Only after an accident"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Une fois par an",
+          "en": "Once a year"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-q02",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quels éléments figurent dans un compte rendu de manipulation ?",
+      "en": "Which items belong in a practical work report?"
+    },
+    "explanation": {
+      "fr": "Le compte rendu décrit notamment les outils utilisés et le temps de réalisation.",
+      "en": "The report describes, among other things, the tools used and the time taken."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Les outils et matériels nécessaires",
+          "en": "The tools and equipment needed"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le temps de réalisation",
+          "en": "The time taken"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le salaire du technicien",
+          "en": "The technician's salary"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-e01",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelles sont les trois phases d'un exercice de travaux pratiques ?",
+      "en": "What are the three phases of a practical exercise?"
+    },
+    "explanation": {
+      "fr": "Préparation, lancement et suivi.",
+      "en": "Preparation, launch and follow-up."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Préparation, lancement, suivi",
+          "en": "Preparation, launch, follow-up"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Achat, livraison, facturation",
+          "en": "Purchase, delivery, invoicing"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Lecture, écriture, signature",
+          "en": "Reading, writing, signing"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-e02",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Le rapport de stage fait partie des types de rapports présentés dans le cours.",
+      "en": "The internship report is one of the report types presented in the course."
+    },
+    "explanation": {
+      "fr": "Le cours cite le compte rendu de manipulation, le rapport d'activité, le rapport de maintenance et le rapport de stage.",
+      "en": "The course lists the practical work report, the activity report, the maintenance report and the internship report."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

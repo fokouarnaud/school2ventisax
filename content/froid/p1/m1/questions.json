@@ -1,0 +1,202 @@
+[
+  {
+    "id": "p1-m1-q01",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelle différence entre électrisation et électrocution ?",
+      "en": "What is the difference between electric shock and electrocution?"
+    },
+    "explanation": {
+      "fr": "L'électrisation est le passage du courant dans le corps ; l'électrocution est une électrisation mortelle.",
+      "en": "An electric shock is current passing through the body; electrocution is a fatal electric shock."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "L'électrocution entraîne la mort, l'électrisation non",
+          "en": "Electrocution causes death, an electric shock does not"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Aucune, ce sont des synonymes",
+          "en": "None, they mean the same thing"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "L'électrisation ne concerne que le courant continu",
+          "en": "An electric shock only involves direct current"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q02",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quels EPI protègent lors d'une intervention sur un circuit frigorifique sous pression ?",
+      "en": "Which PPE protects you when working on a pressurised refrigeration circuit?"
+    },
+    "explanation": {
+      "fr": "Lunettes et gants protègent contre les projections de fluide.",
+      "en": "Goggles and gloves protect against sprays of fluid."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Lunettes de protection",
+          "en": "Safety goggles"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Gants adaptés",
+          "en": "Suitable gloves"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Casque audio",
+          "en": "Headphones"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Chaussures de ville",
+          "en": "Everyday shoes"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q03",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "On peut ouvrir un tableau électrique sans consignation si l'intervention est courte.",
+      "en": "You may open a switchboard without locking it out if the job is short."
+    },
+    "explanation": {
+      "fr": "La consignation est obligatoire quelle que soit la durée.",
+      "en": "Lock-out is mandatory whatever the duration."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e01",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "De quoi dépend le danger d'un courant électrique pour le corps ?",
+      "en": "What does the danger of an electric current to the body depend on?"
+    },
+    "explanation": {
+      "fr": "Intensité, durée du contact et trajet du courant déterminent la gravité.",
+      "en": "Intensity, contact time and the current's path determine how serious it is."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "De l'intensité, de la durée et du trajet du courant",
+          "en": "Its intensity, duration and path"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Uniquement de la couleur du câble",
+          "en": "Only the colour of the cable"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Uniquement de la marque de l'appareil",
+          "en": "Only the brand of the device"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e02",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que faire face à un câble dénudé sur le chantier ?",
+      "en": "What should you do about a bare cable on site?"
+    },
+    "explanation": {
+      "fr": "On balise la zone et on signale le danger avant toute intervention.",
+      "en": "Mark off the area and report the danger before any work."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Baliser et signaler",
+          "en": "Mark off the area and report it"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le toucher pour vérifier s'il est sous tension",
+          "en": "Touch it to check whether it is live"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Continuer le travail",
+          "en": "Carry on working"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

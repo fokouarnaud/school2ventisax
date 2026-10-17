@@ -1,0 +1,155 @@
+[
+  {
+    "id": "p1-m4-q01",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quels risques présente un espace confiné ?",
+      "en": "What risks does a confined space present?"
+    },
+    "explanation": {
+      "fr": "Incendie, explosion, perte de conscience, asphyxie ou noyade.",
+      "en": "Fire, explosion, loss of consciousness, asphyxiation or drowning."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Asphyxie",
+          "en": "Asphyxiation"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Explosion",
+          "en": "Explosion"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Coup de soleil",
+          "en": "Sunburn"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-q02",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Un espace confiné déclaré sûr un jour le reste toujours.",
+      "en": "A confined space declared safe one day stays safe for ever."
+    },
+    "explanation": {
+      "fr": "Faux : les conditions changent, il faut réévaluer à chaque fois.",
+      "en": "False: conditions change, so the risks must be reassessed every time."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-e01",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que faire si l'oxygène est insuffisant dans un espace confiné ?",
+      "en": "What should be done if there is not enough oxygen in a confined space?"
+    },
+    "explanation": {
+      "fr": "Fournir un appareil respiratoire ou ventiler l'espace avant d'entrer.",
+      "en": "Provide breathing apparatus or ventilate the space before entering."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Fournir un appareil respiratoire ou ventiler",
+          "en": "Provide breathing apparatus or ventilate"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Entrer rapidement et ressortir",
+          "en": "Go in quickly and come out"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Allumer une flamme pour vérifier",
+          "en": "Light a flame to check"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-e02",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quel est l'exemple d'un grand espace confiné cité dans le cours ?",
+      "en": "Which example of a large confined space does the course give?"
+    },
+    "explanation": {
+      "fr": "Le cours cite les silos à grain de plusieurs centaines de mètres cubes.",
+      "en": "The course mentions grain silos holding several hundred cubic metres."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un silo à grain",
+          "en": "A grain silo"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un terrain de football",
+          "en": "A football pitch"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Une salle de classe ouverte",
+          "en": "An open classroom"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

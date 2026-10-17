@@ -1,0 +1,108 @@
+{
+  "slug": "froid",
+  "title": {"fr": "Froid et climatisation", "en": "Refrigeration and air conditioning"},
+  "description": {
+    "fr": "Formation professionnelle du centre LA VOCATION : sécurité, électricité, froid et climatisation.",
+    "en": "Vocational training at the LA VOCATION centre: safety, electricity, refrigeration and air conditioning."
+  },
+  "parties": [
+    {
+      "slug": "p1",
+      "order": 1,
+      "title": {"fr": "Habilitation et sécurité professionnelle", "en": "Professional safety qualification"},
+      "modules": [
+        {
+          "order": 1,
+          "dir": "p1/m1",
+          "duration_hours": 8,
+          "title": {"fr": "Sécurité dans les travaux", "en": "Safety at work"},
+          "competence": {
+            "fr": "L'apprenant sera capable de réaliser des travaux en identifiant les risques et en adoptant les mesures de prévention appropriées.",
+            "en": "The learner will be able to carry out work by identifying the risks and taking the appropriate preventive measures."
+          },
+          "evaluation_note": {
+            "fr": "QCM et observation des gestes sécuritaires lors d'un atelier.",
+            "en": "Multiple-choice test and observation of safe practices during a workshop."
+          },
+          "sections": [
+            {"order": 1, "file": "01-enjeux", "kind": "content", "title": {"fr": "Introduction : enjeux de la sécurité", "en": "Introduction: why safety matters"}},
+            {"order": 2, "file": "02-securite-electrique", "kind": "content", "title": {"fr": "Sécurité électrique", "en": "Electrical safety"}},
+            {"order": 3, "file": "03-pression", "kind": "content", "title": {"fr": "Équipements sous pression", "en": "Pressurised equipment"}},
+            {"order": 4, "file": "04-etudes-de-cas", "kind": "content", "title": {"fr": "Études de cas d'accidents réels", "en": "Case studies of real accidents"}},
+            {"order": 5, "file": "05-taf", "kind": "practical", "title": {"fr": "Activités pratiques (TAF)", "en": "Practical activities (assignments)"}}
+          ]
+        },
+        {
+          "order": 2,
+          "dir": "p1/m2",
+          "duration_hours": 16,
+          "title": {"fr": "Techniques de rédaction des rapports", "en": "Report writing techniques"},
+          "competence": {
+            "fr": "L'apprenant sera capable de rédiger un rapport clair, structuré et professionnel.",
+            "en": "The learner will be able to write a clear, structured and professional report."
+          },
+          "sections": [
+            {"order": 1, "file": "01-introduction", "kind": "content", "title": {"fr": "Introduction : les types de rapports", "en": "Introduction: types of reports"}},
+            {"order": 2, "file": "02-compte-rendu", "kind": "content", "title": {"fr": "Le compte rendu de manipulation", "en": "The practical work report"}}
+          ]
+        },
+        {
+          "order": 3,
+          "dir": "p1/m3",
+          "duration_hours": 4,
+          "title": {"fr": "Travail en hauteur", "en": "Working at height"},
+          "competence": {
+            "fr": "Les apprenants seront capables d'utiliser les équipements requis pour effectuer les travaux en hauteur en toute sécurité.",
+            "en": "Learners will be able to use the equipment required to work at height safely."
+          },
+          "sections": [
+            {"order": 1, "file": "01-introduction", "kind": "content", "title": {"fr": "Introduction et étude de cas", "en": "Introduction and case study"}},
+            {"order": 2, "file": "02-prevention", "kind": "content", "title": {"fr": "Mesures de prévention", "en": "Preventive measures"}}
+          ]
+        },
+        {
+          "order": 4,
+          "dir": "p1/m4",
+          "duration_hours": 4,
+          "title": {"fr": "Travaux en espaces confinés", "en": "Work in confined spaces"},
+          "competence": {
+            "fr": "L'apprenant sera apte à travailler dans des espaces réduits en toute sécurité.",
+            "en": "The learner will be able to work safely in confined spaces."
+          },
+          "sections": [
+            {"order": 1, "file": "01-introduction", "kind": "content", "title": {"fr": "Qu'est-ce qu'un espace confiné ?", "en": "What is a confined space?"}},
+            {"order": 2, "file": "02-dangers", "kind": "content", "title": {"fr": "Quels sont les dangers ?", "en": "What are the dangers?"}}
+          ]
+        },
+        {
+          "order": 5,
+          "dir": "p1/m5",
+          "duration_hours": 8,
+          "title": {"fr": "Fiche de maintenance ou d'intervention", "en": "Maintenance or service sheet"},
+          "competence": {
+            "fr": "L'apprenant va établir et utiliser convenablement une fiche de maintenance, en identifiant au préalable tous les points essentiels d'une installation frigorifique.",
+            "en": "The learner will draw up and correctly use a maintenance sheet, after identifying all the key points of a refrigeration installation."
+          },
+          "sections": [
+            {"order": 1, "file": "01-fiche", "kind": "content", "title": {"fr": "La fiche d'intervention", "en": "The service sheet"}},
+            {"order": 2, "file": "02-taf", "kind": "practical", "title": {"fr": "Activité pratique : remplir une fiche", "en": "Practical activity: filling in a sheet"}}
+          ]
+        },
+        {
+          "order": 6,
+          "dir": "p1/m6",
+          "duration_hours": 8,
+          "title": {"fr": "Recherche Internet", "en": "Internet research"},
+          "competence": {
+            "fr": "Télécharger et utiliser les catalogues, déterminer la puissance des compresseurs grâce à la plaque signalétique, traduire tout type de langue et faire des recherches sur des équipements.",
+            "en": "Download and use catalogues, determine compressor power from the rating plate, translate any language and research equipment."
+          },
+          "sections": [
+            {"order": 1, "file": "01-introduction", "kind": "content", "title": {"fr": "Introduction", "en": "Introduction"}},
+            {"order": 2, "file": "02-taf", "kind": "practical", "title": {"fr": "Activités pratiques (TAF)", "en": "Practical activities (assignments)"}}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+[
+  {
+    "id": "p1-m5-q01",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "À quoi sert la signature du client sur la fiche d'intervention ?",
+      "en": "What is the customer's signature on the service sheet for?"
+    },
+    "explanation": {
+      "fr": "Elle atteste la rencontre et l'approbation du travail effectué.",
+      "en": "It confirms the visit and that the work done is approved."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "À attester que le client approuve le travail effectué",
+          "en": "To confirm the customer approves the work done"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "À remplacer le paiement",
+          "en": "To replace payment"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "À rien, elle est facultative",
+          "en": "Nothing, it is optional"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m5-q02",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Que note-t-on sur une fiche d'intervention ?",
+      "en": "What is recorded on a service sheet?"
+    },
+    "explanation": {
+      "fr": "Les détails de la demande, les anomalies relevées et le matériel utilisé.",
+      "en": "The details of the request, the faults found and the equipment used."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Les anomalies relevées",
+          "en": "The faults found"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le matériel utilisé",
+          "en": "The equipment used"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La météo de la semaine",
+          "en": "The week's weather"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m5-e01",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Une copie de la fiche d'intervention peut être archivée dans l'entreprise.",
+      "en": "A copy of the service sheet can be filed by the company."
+    },
+    "explanation": {
+      "fr": "Oui : on la scanne ou la photocopie pour garder une trace du travail.",
+      "en": "Yes: it is scanned or photocopied to keep a record of the work."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m5-e02",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quel service profite particulièrement de la fiche signée ?",
+      "en": "Which department particularly benefits from the signed sheet?"
+    },
+    "explanation": {
+      "fr": "Le service chargé de la facturation de l'intervention.",
+      "en": "The department in charge of billing the job."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La facturation",
+          "en": "Billing"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La cantine",
+          "en": "The canteen"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le service des sports",
+          "en": "The sports department"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

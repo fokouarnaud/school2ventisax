@@ -1,0 +1,155 @@
+[
+  {
+    "id": "p1-m6-q01",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Où trouve-t-on la puissance d'un compresseur ?",
+      "en": "Where do you find a compressor's power rating?"
+    },
+    "explanation": {
+      "fr": "Sur la plaque signalétique de l'équipement.",
+      "en": "On the equipment's rating plate."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Sur la plaque signalétique",
+          "en": "On the rating plate"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Sur la facture d'électricité",
+          "en": "On the electricity bill"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Sur le carton d'emballage seulement",
+          "en": "Only on the cardboard packaging"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-q02",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Internet permet aux ordinateurs de communiquer grâce à un protocole commun (IP).",
+      "en": "The internet lets computers communicate through a common protocol (IP)."
+    },
+    "explanation": {
+      "fr": "C'est la définition donnée dans le cours.",
+      "en": "That is the definition given in the course."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-e01",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelles recherches un technicien fait-il sur internet selon le cours ?",
+      "en": "According to the course, what does a technician look up online?"
+    },
+    "explanation": {
+      "fr": "Catalogues, caractéristiques d'équipements et traductions de textes techniques.",
+      "en": "Catalogues, equipment specifications and translations of technical texts."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Des catalogues de climatiseurs",
+          "en": "Air-conditioner catalogues"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les caractéristiques d'un équipement",
+          "en": "Equipment specifications"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Des jeux vidéo",
+          "en": "Video games"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-e02",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Comment identifier un équipement inconnu de l'atelier ?",
+      "en": "How can you identify an unknown piece of workshop equipment?"
+    },
+    "explanation": {
+      "fr": "Par une recherche internet à partir d'un texte, d'un son, d'une photo ou d'une description.",
+      "en": "With an online search from a text, a sound, a photo or a description."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Par une recherche internet (texte, photo, description)",
+          "en": "With an online search (text, photo, description)"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "En le démontant entièrement",
+          "en": "By taking it completely apart"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "En devinant",
+          "en": "By guessing"
+        },
+        "correct": false
+      }
+    ]
+  }
+]
