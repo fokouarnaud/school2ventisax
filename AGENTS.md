@@ -110,16 +110,25 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 | **Module** | title*, order, duration_hours, competence*, evaluation_note* | FK Partie ; 1-1 Assessment (quiz) |
 | **Section** | title*, order, kind ∈ {content, practical}, body_md* | FK Module ; HTML rendu et nettoyé à l'affichage (avec cache) |
 | **Annexe** | title*, file | FK Section (practical) |
-| **Question** | prompt*, explanation*, qtype ∈ {single, multiple, truefalse}, usage ∈ {quiz, exam}, status ∈ {draft, published}, reviewed_fr, reviewed_en, image (facultative), external_id | FK Module ; publication impossible si `reviewed_fr` ou `reviewed_en` est faux ; truefalse = exactement 2 choix ; single = exactement 1 bonne réponse ; multiple ≥ 2 bonnes réponses |
+| **Question** | prompt*, explanation*, qtype ∈ {single, multiple, truefalse}, usage ∈ {quiz, exam}, status ∈ {draft, published}, reviewed_fr, reviewed_en, image (FileField facultatif : webp/png/jpg/svg), external_id | FK Module ; publication impossible si `reviewed_fr` ou `reviewed_en` est faux ; truefalse = exactement 2 choix ; single = exactement 1 bonne réponse ; multiple ≥ 2 bonnes réponses |
 | **Choice** | text*, is_correct, order | FK Question |
 | **Assessment** | kind ∈ {module_quiz, part_exam}, pass_threshold (70), max_attempts (null = illimité ; 3 pour l'examen), duration_minutes (null ; 60), questions_per_module (examen), shuffle | 1-1 Module (quiz) **ou** 1-1 Partie (examen) |
 | **Attempt** | started_at, deadline, submitted_at, auto_submitted, score_pct, passed, number | FK User, FK Assessment ; unique (user, assessment, number) ; au plus 1 tentative ouverte par (user, assessment) |
-| **AttemptQuestion** | order, choice_order (JSON) | FK Attempt, FK Question ; fige le tirage et l'ordre au démarrage |
-| **Answer** | selected_choices (M2M Choice), answered_at, points | FK AttemptQuestion (1-1) ; modifiable seulement si l'heure serveur est avant la deadline et que la tentative n'est pas envoyée |
+| **AttemptQuestion** | order, choice_order (JSON), selected_choices (M2M Choice), answered_at | FK Attempt, FK Question ; fige le tirage et l'ordre au démarrage ; porte aussi la réponse (ex-entité Answer) : modifiable seulement si l'heure serveur est avant la deadline et que la tentative n'est pas envoyée ; le score est recalculé à l'envoi (pas de champ `points`) |
 | **SectionView** | viewed_at | FK User, FK Section ; unique (user, section) |
 
 `*` = champ traduit (fr/en) via modeltranslation, avec repli sur le fr.
 **Règles dérivées (calculées, non stockées)** : module terminé = toutes ses sections vues + ≥ 1 tentative de quiz envoyée ; examen ouvert = tous les modules de la partie terminés et tentatives < max ; score multiple = max(0, bonnes cochées − mauvaises cochées) / nombre de bonnes ; meilleure note = max(score_pct) des tentatives envoyées.
+
+### Écarts d'implémentation validés (backend, 2026-10-17)
+Décisions prises pendant l'implémentation TDD, qui priment sur le texte ci-dessus :
+1. **Answer fusionnée dans AttemptQuestion** : la question tirée et la réponse de l'apprenant vivent dans la même ligne (une entité de moins, aucune perte de règle métier).
+2. **Contenu importé en JSON, pas en YAML** : PyYAML ne fait pas partie des 4 dépendances autorisées. Format : `content/<formation>/formation.json` (manifeste) + `<partie>/<module>/<NN-section>.fr.md` / `.en.md` + `<partie>/<module>/questions.json`. Commande : `python manage.py import_content content/<formation>/formation.json` (idempotente ; une question publiée dont le texte change repasse en brouillon).
+3. **Image de question = FileField** (extensions webp/png/jpg/jpeg/svg) au lieu d'ImageField : ImageField exige Pillow, exclu par le budget disque.
+4. **Pas d'entité « Answer.points »** : le score est calculé à l'envoi par `assessments/scoring.py` (fractions exactes).
+5. **Sauvegarde** : commande `python manage.py backup_db <dossier>` (API backup de SQLite, 7 copies gardées), à lancer par la tâche planifiée quotidienne de PythonAnywhere.
+6. **Dépendances de développement** : `pytest` et `pytest-django` (`requirements-dev.txt`), jamais installées en production.
+7. **Accès à l'admin dérivé du rôle** : un formateur devient `is_staff` avec le groupe « Formateurs » (questions et choix seulement) ; un admin reçoit le groupe « Administrateurs » (tout le contenu).
 
 ### Exigences non fonctionnelles
 - Performance : TTFB < 500 ms sur PythonAnywhere pour les pages de cours ; ≤ 10 requêtes SQL par page.
