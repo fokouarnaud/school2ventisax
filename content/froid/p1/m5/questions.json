@@ -13,8 +13,8 @@
       "en": "It confirms the visit and that the work done is approved."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -54,8 +54,8 @@
       "en": "The details of the request, the faults found and the equipment used."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -95,8 +95,8 @@
       "en": "Yes: it is scanned or photocopied to keep a record of the work."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -129,8 +129,8 @@
       "en": "The department in charge of billing the job."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -170,8 +170,8 @@
       "en": "Maintenance, breakdown or repair."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -211,8 +211,8 @@
       "en": "5 ppm."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -252,8 +252,8 @@
       "en": "Ready or not ready."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -293,8 +293,8 @@
       "en": "0.5 h; 1 h from 10 to 200 kg; 2 h above."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -334,8 +334,8 @@
       "en": "≤ 270 Pa."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -375,8 +375,8 @@
       "en": "≤ 0.9 × PS (PS: maximum allowable pressure)."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {

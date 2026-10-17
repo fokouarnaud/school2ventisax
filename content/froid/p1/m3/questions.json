@@ -13,8 +13,8 @@
       "en": "Whenever possible, avoid working at height."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -54,8 +54,8 @@
       "en": "Measures that protect everyone always come first."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -88,8 +88,8 @@
       "en": "The height, how long and how often the task lasts, and the condition of the work surface."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -129,8 +129,8 @@
       "en": "Competent people with the necessary knowledge and experience."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -170,8 +170,8 @@
       "en": "A guardrail protects everyone without personal equipment."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -211,8 +211,8 @@
       "en": "Ladders are for light, short jobs, for example 30 minutes at a time at most."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -252,8 +252,8 @@
       "en": "10 kN for 3 minutes."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -293,8 +293,8 @@
       "en": "4:1 ratio and three points of contact."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -334,8 +334,8 @@
       "en": "At least 6 to 8 m, because of the absorber deploying and the length of the body."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -375,8 +375,8 @@
       "en": "False: you attach to the anchor point provided on the lift."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {

@@ -13,8 +13,8 @@
       "en": "On the equipment's rating plate."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -54,8 +54,8 @@
       "en": "That is the definition given in the course."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -88,8 +88,8 @@
       "en": "Using catalogues, reading the rating plate, translating, researching equipment."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -129,8 +129,8 @@
       "en": "Equipment is more and more varied and sophisticated (model, brand, manufacturer)."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -170,8 +170,8 @@
       "en": "Catalogues, equipment specifications and translations of technical texts."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -211,8 +211,8 @@
       "en": "With an online search from a text, a sound, a photo or a description."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -252,8 +252,8 @@
       "en": "With a practical test on searching for and using data."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -293,8 +293,8 @@
       "en": "The IP protocol."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {

@@ -108,10 +108,21 @@ def test_every_module_has_enough_quiz_and_exam_questions():
         assert quiz >= 4 and exam >= 4, f"{module['dir']} : {quiz} quiz, {exam} examen"
 
 
-def test_questions_are_drafts_awaiting_trainer_review():
+def test_review_flags_are_explicit_for_both_languages():
+    """Relecture approuvée par le formateur le 2026-10-17 ; toute nouvelle question entre avec false/false."""
     for _, questions in questions_by_module():
         for q in questions:
-            assert q["reviewed"] == {"fr": False, "en": False}, f"{q['id']} ne doit pas être marquée relue dans le dépôt"
+            assert set(q["reviewed"]) == {"fr", "en"}, q["id"]
+            assert all(isinstance(v, bool) for v in q["reviewed"].values()), q["id"]
+
+
+@pytest.mark.django_db
+def test_imported_reviewed_questions_need_only_the_trainer_publish_step():
+    call_command("import_content", str(CONTENT / "formation.json"), verbosity=0)
+    assert not Question.objects.published().exists()  # l'import ne publie jamais tout seul
+    for question in Question.objects.filter(reviewed_fr=True, reviewed_en=True):
+        question.publish()
+    assert Question.objects.published().count() == Question.objects.count()
 
 
 @pytest.mark.django_db

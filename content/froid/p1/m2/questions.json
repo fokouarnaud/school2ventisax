@@ -13,8 +13,8 @@
       "en": "The course recommends a report at the end of every practical exercise."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -54,8 +54,8 @@
       "en": "The report describes, among other things, the tools used and the time taken."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -95,8 +95,8 @@
       "en": "Preparation, launch and follow-up."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -136,8 +136,8 @@
       "en": "The course lists the practical work report, the activity report, the maintenance report and the internship report."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -170,8 +170,8 @@
       "en": "Among other things the date, place, objectives, difficulties and solutions."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -211,8 +211,8 @@
       "en": "For the overall analysis of the company, to build decision-making tools."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -252,8 +252,8 @@
       "en": "Once you have left the company, some information will be hard to get."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -293,8 +293,8 @@
       "en": "Be critical: a thorough analysis of the company, not just a description."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -334,8 +334,8 @@
       "en": "False: the cover is never numbered."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -368,8 +368,8 @@
       "en": "The body, which presents the company and then the assignment."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -409,8 +409,8 @@
       "en": "After the table of contents and before the introduction."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {

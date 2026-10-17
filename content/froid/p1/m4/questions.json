@@ -13,8 +13,8 @@
       "en": "Fire, explosion, loss of consciousness, asphyxiation or drowning."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -54,8 +54,8 @@
       "en": "False: conditions change, so the risks must be reassessed every time."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -88,8 +88,8 @@
       "en": "Provide breathing apparatus or ventilate the space before entering."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -129,8 +129,8 @@
       "en": "The course mentions grain silos holding several hundred cubic metres."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -170,8 +170,8 @@
       "en": "B: low voltage; H: high voltage."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -211,8 +211,8 @@
       "en": "Non-electrical work."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -252,8 +252,8 @@
       "en": "BC: in charge of lock-out."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -293,8 +293,8 @@
       "en": "Interventions: troubleshooting, live connections, tests, measurements."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {

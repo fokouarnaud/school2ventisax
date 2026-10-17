@@ -13,8 +13,8 @@
       "en": "An electric shock is current passing through the body; electrocution is a fatal electric shock."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -54,8 +54,8 @@
       "en": "Goggles and gloves protect against sprays of fluid."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -102,8 +102,8 @@
       "en": "False: never use water, unless it is sprayed as a mist or the installation is switched off."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -136,8 +136,8 @@
       "en": "On the current's intensity and how long it flows through the body."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -177,8 +177,8 @@
       "en": "Do not touch it until you are sure it is dead."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -218,8 +218,8 @@
       "en": "48 hours across 6 modules."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -259,8 +259,8 @@
       "en": "A situation where the accident did not happen, but very nearly did."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -300,8 +300,8 @@
       "en": "That is the rule stated at the end of the introduction."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -334,8 +334,8 @@
       "en": "A description of the place, the circumstances, the facts and anything useful."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -375,8 +375,8 @@
       "en": "That is the requirement for all PPE."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -409,8 +409,8 @@
       "en": "False: insulating mats must not be used on wet floors."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -443,8 +443,8 @@
       "en": "Thermal effect, blast, UV and infrared radiation, ionisation and detonation."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -484,8 +484,8 @@
       "en": "40 mA, the current of a 10 W lamp, can kill."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -525,8 +525,8 @@
       "en": "Any voltage above 50 V is potentially fatal; low voltage goes up to 1,000 V."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -566,8 +566,8 @@
       "en": "By pulling the plug, never the cable."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -607,8 +607,8 @@
       "en": "3 m up to 50 kV, 5 m above."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -648,8 +648,8 @@
       "en": "1 bar = 10⁵ Pa = 100,000 Pa."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -689,8 +689,8 @@
       "en": "It shows compliance with the European Union's essential safety requirements."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -730,8 +730,8 @@
       "en": "Every 2 years according to the requalification table."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -771,8 +771,8 @@
       "en": "False: a doctor must examine them before they leave."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -805,8 +805,8 @@
       "en": "6 %: respiratory and cardiac arrest; normal air contains about 22 %."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -846,8 +846,8 @@
       "en": "Yellow: toxic and/or corrosive."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -887,8 +887,8 @@
       "en": "False: never try to catch a falling cylinder."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -921,8 +921,8 @@
       "en": "Oxygen has a white shoulder."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -962,8 +962,8 @@
       "en": "At 2/3 of its height, with a chain."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
@@ -1003,8 +1003,8 @@
       "en": "It is protective equipment for work at height."
     },
     "reviewed": {
-      "fr": false,
-      "en": false
+      "fr": true,
+      "en": true
     },
     "choices": [
       {
