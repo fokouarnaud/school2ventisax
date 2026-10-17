@@ -4,7 +4,10 @@ from pathlib import Path
 
 from django.utils.translation import gettext_lazy as _
 
+from .env import load_env_file
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_env_file(BASE_DIR / ".env")  # secrets du serveur (fichier ignoré par git)
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-insecure-key-ne-pas-utiliser-en-production")
 DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
@@ -101,6 +104,8 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 if not DEBUG:
+    # PythonAnywhere termine le HTTPS en amont et transmet X-Forwarded-Proto.
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
