@@ -17,7 +17,7 @@
         {% for item in row.modules %}
           <li class="{% if item.done %}done{% endif %}">
             <a href="{% url 'module_detail' item.module.pk %}">
-              <span class="num">{% if item.done %}{% include "icons/check.svg" %}{% else %}{{ forloop.counter }}{% endif %}</span>
+              <span class="num">{% if item.done %}{% include "icons/check.svg" %}<span class="visually-hidden">{% translate "Terminé" %} :</span>{% else %}{{ forloop.counter }}{% endif %}</span>
               <span>{{ item.module.title }}</span>
               {% if item.done %}<span class="badge badge-done">{% translate "Terminé" %}</span>{% else %}<span class="badge">{% blocktranslate with h=item.module.duration_hours %}{{ h }} h{% endblocktranslate %}</span>{% endif %}
             </a>
