@@ -170,7 +170,22 @@ Source : `static/acad/css/app.css` (CSS natif, aucun framework). Toute modificat
 
 **Points ouverts**
 - PRD « CSS et JS < 50 Ko au total » : respecté en transfert compressé (22 Ko), dépassé en brut (70 Ko, dont HTMX 51 Ko). Vérifier que PythonAnywhere sert les fichiers statiques compressés, sinon remplacer HTMX par un petit `fetch` natif (décision Q13 à revoir).
-- Traductions anglaises de l'interface (`locale/en/…/django.po`) pas encore écrites : sur `/en/`, le contenu est en anglais s'il existe, l'interface reste en français.
+
+## Traduction de l'interface et versionnement des fichiers statiques (2026-10-17)
+
+**Interface anglaise**
+- Chaînes sources en français dans les gabarits (`{% translate %}`, `{% blocktranslate %}`) et le code (`gettext_lazy`). Traductions dans `locale/en/LC_MESSAGES/django.po` (169 chaînes, pluriels compris) ; le `.mo` compilé est versionné pour que le serveur n'ait pas besoin de gettext.
+- Mettre à jour après tout ajout de texte :
+  `python manage.py makemessages -l en --ignore=.venv --ignore=reference --ignore=staticfiles --ignore=.playwright-mcp --ignore=conftest.py --ignore="*/tests/*"` puis traduire, puis `python manage.py compilemessages -l en --ignore=.venv`.
+- Sous Windows, gettext s'installe avec `winget install mlocati.GetText --scope user` (binaires dans `%LOCALAPPDATA%\Programs\gettext-iconv\bin`, à ajouter au PATH).
+- Garde-fou : `accounts/tests/test_i18n.py` échoue si une chaîne du `.po` est vide ou marquée `fuzzy`, et vérifie les écrans clés en anglais.
+- Contenu non traduit affiché en repli français : le filtre `{{ objet|lang_attr:"title" }}` (`courses/templatetags/acad_i18n.py`) ajoute `lang="fr"` pour que les lecteurs d'écran le prononcent en français ; le corps d'une section garde le badge « FR ».
+
+**Versionnement anti-cache des CSS et JS**
+- Production (`DJANGO_DEBUG=0`) : `ManifestStaticFilesStorage`, l'empreinte du contenu est dans le nom (`app.3f9c….css`) après `collectstatic`. Une modification crée une nouvelle URL ; les anciennes peuvent être mises en cache longtemps.
+- Développement : `config.storage.VersionedStaticFilesStorage` ajoute `?v=<empreinte du contenu>` à chaque URL `{% static %}` ; plus besoin de vider le cache du navigateur.
+- Toujours référencer CSS, JS et images par `{% static %}`, jamais par une URL écrite en dur. `STATIC_ROOT` est réglable par `DJANGO_STATIC_ROOT`.
+- Testé par `config/tests/test_static_versioning.py` (y compris un `collectstatic` de production réel).
 
 ## Definition of Done (critères stricts)
 Une user story ou une fonctionnalité n'est **terminée** que si **tous** les points sont vrais :
