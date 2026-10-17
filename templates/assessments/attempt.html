@@ -1,23 +1,53 @@
-{% extends "base.html" %}{% load i18n %}
+{% extends "base.html" %}{% load i18n static %}
+{% block title %}{% if attempt.assessment.is_exam %}{% translate "Examen" %}{% else %}{% translate "Quiz" %}{% endif %}{% endblock %}
 {% block content %}
-<h1>{{ attempt.assessment }}</h1>
-{% if remaining_seconds is not None %}<p data-remaining="{{ remaining_seconds }}">{% translate "Temps restant :" %} {{ remaining_seconds }} s</p>{% endif %}
-{% for row in rows %}
-  <form method="post" action="{% url 'save_answer' attempt.pk %}">{% csrf_token %}
-    <fieldset>
-      <legend>{{ forloop.counter }}. {{ row.question.prompt }}</legend>
-      <input type="hidden" name="question" value="{{ row.question.pk }}">
-      {% for choice in row.choices %}
-        <label>
-          <input type="{% if row.question.qtype == 'multiple' %}checkbox{% else %}radio{% endif %}" name="choices" value="{{ choice.pk }}"{% if choice.pk in row.selected %} checked{% endif %}>
-          {{ choice.text }}
-        </label>
-      {% endfor %}
-      <button type="submit">{% translate "Enregistrer" %}</button>
-    </fieldset>
+<div data-attempt
+     data-saving="{% translate 'Enregistrement…' %}"
+     data-saved="{% translate 'Réponse enregistrée' %}"
+     data-failed="{% translate 'Échec de l’enregistrement. Vérifiez la connexion puis recochez.' %}"
+     data-closed="{% translate 'Temps écoulé : la tentative est envoyée.' %}"
+     data-answered-label="{% translate '%(done)s / %(total)s répondues' %}">
+  <div class="attempt-bar">
+    <h1>{% if attempt.assessment.is_exam %}{% blocktranslate with p=attempt.assessment.partie.title %}Examen : {{ p }}{% endblocktranslate %}{% else %}{% blocktranslate with m=attempt.assessment.module.title %}Quiz : {{ m }}{% endblocktranslate %}{% endif %}</h1>
+    <span class="answered" data-answered aria-live="polite"></span>
+    {% if remaining_seconds is not None %}
+      <span class="timer" data-remaining="{{ remaining_seconds }}">{% include "icons/clock.svg" %}<span class="visually-hidden">{% translate "Temps restant" %}</span><output>{% widthratio remaining_seconds 60 1 %} min</output></span>
+    {% endif %}
+  </div>
+
+  <div class="questions">
+    {% for row in rows %}
+      <form class="panel" id="q-{{ row.question.pk }}" method="post" action="{% url 'save_answer' attempt.pk %}"
+            hx-post="{% url 'save_answer' attempt.pk %}" hx-trigger="change" hx-swap="none">{% csrf_token %}
+        <fieldset class="question">
+          <legend>{{ forloop.counter }}. {{ row.question.prompt }}</legend>
+          <p class="hint">{% if row.question.qtype == "multiple" %}{% translate "Plusieurs réponses possibles." %}{% else %}{% translate "Une seule réponse." %}{% endif %}</p>
+          {% if row.question.image %}<img src="{{ row.question.image.url }}" alt="" loading="lazy">{% endif %}
+          <input type="hidden" name="question" value="{{ row.question.pk }}">
+          <div class="choices">
+            {% for choice in row.choices %}
+              <label class="choice">
+                <input type="{% if row.question.qtype == 'multiple' %}checkbox{% else %}radio{% endif %}" name="choices" value="{{ choice.pk }}"{% if choice.pk in row.selected %} checked{% endif %}>
+                <span>{{ choice.text }}</span>
+              </label>
+            {% endfor %}
+          </div>
+          <p class="save-state" aria-live="polite"></p>
+          <button class="btn btn-ghost save-btn" type="submit">{% translate "Enregistrer cette réponse" %}</button>
+        </fieldset>
+      </form>
+    {% empty %}
+      <section class="panel empty"><p class="muted">{% translate "Aucune question publiée pour le moment." %}</p></section>
+    {% endfor %}
+  </div>
+
+  <form class="submit-zone" method="post" action="{% url 'submit_attempt' attempt.pk %}">{% csrf_token %}
+    <p class="muted">{% if attempt.assessment.is_exam %}{% translate "Une fois envoyé, l'examen ne peut plus être modifié." %}{% else %}{% translate "Vous verrez la correction juste après l'envoi." %}{% endif %}</p>
+    <button class="btn" type="submit">{% if attempt.assessment.is_exam %}{% translate "Envoyer l'examen" %}{% else %}{% translate "Voir la correction" %}{% endif %}</button>
   </form>
-{% endfor %}
-<form method="post" action="{% url 'submit_attempt' attempt.pk %}">{% csrf_token %}
-  <button type="submit">{% translate "Envoyer" %}</button>
-</form>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'vendor/htmx.min.js' %}" defer></script>
+<script src="{% static 'acad/js/attempt.js' %}" defer></script>
 {% endblock %}

@@ -1,16 +1,46 @@
 {% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Mes cours" %}{% endblock %}
 {% block content %}
-<h1>{% translate "Mes cours" %}</h1>
-{% if promotion %}<p>{{ promotion.formation.title }}</p>{% endif %}
+<div class="page-head">
+  <h1>{% if user.first_name %}{% blocktranslate with name=user.first_name %}Bonjour, {{ name }}{% endblocktranslate %}{% else %}{% translate "Mes cours" %}{% endif %}</h1>
+  {% if promotion %}<p class="muted">{{ promotion.formation.title }} · {{ promotion.name }}</p>{% endif %}
+</div>
 {% for row in parts %}
-  <section>
-    <h2>{{ row.partie.title }}</h2>
-    <progress max="100" value="{{ row.progress }}">{{ row.progress }} %</progress> {{ row.progress }} %
-    <ul>
-      {% for module in row.partie.modules.all %}<li>{{ module.title }}</li>{% endfor %}
-    </ul>
-  </section>
+  <div class="course">
+    <section class="panel" aria-labelledby="partie-{{ row.partie.pk }}">
+      <h2 id="partie-{{ row.partie.pk }}">{{ row.partie.title }}</h2>
+      <div class="course-meter">
+        <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ row.progress }}" aria-label="{% translate 'Progression' %}"><span style="width: {{ row.progress }}%"></span></div>
+        <strong>{{ row.progress }} %</strong>
+      </div>
+      <ol class="modules">
+        {% for item in row.modules %}
+          <li class="{% if item.done %}done{% endif %}">
+            <a href="{% url 'module_detail' item.module.pk %}">
+              <span class="num">{% if item.done %}{% include "icons/check.svg" %}{% else %}{{ forloop.counter }}{% endif %}</span>
+              <span>{{ item.module.title }}</span>
+              {% if item.done %}<span class="badge badge-done">{% translate "Terminé" %}</span>{% else %}<span class="badge">{% blocktranslate with h=item.module.duration_hours %}{{ h }} h{% endblocktranslate %}</span>{% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+    <aside class="panel exam-card" aria-labelledby="examen-{{ row.partie.pk }}">
+      <span class="exam-icon">{% if row.exam_unlocked %}{% include "icons/player-play.svg" %}{% else %}{% include "icons/lock.svg" %}{% endif %}</span>
+      <h2 id="examen-{{ row.partie.pk }}">{% translate "Examen de la partie" %}</h2>
+      {% if row.exam_unlocked %}
+        <p class="muted">{% translate "Tous les modules sont terminés. L'examen est ouvert." %}</p>
+        <a class="btn" href="{% url 'exam' row.partie.pk %}">{% translate "Voir l'examen" %}</a>
+      {% else %}
+        <p class="muted">{% translate "Il s'ouvre quand tous les modules sont terminés : sections lues et quiz envoyé." %}</p>
+        <a class="btn btn-ghost" href="{% url 'exam' row.partie.pk %}">{% translate "Ce qu'il reste à faire" %}</a>
+      {% endif %}
+    </aside>
+  </div>
 {% empty %}
-  <p>{% translate "Vous n'êtes inscrit à aucune formation pour le moment." %}</p>
+  <section class="panel empty">
+    <h2>{% translate "Aucune formation pour le moment" %}</h2>
+    <p class="muted">{% translate "Votre compte n'est rattaché à aucune promotion. Le centre vous inscrira avant le début des cours." %}</p>
+  </section>
 {% endfor %}
 {% endblock %}

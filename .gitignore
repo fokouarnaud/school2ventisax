@@ -57,3 +57,6 @@ backups/
 # Programme  et cours: contient cours groupe en partie et module 
 
 reference/
+
+# Captures Playwright MCP (validation visuelle locale)
+.playwright-mcp/
