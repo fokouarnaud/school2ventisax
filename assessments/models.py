@@ -1,3 +1,5 @@
+import random
+
 from django.core.exceptions import ValidationError
 from django.core.validators import FileExtensionValidator
 from django.db import models
@@ -92,6 +94,11 @@ class Assessment(models.Model):
     partie = models.OneToOneField(
         "courses.Partie", on_delete=models.CASCADE, null=True, blank=True, related_name="exam"
     )
+    pass_threshold = models.PositiveSmallIntegerField(_("seuil de réussite (%)"), default=70)
+    max_attempts = models.PositiveSmallIntegerField(_("tentatives maximum"), null=True, blank=True)
+    duration_minutes = models.PositiveSmallIntegerField(_("durée (minutes)"), null=True, blank=True)
+    questions_per_module = models.PositiveSmallIntegerField(_("questions par module"), default=10)
+    shuffle = models.BooleanField(_("mélanger questions et choix"), default=False)
 
     class Meta:
         constraints = [
@@ -111,8 +118,36 @@ class Assessment(models.Model):
     def quiz_for(cls, module):
         return cls.objects.get_or_create(kind=cls.Kind.MODULE_QUIZ, module=module)[0]
 
-    def question_pool(self):
-        return Question.objects.published().filter(module=self.module, usage=Question.Usage.QUIZ)
+    @classmethod
+    def exam_for(cls, partie):
+        return cls.objects.get_or_create(
+            kind=cls.Kind.PART_EXAM,
+            partie=partie,
+            defaults={"max_attempts": 3, "duration_minutes": 60, "shuffle": True},
+        )[0]
+
+    @property
+    def is_exam(self):
+        return self.kind == self.Kind.PART_EXAM
+
+    def question_pool(self, rng=random):
+        published = Question.objects.published()
+        if not self.is_exam:
+            return list(published.filter(module=self.module, usage=Question.Usage.QUIZ))
+        drawn = []
+        for module in self.partie.modules.all():
+            candidates = list(published.filter(module=module, usage=Question.Usage.EXAM))
+            drawn += rng.sample(candidates, min(self.questions_per_module, len(candidates)))
+        if self.shuffle:
+            rng.shuffle(drawn)
+        return drawn
+
+    def best_attempt(self, user):
+        return (
+            self.attempts.filter(user=user, submitted_at__isnull=False)
+            .order_by("-score_pct", "submitted_at")
+            .first()
+        )
 
 
 class Attempt(models.Model):
@@ -123,6 +158,7 @@ class Attempt(models.Model):
     deadline = models.DateTimeField(null=True, blank=True)
     submitted_at = models.DateTimeField(null=True, blank=True)
     score_pct = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    auto_submitted = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["assessment", "user", "number"]
@@ -132,6 +168,18 @@ class Attempt(models.Model):
 
     def __str__(self):
         return f"{self.user} – {self.assessment} #{self.number}"
+
+    @property
+    def passed(self):
+        return self.score_pct is not None and self.score_pct >= self.assessment.pass_threshold
+
+    def module_scores(self):
+        from .services import percentage
+
+        by_module = {}
+        for item in self.feedback():
+            by_module.setdefault(item["question"].module, []).append(item["score"])
+        return {module: percentage(scores) for module, scores in by_module.items()}
 
     def feedback(self):
         from .scoring import score_answer
@@ -160,9 +208,15 @@ class AttemptQuestion(models.Model):
     order = models.PositiveIntegerField()
     selected_choices = models.ManyToManyField(Choice, blank=True)
     answered_at = models.DateTimeField(null=True, blank=True)
+    choice_order = models.JSONField(default=list, blank=True)
 
     class Meta:
         ordering = ["order"]
         constraints = [
             models.UniqueConstraint(fields=["attempt", "question"], name="unique_question_per_attempt")
         ]
+
+    def ordered_choices(self):
+        choices = {c.pk: c for c in self.question.choices.all()}
+        ordered = [choices.pop(pk) for pk in self.choice_order if pk in choices]
+        return ordered + list(choices.values())
