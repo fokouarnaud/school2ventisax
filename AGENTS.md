@@ -172,6 +172,13 @@ Source : `static/acad/css/app.css` (CSS natif, aucun framework). Toute modificat
 - Garde-fou : `accounts/tests/test_i18n.py` échoue si une chaîne du `.po` est vide ou marquée `fuzzy`, et vérifie les écrans clés en anglais.
 - Contenu non traduit affiché en repli français : le filtre `{{ objet|lang_attr:"title" }}` (`courses/templatetags/acad_i18n.py`) ajoute `lang="fr"` pour que les lecteurs d'écran le prononcent en français ; le corps d'une section garde le badge « FR ».
 
+**Contenu des cours bilingue (`content/froid/`)**
+- `formation.json` + `p1/m1…m6/*.fr.md` / `*.en.md` + `p1/m*/questions.json` : Partie 1 (6 modules, 48 h) transcrite depuis la première page de chaque module de `reference/cours/01_partie1`, avec sa traduction anglaise. Titres et durées conformes au support : 1 Sécurité dans les travaux (8 h), 2 Techniques de rédaction des rapports (16 h), 3 Travail en hauteur (4 h), 4 Travaux en espaces confinés (4 h), 5 Fiche de maintenance ou d'intervention (8 h), 6 Recherche Internet (8 h).
+- 25 questions (13 de quiz, 12 d'examen), toutes en français et en anglais, avec `reviewed` à `false` : ce sont des brouillons rédigés par Claude, qu'un formateur doit relire dans les deux langues avant publication (règle Q11b).
+- Transcription encore partielle : seules les premières pages de chaque module sont reprises ; le reste des 44 photos est à transcrire.
+- Garde-fou : `courses/tests/test_content_files.py` échoue si un titre, un texte de section, une question, une réponse ou une explication manque dans l'une des deux langues.
+- Import : `python manage.py import_content content/froid/formation.json` (idempotent).
+
 **Versionnement anti-cache des CSS et JS**
 - Production (`DJANGO_DEBUG=0`) : `ManifestStaticFilesStorage`, l'empreinte du contenu est dans le nom (`app.3f9c….css`) après `collectstatic`. Une modification crée une nouvelle URL ; les anciennes peuvent être mises en cache longtemps.
 - Développement : `config.storage.VersionedStaticFilesStorage` ajoute `?v=<empreinte du contenu>` à chaque URL `{% static %}` ; plus besoin de vider le cache du navigateur.
