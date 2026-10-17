@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<h1>{{ attempt.assessment }}</h1>
+{% if remaining_seconds is not None %}<p data-remaining="{{ remaining_seconds }}">{% translate "Temps restant :" %} {{ remaining_seconds }} s</p>{% endif %}
+{% for row in rows %}
+  <form method="post" action="{% url 'save_answer' attempt.pk %}">{% csrf_token %}
+    <fieldset>
+      <legend>{{ forloop.counter }}. {{ row.question.prompt }}</legend>
+      <input type="hidden" name="question" value="{{ row.question.pk }}">
+      {% for choice in row.choices %}
+        <label>
+          <input type="{% if row.question.qtype == 'multiple' %}checkbox{% else %}radio{% endif %}" name="choices" value="{{ choice.pk }}"{% if choice.pk in row.selected %} checked{% endif %}>
+          {{ choice.text }}
+        </label>
+      {% endfor %}
+      <button type="submit">{% translate "Enregistrer" %}</button>
+    </fieldset>
+  </form>
+{% endfor %}
+<form method="post" action="{% url 'submit_attempt' attempt.pk %}">{% csrf_token %}
+  <button type="submit">{% translate "Envoyer" %}</button>
+</form>
+{% endblock %}

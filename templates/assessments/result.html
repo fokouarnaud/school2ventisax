@@ -1,0 +1,25 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<h1>{% translate "Résultat" %}</h1>
+<p>{{ attempt.score_pct }} %{% if attempt.assessment.is_exam %} : {% if attempt.passed %}{% translate "réussi" %}{% else %}{% translate "non réussi" %}{% endif %}{% endif %}</p>
+{% if attempt.auto_submitted %}<p>{% translate "Temps écoulé : vos réponses ont été envoyées automatiquement." %}</p>{% endif %}
+{% if module_scores %}
+  <table>
+    {% for module, score in module_scores.items %}<tr><th>{{ module.title }}</th><td>{{ score }} %</td></tr>{% endfor %}
+  </table>
+  {% if attempts_left is not None %}<p>{% blocktranslate count n=attempts_left %}{{ n }} tentative restante.{% plural %}{{ n }} tentatives restantes.{% endblocktranslate %}</p>{% endif %}
+{% endif %}
+{% if show_correction %}
+  {% for item in feedback %}
+    <section>
+      <h2>{{ item.question.prompt }}</h2>
+      <ul>
+        {% for choice in item.question.choices.all %}
+          <li>{{ choice.text }}{% if choice.pk in item.correct_choice_ids %} ✓{% endif %}{% if choice.pk in item.selected_choice_ids %} ({% translate "votre réponse" %}){% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% if item.explanation %}<p>{{ item.explanation }}</p>{% endif %}
+    </section>
+  {% endfor %}
+{% endif %}
+{% endblock %}

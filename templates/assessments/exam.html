@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<h1>{% blocktranslate with p=partie.title %}Examen : {{ p }}{% endblocktranslate %}</h1>
+<p>{% blocktranslate with d=assessment.duration_minutes t=assessment.pass_threshold %}{{ d }} minutes, {{ t }} % pour réussir.{% endblocktranslate %}</p>
+{% if best %}<p>{% blocktranslate with s=best.score_pct %}Meilleur score : {{ s }} %{% endblocktranslate %}</p>{% endif %}
+{% if not unlocked %}
+  <p>{% translate "Terminez d'abord ces modules :" %}</p>
+  <ul>{% for m in missing_modules %}<li><a href="{% url 'module_detail' m.pk %}">{{ m.title }}</a></li>{% endfor %}</ul>
+{% elif attempts_left == 0 %}
+  <p>{% translate "Vous avez utilisé toutes vos tentatives." %}</p>
+{% else %}
+  <p>{% blocktranslate count n=attempts_left %}{{ n }} tentative restante.{% plural %}{{ n }} tentatives restantes.{% endblocktranslate %}</p>
+  <form method="post">{% csrf_token %}<button type="submit">{% translate "Commencer l'examen" %}</button></form>
+{% endif %}
+{% endblock %}
