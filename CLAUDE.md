@@ -59,7 +59,7 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 - Dépendances autorisées : `django`, `django-modeltranslation`, `markdown`, `bleach`. Toute autre dépendance demande un accord explicite.
 - **Disque < 150 Mo** (code + venv + base + médias) sur un quota de 512 Mo ; images en WebP ; **pages < 200 Ko** à la première visite.
 - i18n : `i18n_patterns`, préfixes /fr/ (par défaut) et /en/, gettext pour l'interface, modeltranslation pour le contenu, repli sur le fr.
-- Plan gratuit PythonAnywhere : une web app, internet sortant sur liste blanche, pas de tâche permanente (une tâche planifiée par jour).
+- Plan gratuit PythonAnywhere : une web app, internet sortant sur liste blanche, aucune tâche planifiée ni permanente (constaté le 2026-10-17 : réservées aux comptes payants).
 - Sécurité : DEBUG=False en production, HTTPS forcé, CSRF actif, HTML Markdown nettoyé par bleach, secrets dans `.env`.
 - Déploiement : `deploy.sh` (pull, install, migrate, compilemessages, collectstatic, reload).
 
@@ -135,7 +135,7 @@ Décisions prises pendant l'implémentation TDD, qui priment sur le texte ci-des
 2. **Contenu importé en JSON, pas en YAML** : PyYAML ne fait pas partie des 4 dépendances autorisées. Format : `content/<formation>/formation.json` (manifeste) + `<partie>/<module>/<NN-section>.fr.md` / `.en.md` + `<partie>/<module>/questions.json`. Commande : `python manage.py import_content content/<formation>/formation.json` (idempotente ; une question publiée dont le texte change repasse en brouillon).
 3. **Image de question = FileField** (extensions webp/png/jpg/jpeg/svg) au lieu d'ImageField : ImageField exige Pillow, exclu par le budget disque.
 4. **Pas d'entité « Answer.points »** : le score est calculé à l'envoi par `assessments/scoring.py` (fractions exactes).
-5. **Sauvegarde** : commande `python manage.py backup_db <dossier>` (API backup de SQLite, 7 copies gardées), à lancer par la tâche planifiée quotidienne de PythonAnywhere.
+5. **Sauvegarde** : commande `python manage.py backup_db <dossier>` (API backup de SQLite, 7 copies gardées), lancée automatiquement par `progress.middleware.DailyBackupMiddleware` : la première requête qui suit 24 h sans copie déclenche la sauvegarde dans `DJANGO_BACKUP_DIR` (désactivée si la variable est vide ; une erreur est journalisée sans casser la page). Le plan gratuit n'ayant pas de tâche planifiée, aucun jour sans visite ne produit de copie, ce qui est sans conséquence puisque la base n'a alors pas changé.
 6. **Dépendances de développement** : `pytest` et `pytest-django` (`requirements-dev.txt`), jamais installées en production.
 7. **Accès à l'admin dérivé du rôle** : un formateur devient `is_staff` avec le groupe « Formateurs » (questions et choix seulement) ; un admin reçoit le groupe « Administrateurs » (tout le contenu).
 
@@ -168,8 +168,8 @@ Source : `static/acad/css/app.css` (CSS natif, aucun framework). Toute modificat
 
 **Budget mesuré** : page la plus lourde (examen) ≈ 32 Ko à la première visite ; CSS + JS = 22 Ko compressés (gzip), 70 Ko bruts.
 
-**Points ouverts**
-- PRD « CSS et JS < 50 Ko au total » : respecté en transfert compressé (22 Ko), dépassé en brut (70 Ko, dont HTMX 51 Ko). Vérifier que PythonAnywhere sert les fichiers statiques compressés, sinon remplacer HTMX par un petit `fetch` natif (décision Q13 à revoir).
+**Point résolu (2026-10-17)**
+- PRD « CSS et JS < 50 Ko au total » : respecté en transfert compressé (22 Ko) ; PythonAnywhere sert bien les fichiers statiques en gzip (vérifié en production), HTMX est donc conservé (70 Ko bruts, dont HTMX 51 Ko).
 
 ## Traduction de l'interface et versionnement des fichiers statiques (2026-10-17)
 
@@ -206,5 +206,5 @@ Une user story ou une fonctionnalité n'est **terminée** que si **tous** les po
 6. **Données** : les migrations sont créées et appliquées sur une base vide ; `import_content` est idempotent (deux exécutions, aucun doublon).
 7. **Interface** : relue avec la grille design-taste-frontend ; aucun texte ni asset NetAcad ; capture mobile jointe à la PR.
 8. **Contenu** (stories de contenu) : sections transcrites fidèles aux photos (relecture humaine cochée), questions au statut `draft` jusqu'à validation du formateur.
-9. **Déploiement** (jalon de release) : `deploy.sh` exécuté sur PythonAnywhere ; /fr/ et /en/ répondent 200 ; l'admin est accessible ; la tâche de sauvegarde a produit un fichier.
+9. **Déploiement** (jalon de release) : `deploy.sh` exécuté sur PythonAnywhere ; /fr/ et /en/ répondent 200 ; l'admin est accessible ; une sauvegarde a été produite dans `DJANGO_BACKUP_DIR`.
 10. **Documentation** : AGENTS.md est mis à jour si une décision change ; pas de TODO non suivi dans le code livré.
