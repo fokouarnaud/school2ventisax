@@ -48,7 +48,8 @@ def test_new_backup_when_the_last_one_is_older_than_a_day(tmp_path):
     old.write_bytes(b"x")
     age(old, DAY + 60)
     assert backup.backup_if_due(tmp_path) is True
-    assert len(backups_in(tmp_path)) == 2
+    [new] = backups_in(tmp_path)
+    assert new != old
 
 
 @pytest.mark.django_db(transaction=True)

@@ -36,7 +36,7 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 | Q11b | Traduction manquante ? Changement de langue pendant l'examen ? | Un objet par question avec champs fr/en ; repli sur le fr avec badge « FR » ; même tentative ; publication seulement si les deux langues sont relues |
 | Q12 | Direction de l'interface ? | Patterns NetAcad + charte Ventisax ; mobile d'abord ; < 200 Ko par page ; CSS écrit à la main |
 | Q13 | Stack ? | Django 5.2 LTS, gabarits serveur + HTMX vendoré ; deps : django, django-modeltranslation, markdown, bleach |
-| Q14 | Déploiement et exploitation ? | GitHub → `deploy.sh` sur PythonAnywhere ; sauvegarde SQLite quotidienne (7 copies) ; DEBUG=False, HTTPS |
+| Q14 | Déploiement et exploitation ? | GitHub → `deploy.sh` sur PythonAnywhere ; sauvegarde SQLite quotidienne (1 copie, la plus récente) ; DEBUG=False, HTTPS |
 | Q15 | Contenu de la v1 ? | Partie 1 complète (6 modules) |
 | Q16 | Comment observer NetAcad ? | L'utilisateur se connecte lui-même dans le Chrome CDP (`/cloner-webapp`) ; 4 écrans observés ; principes d'interface seulement |
 
@@ -107,7 +107,7 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 - US-17 : En tant qu'admin, j'importe une liste d'apprenants depuis un CSV dans une promotion.
 - US-18 : En tant qu'admin, j'importe ou je mets à jour le contenu (cours et questions) depuis les fichiers du dépôt avec une commande idempotente.
 - US-19 : En tant qu'admin, je règle un examen (seuil, tentatives, durée, nombre de questions par module) ; les valeurs NetAcad sont proposées par défaut.
-- US-20 : En tant qu'admin, une sauvegarde quotidienne de la base est faite automatiquement, et j'en garde 7.
+- US-20 : En tant qu'admin, une sauvegarde quotidienne de la base est faite automatiquement, et seule la plus récente est gardée (décision du 2026-10-17, pour limiter le disque).
 
 ### Modélisation logique des données
 | Entité | Attributs clés | Relations / contraintes |
@@ -135,7 +135,7 @@ Décisions prises pendant l'implémentation TDD, qui priment sur le texte ci-des
 2. **Contenu importé en JSON, pas en YAML** : PyYAML ne fait pas partie des 4 dépendances autorisées. Format : `content/<formation>/formation.json` (manifeste) + `<partie>/<module>/<NN-section>.fr.md` / `.en.md` + `<partie>/<module>/questions.json`. Commande : `python manage.py import_content content/<formation>/formation.json` (idempotente ; une question publiée dont le texte change repasse en brouillon).
 3. **Image de question = FileField** (extensions webp/png/jpg/jpeg/svg) au lieu d'ImageField : ImageField exige Pillow, exclu par le budget disque.
 4. **Pas d'entité « Answer.points »** : le score est calculé à l'envoi par `assessments/scoring.py` (fractions exactes).
-5. **Sauvegarde** : commande `python manage.py backup_db <dossier>` (API backup de SQLite, 7 copies gardées), lancée automatiquement par `progress.middleware.DailyBackupMiddleware` : la première requête qui suit 24 h sans copie déclenche la sauvegarde dans `DJANGO_BACKUP_DIR` (désactivée si la variable est vide ; une erreur est journalisée sans casser la page). Le plan gratuit n'ayant pas de tâche planifiée, aucun jour sans visite ne produit de copie, ce qui est sans conséquence puisque la base n'a alors pas changé.
+5. **Sauvegarde** : commande `python manage.py backup_db <dossier>` (API backup de SQLite ; seule la nouvelle copie est gardée, les anciennes ne sont supprimées qu'après son écriture), lancée automatiquement par `progress.middleware.DailyBackupMiddleware` : la première requête qui suit 24 h sans copie déclenche la sauvegarde dans `DJANGO_BACKUP_DIR` (désactivée si la variable est vide ; une erreur est journalisée sans casser la page). Le plan gratuit n'ayant pas de tâche planifiée, aucun jour sans visite ne produit de copie, ce qui est sans conséquence puisque la base n'a alors pas changé.
 6. **Dépendances de développement** : `pytest` et `pytest-django` (`requirements-dev.txt`), jamais installées en production.
 7. **Accès à l'admin dérivé du rôle** : un formateur devient `is_staff` avec le groupe « Formateurs » (questions et choix seulement) ; un admin reçoit le groupe « Administrateurs » (tout le contenu).
 

@@ -1,4 +1,6 @@
-"""Sauvegarde à chaud de la base SQLite (API backup), en gardant les 7 copies les plus récentes (US-20)."""
+"""Sauvegarde à chaud de la base SQLite (API backup), en ne gardant que la nouvelle copie (US-20).
+
+Les anciennes copies ne sont supprimées qu'une fois la nouvelle écrite."""
 import sqlite3
 from pathlib import Path
 
@@ -6,11 +8,11 @@ from django.core.management.base import BaseCommand
 from django.db import connection
 from django.utils import timezone
 
-KEEP = 7
+KEEP = 1
 
 
 class Command(BaseCommand):
-    help = "Copie la base SQLite dans le dossier donné et ne garde que les 7 dernières copies."
+    help = "Copie la base SQLite dans le dossier donné et ne garde que cette nouvelle copie."
 
     def add_arguments(self, parser):
         parser.add_argument("directory")
