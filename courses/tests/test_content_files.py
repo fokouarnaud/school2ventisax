@@ -69,3 +69,13 @@ def test_versioned_content_imports_with_english_everywhere():
     assert not Section.objects.filter(body_md_en="").exists()
     assert not Question.objects.filter(prompt_en="").exists()
     assert not Question.objects.filter(explanation_en="").exists()
+
+
+def test_every_markdown_file_is_referenced_by_the_manifest():
+    referenced = set()
+    for _, module in iter_modules():
+        for section in module["sections"]:
+            for lang in LANGS:
+                referenced.add((CONTENT / module["dir"] / f"{section['file']}.{lang}.md").resolve())
+    on_disk = {p.resolve() for p in CONTENT.rglob("*.md")}
+    assert sorted(str(p) for p in on_disk - referenced) == []

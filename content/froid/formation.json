@@ -1,6 +1,9 @@
 {
   "slug": "froid",
-  "title": {"fr": "Froid et climatisation", "en": "Refrigeration and air conditioning"},
+  "title": {
+    "fr": "Froid et climatisation",
+    "en": "Refrigeration and air conditioning"
+  },
   "description": {
     "fr": "Formation professionnelle du centre LA VOCATION : sécurité, électricité, froid et climatisation.",
     "en": "Vocational training at the LA VOCATION centre: safety, electricity, refrigeration and air conditioning."
@@ -9,13 +12,19 @@
     {
       "slug": "p1",
       "order": 1,
-      "title": {"fr": "Habilitation et sécurité professionnelle", "en": "Professional safety qualification"},
+      "title": {
+        "fr": "Habilitation et sécurité professionnelle",
+        "en": "Professional safety qualification"
+      },
       "modules": [
         {
           "order": 1,
           "dir": "p1/m1",
           "duration_hours": 8,
-          "title": {"fr": "Sécurité dans les travaux", "en": "Safety at work"},
+          "title": {
+            "fr": "Sécurité dans les travaux",
+            "en": "Safety at work"
+          },
           "competence": {
             "fr": "L'apprenant sera capable de réaliser des travaux en identifiant les risques et en adoptant les mesures de prévention appropriées.",
             "en": "The learner will be able to carry out work by identifying the risks and taking the appropriate preventive measures."
@@ -25,82 +34,381 @@
             "en": "Multiple-choice test and observation of safe practices during a workshop."
           },
           "sections": [
-            {"order": 1, "file": "01-enjeux", "kind": "content", "title": {"fr": "Introduction : enjeux de la sécurité", "en": "Introduction: why safety matters"}},
-            {"order": 2, "file": "02-securite-electrique", "kind": "content", "title": {"fr": "Sécurité électrique", "en": "Electrical safety"}},
-            {"order": 3, "file": "03-pression", "kind": "content", "title": {"fr": "Équipements sous pression", "en": "Pressurised equipment"}},
-            {"order": 4, "file": "04-etudes-de-cas", "kind": "content", "title": {"fr": "Études de cas d'accidents réels", "en": "Case studies of real accidents"}},
-            {"order": 5, "file": "05-taf", "kind": "practical", "title": {"fr": "Activités pratiques (TAF)", "en": "Practical activities (assignments)"}}
+            {
+              "order": 1,
+              "file": "00-presentation",
+              "kind": "content",
+              "title": {
+                "fr": "Présentation de la formation",
+                "en": "About the training"
+              }
+            },
+            {
+              "order": 2,
+              "file": "01-introduction",
+              "kind": "content",
+              "title": {
+                "fr": "Introduction : situations dangereuses et accidents",
+                "en": "Introduction: dangerous situations and accidents"
+              }
+            },
+            {
+              "order": 3,
+              "file": "02-epi",
+              "kind": "content",
+              "title": {
+                "fr": "Les équipements de protection individuelle",
+                "en": "Personal protective equipment"
+              }
+            },
+            {
+              "order": 4,
+              "file": "03-electrisation",
+              "kind": "content",
+              "title": {
+                "fr": "Électrisation et seuils de danger",
+                "en": "Electric shock and danger thresholds"
+              }
+            },
+            {
+              "order": 5,
+              "file": "04-regles",
+              "kind": "content",
+              "title": {
+                "fr": "Règles élémentaires de sécurité électrique",
+                "en": "Basic electrical safety rules"
+              }
+            },
+            {
+              "order": 6,
+              "file": "05-pression",
+              "kind": "content",
+              "title": {
+                "fr": "Équipements sous pression",
+                "en": "Pressurised equipment"
+              }
+            },
+            {
+              "order": 7,
+              "file": "06-annexes",
+              "kind": "content",
+              "title": {
+                "fr": "Annexes : blast, oxygène, pictogrammes, étiquettes",
+                "en": "Appendices: blast, oxygen, pictograms, labels"
+              }
+            },
+            {
+              "order": 8,
+              "file": "07-bouteilles",
+              "kind": "content",
+              "title": {
+                "fr": "Les bouteilles de gaz : identifier, transporter, utiliser",
+                "en": "Gas cylinders: identify, transport, use"
+              }
+            },
+            {
+              "order": 9,
+              "file": "08-equipements",
+              "kind": "content",
+              "title": {
+                "fr": "Exemples d'équipements de protection",
+                "en": "Examples of protective equipment"
+              }
+            },
+            {
+              "order": 10,
+              "file": "09-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities (assignments)"
+              }
+            }
           ]
         },
         {
           "order": 2,
           "dir": "p1/m2",
           "duration_hours": 16,
-          "title": {"fr": "Techniques de rédaction des rapports", "en": "Report writing techniques"},
+          "title": {
+            "fr": "Techniques de rédaction des rapports",
+            "en": "Report writing techniques"
+          },
           "competence": {
             "fr": "L'apprenant sera capable de rédiger un rapport clair, structuré et professionnel.",
             "en": "The learner will be able to write a clear, structured and professional report."
           },
           "sections": [
-            {"order": 1, "file": "01-introduction", "kind": "content", "title": {"fr": "Introduction : les types de rapports", "en": "Introduction: types of reports"}},
-            {"order": 2, "file": "02-compte-rendu", "kind": "content", "title": {"fr": "Le compte rendu de manipulation", "en": "The practical work report"}}
-          ]
+            {
+              "order": 1,
+              "file": "01-introduction",
+              "kind": "content",
+              "title": {
+                "fr": "Introduction : les types de rapports",
+                "en": "Introduction: types of reports"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-compte-rendu",
+              "kind": "content",
+              "title": {
+                "fr": "Le compte rendu de manipulation",
+                "en": "The practical work report"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-rapport-activite",
+              "kind": "content",
+              "title": {
+                "fr": "Le rapport d'activité",
+                "en": "The activity report"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-rapport-stage",
+              "kind": "content",
+              "title": {
+                "fr": "Le rapport de stage",
+                "en": "The internship report"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-structure-stage",
+              "kind": "content",
+              "title": {
+                "fr": "Structure d'un rapport de stage",
+                "en": "Structure of an internship report"
+              }
+            }
+          ],
+          "evaluation_note": {
+            "fr": "Rapport écrit corrigé et noté (individuel et en groupe).",
+            "en": "Written report, marked and graded (individual and group)."
+          }
         },
         {
           "order": 3,
           "dir": "p1/m3",
           "duration_hours": 4,
-          "title": {"fr": "Travail en hauteur", "en": "Working at height"},
+          "title": {
+            "fr": "Travail en hauteur",
+            "en": "Working at height"
+          },
           "competence": {
-            "fr": "Les apprenants seront capables d'utiliser les équipements requis pour effectuer les travaux en hauteur en toute sécurité.",
-            "en": "Learners will be able to use the equipment required to work at height safely."
+            "fr": "L'apprenant sera capable d'utiliser les équipements de protection et de réaliser des travaux en hauteur en toute sécurité.",
+            "en": "The learner will be able to use protective equipment and work at height safely."
           },
           "sections": [
-            {"order": 1, "file": "01-introduction", "kind": "content", "title": {"fr": "Introduction et étude de cas", "en": "Introduction and case study"}},
-            {"order": 2, "file": "02-prevention", "kind": "content", "title": {"fr": "Mesures de prévention", "en": "Preventive measures"}}
-          ]
+            {
+              "order": 1,
+              "file": "01-introduction",
+              "kind": "content",
+              "title": {
+                "fr": "Introduction et étude de cas",
+                "en": "Introduction and case study"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-prevention",
+              "kind": "content",
+              "title": {
+                "fr": "Mesures de prévention",
+                "en": "Preventive measures"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-protection",
+              "kind": "content",
+              "title": {
+                "fr": "Protection collective et individuelle",
+                "en": "Collective and personal protection"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-conseils",
+              "kind": "content",
+              "title": {
+                "fr": "Dix conseils pour travailler en hauteur",
+                "en": "Ten tips for working at height"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités d'intégration",
+                "en": "Integration activities"
+              }
+            }
+          ],
+          "evaluation_note": {
+            "fr": "Observation des pratiques sécuritaires en atelier.",
+            "en": "Observation of safe practices in the workshop."
+          }
         },
         {
           "order": 4,
           "dir": "p1/m4",
           "duration_hours": 4,
-          "title": {"fr": "Travaux en espaces confinés", "en": "Work in confined spaces"},
+          "title": {
+            "fr": "Travaux en espaces confinés et habilitation électrique",
+            "en": "Work in confined spaces and electrical clearance"
+          },
           "competence": {
-            "fr": "L'apprenant sera apte à travailler dans des espaces réduits en toute sécurité.",
-            "en": "The learner will be able to work safely in confined spaces."
+            "fr": "L'apprenant sera capable d'identifier les dangers liés aux espaces confinés et d'appliquer les règles de l'habilitation électrique.",
+            "en": "The learner will be able to identify the dangers of confined spaces and apply the rules of electrical clearance."
           },
           "sections": [
-            {"order": 1, "file": "01-introduction", "kind": "content", "title": {"fr": "Qu'est-ce qu'un espace confiné ?", "en": "What is a confined space?"}},
-            {"order": 2, "file": "02-dangers", "kind": "content", "title": {"fr": "Quels sont les dangers ?", "en": "What are the dangers?"}}
-          ]
+            {
+              "order": 1,
+              "file": "01-introduction",
+              "kind": "content",
+              "title": {
+                "fr": "Qu'est-ce qu'un espace confiné ?",
+                "en": "What is a confined space?"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-dangers",
+              "kind": "content",
+              "title": {
+                "fr": "Dangers et mesures à prendre",
+                "en": "Dangers and measures to take"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-habilitation",
+              "kind": "content",
+              "title": {
+                "fr": "L'habilitation électrique",
+                "en": "Electrical clearance"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités d'intégration",
+                "en": "Integration activities"
+              }
+            }
+          ],
+          "evaluation_note": {
+            "fr": "QCM et exercice pratique d'identification des risques.",
+            "en": "Multiple-choice test and a practical risk-identification exercise."
+          }
         },
         {
           "order": 5,
           "dir": "p1/m5",
           "duration_hours": 8,
-          "title": {"fr": "Fiche de maintenance ou d'intervention", "en": "Maintenance or service sheet"},
+          "title": {
+            "fr": "Utilisation d'une fiche de maintenance ou d'intervention",
+            "en": "Using a maintenance or service sheet"
+          },
           "competence": {
-            "fr": "L'apprenant va établir et utiliser convenablement une fiche de maintenance, en identifiant au préalable tous les points essentiels d'une installation frigorifique.",
-            "en": "The learner will draw up and correctly use a maintenance sheet, after identifying all the key points of a refrigeration installation."
+            "fr": "L'apprenant sera capable de remplir et d'utiliser correctement une fiche de maintenance ou d'intervention.",
+            "en": "The learner will be able to fill in and correctly use a maintenance or service sheet."
           },
           "sections": [
-            {"order": 1, "file": "01-fiche", "kind": "content", "title": {"fr": "La fiche d'intervention", "en": "The service sheet"}},
-            {"order": 2, "file": "02-taf", "kind": "practical", "title": {"fr": "Activité pratique : remplir une fiche", "en": "Practical activity: filling in a sheet"}}
-          ]
+            {
+              "order": 1,
+              "file": "01-fiche",
+              "kind": "content",
+              "title": {
+                "fr": "La fiche d'intervention",
+                "en": "The service sheet"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-rapport-service",
+              "kind": "content",
+              "title": {
+                "fr": "Le rapport de service",
+                "en": "The service report"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-feuille-travail",
+              "kind": "content",
+              "title": {
+                "fr": "La feuille de travail",
+                "en": "The work sheet"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-certificat",
+              "kind": "content",
+              "title": {
+                "fr": "Certificat de fuites, de pression et de vide",
+                "en": "Leak, pressure and vacuum certificate"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activité pratique : remplir une fiche",
+                "en": "Practical activity: filling in a sheet"
+              }
+            }
+          ],
+          "evaluation_note": {
+            "fr": "Remplissage correct d'une fiche d'intervention après un exercice pratique.",
+            "en": "Correctly filling in a service sheet after a practical exercise."
+          }
         },
         {
           "order": 6,
           "dir": "p1/m6",
           "duration_hours": 8,
-          "title": {"fr": "Recherche Internet", "en": "Internet research"},
+          "title": {
+            "fr": "Recherche Internet",
+            "en": "Internet research"
+          },
           "competence": {
-            "fr": "Télécharger et utiliser les catalogues, déterminer la puissance des compresseurs grâce à la plaque signalétique, traduire tout type de langue et faire des recherches sur des équipements.",
-            "en": "Download and use catalogues, determine compressor power from the rating plate, translate any language and research equipment."
+            "fr": "L'apprenant sera capable d'utiliser Internet comme outil professionnel pour rechercher, traduire et exploiter des informations techniques.",
+            "en": "The learner will be able to use the internet as a professional tool to search for, translate and use technical information."
           },
           "sections": [
-            {"order": 1, "file": "01-introduction", "kind": "content", "title": {"fr": "Introduction", "en": "Introduction"}},
-            {"order": 2, "file": "02-taf", "kind": "practical", "title": {"fr": "Activités pratiques (TAF)", "en": "Practical activities (assignments)"}}
-          ]
+            {
+              "order": 1,
+              "file": "01-introduction",
+              "kind": "content",
+              "title": {
+                "fr": "Compétences visées et introduction",
+                "en": "Target skills and introduction"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities (assignments)"
+              }
+            }
+          ],
+          "evaluation_note": {
+            "fr": "Contrôle pratique sur la recherche et l'exploitation des données.",
+            "en": "Practical test on searching for and using data."
+          }
         }
       ]
     }
