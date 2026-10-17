@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.utils.translation import get_language
 
 from progress.models import SectionView
-from progress.services import mark_section_viewed
+from progress.services import module_has_quiz, mark_section_viewed, outline
 
 from .access import accessible_formations
 from .models import Module, Section
@@ -15,7 +15,12 @@ def module_detail(request, pk):
     module = get_object_or_404(Module, pk=pk, partie__formation__in=accessible_formations(request.user))
     viewed = set(SectionView.objects.filter(user=request.user, section__module=module).values_list("section_id", flat=True))
     sections = [{"section": s, "viewed": s.pk in viewed} for s in module.sections.all()]
-    return render(request, "courses/module_detail.html", {"module": module, "sections": sections})
+    return render(request, "courses/module_detail.html", {
+        "module": module,
+        "sections": sections,
+        "outline": outline(request.user, module.partie, current_module=module),
+        "has_quiz": module_has_quiz(module),
+    })
 
 
 @login_required
@@ -35,4 +40,5 @@ def section_detail(request, pk):
         "previous": siblings[index - 1] if index > 0 else None,
         "next": siblings[index + 1] if index + 1 < len(siblings) else None,
         "fallback_fr": lang != "fr" and not getattr(section, f"body_md_{lang}", ""),
+        "outline": outline(request.user, section.module.partie, current_section=section),
     })

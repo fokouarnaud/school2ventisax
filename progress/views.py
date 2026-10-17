@@ -38,6 +38,7 @@ def _tables(user):
                     "partie": partie,
                     "best": best.score_pct if best else None,
                     "attempts": exam.attempts.filter(user=learner).count(),
+                    "max_attempts": exam.max_attempts,
                 })
             rows.append({
                 "learner": learner,

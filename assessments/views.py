@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 from django.utils import timezone
 from django.views.decorators.http import require_POST
 
@@ -48,6 +49,9 @@ def exam(request, partie_pk):
             return HttpResponse(status=403)
         return redirect("attempt_detail", pk=attempt.pk)
     missing = [m for m in partie.modules.all() if not module_completed(request.user, m)]
+    open_attempt = assessment.attempts.filter(user=request.user, submitted_at__isnull=True).last()
+    if open_attempt and close_if_expired(open_attempt).submitted_at:
+        open_attempt = None
     return render(request, "assessments/exam.html", {
         "partie": partie,
         "assessment": assessment,
@@ -55,6 +59,7 @@ def exam(request, partie_pk):
         "missing_modules": missing,
         "attempts_left": _attempts_left(request.user, assessment),
         "best": assessment.best_attempt(request.user),
+        "open_attempt": open_attempt,
     })
 
 
@@ -81,11 +86,15 @@ def attempt_detail(request, pk):
 @require_POST
 def save_answer_view(request, pk):
     attempt = _own_attempt(request, pk)
+    question_id = int(request.POST["question"])
     try:
-        save_answer(attempt, int(request.POST["question"]), request.POST.getlist("choices"))
+        save_answer(attempt, question_id, request.POST.getlist("choices"))
     except AttemptClosed:
-        return HttpResponse(status=409)
-    return HttpResponse(status=200)
+        return HttpResponse(status=409) if request.headers.get("HX-Request") else redirect("attempt_detail", pk=attempt.pk)
+    if request.headers.get("HX-Request"):
+        return HttpResponse(status=200)
+    # Sans JavaScript : retour à la question enregistrée.
+    return redirect(reverse("attempt_detail", args=[attempt.pk]) + f"#q-{question_id}")
 
 
 @login_required

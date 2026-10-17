@@ -69,7 +69,8 @@ def test_answer_is_saved_as_soon_as_it_is_posted(client, enrolled, module, quiz_
     client.force_login(enrolled)
     attempt = start_attempt(enrolled, Assessment.quiz_for(module))
     response = client.post(
-        f"/fr/tentatives/{attempt.pk}/reponse/", {"question": quiz_question.pk, "choices": correct_ids(quiz_question)}
+        f"/fr/tentatives/{attempt.pk}/reponse/", {"question": quiz_question.pk, "choices": correct_ids(quiz_question)},
+        HTTP_HX_REQUEST="true",
     )
     assert response.status_code == 200
     aq = attempt.attempt_questions.get()
@@ -82,7 +83,10 @@ def test_answer_after_deadline_is_rejected_with_conflict(client, enrolled, parti
     attempt = start_attempt(enrolled, exam, now=timezone.now() - timedelta(minutes=61))
     question = attempt.attempt_questions.first().question
     client.force_login(enrolled)
-    response = client.post(f"/fr/tentatives/{attempt.pk}/reponse/", {"question": question.pk, "choices": correct_ids(question)})
+    response = client.post(
+        f"/fr/tentatives/{attempt.pk}/reponse/", {"question": question.pk, "choices": correct_ids(question)},
+        HTTP_HX_REQUEST="true",
+    )
     assert response.status_code == 409
 
 
@@ -177,3 +181,39 @@ def test_switching_to_english_keeps_the_same_attempt_and_answers(client, enrolle
     [row] = response.context["rows"]
     assert row["selected"] == set(correct_ids(quiz_question))
     assert Attempt.objects.count() == 1
+
+
+@pytest.mark.django_db
+def test_answer_saved_without_javascript_returns_to_the_attempt(client, enrolled, module, quiz_question):
+    client.force_login(enrolled)
+    attempt = start_attempt(enrolled, Assessment.quiz_for(module))
+    response = client.post(f"/fr/tentatives/{attempt.pk}/reponse/", {"question": quiz_question.pk, "choices": correct_ids(quiz_question)})
+    assert response.status_code == 302
+    assert response.url == f"/fr/tentatives/{attempt.pk}/#q-{quiz_question.pk}"
+
+
+@pytest.mark.django_db
+def test_answer_saved_by_htmx_gets_an_empty_success(client, enrolled, module, quiz_question):
+    client.force_login(enrolled)
+    attempt = start_attempt(enrolled, Assessment.quiz_for(module))
+    response = client.post(
+        f"/fr/tentatives/{attempt.pk}/reponse/", {"question": quiz_question.pk, "choices": correct_ids(quiz_question)},
+        HTTP_HX_REQUEST="true",
+    )
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+def test_exam_page_offers_to_resume_an_open_attempt(client, enrolled, partie, module, quiz_question, exam):
+    complete_module(enrolled, module)
+    attempt = start_attempt(enrolled, exam)
+    client.force_login(enrolled)
+    assert client.get(f"/fr/examen/{partie.pk}/").context["open_attempt"] == attempt
+
+
+@pytest.mark.django_db
+def test_exam_page_has_no_open_attempt_after_submission(client, enrolled, partie, module, quiz_question, exam):
+    complete_module(enrolled, module)
+    submit_attempt(start_attempt(enrolled, exam))
+    client.force_login(enrolled)
+    assert client.get(f"/fr/examen/{partie.pk}/").context["open_attempt"] is None

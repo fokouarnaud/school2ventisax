@@ -196,3 +196,14 @@ def test_exam_result_breaks_score_down_by_module(unlocked, exam, two_modules):
         save_answer(attempt, aq.question_id, aq.question.choices.filter(is_correct=True).values_list("pk", flat=True), T0)
     submit_attempt(attempt, now=T0 + timedelta(minutes=10))
     assert attempt.module_scores() == {two_modules[0]: 100, two_modules[1]: 0}
+
+
+@pytest.mark.django_db
+def test_module_scores_follow_course_order_not_draw_order(unlocked, exam, two_modules):
+    attempt = start_attempt(unlocked, exam, now=T0)
+    # Force un tirage où toutes les questions du module 2 sortent en premier.
+    for aq in attempt.attempt_questions.all():
+        aq.order = aq.order + (0 if aq.question.module == two_modules[1] else 100)
+        aq.save()
+    submit_attempt(attempt, now=T0 + timedelta(minutes=5))
+    assert list(attempt.module_scores()) == two_modules

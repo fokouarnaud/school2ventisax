@@ -179,7 +179,8 @@ class Attempt(models.Model):
         by_module = {}
         for item in self.feedback():
             by_module.setdefault(item["question"].module, []).append(item["score"])
-        return {module: percentage(scores) for module, scores in by_module.items()}
+        ordered = sorted(by_module.items(), key=lambda kv: (kv[0].order, kv[0].pk))
+        return {module: percentage(scores) for module, scores in ordered}
 
     def feedback(self):
         from .scoring import score_answer

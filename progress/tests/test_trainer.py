@@ -49,7 +49,7 @@ def test_trainer_table_shows_module_completion_and_best_exam_score_per_part(clie
     client.force_login(trainer)
     [row] = client.get("/fr/formateur/").context["rows"]
     assert row["modules"] == [True]
-    assert row["exams"] == [{"partie": partie, "best": 100, "attempts": 1}]
+    assert row["exams"] == [{"partie": partie, "best": 100, "attempts": 1, "max_attempts": 3}]
 
 
 @pytest.mark.django_db
@@ -80,3 +80,17 @@ def test_csv_export_has_one_line_per_visible_learner(client, trainer, scored, ou
 def test_learner_cannot_export_csv(client, enrolled):
     client.force_login(enrolled)
     assert client.get("/fr/formateur/export.csv").status_code == 403
+
+
+@pytest.mark.django_db
+def test_trainer_home_redirects_to_the_progress_table(client, trainer):
+    client.force_login(trainer)
+    response = client.get("/fr/")
+    assert response.status_code == 302
+    assert response.url == "/fr/formateur/"
+
+
+@pytest.mark.django_db
+def test_learner_home_stays_the_course_dashboard(client, enrolled):
+    client.force_login(enrolled)
+    assert client.get("/fr/").status_code == 200
