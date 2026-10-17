@@ -1,0 +1,32 @@
+{% extends "base.html" %}{% load i18n acad_i18n %}
+{% block title %}{{ section.title }}{% endblock %}
+{% block content %}
+<div class="reader">
+  {% include "courses/_outline.html" with partie=section.module.partie %}
+  <article>
+    <a class="crumb" href="{% url 'module_detail' section.module.pk %}">{% include "icons/chevron-left.svg" %}{{ section.module.title }}</a>
+    <h1{{ section|lang_attr:"title" }}>{{ section.title }}</h1>
+    <div class="facts">
+      {% if section.kind == "practical" %}<span class="badge badge-warn">{% translate "Activité pratique" %}</span>{% endif %}
+      {% if fallback_fr %}<span class="badge" lang="fr" title="{% translate 'Contenu disponible en français uniquement' %}">FR</span>{% endif %}
+    </div>
+    <div class="prose"{% if fallback_fr %} lang="fr"{% endif %}>{{ body_html|safe }}</div>
+    {% if section.annexes.exists %}
+      <section class="panel" aria-labelledby="annexes" style="margin-top:1.5rem">
+        <h2 id="annexes">{% translate "Annexes à télécharger" %}</h2>
+        <ul class="annexes">
+          {% for annexe in section.annexes.all %}<li><a href="{{ annexe.file.url }}" download>{% include "icons/download.svg" %}{{ annexe.title }}</a></li>{% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+    <nav class="pager" aria-label="{% translate 'Sections' %}">
+      {% if previous %}<a class="btn btn-ghost" href="{% url 'section_detail' previous.pk %}">{% include "icons/chevron-left.svg" %}{% translate "Précédent" %}</a>{% else %}<span></span>{% endif %}
+      {% if next %}
+        <a class="btn" href="{% url 'section_detail' next.pk %}">{% translate "Suivant" %}{% include "icons/chevron-right.svg" %}</a>
+      {% else %}
+        <a class="btn" href="{% url 'module_detail' section.module.pk %}">{% translate "Fin du module" %}{% include "icons/chevron-right.svg" %}</a>
+      {% endif %}
+    </nav>
+  </article>
+</div>
+{% endblock %}

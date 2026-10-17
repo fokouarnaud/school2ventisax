@@ -1,0 +1,42 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Suivi des apprenants" %}{% endblock %}
+{% block content %}
+<div class="page-head">
+  <h1>{% translate "Suivi des apprenants" %}</h1>
+  <div class="cta-row"><a class="btn btn-ghost" href="{% url 'trainer_export' %}">{% include "icons/download.svg" %}{% translate "Exporter en CSV" %}</a></div>
+</div>
+{% for table in tables %}
+  <section aria-labelledby="f-{{ table.formation.pk }}" style="margin-bottom:2rem">
+    <h2 id="f-{{ table.formation.pk }}">{{ table.formation.title }}</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="f-{{ table.formation.pk }}">
+      <table class="grid-table">
+        <thead>
+          <tr>
+            <th scope="col">{% translate "Apprenant" %}</th>
+            <th scope="col">{% translate "Promotion" %}</th>
+            {% for module in table.modules %}<th scope="col" title="{{ module.title }}">M{{ forloop.counter }}</th>{% endfor %}
+            {% for partie in table.parties %}<th scope="col">{% blocktranslate with p=partie.title %}Examen {{ p }}{% endblocktranslate %}</th>{% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in table.rows %}
+            <tr>
+              <th scope="row">{{ row.learner.get_full_name|default:row.learner.username }}</th>
+              <td>{{ row.learner.promotion.name }}</td>
+              {% for done in row.modules %}<td class="{% if done %}cell-done{% endif %}">{% if done %}{% include "icons/check.svg" %}<span class="visually-hidden">{% translate "terminé" %}</span>{% else %}<span class="muted" aria-label="{% translate 'non terminé' %}">-</span>{% endif %}</td>{% endfor %}
+              {% for result in row.exams %}
+                <td class="num">{% if result.best is not None %}<strong>{{ result.best|floatformat:0 }} %</strong>{% else %}<span class="muted">-</span>{% endif %} <span class="muted">({{ result.attempts }}{% if result.max_attempts %}/{{ result.max_attempts }}{% endif %})</span></td>
+              {% endfor %}
+            </tr>
+          {% empty %}
+            <tr><td colspan="99" class="muted">{% translate "Aucun apprenant dans ces promotions." %}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:.85rem;margin-top:.5rem">{% for module in table.modules %}M{{ forloop.counter }} : {{ module.title }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+  </section>
+{% empty %}
+  <section class="panel empty"><h2>{% translate "Aucune promotion" %}</h2><p class="muted">{% translate "Aucune promotion ne vous est rattachée. Demandez à l'administrateur de vous ajouter." %}</p></section>
+{% endfor %}
+{% endblock %}

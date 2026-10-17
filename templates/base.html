@@ -1,0 +1,54 @@
+{% load i18n static %}{% get_current_language as LANGUAGE_CODE %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{% block title %}{% translate "Formation" %}{% endblock %} | Acad Ventisax</title>
+  <link rel="icon" type="image/svg+xml" href="{% static 'acad/img/ventisax-mark.svg' %}">
+  <link rel="stylesheet" href="{% static 'acad/css/app.css' %}">
+  {% block head %}{% endblock %}
+</head>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+  <a class="skip" href="#contenu">{% translate "Aller au contenu" %}</a>
+  <header class="topbar{% if user.is_trainer or user.is_staff %} has-staff-nav{% endif %}">
+    <div class="wrap">
+      <a class="brand" href="{% url 'dashboard' %}">
+        <img src="{% static 'acad/img/ventisax-mark.svg' %}" alt="" width="34" height="34">
+        <span>Acad Ventisax<small>{% translate "Formation et évaluation" %}</small></span>
+      </a>
+      <nav class="topnav" aria-label="{% translate 'Navigation principale' %}">
+        {% if user.is_authenticated %}
+          {% if user.is_trainer or user.is_platform_admin %}
+            <a href="{% url 'trainer_table' %}">{% include "icons/users.svg" %}<span class="label">{% translate "Suivi" %}</span></a>
+          {% endif %}
+          {% if user.is_staff %}
+            <a href="{% url 'admin:index' %}">{% include "icons/list-details.svg" %}<span class="label">{% translate "Gestion" %}</span></a>
+          {% endif %}
+        {% endif %}
+        <form class="lang" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.get_full_path }}">
+          {% get_available_languages as languages %}
+          {% for code, name in languages %}
+            <button name="language" value="{{ code }}" lang="{{ code }}" title="{{ name }}"{% if code == LANGUAGE_CODE %} aria-current="true"{% endif %}>{{ code|upper }}</button>
+          {% endfor %}
+        </form>
+        {% if user.is_authenticated %}
+          <form action="{% url 'logout' %}" method="post">{% csrf_token %}
+            <button type="submit" title="{% translate 'Déconnexion' %}">{% include "icons/logout.svg" %}<span class="visually-hidden">{% translate "Déconnexion" %}</span></button>
+          </form>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+  <main id="contenu">
+    <div class="wrap">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="wrap">{% translate "Ventisax, centre de formation à Yaoundé." %} <a href="https://ventisax.pythonanywhere.com/{{ LANGUAGE_CODE }}/">ventisax.pythonanywhere.com</a></div>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

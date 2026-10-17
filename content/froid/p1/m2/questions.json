@@ -1,0 +1,439 @@
+[
+  {
+    "id": "p1-m2-q01",
+    "section": "01-introduction",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quand est-il recommandé de rédiger un rapport circonstancié ?",
+      "en": "When is it recommended to write a detailed report?"
+    },
+    "explanation": {
+      "fr": "Le cours recommande un rapport à la fin de tout exercice de travaux pratiques.",
+      "en": "The course recommends a report at the end of every practical exercise."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "À la fin de tout exercice de travaux pratiques",
+          "en": "At the end of every practical exercise"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Seulement en cas d'accident",
+          "en": "Only after an accident"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Une fois par an",
+          "en": "Once a year"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-q02",
+    "section": "02-compte-rendu",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quels éléments figurent dans un compte rendu de manipulation ?",
+      "en": "Which items belong in a practical work report?"
+    },
+    "explanation": {
+      "fr": "Le compte rendu décrit notamment les outils utilisés et le temps de réalisation.",
+      "en": "The report describes, among other things, the tools used and the time taken."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Les outils et matériels nécessaires",
+          "en": "The tools and equipment needed"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le temps de réalisation",
+          "en": "The time taken"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le salaire du technicien",
+          "en": "The technician's salary"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-e01",
+    "section": "02-compte-rendu",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelles sont les trois phases d'un exercice de travaux pratiques ?",
+      "en": "What are the three phases of a practical exercise?"
+    },
+    "explanation": {
+      "fr": "Préparation, lancement et suivi.",
+      "en": "Preparation, launch and follow-up."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Préparation, lancement, suivi",
+          "en": "Preparation, launch, follow-up"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Achat, livraison, facturation",
+          "en": "Purchase, delivery, invoicing"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Lecture, écriture, signature",
+          "en": "Reading, writing, signing"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-e02",
+    "section": "01-introduction",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Le rapport de stage fait partie des types de rapports présentés dans le cours.",
+      "en": "The internship report is one of the report types presented in the course."
+    },
+    "explanation": {
+      "fr": "Le cours cite le compte rendu de manipulation, le rapport d'activité, le rapport de maintenance et le rapport de stage.",
+      "en": "The course lists the practical work report, the activity report, the maintenance report and the internship report."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-q03",
+    "section": "03-rapport-activite",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Que doit renseigner un rapport de visite d'entreprise ?",
+      "en": "What must a company visit report give information on?"
+    },
+    "explanation": {
+      "fr": "Notamment la date, le lieu, les objectifs, les difficultés et les solutions.",
+      "en": "Among other things the date, place, objectives, difficulties and solutions."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La date et le lieu de la visite",
+          "en": "The date and place of the visit"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les objectifs visés",
+          "en": "The objectives set"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les loisirs des visiteurs",
+          "en": "The visitors' hobbies"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-e03",
+    "section": "03-rapport-activite",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "À quoi sert un bilan d'activité périodique ?",
+      "en": "What is a periodic activity summary for?"
+    },
+    "explanation": {
+      "fr": "À l'analyse globale de l'entreprise, pour développer des outils d'aide à la décision.",
+      "en": "For the overall analysis of the company, to build decision-making tools."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "À analyser l'entreprise pour aider à la décision",
+          "en": "Analysing the company to support decisions"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "À remplacer la fiche de paie",
+          "en": "Replacing the payslip"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "À rien, il est facultatif",
+          "en": "Nothing, it is optional"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-q04",
+    "section": "04-rapport-stage",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Pourquoi prendre des notes pendant le stage ?",
+      "en": "Why take notes during the internship?"
+    },
+    "explanation": {
+      "fr": "Une fois sorti de l'entreprise, certaines informations seront difficiles à obtenir.",
+      "en": "Once you have left the company, some information will be hard to get."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Certaines informations seront difficiles à obtenir ensuite",
+          "en": "Some information will be hard to get later"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Pour remplir le rapport de pages inutiles",
+          "en": "To fill the report with useless pages"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "C'est interdit",
+          "en": "It is forbidden"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-e04",
+    "section": "04-rapport-stage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelle attitude adopter dans un rapport de stage ?",
+      "en": "What attitude should an internship report take?"
+    },
+    "explanation": {
+      "fr": "Être critique : une analyse poussée de l'entreprise, pas un simple documentaire.",
+      "en": "Be critical: a thorough analysis of the company, not just a description."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Être critique et analyser l'entreprise",
+          "en": "Be critical and analyse the company"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Recopier la plaquette de l'entreprise",
+          "en": "Copy the company brochure"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Raconter chaque journée en détail",
+          "en": "Recount every day in detail"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-q05",
+    "section": "05-structure-stage",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "La couverture d'un rapport de stage est paginée.",
+      "en": "The cover of an internship report is numbered."
+    },
+    "explanation": {
+      "fr": "Faux : la couverture n'est jamais paginée.",
+      "en": "False: the cover is never numbered."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-e05",
+    "section": "05-structure-stage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelle est la partie la plus importante d'un rapport de stage ?",
+      "en": "Which is the most important part of an internship report?"
+    },
+    "explanation": {
+      "fr": "Le développement, qui présente l'entreprise puis la mission.",
+      "en": "The body, which presents the company and then the assignment."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le développement",
+          "en": "The body"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La page de garde",
+          "en": "The flyleaf"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "La table des abréviations",
+          "en": "The list of abbreviations"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m2-e06",
+    "section": "05-structure-stage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Où se placent les remerciements ?",
+      "en": "Where do the acknowledgements go?"
+    },
+    "explanation": {
+      "fr": "Après le sommaire et avant l'introduction.",
+      "en": "After the table of contents and before the introduction."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Après le sommaire, avant l'introduction",
+          "en": "After the contents, before the introduction"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Après la conclusion",
+          "en": "After the conclusion"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Dans les annexes",
+          "en": "In the appendices"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

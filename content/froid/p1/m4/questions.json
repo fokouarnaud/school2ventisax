@@ -1,0 +1,323 @@
+[
+  {
+    "id": "p1-m4-q01",
+    "section": "01-introduction",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quels risques présente un espace confiné ?",
+      "en": "What risks does a confined space present?"
+    },
+    "explanation": {
+      "fr": "Incendie, explosion, perte de conscience, asphyxie ou noyade.",
+      "en": "Fire, explosion, loss of consciousness, asphyxiation or drowning."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Asphyxie",
+          "en": "Asphyxiation"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Explosion",
+          "en": "Explosion"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Coup de soleil",
+          "en": "Sunburn"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-q02",
+    "section": "02-dangers",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Un espace confiné déclaré sûr un jour le reste toujours.",
+      "en": "A confined space declared safe one day stays safe for ever."
+    },
+    "explanation": {
+      "fr": "Faux : les conditions changent, il faut réévaluer à chaque fois.",
+      "en": "False: conditions change, so the risks must be reassessed every time."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-e01",
+    "section": "02-dangers",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que faire si l'oxygène est insuffisant dans un espace confiné ?",
+      "en": "What should be done if there is not enough oxygen in a confined space?"
+    },
+    "explanation": {
+      "fr": "Fournir un appareil respiratoire ou ventiler l'espace avant d'entrer.",
+      "en": "Provide breathing apparatus or ventilate the space before entering."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Fournir un appareil respiratoire ou ventiler",
+          "en": "Provide breathing apparatus or ventilate"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Entrer rapidement et ressortir",
+          "en": "Go in quickly and come out"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Allumer une flamme pour vérifier",
+          "en": "Light a flame to check"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-e02",
+    "section": "01-introduction",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quel est l'exemple d'un grand espace confiné cité dans le cours ?",
+      "en": "Which example of a large confined space does the course give?"
+    },
+    "explanation": {
+      "fr": "Le cours cite les silos à grain de plusieurs centaines de mètres cubes.",
+      "en": "The course mentions grain silos holding several hundred cubic metres."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un silo à grain",
+          "en": "A grain silo"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un terrain de football",
+          "en": "A football pitch"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Une salle de classe ouverte",
+          "en": "An open classroom"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-q03",
+    "section": "03-habilitation",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Dans un titre d'habilitation, que signifie la première lettre B ?",
+      "en": "In a clearance code, what does the first letter B mean?"
+    },
+    "explanation": {
+      "fr": "B : basse tension ; H : haute tension.",
+      "en": "B: low voltage; H: high voltage."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Basse tension",
+          "en": "Low voltage"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Bâtiment",
+          "en": "Building"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Bouteille de gaz",
+          "en": "Gas cylinder"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-q04",
+    "section": "03-habilitation",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Que signifie l'indice 0 dans une habilitation (B0, H0) ?",
+      "en": "What does index 0 mean in a clearance (B0, H0)?"
+    },
+    "explanation": {
+      "fr": "Des opérations d'ordre non électrique.",
+      "en": "Non-electrical work."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Des opérations d'ordre non électrique",
+          "en": "Non-electrical work"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Aucune formation",
+          "en": "No training"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Des travaux sous tension",
+          "en": "Live working"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-e03",
+    "section": "03-habilitation",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelle habilitation désigne le chargé de consignation ?",
+      "en": "Which clearance refers to the person in charge of lock-out?"
+    },
+    "explanation": {
+      "fr": "BC : chargé de consignation.",
+      "en": "BC: in charge of lock-out."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "BC",
+          "en": "BC"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "B0",
+          "en": "B0"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "BE",
+          "en": "BE"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m4-e04",
+    "section": "03-habilitation",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que permet l'habilitation BR ?",
+      "en": "What does BR clearance allow?"
+    },
+    "explanation": {
+      "fr": "Les interventions : dépannages, raccordements sous tension, essais, mesures.",
+      "en": "Interventions: troubleshooting, live connections, tests, measurements."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Des dépannages, essais et mesures",
+          "en": "Troubleshooting, tests and measurements"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Uniquement le nettoyage des locaux",
+          "en": "Only cleaning the premises"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "La conduite d'engins",
+          "en": "Driving machinery"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

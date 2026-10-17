@@ -1,0 +1,323 @@
+[
+  {
+    "id": "p1-m6-q01",
+    "section": "01-introduction",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Où trouve-t-on la puissance d'un compresseur ?",
+      "en": "Where do you find a compressor's power rating?"
+    },
+    "explanation": {
+      "fr": "Sur la plaque signalétique de l'équipement.",
+      "en": "On the equipment's rating plate."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Sur la plaque signalétique",
+          "en": "On the rating plate"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Sur la facture d'électricité",
+          "en": "On the electricity bill"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Sur le carton d'emballage seulement",
+          "en": "Only on the cardboard packaging"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-q02",
+    "section": "01-introduction",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Internet permet aux ordinateurs de communiquer grâce à un protocole commun (IP).",
+      "en": "The internet lets computers communicate through a common protocol (IP)."
+    },
+    "explanation": {
+      "fr": "C'est la définition donnée dans le cours.",
+      "en": "That is the definition given in the course."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-q03",
+    "section": "01-introduction",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelles compétences vise le module Recherche Internet ?",
+      "en": "Which skills does the Internet research module target?"
+    },
+    "explanation": {
+      "fr": "Utiliser les catalogues, lire la plaque signalétique, traduire, rechercher des équipements.",
+      "en": "Using catalogues, reading the rating plate, translating, researching equipment."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Télécharger et utiliser les catalogues",
+          "en": "Download and use catalogues"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Traduire des documents",
+          "en": "Translate documents"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Réparer un ordinateur",
+          "en": "Repair a computer"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-q04",
+    "section": "01-introduction",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Pourquoi les techniciens s'appuient-ils sur Internet ?",
+      "en": "Why do technicians rely on the internet?"
+    },
+    "explanation": {
+      "fr": "Les équipements sont de plus en plus variés et sophistiqués (modèle, marque, fabricant).",
+      "en": "Equipment is more and more varied and sophisticated (model, brand, manufacturer)."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Les équipements sont variés et de plus en plus sophistiqués",
+          "en": "Equipment is varied and increasingly sophisticated"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les catalogues papier sont interdits",
+          "en": "Paper catalogues are banned"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Par simple habitude",
+          "en": "Out of habit"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-e01",
+    "section": "01-introduction",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelles recherches un technicien fait-il sur Internet selon le cours ?",
+      "en": "According to the course, what does a technician look up online?"
+    },
+    "explanation": {
+      "fr": "Catalogues, caractéristiques d'équipements et traductions de textes techniques.",
+      "en": "Catalogues, equipment specifications and translations of technical texts."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Des catalogues de climatiseurs",
+          "en": "Air-conditioner catalogues"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les caractéristiques d'un équipement",
+          "en": "Equipment specifications"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Des jeux vidéo",
+          "en": "Video games"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-e02",
+    "section": "01-introduction",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Comment identifier un équipement inconnu de l'atelier ?",
+      "en": "How can you identify an unknown piece of workshop equipment?"
+    },
+    "explanation": {
+      "fr": "Par une recherche Internet à partir d'un texte, d'un son, d'une photo ou d'une description.",
+      "en": "With an online search from a text, a sound, a photo or a description."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Par une recherche Internet (texte, photo, description)",
+          "en": "With an online search (text, photo, description)"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "En le démontant entièrement",
+          "en": "By taking it completely apart"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "En devinant",
+          "en": "By guessing"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-e03",
+    "section": "01-introduction",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Comment le module 6 est-il évalué ?",
+      "en": "How is module 6 assessed?"
+    },
+    "explanation": {
+      "fr": "Par un contrôle pratique sur la recherche et l'exploitation des données.",
+      "en": "With a practical test on searching for and using data."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un contrôle pratique de recherche",
+          "en": "A practical research test"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un examen oral de langue",
+          "en": "An oral language exam"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Il n'est pas évalué",
+          "en": "It is not assessed"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m6-e04",
+    "section": "01-introduction",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quel protocole commun permet aux ordinateurs de communiquer sur Internet ?",
+      "en": "Which common protocol lets computers communicate on the internet?"
+    },
+    "explanation": {
+      "fr": "Le protocole IP.",
+      "en": "The IP protocol."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "IP",
+          "en": "IP"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "USB",
+          "en": "USB"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "HDMI",
+          "en": "HDMI"
+        },
+        "correct": false
+      }
+    ]
+  }
+]
