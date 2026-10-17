@@ -1,11 +1,11 @@
-{% extends "base.html" %}{% load i18n %}
+{% extends "base.html" %}{% load i18n acad_i18n %}
 {% block title %}{{ section.title }}{% endblock %}
 {% block content %}
 <div class="reader">
   {% include "courses/_outline.html" with partie=section.module.partie %}
   <article>
     <a class="crumb" href="{% url 'module_detail' section.module.pk %}">{% include "icons/chevron-left.svg" %}{{ section.module.title }}</a>
-    <h1>{{ section.title }}</h1>
+    <h1{{ section|lang_attr:"title" }}>{{ section.title }}</h1>
     <div class="facts">
       {% if section.kind == "practical" %}<span class="badge badge-warn">{% translate "Activité pratique" %}</span>{% endif %}
       {% if fallback_fr %}<span class="badge" lang="fr" title="{% translate 'Contenu disponible en français uniquement' %}">FR</span>{% endif %}

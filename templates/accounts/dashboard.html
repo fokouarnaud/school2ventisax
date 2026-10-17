@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% load i18n %}
+{% extends "base.html" %}{% load i18n acad_i18n %}
 {% block title %}{% translate "Mes cours" %}{% endblock %}
 {% block content %}
 <div class="page-head">
@@ -8,7 +8,7 @@
 {% for row in parts %}
   <div class="course">
     <section class="panel" aria-labelledby="partie-{{ row.partie.pk }}">
-      <h2 id="partie-{{ row.partie.pk }}">{{ row.partie.title }}</h2>
+      <h2 id="partie-{{ row.partie.pk }}"{{ row.partie|lang_attr:"title" }}>{{ row.partie.title }}</h2>
       <div class="course-meter">
         <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ row.progress }}" aria-label="{% translate 'Progression' %}"><span style="width: {{ row.progress }}%"></span></div>
         <strong>{{ row.progress }} %</strong>
@@ -18,7 +18,7 @@
           <li class="{% if item.done %}done{% endif %}">
             <a href="{% url 'module_detail' item.module.pk %}">
               <span class="num">{% if item.done %}{% include "icons/check.svg" %}<span class="visually-hidden">{% translate "Terminé" %} :</span>{% else %}{{ forloop.counter }}{% endif %}</span>
-              <span>{{ item.module.title }}</span>
+              <span{{ item.module|lang_attr:"title" }}>{{ item.module.title }}</span>
               {% if item.done %}<span class="badge badge-done">{% translate "Terminé" %}</span>{% else %}<span class="badge">{% blocktranslate with h=item.module.duration_hours %}{{ h }} h{% endblocktranslate %}</span>{% endif %}
             </a>
           </li>

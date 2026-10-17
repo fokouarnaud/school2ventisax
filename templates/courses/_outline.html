@@ -1,14 +1,14 @@
-{% load i18n %}
+{% load i18n acad_i18n %}
 <details class="outline" id="sommaire">
   <summary>{% include "icons/list-details.svg" %}{% translate "Sommaire" %}</summary>
   <nav class="outline-body" aria-label="{% translate 'Sommaire de la partie' %}">
-    <h2>{{ partie.title }}</h2>
+    <h2{{ partie|lang_attr:"title" }}>{{ partie.title }}</h2>
     <ol>
       {% for row in outline %}
         <li class="outline-module">
           <a href="{% url 'module_detail' row.module.pk %}"{% if row.current %} aria-current="true"{% endif %}>
             {% if row.done %}{% include "icons/circle-check.svg" %}<span class="visually-hidden">{% translate "terminé" %}</span>{% else %}<span class="dot-todo" aria-hidden="true"></span>{% endif %}
-            {{ forloop.counter }}. {{ row.module.title }}
+            <span{{ row.module|lang_attr:"title" }}>{{ forloop.counter }}. {{ row.module.title }}</span>
           </a>
           {% if row.current %}
             <ol class="outline-sections">
@@ -16,7 +16,7 @@
                 <li>
                   <a href="{% url 'section_detail' item.section.pk %}"{% if item.current %} aria-current="page"{% endif %}>
                     {% if item.viewed %}{% include "icons/check.svg" %}<span class="visually-hidden">{% translate "lu" %}</span>{% else %}<span class="dot-todo" aria-hidden="true"></span>{% endif %}
-                    {{ item.section.title }}
+                    <span{{ item.section|lang_attr:"title" }}>{{ item.section.title }}</span>
                   </a>
                 </li>
               {% endfor %}
