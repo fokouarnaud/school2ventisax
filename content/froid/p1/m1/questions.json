@@ -1,6 +1,7 @@
 [
   {
     "id": "p1-m1-q01",
+    "section": "03-electrisation",
     "type": "single",
     "usage": "quiz",
     "prompt": {
@@ -41,6 +42,7 @@
   },
   {
     "id": "p1-m1-q02",
+    "section": "02-epi",
     "type": "multiple",
     "usage": "quiz",
     "prompt": {
@@ -88,15 +90,16 @@
   },
   {
     "id": "p1-m1-q03",
+    "section": "04-regles",
     "type": "truefalse",
     "usage": "quiz",
     "prompt": {
-      "fr": "On peut ouvrir un tableau électrique sans consignation si l'intervention est courte.",
-      "en": "You may open a switchboard without locking it out if the job is short."
+      "fr": "On peut éteindre au jet d'eau un feu sur une installation électrique sous tension.",
+      "en": "You may put out a fire on a live electrical installation with a water jet."
     },
     "explanation": {
-      "fr": "La consignation est obligatoire quelle que soit la durée.",
-      "en": "Lock-out is mandatory whatever the duration."
+      "fr": "Faux : jamais d'eau, sauf pulvérisée ou si l'installation est hors tension.",
+      "en": "False: never use water, unless it is sprayed as a mist or the installation is switched off."
     },
     "reviewed": {
       "fr": false,
@@ -121,15 +124,16 @@
   },
   {
     "id": "p1-m1-e01",
+    "section": "03-electrisation",
     "type": "single",
     "usage": "exam",
     "prompt": {
-      "fr": "De quoi dépend le danger d'un courant électrique pour le corps ?",
-      "en": "What does the danger of an electric current to the body depend on?"
+      "fr": "De quoi dépendent surtout les effets du courant électrique sur le corps ?",
+      "en": "What do the effects of electric current on the body mainly depend on?"
     },
     "explanation": {
-      "fr": "Intensité, durée du contact et trajet du courant déterminent la gravité.",
-      "en": "Intensity, contact time and the current's path determine how serious it is."
+      "fr": "De l'intensité du courant et de la durée de son passage dans le corps.",
+      "en": "On the current's intensity and how long it flows through the body."
     },
     "reviewed": {
       "fr": false,
@@ -138,8 +142,8 @@
     "choices": [
       {
         "text": {
-          "fr": "De l'intensité, de la durée et du trajet du courant",
-          "en": "Its intensity, duration and path"
+          "fr": "De l'intensité et de la durée du passage du courant",
+          "en": "Its intensity and how long it flows"
         },
         "correct": true
       },
@@ -161,15 +165,16 @@
   },
   {
     "id": "p1-m1-e02",
+    "section": "04-regles",
     "type": "single",
     "usage": "exam",
     "prompt": {
-      "fr": "Que faire face à un câble dénudé sur le chantier ?",
-      "en": "What should you do about a bare cable on site?"
+      "fr": "Que faire face à un câble non isolé ou dénudé ?",
+      "en": "What should you do about an uninsulated or bare cable?"
     },
     "explanation": {
-      "fr": "On balise la zone et on signale le danger avant toute intervention.",
-      "en": "Mark off the area and report the danger before any work."
+      "fr": "Ne pas le toucher tant qu'on n'est pas certain de l'absence de tension.",
+      "en": "Do not touch it until you are sure it is dead."
     },
     "reviewed": {
       "fr": false,
@@ -178,22 +183,848 @@
     "choices": [
       {
         "text": {
-          "fr": "Baliser et signaler",
-          "en": "Mark off the area and report it"
+          "fr": "Ne pas le toucher sans certitude sur l'absence de tension",
+          "en": "Do not touch it unless you are sure it is dead"
         },
         "correct": true
       },
       {
         "text": {
-          "fr": "Le toucher pour vérifier s'il est sous tension",
-          "en": "Touch it to check whether it is live"
+          "fr": "Le toucher rapidement pour vérifier",
+          "en": "Touch it quickly to check"
         },
         "correct": false
       },
       {
         "text": {
-          "fr": "Continuer le travail",
-          "en": "Carry on working"
+          "fr": "L'enrouler autour d'un outil",
+          "en": "Wrap it around a tool"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q04",
+    "section": "00-presentation",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Combien de temps dure la formation de la Partie 1 ?",
+      "en": "How long does the Part 1 training last?"
+    },
+    "explanation": {
+      "fr": "48 heures réparties en 6 modules.",
+      "en": "48 hours across 6 modules."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "48 heures en 6 modules",
+          "en": "48 hours across 6 modules"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "8 heures en 1 module",
+          "en": "8 hours in 1 module"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "200 heures en 20 modules",
+          "en": "200 hours across 20 modules"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q05",
+    "section": "01-introduction",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Qu'est-ce qu'un presque-accident ?",
+      "en": "What is a near miss?"
+    },
+    "explanation": {
+      "fr": "Une situation où l'accident n'a pas eu lieu, mais il s'en est fallu de peu.",
+      "en": "A situation where the accident did not happen, but very nearly did."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un accident évité de peu",
+          "en": "An accident narrowly avoided"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un accident avec blessures graves",
+          "en": "An accident with serious injuries"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Une maladie professionnelle",
+          "en": "An occupational illness"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e03",
+    "section": "01-introduction",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Tout accident du travail doit être déclaré immédiatement à la ligne hiérarchique.",
+      "en": "Every workplace accident must be reported immediately to line management."
+    },
+    "explanation": {
+      "fr": "C'est la règle rappelée en conclusion de l'introduction.",
+      "en": "That is the rule stated at the end of the introduction."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e04",
+    "section": "01-introduction",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que doit mentionner la déclaration d'un presque-accident ou d'un accident ?",
+      "en": "What must a report of a near miss or an accident state?"
+    },
+    "explanation": {
+      "fr": "La description des lieux, les circonstances, les faits et tout élément utile.",
+      "en": "A description of the place, the circumstances, the facts and anything useful."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La description des lieux",
+          "en": "A description of the place"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les circonstances et les faits",
+          "en": "The circumstances and the facts"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "L'avis personnel sur les collègues",
+          "en": "Personal opinions about colleagues"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q06",
+    "section": "02-epi",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Au moindre doute sur un EPI, il doit être réformé et remplacé immédiatement.",
+      "en": "At the slightest doubt about a PPE item, it must be withdrawn and replaced immediately."
+    },
+    "explanation": {
+      "fr": "C'est l'exigence posée pour tous les EPI.",
+      "en": "That is the requirement for all PPE."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e05",
+    "section": "02-epi",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Un tapis isolant peut être utilisé sur un sol mouillé.",
+      "en": "An insulating mat may be used on a wet floor."
+    },
+    "explanation": {
+      "fr": "Faux : les tapis isolants ne s'utilisent pas sur un sol mouillé.",
+      "en": "False: insulating mats must not be used on wet floors."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e06",
+    "section": "02-epi",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quels effets produit un arc électrique ?",
+      "en": "What effects does an electric arc produce?"
+    },
+    "explanation": {
+      "fr": "Effet thermique, souffle, rayonnement UV et infrarouge, ionisation et détonation.",
+      "en": "Thermal effect, blast, UV and infrared radiation, ionisation and detonation."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un effet thermique",
+          "en": "A thermal effect"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un effet de souffle",
+          "en": "A blast effect"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un refroidissement de l'installation",
+          "en": "Cooling of the installation"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q07",
+    "section": "03-electrisation",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelle intensité de courant peut tuer un homme ?",
+      "en": "What current can kill a person?"
+    },
+    "explanation": {
+      "fr": "40 mA, soit le courant d'une lampe de 10 W, peut tuer.",
+      "en": "40 mA, the current of a 10 W lamp, can kill."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "40 mA",
+          "en": "40 mA"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "0,05 mA",
+          "en": "0.05 mA"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Seulement au-delà de 100 A",
+          "en": "Only above 100 A"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e07",
+    "section": "03-electrisation",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "À partir de quelle tension une tension électrique est-elle potentiellement mortelle ?",
+      "en": "Above what voltage is a voltage potentially fatal?"
+    },
+    "explanation": {
+      "fr": "Toute tension au-delà de 50 V est potentiellement mortelle ; la basse tension va jusqu'à 1 000 V.",
+      "en": "Any voltage above 50 V is potentially fatal; low voltage goes up to 1,000 V."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "50 V",
+          "en": "50 V"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "1 000 V",
+          "en": "1,000 V"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "230 V seulement",
+          "en": "230 V only"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q08",
+    "section": "04-regles",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Comment débrancher un appareil électrique ?",
+      "en": "How should you unplug an electrical device?"
+    },
+    "explanation": {
+      "fr": "En tirant sur la fiche, jamais sur le câble.",
+      "en": "By pulling the plug, never the cable."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "En tirant sur la fiche",
+          "en": "By pulling the plug"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "En tirant sur le câble",
+          "en": "By pulling the cable"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "En coupant le câble",
+          "en": "By cutting the cable"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e08",
+    "section": "04-regles",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Sur un chantier, quelle distance garder avec des pièces nues sous tension de 50 kV ou moins ?",
+      "en": "On a building site, what distance must you keep from bare live parts at 50 kV or less?"
+    },
+    "explanation": {
+      "fr": "3 m jusqu'à 50 kV, 5 m au-delà.",
+      "en": "3 m up to 50 kV, 5 m above."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "3 m",
+          "en": "3 m"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "50 cm",
+          "en": "50 cm"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Aucune distance n'est imposée",
+          "en": "No distance is required"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q09",
+    "section": "05-pression",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "À combien de pascals correspond 1 bar ?",
+      "en": "How many pascals is 1 bar?"
+    },
+    "explanation": {
+      "fr": "1 bar = 10⁵ Pa = 100 000 Pa.",
+      "en": "1 bar = 10⁵ Pa = 100,000 Pa."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "100 000 Pa",
+          "en": "100,000 Pa"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "105 Pa",
+          "en": "105 Pa"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "1 Pa",
+          "en": "1 Pa"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e09",
+    "section": "05-pression",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que signifie le marquage CE sur un équipement sous pression ?",
+      "en": "What does the CE mark on pressurised equipment mean?"
+    },
+    "explanation": {
+      "fr": "Il atteste la conformité aux exigences essentielles de sécurité de l'Union européenne.",
+      "en": "It shows compliance with the European Union's essential safety requirements."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La conformité aux exigences de sécurité de l'Union européenne",
+          "en": "Compliance with EU safety requirements"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La couleur du gaz contenu",
+          "en": "The colour of the gas inside"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "La date de fabrication",
+          "en": "The date of manufacture"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e10",
+    "section": "05-pression",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Tous les combien faut-il requalifier une bouteille de plongée ?",
+      "en": "How often must a diving cylinder be requalified?"
+    },
+    "explanation": {
+      "fr": "Tous les 2 ans d'après le tableau de requalification.",
+      "en": "Every 2 years according to the requalification table."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Tous les 2 ans",
+          "en": "Every 2 years"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Tous les 10 ans",
+          "en": "Every 10 years"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Jamais",
+          "en": "Never"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q10",
+    "section": "06-annexes",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Une personne apparemment indemne peut quitter le lieu d'une explosion sans avis médical.",
+      "en": "A person who seems unhurt may leave the scene of an explosion without medical advice."
+    },
+    "explanation": {
+      "fr": "Faux : elle doit être examinée par un médecin avant de partir.",
+      "en": "False: a doctor must examine them before they leave."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e11",
+    "section": "06-annexes",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "À quelle teneur en oxygène de l'air survient l'arrêt respiratoire ?",
+      "en": "At what oxygen level in the air does respiratory arrest occur?"
+    },
+    "explanation": {
+      "fr": "6 % : arrêt respiratoire et cardiaque ; l'air normal en contient environ 22 %.",
+      "en": "6 %: respiratory and cardiac arrest; normal air contains about 22 %."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "6 %",
+          "en": "6 %"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "19 %",
+          "en": "19 %"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "22 %",
+          "en": "22 %"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q11",
+    "section": "07-bouteilles",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Une ogive de bouteille jaune signale quel risque ?",
+      "en": "A yellow cylinder shoulder signals which hazard?"
+    },
+    "explanation": {
+      "fr": "Jaune : toxique et/ou corrosif.",
+      "en": "Yellow: toxic and/or corrosive."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Toxique et/ou corrosif",
+          "en": "Toxic and/or corrosive"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Inflammable",
+          "en": "Flammable"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Inerte",
+          "en": "Inert"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q12",
+    "section": "07-bouteilles",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Il faut essayer de rattraper une bouteille de gaz qui tombe.",
+      "en": "You should try to catch a falling gas cylinder."
+    },
+    "explanation": {
+      "fr": "Faux : ne jamais essayer de rattraper une bouteille qui tombe.",
+      "en": "False: never try to catch a falling cylinder."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e12",
+    "section": "07-bouteilles",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelle est la couleur d'ogive de l'oxygène ?",
+      "en": "What is the shoulder colour for oxygen?"
+    },
+    "explanation": {
+      "fr": "L'oxygène a une ogive blanche.",
+      "en": "Oxygen has a white shoulder."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Blanc",
+          "en": "White"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Noir",
+          "en": "Black"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Marron",
+          "en": "Maroon"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-e13",
+    "section": "07-bouteilles",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "À quelle hauteur arrimer une bouteille à un élément fixe ?",
+      "en": "At what height should a cylinder be secured to a fixed point?"
+    },
+    "explanation": {
+      "fr": "Aux 2/3 de sa hauteur, par une chaînette.",
+      "en": "At 2/3 of its height, with a chain."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Aux 2/3 de sa hauteur",
+          "en": "At 2/3 of its height"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Au ras du sol",
+          "en": "At ground level"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Par le robinet",
+          "en": "By the valve"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m1-q13",
+    "section": "08-equipements",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "À quoi sert un harnais antichute ?",
+      "en": "What is a fall-arrest harness for?"
+    },
+    "explanation": {
+      "fr": "C'est un équipement de protection pour les travaux en hauteur.",
+      "en": "It is protective equipment for work at height."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "À travailler en hauteur",
+          "en": "Working at height"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "À isoler du sol",
+          "en": "Insulating from the ground"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "À protéger les yeux",
+          "en": "Protecting the eyes"
         },
         "correct": false
       }

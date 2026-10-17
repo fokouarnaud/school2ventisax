@@ -1,6 +1,7 @@
 [
   {
     "id": "p1-m3-q01",
+    "section": "02-prevention",
     "type": "single",
     "usage": "quiz",
     "prompt": {
@@ -41,6 +42,7 @@
   },
   {
     "id": "p1-m3-q02",
+    "section": "02-prevention",
     "type": "truefalse",
     "usage": "quiz",
     "prompt": {
@@ -74,6 +76,7 @@
   },
   {
     "id": "p1-m3-e01",
+    "section": "02-prevention",
     "type": "multiple",
     "usage": "exam",
     "prompt": {
@@ -114,6 +117,7 @@
   },
   {
     "id": "p1-m3-e02",
+    "section": "01-introduction",
     "type": "single",
     "usage": "exam",
     "prompt": {
@@ -149,6 +153,245 @@
           "en": "The customer"
         },
         "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m3-q03",
+    "section": "03-protection",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Lequel est un exemple de protection collective ?",
+      "en": "Which is an example of collective protection?"
+    },
+    "explanation": {
+      "fr": "Le garde-corps protège tout le monde sans équipement individuel.",
+      "en": "A guardrail protects everyone without personal equipment."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un garde-corps",
+          "en": "A guardrail"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un harnais",
+          "en": "A harness"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Des gants",
+          "en": "Gloves"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m3-e03",
+    "section": "03-protection",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Combien de temps d'affilée, au maximum, travailler sur une échelle ou un escabeau ?",
+      "en": "For how long at a time, at most, should you work on a ladder or stepladder?"
+    },
+    "explanation": {
+      "fr": "Les échelles sont réservées aux travaux légers de courte durée, 30 minutes d'affilée au maximum par exemple.",
+      "en": "Ladders are for light, short jobs, for example 30 minutes at a time at most."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Environ 30 minutes",
+          "en": "About 30 minutes"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Toute la journée",
+          "en": "All day"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "4 heures",
+          "en": "4 hours"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m3-q04",
+    "section": "04-conseils",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelle force un point d'ancrage doit-il supporter selon la norme ?",
+      "en": "What force must an anchor point withstand according to the standard?"
+    },
+    "explanation": {
+      "fr": "10 kN pendant 3 minutes.",
+      "en": "10 kN for 3 minutes."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "10 kN pendant 3 minutes",
+          "en": "10 kN for 3 minutes"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "1 kg",
+          "en": "1 kg"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Aucune exigence",
+          "en": "No requirement"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m3-q05",
+    "section": "04-conseils",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelle règle d'inclinaison et d'appui s'applique à une échelle ?",
+      "en": "Which angle and contact rule applies to a ladder?"
+    },
+    "explanation": {
+      "fr": "Rapport 4:1 et trois points d'appui.",
+      "en": "4:1 ratio and three points of contact."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Rapport 4:1 et trois points d'appui",
+          "en": "4:1 ratio and three points of contact"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Échelle verticale et une main libre",
+          "en": "Vertical ladder and one free hand"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Aucune règle",
+          "en": "No rule"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m3-e04",
+    "section": "04-conseils",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelle hauteur minimale prévoir pour utiliser une longe de 2 m avec absorbeur d'énergie ?",
+      "en": "What minimum height is needed to use a 2 m lanyard with an energy absorber?"
+    },
+    "explanation": {
+      "fr": "Au moins 6 à 8 m, à cause du déploiement de l'absorbeur et de la longueur du corps.",
+      "en": "At least 6 to 8 m, because of the absorber deploying and the length of the body."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "6 à 8 m",
+          "en": "6 to 8 m"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "2 m",
+          "en": "2 m"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "3 à 4 m",
+          "en": "3 to 4 m"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m3-e05",
+    "section": "04-conseils",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Dans une nacelle élévatrice, on peut enrouler sa longe autour des rails.",
+      "en": "In an aerial lift, you may wrap your lanyard around the rails."
+    },
+    "explanation": {
+      "fr": "Faux : on s'attache au point d'ancrage prévu sur la nacelle.",
+      "en": "False: you attach to the anchor point provided on the lift."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
       }
     ]
   }

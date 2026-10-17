@@ -1,6 +1,7 @@
 [
   {
     "id": "p1-m5-q01",
+    "section": "01-fiche",
     "type": "single",
     "usage": "quiz",
     "prompt": {
@@ -41,6 +42,7 @@
   },
   {
     "id": "p1-m5-q02",
+    "section": "01-fiche",
     "type": "multiple",
     "usage": "quiz",
     "prompt": {
@@ -81,6 +83,7 @@
   },
   {
     "id": "p1-m5-e01",
+    "section": "01-fiche",
     "type": "truefalse",
     "usage": "exam",
     "prompt": {
@@ -114,6 +117,7 @@
   },
   {
     "id": "p1-m5-e02",
+    "section": "01-fiche",
     "type": "single",
     "usage": "exam",
     "prompt": {
@@ -147,6 +151,252 @@
         "text": {
           "fr": "Le service des sports",
           "en": "The sports department"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m5-q03",
+    "section": "02-rapport-service",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quels types d'intervention coche-t-on sur le rapport de service ?",
+      "en": "Which types of job are ticked on the service report?"
+    },
+    "explanation": {
+      "fr": "Entretien, dépannage ou réparation.",
+      "en": "Maintenance, breakdown or repair."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Entretien",
+          "en": "Maintenance"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Dépannage",
+          "en": "Breakdown"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Vente",
+          "en": "Sale"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m5-e03",
+    "section": "02-rapport-service",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelle sensibilité minimale doit avoir le détecteur de fuites indiqué sur le rapport ?",
+      "en": "What minimum sensitivity must the leak detector on the report have?"
+    },
+    "explanation": {
+      "fr": "5 ppm.",
+      "en": "5 ppm."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "5 ppm",
+          "en": "5 ppm"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "500 ppm",
+          "en": "500 ppm"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Aucune",
+          "en": "None"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m5-q04",
+    "section": "03-feuille-travail",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel état final indique-t-on sur la feuille de travail ?",
+      "en": "What final status is recorded on the work sheet?"
+    },
+    "explanation": {
+      "fr": "Prêt ou pas prêt.",
+      "en": "Ready or not ready."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Prêt ou pas prêt",
+          "en": "Ready or not ready"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Payé ou impayé",
+          "en": "Paid or unpaid"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Neuf ou usagé",
+          "en": "New or used"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m5-q05",
+    "section": "04-certificat",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelle durée minimale de vide pour une charge de fluide jusqu'à 10 kg ?",
+      "en": "What minimum vacuum time for a refrigerant charge up to 10 kg?"
+    },
+    "explanation": {
+      "fr": "0,5 h ; 1 h de 10 à 200 kg ; 2 h au-delà.",
+      "en": "0.5 h; 1 h from 10 to 200 kg; 2 h above."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "0,5 h",
+          "en": "0.5 h"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "5 minutes",
+          "en": "5 minutes"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "24 h",
+          "en": "24 h"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m5-e04",
+    "section": "04-certificat",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quel vide minimum le certificat exige-t-il ?",
+      "en": "What minimum vacuum does the certificate require?"
+    },
+    "explanation": {
+      "fr": "≤ 270 Pa.",
+      "en": "≤ 270 Pa."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "270 Pa ou moins",
+          "en": "270 Pa or less"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "1 bar",
+          "en": "1 bar"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "10 bar",
+          "en": "10 bar"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p1-m5-e05",
+    "section": "04-certificat",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "À combien régler au plus le pressostat haute pression ?",
+      "en": "What is the maximum setting for the high-pressure switch?"
+    },
+    "explanation": {
+      "fr": "≤ 0,9 × PS (PS : pression maximale admissible).",
+      "en": "≤ 0.9 × PS (PS: maximum allowable pressure)."
+    },
+    "reviewed": {
+      "fr": false,
+      "en": false
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "0,9 × PS",
+          "en": "0.9 × PS"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "2 × PS",
+          "en": "2 × PS"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Sans limite",
+          "en": "No limit"
         },
         "correct": false
       }

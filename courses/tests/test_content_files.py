@@ -79,3 +79,50 @@ def test_every_markdown_file_is_referenced_by_the_manifest():
                 referenced.add((CONTENT / module["dir"] / f"{section['file']}.{lang}.md").resolve())
     on_disk = {p.resolve() for p in CONTENT.rglob("*.md")}
     assert sorted(str(p) for p in on_disk - referenced) == []
+
+
+def questions_by_module():
+    for _, module in iter_modules():
+        path = CONTENT / module["dir"] / "questions.json"
+        yield module, (json.loads(path.read_text(encoding="utf-8")) if path.exists() else [])
+
+
+def test_every_question_cites_an_existing_section_of_its_module():
+    for module, questions in questions_by_module():
+        files = {s["file"] for s in module["sections"]}
+        for q in questions:
+            assert q.get("section") in files, f"{q['id']} : section {q.get('section')!r} inconnue dans {module['dir']}"
+
+
+def test_every_content_section_is_covered_by_at_least_one_question():
+    for module, questions in questions_by_module():
+        cited = {q.get("section") for q in questions}
+        missing = [s["file"] for s in module["sections"] if s["kind"] == "content" and s["file"] not in cited]
+        assert missing == [], f"{module['dir']} : sections sans question {missing}"
+
+
+def test_every_module_has_enough_quiz_and_exam_questions():
+    for module, questions in questions_by_module():
+        quiz = sum(q["usage"] == "quiz" for q in questions)
+        exam = sum(q["usage"] == "exam" for q in questions)
+        assert quiz >= 4 and exam >= 4, f"{module['dir']} : {quiz} quiz, {exam} examen"
+
+
+def test_questions_are_drafts_awaiting_trainer_review():
+    for _, questions in questions_by_module():
+        for q in questions:
+            assert q["reviewed"] == {"fr": False, "en": False}, f"{q['id']} ne doit pas être marquée relue dans le dépôt"
+
+
+@pytest.mark.django_db
+def test_every_question_is_publishable_once_reviewed():
+    call_command("import_content", str(CONTENT / "formation.json"), verbosity=0)
+    refused = []
+    for question in Question.objects.all():
+        question.reviewed_fr = question.reviewed_en = True  # simulate the trainer's review
+        try:
+            question.validate_for_publication()
+        except Exception as exc:  # noqa: BLE001
+            refused.append(f"{question.external_id}: {exc}")
+    assert refused == []
+    assert Question.objects.count() == sum(len(qs) for _, qs in questions_by_module())
