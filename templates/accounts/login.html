@@ -15,7 +15,7 @@
     <h2 id="titre-connexion">{% translate "Connexion" %}</h2>
     <p class="muted">{% translate "Utilisez l'identifiant remis par le centre." %}</p>
     {% if form.non_field_errors %}
-      <div class="notice notice-error" role="alert">{% include "icons/alert-triangle.svg" %}<div>{% translate "Identifiant ou mot de passe incorrect." %}</div></div>
+      <div class="notice notice-error" role="alert">{% include "icons/alert-triangle.svg" %}<div>{% if form.locked_out %}{{ form.non_field_errors.0 }}{% else %}{% translate "Identifiant ou mot de passe incorrect." %}{% endif %}</div></div>
     {% endif %}
     <form method="post" class="form" novalidate>{% csrf_token %}
       <input type="hidden" name="next" value="{{ next }}">

@@ -25,7 +25,7 @@ def foreign_section(db):
 def test_module_page_lists_sections_with_viewed_state(client, enrolled, module, sections):
     SectionView.objects.create(user=enrolled, section=sections[0])
     client.force_login(enrolled)
-    response = client.get(f"/fr/modules/{module.pk}/")
+    response = client.get(f"/fr/modules/{module.public_id}/")
     assert response.status_code == 200
     assert [(row["section"], row["viewed"]) for row in response.context["sections"]] == [
         (sections[0], True),
@@ -36,7 +36,7 @@ def test_module_page_lists_sections_with_viewed_state(client, enrolled, module, 
 @pytest.mark.django_db
 def test_opening_a_section_marks_it_viewed(client, enrolled, sections):
     client.force_login(enrolled)
-    response = client.get(f"/fr/sections/{sections[0].pk}/")
+    response = client.get(f"/fr/sections/{sections[0].public_id}/")
     assert response.status_code == 200
     assert SectionView.objects.filter(user=enrolled, section=sections[0]).exists()
 
@@ -44,14 +44,14 @@ def test_opening_a_section_marks_it_viewed(client, enrolled, sections):
 @pytest.mark.django_db
 def test_section_markdown_is_rendered_as_html(client, enrolled, sections):
     client.force_login(enrolled)
-    response = client.get(f"/fr/sections/{sections[0].pk}/")
+    response = client.get(f"/fr/sections/{sections[0].public_id}/")
     assert "Le <strong>courant</strong> tue." in response.content.decode()
 
 
 @pytest.mark.django_db
 def test_section_links_to_previous_and_next_sections(client, enrolled, sections):
     client.force_login(enrolled)
-    response = client.get(f"/fr/sections/{sections[0].pk}/")
+    response = client.get(f"/fr/sections/{sections[0].public_id}/")
     assert response.context["previous"] is None
     assert response.context["next"] == sections[1]
 
@@ -59,19 +59,19 @@ def test_section_links_to_previous_and_next_sections(client, enrolled, sections)
 @pytest.mark.django_db
 def test_section_from_another_formation_is_not_found(client, enrolled, foreign_section):
     client.force_login(enrolled)
-    assert client.get(f"/fr/sections/{foreign_section.pk}/").status_code == 404
+    assert client.get(f"/fr/sections/{foreign_section.public_id}/").status_code == 404
     assert not SectionView.objects.filter(user=enrolled).exists()
 
 
 @pytest.mark.django_db
 def test_module_from_another_formation_is_not_found(client, enrolled, foreign_section):
     client.force_login(enrolled)
-    assert client.get(f"/fr/modules/{foreign_section.module.pk}/").status_code == 404
+    assert client.get(f"/fr/modules/{foreign_section.module.public_id}/").status_code == 404
 
 
 @pytest.mark.django_db
 def test_anonymous_visitor_cannot_read_a_section(client, sections):
-    response = client.get(f"/fr/sections/{sections[0].pk}/")
+    response = client.get(f"/fr/sections/{sections[0].public_id}/")
     assert response.status_code == 302
 
 
@@ -81,14 +81,14 @@ def test_practical_section_offers_its_annexes_for_download(client, enrolled, sec
     annexe = Annexe(section=sections[1], title_fr="Fiche d'intervention")
     annexe.file.save("fiche.xlsx", ContentFile(b"data"))
     client.force_login(enrolled)
-    response = client.get(f"/fr/sections/{sections[1].pk}/")
+    response = client.get(f"/fr/sections/{sections[1].public_id}/")
     assert annexe.file.url in response.content.decode()
 
 
 @pytest.mark.django_db
 def test_untranslated_section_is_flagged_as_french_fallback_in_english(client, enrolled, sections):
     client.force_login(enrolled)
-    response = client.get(f"/en/sections/{sections[0].pk}/")
+    response = client.get(f"/en/sections/{sections[0].public_id}/")
     assert response.context["fallback_fr"] is True
     assert "Le <strong>courant</strong> tue." in response.content.decode()
 
@@ -98,5 +98,5 @@ def test_translated_section_is_not_flagged_in_english(client, enrolled, sections
     sections[0].body_md_en = "Current **kills**."
     sections[0].save()
     client.force_login(enrolled)
-    response = client.get(f"/en/sections/{sections[0].pk}/")
+    response = client.get(f"/en/sections/{sections[0].public_id}/")
     assert response.context["fallback_fr"] is False

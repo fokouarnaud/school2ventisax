@@ -59,11 +59,12 @@ def start_attempt(user, assessment, now=None, rng=random):
 
 
 def save_answer(attempt, question_id, choice_ids, now=None):
+    """Enregistre la réponse ; question et choix sont désignés par leur identifiant public (UUID)."""
     now = now or timezone.now()
     if attempt.submitted_at is not None or (attempt.deadline and now >= attempt.deadline):
         raise AttemptClosed
-    aq = attempt.attempt_questions.get(question_id=question_id)
-    aq.selected_choices.set(aq.question.choices.filter(pk__in=choice_ids))
+    aq = attempt.attempt_questions.select_related("question").get(question__public_id=question_id)
+    aq.selected_choices.set(aq.question.choices.filter(public_id__in=choice_ids))
     aq.answered_at = now
     aq.save(update_fields=["answered_at"])
 

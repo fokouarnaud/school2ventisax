@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Acad Ventisax\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-17 12:05+0100\n"
+"POT-Creation-Date: 2026-10-17 18:09+0100\n"
 "PO-Revision-Date: 2026-10-17 12:00+0100\n"
 "Last-Translator: Acad Ventisax\n"
 "Language-Team: English\n"
@@ -14,23 +14,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\accounts\admin.py:18 .\accounts\admin.py:19
+#: .\accounts\admin.py:21 .\accounts\admin.py:22
 msgid "Acad Ventisax"
 msgstr "Acad Ventisax"
 
-#: .\accounts\admin.py:23
+#: .\accounts\admin.py:26
 msgid "Fichier CSV (username;first_name;last_name;email)"
 msgstr "CSV file (username;first_name;last_name;email)"
 
-#: .\accounts\admin.py:36
+#: .\accounts\admin.py:39
 msgid "Apprenants"
 msgstr "Learners"
 
-#: .\accounts\admin.py:38
+#: .\accounts\admin.py:41
 msgid "Importer un CSV"
 msgstr "Import a CSV"
 
-#: .\accounts\admin.py:58
+#: .\accounts\admin.py:61
 msgid "Importer des apprenants"
 msgstr "Import learners"
 
@@ -66,6 +66,10 @@ msgstr "start date"
 msgid "formateurs"
 msgstr "trainers"
 
+#: .\accounts\throttling.py:38
+msgid "Trop de tentatives de connexion. Réessayez dans quelques minutes."
+msgstr "Too many sign-in attempts. Try again in a few minutes."
+
 #: .\assessments\admin.py:24
 msgid "Marquer comme relues (FR et EN)"
 msgstr "Mark as reviewed (FR and EN)"
@@ -93,179 +97,183 @@ msgstr[1] "%(n)d questions published."
 msgid "Refusée %(reason)s"
 msgstr "Refused %(reason)s"
 
-#: .\assessments\models.py:16
+#: .\assessments\models.py:19
 msgid "QCM une réponse"
 msgstr "Single-answer MCQ"
 
-#: .\assessments\models.py:17
+#: .\assessments\models.py:20
 msgid "QCM plusieurs réponses"
 msgstr "Multiple-answer MCQ"
 
-#: .\assessments\models.py:18
+#: .\assessments\models.py:21
 msgid "Vrai / Faux"
 msgstr "True / False"
 
-#: .\assessments\models.py:21 .\assessments\models.py:87
+#: .\assessments\models.py:24 .\assessments\models.py:92
 msgid "Quiz de module"
 msgstr "Module quiz"
 
-#: .\assessments\models.py:22 .\assessments\models.py:88
+#: .\assessments\models.py:25 .\assessments\models.py:93
 msgid "Examen de partie"
 msgstr "Part exam"
 
-#: .\assessments\models.py:25
+#: .\assessments\models.py:28
 msgid "Brouillon"
 msgstr "Draft"
 
-#: .\assessments\models.py:26
+#: .\assessments\models.py:29
 msgid "Publiée"
 msgstr "Published"
 
-#: .\assessments\models.py:29
+#: .\assessments\models.py:33
 msgid "type"
 msgstr "type"
 
-#: .\assessments\models.py:30
+#: .\assessments\models.py:34
 msgid "usage"
 msgstr "usage"
 
-#: .\assessments\models.py:31
+#: .\assessments\models.py:35
 msgid "statut"
 msgstr "status"
 
-#: .\assessments\models.py:32
+#: .\assessments\models.py:36
 msgid "énoncé"
 msgstr "question text"
 
-#: .\assessments\models.py:33
+#: .\assessments\models.py:37
 msgid "explication"
 msgstr "explanation"
 
-#: .\assessments\models.py:36
+#: .\assessments\models.py:40
 msgid "image"
 msgstr "image"
 
-#: .\assessments\models.py:39
+#: .\assessments\models.py:43
 msgid "relue en français"
 msgstr "reviewed in French"
 
-#: .\assessments\models.py:40
+#: .\assessments\models.py:44
 msgid "relue en anglais"
 msgstr "reviewed in English"
 
-#: .\assessments\models.py:54
+#: .\assessments\models.py:58
 msgid "La question doit être relue en français et en anglais."
 msgstr "The question must be reviewed in French and in English."
 
-#: .\assessments\models.py:58
+#: .\assessments\models.py:62
 msgid "Un QCM à une réponse doit avoir exactement une bonne réponse."
 msgstr "A single-answer MCQ must have exactly one correct answer."
 
-#: .\assessments\models.py:60
+#: .\assessments\models.py:64
 msgid "Un QCM à plusieurs réponses doit avoir au moins deux bonnes réponses."
 msgstr "A multiple-answer MCQ must have at least two correct answers."
 
-#: .\assessments\models.py:62
+#: .\assessments\models.py:66
 msgid "Une question Vrai/Faux doit avoir deux choix dont un seul correct."
 msgstr "A True/False question must have two choices with exactly one correct."
 
-#: .\assessments\models.py:74
+#: .\assessments\models.py:79
 msgid "texte"
 msgstr "text"
 
-#: .\assessments\models.py:75
+#: .\assessments\models.py:80
 msgid "bonne réponse"
 msgstr "correct answer"
 
-#: .\assessments\models.py:97
+#: .\assessments\models.py:102
 msgid "seuil de réussite (%)"
 msgstr "pass mark (%)"
 
-#: .\assessments\models.py:98
+#: .\assessments\models.py:103
 msgid "tentatives maximum"
 msgstr "maximum attempts"
 
-#: .\assessments\models.py:99
+#: .\assessments\models.py:104
 msgid "durée (minutes)"
 msgstr "duration (minutes)"
 
-#: .\assessments\models.py:100
+#: .\assessments\models.py:105
 msgid "questions par module"
 msgstr "questions per module"
 
-#: .\assessments\models.py:101
+#: .\assessments\models.py:106
 msgid "mélanger questions et choix"
 msgstr "shuffle questions and choices"
 
-#: .\config\settings.py:77
+#: .\config\settings.py:101
 msgid "Français"
 msgstr "French"
 
-#: .\config\settings.py:77
+#: .\config\settings.py:101
 msgid "English"
 msgstr "English"
 
-#: .\courses\models.py:6 .\courses\models.py:20 .\courses\models.py:34
-#: .\courses\models.py:61 .\courses\models.py:77
+#: .\config\uploads.py:47
+msgid "Ce SVG contient du script ou un lien actif : il est refusé."
+msgstr "This SVG contains a script or an active link: it is rejected."
+
+#: .\courses\models.py:11 .\courses\models.py:26 .\courses\models.py:41
+#: .\courses\models.py:69 .\courses\models.py:85
 msgid "titre"
 msgstr "title"
 
-#: .\courses\models.py:8
+#: .\courses\models.py:13
 msgid "description"
 msgstr "description"
 
-#: .\courses\models.py:36
+#: .\courses\models.py:43
 msgid "durée (heures)"
 msgstr "duration (hours)"
 
-#: .\courses\models.py:37
+#: .\courses\models.py:44
 msgid "compétence visée"
 msgstr "target skill"
 
-#: .\courses\models.py:38
+#: .\courses\models.py:45
 msgid "modalités d'évaluation"
 msgstr "assessment method"
 
-#: .\courses\models.py:57
+#: .\courses\models.py:64
 msgid "Contenu"
 msgstr "Content"
 
-#: .\courses\models.py:58
+#: .\courses\models.py:65
 msgid "Activités pratiques"
 msgstr "Practical activities"
 
-#: .\courses\models.py:64
+#: .\courses\models.py:72
 msgid "contenu (Markdown)"
 msgstr "content (Markdown)"
 
-#: .\progress\views.py:68 .\templates\progress\trainer_table.html:16
+#: .\progress\views.py:77 .\templates\progress\trainer_table.html:16
 msgid "Promotion"
 msgstr "Cohort"
 
-#: .\progress\views.py:68 .\templates\accounts\login.html:23
+#: .\progress\views.py:77 .\templates\accounts\login.html:23
 #: .\templates\admin\accounts\promotion\import.html:9
 msgid "Identifiant"
 msgstr "Username"
 
-#: .\progress\views.py:68
+#: .\progress\views.py:77
 msgid "Nom"
 msgstr "Name"
 
-#: .\progress\views.py:70
+#: .\progress\views.py:79
 #, python-format
 msgid "Examen %(partie)s (%%)"
 msgstr "Exam %(partie)s (%%)"
 
-#: .\progress\views.py:70
+#: .\progress\views.py:79
 #, python-format
 msgid "Tentatives %(partie)s"
 msgstr "Attempts %(partie)s"
 
-#: .\progress\views.py:75
+#: .\progress\views.py:84
 msgid "oui"
 msgstr "yes"
 
-#: .\progress\views.py:75
+#: .\progress\views.py:84
 msgid "non"
 msgstr "no"
 

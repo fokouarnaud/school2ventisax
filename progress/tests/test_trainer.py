@@ -31,7 +31,7 @@ def scored(enrolled, partie, module, question_factory):
     question_factory(module, usage="exam")
     attempt = start_attempt(enrolled, Assessment.exam_for(partie))
     for aq in attempt.attempt_questions.all():
-        save_answer(attempt, aq.question_id, aq.question.choices.filter(is_correct=True).values_list("pk", flat=True))
+        save_answer(attempt, aq.question.public_id, aq.question.choices.filter(is_correct=True).values_list("public_id", flat=True))
     submit_attempt(attempt)
     return enrolled
 

@@ -1,9 +1,12 @@
 import random
+import uuid
 
 from django.core.exceptions import ValidationError
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
+from config.uploads import RandomFilename, validate_inert_svg
 
 
 class QuestionQuerySet(models.QuerySet):
@@ -25,6 +28,7 @@ class Question(models.Model):
         DRAFT = "draft", _("Brouillon")
         PUBLISHED = "published", _("Publiée")
 
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)  # identifiant des URL et formulaires
     module = models.ForeignKey("courses.Module", on_delete=models.CASCADE, related_name="questions")
     qtype = models.CharField(_("type"), max_length=10, choices=Type.choices, default=Type.SINGLE)
     usage = models.CharField(_("usage"), max_length=5, choices=Usage.choices, default=Usage.QUIZ)
@@ -33,8 +37,8 @@ class Question(models.Model):
     explanation = models.TextField(_("explication"), blank=True)
     # FileField plutôt qu'ImageField : Pillow est exclu (budget disque, AGENTS.md).
     image = models.FileField(
-        _("image"), upload_to="questions/", blank=True,
-        validators=[FileExtensionValidator(["webp", "png", "jpg", "jpeg", "svg"])],
+        _("image"), upload_to=RandomFilename("questions"), blank=True,
+        validators=[FileExtensionValidator(["webp", "png", "jpg", "jpeg", "svg"]), validate_inert_svg],
     )
     reviewed_fr = models.BooleanField(_("relue en français"), default=False)
     reviewed_en = models.BooleanField(_("relue en anglais"), default=False)
@@ -70,6 +74,7 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)  # identifiant des URL et formulaires
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name="choices")
     text = models.CharField(_("texte"), max_length=300)
     is_correct = models.BooleanField(_("bonne réponse"), default=False)
@@ -151,6 +156,7 @@ class Assessment(models.Model):
 
 
 class Attempt(models.Model):
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)  # identifiant des URL et formulaires
     user = models.ForeignKey("accounts.User", on_delete=models.CASCADE, related_name="attempts")
     assessment = models.ForeignKey(Assessment, on_delete=models.CASCADE, related_name="attempts")
     number = models.PositiveIntegerField()

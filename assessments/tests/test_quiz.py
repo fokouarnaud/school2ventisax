@@ -8,6 +8,10 @@ def correct_ids(q):
     return [c.pk for c in q.choices.filter(is_correct=True)]
 
 
+def public_ids(q, correct):
+    return [c.public_id for c in q.choices.filter(is_correct=correct)][: None if correct else 1]
+
+
 def wrong_ids(q):
     return [c.pk for c in q.choices.filter(is_correct=False)][:1]
 
@@ -41,8 +45,8 @@ def test_quiz_can_be_retaken_without_limit(module, learner, question_factory):
 def test_submitted_quiz_is_scored_as_percentage(module, learner, question_factory):
     q1, q2 = question_factory(module), question_factory(module)
     attempt = start_attempt(learner, Assessment.quiz_for(module))
-    save_answer(attempt, q1.pk, correct_ids(q1))
-    save_answer(attempt, q2.pk, wrong_ids(q2))
+    save_answer(attempt, q1.public_id, public_ids(q1, True))
+    save_answer(attempt, q2.public_id, public_ids(q2, False))
     submit_attempt(attempt)
     attempt.refresh_from_db()
     assert attempt.submitted_at is not None
@@ -53,7 +57,7 @@ def test_submitted_quiz_is_scored_as_percentage(module, learner, question_factor
 def test_quiz_feedback_reveals_correct_choices_and_explanation(module, learner, question_factory):
     q = question_factory(module)
     attempt = start_attempt(learner, Assessment.quiz_for(module))
-    save_answer(attempt, q.pk, wrong_ids(q))
+    save_answer(attempt, q.public_id, public_ids(q, False))
     submit_attempt(attempt)
     [item] = attempt.feedback()
     assert item["correct_choice_ids"] == correct_ids(q)

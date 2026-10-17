@@ -1,6 +1,9 @@
 """Réglages Django d'Acad Ventisax. Les secrets viennent de l'environnement (.env sur le serveur)."""
 import os
+from datetime import timedelta
 from pathlib import Path
+
+from django.core.exceptions import ImproperlyConfigured
 
 from django.utils.translation import gettext_lazy as _
 
@@ -9,8 +12,12 @@ from .env import load_env_file
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_env_file(BASE_DIR / ".env")  # secrets du serveur (fichier ignoré par git)
 
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-insecure-key-ne-pas-utiliser-en-production")
+DEV_SECRET_KEY = "dev-insecure-key-ne-pas-utiliser-en-production"
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY") or DEV_SECRET_KEY
 DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
+if not DEBUG and (SECRET_KEY == DEV_SECRET_KEY or len(SECRET_KEY) < 50 or len(set(SECRET_KEY)) < 5):
+    # Une clé connue ou faible permettrait de forger des cookies de session : refus de démarrer.
+    raise ImproperlyConfigured("DJANGO_SECRET_KEY doit être définie (au moins 50 caractères variés) en production.")
 ALLOWED_HOSTS = [h for h in os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",") if h]
 
 INSTALLED_APPS = [
@@ -36,6 +43,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "config.middleware.ContentSecurityPolicyMiddleware",
     "progress.middleware.DailyBackupMiddleware",
 ]
 
@@ -72,6 +80,15 @@ AUTH_USER_MODEL = "accounts.User"
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "login"
+
+# Sessions : cookies inaccessibles au JavaScript, durée d'une journée de formation (téléphones partagés).
+SESSION_COOKIE_AGE = 8 * 3600
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = "Lax"
+CSRF_COOKIE_HTTPONLY = True  # le jeton CSRF est injecté par le gabarit (hx-headers), jamais lu dans le cookie
+# Force brute : verrouillage d'un identifiant après LOGIN_MAX_FAILURES échecs en LOGIN_LOCKOUT (accounts/throttling.py).
+LOGIN_MAX_FAILURES = 5
+LOGIN_LOCKOUT = timedelta(minutes=15)
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
@@ -113,4 +130,12 @@ if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
-    SECURE_HSTS_SECONDS = 3600
+    # Préfixe __Host- : cookie limité à HTTPS, à ce domaine exact et au chemin /, impossible à injecter
+    # depuis un autre sous-domaine de pythonanywhere.com.
+    SESSION_COOKIE_NAME = "__Host-sessionid"
+    CSRF_COOKIE_NAME = "__Host-csrftoken"
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    # Préchargement HSTS impossible : la liste de préchargement n'accepte que des domaines enregistrables,
+    # pas un sous-domaine de pythonanywhere.com.
+    SILENCED_SYSTEM_CHECKS = ["security.W021"]

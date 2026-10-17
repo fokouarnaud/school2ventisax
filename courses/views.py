@@ -11,8 +11,8 @@ from .rendering import render_markdown
 
 
 @login_required
-def module_detail(request, pk):
-    module = get_object_or_404(Module, pk=pk, partie__formation__in=accessible_formations(request.user))
+def module_detail(request, public_id):
+    module = get_object_or_404(Module, public_id=public_id, partie__formation__in=accessible_formations(request.user))
     viewed = set(SectionView.objects.filter(user=request.user, section__module=module).values_list("section_id", flat=True))
     sections = [{"section": s, "viewed": s.pk in viewed} for s in module.sections.all()]
     return render(request, "courses/module_detail.html", {
@@ -24,10 +24,10 @@ def module_detail(request, pk):
 
 
 @login_required
-def section_detail(request, pk):
+def section_detail(request, public_id):
     section = get_object_or_404(
         Section.objects.select_related("module__partie"),
-        pk=pk,
+        public_id=public_id,
         module__partie__formation__in=accessible_formations(request.user),
     )
     mark_section_viewed(request.user, section)

@@ -9,6 +9,9 @@ from django.utils.translation import gettext_lazy as _
 
 from .importing import import_learners
 from .models import Promotion, User
+from .throttling import ThrottledAdminAuthenticationForm
+
+admin.site.login_form = ThrottledAdminAuthenticationForm
 
 
 @admin.register(User)

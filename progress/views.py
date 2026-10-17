@@ -13,6 +13,15 @@ from courses.models import Module, Partie
 from .services import module_completed
 
 
+FORMULA_PREFIXES = ("=", "+", "-", "@", "\t", "\r")
+
+
+def _csv_cell(value):
+    """Neutralise l'injection de formules : Excel exécuterait une cellule qui commence par = + - @."""
+    text = str(value)
+    return "'" + text if text.startswith(FORMULA_PREFIXES) else text
+
+
 def _require_staff_role(user):
     if not (user.is_trainer or user.is_platform_admin):
         raise PermissionDenied
@@ -68,12 +77,12 @@ def export_csv(request):
         header = [_("Promotion"), _("Identifiant"), _("Nom")] + [m.title for m in table["modules"]]
         for partie in table["parties"]:
             header += [_("Examen %(partie)s (%%)") % {"partie": partie.title}, _("Tentatives %(partie)s") % {"partie": partie.title}]
-        writer.writerow(header)
+        writer.writerow([_csv_cell(cell) for cell in header])
         for row in table["rows"]:
             learner = row["learner"]
             line = [learner.promotion.name, learner.username, learner.get_full_name()]
             line += [_("oui") if done else _("non") for done in row["modules"]]
             for result in row["exams"]:
                 line += ["" if result["best"] is None else result["best"], result["attempts"]]
-            writer.writerow(line)
+            writer.writerow([_csv_cell(cell) for cell in line])
     return response
