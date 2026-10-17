@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<h1>{% translate "Mes cours" %}</h1>
+{% if promotion %}<p>{{ promotion.formation.title }}</p>{% endif %}
+{% for row in parts %}
+  <section>
+    <h2>{{ row.partie.title }}</h2>
+    <progress max="100" value="{{ row.progress }}">{{ row.progress }} %</progress> {{ row.progress }} %
+    <ul>
+      {% for module in row.partie.modules.all %}<li>{{ module.title }}</li>{% endfor %}
+    </ul>
+  </section>
+{% empty %}
+  <p>{% translate "Vous n'êtes inscrit à aucune formation pour le moment." %}</p>
+{% endfor %}
+{% endblock %}

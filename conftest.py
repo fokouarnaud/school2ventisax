@@ -42,3 +42,17 @@ def make_question(module, usage="quiz", qtype="single", choices=((True, "Bon"), 
 @pytest.fixture
 def question_factory():
     return make_question
+
+
+@pytest.fixture
+def promotion(partie):
+    from accounts.models import Promotion
+
+    return Promotion.objects.create(name="Oct 2026", formation=partie.formation)
+
+
+@pytest.fixture
+def enrolled(learner, promotion):
+    learner.promotion = promotion
+    learner.save()
+    return learner

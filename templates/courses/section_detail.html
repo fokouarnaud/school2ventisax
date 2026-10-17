@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ section.title }}{% endblock %}
+{% block content %}
+<p><a href="{% url 'module_detail' section.module.pk %}">{{ section.module.title }}</a></p>
+<h1>{{ section.title }}</h1>
+{% if fallback_fr %}<p lang="fr"><abbr title="{% translate 'Contenu disponible en français uniquement' %}">FR</abbr></p>{% endif %}
+<div{% if fallback_fr %} lang="fr"{% endif %}>{{ body_html|safe }}</div>
+{% if section.annexes.exists %}
+  <h2>{% translate "Annexes" %}</h2>
+  <ul>{% for annexe in section.annexes.all %}<li><a href="{{ annexe.file.url }}" download>{{ annexe.title }}</a></li>{% endfor %}</ul>
+{% endif %}
+<nav>
+  {% if previous %}<a href="{% url 'section_detail' previous.pk %}">{% translate "Précédent" %}</a>{% endif %}
+  {% if next %}<a href="{% url 'section_detail' next.pk %}">{% translate "Suivant" %}</a>{% endif %}
+</nav>
+{% endblock %}

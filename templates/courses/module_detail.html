@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ module.title }}{% endblock %}
+{% block content %}
+<h1>{{ module.title }}</h1>
+<p>{% blocktranslate with h=module.duration_hours %}Durée : {{ h }} heures{% endblocktranslate %}</p>
+{% if module.competence %}<p>{{ module.competence }}</p>{% endif %}
+<ol>
+  {% for row in sections %}
+    <li><a href="{% url 'section_detail' row.section.pk %}">{{ row.section.title }}</a>{% if row.viewed %} ✓{% endif %}</li>
+  {% endfor %}
+</ol>
+{% endblock %}
