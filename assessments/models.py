@@ -78,3 +78,91 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Assessment(models.Model):
+    class Kind(models.TextChoices):
+        MODULE_QUIZ = "module_quiz", _("Quiz de module")
+        PART_EXAM = "part_exam", _("Examen de partie")
+
+    kind = models.CharField(max_length=12, choices=Kind.choices)
+    module = models.OneToOneField(
+        "courses.Module", on_delete=models.CASCADE, null=True, blank=True, related_name="quiz"
+    )
+    partie = models.OneToOneField(
+        "courses.Partie", on_delete=models.CASCADE, null=True, blank=True, related_name="exam"
+    )
+
+    class Meta:
+        constraints = [
+            models.CheckConstraint(
+                condition=(
+                    models.Q(kind="module_quiz", module__isnull=False, partie__isnull=True)
+                    | models.Q(kind="part_exam", module__isnull=True, partie__isnull=False)
+                ),
+                name="assessment_target_matches_kind",
+            )
+        ]
+
+    def __str__(self):
+        return f"{self.get_kind_display()} : {self.module or self.partie}"
+
+    @classmethod
+    def quiz_for(cls, module):
+        return cls.objects.get_or_create(kind=cls.Kind.MODULE_QUIZ, module=module)[0]
+
+    def question_pool(self):
+        return Question.objects.published().filter(module=self.module, usage=Question.Usage.QUIZ)
+
+
+class Attempt(models.Model):
+    user = models.ForeignKey("accounts.User", on_delete=models.CASCADE, related_name="attempts")
+    assessment = models.ForeignKey(Assessment, on_delete=models.CASCADE, related_name="attempts")
+    number = models.PositiveIntegerField()
+    started_at = models.DateTimeField()
+    deadline = models.DateTimeField(null=True, blank=True)
+    submitted_at = models.DateTimeField(null=True, blank=True)
+    score_pct = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+
+    class Meta:
+        ordering = ["assessment", "user", "number"]
+        constraints = [
+            models.UniqueConstraint(fields=["user", "assessment", "number"], name="unique_attempt_number")
+        ]
+
+    def __str__(self):
+        return f"{self.user} – {self.assessment} #{self.number}"
+
+    def feedback(self):
+        from .scoring import score_answer
+
+        items = []
+        for aq in self.attempt_questions.select_related("question").prefetch_related(
+            "question__choices", "selected_choices"
+        ):
+            correct = [c.pk for c in aq.question.choices.all() if c.is_correct]
+            selected = sorted(c.pk for c in aq.selected_choices.all())
+            items.append({
+                "question": aq.question,
+                "correct_choice_ids": correct,
+                "selected_choice_ids": selected,
+                "explanation": aq.question.explanation,
+                "score": score_answer(aq.question.qtype, correct, selected),
+            })
+        return items
+
+
+class AttemptQuestion(models.Model):
+    """Question tirée pour une tentative, avec la réponse de l'apprenant (l'entité Answer du PRD)."""
+
+    attempt = models.ForeignKey(Attempt, on_delete=models.CASCADE, related_name="attempt_questions")
+    question = models.ForeignKey(Question, on_delete=models.PROTECT)
+    order = models.PositiveIntegerField()
+    selected_choices = models.ManyToManyField(Choice, blank=True)
+    answered_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["order"]
+        constraints = [
+            models.UniqueConstraint(fields=["attempt", "question"], name="unique_question_per_attempt")
+        ]
