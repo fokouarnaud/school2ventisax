@@ -83,12 +83,14 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = Path(os.environ.get("DJANGO_STATIC_ROOT", BASE_DIR / "staticfiles"))
 STATICFILES_DIRS = [BASE_DIR / "static"]
+# Versionnement anti-cache : empreinte dans le nom en production (manifeste),
+# ?v=<empreinte> en développement (config/storage.py).
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"
+        "BACKEND": "config.storage.VersionedStaticFilesStorage"
         if DEBUG
         else "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
     },
