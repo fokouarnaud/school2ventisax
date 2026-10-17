@@ -14,13 +14,24 @@ def test_backup_writes_a_readable_copy_of_the_database(tmp_path, django_user_mod
 
 
 @pytest.mark.django_db(transaction=True)
-def test_backup_keeps_only_the_seven_most_recent_copies(tmp_path):
-    for i in range(9):
+def test_backup_keeps_only_the_new_copy(tmp_path):
+    for i in range(3):
         old = tmp_path / f"db-2026010{i}-000000.sqlite3"
         old.write_bytes(b"old")
     call_command("backup_db", str(tmp_path), verbosity=0)
-    kept = sorted(p.name for p in tmp_path.glob("db-*.sqlite3"))
-    assert len(kept) == 7
-    assert "db-20260100-000000.sqlite3" not in kept  # la plus ancienne est supprimée
-    assert "db-20260101-000000.sqlite3" not in kept
-    assert "db-20260102-000000.sqlite3" not in kept
+    [kept] = tmp_path.glob("db-*.sqlite3")
+    assert kept.read_bytes() != b"old"  # la nouvelle copie remplace les anciennes
+
+
+@pytest.mark.django_db(transaction=True)
+def test_a_failed_backup_keeps_the_previous_copy(tmp_path, monkeypatch):
+    previous = tmp_path / "db-20260101-000000.sqlite3"
+    previous.write_bytes(b"old")
+
+    def boom(*args, **kwargs):
+        raise OSError("disque plein")
+
+    monkeypatch.setattr("progress.management.commands.backup_db.sqlite3.connect", boom)
+    with pytest.raises(OSError):
+        call_command("backup_db", str(tmp_path), verbosity=0)
+    assert previous.read_bytes() == b"old"
