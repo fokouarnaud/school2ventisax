@@ -136,6 +136,33 @@ Décisions prises pendant l'implémentation TDD, qui priment sur le texte ci-des
 - Accessibilité : contraste AA, navigation au clavier dans les quiz, `lang` correct par page.
 - Fiabilité : aucune réponse d'examen perdue lors d'un rechargement ou d'une coupure.
 
+## Guide de style de l'interface (validé le 2026-10-17)
+Source : `static/acad/css/app.css` (CSS natif, aucun framework). Toute modification de style majeure doit être reportée ici.
+
+**Charte (reprise de ventisax.pythonanywhere.com)**
+- Couleurs : bleu marine `--navy #0b2d46` (titres, boutons), une seule couleur d'accent : turquoise (`--teal-ink #0d665e` en clair, `--teal #68ddce` en sombre) pour les états « vu / terminé / sélectionné ». Pas d'autre couleur d'accent.
+- Mode sombre automatique (`prefers-color-scheme`), jetons redéfinis dans `:root`. Le logo reçoit un liseré en sombre (sinon il se fond dans le fond).
+- Police : pile `"Lexend", system-ui…` sans fichier téléchargé (comme ventisax : aucune police web chargée).
+- Formes : boutons et badges en pilule, panneaux 20px, champs et cartes de réponse 14px.
+- Icônes : Tabler Icons 3.31.0 (MIT) en partiels `templates/icons/*.svg`, jamais de SVG dessiné à la main.
+- Zéro tiret cadratin ou demi-cadratin dans les textes affichés.
+
+**Règles de mise en page et d'accessibilité (vérifiées par l'audit Playwright `.playwright-mcp/audit.js`)**
+- Contraste AA partout, en clair et en sombre.
+- Mobile (< 700px) : toute cible tactile (liens de navigation, boutons, fil d'Ariane, entrées du sommaire, FR/EN) mesure au moins 44px de haut.
+- Aucun défilement horizontal de page à 360px ; les tableaux larges défilent dans `.table-scroll` (qui est `position: relative` pour contenir les libellés `.visually-hidden`) avec la 1re colonne figée.
+- Sous 480px : panneaux en `padding: 1rem`, boutons d'action (`.cta-row`, `.pager`) pleine largeur, badges de durée ou « Terminé » des modules masqués (l'état reste porté par la coche et un texte pour lecteurs d'écran).
+- Sous 400px, en-tête formateur ou admin (5 commandes) : le nom « Acad Ventisax » est masqué visuellement, le logo seul porte la marque (nom toujours lu par les lecteurs d'écran).
+- Sommaire du lecteur replié par défaut sur mobile, ouvert à partir de 960px.
+- Quiz et examen : navigation au clavier par flèches ; l'anneau de focus entoure toute la carte de réponse (`.choice:has(input:focus-visible)`).
+- Une rangée de badges vide (`.facts`) est masquée pour ne pas créer d'espace parasite sous le titre.
+
+**Budget mesuré** : page la plus lourde (examen) ≈ 32 Ko à la première visite ; CSS + JS = 22 Ko compressés (gzip), 70 Ko bruts.
+
+**Points ouverts**
+- PRD « CSS et JS < 50 Ko au total » : respecté en transfert compressé (22 Ko), dépassé en brut (70 Ko, dont HTMX 51 Ko). Vérifier que PythonAnywhere sert les fichiers statiques compressés, sinon remplacer HTMX par un petit `fetch` natif (décision Q13 à revoir).
+- Traductions anglaises de l'interface (`locale/en/…/django.po`) pas encore écrites : sur `/en/`, le contenu est en anglais s'il existe, l'interface reste en français.
+
 ## Definition of Done (critères stricts)
 Une user story ou une fonctionnalité n'est **terminée** que si **tous** les points sont vrais :
 1. **Tests** : `python manage.py test` passe à 100 %. Toute règle métier touchée a ses tests : notation partielle et plancher 0, seuil de 70 %, 3 tentatives et meilleure note, deadline et envoi automatique, reprise de tentative, déblocage de l'examen, cloisonnement formateur ↔ promotion, refus de publication sans double relecture, repli de langue.
