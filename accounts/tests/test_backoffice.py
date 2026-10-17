@@ -115,3 +115,30 @@ def test_admin_can_upload_learner_csv_for_a_promotion(client, promotion):
 def test_trainer_cannot_import_learners(client, promotion):
     client.force_login(make("macaire", User.Role.TRAINER))
     assert client.get(f"/fr/admin/accounts/promotion/{promotion.pk}/import/").status_code == 403
+
+
+@pytest.mark.django_db
+def test_trainer_marks_selected_questions_as_reviewed_in_both_languages(client, module, question_factory):
+    first = question_factory(module, publish=False)
+    second = question_factory(module, publish=False)
+    untouched = question_factory(module, publish=False)
+    Question.objects.update(reviewed_fr=False, reviewed_en=False)
+    client.force_login(make("macaire", User.Role.TRAINER))
+    response = client.post(
+        "/fr/admin/assessments/question/",
+        {"action": "mark_reviewed", "_selected_action": [first.pk, second.pk]},
+        follow=True,
+    )
+    reviewed = set(Question.objects.filter(reviewed_fr=True, reviewed_en=True).values_list("pk", flat=True))
+    assert reviewed == {first.pk, second.pk}
+    assert untouched.pk not in reviewed
+    assert any("2" in str(m) for m in response.context["messages"])
+
+
+@pytest.mark.django_db
+def test_marking_reviewed_does_not_publish_by_itself(client, module, question_factory):
+    question = question_factory(module, publish=False)
+    client.force_login(make("macaire", User.Role.TRAINER))
+    client.post("/fr/admin/assessments/question/", {"action": "mark_reviewed", "_selected_action": [question.pk]})
+    question.refresh_from_db()
+    assert question.status == Question.Status.DRAFT

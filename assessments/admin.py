@@ -19,7 +19,16 @@ class QuestionAdmin(TranslationAdmin):
     search_fields = ("prompt_fr", "prompt_en", "external_id")
     readonly_fields = ("status",)
     inlines = [ChoiceInline]
-    actions = ["publish_selected"]
+    actions = ["mark_reviewed", "publish_selected"]
+
+    @admin.action(description=_("Marquer comme relues (FR et EN)"))
+    def mark_reviewed(self, request, queryset):
+        count = queryset.update(reviewed_fr=True, reviewed_en=True)
+        self.message_user(
+            request,
+            ngettext("%(n)d question marquée relue.", "%(n)d questions marquées relues.", count) % {"n": count},
+            messages.SUCCESS,
+        )
 
     @admin.action(description=_("Publier les questions sélectionnées"))
     def publish_selected(self, request, queryset):

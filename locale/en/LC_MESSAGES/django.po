@@ -1,13 +1,10 @@
 # Acad Ventisax : interface en anglais.
-
-
-
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Acad Ventisax\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-17 11:28+0100\n"
+"POT-Creation-Date: 2026-10-17 12:05+0100\n"
 "PO-Revision-Date: 2026-10-17 12:00+0100\n"
 "Last-Translator: Acad Ventisax\n"
 "Language-Team: English\n"
@@ -70,17 +67,28 @@ msgid "formateurs"
 msgstr "trainers"
 
 #: .\assessments\admin.py:24
+msgid "Marquer comme relues (FR et EN)"
+msgstr "Mark as reviewed (FR and EN)"
+
+#: .\assessments\admin.py:29
+#, python-format
+msgid "%(n)d question marquée relue."
+msgid_plural "%(n)d questions marquées relues."
+msgstr[0] "%(n)d question marked as reviewed."
+msgstr[1] "%(n)d questions marked as reviewed."
+
+#: .\assessments\admin.py:33
 msgid "Publier les questions sélectionnées"
 msgstr "Publish selected questions"
 
-#: .\assessments\admin.py:36
+#: .\assessments\admin.py:45
 #, python-format
 msgid "%(n)d question publiée."
 msgid_plural "%(n)d questions publiées."
 msgstr[0] "%(n)d question published."
 msgstr[1] "%(n)d questions published."
 
-#: .\assessments\admin.py:40
+#: .\assessments\admin.py:49
 #, python-format
 msgid "Refusée %(reason)s"
 msgstr "Refused %(reason)s"
@@ -301,7 +309,8 @@ msgstr "View the exam"
 msgid ""
 "Il s'ouvre quand tous les modules sont terminés : sections lues et quiz "
 "envoyé."
-msgstr "It opens once every module is completed: sections read and quiz submitted."
+msgstr ""
+"It opens once every module is completed: sections read and quiz submitted."
 
 #: .\templates\accounts\dashboard.html:36
 msgid "Ce qu'il reste à faire"
@@ -315,7 +324,9 @@ msgstr "No course yet"
 msgid ""
 "Votre compte n'est rattaché à aucune promotion. Le centre vous inscrira "
 "avant le début des cours."
-msgstr "Your account is not linked to a cohort yet. The centre will enrol you before classes start."
+msgstr ""
+"Your account is not linked to a cohort yet. The centre will enrol you before "
+"classes start."
 
 #: .\templates\accounts\login.html:2 .\templates\accounts\login.html:15
 msgid "Connexion"
@@ -328,7 +339,8 @@ msgstr "Your training, one module at a time."
 #: .\templates\accounts\login.html:7
 msgid ""
 "Cours, quiz d'entraînement et examens du centre, lisibles sur téléphone."
-msgstr "The centre's courses, practice quizzes and exams, easy to read on a phone."
+msgstr ""
+"The centre's courses, practice quizzes and exams, easy to read on a phone."
 
 #: .\templates\accounts\login.html:9
 msgid "Reprenez là où vous vous êtes arrêté"
@@ -502,7 +514,9 @@ msgstr "You have used all your attempts. Talk to your trainer."
 msgid ""
 "Le chrono démarre dès que vous commencez. Chaque réponse est enregistrée "
 "immédiatement : si la connexion coupe, revenez sur cette page pour reprendre."
-msgstr "The timer starts as soon as you begin. Every answer is saved immediately: if the connection drops, come back to this page to resume."
+msgstr ""
+"The timer starts as soon as you begin. Every answer is saved immediately: if "
+"the connection drops, come back to this page to resume."
 
 #: .\templates\assessments\exam.html:25
 msgid "Commencer l'examen"
@@ -554,7 +568,8 @@ msgstr[1] "%(n)s attempts left."
 
 #: .\templates\assessments\result.html:14
 msgid "Ce quiz ne compte pas dans la note. Refaites-le autant que vous voulez."
-msgstr "This quiz does not count towards your grade. Retake it as often as you like."
+msgstr ""
+"This quiz does not count towards your grade. Retake it as often as you like."
 
 #: .\templates\assessments\result.html:16
 msgid "Temps écoulé : vos réponses ont été envoyées automatiquement."
