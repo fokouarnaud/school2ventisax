@@ -1,8 +1,13 @@
+import uuid
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from config.uploads import RandomFilename
+
 
 class Formation(models.Model):
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)  # identifiant des URL et formulaires
     title = models.CharField(_("titre"), max_length=200)
     slug = models.SlugField(unique=True)
     description = models.TextField(_("description"), blank=True)
@@ -16,6 +21,7 @@ class Formation(models.Model):
 
 
 class Partie(models.Model):
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)  # identifiant des URL et formulaires
     formation = models.ForeignKey(Formation, on_delete=models.CASCADE, related_name="parties")
     title = models.CharField(_("titre"), max_length=200)
     slug = models.SlugField()
@@ -30,6 +36,7 @@ class Partie(models.Model):
 
 
 class Module(models.Model):
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)  # identifiant des URL et formulaires
     partie = models.ForeignKey(Partie, on_delete=models.CASCADE, related_name="modules")
     title = models.CharField(_("titre"), max_length=200)
     order = models.PositiveIntegerField(default=0)
@@ -57,6 +64,7 @@ class Section(models.Model):
         CONTENT = "content", _("Contenu")
         PRACTICAL = "practical", _("Activités pratiques")
 
+    public_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)  # identifiant des URL et formulaires
     module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name="sections")
     title = models.CharField(_("titre"), max_length=200)
     order = models.PositiveIntegerField(default=0)
@@ -75,7 +83,7 @@ class Section(models.Model):
 class Annexe(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE, related_name="annexes")
     title = models.CharField(_("titre"), max_length=200)
-    file = models.FileField(upload_to="annexes/")
+    file = models.FileField(upload_to=RandomFilename("annexes"))
 
     def __str__(self):
         return self.title

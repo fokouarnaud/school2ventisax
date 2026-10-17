@@ -45,7 +45,7 @@ def test_pages_reference_versioned_css_and_js(client):
 
 
 def test_production_collectstatic_hashes_css_and_js_file_names(tmp_path):
-    env = {**os.environ, "DJANGO_DEBUG": "0", "DJANGO_SECRET_KEY": "x" * 60, "DJANGO_STATIC_ROOT": str(tmp_path)}
+    env = {**os.environ, "DJANGO_DEBUG": "0", "DJANGO_SECRET_KEY": "x7#Kq!p2@Zr9$wM4%" * 4, "DJANGO_STATIC_ROOT": str(tmp_path)}
     subprocess.run([sys.executable, "manage.py", "collectstatic", "--noinput", "-v0"], cwd=settings.BASE_DIR, env=env, check=True)
     paths = json.loads((tmp_path / "staticfiles.json").read_text())["paths"]
     for name in ("acad/css/app.css", "acad/js/attempt.js", "vendor/htmx.min.js"):

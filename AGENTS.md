@@ -51,7 +51,7 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 - **Disque < 150 Mo** (code + venv + base + médias) sur un quota de 512 Mo ; images en WebP ; **pages < 200 Ko** à la première visite.
 - i18n : `i18n_patterns`, préfixes /fr/ (par défaut) et /en/, gettext pour l'interface, modeltranslation pour le contenu, repli sur le fr.
 - Plan gratuit PythonAnywhere : une web app, internet sortant sur liste blanche, aucune tâche planifiée ni permanente (constaté le 2026-10-17 : réservées aux comptes payants).
-- Sécurité : DEBUG=False en production, HTTPS forcé, CSRF actif, HTML Markdown nettoyé par bleach, secrets dans `.env`.
+- Sécurité : DEBUG=False en production, HTTPS forcé, CSRF actif, HTML Markdown nettoyé par bleach, secrets dans `.env`, identifiants publics UUID dans les URL et les formulaires, en-tête CSP sans script en ligne (voir « Audit de sécurité et tests d'intrusion »).
 - Déploiement : `deploy.sh` (pull, install, migrate, compilemessages, collectstatic, reload).
 
 ### 3. Périmètre strictement hors scope (v1)
@@ -118,6 +118,7 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 | **SectionView** | viewed_at | FK User, FK Section ; unique (user, section) |
 
 `*` = champ traduit (fr/en) via modeltranslation, avec repli sur le fr.
+Formation, Partie, Module, Section, Question, Choice et Attempt portent en plus un `public_id` (UUID v4, unique, non modifiable) : c'est le seul identifiant qui sort de la base (URL, champs de formulaire, ancres HTML). Les clés entières restent internes (jointures, admin réservé au personnel).
 **Règles dérivées (calculées, non stockées)** : module terminé = toutes ses sections vues + ≥ 1 tentative de quiz envoyée ; examen ouvert = tous les modules de la partie terminés et tentatives < max ; score multiple = max(0, bonnes cochées − mauvaises cochées) / nombre de bonnes ; meilleure note = max(score_pct) des tentatives envoyées.
 
 ### Écarts d'implémentation validés (backend, 2026-10-17)
@@ -129,6 +130,8 @@ Décisions prises pendant l'implémentation TDD, qui priment sur le texte ci-des
 5. **Sauvegarde** : commande `python manage.py backup_db <dossier>` (API backup de SQLite ; seule la nouvelle copie est gardée, les anciennes ne sont supprimées qu'après son écriture), lancée automatiquement par `progress.middleware.DailyBackupMiddleware` : la première requête qui suit 24 h sans copie déclenche la sauvegarde dans `DJANGO_BACKUP_DIR` (désactivée si la variable est vide ; une erreur est journalisée sans casser la page). Le plan gratuit n'ayant pas de tâche planifiée, aucun jour sans visite ne produit de copie, ce qui est sans conséquence puisque la base n'a alors pas changé.
 6. **Dépendances de développement** : `pytest` et `pytest-django` (`requirements-dev.txt`), jamais installées en production.
 7. **Accès à l'admin dérivé du rôle** : un formateur devient `is_staff` avec le groupe « Formateurs » (questions et choix seulement) ; un admin reçoit le groupe « Administrateurs » (tout le contenu).
+8. **Identifiants publics UUID** (2026-10-17) : les URL passent de `/modules/12/` à `/modules/<uuid>/` (convertisseur `<uuid:…>`), le formulaire de réponse envoie l'UUID de la question et des choix, et `assessments.services.save_answer` les attend. Migrations en trois temps (champ nullable, une valeur par ligne, puis unicité) : `courses/0002_public_ids`, `assessments/0004_public_ids`.
+9. **Entité LoginFailure** (accounts) : un échec de connexion par ligne, purgé après `LOGIN_LOCKOUT` ; sert au verrouillage anti force brute.
 
 ### Exigences non fonctionnelles
 - Performance : TTFB < 500 ms sur PythonAnywhere pour les pages de cours ; ≤ 10 requêtes SQL par page.
@@ -187,12 +190,33 @@ Source : `static/acad/css/app.css` (CSS natif, aucun framework). Toute modificat
 - Toujours référencer CSS, JS et images par `{% static %}`, jamais par une URL écrite en dur. `STATIC_ROOT` est réglable par `DJANGO_STATIC_ROOT`.
 - Testé par `config/tests/test_static_versioning.py` (y compris un `collectstatic` de production réel).
 
+## Audit de sécurité et tests d'intrusion (2026-10-17)
+Audit du code de la v1 (vues, gabarits, réglages, import, export, téléversements). Chaque faille est rejouée par un test d'intrusion dans `config/tests/test_intrusion.py` (62 cas), écrit avant le correctif puis vu au vert.
+
+| # | Faille constatée | Famille | Correctif | Test(s) |
+|---|---|---|---|---|
+| S1 | Identifiants séquentiels dans les URL et formulaires (`/tentatives/8/`, `value="17"`) : volume de données, nombre d'apprenants et de tentatives déductibles | Énumération / déduction | `public_id` UUID v4 sur 7 modèles, convertisseur `<uuid:…>`, ancres HTML en UUID | `test_every_exposed_model_has_a_random_public_uuid`, `test_sequential_integer_urls_no_longer_exist`, `test_pages_never_reveal_database_ids` |
+| S2 | Fichiers téléversés gardant leur nom d'origine (`annexes/Fiche client Dupont.pdf`), servis sans authentification | Déduction | `config.uploads.RandomFilename` : `<dossier>/<uuid>.<ext>` | `test_uploaded_files_get_unguessable_names` |
+| S3 | Réponse d'examen : `int(request.POST["question"])` et `pk__in` sur des valeurs brutes, erreur 500 sur une charge du type `1 OR 1=1` | Injection SQL (tentative) / robustesse | Validation stricte en UUID avant toute requête : 400 si invalide, 404 si la question n'est pas dans la tentative | `test_sql_injection_in_answer_fields_is_a_clean_400`, `test_answer_without_question_or_with_a_foreign_question_is_refused` |
+| S4 | Image de question en SVG acceptée sans contrôle : un `<script>` s'exécuterait dans l'origine du site à l'ouverture du fichier | XSS stocké | `config.uploads.validate_inert_svg` refuse script, `on…=`, `javascript:`/`data:`, `foreignObject`, DOCTYPE/ENTITY | `test_question_image_rejects_active_svg`, `test_question_image_accepts_a_plain_svg` |
+| S5 | Aucune politique CSP ; script en ligne dans le sommaire | XSS (défense en profondeur) | `config.middleware.ContentSecurityPolicyMiddleware` (`script-src 'self'`, `object-src 'none'`, `frame-ancestors 'none'`…) ; script du sommaire déplacé dans `static/acad/js/outline.js` | `test_content_security_policy_blocks_inline_and_foreign_scripts`, `test_no_inline_script_in_rendered_pages` |
+| S6 | Export CSV : un nom commençant par `=`, `+`, `-`, `@` devient une formule dans Excel | Injection CSV | Préfixe `'` sur ces cellules (`progress.views._csv_cell`) | `test_csv_export_neutralises_formula_injection` |
+| S7 | `GET /quiz/<id>/` créait une tentative : action déclenchable par un lien ou une image tiers | CSRF | `require_POST` + bouton dans un formulaire avec jeton | `test_starting_a_quiz_requires_post`, `test_state_changing_requests_without_csrf_token_are_refused` |
+| S8 | Connexion (site et admin) sans limite d'essais | Session / force brute | `accounts.throttling` : 5 échecs en 15 min verrouillent l'identifiant ; message identique que le compte existe ou non ; pas de comptage par IP (proxy PythonAnywhere commun) | `test_brute_force_locks_the_account_after_five_failures`, `test_lockout_does_not_reveal_whether_the_username_exists`, `test_lockout_expires_and_success_resets_the_counter`, `test_lockout_of_one_user_does_not_block_another` |
+| S9 | Session de 2 semaines sur des téléphones partagés ; cookie CSRF lisible en JavaScript | Session | `SESSION_COOKIE_AGE` = 8 h, `HttpOnly` sur les deux cookies, `SameSite=Lax` ; en production préfixe `__Host-`, HSTS 1 an avec sous-domaines | `test_session_and_csrf_cookies_are_hardened`, `test_production_cookies_use_host_prefixes` |
+| S10 | Production démarrable avec la clé secrète de développement (cookies de session forgeables) | Session | Refus de démarrer si `DEBUG=0` et clé absente, connue ou faible (< 50 caractères ou < 5 caractères distincts) | `test_production_refuses_to_start_without_a_strong_secret_key` |
+
+**Vérifié sans faille (tests de non-régression)** : injection SQL dans les URL (rejetée par le routeur) et dans la connexion (ORM paramétré, aucun `raw()`, `extra()` ni `cursor` dans le code) ; Markdown nettoyé par bleach (script, `onerror`, `javascript:`, iframe, `style`) ; titres, énoncés et choix échappés par les gabarits ; cloisonnement par promotion et propriétaire de la tentative, même avec un UUID connu ; rotation de la clé de session à la connexion ; déconnexion en POST qui détruit la session ; changement de mot de passe qui invalide les autres sessions ; `check --deploy` sans avertissement (le seul avertissement désactivé, `security.W021` préchargement HSTS, est impossible pour un sous-domaine de pythonanywhere.com).
+
+**Limites connues** : les médias sont servis par PythonAnywhere sans contrôle d'accès (l'UUID du nom rend l'adresse impossible à deviner, mais un lien partagé reste valable) ; l'admin garde des clés entières dans ses URL (réservé au personnel authentifié).
+
 ## Definition of Done (critères stricts)
 Une user story ou une fonctionnalité n'est **terminée** que si **tous** les points sont vrais :
-1. **Tests** : `python manage.py test` passe à 100 %. Toute règle métier touchée a ses tests : notation partielle et plancher 0, seuil de 70 %, 3 tentatives et meilleure note, deadline et envoi automatique, reprise de tentative, déblocage de l'examen, cloisonnement formateur ↔ promotion, refus de publication sans double relecture, repli de langue.
+1. **Tests** : la suite (`pytest`, 234 tests au 2026-10-17) passe à 100 %. Toute règle métier touchée a ses tests : notation partielle et plancher 0, seuil de 70 %, 3 tentatives et meilleure note, deadline et envoi automatique, reprise de tentative, déblocage de l'examen, cloisonnement formateur ↔ promotion, refus de publication sans double relecture, repli de langue.
 2. **E2E** : le scénario Playwright de la story passe en local sur un viewport mobile (360×800) : connexion → lecture → quiz → examen avec rechargement en cours → résultat → bascule /fr/ ↔ /en/.
 3. **Bilingue** : toute chaîne d'interface est dans les fichiers `.po`, fr et en, avec `compilemessages` sans erreur ; aucune chaîne en dur.
-4. **Sécurité** : `python manage.py check --deploy` sans avertissement bloquant avec les réglages de production ; aucun secret dans le diff (vérifié par une recherche) ; contrôle d'accès testé (un apprenant ne voit pas une autre promotion ; un formateur ne voit que ses promotions).
+4. **Sécurité** : `python manage.py check --deploy --fail-level WARNING` passe avec les réglages de production ; aucun secret dans le diff (vérifié par une recherche) ; contrôle d'accès testé (un apprenant ne voit pas une autre promotion ; un formateur ne voit que ses promotions) ; les tests d'intrusion `config/tests/test_intrusion.py` passent (injection SQL, XSS, CSRF, session, force brute, énumération). Toute nouvelle vue ou tout nouveau formulaire : objets désignés par leur `public_id` UUID, jamais par la clé entière ; entrées validées avant la base (400 si invalides) ; action qui modifie l'état en POST avec jeton CSRF ; aucun `|safe` hors HTML nettoyé par bleach ; aucun script en ligne ni gestionnaire `on…=` (CSP) ; tout téléversement avec un nom aléatoire et, s'il s'agit de SVG, `validate_inert_svg` ; toute cellule d'export CSV passée par `_csv_cell`. Un test d'intrusion accompagne chaque nouvelle surface d'attaque.
+   - **Conformité constatée le 2026-10-17** (audit S1 à S10 ci-dessus) : 234 tests au vert dont 62 tests d'intrusion ; `check --deploy` sans avertissement ; migrations UUID appliquées sur la base de développement réelle (une valeur distincte par ligne, aucune valeur nulle) et sur base vide ; `import_content` exécuté deux fois sans doublon ; scénario Playwright 360×800 (connexion, module, quiz lancé en POST, sauvegarde HTMX, rechargement, résultat, bascule /en/) sans aucune violation CSP.
 5. **Budget** : le poids du projet + venv reste < 150 Mo (`du -sh`) ; la page touchée transfère < 200 Ko (mesure Playwright).
 6. **Données** : les migrations sont créées et appliquées sur une base vide ; `import_content` est idempotent (deux exécutions, aucun doublon).
 7. **Interface** : relue avec la grille design-taste-frontend ; aucun texte ni asset NetAcad ; capture mobile jointe à la PR.

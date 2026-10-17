@@ -4,7 +4,7 @@
 <div class="reader">
   {% include "courses/_outline.html" with partie=section.module.partie %}
   <article>
-    <a class="crumb" href="{% url 'module_detail' section.module.pk %}">{% include "icons/chevron-left.svg" %}{{ section.module.title }}</a>
+    <a class="crumb" href="{% url 'module_detail' section.module.public_id %}">{% include "icons/chevron-left.svg" %}{{ section.module.title }}</a>
     <h1{{ section|lang_attr:"title" }}>{{ section.title }}</h1>
     <div class="facts">
       {% if section.kind == "practical" %}<span class="badge badge-warn">{% translate "Activité pratique" %}</span>{% endif %}
@@ -20,11 +20,11 @@
       </section>
     {% endif %}
     <nav class="pager" aria-label="{% translate 'Sections' %}">
-      {% if previous %}<a class="btn btn-ghost" href="{% url 'section_detail' previous.pk %}">{% include "icons/chevron-left.svg" %}{% translate "Précédent" %}</a>{% else %}<span></span>{% endif %}
+      {% if previous %}<a class="btn btn-ghost" href="{% url 'section_detail' previous.public_id %}">{% include "icons/chevron-left.svg" %}{% translate "Précédent" %}</a>{% else %}<span></span>{% endif %}
       {% if next %}
-        <a class="btn" href="{% url 'section_detail' next.pk %}">{% translate "Suivant" %}{% include "icons/chevron-right.svg" %}</a>
+        <a class="btn" href="{% url 'section_detail' next.public_id %}">{% translate "Suivant" %}{% include "icons/chevron-right.svg" %}</a>
       {% else %}
-        <a class="btn" href="{% url 'module_detail' section.module.pk %}">{% translate "Fin du module" %}{% include "icons/chevron-right.svg" %}</a>
+        <a class="btn" href="{% url 'module_detail' section.module.public_id %}">{% translate "Fin du module" %}{% include "icons/chevron-right.svg" %}</a>
       {% endif %}
     </nav>
   </article>

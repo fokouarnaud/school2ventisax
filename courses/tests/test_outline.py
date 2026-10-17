@@ -18,7 +18,7 @@ def test_section_page_outline_marks_current_module_section_and_viewed_state(clie
     s1, s2, s3 = course["sections"]
     mark_section_viewed(enrolled, s1)
     client.force_login(enrolled)
-    outline = client.get(f"/fr/sections/{s2.pk}/").context["outline"]
+    outline = client.get(f"/fr/sections/{s2.public_id}/").context["outline"]
     assert [(row["module"], row["current"]) for row in outline] == [(course["modules"][0], True), (course["modules"][1], False)]
     assert [(i["section"], i["viewed"], i["current"]) for i in outline[0]["sections"]] == [
         (s1, True, False),
@@ -31,16 +31,16 @@ def test_module_page_outline_flags_completed_modules(client, enrolled, course):
     s1, s2, s3 = course["sections"]
     mark_section_viewed(enrolled, s3)
     client.force_login(enrolled)
-    outline = client.get(f"/fr/modules/{course['modules'][0].pk}/").context["outline"]
+    outline = client.get(f"/fr/modules/{course['modules'][0].public_id}/").context["outline"]
     assert [row["done"] for row in outline] == [False, True]
 
 
 @pytest.mark.django_db
 def test_module_page_says_whether_a_quiz_is_available(client, enrolled, course, question_factory):
     client.force_login(enrolled)
-    assert client.get(f"/fr/modules/{course['modules'][0].pk}/").context["has_quiz"] is False
+    assert client.get(f"/fr/modules/{course['modules'][0].public_id}/").context["has_quiz"] is False
     question_factory(course["modules"][0])
-    assert client.get(f"/fr/modules/{course['modules'][0].pk}/").context["has_quiz"] is True
+    assert client.get(f"/fr/modules/{course['modules'][0].public_id}/").context["has_quiz"] is True
 
 
 @pytest.mark.django_db

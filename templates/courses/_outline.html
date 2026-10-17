@@ -1,4 +1,4 @@
-{% load i18n acad_i18n %}
+{% load i18n acad_i18n static %}
 <details class="outline" id="sommaire">
   <summary>{% include "icons/list-details.svg" %}{% translate "Sommaire" %}</summary>
   <nav class="outline-body" aria-label="{% translate 'Sommaire de la partie' %}">
@@ -6,7 +6,7 @@
     <ol>
       {% for row in outline %}
         <li class="outline-module">
-          <a href="{% url 'module_detail' row.module.pk %}"{% if row.current %} aria-current="true"{% endif %}>
+          <a href="{% url 'module_detail' row.module.public_id %}"{% if row.current %} aria-current="true"{% endif %}>
             {% if row.done %}{% include "icons/circle-check.svg" %}<span class="visually-hidden">{% translate "terminé" %}</span>{% else %}<span class="dot-todo" aria-hidden="true"></span>{% endif %}
             <span{{ row.module|lang_attr:"title" }}>{{ forloop.counter }}. {{ row.module.title }}</span>
           </a>
@@ -14,7 +14,7 @@
             <ol class="outline-sections">
               {% for item in row.sections %}
                 <li>
-                  <a href="{% url 'section_detail' item.section.pk %}"{% if item.current %} aria-current="page"{% endif %}>
+                  <a href="{% url 'section_detail' item.section.public_id %}"{% if item.current %} aria-current="page"{% endif %}>
                     {% if item.viewed %}{% include "icons/check.svg" %}<span class="visually-hidden">{% translate "lu" %}</span>{% else %}<span class="dot-todo" aria-hidden="true"></span>{% endif %}
                     <span{{ item.section|lang_attr:"title" }}>{{ item.section.title }}</span>
                   </a>
@@ -27,4 +27,5 @@
     </ol>
   </nav>
 </details>
-<script>if (window.matchMedia("(min-width: 960px)").matches) document.getElementById("sommaire").open = true;</script>
+{# Script synchrone et externe (CSP sans script en ligne) : le sommaire s'ouvre avant le premier affichage. #}
+<script src="{% static 'acad/js/outline.js' %}"></script>

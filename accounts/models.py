@@ -67,3 +67,10 @@ class Promotion(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class LoginFailure(models.Model):
+    """Échec de connexion, compté par identifiant pour bloquer la force brute (voir accounts/throttling.py)."""
+
+    username = models.CharField(max_length=150, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)

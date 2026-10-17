@@ -47,7 +47,7 @@ def unlocked(learner, two_modules):
 
 def answer_all_correctly(attempt, now):
     for aq in attempt.attempt_questions.all():
-        save_answer(attempt, aq.question_id, aq.question.choices.filter(is_correct=True).values_list("pk", flat=True), now)
+        save_answer(attempt, aq.question.public_id, aq.question.choices.filter(is_correct=True).values_list("public_id", flat=True), now)
 
 
 @pytest.mark.django_db
@@ -98,7 +98,7 @@ def test_resumed_attempt_keeps_answers_and_choice_order(unlocked, exam):
     first = start_attempt(unlocked, exam, now=T0)
     aq = first.attempt_questions.first()
     order_before = aq.ordered_choices()
-    save_answer(first, aq.question_id, [order_before[0].pk], T0 + timedelta(minutes=1))
+    save_answer(first, aq.question.public_id, [order_before[0].public_id], T0 + timedelta(minutes=1))
     resumed = start_attempt(unlocked, exam, now=T0 + timedelta(minutes=30))
     aq_again = resumed.attempt_questions.get(pk=aq.pk)
     assert aq_again.ordered_choices() == order_before
@@ -118,7 +118,7 @@ def test_answer_after_deadline_is_refused(unlocked, exam):
     attempt = start_attempt(unlocked, exam, now=T0)
     aq = attempt.attempt_questions.first()
     with pytest.raises(AttemptClosed):
-        save_answer(attempt, aq.question_id, [], T0 + timedelta(minutes=61))
+        save_answer(attempt, aq.question.public_id, [], T0 + timedelta(minutes=61))
 
 
 @pytest.mark.django_db
@@ -127,7 +127,7 @@ def test_answer_after_submission_is_refused(unlocked, exam):
     submit_attempt(attempt, now=T0 + timedelta(minutes=10))
     aq = attempt.attempt_questions.first()
     with pytest.raises(AttemptClosed):
-        save_answer(attempt, aq.question_id, [], T0 + timedelta(minutes=11))
+        save_answer(attempt, aq.question.public_id, [], T0 + timedelta(minutes=11))
 
 
 @pytest.mark.django_db
@@ -163,7 +163,7 @@ def test_exam_is_passed_at_seventy_percent(unlocked, exam):
     attempt = start_attempt(unlocked, exam, now=T0)
     aqs = list(attempt.attempt_questions.all())
     for aq in aqs[:3]:  # 3 bonnes réponses sur 4 = 75 %
-        save_answer(attempt, aq.question_id, aq.question.choices.filter(is_correct=True).values_list("pk", flat=True), T0)
+        save_answer(attempt, aq.question.public_id, aq.question.choices.filter(is_correct=True).values_list("public_id", flat=True), T0)
     submit_attempt(attempt, now=T0 + timedelta(minutes=10))
     attempt.refresh_from_db()
     assert attempt.score_pct == 75
@@ -174,7 +174,7 @@ def test_exam_is_passed_at_seventy_percent(unlocked, exam):
 def test_exam_below_threshold_is_failed(unlocked, exam):
     attempt = start_attempt(unlocked, exam, now=T0)
     aq = attempt.attempt_questions.first()
-    save_answer(attempt, aq.question_id, aq.question.choices.filter(is_correct=True).values_list("pk", flat=True), T0)
+    save_answer(attempt, aq.question.public_id, aq.question.choices.filter(is_correct=True).values_list("public_id", flat=True), T0)
     submit_attempt(attempt, now=T0 + timedelta(minutes=10))  # 1 sur 4 = 25 %
     attempt.refresh_from_db()
     assert not attempt.passed
@@ -193,7 +193,7 @@ def test_best_score_is_kept_across_attempts(unlocked, exam):
 def test_exam_result_breaks_score_down_by_module(unlocked, exam, two_modules):
     attempt = start_attempt(unlocked, exam, now=T0)
     for aq in attempt.attempt_questions.filter(question__module=two_modules[0]):
-        save_answer(attempt, aq.question_id, aq.question.choices.filter(is_correct=True).values_list("pk", flat=True), T0)
+        save_answer(attempt, aq.question.public_id, aq.question.choices.filter(is_correct=True).values_list("public_id", flat=True), T0)
     submit_attempt(attempt, now=T0 + timedelta(minutes=10))
     assert attempt.module_scores() == {two_modules[0]: 100, two_modules[1]: 0}
 

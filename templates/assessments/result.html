@@ -2,7 +2,7 @@
 {% block title %}{% translate "Résultat" %}{% endblock %}
 {% block content %}
 {% with a=attempt.assessment %}
-<a class="crumb" href="{% if a.is_exam %}{% url 'exam' a.partie.pk %}{% else %}{% url 'module_detail' a.module.pk %}{% endif %}">{% include "icons/chevron-left.svg" %}{% if a.is_exam %}{{ a.partie.title }}{% else %}{{ a.module.title }}{% endif %}</a>
+<a class="crumb" href="{% if a.is_exam %}{% url 'exam' a.partie.public_id %}{% else %}{% url 'module_detail' a.module.public_id %}{% endif %}">{% include "icons/chevron-left.svg" %}{% if a.is_exam %}{{ a.partie.title }}{% else %}{{ a.module.title }}{% endif %}</a>
 <section class="panel score" aria-labelledby="titre-resultat">
   <p class="score-value">{{ attempt.score_pct|floatformat:0 }}<small> %</small></p>
   <div>
@@ -18,8 +18,8 @@
       {% if a.is_exam %}
         <a class="btn" href="{% url 'dashboard' %}">{% translate "Retour à mes cours" %}</a>
       {% else %}
-        <a class="btn" href="{% url 'module_detail' a.module.pk %}">{% translate "Retour au module" %}</a>
-        <a class="btn btn-ghost" href="{% url 'start_quiz' a.module.pk %}">{% translate "Refaire le quiz" %}</a>
+        <a class="btn" href="{% url 'module_detail' a.module.public_id %}">{% translate "Retour au module" %}</a>
+        <form class="inline-form" method="post" action="{% url 'start_quiz' a.module.public_id %}">{% csrf_token %}<button class="btn btn-ghost" type="submit">{% translate "Refaire le quiz" %}</button></form>
       {% endif %}
     </div>
   </div>

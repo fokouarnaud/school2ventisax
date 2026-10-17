@@ -13,11 +13,11 @@
     {% if not unlocked %}
       <div class="notice" role="status">{% include "icons/lock.svg" %}<div>{% translate "L'examen s'ouvre quand ces modules sont terminés :" %}</div></div>
       <ol class="section-list" style="margin-top:1rem">
-        {% for m in missing_modules %}<li><a href="{% url 'module_detail' m.pk %}"><span class="dot-todo" aria-hidden="true"></span>{{ m.title }}</a></li>{% endfor %}
+        {% for m in missing_modules %}<li><a href="{% url 'module_detail' m.public_id %}"><span class="dot-todo" aria-hidden="true"></span>{{ m.title }}</a></li>{% endfor %}
       </ol>
     {% elif open_attempt %}
       <div class="notice" role="status">{% include "icons/clock.svg" %}<div>{% translate "Un examen est en cours. Le chrono continue de tourner." %}</div></div>
-      <p style="margin-top:1rem"><a class="btn" href="{% url 'attempt_detail' open_attempt.pk %}">{% include "icons/player-play.svg" %}{% translate "Reprendre l'examen" %}</a></p>
+      <p style="margin-top:1rem"><a class="btn" href="{% url 'attempt_detail' open_attempt.public_id %}">{% include "icons/player-play.svg" %}{% translate "Reprendre l'examen" %}</a></p>
     {% elif attempts_left == 0 %}
       <div class="notice" role="status">{% include "icons/alert-triangle.svg" %}<div>{% translate "Vous avez utilisé toutes vos tentatives. Parlez-en à votre formateur." %}</div></div>
     {% else %}

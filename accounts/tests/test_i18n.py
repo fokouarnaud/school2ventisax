@@ -45,7 +45,7 @@ def test_trainer_table_is_translated(client, promotion):
 @pytest.mark.django_db
 def test_pluralised_attempts_left_is_translated(client, enrolled, partie, module):
     client.force_login(enrolled)
-    html = client.get(f"/en/examen/{partie.pk}/").content.decode()
+    html = client.get(f"/en/examen/{partie.public_id}/").content.decode()
     assert "3 attempts left" in html
 
 

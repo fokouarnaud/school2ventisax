@@ -6,9 +6,9 @@
   <div class="cta-row"><a class="btn btn-ghost" href="{% url 'trainer_export' %}">{% include "icons/download.svg" %}{% translate "Exporter en CSV" %}</a></div>
 </div>
 {% for table in tables %}
-  <section aria-labelledby="f-{{ table.formation.pk }}" style="margin-bottom:2rem">
-    <h2 id="f-{{ table.formation.pk }}">{{ table.formation.title }}</h2>
-    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="f-{{ table.formation.pk }}">
+  <section aria-labelledby="f-{{ table.formation.public_id }}" style="margin-bottom:2rem">
+    <h2 id="f-{{ table.formation.public_id }}">{{ table.formation.title }}</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="f-{{ table.formation.public_id }}">
       <table class="grid-table">
         <thead>
           <tr>
