@@ -19,6 +19,13 @@ class User(AbstractUser):
         verbose_name=_("promotion"),
     )
 
+    def save(self, *args, **kwargs):
+        self.is_staff = self.is_superuser or self.role in (self.Role.TRAINER, self.Role.ADMIN)
+        super().save(*args, **kwargs)
+        from .roles import sync_role_groups
+
+        sync_role_groups(self)
+
     @property
     def is_learner(self):
         return self.role == self.Role.LEARNER
