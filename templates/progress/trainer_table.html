@@ -1,0 +1,32 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Suivi des apprenants" %}{% endblock %}
+{% block content %}
+<h1>{% translate "Suivi des apprenants" %}</h1>
+<p><a href="{% url 'trainer_export' %}">{% translate "Exporter en CSV" %}</a></p>
+{% for table in tables %}
+  <h2>{{ table.formation.title }}</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>{% translate "Promotion" %}</th><th>{% translate "Apprenant" %}</th>
+        {% for module in table.modules %}<th>{{ module.title }}</th>{% endfor %}
+        {% for partie in table.parties %}<th>{% blocktranslate with p=partie.title %}Examen {{ p }}{% endblocktranslate %}</th>{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in table.rows %}
+        <tr>
+          <td>{{ row.learner.promotion.name }}</td>
+          <td>{{ row.learner.get_full_name|default:row.learner.username }}</td>
+          {% for done in row.modules %}<td>{% if done %}✓{% else %}–{% endif %}</td>{% endfor %}
+          {% for result in row.exams %}<td>{% if result.best is not None %}{{ result.best }} %{% else %}–{% endif %} ({{ result.attempts }})</td>{% endfor %}
+        </tr>
+      {% empty %}
+        <tr><td colspan="99">{% translate "Aucun apprenant." %}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% empty %}
+  <p>{% translate "Aucune promotion ne vous est rattachée." %}</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,82 @@
+import csv
+import io
+
+import pytest
+
+from accounts.models import Promotion, User
+from assessments.models import Assessment
+from assessments.services import save_answer, start_attempt, submit_attempt
+from courses.models import Section
+from progress.services import mark_section_viewed
+
+
+@pytest.fixture
+def trainer(promotion):
+    user = User.objects.create_user(username="macaire", password="x-Secret-123", role=User.Role.TRAINER)
+    promotion.trainers.add(user)
+    return user
+
+
+@pytest.fixture
+def outsider(partie):
+    other = Promotion.objects.create(name="Jan 2027", formation=partie.formation)
+    return User.objects.create_user(username="zoe", password="x-Secret-123", promotion=other)
+
+
+@pytest.fixture
+def scored(enrolled, partie, module, question_factory):
+    """L'apprenant a terminé le module et obtenu 100 % à l'examen."""
+    section = Section.objects.create(module=module, title_fr="Cours", order=1)
+    mark_section_viewed(enrolled, section)
+    question_factory(module, usage="exam")
+    attempt = start_attempt(enrolled, Assessment.exam_for(partie))
+    for aq in attempt.attempt_questions.all():
+        save_answer(attempt, aq.question_id, aq.question.choices.filter(is_correct=True).values_list("pk", flat=True))
+    submit_attempt(attempt)
+    return enrolled
+
+
+@pytest.mark.django_db
+def test_trainer_table_lists_only_learners_of_their_promotions(client, trainer, scored, outsider):
+    client.force_login(trainer)
+    response = client.get("/fr/formateur/")
+    assert response.status_code == 200
+    assert [row["learner"] for row in response.context["rows"]] == [scored]
+
+
+@pytest.mark.django_db
+def test_trainer_table_shows_module_completion_and_best_exam_score_per_part(client, trainer, scored, partie):
+    client.force_login(trainer)
+    [row] = client.get("/fr/formateur/").context["rows"]
+    assert row["modules"] == [True]
+    assert row["exams"] == [{"partie": partie, "best": 100, "attempts": 1}]
+
+
+@pytest.mark.django_db
+def test_learner_cannot_open_the_trainer_table(client, enrolled):
+    client.force_login(enrolled)
+    assert client.get("/fr/formateur/").status_code == 403
+
+
+@pytest.mark.django_db
+def test_admin_sees_learners_of_every_promotion(client, scored, outsider):
+    admin = User.objects.create_user(username="chef", password="x-Secret-123", role=User.Role.ADMIN)
+    client.force_login(admin)
+    learners = {row["learner"] for row in client.get("/fr/formateur/").context["rows"]}
+    assert learners == {scored, outsider}
+
+
+@pytest.mark.django_db
+def test_csv_export_has_one_line_per_visible_learner(client, trainer, scored, outsider, module):
+    client.force_login(trainer)
+    response = client.get("/fr/formateur/export.csv")
+    assert response["Content-Type"].startswith("text/csv")
+    rows = list(csv.reader(io.StringIO(response.content.decode("utf-8-sig")), delimiter=";"))
+    assert rows[0] == ["Promotion", "Identifiant", "Nom", "Sécurité dans les travaux", "Examen Habilitation et sécurité (%)", "Tentatives Habilitation et sécurité"]
+    assert rows[1:] == [["Oct 2026", "awa", "", "oui", "100.00", "1"]]
+
+
+@pytest.mark.django_db
+def test_learner_cannot_export_csv(client, enrolled):
+    client.force_login(enrolled)
+    assert client.get("/fr/formateur/export.csv").status_code == 403
