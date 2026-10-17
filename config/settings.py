@@ -36,7 +36,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "progress.middleware.DailyBackupMiddleware",
 ]
+
+# Sauvegarde quotidienne de la base (vide = désactivée, comme en développement).
+BACKUP_DIR = os.environ.get("DJANGO_BACKUP_DIR", "")
 
 ROOT_URLCONF = "config.urls"
 
