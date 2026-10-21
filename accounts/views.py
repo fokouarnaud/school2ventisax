@@ -13,10 +13,14 @@ def dashboard(request):
     promotion = request.user.promotion
     if promotion:
         for partie in Partie.objects.filter(formation=promotion.formation):
+            modules = [{"module": m, "done": module_completed(request.user, m)} for m in partie.modules.all()]
             parts.append({
                 "partie": partie,
                 "progress": progress_pct(request.user, partie),
-                "modules": [{"module": m, "done": module_completed(request.user, m)} for m in partie.modules.all()],
+                "modules": modules,
+                "hours": sum(item["module"].duration_hours for item in modules),
+                # Où reprendre : le premier module non terminé de la partie.
+                "next_module": next((item["module"] for item in modules if not item["done"]), None),
                 "exam_unlocked": exam_unlocked(request.user, partie),
             })
     return render(request, "accounts/dashboard.html", {"promotion": promotion, "parts": parts})

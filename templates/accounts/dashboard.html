@@ -9,6 +9,7 @@
   <div class="course">
     <section class="panel" aria-labelledby="partie-{{ row.partie.public_id }}">
       <h2 id="partie-{{ row.partie.public_id }}"{{ row.partie|lang_attr:"title" }}>{{ row.partie.title }}</h2>
+      <p class="muted part-meta">{% blocktranslate count n=row.modules|length %}{{ n }} module{% plural %}{{ n }} modules{% endblocktranslate %} · {% blocktranslate with h=row.hours %}{{ h }} h{% endblocktranslate %}</p>
       <div class="course-meter">
         <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ row.progress }}" aria-label="{% translate 'Progression' %}"><span style="width: {{ row.progress }}%"></span></div>
         <strong>{{ row.progress }} %</strong>
@@ -24,10 +25,13 @@
           </li>
         {% endfor %}
       </ol>
+      {% if row.next_module %}
+        <div class="cta-row spaced"><a class="btn" href="{% url 'module_detail' row.next_module.public_id %}">{% include "icons/player-play.svg" %}{% translate "Continuer" %}<span class="visually-hidden"> : {{ row.next_module.title }}</span></a></div>
+      {% endif %}
     </section>
     <aside class="panel exam-card" aria-labelledby="examen-{{ row.partie.public_id }}">
       <span class="exam-icon">{% if row.exam_unlocked %}{% include "icons/player-play.svg" %}{% else %}{% include "icons/lock.svg" %}{% endif %}</span>
-      <h2 id="examen-{{ row.partie.public_id }}">{% translate "Examen de la partie" %}</h2>
+      <h2 id="examen-{{ row.partie.public_id }}">{% blocktranslate with p=row.partie.title %}Examen : {{ p }}{% endblocktranslate %}</h2>
       {% if row.exam_unlocked %}
         <p class="muted">{% translate "Tous les modules sont terminés. L'examen est ouvert." %}</p>
         <a class="btn" href="{% url 'exam' row.partie.public_id %}">{% translate "Voir l'examen" %}</a>

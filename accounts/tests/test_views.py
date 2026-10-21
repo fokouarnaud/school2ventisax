@@ -70,3 +70,30 @@ def test_part_two_has_its_own_progress_and_exam_unlocking(client, enrolled, part
     assert [p["partie"].slug for p in parts] == ["p1", "p2"]
     assert parts[0]["exam_unlocked"] is False  # la Partie 1 n'est pas terminée
     assert (parts[1]["progress"], parts[1]["exam_unlocked"]) == (100, True)  # indépendante de la Partie 1
+
+
+@pytest.mark.django_db
+def test_dashboard_points_each_part_to_its_first_unfinished_module(client, enrolled, partie, module):
+    from courses.models import Module
+
+    mark_section_viewed(enrolled, Section.objects.create(module=module, title_fr="Cours", order=1))
+    second = Module.objects.create(partie=partie, title_fr="Travail en hauteur", order=2, duration_hours=4)
+    Section.objects.create(module=second, title_fr="Cours", order=1)
+    client.force_login(enrolled)
+    response = client.get("/fr/")
+    [row] = response.context["parts"]
+    assert row["next_module"] == second
+    assert row["hours"] == 12
+    html = response.content.decode()
+    assert f'class="btn" href="/fr/modules/{second.public_id}/"' in html
+    assert "Continuer" in html and "2 modules" in html and "12 h" in html
+    assert "Examen : Habilitation et sécurité" in html  # deux parties, deux examens : chacun nommé
+
+
+@pytest.mark.django_db
+def test_dashboard_offers_no_continue_button_once_every_module_is_done(client, enrolled, module):
+    mark_section_viewed(enrolled, Section.objects.create(module=module, title_fr="Cours", order=1))
+    client.force_login(enrolled)
+    response = client.get("/fr/")
+    assert response.context["parts"][0]["next_module"] is None
+    assert "Continuer" not in response.content.decode()

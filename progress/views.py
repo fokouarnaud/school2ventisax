@@ -54,7 +54,13 @@ def _tables(user):
                 "modules": [module_completed(learner, m) for m in modules],
                 "exams": exam_results,
             })
-        tables.append({"formation": formation, "modules": modules, "parties": parties, "rows": rows})
+        # Repère « partie.module » (2.3 = module 3 de la partie 2), comme dans le cours.
+        rank = {p.pk: i for i, p in enumerate(sorted(parties, key=lambda p: (p.order, p.pk)), start=1)}
+        columns = []
+        for module in modules:
+            within = sum(1 for m in modules if m.partie_id == module.partie_id and (m.order, m.pk) <= (module.order, module.pk))
+            columns.append({"label": f"{rank[module.partie_id]}.{within}", "module": module})
+        tables.append({"formation": formation, "modules": modules, "columns": columns, "parties": parties, "rows": rows})
     return sorted(tables, key=lambda t: t["formation"].order)
 
 
