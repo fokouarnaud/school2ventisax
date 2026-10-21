@@ -2,7 +2,7 @@
 
 Plateforme Django + SQLite hébergée sur https://acadventisax.pythonanywhere.com/fr/ (compte PythonAnywhere `acadventisax`, plan gratuit).
 Le site vitrine https://ventisax.pythonanywhere.com/fr/ y renvoie par un simple lien.
-Le contenu source est dans `reference/` : photos du support de cours « Froid et climatisation » du centre LA VOCATION (Partie 1, 6 modules) et planning.
+Le contenu source est dans `reference/` : photos du support de cours « Froid et climatisation » du centre LA VOCATION (Partie 1, 6 modules ; Partie 2 « Les bases de l'électricité domestique », 8 modules) et planning.
 
 ## Sécurité (règle absolue)
 - Aucun identifiant, mot de passe, token ou SECRET_KEY dans le dépôt, AGENTS.md ou CLAUDE.md compris. Secrets dans `.env` (ignoré par git) ; `.env.example` sans valeurs.
@@ -28,8 +28,22 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 | Q12 | Direction de l'interface ? | Patterns NetAcad + charte Ventisax ; mobile d'abord ; < 200 Ko par page ; CSS écrit à la main |
 | Q13 | Stack ? | Django 5.2 LTS, gabarits serveur + HTMX vendoré ; deps : django, django-modeltranslation, markdown, bleach |
 | Q14 | Déploiement et exploitation ? | GitHub → `deploy.sh` sur PythonAnywhere ; sauvegarde SQLite quotidienne (1 copie, la plus récente) ; DEBUG=False, HTTPS |
-| Q15 | Contenu de la v1 ? | Partie 1 complète (6 modules) |
+| Q15 | Contenu de la v1 ? | Partie 1 complète (6 modules), puis Partie 2 (8 modules, Q17 à Q30) |
 | Q16 | Comment observer NetAcad ? | L'utilisateur se connecte lui-même dans le Chrome CDP (`/cloner-webapp`) ; 4 écrans observés ; principes d'interface seulement |
+| Q17 | Combien de modules en Partie 2 (le sommaire du support en annonce 7, le corps en contient 8) ? | 8 modules : 1 Notions de base en électricité, appareillages et outils de l'électricien ; 2 Projet de création d'une installation électrique d'une nouvelle résidence ; 3 Montage simple allumage ; 4 Montage double allumage ; 5 Montage va-et-vient ; 6 Montage télérupteur ; 7 Montage d'une minuterie ; 8 Montage et réglage d'une horloge. Interrupteur crépusculaire et détecteur de mouvement hors v1 (aucune page dans le support) |
+| Q18 | Que faire du PDF NF C 15-100 (norme AFNOR, 8 Mo) ? | Source de travail seulement : règles reformulées et citées « NF C 15-100 » ; le PDF n'est ni dans le dépôt ni sur le serveur |
+| Q19 | Comment afficher les schémas (architectural, développé, unifilaire, symboles) ? | Schémas redessinés en SVG (2 à 6 Ko, `validate_inert_svg`) ; la règle « jamais de SVG dessiné à la main » ne vise que les icônes d'interface |
+| Q20 | Où mettre les images de cours, et comment le Markdown les appelle-t-il ? | Fichiers statiques versionnés à côté du texte (`content/froid/p2/mN/img/`) ; chemin relatif dans le Markdown, réécrit en URL `{% static %}` (empreinte, gzip) au rendu ; SVG sur fond clair fixe, lisible en mode sombre |
+| Q21 | Le module 2 (2 pages imprimées et 3 photos du tableau noir) est trop mince pour 8 h : que fait-on ? | On transcrit, puis on développe chaque étape d'après la NF C 15-100, sur le cas du tableau noir ; plan de maison redessiné en SVG (pas l'image d'internet) ; valeurs à la craie recoupées avec la norme |
+| Q22 | Comment marquer le contenu rédigé par Claude ? | Champ `Section.is_supplement` (`"supplement": true` dans le manifeste), badge « Complément » dans le sommaire et en tête de section, filtre dans l'admin ; une section est soit transcrite, soit rédigée. Les compléments sont publiés sans validation préalable du formateur |
+| Q23 | Questions de la Partie 2 : brouillon jusqu'à relecture (Q11b) ou publiées d'office ? | Publiées d'office (quiz et examen), `reviewed` fr/en à `true` dans `questions.json` ; dérogation à Q11b approuvée par le propriétaire le 2026-10-20 |
+| Q24 | Par quel mécanisme publier d'office, et jusqu'où va la dérogation ? | Option `import_content --publish` : appelle `Question.publish()` sur les questions relues fr et en, et liste les refus ; sans l'option, rien ne change. Dérogation limitée à la Partie 2 ; Q11b reste la règle par défaut |
+| Q25 | Combien de questions, et quel examen pour 8 modules ? | Banque de 8 questions de quiz et 8 d'examen par module (au moins 1 par section) ; tirage de 5 par module, soit 40 questions en 60 min ; `"exam": {"questions_per_module": 5}` dans `formation.json`, appliqué par l'import ; 70 %, 3 tentatives et mélange inchangés |
+| Q26 | Que faire des images copiées d'internet (schéma de frigo légendé en indonésien p. 35, maison filigranée, photos de produits) ? | Aucune photo en Partie 2 : schémas tiers redessinés en SVG simplifié (seulement l'utile), maison remplacée par le plan SVG, photos de produits remplacées par des tableaux (appareil, usage, plaque), plus un SVG quand la forme compte |
+| Q27 | Quel anglais pour l'électricité ? | Vocabulaire IEC et anglais britannique (two-way switching, intermediate switching, impulse relay, staircase timer, RCD, MCB, time switch) ; NF C 15-100 citée (« IEC 60364 » à la 1re mention) ; Eneo et couleurs de fils inchangés ; terme français entre parenthèses à la 1re occurrence ; glossaire fr ↔ en dans la présentation de la Partie 2 |
+| Q28 | En quelle langue écrire dans les SVG ? | Repères normalisés neutres (L, N, PE, F1, S1, K1, ①…), légende et `alt` traduits dans le Markdown ; `.fr.svg` et `.en.svg` seulement pour les schémas dont le texte est le contenu (synopsis, plan) ; un test vérifie que tout `.fr.svg` a son `.en.svg` |
+| Q29 | Que faire quand le support se trompe techniquement ? | Correction dans le texte, sans note pour l'apprenant ; chaque correction de fond (page, texte d'origine, correction, justification) est consignée dans `content/froid/p2/CORRECTIONS.md` |
+| Q30 | Ordre des livraisons et points de validation ? | J0 grill consigné → J1 code et tests, plus une section d'essai (module 3) pour valider le style des SVG → J2 modules 1 à 4 → J3 modules 5 à 8 → J4 publication, Playwright 360×800, Definition of Done, déploiement sur demande ; arrêt pour validation après chaque jalon ; commit sur `develop`, sans push sans accord |
 
 ## GOALS
 
@@ -40,15 +54,21 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 4. **Progression** : navigation libre ; l'examen se débloque quand tous les modules de la partie sont terminés.
 5. **Comptes et promotions** : créés par l'admin (import CSV) ; trois rôles ; cloisonnement par promotion.
 6. **Tableau formateur** : apprenants × modules (progression, meilleur score d'examen) et export CSV.
-7. **Workflow éditorial** : questions brouillon → publiées par un formateur, seulement quand fr et en sont relus.
-8. **Contenu v1** : Partie 1 (6 modules) transcrite et bilingue, avec ≈ 12 questions de quiz et ≈ 10 questions d'examen par module.
-9. **Interface** : bilingue /fr/ et /en/, mobile d'abord, patterns NetAcad, charte Ventisax.
+7. **Workflow éditorial** : questions brouillon → publiées par un formateur, seulement quand fr et en sont relus. Dérogation pour la Partie 2 : questions approuvées d'avance par le propriétaire et publiées par `import_content --publish` (Q23, Q24).
+8. **Contenu v1, Partie 1** : 6 modules transcrits et bilingues, avec ≈ 12 questions de quiz et ≈ 10 questions d'examen par module.
+9. **Contenu, Partie 2 « Les bases de l'électricité domestique »** : 8 modules (Q17) transcrits et bilingues, chacun avec sa section d'activités pratiques (TAF) ; module 2 développé d'après la NF C 15-100 sur le cas du tableau noir (Q21) ; banque de 8 questions de quiz et 8 d'examen par module, examen de 40 questions tirées (5 par module) en 60 min (Q25) ; glossaire fr ↔ en (Q27).
+10. **Schémas de cours** : schémas électriques redessinés en SVG, aucune photo en Partie 2 ; repères normalisés dans le dessin, légende et texte alternatif traduits (Q19, Q26, Q28).
+11. **Provenance visible** : toute section rédigée par Claude (et non transcrite) porte le badge « Complément » et se filtre dans l'admin ; les corrections de fond du support sont journalisées dans `content/froid/p2/CORRECTIONS.md` (Q22, Q29).
+12. **Interface** : bilingue /fr/ et /en/, mobile d'abord, patterns NetAcad, charte Ventisax.
 
 ### 2. Contraintes techniques
 - Python le plus récent proposé par PythonAnywhere ; **Django 5.2 LTS** ; **SQLite** (un seul fichier, sauvegardé chaque jour).
 - Rendu serveur (gabarits Django) + **HTMX vendoré** ; aucun CDN, aucun Node, aucune SPA.
 - Dépendances autorisées : `django`, `django-modeltranslation`, `markdown`, `bleach`. Toute autre dépendance demande un accord explicite.
-- **Disque < 150 Mo** (code + venv + base + médias) sur un quota de 512 Mo ; images en WebP ; **pages < 200 Ko** à la première visite.
+- **Disque < 150 Mo** (code + venv + base + médias) sur un quota de 512 Mo ; photos en WebP, schémas en SVG ; **pages < 200 Ko** à la première visite.
+- Images de cours : fichiers statiques versionnés dans `content/<formation>/<partie>/<module>/img/`, appelés en chemin relatif dans le Markdown et réécrits en URL `{% static %}` au rendu ; SVG de 2 à 6 Ko, inertes (`validate_inert_svg`), sur fond clair fixe ; `.fr.svg` / `.en.svg` seulement pour les schémas dont le texte est le contenu (Q20, Q28).
+- Manifeste `formation.json` : `"supplement": true` par section et `"exam": {"questions_per_module": N}` par partie, appliqués par l'import idempotent (Q22, Q25).
+- Normes : la NF C 15-100 sert de source de travail, reformulée et citée, jamais versionnée ni servie (Q18) ; anglais technique IEC / britannique, contexte camerounais conservé (Eneo, couleurs de fils du support) (Q27).
 - i18n : `i18n_patterns`, préfixes /fr/ (par défaut) et /en/, gettext pour l'interface, modeltranslation pour le contenu, repli sur le fr.
 - Plan gratuit PythonAnywhere : une web app, internet sortant sur liste blanche, aucune tâche planifiée ni permanente (constaté le 2026-10-17 : réservées aux comptes payants).
 - Sécurité : DEBUG=False en production, HTTPS forcé, CSRF actif, HTML Markdown nettoyé par bleach, secrets dans `.env`, identifiants publics UUID dans les URL et les formulaires, en-tête CSP sans script en ligne (voir « Audit de sécurité et tests d'intrusion »).
@@ -62,8 +82,10 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 - Questions d'appariement, glisser-déposer, zone cliquable sur image, réponse libre.
 - Parcours séquentiel bloquant.
 - Mode hors ligne / PWA, application mobile native.
-- Parties 2 et suivantes de la formation.
+- Parties 3 et suivantes de la formation ; interrupteur crépusculaire et détecteur de mouvement (annoncés par le sommaire de la Partie 2, sans page dans le support).
 - Toute reprise de textes, questions, logos ou assets de NetAcad/Cisco.
+- Photos ou images tirées d'internet ou de catalogues dans le contenu de la Partie 2 ; republication du texte ou du PDF de la NF C 15-100.
+- Note visible par l'apprenant sur les erreurs corrigées du support (journal formateur seulement).
 - Paiement, messagerie, forum, notifications.
 
 ## PRD
@@ -100,6 +122,22 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 - US-19 : En tant qu'admin, je règle un examen (seuil, tentatives, durée, nombre de questions par module) ; les valeurs NetAcad sont proposées par défaut.
 - US-20 : En tant qu'admin, une sauvegarde quotidienne de la base est faite automatiquement, et seule la plus récente est gardée (décision du 2026-10-17, pour limiter le disque).
 
+**Partie 2 : bases de l'électricité domestique (2026-10-20)**
+*Apprenant*
+- US-21 : En tant qu'apprenant, je suis les 8 modules de la Partie 2 dans le même lecteur que la Partie 1, avec la même progression et le même déblocage de l'examen.
+- US-22 : En tant qu'apprenant, je lis chaque schéma (architectural, développé, unifilaire, symboles) sur un téléphone de 360 px, en mode clair comme sombre, avec une légende et un texte alternatif dans ma langue.
+- US-23 : En tant qu'apprenant, je reconnais au badge « Complément » les sections rédigées en plus du support imprimé.
+- US-24 : En tant qu'apprenant anglophone, je lis le vocabulaire IEC avec le terme français entre parenthèses à la 1re occurrence, et je consulte un glossaire fr ↔ en dans la présentation de la Partie 2.
+- US-25 : En tant qu'apprenant, je consulte l'activité pratique (TAF) de chaque module : consignes, matériel et outillage, séquence de réalisation, temps estimé, éléments d'évaluation.
+- US-26 : En tant qu'apprenant, je passe l'examen de la Partie 2 : 40 questions (5 par module) en 60 min, avec un tirage différent à chaque tentative.
+
+*Formateur*
+- US-27 : En tant que formateur, je filtre dans l'admin les sections « Complément » (lecture seule) pour les relire après publication, et je consulte `content/froid/p2/CORRECTIONS.md` pour voir chaque correction de fond apportée au support.
+
+*Admin*
+- US-28 : En tant qu'admin, je lance `import_content … --publish` : les questions relues fr et en sont publiées, les refus sont listés avec leur raison ; sans l'option, rien n'est publié.
+- US-29 : En tant qu'admin, le nombre de questions d'examen par module est lu dans `formation.json` (`exam.questions_per_module`) et réappliqué à chaque import, sans réglage à la main sur le serveur.
+
 ### Modélisation logique des données
 | Entité | Attributs clés | Relations / contraintes |
 |---|---|---|
@@ -121,6 +159,17 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 Formation, Partie, Module, Section, Question, Choice et Attempt portent en plus un `public_id` (UUID v4, unique, non modifiable) : c'est le seul identifiant qui sort de la base (URL, champs de formulaire, ancres HTML). Les clés entières restent internes (jointures, admin réservé au personnel).
 **Règles dérivées (calculées, non stockées)** : module terminé = toutes ses sections vues + ≥ 1 tentative de quiz envoyée ; examen ouvert = tous les modules de la partie terminés et tentatives < max ; score multiple = max(0, bonnes cochées − mauvaises cochées) / nombre de bonnes ; meilleure note = max(score_pct) des tentatives envoyées.
 
+**Évolutions pour la Partie 2 (2026-10-20)**
+| Entité | Changement | Contraintes |
+|---|---|---|
+| **Section** | + `is_supplement` (booléen, faux par défaut), alimenté par `"supplement": true` dans le manifeste | une section `practical` n'est jamais un complément ; une section est soit transcrite, soit rédigée, jamais les deux |
+| **Assessment** (part_exam) | `questions_per_module` écrit par l'import quand la partie a une clé `exam` ; sinon la valeur en base est gardée | ≥ 1 ; tirage = min(N, questions d'examen publiées du module) |
+| **Question** | aucun champ nouveau ; `reviewed_fr` / `reviewed_en` à vrai dans `p2/m*/questions.json` | la publication passe toujours par `Question.publish()` (cohérence des choix vérifiée) |
+| **Image de cours** | pas d'entité : fichiers statiques `content/<formation>/<partie>/<module>/img/*.svg` | appelés en chemin relatif dans `body_md`, réécrits en URL `{% static %}` par `courses/rendering.py` ; un chemin inconnu fait échouer l'import (jamais d'image cassée) |
+| **Groupe « Formateurs »** | + permission `view_section` | lecture seule, aucune édition du contenu |
+
+Règle dérivée : examen de la Partie 2 = 8 modules × 5 = 40 questions tirées dans une banque de 8 questions d'examen par module.
+
 ### Écarts d'implémentation validés (backend, 2026-10-17)
 Décisions prises pendant l'implémentation TDD, qui priment sur le texte ci-dessus :
 1. **Answer fusionnée dans AttemptQuestion** : la question tirée et la réponse de l'apprenant vivent dans la même ligne (une entité de moins, aucune perte de règle métier).
@@ -132,6 +181,8 @@ Décisions prises pendant l'implémentation TDD, qui priment sur le texte ci-des
 7. **Accès à l'admin dérivé du rôle** : un formateur devient `is_staff` avec le groupe « Formateurs » (questions et choix seulement) ; un admin reçoit le groupe « Administrateurs » (tout le contenu).
 8. **Identifiants publics UUID** (2026-10-17) : les URL passent de `/modules/12/` à `/modules/<uuid>/` (convertisseur `<uuid:…>`), le formulaire de réponse envoie l'UUID de la question et des choix, et `assessments.services.save_answer` les attend. Migrations en trois temps (champ nullable, une valeur par ligne, puis unicité) : `courses/0002_public_ids`, `assessments/0004_public_ids`.
 9. **Entité LoginFailure** (accounts) : un échec de connexion par ligne, purgé après `LOGIN_LOCKOUT` ; sert au verrouillage anti force brute.
+10. **Backend de la Partie 2 (TDD, 2026-10-20)** : migration `courses/0003_section_is_supplement` ; erreurs de contenu levées par `courses.importer.ContentError` (import annulé, `CommandError` côté commande) : section pratique marquée complément, `exam.questions_per_module` < 1, image absente, SVG actif. Les images `img/x.svg` d'un `.md` deviennent `cours/<formation>/<dossier du module>/img/x.svg`, servies par `courses.finders.ContentImagesFinder` (racine `ACAD_CONTENT_ROOT`) qui ne laisse sortir que les `.svg`/`.webp` d'un dossier `img/`, jamais `questions.json` ni les `.md` (test d'intrusion `test_course_static_files_never_expose_answers_or_sources`). Les droits des groupes « Formateurs » et « Administrateurs » sont désormais **ajoutés** à chaque synchronisation (un groupe déjà créé en production reçoit `view_section`). Un nouvel examen tire d'abord les questions absentes de la tentative précédente (`Assessment.question_pool(previous=…)`, US-26). bleach garde `<span lang="fr">` pour les termes français cités en anglais (US-24). `.prose img` : `height: auto`, fond blanc fixe (lisible en sombre), vérifié dans Chromium à 360 px en mode sombre (aucun défilement horizontal). Un nouvel import supprime les sections retirées du manifeste (sinon une section orpheline, jamais vue, bloquerait la fin du module et l'examen, US-21) ; le sommaire signale l'activité pratique par le badge « Pratique » (US-25).
+11. **Gabarits et rendu vérifiés dans Playwright (2026-10-21)** : pages d'erreur à la charte et bilingues (en production, plus jamais la page brute de Django ; l'examen verrouillé lève `PermissionDenied` au lieu d'un 403 vide) ; `ContentImagesFinder` accepte les `\` que `runserver` transmet sous Windows (le schéma était invisible en développement local) ; SQLite en `transaction_mode = IMMEDIATE` avec `timeout = 20` : deux sauvegardes de réponse simultanées s'interbloquaient (« database is locked », réponse perdue), constaté en cochant vite un quiz puis reproduit par `config/tests/test_sqlite_concurrency.py`. Contrôles à 360 et 1280 px, clair et sombre : aucun défilement horizontal, badges en contraste AA (6 à 10:1), schéma SVG chargé sur fond blanc. 289 tests au vert (302 après l'audit S11 à S14).
 
 ### Exigences non fonctionnelles
 - Performance : TTFB < 500 ms sur PythonAnywhere pour les pages de cours ; ≤ 10 requêtes SQL par page.
@@ -150,7 +201,7 @@ Source : `static/acad/css/app.css` (CSS natif, aucun framework). Toute modificat
 - Icônes : Tabler Icons 3.31.0 (MIT) en partiels `templates/icons/*.svg`, jamais de SVG dessiné à la main.
 - Zéro tiret cadratin ou demi-cadratin dans les textes affichés.
 
-**Règles de mise en page et d'accessibilité (vérifiées par l'audit Playwright `.playwright-mcp/audit.js`)**
+**Règles de mise en page et d'accessibilité (vérifiées par l'audit Playwright `.playwright-mcp/prd-audit.js` (12 écrans, 360, 390, 768 et 1280 px, clair et sombre ; hors dépôt, sessions de développement))**
 - Contraste AA partout, en clair et en sombre.
 - Mobile (< 700px) : toute cible tactile (liens de navigation, boutons, fil d'Ariane, entrées du sommaire, FR/EN) mesure au moins 44px de haut.
 - Aucun défilement horizontal de page à 360px ; les tableaux larges défilent dans `.table-scroll` (qui est `position: relative` pour contenir les libellés `.visually-hidden`) avec la 1re colonne figée.
@@ -159,6 +210,13 @@ Source : `static/acad/css/app.css` (CSS natif, aucun framework). Toute modificat
 - Sommaire du lecteur replié par défaut sur mobile, ouvert à partir de 960px.
 - Quiz et examen : navigation au clavier par flèches ; l'anneau de focus entoure toute la carte de réponse (`.choice:has(input:focus-visible)`).
 - Une rangée de badges vide (`.facts`) est masquée pour ne pas créer d'espace parasite sous le titre.
+- Aucun attribut `style=` dans les gabarits, sauf la largeur calculée d'une barre de progression : les espacements passent par des classes nommées (`.spaced`, `.spaced-lg`, `.list-heading`, `.formation-block`, `.table-legend`) ; vérifié par `config/tests/test_templates.py`.
+- Tout bouton d'action principal est dans une `.cta-row` (formulaire compris : `<form class="cta-row">`) pour hériter de la pleine largeur sous 480px.
+- Correction de quiz : une réponse longue garde au moins 10rem de large ; le badge « Votre réponse » passe à la ligne au lieu de la comprimer.
+- Sous 480px, le bouton d'envoi d'une tentative (`.submit-zone`) est aussi pleine largeur ; l'espace réservé vide du pager (pas de « Précédent ») est masqué pour que « Suivant » s'aligne sur le bord du texte (2026-10-21).
+- Sommaire : la coche ou la pastille d'une entrée est calée sur la 1re ligne du titre (`align-items: flex-start` + `margin-top: calc((1lh - taille) / 2)`) ; une entrée d'une seule ligne reste centrée dans ses 44px grâce à `padding-block: max(.4rem, calc((44px - 1lh) / 2))` (2026-10-21).
+- Quiz et examen : l'espace sous la dernière réponse est volontaire (`.save-state` réserve la ligne du message « Enregistré » pour éviter tout saut de mise en page).
+- Pages d'erreur (`templates/400.html`, `403.html`, `403_csrf.html`, `404.html`, `500.html`, sur `_error.html`) : panneau à la charte, pastille d'icône, titre, une phrase, un seul bouton « Retour à mes cours ».
 
 **Budget mesuré** : page la plus lourde (examen) ≈ 32 Ko à la première visite ; CSS + JS = 22 Ko compressés (gzip), 70 Ko bruts.
 
@@ -190,8 +248,8 @@ Source : `static/acad/css/app.css` (CSS natif, aucun framework). Toute modificat
 - Toujours référencer CSS, JS et images par `{% static %}`, jamais par une URL écrite en dur. `STATIC_ROOT` est réglable par `DJANGO_STATIC_ROOT`.
 - Testé par `config/tests/test_static_versioning.py` (y compris un `collectstatic` de production réel).
 
-## Audit de sécurité et tests d'intrusion (2026-10-17)
-Audit du code de la v1 (vues, gabarits, réglages, import, export, téléversements). Chaque faille est rejouée par un test d'intrusion dans `config/tests/test_intrusion.py` (62 cas), écrit avant le correctif puis vu au vert.
+## Audit de sécurité et tests d'intrusion (2026-10-17, complété le 2026-10-21)
+Audit du code de la v1 (vues, gabarits, réglages, import, export, téléversements). Chaque faille est rejouée par un test d'intrusion dans `config/tests/test_intrusion.py` (62 cas au 2026-10-17, 79 au 2026-10-21), écrit avant le correctif puis vu au vert.
 
 | # | Faille constatée | Famille | Correctif | Test(s) |
 |---|---|---|---|---|
@@ -205,6 +263,10 @@ Audit du code de la v1 (vues, gabarits, réglages, import, export, téléverseme
 | S8 | Connexion (site et admin) sans limite d'essais | Session / force brute | `accounts.throttling` : 5 échecs en 15 min verrouillent l'identifiant ; message identique que le compte existe ou non ; pas de comptage par IP (proxy PythonAnywhere commun) | `test_brute_force_locks_the_account_after_five_failures`, `test_lockout_does_not_reveal_whether_the_username_exists`, `test_lockout_expires_and_success_resets_the_counter`, `test_lockout_of_one_user_does_not_block_another` |
 | S9 | Session de 2 semaines sur des téléphones partagés ; cookie CSRF lisible en JavaScript | Session | `SESSION_COOKIE_AGE` = 8 h, `HttpOnly` sur les deux cookies, `SameSite=Lax` ; en production préfixe `__Host-`, HSTS 1 an avec sous-domaines | `test_session_and_csrf_cookies_are_hardened`, `test_production_cookies_use_host_prefixes` |
 | S10 | Production démarrable avec la clé secrète de développement (cookies de session forgeables) | Session | Refus de démarrer si `DEBUG=0` et clé absente, connue ou faible (< 50 caractères ou < 5 caractères distincts) | `test_production_refuses_to_start_without_a_strong_secret_key` |
+| S11 | (2026-10-21, Partie 2) Import : `![x](img/../questions.json)` ou `img/../../../formation.json` accepté ; la section pointait vers les bonnes réponses, et une image matricielle passait | Traversée de chemin / déduction | `courses.importer.IMAGE_NAME` : un seul nom de fichier `.svg` ou `.webp` directement dans `img/`, sinon `ContentError` (import annulé) | `test_import_refuses_course_images_outside_img_or_of_another_type` |
+| S12 | (2026-10-21) Rendu : un `src="cours/…"` absent du manifeste (texte édité dans l'admin) faisait lever `static()` : section en erreur 500 en production | Déni de service | `courses.rendering._static_src` : source retirée, texte alternatif conservé ; réécriture testée contre la réouverture d'un XSS | `test_unknown_course_image_does_not_break_the_section_page`, `test_course_image_rewriting_never_reopens_an_xss` |
+| S13 | (2026-10-21) `ContentImagesFinder` publiait tout SVG d'un dossier `img/`, même jamais importé donc jamais contrôlé ; PythonAnywhere sert les statiques sans l'en-tête CSP | XSS stocké | Le finder (`find` et `list`, donc `collectstatic`) exige `validate_inert_svg` ; chemins absolus, lecteurs Windows et séparateurs mélangés refusés | `test_course_static_files_never_serve_an_active_svg`, `test_course_static_files_refuse_absolute_and_mixed_separator_paths` |
+| S14 | (2026-10-21) Nouvelles pages d'erreur 400/403/404/500 : risque de refléter l'URL demandée ou le message d'exception | XSS réfléchi / fuite d'information | Gabarits sans variable d'exception ni chemin ; l'URL n'apparaît qu'échappée (champ `next` du sélecteur de langue) | `test_error_pages_never_reflect_the_requested_url_unescaped`, `test_server_error_page_never_reveals_the_exception` |
 
 **Vérifié sans faille (tests de non-régression)** : injection SQL dans les URL (rejetée par le routeur) et dans la connexion (ORM paramétré, aucun `raw()`, `extra()` ni `cursor` dans le code) ; Markdown nettoyé par bleach (script, `onerror`, `javascript:`, iframe, `style`) ; titres, énoncés et choix échappés par les gabarits ; cloisonnement par promotion et propriétaire de la tentative, même avec un UUID connu ; rotation de la clé de session à la connexion ; déconnexion en POST qui détruit la session ; changement de mot de passe qui invalide les autres sessions ; `check --deploy` sans avertissement (le seul avertissement désactivé, `security.W021` préchargement HSTS, est impossible pour un sous-domaine de pythonanywhere.com).
 
@@ -212,14 +274,20 @@ Audit du code de la v1 (vues, gabarits, réglages, import, export, téléverseme
 
 ## Definition of Done (critères stricts)
 Une user story ou une fonctionnalité n'est **terminée** que si **tous** les points sont vrais :
-1. **Tests** : la suite (`pytest`, 234 tests au 2026-10-17) passe à 100 %. Toute règle métier touchée a ses tests : notation partielle et plancher 0, seuil de 70 %, 3 tentatives et meilleure note, deadline et envoi automatique, reprise de tentative, déblocage de l'examen, cloisonnement formateur ↔ promotion, refus de publication sans double relecture, repli de langue.
+1. **Tests** : la suite (`pytest`, 302 tests au 2026-10-21) passe à 100 %. Toute règle métier touchée a ses tests : notation partielle et plancher 0, seuil de 70 %, 3 tentatives et meilleure note, deadline et envoi automatique, reprise de tentative, déblocage de l'examen, cloisonnement formateur ↔ promotion, refus de publication sans double relecture, repli de langue.
 2. **E2E** : le scénario Playwright de la story passe en local sur un viewport mobile (360×800) : connexion → lecture → quiz → examen avec rechargement en cours → résultat → bascule /fr/ ↔ /en/.
 3. **Bilingue** : toute chaîne d'interface est dans les fichiers `.po`, fr et en, avec `compilemessages` sans erreur ; aucune chaîne en dur.
-4. **Sécurité** : `python manage.py check --deploy --fail-level WARNING` passe avec les réglages de production ; aucun secret dans le diff (vérifié par une recherche) ; contrôle d'accès testé (un apprenant ne voit pas une autre promotion ; un formateur ne voit que ses promotions) ; les tests d'intrusion `config/tests/test_intrusion.py` passent (injection SQL, XSS, CSRF, session, force brute, énumération). Toute nouvelle vue ou tout nouveau formulaire : objets désignés par leur `public_id` UUID, jamais par la clé entière ; entrées validées avant la base (400 si invalides) ; action qui modifie l'état en POST avec jeton CSRF ; aucun `|safe` hors HTML nettoyé par bleach ; aucun script en ligne ni gestionnaire `on…=` (CSP) ; tout téléversement avec un nom aléatoire et, s'il s'agit de SVG, `validate_inert_svg` ; toute cellule d'export CSV passée par `_csv_cell`. Un test d'intrusion accompagne chaque nouvelle surface d'attaque.
+4. **Sécurité** : `python manage.py check --deploy --fail-level WARNING` passe avec les réglages de production ; aucun secret dans le diff (vérifié par une recherche) ; contrôle d'accès testé (un apprenant ne voit pas une autre promotion ; un formateur ne voit que ses promotions) ; les tests d'intrusion `config/tests/test_intrusion.py` passent (injection SQL, XSS, CSRF, session, force brute, énumération). Toute nouvelle vue ou tout nouveau formulaire : objets désignés par leur `public_id` UUID, jamais par la clé entière ; entrées validées avant la base (400 si invalides) ; action qui modifie l'état en POST avec jeton CSRF ; aucun `|safe` hors HTML nettoyé par bleach ; aucun script en ligne ni gestionnaire `on…=` (CSP) ; tout téléversement avec un nom aléatoire et, s'il s'agit de SVG, `validate_inert_svg` ; toute image de cours : un nom de fichier `.svg`/`.webp` directement dans `img/`, inerte, servie seulement par `ContentImagesFinder` ; toute page d'erreur sans chemin ni message d'exception ; toute cellule d'export CSV passée par `_csv_cell`. Un test d'intrusion accompagne chaque nouvelle surface d'attaque.
    - **Conformité constatée le 2026-10-17** (audit S1 à S10 ci-dessus) : 234 tests au vert dont 62 tests d'intrusion ; `check --deploy` sans avertissement ; migrations UUID appliquées sur la base de développement réelle (une valeur distincte par ligne, aucune valeur nulle) et sur base vide ; `import_content` exécuté deux fois sans doublon ; scénario Playwright 360×800 (connexion, module, quiz lancé en POST, sauvegarde HTMX, rechargement, résultat, bascule /en/) sans aucune violation CSP.
+   - **Conformité constatée le 2026-10-21** (audit S11 à S14, code de la Partie 2 et des pages d'erreur) : 302 tests au vert dont 79 cas d'intrusion, chacun vu en échec avant son correctif (le cas « XSS par l'URL d'image » s'est révélé sans faille : l'attaque reste encodée dans l'URL) ; aucune requête SQL brute ajoutée (ORM seul, vérifié par le test existant) ; seul `|safe` du projet = HTML passé par bleach ; `check --deploy` sans avertissement ; `import_content` réel exécuté deux fois (31 sections, 73 questions, aucune image refusée) ; transactions SQLite `IMMEDIATE` (aucune réponse perdue sur sauvegardes simultanées) ; sessions ouvertes pour l'audit visuel supprimées de la base de développement.
 5. **Budget** : le poids du projet + venv reste < 150 Mo (`du -sh`) ; la page touchée transfère < 200 Ko (mesure Playwright).
 6. **Données** : les migrations sont créées et appliquées sur une base vide ; `import_content` est idempotent (deux exécutions, aucun doublon).
 7. **Interface** : relue avec la grille design-taste-frontend ; aucun texte ni asset NetAcad ; capture mobile jointe à la PR.
-8. **Contenu** (stories de contenu) : sections transcrites fidèles aux photos (relecture humaine cochée), questions au statut `draft` jusqu'à validation du formateur.
+8. **Contenu** (stories de contenu) : sections transcrites fidèles aux photos (relecture humaine cochée), questions au statut `draft` jusqu'à validation du formateur, sauf pour la Partie 2 (Q23, Q24) : questions publiées par `import_content --publish`.
 9. **Déploiement** (jalon de release) : `deploy.sh` exécuté sur PythonAnywhere ; /fr/ et /en/ répondent 200 ; l'admin est accessible ; une sauvegarde a été produite dans `DJANGO_BACKUP_DIR`.
 10. **Documentation** : AGENTS.md est mis à jour si une décision change ; pas de TODO non suivi dans le code livré.
+11. **Schémas** (Partie 2, vérifiés par des tests sauf la capture) : toute image citée dans un `.md` existe ; chaque SVG passe `validate_inert_svg` et pèse ≤ 6 Ko ; texte alternatif non vide en fr et en en ; tout `.fr.svg` a son `.en.svg` ; aucun fichier matriciel (jpg, png, webp) sous `content/froid/p2/` ; capture à 360 px en clair et en sombre pour au moins un schéma par module.
+12. **Provenance** : un test vérifie que toute section `supplement` affiche le badge « Complément » en fr et en en ; chaque entrée de `CORRECTIONS.md` donne la page, le texte d'origine, la correction et la justification ; aucune note de correction dans le texte servi à l'apprenant.
+13. **Banque de la Partie 2** (tests) : au moins 8 questions de quiz et 8 d'examen par module, toutes publiables ; chaque section `content` a au moins une question ; l'examen tire exactement 40 questions, 5 par module ; deux tirages successifs diffèrent.
+14. **Licences** : `git ls-files` ne contient ni la NF C 15-100, ni une photo du support, ni une image tirée d'internet ; la terminologie anglaise suit le glossaire de la Partie 2 (relecture).
+15. **Jalons** (Q30) : chaque jalon J1 à J4 se termine par un arrêt pour validation ; J1 fait valider le style des SVG avant toute production en série.
