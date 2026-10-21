@@ -135,14 +135,19 @@ class Assessment(models.Model):
     def is_exam(self):
         return self.kind == self.Kind.PART_EXAM
 
-    def question_pool(self, rng=random):
+    def question_pool(self, rng=random, previous=()):
+        """previous : questions de la tentative précédente, reprises seulement si la banque est trop petite."""
         published = Question.objects.published()
         if not self.is_exam:
             return list(published.filter(module=self.module, usage=Question.Usage.QUIZ))
         drawn = []
         for module in self.partie.modules.all():
             candidates = list(published.filter(module=module, usage=Question.Usage.EXAM))
-            drawn += rng.sample(candidates, min(self.questions_per_module, len(candidates)))
+            fresh = [q for q in candidates if q.pk not in previous]
+            seen = [q for q in candidates if q.pk in previous]
+            rng.shuffle(fresh)
+            rng.shuffle(seen)
+            drawn += (fresh + seen)[: self.questions_per_module]
         if self.shuffle:
             rng.shuffle(drawn)
         return drawn

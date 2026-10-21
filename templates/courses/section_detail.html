@@ -8,11 +8,12 @@
     <h1{{ section|lang_attr:"title" }}>{{ section.title }}</h1>
     <div class="facts">
       {% if section.kind == "practical" %}<span class="badge badge-warn">{% translate "Activité pratique" %}</span>{% endif %}
+      {% if section.is_supplement %}<span class="badge badge-supplement" title="{% translate 'Rédigé en complément du support imprimé' %}">{% translate "Complément" %}</span>{% endif %}
       {% if fallback_fr %}<span class="badge" lang="fr" title="{% translate 'Contenu disponible en français uniquement' %}">FR</span>{% endif %}
     </div>
     <div class="prose"{% if fallback_fr %} lang="fr"{% endif %}>{{ body_html|safe }}</div>
     {% if section.annexes.exists %}
-      <section class="panel" aria-labelledby="annexes" style="margin-top:1.5rem">
+      <section class="panel spaced-lg" aria-labelledby="annexes">
         <h2 id="annexes">{% translate "Annexes à télécharger" %}</h2>
         <ul class="annexes">
           {% for annexe in section.annexes.all %}<li><a href="{{ annexe.file.url }}" download>{% include "icons/download.svg" %}{{ annexe.title }}</a></li>{% endfor %}

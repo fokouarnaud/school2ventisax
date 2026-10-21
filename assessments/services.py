@@ -48,8 +48,10 @@ def start_attempt(user, assessment, now=None, rng=random):
     attempt = Attempt.objects.create(
         user=user, assessment=assessment, number=used + 1, started_at=now, deadline=deadline
     )
+    last = assessment.attempts.filter(user=user, submitted_at__isnull=False).order_by("-number").first()
+    previous = set(last.attempt_questions.values_list("question_id", flat=True)) if last else set()
     rows = []
-    for i, question in enumerate(assessment.question_pool(rng)):
+    for i, question in enumerate(assessment.question_pool(rng, previous=previous)):
         order = list(question.choices.values_list("pk", flat=True))
         if assessment.shuffle:
             rng.shuffle(order)

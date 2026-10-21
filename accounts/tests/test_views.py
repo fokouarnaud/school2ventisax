@@ -54,3 +54,19 @@ def test_english_prefix_serves_the_dashboard_in_english(client, enrolled, partie
     client.force_login(enrolled)
     response = client.get("/en/")
     assert "Safety qualification" in response.content.decode()
+
+
+@pytest.mark.django_db
+def test_part_two_has_its_own_progress_and_exam_unlocking(client, enrolled, partie, module):
+    from courses.models import Module, Partie, Section
+    from progress.services import mark_section_viewed
+
+    part_two = Partie.objects.create(formation=partie.formation, title_fr="Bases de l'électricité domestique", order=2, slug="p2")
+    wiring = Module.objects.create(partie=part_two, title_fr="Montage simple allumage", order=3)
+    mark_section_viewed(enrolled, Section.objects.create(module=wiring, title_fr="Cours", order=1))
+    Section.objects.create(module=module, title_fr="Cours P1", order=1)
+    client.force_login(enrolled)
+    parts = client.get("/fr/").context["parts"]
+    assert [p["partie"].slug for p in parts] == ["p1", "p2"]
+    assert parts[0]["exam_unlocked"] is False  # la Partie 1 n'est pas terminée
+    assert (parts[1]["progress"], parts[1]["exam_unlocked"]) == (100, True)  # indépendante de la Partie 1

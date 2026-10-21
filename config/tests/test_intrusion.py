@@ -422,3 +422,101 @@ def test_production_cookies_use_host_prefixes():
     assert session_name.startswith("__Host-") and csrf_name.startswith("__Host-")
     assert session_secure == csrf_secure == "True"
     assert int(hsts) >= 31536000
+
+
+@pytest.mark.parametrize("path", [
+    "cours/froid/p1/m1/questions.json",  # bonnes réponses du quiz et de l'examen
+    "cours/froid/formation.json",
+    "cours/froid/p1/m1/01-introduction.fr.md",
+    "cours/froid/p1/m1/img/../questions.json",
+])
+def test_course_static_files_never_expose_answers_or_sources(path):
+    from django.contrib.staticfiles import finders
+
+    assert (settings.BASE_DIR / "content" / "froid" / "p1" / "m1" / "questions.json").is_file()
+    assert not finders.find(path)
+
+
+# S11 à S14 : surface ajoutée pour la Partie 2 (images de cours, pages d'erreur), audit du 2026-10-21.
+
+from courses.tests.test_import_content import content_dir  # noqa: E402,F401  (fixture : contenu minimal)
+
+ACTIVE_SVG_TEXT = '<svg xmlns="http://www.w3.org/2000/svg"><script>alert(1)</script></svg>'
+
+
+@pytest.mark.django_db
+@pytest.mark.parametrize("target", [
+    "../questions.json",          # bonnes réponses du module voisin
+    "../../../formation.json",    # manifeste, hors du dossier du module
+    "schema.png",                 # image matricielle : interdite en Partie 2
+])
+def test_import_refuses_course_images_outside_img_or_of_another_type(content_dir, target):
+    from django.core.management import CommandError, call_command
+
+    module_dir = content_dir / "p1" / "m1"
+    (module_dir / "img").mkdir()
+    (module_dir / "img" / "schema.png").write_bytes(b"\x89PNG")
+    (module_dir / "01-introduction.fr.md").write_text(f"![schéma](img/{target})", encoding="utf-8")
+    with pytest.raises(CommandError):
+        call_command("import_content", str(content_dir / "formation.json"), verbosity=0)
+    assert not Section.objects.filter(body_md_fr__contains="questions.json").exists()
+
+
+def test_unknown_course_image_does_not_break_the_section_page(settings, tmp_path):
+    """En production (manifeste), un chemin absent ferait lever static() : jamais d'erreur 500."""
+    settings.STATIC_ROOT = tmp_path
+    settings.STORAGES = {**settings.STORAGES, "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"}}
+    html = render_markdown("![Schéma du va-et-vient](cours/froid/p2/m5/img/inconnu.svg)")
+    assert 'src="cours/' not in html
+    assert "Schéma du va-et-vient" in html
+
+
+@pytest.mark.parametrize("markdown_text", [
+    '<img src="cours/froid/p2/m3/img/a.svg" onerror="alert(1)">',
+    '`src="cours/<script>alert(1)</script>"`',
+    '![x](cours/froid/p2/m3/img/a.svg"onerror="alert(1))',
+])
+def test_course_image_rewriting_never_reopens_an_xss(markdown_text):
+    html = render_markdown(markdown_text)
+    assert not re.search(r"<[^>]*\son\w+\s*=", html)  # aucun attribut gestionnaire d'événement
+    assert "<script" not in html
+
+
+def test_course_static_files_never_serve_an_active_svg(tmp_path, settings):
+    """PythonAnywhere sert les statiques sans l'en-tête CSP : un SVG actif exécuterait son script."""
+    from courses.finders import ContentImagesFinder
+
+    img = tmp_path / "froid" / "p2" / "m3" / "img"
+    img.mkdir(parents=True)
+    (img / "piege.svg").write_text(ACTIVE_SVG_TEXT, encoding="utf-8")
+    settings.ACAD_CONTENT_ROOT = tmp_path
+    finder = ContentImagesFinder()
+    assert not finder.find("cours/froid/p2/m3/img/piege.svg")
+    assert list(finder.list([])) == []
+
+
+@pytest.mark.parametrize("path", [
+    "cours/C:/Windows/win.ini",
+    "cours//etc/passwd",
+    "cours/froid/p2/m3/img/..\..\..\..\config\settings.py",
+])
+def test_course_static_files_refuse_absolute_and_mixed_separator_paths(path):
+    from courses.finders import ContentImagesFinder
+
+    assert not ContentImagesFinder().find(path)
+
+
+@pytest.mark.django_db
+def test_error_pages_never_reflect_the_requested_url_unescaped(client, enrolled):
+    client.force_login(enrolled)
+    response = client.get('/fr/%22%3E%3Cscript%3Ealert(1)%3C/script%3E/')
+    html = response.content.decode()
+    assert response.status_code == 404
+    assert "<script>alert(1)" not in html
+
+
+@pytest.mark.django_db
+def test_server_error_page_never_reveals_the_exception(settings):
+    settings.ROOT_URLCONF = "config.tests.test_error_pages"
+    html = Client(raise_request_exception=False).get("/boom/").content.decode()
+    assert "panne" not in html and "Traceback" not in html and "RuntimeError" not in html

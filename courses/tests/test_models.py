@@ -37,3 +37,11 @@ def test_practical_sections_are_separated_from_content_sections(module):
     Section.objects.create(module=module, title_fr="Cours", order=1, body_md_fr="...")
     Section.objects.create(module=module, title_fr="TAF", order=2, body_md_fr="...", kind=Section.Kind.PRACTICAL)
     assert [s.title_fr for s in module.sections.practical()] == ["TAF"]
+
+
+@pytest.mark.django_db
+def test_a_section_is_transcribed_unless_marked_as_a_supplement(module):
+    transcribed = Section.objects.create(module=module, title_fr="Cours", order=1)
+    supplement = Section.objects.create(module=module, title_fr="Complément", order=2, is_supplement=True)
+    assert transcribed.is_supplement is False
+    assert list(module.sections.filter(is_supplement=True)) == [supplement]

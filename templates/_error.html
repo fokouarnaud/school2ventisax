@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+<section class="panel error-page" aria-labelledby="titre-erreur">
+  <span class="exam-icon" aria-hidden="true">{% block icon %}{% include "icons/alert-triangle.svg" %}{% endblock %}</span>
+  <h1 id="titre-erreur">{% block heading %}{% endblock %}</h1>
+  <p>{% block message %}{% endblock %}</p>
+  <div class="cta-row">
+    <a class="btn" href="{% url 'dashboard' %}">{% include "icons/chevron-left.svg" %}{% translate "Retour à mes cours" %}</a>
+  </div>
+</section>
+{% endblock %}

@@ -17,7 +17,7 @@
         {% if module.evaluation_note %}<p class="muted">{{ module.evaluation_note }}</p>{% endif %}
       </section>
     {% endif %}
-    <h2 style="margin-top:1.75rem">{% translate "Sections" %}</h2>
+    <h2 class="list-heading">{% translate "Sections" %}</h2>
     <ol class="section-list">
       {% for row in sections %}
         <li>
@@ -25,6 +25,7 @@
             {% if row.viewed %}{% include "icons/circle-check.svg" %}<span class="visually-hidden">{% translate "lu" %}</span>{% else %}<span class="dot-todo" aria-hidden="true"></span>{% endif %}
             <span{{ row.section|lang_attr:"title" }}>{{ row.section.title }}</span>
             {% if row.section.kind == "practical" %}<span class="badge badge-warn">{% translate "Pratique" %}</span>{% endif %}
+            {% if row.section.is_supplement %}<span class="badge badge-supplement" title="{% translate 'Rédigé en complément du support imprimé' %}">{% translate "Complément" %}</span>{% endif %}
           </a>
         </li>
       {% empty %}

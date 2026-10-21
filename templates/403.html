@@ -1,0 +1,5 @@
+{% extends "_error.html" %}{% load i18n %}
+{% block title %}{% translate "Accès refusé" %}{% endblock %}
+{% block icon %}{% include "icons/lock.svg" %}{% endblock %}
+{% block heading %}{% translate "Accès refusé" %}{% endblock %}
+{% block message %}{% translate "Cette page n'est pas ouverte à votre compte pour le moment. Si vous pensez que c'est une erreur, parlez-en à votre formateur." %}{% endblock %}

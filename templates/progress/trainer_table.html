@@ -6,7 +6,7 @@
   <div class="cta-row"><a class="btn btn-ghost" href="{% url 'trainer_export' %}">{% include "icons/download.svg" %}{% translate "Exporter en CSV" %}</a></div>
 </div>
 {% for table in tables %}
-  <section aria-labelledby="f-{{ table.formation.public_id }}" style="margin-bottom:2rem">
+  <section aria-labelledby="f-{{ table.formation.public_id }}" class="formation-block">
     <h2 id="f-{{ table.formation.public_id }}">{{ table.formation.title }}</h2>
     <div class="table-scroll" tabindex="0" role="region" aria-labelledby="f-{{ table.formation.public_id }}">
       <table class="grid-table">
@@ -34,7 +34,7 @@
         </tbody>
       </table>
     </div>
-    <p class="muted" style="font-size:.85rem;margin-top:.5rem">{% for module in table.modules %}M{{ forloop.counter }} : {{ module.title }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p class="muted table-legend">{% for module in table.modules %}M{{ forloop.counter }} : {{ module.title }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
   </section>
 {% empty %}
   <section class="panel empty"><h2>{% translate "Aucune promotion" %}</h2><p class="muted">{% translate "Aucune promotion ne vous est rattachée. Demandez à l'administrateur de vous ajouter." %}</p></section>
