@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Acad Ventisax\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-21 02:45+0100\n"
+"POT-Creation-Date: 2026-10-21 04:05+0100\n"
 "PO-Revision-Date: 2026-10-17 12:00+0100\n"
 "Last-Translator: Acad Ventisax\n"
 "Language-Team: English\n"
@@ -201,11 +201,11 @@ msgstr "questions per module"
 msgid "mélanger questions et choix"
 msgstr "shuffle questions and choices"
 
-#: .\config\settings.py:101
+#: .\config\settings.py:104
 msgid "Français"
 msgstr "French"
 
-#: .\config\settings.py:101
+#: .\config\settings.py:104
 msgid "English"
 msgstr "English"
 
@@ -250,34 +250,34 @@ msgstr "content (Markdown)"
 msgid "complément rédigé"
 msgstr "written supplement"
 
-#: .\progress\views.py:77 .\templates\progress\trainer_table.html:16
+#: .\progress\views.py:83 .\templates\progress\trainer_table.html:16
 msgid "Promotion"
 msgstr "Cohort"
 
-#: .\progress\views.py:77 .\templates\accounts\login.html:23
+#: .\progress\views.py:83 .\templates\accounts\login.html:23
 #: .\templates\admin\accounts\promotion\import.html:9
 msgid "Identifiant"
 msgstr "Username"
 
-#: .\progress\views.py:77
+#: .\progress\views.py:83
 msgid "Nom"
 msgstr "Name"
 
-#: .\progress\views.py:79
+#: .\progress\views.py:85
 #, python-format
 msgid "Examen %(partie)s (%%)"
 msgstr "Exam %(partie)s (%%)"
 
-#: .\progress\views.py:79
+#: .\progress\views.py:85
 #, python-format
 msgid "Tentatives %(partie)s"
 msgstr "Attempts %(partie)s"
 
-#: .\progress\views.py:84
+#: .\progress\views.py:90
 msgid "oui"
 msgstr "yes"
 
-#: .\progress\views.py:84
+#: .\progress\views.py:90
 msgid "non"
 msgstr "no"
 
@@ -288,7 +288,8 @@ msgstr "Invalid request"
 #: .\templates\400.html:4
 msgid ""
 "Le serveur n'a pas compris cette demande. Rechargez la page puis recommencez."
-msgstr "The server could not understand this request. Reload the page and try again."
+msgstr ""
+"The server could not understand this request. Reload the page and try again."
 
 #: .\templates\403.html:2 .\templates\403.html:4
 msgid "Accès refusé"
@@ -298,7 +299,9 @@ msgstr "Access denied"
 msgid ""
 "Cette page n'est pas ouverte à votre compte pour le moment. Si vous pensez "
 "que c'est une erreur, parlez-en à votre formateur."
-msgstr "This page is not open to your account yet. If you think this is a mistake, talk to your trainer."
+msgstr ""
+"This page is not open to your account yet. If you think this is a mistake, "
+"talk to your trainer."
 
 #: .\templates\403_csrf.html:2 .\templates\403_csrf.html:4
 msgid "Session expirée"
@@ -318,7 +321,9 @@ msgstr "Page not found"
 msgid ""
 "Ce lien ne mène à aucun cours. Il a peut-être été déplacé, ou il n'est pas "
 "ouvert à votre promotion."
-msgstr "This link does not lead to a course. It may have moved, or it is not open to your cohort."
+msgstr ""
+"This link does not lead to a course. It may have moved, or it is not open to "
+"your cohort."
 
 #: .\templates\500.html:2 .\templates\500.html:3
 msgid "Erreur du serveur"
@@ -328,7 +333,9 @@ msgstr "Server error"
 msgid ""
 "Un problème est survenu de notre côté. Vos réponses déjà enregistrées sont "
 "conservées. Réessayez dans quelques minutes."
-msgstr "Something went wrong on our side. Answers already saved are kept. Try again in a few minutes."
+msgstr ""
+"Something went wrong on our side. Answers already saved are kept. Try again "
+"in a few minutes."
 
 #: .\templates\_error.html:8 .\templates\assessments\result.html:19
 msgid "Retour à mes cours"
@@ -344,48 +351,62 @@ msgstr "My courses"
 msgid "Bonjour, %(name)s"
 msgstr "Hello, %(name)s"
 
-#: .\templates\accounts\dashboard.html:13
-msgid "Progression"
-msgstr "Progress"
+#: .\templates\accounts\dashboard.html:12
+#, python-format
+msgid "%(n)s module"
+msgid_plural "%(n)s modules"
+msgstr[0] "%(n)s module"
+msgstr[1] "%(n)s modules"
 
-#: .\templates\accounts\dashboard.html:20
-#: .\templates\accounts\dashboard.html:22
-msgid "Terminé"
-msgstr "Completed"
-
-#: .\templates\accounts\dashboard.html:22
+#: .\templates\accounts\dashboard.html:12
+#: .\templates\accounts\dashboard.html:23
 #, python-format
 msgid "%(h)s h"
 msgstr "%(h)s h"
 
-#: .\templates\accounts\dashboard.html:30
-msgid "Examen de la partie"
-msgstr "Part exam"
+#: .\templates\accounts\dashboard.html:14
+msgid "Progression"
+msgstr "Progress"
 
-#: .\templates\accounts\dashboard.html:32
+#: .\templates\accounts\dashboard.html:21
+#: .\templates\accounts\dashboard.html:23
+msgid "Terminé"
+msgstr "Completed"
+
+#: .\templates\accounts\dashboard.html:29
+msgid "Continuer"
+msgstr "Continue"
+
+#: .\templates\accounts\dashboard.html:34
+#: .\templates\assessments\attempt.html:11 .\templates\assessments\exam.html:7
+#, python-format
+msgid "Examen : %(p)s"
+msgstr "Exam: %(p)s"
+
+#: .\templates\accounts\dashboard.html:36
 msgid "Tous les modules sont terminés. L'examen est ouvert."
 msgstr "All modules are completed. The exam is open."
 
-#: .\templates\accounts\dashboard.html:33
+#: .\templates\accounts\dashboard.html:37
 msgid "Voir l'examen"
 msgstr "View the exam"
 
-#: .\templates\accounts\dashboard.html:35
+#: .\templates\accounts\dashboard.html:39
 msgid ""
 "Il s'ouvre quand tous les modules sont terminés : sections lues et quiz "
 "envoyé."
 msgstr ""
 "It opens once every module is completed: sections read and quiz submitted."
 
-#: .\templates\accounts\dashboard.html:36
+#: .\templates\accounts\dashboard.html:40
 msgid "Ce qu'il reste à faire"
 msgstr "What is left to do"
 
-#: .\templates\accounts\dashboard.html:42
+#: .\templates\accounts\dashboard.html:46
 msgid "Aucune formation pour le moment"
 msgstr "No course yet"
 
-#: .\templates\accounts\dashboard.html:43
+#: .\templates\accounts\dashboard.html:47
 msgid ""
 "Votre compte n'est rattaché à aucune promotion. Le centre vous inscrira "
 "avant le début des cours."
@@ -495,11 +516,6 @@ msgstr "Time is up: the attempt has been submitted."
 #, python-format
 msgid "%%(done)s / %%(total)s répondues"
 msgstr "%%(done)s / %%(total)s answered"
-
-#: .\templates\assessments\attempt.html:11 .\templates\assessments\exam.html:7
-#, python-format
-msgid "Examen : %(p)s"
-msgstr "Exam: %(p)s"
 
 #: .\templates\assessments\attempt.html:11
 #, python-format
@@ -813,12 +829,15 @@ msgstr "not completed"
 msgid "Aucun apprenant dans ces promotions."
 msgstr "No learner in these cohorts."
 
-#: .\templates\progress\trainer_table.html:40
+#: .\templates\progress\trainer_table.html:42
 msgid "Aucune promotion"
 msgstr "No cohort"
 
-#: .\templates\progress\trainer_table.html:40
+#: .\templates\progress\trainer_table.html:42
 msgid ""
 "Aucune promotion ne vous est rattachée. Demandez à l'administrateur de vous "
 "ajouter."
 msgstr "No cohort is assigned to you. Ask the administrator to add you."
+
+#~ msgid "Examen de la partie"
+#~ msgstr "Part exam"

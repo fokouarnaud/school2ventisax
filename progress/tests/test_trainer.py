@@ -94,3 +94,15 @@ def test_trainer_home_redirects_to_the_progress_table(client, trainer):
 def test_learner_home_stays_the_course_dashboard(client, enrolled):
     client.force_login(enrolled)
     assert client.get("/fr/").status_code == 200
+
+
+@pytest.mark.django_db
+def test_trainer_table_numbers_modules_within_their_part(client, trainer, scored, partie):
+    from courses.models import Module, Partie
+
+    p2 = Partie.objects.create(formation=partie.formation, title_fr="Électricité", slug="p2", order=2)
+    Module.objects.create(partie=p2, title_fr="Simple allumage", order=1)
+    client.force_login(trainer)
+    html = client.get("/fr/formateur/").content.decode()
+    assert ">1.1</th>" in html and ">2.1</th>" in html and ">M2</th>" not in html
+    assert "<dt>2.1</dt><dd>Simple allumage</dd>" in html

@@ -14,7 +14,7 @@
           <tr>
             <th scope="col">{% translate "Apprenant" %}</th>
             <th scope="col">{% translate "Promotion" %}</th>
-            {% for module in table.modules %}<th scope="col" title="{{ module.title }}">M{{ forloop.counter }}</th>{% endfor %}
+            {% for column in table.columns %}<th scope="col" title="{{ column.module.title }}">{{ column.label }}</th>{% endfor %}
             {% for partie in table.parties %}<th scope="col">{% blocktranslate with p=partie.title %}Examen {{ p }}{% endblocktranslate %}</th>{% endfor %}
           </tr>
         </thead>
@@ -34,7 +34,9 @@
         </tbody>
       </table>
     </div>
-    <p class="muted table-legend">{% for module in table.modules %}M{{ forloop.counter }} : {{ module.title }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <dl class="table-legend">
+      {% for column in table.columns %}<div><dt>{{ column.label }}</dt><dd>{{ column.module.title }}</dd></div>{% endfor %}
+    </dl>
   </section>
 {% empty %}
   <section class="panel empty"><h2>{% translate "Aucune promotion" %}</h2><p class="muted">{% translate "Aucune promotion ne vous est rattachée. Demandez à l'administrateur de vous ajouter." %}</p></section>

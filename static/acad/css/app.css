@@ -339,3 +339,13 @@ main { flex: 1; padding: 1.5rem 0 3rem; }
 .list-heading { margin-top: 1.75rem; }
 .formation-block { margin-bottom: 2rem; }
 .table-legend { font-size: .85rem; margin-top: .5rem; }
+
+/* Tableau de bord : parties espacées, métadonnées sous le titre */
+.course + .course { margin-top: 1.5rem; }
+.part-meta { margin: -.25rem 0 .75rem; font-size: .9rem; }
+
+/* Légende du tableau formateur : repère « partie.module » et titre, en colonnes */
+dl.table-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: .25rem 1.5rem; margin: .75rem 0 0; color: var(--muted); }
+dl.table-legend div { display: flex; gap: .5rem; }
+dl.table-legend dt { font-weight: 600; min-width: 2.25rem; font-variant-numeric: tabular-nums; }
+dl.table-legend dd { margin: 0; }
