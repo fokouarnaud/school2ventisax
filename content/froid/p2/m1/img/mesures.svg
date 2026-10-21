@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+<rect width="640" height="250" fill="#fff"/>
+<g fill="none" stroke="#13212c" stroke-width="2.5">
+<path d="M40 112V50H300V200H40V138"/>
+<path d="M26 112H54M33 138H47" stroke-width="3"/>
+<path d="M33 138H47" stroke-width="6"/>
+<circle cx="170" cy="50" r="20" fill="#fff"/>
+<circle cx="300" cy="125" r="20" fill="#fff"/>
+<path d="M286 111L314 139M314 111L286 139"/>
+<path d="M360 112V50H600V200H360V138M480 50V200"/>
+<path d="M346 112H374" stroke-width="3"/>
+<path d="M353 138H367" stroke-width="6"/>
+<circle cx="480" cy="125" r="20" fill="#fff"/>
+<path d="M466 111L494 139M494 111L466 139"/>
+<circle cx="600" cy="125" r="20" fill="#fff"/>
+</g>
+<g fill="#13212c">
+<circle cx="480" cy="50" r="4"/><circle cx="480" cy="200" r="4"/>
+<text x="163" y="57">A</text><text x="593" y="132">V</text>
+<text x="286" y="95">E1</text><text x="430" y="132">E1</text>
+<text x="62" y="132">U</text><text x="382" y="132">U</text>
+<text x="20" y="108">+</text><text x="340" y="108">+</text>
+</g>
+</svg>

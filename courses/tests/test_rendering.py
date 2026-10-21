@@ -48,3 +48,28 @@ def test_course_diagrams_stay_readable_on_phones_and_in_dark_mode():
     rule = re.search(r"\.prose img \{([^}]*)\}", css).group(1)
     assert "max-width: 100%" in css and "height: auto" in rule
     assert "background: #fff" in rule  # couleur fixe, pas un jeton redéfini en mode sombre
+
+
+def test_wide_course_tables_scroll_inside_the_text_not_the_page():
+    """Guide de style : aucun défilement horizontal de page à 360px ; un tableau large défile dans son cadre."""
+    import re
+
+    from django.conf import settings
+
+    css = (settings.BASE_DIR / "static" / "acad" / "css" / "app.css").read_text(encoding="utf-8")
+    rule = re.search(r"\.prose table \{([^}]*)\}", css).group(1)
+    assert "display: block" in rule and "overflow-x: auto" in rule and "max-width: 100%" in rule
+    reader = re.search(r"^\.reader \{([^}]*)\}", css, re.MULTILINE).group(1)
+    assert "minmax(0, 1fr)" in reader  # sans cela, la colonne du lecteur s'élargit au tableau sur mobile
+
+
+def test_course_diagrams_open_full_size_to_be_zoomed_on_a_phone():
+    from django.templatetags.static import static
+
+    url = static("cours/froid/p2/m2/img/unifilaire.svg")
+    html = render_markdown("![Schéma unifilaire](cours/froid/p2/m2/img/unifilaire.svg)")
+    assert f'<a class="diagram" href="{url}"><img alt="Schéma unifilaire" src="{url}"></a>' in html
+
+
+def test_other_images_are_not_turned_into_links():
+    assert "<a" not in render_markdown("![EPI](/media/epi.webp)")

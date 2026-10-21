@@ -1,0 +1,728 @@
+[
+ {
+  "id": "p2-m6-q01",
+  "section": "01-fonction",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "À partir de combien de points de commande utilise-t-on en pratique un télérupteur ?",
+   "en": "From how many control points is an impulse relay used in practice?"
+  },
+  "explanation": {
+   "fr": "À partir de trois points de commande, là où le va-et-vient ne suffit plus.",
+   "en": "From three control points, where two-way switching is no longer enough."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Trois ou plus",
+     "en": "Three or more"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un seul",
+     "en": "One only"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Deux exactement",
+     "en": "Exactly two"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Aucun",
+     "en": "None"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q02",
+  "section": "01-fonction",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Comment les boutons-poussoirs d'un télérupteur sont-ils montés ?",
+   "en": "How are the push buttons of an impulse relay connected?"
+  },
+  "explanation": {
+   "fr": "En parallèle sur la bobine.",
+   "en": "In parallel on the coil."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "En parallèle",
+     "en": "In parallel"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "En série",
+     "en": "In series"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "En étoile",
+     "en": "In star"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Sur le neutre",
+     "en": "On the neutral"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q03",
+  "section": "01-fonction",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Que fait chaque impulsion sur un bouton-poussoir du télérupteur ?",
+   "en": "What does each pulse on a push button of the impulse relay do?"
+  },
+  "explanation": {
+   "fr": "Elle fait changer d'état le contact : allumé devient éteint, et inversement.",
+   "en": "It changes the state of the contact: on becomes off, and the reverse."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Elle change l'état du contact",
+     "en": "It changes the state of the contact"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Elle allume pendant un temps fixe",
+     "en": "It switches on for a set time"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Elle coupe le disjoncteur",
+     "en": "It trips the circuit breaker"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Elle n'agit que si on maintient l'appui",
+     "en": "It acts only while held down"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q04",
+  "section": "01-fonction",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Le contact d'un télérupteur garde sa position entre deux impulsions.",
+   "en": "An impulse relay contact keeps its position between two pulses."
+  },
+  "explanation": {
+   "fr": "Vrai : c'est un relais bistable.",
+   "en": "True: it is a bistable relay."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q05",
+  "section": "01-fonction",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Où le télérupteur est-il surtout utilisé dans une maison ?",
+   "en": "Where is an impulse relay mainly used in a house?"
+  },
+  "explanation": {
+   "fr": "Dans les couloirs, escaliers et grandes pièces à plusieurs accès.",
+   "en": "In corridors, stairs and large rooms with several entrances."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Les couloirs",
+     "en": "Corridors"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Les placards",
+     "en": "Cupboards"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le tableau",
+     "en": "The consumer unit"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La salle d'eau uniquement",
+     "en": "The shower room only"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q06",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quelles sont les bornes de la bobine du télérupteur K1 ?",
+   "en": "What are the terminals of impulse relay coil K1?"
+  },
+  "explanation": {
+   "fr": "A1 et A2 pour la bobine ; 1 et 2 pour le contact.",
+   "en": "A1 and A2 for the coil; 1 and 2 for the contact."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "A1 et A2",
+     "en": "A1 and A2"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "1 et 2",
+     "en": "1 and 2"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "L et N",
+     "en": "L and N"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "S1 et S2",
+     "en": "S1 and S2"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q07",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quel est le symbole architectural du télérupteur ?",
+   "en": "What is the architectural symbol for an impulse relay?"
+  },
+  "explanation": {
+   "fr": "Un rectangle contenant un créneau.",
+   "en": "A rectangle containing a step."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un rectangle contenant un créneau",
+     "en": "A rectangle containing a step"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un rectangle marqué t",
+     "en": "A rectangle marked t"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un double cercle",
+     "en": "A double circle"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Une croix",
+     "en": "A cross"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q08",
+  "section": "02-schemas",
+  "type": "multiple",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quels éléments font partie du circuit de commande du télérupteur ?",
+   "en": "Which items belong to the control circuit of the impulse relay?"
+  },
+  "explanation": {
+   "fr": "Les boutons-poussoirs et la bobine K1 ; le contact K1 et les lampes forment le circuit de puissance.",
+   "en": "The push buttons and coil K1; contact K1 and the lamps form the power circuit."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Les boutons-poussoirs",
+     "en": "The push buttons"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "La bobine K1",
+     "en": "Coil K1"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Les lampes",
+     "en": "The lamps"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le contact K1 (1-2)",
+     "en": "Contact K1 (1-2)"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q09",
+  "section": "01-fonction",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Qu'est-ce qu'un relais bistable ?",
+   "en": "What is a bistable relay?"
+  },
+  "explanation": {
+   "fr": "Un relais dont le contact garde chacune de ses deux positions sans alimentation permanente de la bobine.",
+   "en": "A relay whose contact keeps each of its two positions without the coil being permanently supplied."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un relais qui garde sa position entre deux impulsions",
+     "en": "A relay that keeps its position between two pulses"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un relais qui revient au repos après un temps réglé",
+     "en": "A relay that returns to rest after a set time"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un relais à deux bobines en série",
+     "en": "A relay with two coils in series"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un disjoncteur différentiel",
+     "en": "A residual current circuit breaker"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q10",
+  "section": "01-fonction",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "On peut ajouter autant de boutons-poussoirs que nécessaire à un télérupteur.",
+   "en": "As many push buttons as needed can be added to an impulse relay."
+  },
+  "explanation": {
+   "fr": "Vrai : ils se montent en parallèle.",
+   "en": "True: they are connected in parallel."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q11",
+  "section": "01-fonction",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Un couloir a quatre accès. Quel montage choisir ?",
+   "en": "A corridor has four entrances. Which circuit should be chosen?"
+  },
+  "explanation": {
+   "fr": "Le télérupteur, commandé par un bouton-poussoir à chaque accès.",
+   "en": "The impulse relay, controlled by a push button at each entrance."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un télérupteur",
+     "en": "An impulse relay"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un simple allumage",
+     "en": "One-way switching"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un double allumage",
+     "en": "A double switch"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un va-et-vient",
+     "en": "Two-way switching"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q12",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Que commande le contact K1 (bornes 1 et 2) ?",
+   "en": "What does contact K1 (terminals 1 and 2) control?"
+  },
+  "explanation": {
+   "fr": "Il alimente les lampes : c'est le circuit de puissance.",
+   "en": "It supplies the lamps: it is the power circuit."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Les lampes",
+     "en": "The lamps"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "La bobine",
+     "en": "The coil"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Les boutons-poussoirs",
+     "en": "The push buttons"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le disjoncteur",
+     "en": "The circuit breaker"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q13",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Sur le schéma développé, où la borne A2 de la bobine est-elle raccordée ?",
+   "en": "On the wiring diagram, where is coil terminal A2 connected?"
+  },
+  "explanation": {
+   "fr": "A2 est raccordée au neutre ; A1 reçoit la phase par les boutons-poussoirs.",
+   "en": "A2 is connected to the neutral; A1 receives the line through the push buttons."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Au neutre",
+     "en": "To the neutral"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "À la phase directement",
+     "en": "Directly to the line"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À la lampe L1",
+     "en": "To lamp L1"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Au conducteur de protection",
+     "en": "To the protective conductor"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q14",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quel est le symbole architectural d'un bouton-poussoir lumineux ?",
+   "en": "What is the architectural symbol for an illuminated push button?"
+  },
+  "explanation": {
+   "fr": "Un double cercle avec un cercle barré au centre.",
+   "en": "A double circle with a crossed circle in the centre."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un double cercle avec un cercle barré au centre",
+     "en": "A double circle with a crossed circle in the centre"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Une simple croix",
+     "en": "A plain cross"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un rectangle marqué t",
+     "en": "A rectangle marked t"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un cercle avec un trait incliné",
+     "en": "A circle with an inclined stroke"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q15",
+  "section": "02-schemas",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans un télérupteur, le courant des lampes traverse les boutons-poussoirs.",
+   "en": "In an impulse relay circuit, the lamp current flows through the push buttons."
+  },
+  "explanation": {
+   "fr": "Faux : les boutons-poussoirs ne commandent que la bobine ; le contact K1 porte le courant des lampes.",
+   "en": "False: the push buttons only control the coil; contact K1 carries the lamp current."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": true
+   }
+  ]
+ },
+ {
+  "id": "p2-m6-q16",
+  "section": "02-schemas",
+  "type": "multiple",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quel matériel faut-il pour câbler un télérupteur ?",
+   "en": "Which materials are needed to wire an impulse relay?"
+  },
+  "explanation": {
+   "fr": "Protection, télérupteur, au moins deux boutons-poussoirs, lampes et douilles, boîte de dérivation, câbles.",
+   "en": "Protection, impulse relay, at least two push buttons, lamps and lampholders, junction box, cables."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un télérupteur",
+     "en": "An impulse relay"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Au moins deux boutons-poussoirs",
+     "en": "At least two push buttons"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un fusible ou un disjoncteur",
+     "en": "A fuse or circuit breaker"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Deux interrupteurs va-et-vient",
+     "en": "Two two-way switches"
+    },
+    "correct": false
+   }
+  ]
+ }
+]

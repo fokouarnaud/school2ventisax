@@ -1,0 +1,742 @@
+[
+ {
+  "id": "p2-m1-q01",
+  "section": "00-presentation",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Combien de modules compte la partie « Les bases de l'électricité domestique » ?",
+   "en": "How many modules does the part \"Basics of domestic electrical installations\" have?"
+  },
+  "explanation": {
+   "fr": "La partie compte huit modules, du module 1 (notions de base) au module 8 (horloge).",
+   "en": "The part has eight modules, from module 1 (basic concepts) to module 8 (time switch)."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "8",
+     "en": "8"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "6",
+     "en": "6"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "7",
+     "en": "7"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "10",
+     "en": "10"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q02",
+  "section": "01-glossaire",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quel est le terme anglais (CEI) pour « télérupteur » ?",
+   "en": "What is the English (IEC) term for \"télérupteur\"?"
+  },
+  "explanation": {
+   "fr": "Le télérupteur se dit impulse relay en anglais.",
+   "en": "A télérupteur is called an impulse relay in English."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Impulse relay",
+     "en": "Impulse relay"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Staircase timer",
+     "en": "Staircase timer"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Time switch",
+     "en": "Time switch"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Contactor",
+     "en": "Contactor"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q03",
+  "section": "02-notions",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Selon la loi d'Ohm, quelle est la tension aux bornes d'une résistance de 100 Ω parcourue par 2 A ?",
+   "en": "According to Ohm's law, what is the voltage across a 100 Ω resistance carrying 2 A?"
+  },
+  "explanation": {
+   "fr": "U = R × I = 100 × 2 = 200 V.",
+   "en": "U = R × I = 100 × 2 = 200 V."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "200 V",
+     "en": "200 V"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "50 V",
+     "en": "50 V"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "102 V",
+     "en": "102 V"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "0,02 V",
+     "en": "0.02 V"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q04",
+  "section": "02-notions",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "En quelle unité s'exprime l'intensité du courant ?",
+   "en": "In which unit is current expressed?"
+  },
+  "explanation": {
+   "fr": "L'intensité s'exprime en ampères (A).",
+   "en": "Current is expressed in amperes (A)."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "L'ampère (A)",
+     "en": "The ampere (A)"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le volt (V)",
+     "en": "The volt (V)"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "L'ohm (Ω)",
+     "en": "The ohm (Ω)"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le watt (W)",
+     "en": "The watt (W)"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q05",
+  "section": "03-outils",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quel outil sert à frapper le burin ou le poinçon ?",
+   "en": "Which tool is used to strike the chisel or the punch?"
+  },
+  "explanation": {
+   "fr": "La massette est une masse qui sert à frapper un autre outil.",
+   "en": "The club hammer is a heavy hammer used to strike another tool."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "La massette",
+     "en": "The club hammer"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "La pince universelle",
+     "en": "The combination pliers"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le niveau à bulle",
+     "en": "The spirit level"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le testeur de phase",
+     "en": "The voltage tester screwdriver"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q06",
+  "section": "04-mesure",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Comment branche-t-on un voltmètre ?",
+   "en": "How is a voltmeter connected?"
+  },
+  "explanation": {
+   "fr": "Le voltmètre se branche en parallèle, aux bornes de l'élément dont on mesure la tension.",
+   "en": "A voltmeter is connected in parallel, across the component whose voltage is measured."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "En parallèle, aux bornes de l'élément",
+     "en": "In parallel, across the component"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "En série dans le circuit",
+     "en": "In series in the circuit"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Entre la phase et la terre seulement",
+     "en": "Between line and earth only"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Circuit hors tension",
+     "en": "With the circuit dead"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q07",
+  "section": "04-mesure",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "On mesure une résistance à l'ohmmètre sur un équipement sous tension.",
+   "en": "Resistance is measured with an ohmmeter on live equipment."
+  },
+  "explanation": {
+   "fr": "Faux : l'ohmmètre s'utilise toujours hors tension, car il fournit lui-même le courant de mesure.",
+   "en": "False: an ohmmeter is always used on dead equipment, because it supplies its own test current."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": true
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q08",
+  "section": "05-appareillages",
+  "type": "multiple",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Lesquels de ces appareils sont des appareillages de protection ?",
+   "en": "Which of these devices are protective devices?"
+  },
+  "explanation": {
+   "fr": "Le disjoncteur, le relais thermique et le sectionneur porte-fusible protègent ; le bouton-poussoir commande.",
+   "en": "The circuit breaker, thermal overload relay and fuse switch disconnector protect; the push button controls."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le disjoncteur",
+     "en": "The circuit breaker"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le relais thermique",
+     "en": "The thermal overload relay"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le sectionneur porte-fusible",
+     "en": "The fuse switch disconnector"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le bouton-poussoir",
+     "en": "The push button"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q09",
+  "section": "02-notions",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quelle est la puissance d'un appareil de 230 V qui absorbe 5 A (récepteur résistif) ?",
+   "en": "What is the power of a 230 V appliance drawing 5 A (resistive load)?"
+  },
+  "explanation": {
+   "fr": "P = U × I = 230 × 5 = 1 150 W.",
+   "en": "P = U × I = 230 × 5 = 1,150 W."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "1 150 W",
+     "en": "1,150 W"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "46 W",
+     "en": "46 W"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "235 W",
+     "en": "235 W"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "11 500 W",
+     "en": "11,500 W"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q10",
+  "section": "02-notions",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Qu'est-ce qui caractérise le courant alternatif ?",
+   "en": "What characterises alternating current?"
+  },
+  "explanation": {
+   "fr": "Le courant alternatif change de sens périodiquement, à 50 Hz ou 60 Hz selon les pays.",
+   "en": "Alternating current reverses direction periodically, at 50 Hz or 60 Hz depending on the country."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Il change de sens périodiquement",
+     "en": "It reverses direction periodically"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Il circule toujours dans le même sens",
+     "en": "It always flows in the same direction"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Il ne sert que dans les appareils portables",
+     "en": "It is only used in portable devices"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Sa tension est constante",
+     "en": "Its voltage is constant"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q11",
+  "section": "03-outils",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Les tournevis de l'électricien sont isolés sur toute la longueur de la tige.",
+   "en": "An electrician's screwdrivers are insulated along the full length of the shaft."
+  },
+  "explanation": {
+   "fr": "Vrai : l'isolation protège l'électricien d'un contact avec une partie sous tension.",
+   "en": "True: the insulation protects the electrician from contact with a live part."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q12",
+  "section": "03-outils",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quel outil identifie le conducteur de phase sur une installation sous tension ?",
+   "en": "Which tool identifies the line conductor on a live installation?"
+  },
+  "explanation": {
+   "fr": "Le testeur de phase signale le conducteur de phase.",
+   "en": "The voltage tester screwdriver shows which conductor is the line."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le testeur de phase",
+     "en": "The voltage tester screwdriver"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le capacimètre",
+     "en": "The capacitance meter"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La meuleuse",
+     "en": "The angle grinder"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le cordeau de traçage",
+     "en": "The chalk line"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q13",
+  "section": "04-mesure",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Comment branche-t-on un ampèremètre ?",
+   "en": "How is an ammeter connected?"
+  },
+  "explanation": {
+   "fr": "L'ampèremètre se branche en série : tout le courant mesuré doit le traverser.",
+   "en": "An ammeter is connected in series: all the current measured must flow through it."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "En série dans le circuit",
+     "en": "In series in the circuit"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "En parallèle aux bornes du récepteur",
+     "en": "In parallel across the load"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Entre la phase et le neutre",
+     "en": "Between line and neutral"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Hors tension uniquement",
+     "en": "Only on a dead circuit"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q14",
+  "section": "04-mesure",
+  "type": "multiple",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quelles précautions faut-il prendre avant de mesurer un condensateur ?",
+   "en": "Which precautions must be taken before measuring a capacitor?"
+  },
+  "explanation": {
+   "fr": "Le condensateur se mesure débranché et déchargé, avec la fonction et le calibre adaptés.",
+   "en": "A capacitor is measured disconnected and discharged, with the right function and range."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le débrancher du circuit",
+     "en": "Disconnect it from the circuit"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le décharger",
+     "en": "Discharge it"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Choisir la fonction capacité et le calibre adapté",
+     "en": "Select the capacitance function and a suitable range"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Laisser le circuit sous tension pour voir la charge",
+     "en": "Leave the circuit live to see the charge"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q15",
+  "section": "05-appareillages",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quel appareil protège les personnes contre les courants de fuite ?",
+   "en": "Which device protects people against leakage currents?"
+  },
+  "explanation": {
+   "fr": "Le dispositif différentiel détecte les courants résiduels et protège les personnes.",
+   "en": "The residual current device detects residual currents and protects people."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le différentiel",
+     "en": "The residual current device"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le relais thermique",
+     "en": "The thermal overload relay"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le contacteur",
+     "en": "The contactor"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le bloc temporisé",
+     "en": "The timer block"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m1-q16",
+  "section": "05-appareillages",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Un condensateur de démarrage de moteur monophasé est remplacé. Que doit avoir le nouveau ?",
+   "en": "A single-phase motor start capacitor is replaced. What must the new one have?"
+  },
+  "explanation": {
+   "fr": "La même capacité et une tension assignée au moins égale.",
+   "en": "The same capacitance and at least the same voltage rating."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "La même capacité et une tension au moins égale",
+     "en": "The same capacitance and at least the same voltage rating"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Une capacité deux fois plus grande",
+     "en": "Twice the capacitance"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "N'importe quelle capacité si la tension est la même",
+     "en": "Any capacitance if the voltage is the same"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Une tension plus faible",
+     "en": "A lower voltage rating"
+    },
+    "correct": false
+   }
+  ]
+ }
+]

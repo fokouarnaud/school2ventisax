@@ -498,7 +498,7 @@ def test_course_static_files_never_serve_an_active_svg(tmp_path, settings):
 @pytest.mark.parametrize("path", [
     "cours/C:/Windows/win.ini",
     "cours//etc/passwd",
-    "cours/froid/p2/m3/img/..\..\..\..\config\settings.py",
+    r"cours/froid/p2/m3/img/..\..\..\..\config\settings.py",
 ])
 def test_course_static_files_refuse_absolute_and_mixed_separator_paths(path):
     from courses.finders import ContentImagesFinder

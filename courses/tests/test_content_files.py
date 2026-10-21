@@ -79,7 +79,8 @@ def test_every_markdown_file_is_referenced_by_the_manifest():
         for section in module["sections"]:
             for lang in LANGS:
                 referenced.add((CONTENT / module["dir"] / f"{section['file']}.{lang}.md").resolve())
-    on_disk = {p.resolve() for p in CONTENT.rglob("*.md")}
+    # CORRECTIONS.md : journal des corrections pour le formateur, jamais servi à l'apprenant (Q29).
+    on_disk = {p.resolve() for p in CONTENT.rglob("*.md") if p.name != "CORRECTIONS.md"}
     assert sorted(str(p) for p in on_disk - referenced) == []
 
 
@@ -173,3 +174,82 @@ def test_every_diagram_link_has_alt_text_and_an_existing_file():
         for alt, name in IMAGE_LINK.findall(md.read_text(encoding="utf-8")):
             assert alt.strip(), f"{md.name} : texte alternatif vide pour {name}"
             assert (md.parent / "img" / name).is_file(), f"{md.name} : {name} introuvable"
+
+
+# Partie 2 « Les bases de l'électricité domestique » (Q17 à Q30, Definition of Done 11 à 14).
+PART_TWO_MODULES = [
+    "Notions de base en électricité, appareillages et outils de l'électricien",
+    "Projet de création d'une installation électrique d'une nouvelle résidence",
+    "Montage simple allumage",
+    "Montage double allumage",
+    "Montage va-et-vient",
+    "Montage télérupteur",
+    "Montage d'une minuterie",
+    "Montage et réglage d'une horloge",
+]
+
+
+def part_two():
+    return next(p for p in manifest()["parties"] if p["slug"] == "p2")
+
+
+def test_part_two_has_the_eight_modules_and_its_exam_setting():
+    partie = part_two()
+    assert [m["title"]["fr"] for m in partie["modules"]] == PART_TWO_MODULES
+    assert partie["exam"] == {"questions_per_module": 5}
+
+
+def test_every_part_two_module_has_one_practical_activity():
+    for module in part_two()["modules"]:
+        practical = [s for s in module["sections"] if s["kind"] == "practical"]
+        assert len(practical) == 1, module["dir"]
+        assert not practical[0].get("supplement"), module["dir"]
+
+
+def test_part_two_bank_has_eight_reviewed_quiz_and_exam_questions_per_module():
+    for module in part_two()["modules"]:
+        questions = json.loads((CONTENT / module["dir"] / "questions.json").read_text(encoding="utf-8"))
+        assert sum(q["usage"] == "quiz" for q in questions) >= 8, module["dir"]
+        assert sum(q["usage"] == "exam" for q in questions) >= 8, module["dir"]
+        assert all(q["reviewed"] == {"fr": True, "en": True} for q in questions), module["dir"]  # Q23
+
+
+@pytest.mark.django_db
+def test_part_two_exam_draws_forty_questions_five_per_module():
+    import random
+    from collections import Counter
+
+    from assessments.models import Assessment
+    from courses.models import Partie
+
+    call_command("import_content", str(CONTENT / "formation.json"), publish=True, verbosity=0)
+    exam = Assessment.exam_for(Partie.objects.get(slug="p2"))
+    first = exam.question_pool(random.Random(1))
+    assert len(first) == 40
+    assert set(Counter(q.module_id for q in first).values()) == {5}
+    assert {q.pk for q in first} != {q.pk for q in exam.question_pool(random.Random(2))}
+
+
+CORRECTION_FIELDS = ("**Page**", "**Texte d'origine**", "**Correction**", "**Justification**")
+
+
+def test_corrections_log_gives_page_original_text_correction_and_reason():
+    log = (CONTENT / "p2" / "CORRECTIONS.md").read_text(encoding="utf-8")
+    entries = log.split("\n## ")[1:]
+    assert len(entries) >= 5
+    for entry in entries:
+        for field in CORRECTION_FIELDS:
+            assert field in entry, f"{entry.splitlines()[0]} : {field} manquant"
+
+
+def test_learner_text_never_mentions_the_corrections():
+    for md in (CONTENT / "p2").rglob("*.md"):
+        if md.name != "CORRECTIONS.md":
+            text = md.read_text(encoding="utf-8").lower()
+            assert "corrections.md" not in text and "erratum" not in text and "texte d'origine" not in text, md
+
+
+def test_part_two_glossary_uses_iec_terms():
+    glossary = (CONTENT / "p2" / "m1" / "01-glossaire.en.md").read_text(encoding="utf-8").lower()
+    for term in ("one-way switching", "two-way switching", "impulse relay", "staircase timer", "time switch", "rcd", "mcb"):
+        assert term in glossary, term

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 620" font-family="Arial, sans-serif" font-size="15">
+<rect width="400" height="620" fill="#fff"/>
+
+<g fill="none" stroke="#13212c" stroke-width="2.5">
+<path d="M30 8V70"/><path d="M23 26L37 40"/><path d="M30 70V440"/>
+<path d="M30 80H70V140"/><ellipse cx="70" cy="110" rx="20" ry="7"/>
+<path d="M70 140V150H345"/>
+<path d="M70 150V210"/><path d="M64 166L76 178"/><path d="M63 198L72 189M67 204L76 195"/>
+<path d="M125 150V210"/><path d="M119 166L131 178"/><path d="M118 198L127 189M122 204L131 195"/>
+<path d="M180 150V210"/><path d="M174 166L186 178"/><path d="M173 198L182 189M177 204L186 195"/>
+<path d="M235 150V210"/><path d="M229 166L241 178"/><path d="M228 198L237 189M232 204L241 195"/>
+<path d="M290 150V210"/><path d="M284 166L296 178"/><path d="M283 198L292 189M287 204L296 195"/>
+<path d="M345 150V210"/><path d="M339 166L351 178"/><path d="M338 198L347 189M342 204L351 195"/>
+<path d="M30 260H70V320"/><ellipse cx="70" cy="290" rx="20" ry="7"/>
+<path d="M70 320V330H290"/>
+<path d="M70 330V390"/><path d="M64 346L76 358"/><path d="M63 378L72 369M67 384L76 375"/>
+<path d="M125 330V390"/><path d="M119 346L131 358"/><path d="M118 378L127 369M122 384L131 375"/>
+<path d="M180 330V390"/><path d="M174 346L186 358"/><path d="M173 378L182 369M177 384L186 375"/>
+<path d="M235 330V390"/><path d="M229 346L241 358"/><path d="M228 378L237 369M232 384L241 375"/>
+<path d="M290 330V390"/><path d="M284 346L296 358"/><path d="M283 378L292 369M287 384L296 375"/>
+<path d="M30 440H70V500"/><ellipse cx="70" cy="470" rx="20" ry="7"/>
+<path d="M70 500V510H235"/>
+<path d="M70 510V570"/><path d="M64 526L76 538"/><path d="M63 558L72 549M67 564L76 555"/>
+<path d="M125 510V570"/><path d="M119 526L131 538"/><path d="M118 558L127 549M122 564L131 555"/>
+<path d="M180 510V570"/><path d="M174 526L186 538"/><path d="M173 558L182 549M177 564L186 555"/>
+<path d="M235 510V570"/><path d="M229 526L241 538"/><path d="M228 558L237 549M232 564L241 555"/>
+</g>
+<g fill="#13212c"><text x="56" y="34" text-anchor="start" font-weight="bold">Q0  40A  500mA</text><text x="100" y="106" text-anchor="start" font-weight="bold">ID1</text><text x="100" y="124" text-anchor="start" font-size="13">40A 30mA AC</text><text x="70" y="230" text-anchor="middle" font-weight="bold">F1</text><text x="70" y="247" text-anchor="middle" font-size="13">10A</text><text x="125" y="230" text-anchor="middle" font-weight="bold">F2</text><text x="125" y="247" text-anchor="middle" font-size="13">10A</text><text x="180" y="230" text-anchor="middle" font-weight="bold">F3</text><text x="180" y="247" text-anchor="middle" font-size="13">10A</text><text x="235" y="230" text-anchor="middle" font-weight="bold">F4</text><text x="235" y="247" text-anchor="middle" font-size="13">10A</text><text x="290" y="230" text-anchor="middle" font-weight="bold">F5</text><text x="290" y="247" text-anchor="middle" font-size="13">10A</text><text x="345" y="230" text-anchor="middle" font-weight="bold">F6</text><text x="345" y="247" text-anchor="middle" font-size="13">10A</text><text x="100" y="286" text-anchor="start" font-weight="bold">ID2</text><text x="100" y="304" text-anchor="start" font-size="13">40A 30mA AC</text><text x="70" y="410" text-anchor="middle" font-weight="bold">F7</text><text x="70" y="427" text-anchor="middle" font-size="13">20A</text><text x="125" y="410" text-anchor="middle" font-weight="bold">F8</text><text x="125" y="427" text-anchor="middle" font-size="13">20A</text><text x="180" y="410" text-anchor="middle" font-weight="bold">F9</text><text x="180" y="427" text-anchor="middle" font-size="13">20A</text><text x="235" y="410" text-anchor="middle" font-weight="bold">F10</text><text x="235" y="427" text-anchor="middle" font-size="13">20A</text><text x="290" y="410" text-anchor="middle" font-weight="bold">F11</text><text x="290" y="427" text-anchor="middle" font-size="13">20A</text><text x="100" y="466" text-anchor="start" font-weight="bold">ID3</text><text x="100" y="484" text-anchor="start" font-size="13">40A 30mA A</text><text x="70" y="590" text-anchor="middle" font-weight="bold">F12</text><text x="70" y="607" text-anchor="middle" font-size="13">20A</text><text x="125" y="590" text-anchor="middle" font-weight="bold">F13</text><text x="125" y="607" text-anchor="middle" font-size="13">20A</text><text x="180" y="590" text-anchor="middle" font-weight="bold">F14</text><text x="180" y="607" text-anchor="middle" font-size="13">20A</text><text x="235" y="590" text-anchor="middle" font-weight="bold">F15</text><text x="235" y="607" text-anchor="middle" font-size="13">32A</text></g></svg>

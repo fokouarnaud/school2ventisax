@@ -212,7 +212,7 @@ main { flex: 1; padding: 1.5rem 0 3rem; }
 .empty { text-align: left; max-width: 52ch; }
 
 /* Lecteur : sommaire + contenu */
-.reader { display: grid; gap: 1.5rem; }
+.reader { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
 @media (min-width: 960px) { .reader { grid-template-columns: 300px minmax(0, 1fr); gap: 2.5rem; align-items: start; } }
 .outline { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 @media (min-width: 960px) { .outline { position: sticky; top: 80px; max-height: calc(100dvh - 100px); overflow: auto; } }
@@ -241,7 +241,8 @@ main { flex: 1; padding: 1.5rem 0 3rem; }
 .prose ul, .prose ol { padding-left: 1.25rem; }
 .prose li + li { margin-top: .3rem; }
 .prose img { height: auto; background: #fff; padding: .5rem; border-radius: var(--radius-sm); margin: 1rem 0; }
-.prose table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+.prose a.diagram { display: block; cursor: zoom-in; } /* le schéma s'ouvre en grand pour être zoomé sur un téléphone */
+.prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1rem 0; font-size: .95rem; } /* un tableau large défile dans son cadre, jamais la page */
 .prose th, .prose td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--line); }
 .annexes { list-style: none; padding: 0; display: grid; gap: .5rem; }
 .annexes a { display: inline-flex; gap: .5rem; align-items: center; }
