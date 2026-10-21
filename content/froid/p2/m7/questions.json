@@ -1,0 +1,714 @@
+[
+ {
+  "id": "p2-m7-q01",
+  "section": "01-role",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quelle est la particularité d'une minuterie ?",
+   "en": "What is special about a staircase timer?"
+  },
+  "explanation": {
+   "fr": "L'extinction est automatique après un temps prédéfini.",
+   "en": "The light switches off automatically after a preset time."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "L'extinction est automatique après un temps réglé",
+     "en": "The light switches off automatically after a set time"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Elle se commande d'un seul point",
+     "en": "It is controlled from one point only"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Elle remplace le disjoncteur",
+     "en": "It replaces the circuit breaker"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Elle ne fonctionne que la nuit",
+     "en": "It only works at night"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q02",
+  "section": "01-role",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Combien de types de minuteries le cours présente-t-il ?",
+   "en": "How many types of staircase timer does the course present?"
+  },
+  "explanation": {
+   "fr": "Deux : avec effet et sans effet.",
+   "en": "Two: retriggerable and non-retriggerable."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "2",
+     "en": "2"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "1",
+     "en": "1"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "3",
+     "en": "3"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "4",
+     "en": "4"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q03",
+  "section": "01-role",
+  "type": "multiple",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Dans quels lieux une minuterie est-elle adaptée ?",
+   "en": "Where is a staircase timer suitable?"
+  },
+  "explanation": {
+   "fr": "Escaliers, couloirs et parties communes, où l'on oublie d'éteindre.",
+   "en": "Stairs, corridors and shared areas, where lights are left on."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Les escaliers",
+     "en": "Stairs"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Les parties communes",
+     "en": "Shared areas"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le circuit du réfrigérateur",
+     "en": "The refrigerator circuit"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La prise du lave-linge",
+     "en": "The washing machine socket"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q04",
+  "section": "02-avec-effet",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Avec une minuterie avec effet, que fait un nouvel appui pendant la temporisation ?",
+   "en": "With a retriggerable timer, what does a new press during the timing do?"
+  },
+  "explanation": {
+   "fr": "Il relance la temporisation.",
+   "en": "It restarts the timing."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Il relance la temporisation",
+     "en": "It restarts the timing"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Il n'a aucun effet",
+     "en": "It has no effect"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Il éteint la lampe",
+     "en": "It switches the lamp off"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Il double la puissance",
+     "en": "It doubles the power"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q05",
+  "section": "02-avec-effet",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Dans la minuterie, les boutons-poussoirs alimentent la bobine temporisée K1.",
+   "en": "In a staircase timer circuit, the push buttons supply the time-delayed coil K1."
+  },
+  "explanation": {
+   "fr": "Vrai : le contact K1 alimente ensuite la lampe.",
+   "en": "True: contact K1 then supplies the lamp."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q06",
+  "section": "03-sans-effet",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Avec une minuterie sans effet, que fait un nouvel appui pendant la temporisation ?",
+   "en": "With a non-retriggerable timer, what does a new press during the timing do?"
+  },
+  "explanation": {
+   "fr": "Il n'a aucun effet.",
+   "en": "It has no effect."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Il n'a aucun effet",
+     "en": "It has no effect"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Il relance la temporisation",
+     "en": "It restarts the timing"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Il éteint la lampe",
+     "en": "It switches the lamp off"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Il force l'allumage permanent",
+     "en": "It forces the light on permanently"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q07",
+  "section": "03-sans-effet",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Sur une minuterie à commutateur, quelle position garde les lampes allumées en permanence ?",
+   "en": "On a timer with a selector, which position keeps the lamps on permanently?"
+  },
+  "explanation": {
+   "fr": "Le forçage.",
+   "en": "Override."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le forçage",
+     "en": "Override"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "L'inhibition",
+     "en": "Inhibit"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le fonctionnement normal",
+     "en": "Normal operation"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La position 0",
+     "en": "Position 0"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q08",
+  "section": "03-sans-effet",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Le schéma développé de la minuterie sans effet est le même que celui de la minuterie avec effet.",
+   "en": "The wiring diagram of the non-retriggerable timer is the same as the retriggerable one."
+  },
+  "explanation": {
+   "fr": "Vrai : seul le comportement de l'appareil change.",
+   "en": "True: only the behaviour of the device changes."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q09",
+  "section": "01-role",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quel est le symbole architectural de la minuterie ?",
+   "en": "What is the architectural symbol for a staircase timer?"
+  },
+  "explanation": {
+   "fr": "Un rectangle marqué t.",
+   "en": "A rectangle marked t."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un rectangle marqué t",
+     "en": "A rectangle marked t"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un rectangle contenant un créneau",
+     "en": "A rectangle containing a step"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un double cercle",
+     "en": "A double circle"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Une croix",
+     "en": "A cross"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q10",
+  "section": "01-role",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Une minuterie peut être commandée depuis plusieurs points.",
+   "en": "A staircase timer can be controlled from several points."
+  },
+  "explanation": {
+   "fr": "Vrai : plusieurs boutons-poussoirs en parallèle.",
+   "en": "True: several push buttons in parallel."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q11",
+  "section": "02-avec-effet",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Temporisation de 3 s, minuterie avec effet : appuis à 6 s puis à 7 s. Quand la lampe s'éteint-elle ?",
+   "en": "3 s timing, retriggerable timer: presses at 6 s then 7 s. When does the lamp go out?"
+  },
+  "explanation": {
+   "fr": "L'appui à 7 s relance la temporisation : extinction à 7 + 3 = 10 s.",
+   "en": "The press at 7 s restarts the timing: off at 7 + 3 = 10 s."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "À 10 s",
+     "en": "At 10 s"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "À 9 s",
+     "en": "At 9 s"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À 13 s",
+     "en": "At 13 s"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À 7 s",
+     "en": "At 7 s"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q12",
+  "section": "02-avec-effet",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Temporisation de 3 s : un seul appui à 1 s. Quand la lampe s'éteint-elle ?",
+   "en": "3 s timing: a single press at 1 s. When does the lamp go out?"
+  },
+  "explanation": {
+   "fr": "1 + 3 = 4 s, quel que soit le type de minuterie.",
+   "en": "1 + 3 = 4 s, whatever the type of timer."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "À 4 s",
+     "en": "At 4 s"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "À 3 s",
+     "en": "At 3 s"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À 1 s",
+     "en": "At 1 s"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Elle reste allumée",
+     "en": "It stays on"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q13",
+  "section": "03-sans-effet",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Temporisation de 3 s, minuterie sans effet : appuis à 6 s puis à 7 s. Quand la lampe s'éteint-elle ?",
+   "en": "3 s timing, non-retriggerable timer: presses at 6 s then 7 s. When does the lamp go out?"
+  },
+  "explanation": {
+   "fr": "L'appui à 7 s est sans effet : extinction à 6 + 3 = 9 s.",
+   "en": "The press at 7 s has no effect: off at 6 + 3 = 9 s."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "À 9 s",
+     "en": "At 9 s"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "À 10 s",
+     "en": "At 10 s"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À 7 s",
+     "en": "At 7 s"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À 12 s",
+     "en": "At 12 s"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q14",
+  "section": "03-sans-effet",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Que fait la position « inhibition » (0) d'une minuterie à commutateur ?",
+   "en": "What does the inhibit position (0) of a timer with a selector do?"
+  },
+  "explanation": {
+   "fr": "La minuterie ne fonctionne plus : les boutons-poussoirs sont sans effet.",
+   "en": "The timer no longer works: the push buttons have no effect."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Elle empêche tout fonctionnement",
+     "en": "It prevents any operation"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Elle allume en permanence",
+     "en": "It keeps the light on permanently"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Elle double la temporisation",
+     "en": "It doubles the timing"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Elle relance la temporisation",
+     "en": "It restarts the timing"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q15",
+  "section": "03-sans-effet",
+  "type": "multiple",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quelles sont les trois positions du commutateur de certaines minuteries électroniques ?",
+   "en": "What are the three positions of the selector on some electronic timers?"
+  },
+  "explanation": {
+   "fr": "Fonctionnement normal, forçage et inhibition.",
+   "en": "Normal operation, override and inhibit."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Fonctionnement normal",
+     "en": "Normal operation"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Forçage",
+     "en": "Override"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Inhibition",
+     "en": "Inhibit"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Dégivrage",
+     "en": "Defrost"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m7-q16",
+  "section": "02-avec-effet",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans le schéma de la minuterie, la lampe est alimentée directement par le bouton-poussoir.",
+   "en": "In the staircase timer diagram, the lamp is supplied directly by the push button."
+  },
+  "explanation": {
+   "fr": "Faux : le bouton-poussoir alimente la bobine ; c'est le contact K1 qui alimente la lampe.",
+   "en": "False: the push button supplies the coil; contact K1 supplies the lamp."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": true
+   }
+  ]
+ }
+]

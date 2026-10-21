@@ -1,0 +1,728 @@
+[
+ {
+  "id": "p2-m4-q01",
+  "section": "01-role",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Combien de circuits distincts un interrupteur double allumage commande-t-il ?",
+   "en": "How many separate circuits does a double switch control?"
+  },
+  "explanation": {
+   "fr": "Il commande deux circuits, ensemble ou séparément.",
+   "en": "It controls two circuits, together or separately."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "2",
+     "en": "2"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "1",
+     "en": "1"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "3",
+     "en": "3"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "4",
+     "en": "4"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q02",
+  "section": "01-role",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Depuis combien d'endroits le double allumage commande-t-il ses deux circuits ?",
+   "en": "From how many places does a double switch control its two circuits?"
+  },
+  "explanation": {
+   "fr": "Depuis un seul endroit.",
+   "en": "From a single place."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un seul",
+     "en": "One"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Deux",
+     "en": "Two"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Trois",
+     "en": "Three"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Autant que de lampes",
+     "en": "As many as there are lamps"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q03",
+  "section": "01-role",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Les deux groupes de lampes d'un double allumage peuvent être allumés ensemble.",
+   "en": "Both lamp groups of a double switch can be on together."
+  },
+  "explanation": {
+   "fr": "Vrai : ensemble ou séparément.",
+   "en": "True: together or separately."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q04",
+  "section": "01-role",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Où le neutre est-il raccordé dans un double allumage ?",
+   "en": "Where is the neutral connected in a double switch circuit?"
+  },
+  "explanation": {
+   "fr": "Le neutre va directement aux deux groupes de lampes.",
+   "en": "The neutral goes straight to both groups of lamps."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Directement aux deux groupes de lampes",
+     "en": "Straight to both groups of lamps"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "À la borne commune de l'interrupteur",
+     "en": "To the common terminal of the switch"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Au premier bouton seulement",
+     "en": "To the first rocker only"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Au conducteur de protection",
+     "en": "To the protective conductor"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q05",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Combien de points d'éclairage au plus sur un circuit d'éclairage ?",
+   "en": "How many lighting points at most on a lighting circuit?"
+  },
+  "explanation": {
+   "fr": "8 points d'éclairage au plus par circuit.",
+   "en": "8 lighting points at most per circuit."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "8",
+     "en": "8"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "5",
+     "en": "5"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "12",
+     "en": "12"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "16",
+     "en": "16"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q06",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Dans le schéma développé du module, quelles lampes la commande S2 alimente-t-elle ?",
+   "en": "In the module's wiring diagram, which lamps does switch S2 supply?"
+  },
+  "explanation": {
+   "fr": "S2 alimente L2 et L3 (circuit 2) ; S1 alimente L1.",
+   "en": "S2 supplies L2 and L3 (circuit 2); S1 supplies L1."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "L2 et L3",
+     "en": "L2 and L3"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "L1 seulement",
+     "en": "L1 only"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "L1, L2 et L3",
+     "en": "L1, L2 and L3"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Aucune",
+     "en": "None"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q07",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quelle section pour les conducteurs d'un double allumage ?",
+   "en": "Which cross-section for the conductors of a double switch circuit?"
+  },
+  "explanation": {
+   "fr": "1,5 mm², comme tout circuit d'éclairage.",
+   "en": "1.5 mm², like any lighting circuit."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "1,5 mm²",
+     "en": "1.5 mm²"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "2,5 mm²",
+     "en": "2.5 mm²"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "0,5 mm²",
+     "en": "0.5 mm²"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "4 mm²",
+     "en": "4 mm²"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q08",
+  "section": "02-schemas",
+  "type": "multiple",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quels éléments trouve-t-on sur la planche du double allumage ?",
+   "en": "Which items are on the double switch practice board?"
+  },
+  "explanation": {
+   "fr": "Protection F1, boîte de dérivation, interrupteur double et trois lampes.",
+   "en": "Protection F1, junction box, double switch and three lamps."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Une protection F1",
+     "en": "A protective device F1"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Une boîte de dérivation",
+     "en": "A junction box"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un interrupteur double allumage",
+     "en": "A double switch"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un télérupteur",
+     "en": "An impulse relay"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q09",
+  "section": "01-role",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Combien de boutons de commande possède un interrupteur double allumage ?",
+   "en": "How many rockers does a double switch have?"
+  },
+  "explanation": {
+   "fr": "Deux boutons de commande simple allumage.",
+   "en": "Two one-way rockers."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "2",
+     "en": "2"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "1",
+     "en": "1"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "3",
+     "en": "3"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Aucun, il est automatique",
+     "en": "None, it is automatic"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q10",
+  "section": "01-role",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans un double allumage, qu'est-ce qui alimente les deux commandes ?",
+   "en": "In a double switch circuit, what supplies both switches?"
+  },
+  "explanation": {
+   "fr": "La phase alimente les deux commandes.",
+   "en": "The line supplies both switches."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "La phase",
+     "en": "The line"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le neutre",
+     "en": "The neutral"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le conducteur de protection",
+     "en": "The protective conductor"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La lampe L1",
+     "en": "Lamp L1"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q11",
+  "section": "01-role",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Le câblage exact d'un double allumage dépend des bornes de l'interrupteur : on suit les indications du fabricant.",
+   "en": "The exact wiring of a double switch depends on its terminals: follow the manufacturer's instructions."
+  },
+  "explanation": {
+   "fr": "Vrai : les bornes varient d'un modèle à l'autre.",
+   "en": "True: terminals vary from one model to another."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q12",
+  "section": "01-role",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quel symbole architectural représente le double allumage ?",
+   "en": "Which architectural symbol represents a double switch?"
+  },
+  "explanation": {
+   "fr": "Un cercle portant deux traits inclinés de part et d'autre.",
+   "en": "A circle with two inclined strokes, one on each side."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un cercle avec deux traits inclinés de part et d'autre",
+     "en": "A circle with two inclined strokes, one on each side"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un double cercle",
+     "en": "A double circle"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un rectangle marqué t",
+     "en": "A rectangle marked t"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Une croix",
+     "en": "A cross"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q13",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quelle protection pour un circuit d'éclairage de double allumage en 1,5 mm² ?",
+   "en": "Which protection for a 1.5 mm² double switch lighting circuit?"
+  },
+  "explanation": {
+   "fr": "De 10 A (fusible) à 16 A (disjoncteur).",
+   "en": "From 10 A (fuse) to 16 A (circuit breaker)."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "De 10 A à 16 A",
+     "en": "From 10 A to 16 A"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "20 A",
+     "en": "20 A"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "32 A",
+     "en": "32 A"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "40 A",
+     "en": "40 A"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q14",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Sur le plan architectural, combien de points d'éclairage le circuit 2 alimente-t-il ?",
+   "en": "On the architectural plan, how many lighting points does circuit 2 supply?"
+  },
+  "explanation": {
+   "fr": "Le circuit 2 alimente deux points d'éclairage.",
+   "en": "Circuit 2 supplies two lighting points."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "2",
+     "en": "2"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "1",
+     "en": "1"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "3",
+     "en": "3"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "0",
+     "en": "0"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q15",
+  "section": "02-schemas",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans un double allumage, chaque sortie de commande alimente son propre groupe de lampes.",
+   "en": "In a double switch circuit, each switch output supplies its own group of lamps."
+  },
+  "explanation": {
+   "fr": "Vrai : chaque commande a son circuit.",
+   "en": "True: each switch has its own circuit."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m4-q16",
+  "section": "02-schemas",
+  "type": "multiple",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quels essais fait-on avant la mise sous tension du montage ?",
+   "en": "Which tests are done before switching the circuit on?"
+  },
+  "explanation": {
+   "fr": "On teste hors tension au multimètre et au testeur de phase, après avoir vérifié les fixations.",
+   "en": "Test dead with the multimeter and voltage tester, after checking the fixings."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vérifier la solidité des fixations",
+     "en": "Check that everything is firmly fixed"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Tester hors tension au multimètre",
+     "en": "Test dead with the multimeter"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Toucher les bornes pour sentir le courant",
+     "en": "Touch the terminals to feel the current"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Retirer le disjoncteur",
+     "en": "Remove the circuit breaker"
+    },
+    "correct": false
+   }
+  ]
+ }
+]

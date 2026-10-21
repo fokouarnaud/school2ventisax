@@ -411,6 +411,499 @@
           }
         }
       ]
+    },
+    {
+      "slug": "p2",
+      "order": 2,
+      "title": {
+        "fr": "Les bases de l'électricité domestique",
+        "en": "Basics of domestic electrical installations"
+      },
+      "exam": {
+        "questions_per_module": 5
+      },
+      "modules": [
+        {
+          "order": 1,
+          "dir": "p2/m1",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Notions de base en électricité, appareillages et outils de l'électricien",
+            "en": "Basic electrical concepts, electrical equipment and the electrician's tools"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de définir les concepts de base de l'électricité et d'utiliser correctement les instruments de mesure pour déterminer les grandeurs électriques dans les installations.",
+            "en": "The learner will be able to define the basic concepts of electricity and use measuring instruments correctly to determine the electrical quantities in installations."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier et QCM.",
+            "en": "Practical work assessed in the workshop and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "00-presentation",
+              "kind": "content",
+              "title": {
+                "fr": "Présentation de la partie",
+                "en": "About this part"
+              }
+            },
+            {
+              "order": 2,
+              "file": "01-glossaire",
+              "kind": "content",
+              "title": {
+                "fr": "Glossaire français-anglais",
+                "en": "French-English glossary"
+              },
+              "supplement": true
+            },
+            {
+              "order": 3,
+              "file": "02-notions",
+              "kind": "content",
+              "title": {
+                "fr": "Les notions de base en électricité",
+                "en": "Basic electrical concepts"
+              }
+            },
+            {
+              "order": 4,
+              "file": "03-outils",
+              "kind": "content",
+              "title": {
+                "fr": "Les outils de l'électricien",
+                "en": "The electrician's tools"
+              }
+            },
+            {
+              "order": 5,
+              "file": "04-mesure",
+              "kind": "content",
+              "title": {
+                "fr": "Les appareils de mesure",
+                "en": "Measuring instruments"
+              }
+            },
+            {
+              "order": 6,
+              "file": "05-appareillages",
+              "kind": "content",
+              "title": {
+                "fr": "Les appareillages électriques",
+                "en": "Electrical equipment"
+              }
+            },
+            {
+              "order": 7,
+              "file": "06-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "dir": "p2/m2",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Projet de création d'une installation électrique d'une nouvelle résidence",
+            "en": "Designing the electrical installation of a new house"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de concevoir l'installation électrique complète d'un bâtiment résidentiel qui réponde aux conditions de sécurité et de fonctionnement optimales.",
+            "en": "The learner will be able to design the complete electrical installation of a residential building that meets the best conditions of safety and operation."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier et QCM.",
+            "en": "Practical work assessed in the workshop and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-projet",
+              "kind": "content",
+              "title": {
+                "fr": "Les étapes du projet et le synopsis",
+                "en": "Project stages and overview"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-plan",
+              "kind": "content",
+              "title": {
+                "fr": "Le plan d'implantation",
+                "en": "The layout plan"
+              },
+              "supplement": true
+            },
+            {
+              "order": 3,
+              "file": "03-unifilaire",
+              "kind": "content",
+              "title": {
+                "fr": "Le schéma unifilaire du tableau",
+                "en": "Single-line diagram of the consumer unit"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-puissance",
+              "kind": "content",
+              "title": {
+                "fr": "Puissance installée et protections",
+                "en": "Installed power and protective devices"
+              },
+              "supplement": true
+            },
+            {
+              "order": 5,
+              "file": "05-cables-devis",
+              "kind": "content",
+              "title": {
+                "fr": "Câble d'arrivée et devis",
+                "en": "Incoming cable and quotation"
+              },
+              "supplement": true
+            },
+            {
+              "order": 6,
+              "file": "06-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "dir": "p2/m3",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Montage simple allumage",
+            "en": "One-way switching"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de définir, de câbler et de tester un montage simple allumage en respectant les règles de sécurité.",
+            "en": "The learner will be able to define, wire and test a one-way switching circuit while following the safety rules."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier et QCM.",
+            "en": "Practical work assessed in the workshop and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-generalites",
+              "kind": "content",
+              "title": {
+                "fr": "Généralités et fonctionnement",
+                "en": "Overview and operation"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-schemas",
+              "kind": "content",
+              "title": {
+                "fr": "Les schémas du simple allumage",
+                "en": "One-way switching diagrams"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-protection",
+              "kind": "content",
+              "title": {
+                "fr": "Protection et section des circuits d'éclairage",
+                "en": "Protection and cross-section of lighting circuits"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-symboles",
+              "kind": "content",
+              "title": {
+                "fr": "Symboles normalisés",
+                "en": "Standard symbols"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "dir": "p2/m4",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Montage double allumage",
+            "en": "Two-gang one-way switching (double switch)"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de définir, de câbler et de tester un montage double allumage en respectant les règles de sécurité.",
+            "en": "The learner will be able to define, wire and test a double switch circuit while following the safety rules."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier et QCM.",
+            "en": "Practical work assessed in the workshop and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-role",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle et fonctionnement du double allumage",
+                "en": "Purpose and operation of a double switch"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-schemas",
+              "kind": "content",
+              "title": {
+                "fr": "Protection et schémas du double allumage",
+                "en": "Protection and diagrams of a double switch"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "dir": "p2/m5",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Montage va-et-vient",
+            "en": "Two-way switching"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de réaliser un montage va-et-vient et d'en rechercher les pannes.",
+            "en": "The learner will be able to wire a two-way switching circuit and find its faults."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier et QCM.",
+            "en": "Practical work assessed in the workshop and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-principe",
+              "kind": "content",
+              "title": {
+                "fr": "Principe et fonctionnement du va-et-vient",
+                "en": "Principle and operation of two-way switching"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-equipements",
+              "kind": "content",
+              "title": {
+                "fr": "Étude et test des équipements",
+                "en": "Studying and testing the equipment"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-schemas",
+              "kind": "content",
+              "title": {
+                "fr": "Les schémas du va-et-vient",
+                "en": "Two-way switching diagrams"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "dir": "p2/m6",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Montage télérupteur",
+            "en": "Impulse relay circuit"
+          },
+          "competence": {
+            "fr": "L'apprenant sera compétent dans le montage d'un télérupteur.",
+            "en": "The learner will be competent in wiring an impulse relay."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier et QCM.",
+            "en": "Practical work assessed in the workshop and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-fonction",
+              "kind": "content",
+              "title": {
+                "fr": "Fonction et principe du télérupteur",
+                "en": "Function and principle of the impulse relay"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-schemas",
+              "kind": "content",
+              "title": {
+                "fr": "Les schémas du télérupteur",
+                "en": "Impulse relay diagrams"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "dir": "p2/m7",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Montage d'une minuterie",
+            "en": "Staircase timer circuit"
+          },
+          "competence": {
+            "fr": "L'apprenant sera apte à réaliser le câblage d'une minuterie sur une installation électrique.",
+            "en": "The learner will be able to wire a staircase timer in an electrical installation."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier et QCM.",
+            "en": "Practical work assessed in the workshop and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-role",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle et symboles de la minuterie",
+                "en": "Purpose and symbols of the staircase timer"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-avec-effet",
+              "kind": "content",
+              "title": {
+                "fr": "La minuterie avec effet",
+                "en": "The retriggerable timer"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-sans-effet",
+              "kind": "content",
+              "title": {
+                "fr": "La minuterie sans effet",
+                "en": "The non-retriggerable timer"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "dir": "p2/m8",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Montage et réglage d'une horloge",
+            "en": "Installing and setting a time switch"
+          },
+          "competence": {
+            "fr": "L'apprenant sera compétent pour le montage et le réglage d'une horloge.",
+            "en": "The learner will be competent in installing and setting a time switch."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier et QCM.",
+            "en": "Practical work assessed in the workshop and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-generalites",
+              "kind": "content",
+              "title": {
+                "fr": "Généralités et fonctionnement de l'horloge",
+                "en": "Overview and operation of the time switch"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-reglage",
+              "kind": "content",
+              "title": {
+                "fr": "Variantes et réglage",
+                "en": "Variants and setting"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-schemas",
+              "kind": "content",
+              "title": {
+                "fr": "Schémas de montage",
+                "en": "Wiring diagrams"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,728 @@
+[
+ {
+  "id": "p2-m5-q01",
+  "section": "01-principe",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Depuis combien de points de commande le va-et-vient commande-t-il une lampe ?",
+   "en": "From how many control points does two-way switching control a lamp?"
+  },
+  "explanation": {
+   "fr": "Depuis deux points de commande.",
+   "en": "From two control points."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "2",
+     "en": "2"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "1",
+     "en": "1"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "3",
+     "en": "3"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Autant que l'on veut",
+     "en": "As many as needed"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q02",
+  "section": "01-principe",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Combien de bornes possède un interrupteur va-et-vient ?",
+   "en": "How many terminals does a two-way switch have?"
+  },
+  "explanation": {
+   "fr": "Trois : une commune et deux navettes.",
+   "en": "Three: one common and two strappers."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "3",
+     "en": "3"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "2",
+     "en": "2"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "4",
+     "en": "4"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "6",
+     "en": "6"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q03",
+  "section": "01-principe",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Comment appelle-t-on les conducteurs qui relient deux interrupteurs va-et-vient ?",
+   "en": "What are the conductors linking two two-way switches called?"
+  },
+  "explanation": {
+   "fr": "Ce sont les navettes.",
+   "en": "They are the strappers."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Les navettes",
+     "en": "Strappers"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Les retours de lampe",
+     "en": "Switch wires"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Les neutres",
+     "en": "Neutrals"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Les torons",
+     "en": "Looms"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q04",
+  "section": "01-principe",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "La lampe d'un va-et-vient s'allume quand les deux interrupteurs sont sur la même navette.",
+   "en": "In two-way switching, the lamp lights when both switches are on the same strapper."
+  },
+  "explanation": {
+   "fr": "Vrai : le circuit est alors fermé par cette navette.",
+   "en": "True: the circuit is then closed through that strapper."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q05",
+  "section": "02-equipements",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "D'après quoi choisit-on le calibre du disjoncteur d'un va-et-vient ?",
+   "en": "What determines the rating of the circuit breaker of a two-way circuit?"
+  },
+  "explanation": {
+   "fr": "D'après la section des conducteurs protégés : 16 A au plus pour 1,5 mm².",
+   "en": "The cross-section of the protected conductors: 16 A at most for 1.5 mm²."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "La section des conducteurs",
+     "en": "The cross-section of the conductors"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "La puissance de la lampe",
+     "en": "The power of the lamp"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La tension du réseau",
+     "en": "The mains voltage"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La longueur de la pièce",
+     "en": "The length of the room"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q06",
+  "section": "02-equipements",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quelle section de conducteurs pour un va-et-vient ?",
+   "en": "Which conductor cross-section for two-way switching?"
+  },
+  "explanation": {
+   "fr": "1,5 mm².",
+   "en": "1.5 mm²."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "1,5 mm²",
+     "en": "1.5 mm²"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "2,5 mm²",
+     "en": "2.5 mm²"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "6 mm²",
+     "en": "6 mm²"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "10 mm²",
+     "en": "10 mm²"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q07",
+  "section": "03-schemas",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Sur le schéma développé, à quoi la borne commune de S2 est-elle reliée ?",
+   "en": "On the wiring diagram, what is the common terminal of S2 connected to?"
+  },
+  "explanation": {
+   "fr": "La borne commune de S2 alimente la lampe L1.",
+   "en": "The common terminal of S2 supplies lamp L1."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "À la lampe L1",
+     "en": "To lamp L1"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "À la phase",
+     "en": "To the line"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Au neutre",
+     "en": "To the neutral"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À la borne commune de S1",
+     "en": "To the common terminal of S1"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q08",
+  "section": "03-schemas",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Où place-t-on les deux interrupteurs d'un va-et-vient sur le plan architectural ?",
+   "en": "Where are the two switches of a two-way circuit placed on the architectural plan?"
+  },
+  "explanation": {
+   "fr": "À deux accès différents de la pièce, par exemple à chaque porte.",
+   "en": "At two different entrances of the room, for example at each door."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "À deux accès différents de la pièce",
+     "en": "At two different entrances of the room"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Côte à côte dans le même boîtier",
+     "en": "Side by side in the same box"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Dans le tableau",
+     "en": "In the consumer unit"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Au plafond, près de la lampe",
+     "en": "On the ceiling, near the lamp"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q09",
+  "section": "01-principe",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Sur le premier interrupteur va-et-vient, que reçoit la borne commune ?",
+   "en": "On the first two-way switch, what does the common terminal receive?"
+  },
+  "explanation": {
+   "fr": "La borne commune du premier interrupteur reçoit la phase.",
+   "en": "The common terminal of the first switch receives the line."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "La phase",
+     "en": "The line"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le neutre",
+     "en": "The neutral"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Une navette",
+     "en": "A strapper"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le conducteur de protection",
+     "en": "The protective conductor"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q10",
+  "section": "01-principe",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Un appui sur l'un ou l'autre des interrupteurs va-et-vient change l'état de la lampe.",
+   "en": "Operating either two-way switch changes the state of the lamp."
+  },
+  "explanation": {
+   "fr": "Vrai : c'est le principe du va-et-vient.",
+   "en": "True: that is the principle of two-way switching."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q11",
+  "section": "01-principe",
+  "type": "multiple",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans quels lieux un va-et-vient est-il utile ?",
+   "en": "Where is two-way switching useful?"
+  },
+  "explanation": {
+   "fr": "Partout où l'on entre et sort par deux endroits : couloir, salon à deux portes, chambre (porte et lit).",
+   "en": "Wherever there are two ways in or out: corridor, living room with two doors, bedroom (door and bed)."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un couloir",
+     "en": "A corridor"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un salon à deux portes",
+     "en": "A living room with two doors"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un placard sans porte",
+     "en": "A cupboard with no door"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le tableau électrique",
+     "en": "The consumer unit"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q12",
+  "section": "02-equipements",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Que vérifie-t-on sur un interrupteur va-et-vient avant le câblage ?",
+   "en": "What is checked on a two-way switch before wiring?"
+  },
+  "explanation": {
+   "fr": "La continuité entre la borne commune et chaque navette, et l'absence de contact entre les navettes.",
+   "en": "Continuity between the common terminal and each strapper, and no contact between the strappers."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "La continuité commune-navette et l'absence de contact entre navettes",
+     "en": "Common-to-strapper continuity and no contact between strappers"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "La capacité en microfarads",
+     "en": "The capacitance in microfarads"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La sensibilité en mA",
+     "en": "The sensitivity in mA"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La vitesse de rotation",
+     "en": "The rotation speed"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q13",
+  "section": "02-equipements",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Comment vérifie-t-on qu'une ampoule n'est pas grillée ?",
+   "en": "How do you check that a bulb is not blown?"
+  },
+  "explanation": {
+   "fr": "On contrôle la continuité du filament à l'ohmmètre, hors tension.",
+   "en": "Check the filament continuity with an ohmmeter, with the supply off."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Continuité du filament à l'ohmmètre, hors tension",
+     "en": "Filament continuity with an ohmmeter, supply off"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Au testeur de phase, sous tension",
+     "en": "With a voltage tester, live"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "En la secouant",
+     "en": "By shaking it"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Au capacimètre",
+     "en": "With a capacitance meter"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q14",
+  "section": "03-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans la légende du schéma développé, que désigne F1 ?",
+   "en": "In the key of the wiring diagram, what does F1 designate?"
+  },
+  "explanation": {
+   "fr": "F1 est le disjoncteur (la protection).",
+   "en": "F1 is the circuit breaker (protection)."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le disjoncteur",
+     "en": "The circuit breaker"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "La lampe",
+     "en": "The lamp"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le premier interrupteur",
+     "en": "The first switch"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La navette 1",
+     "en": "Strapper 1"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q15",
+  "section": "03-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans le schéma multifilaire, où vont le neutre et la protection ?",
+   "en": "In the multi-line diagram, where do the neutral and earth go?"
+  },
+  "explanation": {
+   "fr": "Ils vont directement à la lampe, sans passer par les interrupteurs.",
+   "en": "They go straight to the lamp, without passing through the switches."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Directement à la lampe",
+     "en": "Straight to the lamp"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Aux bornes communes",
+     "en": "To the common terminals"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Aux navettes",
+     "en": "To the strappers"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À l'interrupteur S1",
+     "en": "To switch S1"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m5-q16",
+  "section": "03-schemas",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Les deux navettes relient S1 à S2.",
+   "en": "The two strappers link S1 to S2."
+  },
+  "explanation": {
+   "fr": "Vrai.",
+   "en": "True."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ }
+]

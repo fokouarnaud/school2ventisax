@@ -1,0 +1,728 @@
+[
+ {
+  "id": "p2-m2-q01",
+  "section": "01-projet",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quelle est la première étape du dimensionnement d'une installation domestique ?",
+   "en": "What is the first stage of sizing a domestic installation?"
+  },
+  "explanation": {
+   "fr": "On commence par établir le plan d'implantation des équipements de chaque pièce.",
+   "en": "The first stage is to draw the layout plan of the equipment in each room."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Établir le plan d'implantation",
+     "en": "Draw the layout plan"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Rédiger le devis",
+     "en": "Write the quotation"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Dimensionner le câble d'arrivée",
+     "en": "Size the incoming cable"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Calculer la puissance installée",
+     "en": "Calculate the installed power"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q02",
+  "section": "01-projet",
+  "type": "multiple",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Lesquels sont des appareillages de commande selon le synopsis ?",
+   "en": "Which are control equipment according to the overview?"
+  },
+  "explanation": {
+   "fr": "Interrupteurs, boutons-poussoirs et contacteurs commandent ; les fusibles protègent.",
+   "en": "Switches, push buttons and contactors control; fuses protect."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Interrupteurs",
+     "en": "Switches"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Boutons-poussoirs",
+     "en": "Push buttons"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Contacteurs",
+     "en": "Contactors"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Fusibles",
+     "en": "Fuses"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q03",
+  "section": "02-plan",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Combien de prises de courant faut-il au minimum dans une chambre ?",
+   "en": "What is the minimum number of socket outlets in a bedroom?"
+  },
+  "explanation": {
+   "fr": "La NF C 15-100 impose au moins 3 prises dans une chambre.",
+   "en": "NF C 15-100 requires at least 3 socket outlets in a bedroom."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "3",
+     "en": "3"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "1",
+     "en": "1"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "5",
+     "en": "5"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "6",
+     "en": "6"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q04",
+  "section": "02-plan",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "On peut placer une prise de courant dans le volume 1 d'une salle d'eau.",
+   "en": "A socket outlet may be placed in zone 1 of a shower room."
+  },
+  "explanation": {
+   "fr": "Faux : aucune prise dans les volumes 0, 1 et 2.",
+   "en": "False: no socket outlet in zones 0, 1 and 2."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": true
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q05",
+  "section": "03-unifilaire",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quelle sensibilité protège les personnes ?",
+   "en": "Which sensitivity protects people?"
+  },
+  "explanation": {
+   "fr": "Seul le différentiel 30 mA protège les personnes ; 300 mA protège contre l'incendie.",
+   "en": "Only the 30 mA RCD protects people; 300 mA protects against fire."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "30 mA",
+     "en": "30 mA"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "300 mA",
+     "en": "300 mA"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "500 mA",
+     "en": "500 mA"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "40 A",
+     "en": "40 A"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q06",
+  "section": "03-unifilaire",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quelle section et quelle protection pour un circuit de prises 16 A courant ?",
+   "en": "Which cross-section and protection for a standard 16 A socket circuit?"
+  },
+  "explanation": {
+   "fr": "2,5 mm² avec un disjoncteur de 20 A (12 prises au plus).",
+   "en": "2.5 mm² with a 20 A circuit breaker (12 sockets at most)."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "2,5 mm² et 20 A",
+     "en": "2.5 mm² and 20 A"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "1,5 mm² et 32 A",
+     "en": "1.5 mm² and 32 A"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "6 mm² et 10 A",
+     "en": "6 mm² and 10 A"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "1 mm² et 20 A",
+     "en": "1 mm² and 20 A"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q07",
+  "section": "04-puissance",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Pourquoi applique-t-on un coefficient d'utilisation à la puissance installée ?",
+   "en": "Why is a demand factor applied to the installed power?"
+  },
+  "explanation": {
+   "fr": "Tous les appareils ne fonctionnent jamais ensemble à pleine puissance.",
+   "en": "The appliances never all run at full power at the same time."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Parce que tous les appareils ne fonctionnent pas en même temps",
+     "en": "Because the appliances do not all run at the same time"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Pour augmenter la sécurité du câble",
+     "en": "To make the cable safer"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Parce que la tension baisse le soir",
+     "en": "Because the voltage drops in the evening"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Pour tenir compte de la terre",
+     "en": "To allow for the earth"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q08",
+  "section": "05-cables-devis",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Plus le câble d'arrivée est long, plus sa section doit être grande pour limiter la chute de tension.",
+   "en": "The longer the incoming cable, the larger its cross-section must be to limit the voltage drop."
+  },
+  "explanation": {
+   "fr": "Vrai : la chute de tension est proportionnelle à la longueur et inversement proportionnelle à la section.",
+   "en": "True: the voltage drop is proportional to the length and inversely proportional to the cross-section."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q09",
+  "section": "01-projet",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans le synopsis d'une installation, où classe-t-on les fils, câbles et conduits ?",
+   "en": "In the overview of an installation, where are wires, cables and conduits classified?"
+  },
+  "explanation": {
+   "fr": "Ils forment les canalisations.",
+   "en": "They make up the wiring systems."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Les canalisations",
+     "en": "Wiring systems"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "L'appareillage de protection",
+     "en": "Protective equipment"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La source d'énergie",
+     "en": "Energy source"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "L'appareillage d'utilisation",
+     "en": "Current-using equipment"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q10",
+  "section": "02-plan",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Combien de prises au minimum dans un séjour de 28 m² ?",
+   "en": "What is the minimum number of sockets in a 28 m² living room?"
+  },
+  "explanation": {
+   "fr": "Une prise par tranche de 4 m² : 28 / 4 = 7.",
+   "en": "One socket per 4 m²: 28 / 4 = 7."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "7",
+     "en": "7"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "5",
+     "en": "5"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "3",
+     "en": "3"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "14",
+     "en": "14"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q11",
+  "section": "02-plan",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Combien de prises au minimum dans une cuisine, et combien au-dessus du plan de travail ?",
+   "en": "How many sockets at least in a kitchen, and how many above the worktop?"
+  },
+  "explanation": {
+   "fr": "6 prises dont 4 au-dessus du plan de travail.",
+   "en": "6 sockets, including 4 above the worktop."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "6, dont 4 au-dessus du plan de travail",
+     "en": "6, including 4 above the worktop"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "3, dont 1 au-dessus du plan de travail",
+     "en": "3, including 1 above the worktop"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "4, toutes au-dessus du plan de travail",
+     "en": "4, all above the worktop"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "2, sans exigence d'emplacement",
+     "en": "2, with no location requirement"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q12",
+  "section": "03-unifilaire",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quel type de différentiel 30 mA protège le circuit du lave-linge ?",
+   "en": "Which type of 30 mA RCD protects the washing machine circuit?"
+  },
+  "explanation": {
+   "fr": "Le type A, car l'électronique du lave-linge produit des fuites à composante continue.",
+   "en": "Type A, because the washing machine's electronics produce leakage with a DC component."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Type A",
+     "en": "Type A"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Type AC",
+     "en": "Type AC"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un différentiel 500 mA",
+     "en": "A 500 mA RCD"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Aucun différentiel",
+     "en": "No RCD"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q13",
+  "section": "03-unifilaire",
+  "type": "multiple",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quelles règles s'appliquent à un circuit d'éclairage en 1,5 mm² ?",
+   "en": "Which rules apply to a 1.5 mm² lighting circuit?"
+  },
+  "explanation": {
+   "fr": "Disjoncteur de 16 A au plus, 8 points d'éclairage au plus, différentiel 30 mA en tête.",
+   "en": "16 A circuit breaker at most, 8 lighting points at most, 30 mA RCD upstream."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Disjoncteur de 16 A au plus",
+     "en": "Circuit breaker of 16 A at most"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "8 points d'éclairage au plus",
+     "en": "8 lighting points at most"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Protection différentielle 30 mA",
+     "en": "30 mA residual current protection"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Disjoncteur de 32 A",
+     "en": "32 A circuit breaker"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q14",
+  "section": "04-puissance",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Une maison appelle 6 300 W sous 230 V avec cos φ = 0,9. Quelle intensité environ ?",
+   "en": "A house draws 6,300 W at 230 V with cos φ = 0.9. About what current?"
+  },
+  "explanation": {
+   "fr": "I = P / (U × cos φ) = 6 300 / (230 × 0,9) ≈ 30 A.",
+   "en": "I = P / (U × cos φ) = 6,300 / (230 × 0.9) ≈ 30 A."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "30 A",
+     "en": "30 A"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "27 A",
+     "en": "27 A"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "45 A",
+     "en": "45 A"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "14 A",
+     "en": "14 A"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q15",
+  "section": "04-puissance",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Le calibre d'un disjoncteur divisionnaire se choisit d'après la section du câble qu'il protège.",
+   "en": "The rating of a miniature circuit breaker is chosen according to the cross-section of the cable it protects."
+  },
+  "explanation": {
+   "fr": "Vrai : le disjoncteur protège le câble, jamais d'après l'appareil branché.",
+   "en": "True: the circuit breaker protects the cable, never according to the appliance connected."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m2-q16",
+  "section": "05-cables-devis",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quelle est la chute de tension sur 30 m de câble cuivre de 10 mm² parcouru par 40 A (ρ = 0,0225 Ω·mm²/m) ?",
+   "en": "What is the voltage drop on 30 m of 10 mm² copper cable carrying 40 A (ρ = 0.0225 Ω·mm²/m)?"
+  },
+  "explanation": {
+   "fr": "ΔU = 2 × 0,0225 × 30 × 40 / 10 = 5,4 V.",
+   "en": "ΔU = 2 × 0.0225 × 30 × 40 / 10 = 5.4 V."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "5,4 V",
+     "en": "5.4 V"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "2,7 V",
+     "en": "2.7 V"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "9 V",
+     "en": "9 V"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "54 V",
+     "en": "54 V"
+    },
+    "correct": false
+   }
+  ]
+ }
+]

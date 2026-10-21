@@ -1,0 +1,742 @@
+[
+ {
+  "id": "p2-m3-q01",
+  "section": "01-generalites",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Le simple allumage commande un point lumineux depuis combien d'endroits ?",
+   "en": "From how many places does one-way switching control a light point?"
+  },
+  "explanation": {
+   "fr": "Le simple allumage commande depuis un seul endroit.",
+   "en": "One-way switching controls from a single place."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un seul",
+     "en": "One"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Deux",
+     "en": "Two"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Trois ou plus",
+     "en": "Three or more"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Aucun, il est automatique",
+     "en": "None, it is automatic"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q02",
+  "section": "01-generalites",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quel conducteur l'interrupteur doit-il couper ?",
+   "en": "Which conductor must the switch break?"
+  },
+  "explanation": {
+   "fr": "L'interrupteur coupe la phase ; sinon la douille resterait sous tension.",
+   "en": "The switch breaks the line; otherwise the lampholder would stay live."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "La phase",
+     "en": "The line"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le neutre",
+     "en": "The neutral"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le conducteur de protection",
+     "en": "The protective conductor"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Indifféremment la phase ou le neutre",
+     "en": "Either the line or the neutral"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q03",
+  "section": "01-generalites",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "De quelle couleur est le conducteur neutre ?",
+   "en": "What colour is the neutral conductor?"
+  },
+  "explanation": {
+   "fr": "Le neutre est bleu.",
+   "en": "The neutral is blue."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Bleu",
+     "en": "Blue"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Rouge",
+     "en": "Red"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Vert et jaune",
+     "en": "Green and yellow"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Noir",
+     "en": "Black"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q04",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quel schéma sert surtout au dépannage ?",
+   "en": "Which diagram is used mainly for fault finding?"
+  },
+  "explanation": {
+   "fr": "Le schéma développé explique le fonctionnement et sert au dépannage.",
+   "en": "The wiring diagram explains how the circuit works and is used for fault finding."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le schéma développé",
+     "en": "The wiring diagram"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le plan architectural",
+     "en": "The architectural plan"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le devis",
+     "en": "The quotation"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le synopsis",
+     "en": "The overview"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q05",
+  "section": "02-schemas",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Sur un plan architectural, le trait pointillé entre l'interrupteur et le point d'éclairage est une liaison de dépendance.",
+   "en": "On an architectural plan, the dotted line between the switch and the light point is a control link."
+  },
+  "explanation": {
+   "fr": "Vrai : il montre quelle commande agit sur quel point d'éclairage.",
+   "en": "True: it shows which switch controls which light point."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q06",
+  "section": "03-protection",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quelle section de cuivre pour un circuit d'éclairage ?",
+   "en": "Which copper cross-section for a lighting circuit?"
+  },
+  "explanation": {
+   "fr": "L'éclairage se câble en 1,5 mm² de cuivre.",
+   "en": "Lighting is wired in 1.5 mm² copper."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "1,5 mm²",
+     "en": "1.5 mm²"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "2,5 mm²",
+     "en": "2.5 mm²"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "6 mm²",
+     "en": "6 mm²"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "0,75 mm²",
+     "en": "0.75 mm²"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q07",
+  "section": "04-symboles",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Sur un plan architectural, que représente une croix (×) ?",
+   "en": "On an architectural plan, what does a cross (×) represent?"
+  },
+  "explanation": {
+   "fr": "La croix représente un point d'éclairage.",
+   "en": "The cross represents a lighting point."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un point d'éclairage",
+     "en": "A lighting point"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Une prise de courant",
+     "en": "A socket outlet"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un bouton-poussoir",
+     "en": "A push button"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Une boîte de dérivation",
+     "en": "A junction box"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q08",
+  "section": "04-symboles",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Sur un plan architectural, quel symbole est un rectangle marqué « t » ?",
+   "en": "On an architectural plan, which symbol is a rectangle marked \"t\"?"
+  },
+  "explanation": {
+   "fr": "Le rectangle marqué t est la minuterie.",
+   "en": "The rectangle marked t is the staircase timer."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "La minuterie",
+     "en": "The staircase timer"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le télérupteur",
+     "en": "The impulse relay"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le disjoncteur",
+     "en": "The circuit breaker"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La prise de téléphone",
+     "en": "The telephone socket"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q09",
+  "section": "01-generalites",
+  "type": "multiple",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Où le conducteur de protection vert et jaune est-il raccordé dans un simple allumage ?",
+   "en": "Where is the green and yellow protective conductor connected in one-way switching?"
+  },
+  "explanation": {
+   "fr": "Il va du tableau à la borne de terre du luminaire, quand elle existe ; il ne passe pas par l'interrupteur.",
+   "en": "It runs from the consumer unit to the earth terminal of the light fitting, where there is one; it does not go through the switch."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "À la borne de terre du luminaire",
+     "en": "To the earth terminal of the light fitting"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Au bornier de terre du tableau",
+     "en": "To the earth terminal bar of the consumer unit"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "À la borne de l'interrupteur",
+     "en": "To the switch terminal"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Au neutre de la lampe",
+     "en": "To the lamp neutral"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q10",
+  "section": "01-generalites",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Si l'interrupteur coupait le neutre, la douille resterait sous tension lampe éteinte.",
+   "en": "If the switch broke the neutral, the lampholder would stay live with the lamp off."
+  },
+  "explanation": {
+   "fr": "Vrai : c'est pourquoi l'interrupteur coupe toujours la phase.",
+   "en": "True: that is why the switch always breaks the line."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q11",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quel schéma précise le cheminement exact des conducteurs et leur nombre dans chaque conduit ?",
+   "en": "Which drawing shows the exact route of the conductors and their number in each conduit?"
+  },
+  "explanation": {
+   "fr": "C'est le plan et schéma de réalisation.",
+   "en": "It is the installation plan."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le plan et schéma de réalisation",
+     "en": "The installation plan"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le schéma de principe",
+     "en": "The schematic diagram"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le synopsis",
+     "en": "The overview"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le chronogramme",
+     "en": "The timing diagram"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q12",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans un schéma développé, que désigne le repère S1 ?",
+   "en": "In a wiring diagram, what does reference S1 designate?"
+  },
+  "explanation": {
+   "fr": "S désigne une commande (interrupteur), 1 son rang.",
+   "en": "S designates a switch, 1 its rank."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le premier interrupteur",
+     "en": "The first switch"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "La première lampe",
+     "en": "The first lamp"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Le premier fusible",
+     "en": "The first fuse"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La section de 1 mm²",
+     "en": "A 1 mm² cross-section"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q13",
+  "section": "02-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Combien de conducteurs vont de la boîte de dérivation à l'interrupteur d'un simple allumage ?",
+   "en": "How many conductors run from the junction box to a one-way switch?"
+  },
+  "explanation": {
+   "fr": "Deux : la phase et le retour de lampe.",
+   "en": "Two: the line and the switch wire."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "2",
+     "en": "2"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "1",
+     "en": "1"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "3",
+     "en": "3"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "4",
+     "en": "4"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q14",
+  "section": "03-protection",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quel calibre de disjoncteur au plus pour un circuit d'éclairage en 1,5 mm² ?",
+   "en": "What is the highest circuit breaker rating for a 1.5 mm² lighting circuit?"
+  },
+  "explanation": {
+   "fr": "16 A pour un disjoncteur, 10 A pour un fusible.",
+   "en": "16 A for a circuit breaker, 10 A for a fuse."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "16 A",
+     "en": "16 A"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "20 A",
+     "en": "20 A"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "32 A",
+     "en": "32 A"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "6 A",
+     "en": "6 A"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q15",
+  "section": "04-symboles",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Sur un plan architectural, que représente un double cercle ?",
+   "en": "On an architectural plan, what does a double circle represent?"
+  },
+  "explanation": {
+   "fr": "Le double cercle est le bouton-poussoir.",
+   "en": "The double circle is the push button."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un bouton-poussoir",
+     "en": "A push button"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un point d'éclairage",
+     "en": "A lighting point"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Une lampe témoin",
+     "en": "A pilot lamp"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Une prise de terre",
+     "en": "An earth electrode"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m3-q16",
+  "section": "04-symboles",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans un schéma développé, comment représente-t-on une lampe ?",
+   "en": "In a wiring diagram, how is a lamp shown?"
+  },
+  "explanation": {
+   "fr": "Une lampe est un cercle barré d'une croix.",
+   "en": "A lamp is a circle with a cross."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un cercle barré d'une croix",
+     "en": "A circle with a cross"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Un rectangle marqué t",
+     "en": "A rectangle marked t"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Deux traits parallèles",
+     "en": "Two parallel lines"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un double cercle",
+     "en": "A double circle"
+    },
+    "correct": false
+   }
+  ]
+ }
+]

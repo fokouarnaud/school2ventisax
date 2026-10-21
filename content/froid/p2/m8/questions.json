@@ -1,0 +1,742 @@
+[
+ {
+  "id": "p2-m8-q01",
+  "section": "01-generalites",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Quel autre nom donne-t-on à l'horloge ?",
+   "en": "What else is a time switch called?"
+  },
+  "explanation": {
+   "fr": "Interrupteur horaire.",
+   "en": "A timer clock (interrupteur horaire)."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Interrupteur horaire",
+     "en": "Timer clock"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Télérupteur",
+     "en": "Impulse relay"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Minuterie",
+     "en": "Staircase timer"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Contacteur",
+     "en": "Contactor"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q02",
+  "section": "01-generalites",
+  "type": "multiple",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Où utilise-t-on une horloge ?",
+   "en": "Where is a time switch used?"
+  },
+  "explanation": {
+   "fr": "Chambres froides (dégivrage), éclairage des clôtures, portes motorisées.",
+   "en": "Cold rooms (defrost), fence lighting, motorised gates."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le dégivrage des chambres froides",
+     "en": "Defrosting cold rooms"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "L'éclairage des clôtures",
+     "en": "Fence lighting"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Les portes motorisées",
+     "en": "Motorised gates"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "La protection des personnes contre les fuites",
+     "en": "Protecting people against leakage"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q03",
+  "section": "01-generalites",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Sur une horloge analogique, à quoi servent les cavaliers ?",
+   "en": "On an analogue time switch, what are the segments for?"
+  },
+  "explanation": {
+   "fr": "Abaissés ou relevés, ils définissent les plages de marche et d'arrêt.",
+   "en": "Pushed down or up, they set the on and off periods."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "À définir les plages horaires de marche",
+     "en": "To set the on periods"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "À régler la tension",
+     "en": "To set the voltage"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À fixer l'horloge au rail",
+     "en": "To fix the time switch to the rail"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "À protéger contre les surcharges",
+     "en": "To protect against overloads"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q04",
+  "section": "01-generalites",
+  "type": "truefalse",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "La réserve de marche maintient l'heure de l'horloge pendant une coupure de courant.",
+   "en": "The power reserve keeps the time during a power cut."
+  },
+  "explanation": {
+   "fr": "Vrai : une pile ou un accumulateur interne prend le relais.",
+   "en": "True: an internal battery takes over."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q05",
+  "section": "02-reglage",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Une horloge de 24 h a 96 divisions. Que vaut une division ?",
+   "en": "A 24 h time switch has 96 divisions. What is one division worth?"
+  },
+  "explanation": {
+   "fr": "1 440 min / 96 = 15 min.",
+   "en": "1,440 min / 96 = 15 min."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "15 minutes",
+     "en": "15 minutes"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "30 minutes",
+     "en": "30 minutes"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "1 heure",
+     "en": "1 hour"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "10 minutes",
+     "en": "10 minutes"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q06",
+  "section": "02-reglage",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Une horloge de 24 h a 24 divisions. Que vaut une division ?",
+   "en": "A 24 h time switch has 24 divisions. What is one division worth?"
+  },
+  "explanation": {
+   "fr": "24 h / 24 = 1 h.",
+   "en": "24 h / 24 = 1 h."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "1 heure",
+     "en": "1 hour"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "15 minutes",
+     "en": "15 minutes"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "30 minutes",
+     "en": "30 minutes"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "2 heures",
+     "en": "2 hours"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q07",
+  "section": "02-reglage",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Où trouve-t-on des horloges préréglées en usine ?",
+   "en": "Where are factory-preset time switches found?"
+  },
+  "explanation": {
+   "fr": "Dans les programmateurs de dégivrage des réfrigérateurs et congélateurs ménagers.",
+   "en": "In the defrost timers of household refrigerators and freezers."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Dans les réfrigérateurs ménagers",
+     "en": "In household refrigerators"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Dans les interrupteurs va-et-vient",
+     "en": "In two-way switches"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Dans les disjoncteurs",
+     "en": "In circuit breakers"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Dans les lampes",
+     "en": "In lamps"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q08",
+  "section": "03-schemas",
+  "type": "single",
+  "usage": "quiz",
+  "prompt": {
+   "fr": "Dans le schéma d'éclairage, comment le moteur de l'horloge H1 est-il alimenté ?",
+   "en": "In the lighting diagram, how is the motor of time switch H1 supplied?"
+  },
+  "explanation": {
+   "fr": "En permanence, entre L et N.",
+   "en": "Permanently, between L and N."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "En permanence entre L et N",
+     "en": "Permanently between L and N"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Par son propre contact",
+     "en": "Through its own contact"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Par la lampe",
+     "en": "Through the lamp"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Seulement la nuit",
+     "en": "Only at night"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q09",
+  "section": "01-generalites",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Qu'est-ce qui fait tourner le cadran d'une horloge analogique ?",
+   "en": "What turns the dial of an analogue time switch?"
+  },
+  "explanation": {
+   "fr": "Un petit moteur synchrone alimenté par le réseau.",
+   "en": "A small synchronous motor supplied by the mains."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Un petit moteur synchrone",
+     "en": "A small synchronous motor"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le courant de la lampe",
+     "en": "The lamp current"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Un ressort à remonter chaque jour",
+     "en": "A spring wound every day"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La bobine d'un télérupteur",
+     "en": "An impulse relay coil"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q10",
+  "section": "01-generalites",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quelles sont les deux variétés d'horloges ?",
+   "en": "What are the two kinds of time switch?"
+  },
+  "explanation": {
+   "fr": "Analogiques et numériques.",
+   "en": "Analogue and digital."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Analogiques et numériques",
+     "en": "Analogue and digital"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Avec effet et sans effet",
+     "en": "Retriggerable and non-retriggerable"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Unipolaires et bipolaires",
+     "en": "Single-pole and double-pole"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Type A et type AC",
+     "en": "Type A and type AC"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q11",
+  "section": "02-reglage",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Une horloge de 24 h a 45 divisions. Que vaut une division ?",
+   "en": "A 24 h time switch has 45 divisions. What is one division worth?"
+  },
+  "explanation": {
+   "fr": "1 440 min / 45 = 32 min.",
+   "en": "1,440 min / 45 = 32 min."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "32 minutes",
+     "en": "32 minutes"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "45 minutes",
+     "en": "45 minutes"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "16 minutes",
+     "en": "16 minutes"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "30 minutes",
+     "en": "30 minutes"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q12",
+  "section": "02-reglage",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Avec une horloge de 96 divisions, combien de cavaliers abaisser pour éclairer de 18 h à 22 h ?",
+   "en": "With a 96-division time switch, how many segments must be pushed down to light from 18:00 to 22:00?"
+  },
+  "explanation": {
+   "fr": "4 heures × 4 cavaliers par heure = 16 cavaliers.",
+   "en": "4 hours × 4 segments per hour = 16 segments."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "16",
+     "en": "16"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "4",
+     "en": "4"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "8",
+     "en": "8"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "22",
+     "en": "22"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q13",
+  "section": "02-reglage",
+  "type": "truefalse",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Une horloge numérique se programme par touches et écran, avec le choix des jours de la semaine.",
+   "en": "A digital time switch is programmed with buttons and a display, with a choice of weekdays."
+  },
+  "explanation": {
+   "fr": "Vrai.",
+   "en": "True."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Vrai",
+     "en": "True"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Faux",
+     "en": "False"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q14",
+  "section": "03-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Dans un réfrigérateur no frost, quel élément arrête le dégivrage quand l'évaporateur est dégivré ?",
+   "en": "In a frost-free refrigerator, which part stops the defrost once the evaporator is clear?"
+  },
+  "explanation": {
+   "fr": "Le thermostat de fin de dégivrage TD coupe la résistance.",
+   "en": "The defrost termination thermostat TD cuts the heater."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le thermostat de fin de dégivrage (TD)",
+     "en": "The defrost termination thermostat (TD)"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le thermostat d'ambiance (TH)",
+     "en": "The cabinet thermostat (TH)"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "L'interrupteur de porte (P)",
+     "en": "The door switch (P)"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La lampe intérieure (E1)",
+     "en": "The interior lamp (E1)"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q15",
+  "section": "03-schemas",
+  "type": "single",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Pendant le dégivrage d'un réfrigérateur no frost, que fait le contact C de la minuterie ?",
+   "en": "During the defrost of a frost-free refrigerator, what does timer contact C do?"
+  },
+  "explanation": {
+   "fr": "Il bascule vers 2 et alimente la résistance de dégivrage au lieu du compresseur.",
+   "en": "It switches to 2 and supplies the defrost heater instead of the compressor."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Il alimente la résistance de dégivrage au lieu du compresseur",
+     "en": "It supplies the defrost heater instead of the compressor"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Il alimente le compresseur et la résistance ensemble",
+     "en": "It supplies the compressor and the heater together"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Il allume la lampe intérieure",
+     "en": "It switches on the interior lamp"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "Il coupe le thermostat d'ambiance",
+     "en": "It cuts out the cabinet thermostat"
+    },
+    "correct": false
+   }
+  ]
+ },
+ {
+  "id": "p2-m8-q16",
+  "section": "03-schemas",
+  "type": "multiple",
+  "usage": "exam",
+  "prompt": {
+   "fr": "Quels éléments protègent ou limitent la résistance de dégivrage ?",
+   "en": "Which parts protect or limit the defrost heater?"
+  },
+  "explanation": {
+   "fr": "Le thermostat de fin de dégivrage TD et le fusible thermique FT.",
+   "en": "The defrost termination thermostat TD and the thermal fuse FT."
+  },
+  "reviewed": {
+   "fr": true,
+   "en": true
+  },
+  "choices": [
+   {
+    "text": {
+     "fr": "Le thermostat de fin de dégivrage TD",
+     "en": "Defrost termination thermostat TD"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "Le fusible thermique FT",
+     "en": "Thermal fuse FT"
+    },
+    "correct": true
+   },
+   {
+    "text": {
+     "fr": "L'interrupteur de porte P",
+     "en": "Door switch P"
+    },
+    "correct": false
+   },
+   {
+    "text": {
+     "fr": "La lampe E1",
+     "en": "Lamp E1"
+    },
+    "correct": false
+   }
+  ]
+ }
+]

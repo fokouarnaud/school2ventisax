@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" font-family="Arial, sans-serif">
+<rect width="640" height="300" fill="#fff"/>
+<path d="M20 20H620V280H20Z" fill="none" stroke="#13212c" stroke-width="10"/>
+<rect x="270" y="12" width="90" height="16" fill="#fff"/>
+<path d="M270 20H360" fill="none" stroke="#5b6b76" stroke-width="2"/>
+<rect x="12" y="200" width="16" height="60" fill="#fff"/>
+<path d="M20 200A60 60 0 0 1 80 260" fill="none" stroke="#5b6b76" stroke-width="1.5"/>
+<path d="M560 280V250M545 260H575" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="560" y="236" font-size="14" text-anchor="middle" fill="#13212c" font-weight="bold">230V</text>
+<circle cx="60" cy="180" r="9" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M66 174L84 156M84 156L92 164M54 174L36 156M36 156L28 164" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M250 90L270 110M270 90L250 110" fill="none" stroke="#13212c" stroke-width="3"/>
+<path d="M310 190L330 210M330 190L310 210" fill="none" stroke="#13212c" stroke-width="3"/>
+<path d="M470 190L490 210M490 190L470 210" fill="none" stroke="#13212c" stroke-width="3"/>
+<path d="M90 160L250 104" fill="none" stroke="#5b6b76" stroke-width="1.5" stroke-dasharray="7 5"/>
+<path d="M80 190L308 200M332 200H468" fill="none" stroke="#5b6b76" stroke-width="1.5" stroke-dasharray="7 5"/>
+<text x="170" y="116" font-size="14" text-anchor="middle" fill="#13212c" font-weight="bold">1</text>
+<text x="200" y="214" font-size="14" text-anchor="middle" fill="#13212c" font-weight="bold">2</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" font-family="Arial, sans-serif">
+<rect width="640" height="260" fill="#fff"/>
+<text x="30" y="52" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">S1</text>
+<path d="M90 60H600" fill="none" stroke="#5b6b76" stroke-width="1.2"/>
+<text x="30" y="122" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">K1</text>
+<path d="M90 130H600" fill="none" stroke="#5b6b76" stroke-width="1.2"/>
+<text x="30" y="192" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">L1</text>
+<path d="M90 200H600" fill="none" stroke="#5b6b76" stroke-width="1.2"/>
+<path d="M90 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="90" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">0</text>
+<path d="M130 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="130" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">1</text>
+<path d="M170 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="170" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">2</text>
+<path d="M210 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="210" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">3</text>
+<path d="M250 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="250" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">4</text>
+<path d="M290 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="290" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">5</text>
+<path d="M330 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="330" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">6</text>
+<path d="M370 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="370" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">7</text>
+<path d="M410 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="410" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">8</text>
+<path d="M450 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="450" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">9</text>
+<path d="M490 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="490" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">10</text>
+<path d="M530 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="530" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">11</text>
+<path d="M570 30V215" fill="none" stroke="#d5dde2" stroke-width="1"/>
+<text x="570" y="240" font-size="13" text-anchor="middle" fill="#5b6b76">12</text>
+<path d="M130 60V34H154.0V60" fill="none" stroke="#b3261e" stroke-width="3"/>
+<path d="M130 130V104H154.0V130" fill="none" stroke="#1d4f91" stroke-width="3"/>
+<path d="M330 60V34H354.0V60" fill="none" stroke="#b3261e" stroke-width="3"/>
+<path d="M330 130V104H354.0V130" fill="none" stroke="#1d4f91" stroke-width="3"/>
+<path d="M370 60V34H394.0V60" fill="none" stroke="#b3261e" stroke-width="3"/>
+<path d="M370 130V104H394.0V130" fill="none" stroke="#1d4f91" stroke-width="3"/>
+<path d="M130 200V174H250V200" fill="none" stroke="#2e7d32" stroke-width="3"/>
+<path d="M330 200V174H490V200" fill="none" stroke="#2e7d32" stroke-width="3"/>
+</svg>
