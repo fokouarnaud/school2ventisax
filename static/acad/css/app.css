@@ -59,7 +59,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 80px; } /* une ancre (#sommaire, #suite) ne passe pas sous l'en-tête collant */
 body {
   margin: 0;
   min-height: 100dvh;
@@ -157,6 +157,7 @@ main { flex: 1; padding: 1.5rem 0 3rem; }
 @media (prefers-color-scheme: dark) { .meter > span { background: var(--teal); } }
 
 .notice { display: flex; gap: .75rem; align-items: flex-start; padding: .9rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--warn-line); background: var(--warn-bg); color: var(--warn-ink); }
+.notice-done { border-color: transparent; background: var(--teal-wash); color: var(--teal-ink); }
 .notice-error { border-color: transparent; background: var(--error-bg); color: var(--error-ink); }
 
 /* Connexion */
@@ -190,6 +191,7 @@ main { flex: 1; padding: 1.5rem 0 3rem; }
 .course-meter { display: flex; align-items: center; gap: .75rem; }
 .course-meter .meter { flex: 1; }
 .course-meter strong { font-variant-numeric: tabular-nums; min-width: 3.5ch; text-align: right; }
+.part-next { margin-top: 1rem; } /* « Continuer » ou « Voir l'examen » sous la progression, avant la liste des modules */
 .modules { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: .5rem; }
 .modules a {
   display: grid; grid-template-columns: 2rem 1fr auto; gap: .75rem; align-items: center;
@@ -232,6 +234,12 @@ main { flex: 1; padding: 1.5rem 0 3rem; }
 .outline-module > a, .outline-sections a { align-items: flex-start; padding-block: max(.4rem, calc((44px - 1lh) / 2)); }
 .outline-module > a > .icon { margin-top: calc((1lh - 1.25rem) / 2); }
 .outline-module > a > .dot-todo, .outline-sections a > :is(.icon, .dot-todo) { margin-top: calc((1lh - 1rem) / 2); }
+.outline-exam { border-top: 1px solid var(--line); margin-top: .35rem; padding-top: .35rem; }
+.outline-exam > a:not(.is-open) { color: var(--muted); }
+.outline-exam > a:not(.is-open) .icon { color: var(--muted); }
+/* Lien « Sommaire » sous le pager : inutile à partir de 960px, où le sommaire reste visible à gauche. */
+.to-outline { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; margin-top: .75rem; font-size: .9rem; }
+@media (min-width: 960px) { .to-outline { display: none; } }
 .dot-todo { width: 1rem; height: 1rem; border-radius: 999px; border: 1.5px solid var(--field-line); flex-shrink: 0; }
 .crumb { display: inline-flex; align-items: center; gap: .3rem; min-height: 44px; font-size: .9rem; margin: -.5rem 0 .25rem; }
 .facts { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
@@ -298,7 +306,7 @@ main { flex: 1; padding: 1.5rem 0 3rem; }
 .score-value small { font-size: .45em; font-weight: 500; color: var(--muted); }
 .breakdown { width: 100%; border-collapse: collapse; margin-top: 1rem; }
 .breakdown th, .breakdown td { text-align: left; padding: .65rem 0; border-bottom: 1px solid var(--line); }
-.breakdown td { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.breakdown td { white-space: nowrap; padding-left: .75rem; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
 .review { display: grid; gap: 1rem; margin-top: 1.5rem; }
 .review ul { list-style: none; padding: 0; margin: .5rem 0; display: grid; gap: .4rem; }
 .review li { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; padding: .55rem .8rem; border-radius: 12px; background: var(--paper); }

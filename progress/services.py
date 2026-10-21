@@ -42,6 +42,16 @@ def exam_unlocked(user, partie):
     return all(module_completed(user, m) for m in partie.modules.all())
 
 
+def following_step(user, module):
+    """Après un module terminé : le prochain module non terminé (en partant de celui-ci), sinon l'examen de la partie."""
+    modules = list(module.partie.modules.all())
+    i = modules.index(module)
+    for m in modules[i + 1:] + modules[:i]:
+        if not module_completed(user, m):
+            return {"kind": "module", "module": m}
+    return {"kind": "exam", "partie": module.partie}
+
+
 def progress_pct(user, partie):
     done = total = 0
     for module in partie.modules.all():

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Acad Ventisax\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-21 04:05+0100\n"
+"POT-Creation-Date: 2026-10-21 04:28+0100\n"
 "PO-Revision-Date: 2026-10-17 12:00+0100\n"
 "Last-Translator: Acad Ventisax\n"
 "Language-Team: English\n"
@@ -337,7 +337,8 @@ msgstr ""
 "Something went wrong on our side. Answers already saved are kept. Try again "
 "in a few minutes."
 
-#: .\templates\_error.html:8 .\templates\assessments\result.html:19
+#: .\templates\_error.html:8 .\templates\assessments\result.html:21
+#: .\templates\assessments\result.html:23
 msgid "Retour à mes cours"
 msgstr "Back to my courses"
 
@@ -377,36 +378,38 @@ msgstr "Completed"
 msgid "Continuer"
 msgstr "Continue"
 
-#: .\templates\accounts\dashboard.html:34
+#: .\templates\accounts\dashboard.html:32
+#: .\templates\accounts\dashboard.html:40
+#: .\templates\progress\_following_link.html:2
+msgid "Voir l'examen"
+msgstr "View the exam"
+
+#: .\templates\accounts\dashboard.html:37
 #: .\templates\assessments\attempt.html:11 .\templates\assessments\exam.html:7
 #, python-format
 msgid "Examen : %(p)s"
 msgstr "Exam: %(p)s"
 
-#: .\templates\accounts\dashboard.html:36
+#: .\templates\accounts\dashboard.html:39
 msgid "Tous les modules sont terminés. L'examen est ouvert."
 msgstr "All modules are completed. The exam is open."
 
-#: .\templates\accounts\dashboard.html:37
-msgid "Voir l'examen"
-msgstr "View the exam"
-
-#: .\templates\accounts\dashboard.html:39
+#: .\templates\accounts\dashboard.html:42
 msgid ""
 "Il s'ouvre quand tous les modules sont terminés : sections lues et quiz "
 "envoyé."
 msgstr ""
 "It opens once every module is completed: sections read and quiz submitted."
 
-#: .\templates\accounts\dashboard.html:40
+#: .\templates\accounts\dashboard.html:43
 msgid "Ce qu'il reste à faire"
 msgstr "What is left to do"
 
-#: .\templates\accounts\dashboard.html:46
+#: .\templates\accounts\dashboard.html:49
 msgid "Aucune formation pour le moment"
 msgstr "No course yet"
 
-#: .\templates\accounts\dashboard.html:47
+#: .\templates\accounts\dashboard.html:50
 msgid ""
 "Votre compte n'est rattaché à aucune promotion. Le centre vous inscrira "
 "avant le début des cours."
@@ -487,6 +490,15 @@ msgstr "Usernames already taken, skipped:"
 #: .\templates\admin\accounts\promotion\import.html:16
 msgid "Importer"
 msgstr "Import"
+
+#: .\templates\assessments\_quiz_actions.html:6
+msgid "Retour au module"
+msgstr "Back to the module"
+
+#: .\templates\assessments\_quiz_actions.html:8
+#: .\templates\courses\module_detail.html:41
+msgid "Refaire le quiz"
+msgstr "Retake the quiz"
 
 #: .\templates\assessments\attempt.html:2 .\templates\assessments\exam.html:2
 msgid "Examen"
@@ -656,35 +668,46 @@ msgstr ""
 msgid "Temps écoulé : vos réponses ont été envoyées automatiquement."
 msgstr "Time is up: your answers were submitted automatically."
 
-#: .\templates\assessments\result.html:21
-msgid "Retour au module"
-msgstr "Back to the module"
+#: .\templates\assessments\result.html:20
+msgid "Commencer la partie suivante"
+msgstr "Start the next part"
 
-#: .\templates\assessments\result.html:22
-msgid "Refaire le quiz"
-msgstr "Retake the quiz"
+#: .\templates\assessments\result.html:27
+#: .\templates\courses\module_detail.html:36
+msgid "Module terminé. L'examen de la partie est ouvert."
+msgstr "Module completed. The part exam is now open."
 
-#: .\templates\assessments\result.html:30
+#: .\templates\assessments\result.html:27
+#: .\templates\courses\module_detail.html:36
+msgid "Module terminé."
+msgstr "Module completed."
+
+#: .\templates\assessments\result.html:35
 msgid "Score par module"
 msgstr "Score by module"
 
-#: .\templates\assessments\result.html:43
+#: .\templates\assessments\result.html:36
+#, python-format
+msgid "Revoyez les modules sous %(t)s %% avant votre prochaine tentative."
+msgstr "Review the modules below %(t)s %% before your next attempt."
+
+#: .\templates\assessments\result.html:49
 msgid "Correct"
 msgstr "Correct"
 
-#: .\templates\assessments\result.html:43
+#: .\templates\assessments\result.html:49
 msgid "Partiel"
 msgstr "Partial"
 
-#: .\templates\assessments\result.html:43
+#: .\templates\assessments\result.html:49
 msgid "Incorrect"
 msgstr "Incorrect"
 
-#: .\templates\assessments\result.html:50
+#: .\templates\assessments\result.html:56
 msgid "Votre réponse"
 msgstr "Your answer"
 
-#: .\templates\assessments\result.html:54
+#: .\templates\assessments\result.html:60
 msgid "Sans réponse."
 msgstr "No answer."
 
@@ -721,6 +744,7 @@ msgid "Ventisax, centre de formation à Yaoundé."
 msgstr "Ventisax, training centre in Yaoundé."
 
 #: .\templates\courses\_outline.html:3
+#: .\templates\courses\section_detail.html:32
 msgid "Sommaire"
 msgstr "Contents"
 
@@ -742,6 +766,14 @@ msgstr "read"
 #: .\templates\courses\module_detail.html:27
 msgid "Pratique"
 msgstr "Practical"
+
+#: .\templates\courses\_outline.html:30
+msgid "fermé"
+msgstr "locked"
+
+#: .\templates\courses\_outline.html:31
+msgid "Examen de la partie"
+msgstr "Part exam"
 
 #: .\templates\courses\module_detail.html:10
 #, python-format
@@ -775,11 +807,16 @@ msgstr "Supplement"
 msgid "Le contenu de ce module arrive bientôt."
 msgstr "This module's content is coming soon."
 
-#: .\templates\courses\module_detail.html:36
+#: .\templates\courses\module_detail.html:43
 msgid "Commencer la lecture"
 msgstr "Start reading"
 
-#: .\templates\courses\module_detail.html:37
+#: .\templates\courses\module_detail.html:43
+msgid "Reprendre la lecture"
+msgstr "Resume reading"
+
+#: .\templates\courses\module_detail.html:44
+#: .\templates\courses\module_detail.html:46
 msgid "Faire le quiz"
 msgstr "Take the quiz"
 
@@ -806,6 +843,10 @@ msgstr "Next"
 #: .\templates\courses\section_detail.html:28
 msgid "Fin du module"
 msgstr "End of module"
+
+#: .\templates\progress\_following_link.html:2
+msgid "Module suivant"
+msgstr "Next module"
 
 #: .\templates\progress\trainer_table.html:2
 #: .\templates\progress\trainer_table.html:5
@@ -838,6 +879,3 @@ msgid ""
 "Aucune promotion ne vous est rattachée. Demandez à l'administrateur de vous "
 "ajouter."
 msgstr "No cohort is assigned to you. Ask the administrator to add you."
-
-#~ msgid "Examen de la partie"
-#~ msgstr "Part exam"

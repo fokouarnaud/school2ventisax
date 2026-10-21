@@ -1,16 +1,16 @@
 [
  {
   "id": "p2-m1-q01",
-  "section": "00-presentation",
+  "section": "05-appareillages",
   "type": "single",
   "usage": "quiz",
   "prompt": {
-   "fr": "Combien de modules compte la partie « Les bases de l'électricité domestique » ?",
-   "en": "How many modules does the part \"Basics of domestic electrical installations\" have?"
+   "fr": "Associé à un contacteur, que fait un bloc temporisé « au repos » ?",
+   "en": "Fitted to a contactor, what does an off-delay timer block do?"
   },
   "explanation": {
-   "fr": "La partie compte huit modules, du module 1 (notions de base) au module 8 (horloge).",
-   "en": "The part has eight modules, from module 1 (basic concepts) to module 8 (time switch)."
+   "fr": "Le bloc temporisé au repos retarde l'ouverture : l'équipement reste sous tension un moment après la commande d'arrêt. Le bloc au travail, lui, retarde la fermeture.",
+   "en": "An off-delay timer block delays opening: the equipment stays energised for a while after the stop command. An on-delay block delays closing."
   },
   "reviewed": {
    "fr": true,
@@ -19,29 +19,29 @@
   "choices": [
    {
     "text": {
-     "fr": "8",
-     "en": "8"
+     "fr": "Il retarde l'ouverture des contacts (mise hors tension différée)",
+     "en": "It delays the opening of the contacts (delayed switch-off)"
     },
     "correct": true
    },
    {
     "text": {
-     "fr": "6",
-     "en": "6"
+     "fr": "Il retarde la fermeture des contacts (mise sous tension différée)",
+     "en": "It delays the closing of the contacts (delayed switch-on)"
     },
     "correct": false
    },
    {
     "text": {
-     "fr": "7",
-     "en": "7"
+     "fr": "Il protège le moteur contre les surcharges",
+     "en": "It protects the motor against overloads"
     },
     "correct": false
    },
    {
     "text": {
-     "fr": "10",
-     "en": "10"
+     "fr": "Il détecte les courants de fuite",
+     "en": "It detects leakage currents"
     },
     "correct": false
    }

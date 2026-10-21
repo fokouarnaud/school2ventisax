@@ -441,15 +441,6 @@
           },
           "sections": [
             {
-              "order": 1,
-              "file": "00-presentation",
-              "kind": "content",
-              "title": {
-                "fr": "Présentation de la partie",
-                "en": "About this part"
-              }
-            },
-            {
               "order": 2,
               "file": "01-glossaire",
               "kind": "content",

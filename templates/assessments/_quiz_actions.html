@@ -1,0 +1,9 @@
+{% load i18n %}{# Actions après un quiz : en haut du résultat et sous la correction, pour ne pas remonter une longue correction. #}
+<div class="cta-row{% if spaced %} spaced{% endif %}">
+  {% if following %}
+    {% include "progress/_following_link.html" %}
+  {% else %}
+    <a class="btn" href="{% url 'module_detail' module.public_id %}">{% translate "Retour au module" %}</a>
+  {% endif %}
+  <form class="inline-form" method="post" action="{% url 'start_quiz' module.public_id %}">{% csrf_token %}<button class="btn btn-ghost" type="submit">{% translate "Refaire le quiz" %}</button></form>
+</div>

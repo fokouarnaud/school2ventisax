@@ -25,6 +25,12 @@
           {% endif %}
         </li>
       {% endfor %}
+      <li class="outline-module outline-exam">
+        <a href="{% url 'exam' partie.public_id %}"{% if exam_open %} class="is-open"{% endif %}>
+          {% if exam_open %}{% include "icons/player-play.svg" %}{% else %}{% include "icons/lock.svg" %}<span class="visually-hidden">{% translate "fermé" %}</span>{% endif %}
+          <span>{% translate "Examen de la partie" %}</span>
+        </a>
+      </li>
     </ol>
   </nav>
 </details>

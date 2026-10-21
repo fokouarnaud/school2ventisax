@@ -25,9 +25,11 @@
       {% if next %}
         <a class="btn" href="{% url 'section_detail' next.public_id %}">{% translate "Suivant" %}{% include "icons/chevron-right.svg" %}</a>
       {% else %}
-        <a class="btn" href="{% url 'module_detail' section.module.public_id %}">{% translate "Fin du module" %}{% include "icons/chevron-right.svg" %}</a>
+        <a class="btn" href="{% url 'module_detail' section.module.public_id %}#suite">{% translate "Fin du module" %}{% include "icons/chevron-right.svg" %}</a>
       {% endif %}
     </nav>
+    {# Sur mobile, le sommaire est en haut de page : ce lien évite de remonter une longue section. #}
+    <a class="to-outline" href="#sommaire">{% include "icons/list-details.svg" %}{% translate "Sommaire" %}</a>
   </article>
 </div>
 {% endblock %}

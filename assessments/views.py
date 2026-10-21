@@ -10,7 +10,7 @@ from django.views.decorators.http import require_POST
 
 from courses.access import accessible_formations
 from courses.models import Module, Partie
-from progress.services import module_completed
+from progress.services import following_step, module_completed
 
 from .models import Assessment, Attempt, AttemptQuestion
 from .services import (
@@ -126,11 +126,32 @@ def result(request, public_id):
     attempt = close_if_expired(_own_attempt(request, public_id))
     if attempt.submitted_at is None:
         return redirect("attempt_detail", public_id=attempt.public_id)
-    is_exam = attempt.assessment.is_exam
+    assessment = attempt.assessment
+    is_exam = assessment.is_exam
     return render(request, "assessments/result.html", {
         "attempt": attempt,
         "show_correction": not is_exam,
         "feedback": [] if is_exam else attempt.feedback(),
         "module_scores": attempt.module_scores() if is_exam else {},
-        "attempts_left": _attempts_left(request.user, attempt.assessment),
+        "attempts_left": _attempts_left(request.user, assessment),
+        **(_after_exam(request.user, assessment) if is_exam else _after_quiz(request.user, assessment.module)),
     })
+
+
+def _after_quiz(user, module):
+    """Correction du quiz : si le module est terminé, on propose l'étape suivante (module ou examen)."""
+    if not module_completed(user, module):
+        return {"following": None}
+    return {"following": following_step(user, module)}
+
+
+def _after_exam(user, assessment):
+    """Résultat d'examen : une fois la partie réussie, on mène au premier module non terminé de la partie suivante."""
+    best = assessment.best_attempt(user)
+    partie = assessment.partie
+    next_partie = Partie.objects.filter(formation=partie.formation, order__gt=partie.order).first()
+    if not (best and best.passed and next_partie):
+        return {"next_partie": None, "next_partie_module": None}
+    modules = list(next_partie.modules.all())
+    start = next((m for m in modules if not module_completed(user, m)), modules[0] if modules else None)
+    return {"next_partie": next_partie if start else None, "next_partie_module": start}

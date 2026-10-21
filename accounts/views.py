@@ -1,8 +1,14 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
+from assessments.models import Assessment
 from courses.models import Partie
 from progress.services import exam_unlocked, module_completed, progress_pct
+
+
+def _exam_passed(user, partie):
+    best = Assessment.exam_for(partie).best_attempt(user)
+    return bool(best and best.passed)
 
 
 @login_required
@@ -22,5 +28,6 @@ def dashboard(request):
                 # Où reprendre : le premier module non terminé de la partie.
                 "next_module": next((item["module"] for item in modules if not item["done"]), None),
                 "exam_unlocked": exam_unlocked(request.user, partie),
+                "exam_passed": _exam_passed(request.user, partie),
             })
     return render(request, "accounts/dashboard.html", {"promotion": promotion, "parts": parts})
