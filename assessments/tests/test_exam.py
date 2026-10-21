@@ -207,3 +207,38 @@ def test_module_scores_follow_course_order_not_draw_order(unlocked, exam, two_mo
         aq.save()
     submit_attempt(attempt, now=T0 + timedelta(minutes=5))
     assert list(attempt.module_scores()) == two_modules
+
+
+@pytest.mark.django_db
+def test_part_two_exam_draws_forty_questions_five_per_module_and_varies(partie, module, question_factory):
+    import random
+    from collections import Counter
+
+    modules = [module] + [Module.objects.create(partie=partie, title_fr=f"M{n}", order=n) for n in range(2, 9)]
+    for m in modules:
+        for _ in range(8):
+            question_factory(m, usage="exam")
+    exam = Assessment.exam_for(partie)
+    exam.questions_per_module = 5
+    exam.save()
+    first, second = exam.question_pool(random.Random(1)), exam.question_pool(random.Random(2))
+    assert len(first) == 40
+    assert set(Counter(q.module_id for q in first).values()) == {5}
+    assert {q.pk for q in first} != {q.pk for q in second}
+
+
+@pytest.mark.django_db
+def test_a_new_exam_attempt_draws_questions_left_out_of_the_previous_one(unlocked, exam):
+    import random
+
+    seen = set()
+    for n in range(3):
+        attempt = start_attempt(unlocked, exam, now=T0 + timedelta(hours=n), rng=random.Random(0))
+        drawn = {aq.question_id for aq in attempt.attempt_questions.all()}
+        if n == 1:
+            # banque de 3 par module, tirage de 2 : la question écartée la 1re fois est forcément reprise
+            assert drawn != first and not drawn <= first
+        first = drawn if n == 0 else first
+        seen |= drawn
+        submit_attempt(attempt, now=T0 + timedelta(hours=n, minutes=1))
+    assert len(seen) == 6

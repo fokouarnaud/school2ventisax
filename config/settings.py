@@ -73,6 +73,9 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
+        # IMMEDIATE : deux sauvegardes simultanées attendent leur tour au lieu de s'interbloquer
+        # (« database is locked », réponse d'examen perdue) ; timeout = attente maximale en secondes.
+        "OPTIONS": {"transaction_mode": "IMMEDIATE", "timeout": 20},
     }
 }
 
@@ -109,6 +112,12 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATIC_ROOT = Path(os.environ.get("DJANGO_STATIC_ROOT", BASE_DIR / "staticfiles"))
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "courses.finders.ContentImagesFinder",  # images des cours : content/**/img/ seulement
+]
+ACAD_CONTENT_ROOT = BASE_DIR / "content"
 # Versionnement anti-cache : empreinte dans le nom en production (manifeste),
 # ?v=<empreinte> en développement (config/storage.py).
 STORAGES = {

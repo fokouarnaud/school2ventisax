@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 import uuid
 
+from django.core.exceptions import PermissionDenied
 from django.http import Http404, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
@@ -54,7 +55,7 @@ def exam(request, partie_id):
         try:
             attempt = start_attempt(request.user, assessment)
         except (ExamLocked, AttemptLimitReached):
-            return HttpResponse(status=403)
+            raise PermissionDenied
         return redirect("attempt_detail", public_id=attempt.public_id)
     missing = [m for m in partie.modules.all() if not module_completed(request.user, m)]
     open_attempt = assessment.attempts.filter(user=request.user, submitted_at__isnull=True).last()

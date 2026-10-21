@@ -142,3 +142,38 @@ def test_marking_reviewed_does_not_publish_by_itself(client, module, question_fa
     client.post("/fr/admin/assessments/question/", {"action": "mark_reviewed", "_selected_action": [question.pk]})
     question.refresh_from_db()
     assert question.status == Question.Status.DRAFT
+
+
+@pytest.mark.django_db
+def test_trainer_filters_supplement_sections_in_the_back_office(client, module):
+    from courses.models import Section
+
+    Section.objects.create(module=module, title_fr="Transcrite", order=1)
+    Section.objects.create(module=module, title_fr="Bilan de puissance", order=2, is_supplement=True)
+    client.force_login(make("macaire", User.Role.TRAINER))
+    response = client.get("/fr/admin/courses/section/", {"is_supplement__exact": "1"})
+    assert response.status_code == 200
+    assert [s.title_fr for s in response.context["cl"].result_list] == ["Bilan de puissance"]
+
+
+@pytest.mark.django_db
+def test_trainer_reads_sections_without_being_able_to_change_them(client, module):
+    from courses.models import Section
+
+    section = Section.objects.create(module=module, title_fr="Bilan de puissance", order=1, is_supplement=True)
+    client.force_login(make("macaire", User.Role.TRAINER))
+    assert client.get(f"/fr/admin/courses/section/{section.pk}/change/").status_code == 200
+    response = client.post(f"/fr/admin/courses/section/{section.pk}/change/", {"title_fr": "Modifié"})
+    assert response.status_code == 403
+    section.refresh_from_db()
+    assert section.title_fr == "Bilan de puissance"
+
+
+@pytest.mark.django_db
+def test_an_existing_trainers_group_gains_read_access_to_sections(client):
+    from django.contrib.auth.models import Group, Permission
+
+    group = Group.objects.create(name="Formateurs")
+    group.permissions.set(Permission.objects.filter(content_type__app_label="assessments"))
+    client.force_login(make("macaire", User.Role.TRAINER))
+    assert client.get("/fr/admin/courses/section/").status_code == 200

@@ -48,6 +48,6 @@ class AnnexeInline(TranslationTabularInline):
 
 @admin.register(Section)
 class SectionAdmin(TranslationAdmin):
-    list_display = ("title", "module", "kind", "order")
-    list_filter = ("kind", "module__partie", "module")
+    list_display = ("title", "module", "kind", "is_supplement", "order")
+    list_filter = ("kind", "is_supplement", "module__partie", "module")
     inlines = [AnnexeInline]

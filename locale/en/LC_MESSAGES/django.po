@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Acad Ventisax\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-17 18:09+0100\n"
+"POT-Creation-Date: 2026-10-21 02:45+0100\n"
 "PO-Revision-Date: 2026-10-17 12:00+0100\n"
 "Last-Translator: Acad Ventisax\n"
 "Language-Team: English\n"
@@ -214,7 +214,7 @@ msgid "Ce SVG contient du script ou un lien actif : il est refusé."
 msgstr "This SVG contains a script or an active link: it is rejected."
 
 #: .\courses\models.py:11 .\courses\models.py:26 .\courses\models.py:41
-#: .\courses\models.py:69 .\courses\models.py:85
+#: .\courses\models.py:69 .\courses\models.py:86
 msgid "titre"
 msgstr "title"
 
@@ -246,6 +246,10 @@ msgstr "Practical activities"
 msgid "contenu (Markdown)"
 msgstr "content (Markdown)"
 
+#: .\courses\models.py:73
+msgid "complément rédigé"
+msgstr "written supplement"
+
 #: .\progress\views.py:77 .\templates\progress\trainer_table.html:16
 msgid "Promotion"
 msgstr "Cohort"
@@ -276,6 +280,59 @@ msgstr "yes"
 #: .\progress\views.py:84
 msgid "non"
 msgstr "no"
+
+#: .\templates\400.html:2 .\templates\400.html:3
+msgid "Demande invalide"
+msgstr "Invalid request"
+
+#: .\templates\400.html:4
+msgid ""
+"Le serveur n'a pas compris cette demande. Rechargez la page puis recommencez."
+msgstr "The server could not understand this request. Reload the page and try again."
+
+#: .\templates\403.html:2 .\templates\403.html:4
+msgid "Accès refusé"
+msgstr "Access denied"
+
+#: .\templates\403.html:5
+msgid ""
+"Cette page n'est pas ouverte à votre compte pour le moment. Si vous pensez "
+"que c'est une erreur, parlez-en à votre formateur."
+msgstr "This page is not open to your account yet. If you think this is a mistake, talk to your trainer."
+
+#: .\templates\403_csrf.html:2 .\templates\403_csrf.html:4
+msgid "Session expirée"
+msgstr "Session expired"
+
+#: .\templates\403_csrf.html:5
+msgid ""
+"La page est restée ouverte trop longtemps. Revenez en arrière, rechargez la "
+"page, puis recommencez."
+msgstr "The page stayed open too long. Go back, reload the page and try again."
+
+#: .\templates\404.html:2 .\templates\404.html:3
+msgid "Page introuvable"
+msgstr "Page not found"
+
+#: .\templates\404.html:4
+msgid ""
+"Ce lien ne mène à aucun cours. Il a peut-être été déplacé, ou il n'est pas "
+"ouvert à votre promotion."
+msgstr "This link does not lead to a course. It may have moved, or it is not open to your cohort."
+
+#: .\templates\500.html:2 .\templates\500.html:3
+msgid "Erreur du serveur"
+msgstr "Server error"
+
+#: .\templates\500.html:4
+msgid ""
+"Un problème est survenu de notre côté. Vos réponses déjà enregistrées sont "
+"conservées. Réessayez dans quelques minutes."
+msgstr "Something went wrong on our side. Answers already saved are kept. Try again in a few minutes."
+
+#: .\templates\_error.html:8 .\templates\assessments\result.html:19
+msgid "Retour à mes cours"
+msgstr "Back to my courses"
 
 #: .\templates\accounts\dashboard.html:2 .\templates\accounts\dashboard.html:5
 #: .\templates\assessments\exam.html:4 .\templates\courses\module_detail.html:7
@@ -583,10 +640,6 @@ msgstr ""
 msgid "Temps écoulé : vos réponses ont été envoyées automatiquement."
 msgstr "Time is up: your answers were submitted automatically."
 
-#: .\templates\assessments\result.html:19
-msgid "Retour à mes cours"
-msgstr "Back to my courses"
-
 #: .\templates\assessments\result.html:21
 msgid "Retour au module"
 msgstr "Back to the module"
@@ -669,6 +722,11 @@ msgstr "completed"
 msgid "lu"
 msgstr "read"
 
+#: .\templates\courses\_outline.html:20
+#: .\templates\courses\module_detail.html:27
+msgid "Pratique"
+msgstr "Practical"
+
 #: .\templates\courses\module_detail.html:10
 #, python-format
 msgid "%(h)s heures"
@@ -683,23 +741,29 @@ msgid "Compétence visée"
 msgstr "Target skill"
 
 #: .\templates\courses\module_detail.html:20
-#: .\templates\courses\section_detail.html:22
+#: .\templates\courses\section_detail.html:23
 msgid "Sections"
 msgstr "Sections"
 
-#: .\templates\courses\module_detail.html:27
-msgid "Pratique"
-msgstr "Practical"
+#: .\templates\courses\module_detail.html:28
+#: .\templates\courses\section_detail.html:11
+msgid "Rédigé en complément du support imprimé"
+msgstr "Written in addition to the printed handout"
 
-#: .\templates\courses\module_detail.html:31
+#: .\templates\courses\module_detail.html:28
+#: .\templates\courses\section_detail.html:11
+msgid "Complément"
+msgstr "Supplement"
+
+#: .\templates\courses\module_detail.html:32
 msgid "Le contenu de ce module arrive bientôt."
 msgstr "This module's content is coming soon."
 
-#: .\templates\courses\module_detail.html:35
+#: .\templates\courses\module_detail.html:36
 msgid "Commencer la lecture"
 msgstr "Start reading"
 
-#: .\templates\courses\module_detail.html:36
+#: .\templates\courses\module_detail.html:37
 msgid "Faire le quiz"
 msgstr "Take the quiz"
 
@@ -707,23 +771,23 @@ msgstr "Take the quiz"
 msgid "Activité pratique"
 msgstr "Practical activity"
 
-#: .\templates\courses\section_detail.html:11
+#: .\templates\courses\section_detail.html:12
 msgid "Contenu disponible en français uniquement"
 msgstr "Content available in French only"
 
-#: .\templates\courses\section_detail.html:16
+#: .\templates\courses\section_detail.html:17
 msgid "Annexes à télécharger"
 msgstr "Downloadable appendices"
 
-#: .\templates\courses\section_detail.html:23
+#: .\templates\courses\section_detail.html:24
 msgid "Précédent"
 msgstr "Previous"
 
-#: .\templates\courses\section_detail.html:25
+#: .\templates\courses\section_detail.html:26
 msgid "Suivant"
 msgstr "Next"
 
-#: .\templates\courses\section_detail.html:27
+#: .\templates\courses\section_detail.html:28
 msgid "Fin du module"
 msgstr "End of module"
 

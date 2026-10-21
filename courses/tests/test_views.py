@@ -100,3 +100,69 @@ def test_translated_section_is_not_flagged_in_english(client, enrolled, sections
     client.force_login(enrolled)
     response = client.get(f"/en/sections/{sections[0].public_id}/")
     assert response.context["fallback_fr"] is False
+
+
+@pytest.fixture
+def supplement(module):
+    return Section.objects.create(
+        module=module, title_fr="Bilan de puissance", order=3, body_md_fr="Rédigé.", is_supplement=True
+    )
+
+
+@pytest.mark.django_db
+@pytest.mark.parametrize("lang, label", [("fr", "Complément"), ("en", "Supplement")])
+def test_a_supplement_section_carries_its_badge(client, enrolled, supplement, lang, label):
+    client.force_login(enrolled)
+    page = client.get(f"/{lang}/sections/{supplement.public_id}/").content.decode()
+    assert f'<span class="badge badge-supplement"' in page
+    assert f">{label}</span>" in page
+
+
+@pytest.mark.django_db
+def test_the_module_page_flags_supplement_sections(client, enrolled, module, sections, supplement):
+    client.force_login(enrolled)
+    page = client.get(f"/fr/modules/{module.public_id}/").content.decode()
+    assert page.count(">Complément</span>") == 1
+
+
+@pytest.mark.django_db
+def test_a_transcribed_section_has_no_supplement_badge(client, enrolled, sections):
+    client.force_login(enrolled)
+    page = client.get(f"/fr/sections/{sections[0].public_id}/").content.decode()
+    assert "badge-supplement" not in page
+
+
+TAF = """**TAF** : réaliser le câblage sécurisé d'un simple allumage sur planche.
+
+### Matériel
+- Disjoncteur 10 A
+
+### Séquence de réalisation
+1. Fixer les appareillages
+2. Câbler
+
+**Temps de réalisation estimé** : 2 heures.
+
+### Éléments d'évaluation
+- Solidité des fixations
+"""
+
+
+@pytest.mark.django_db
+def test_a_practical_activity_shows_its_instructions_sequence_and_criteria(client, enrolled, module):
+    taf = Section.objects.create(module=module, title_fr="Activité pratique", order=9, kind=Section.Kind.PRACTICAL, body_md_fr=TAF)
+    client.force_login(enrolled)
+    page = client.get(f"/fr/sections/{taf.public_id}/").content.decode()
+    assert '<span class="badge badge-warn">Activité pratique</span>' in page
+    assert "<h3>Séquence de réalisation</h3>" in page
+    assert "<ol>\n<li>Fixer les appareillages</li>" in page
+    assert "<h3>Éléments d'évaluation</h3>" in page
+
+
+@pytest.mark.django_db
+def test_the_outline_marks_the_practical_activity_of_the_module(client, enrolled, sections):
+    client.force_login(enrolled)
+    page = client.get(f"/fr/sections/{sections[0].public_id}/").content.decode()
+    outline = page.split('id="sommaire"')[1].split("</details>")[0]
+    assert outline.count('class="badge badge-warn"') == 1
+    assert ">Pratique</span>" in outline

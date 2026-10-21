@@ -1,0 +1,5 @@
+{% extends "_error.html" %}{% load i18n %}
+{% block title %}{% translate "Session expirée" %}{% endblock %}
+{% block icon %}{% include "icons/clock.svg" %}{% endblock %}
+{% block heading %}{% translate "Session expirée" %}{% endblock %}
+{% block message %}{% translate "La page est restée ouverte trop longtemps. Revenez en arrière, rechargez la page, puis recommencez." %}{% endblock %}

@@ -1,11 +1,13 @@
 """Garde-fou du contenu versionné : tout texte destiné aux apprenants existe en français ET en anglais."""
 import json
+import re
 
 import pytest
 from django.conf import settings
 from django.core.management import call_command
 
 from assessments.models import Question
+from config.uploads import ACTIVE_SVG
 from courses.models import Module, Section
 
 CONTENT = settings.BASE_DIR / "content" / "froid"
@@ -137,3 +139,37 @@ def test_every_question_is_publishable_once_reviewed():
             refused.append(f"{question.external_id}: {exc}")
     assert refused == []
     assert Question.objects.count() == sum(len(qs) for _, qs in questions_by_module())
+
+
+# Schémas de cours (Q19 à Q28) : SVG inertes et légers, aucune photo en Partie 2, légendes bilingues.
+IMAGE_LINK = re.compile(r"!\[([^\]]*)\]\(img/([^)\s]+)\)")
+SVG_MAX_BYTES = 6 * 1024
+
+
+def course_images():
+    return sorted(p for p in CONTENT.rglob("img/*") if p.is_file())
+
+
+def test_course_images_are_light_inert_svgs():
+    for image in course_images():
+        assert image.suffix == ".svg", f"{image} : seuls les SVG sont admis comme schémas"
+        assert image.stat().st_size <= SVG_MAX_BYTES, f"{image} : {image.stat().st_size} octets (> 6 Ko)"
+        assert not ACTIVE_SVG.search(image.read_bytes()), f"{image} : SVG actif"
+
+
+def test_part_two_has_no_photo():
+    photos = [p for p in (CONTENT / "p2").rglob("*") if p.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp", ".pdf"}]
+    assert photos == []
+
+
+def test_every_french_only_diagram_has_its_english_twin():
+    for image in course_images():
+        if image.name.endswith(".fr.svg"):
+            assert image.with_name(image.name.replace(".fr.svg", ".en.svg")).is_file(), image
+
+
+def test_every_diagram_link_has_alt_text_and_an_existing_file():
+    for md in CONTENT.rglob("*.md"):
+        for alt, name in IMAGE_LINK.findall(md.read_text(encoding="utf-8")):
+            assert alt.strip(), f"{md.name} : texte alternatif vide pour {name}"
+            assert (md.parent / "img" / name).is_file(), f"{md.name} : {name} introuvable"

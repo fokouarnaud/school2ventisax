@@ -1,5 +1,6 @@
-"""Droits d'accès à l'admin Django dérivés du rôle (formateurs : questions ; admins : tout le contenu)."""
+"""Droits d'accès à l'admin Django dérivés du rôle (formateurs : questions et lecture des sections ; admins : tout le contenu)."""
 from django.contrib.auth.models import Group, Permission
+from django.db.models import Q
 
 TRAINERS_GROUP = "Formateurs"
 ADMINS_GROUP = "Administrateurs"
@@ -9,15 +10,16 @@ ADMIN_APPS = ["accounts", "courses", "assessments", "progress"]
 
 
 def _group(name):
-    group, created = Group.objects.get_or_create(name=name)
-    if created or not group.permissions.exists():
-        if name == TRAINERS_GROUP:
-            perms = Permission.objects.filter(
-                content_type__app_label="assessments", content_type__model__in=TRAINER_MODELS["assessments"]
-            )
-        else:
-            perms = Permission.objects.filter(content_type__app_label__in=ADMIN_APPS)
-        group.permissions.set(perms)
+    group, _ = Group.objects.get_or_create(name=name)
+    if name == TRAINERS_GROUP:
+        perms = Permission.objects.filter(
+            Q(content_type__app_label="assessments", content_type__model__in=TRAINER_MODELS["assessments"])
+            | Q(content_type__app_label="courses", codename="view_section")  # relecture des compléments (US-27)
+        )
+    else:
+        perms = Permission.objects.filter(content_type__app_label__in=ADMIN_APPS)
+    # Ajout seulement : un groupe existant reçoit les droits apparus depuis sa création.
+    group.permissions.add(*perms)
     return group
 
 

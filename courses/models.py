@@ -70,6 +70,7 @@ class Section(models.Model):
     order = models.PositiveIntegerField(default=0)
     kind = models.CharField(max_length=10, choices=Kind.choices, default=Kind.CONTENT)
     body_md = models.TextField(_("contenu (Markdown)"), blank=True)
+    is_supplement = models.BooleanField(_("complément rédigé"), default=False)  # rédigé en plus du support imprimé
 
     objects = SectionQuerySet.as_manager()
 

@@ -14,7 +14,7 @@
       <p class="muted">{% translate "Ce quiz ne compte pas dans la note. Refaites-le autant que vous voulez." %}</p>
     {% endif %}
     {% if attempt.auto_submitted %}<div class="notice" role="status">{% include "icons/clock.svg" %}<div>{% translate "Temps écoulé : vos réponses ont été envoyées automatiquement." %}</div></div>{% endif %}
-    <div class="cta-row" style="margin-top:1rem">
+    <div class="cta-row spaced">
       {% if a.is_exam %}
         <a class="btn" href="{% url 'dashboard' %}">{% translate "Retour à mes cours" %}</a>
       {% else %}
@@ -26,7 +26,7 @@
 </section>
 
 {% if module_scores %}
-  <section class="panel" aria-labelledby="par-module" style="margin-top:1rem">
+  <section class="panel spaced" aria-labelledby="par-module">
     <h2 id="par-module">{% translate "Score par module" %}</h2>
     <table class="breakdown">
       {% for module, score in module_scores.items %}<tr><th scope="row">{{ module.title }}</th><td>{{ score|floatformat:0 }} %</td></tr>{% endfor %}

@@ -17,6 +17,7 @@
                   <a href="{% url 'section_detail' item.section.public_id %}"{% if item.current %} aria-current="page"{% endif %}>
                     {% if item.viewed %}{% include "icons/check.svg" %}<span class="visually-hidden">{% translate "lu" %}</span>{% else %}<span class="dot-todo" aria-hidden="true"></span>{% endif %}
                     <span{{ item.section|lang_attr:"title" }}>{{ item.section.title }}</span>
+                    {% if item.section.kind == "practical" %}<span class="badge badge-warn">{% translate "Pratique" %}</span>{% endif %}
                   </a>
                 </li>
               {% endfor %}
