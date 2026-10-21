@@ -32,9 +32,19 @@
         <li class="muted">{% translate "Le contenu de ce module arrive bientôt." %}</li>
       {% endfor %}
     </ol>
-    <div class="cta-row">
-      {% if sections %}<a class="btn" href="{% url 'section_detail' sections.0.section.public_id %}">{% translate "Commencer la lecture" %}</a>{% endif %}
-      {% if has_quiz %}<form class="inline-form" method="post" action="{% url 'start_quiz' module.public_id %}">{% csrf_token %}<button class="btn btn-ghost" type="submit">{% translate "Faire le quiz" %}</button></form>{% endif %}
+    {% if completed and following %}
+      <div class="notice notice-done spaced-lg" role="status">{% include "icons/circle-check.svg" %}<div>{% if following.kind == "exam" %}{% translate "Module terminé. L'examen de la partie est ouvert." %}{% else %}{% translate "Module terminé." %}{% endif %}</div></div>
+    {% endif %}
+    <div class="cta-row spaced" id="suite">
+      {% if completed and following %}
+        {% include "progress/_following_link.html" %}
+        {% if has_quiz %}<form class="inline-form" method="post" action="{% url 'start_quiz' module.public_id %}">{% csrf_token %}<button class="btn btn-ghost" type="submit">{% translate "Refaire le quiz" %}</button></form>{% endif %}
+      {% elif resume_section %}
+        <a class="btn" href="{% url 'section_detail' resume_section.public_id %}">{% if resume_section == sections.0.section %}{% translate "Commencer la lecture" %}{% else %}{% translate "Reprendre la lecture" %}{% endif %}</a>
+        {% if has_quiz %}<form class="inline-form" method="post" action="{% url 'start_quiz' module.public_id %}">{% csrf_token %}<button class="btn btn-ghost" type="submit">{% translate "Faire le quiz" %}</button></form>{% endif %}
+      {% elif has_quiz %}
+        <form class="inline-form" method="post" action="{% url 'start_quiz' module.public_id %}">{% csrf_token %}<button class="btn" type="submit">{% translate "Faire le quiz" %}</button></form>
+      {% endif %}
     </div>
   </article>
 </div>

@@ -20,11 +20,37 @@
     if (out) out.textContent = labels.answeredLabel.replace("%(done)s", done).replace("%(total)s", total);
   }
 
+  // Envoi de la tentative : il attend la fin des sauvegardes en cours, sinon une réponse cochée
+  // juste avant arrive après la clôture (409) et se perd, surtout sur réseau mobile lent.
+  var pending = 0;
+  var submitForm = document.querySelector(".submit-zone");
+  var submitWaiting = false;
+  if (submitForm) {
+    submitForm.addEventListener("submit", function (e) {
+      if (pending === 0) return;
+      e.preventDefault();
+      submitWaiting = true;
+      var button = submitForm.querySelector("button");
+      button.disabled = true;
+      button.setAttribute("aria-busy", "true");
+    });
+  }
+
   document.body.addEventListener("htmx:beforeRequest", function (e) {
+    pending += 1;
     var s = stateOf(e.detail.elt);
     if (s) { s.classList.remove("is-error"); s.textContent = labels.saving; }
   });
   document.body.addEventListener("htmx:afterRequest", function (e) {
+    pending = Math.max(0, pending - 1);
+    if (submitWaiting && pending === 0) {
+      submitWaiting = false;
+      if (e.detail.successful) { submitForm.submit(); return; }
+      // Échec réseau : on rend la main, le message d'échec s'affiche sous la question.
+      var button = submitForm.querySelector("button");
+      button.disabled = false;
+      button.removeAttribute("aria-busy");
+    }
     var s = stateOf(e.detail.elt);
     if (!s) return;
     var status = e.detail.xhr.status;

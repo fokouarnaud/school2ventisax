@@ -14,6 +14,13 @@
         <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ row.progress }}" aria-label="{% translate 'Progression' %}"><span style="width: {{ row.progress }}%"></span></div>
         <strong>{{ row.progress }} %</strong>
       </div>
+      {# Action suivante sous la progression : visible sans faire défiler la liste des modules. #}
+      {% if row.next_module %}
+        <div class="cta-row part-next"><a class="btn" href="{% url 'module_detail' row.next_module.public_id %}">{% include "icons/player-play.svg" %}{% translate "Continuer" %}<span class="visually-hidden"> : {{ row.next_module.title }}</span></a></div>
+      {% elif row.exam_unlocked and not row.exam_passed %}
+        {# Tous les modules sont terminés : l'étape suivante est l'examen. #}
+        <div class="cta-row part-next"><a class="btn" href="{% url 'exam' row.partie.public_id %}">{% include "icons/player-play.svg" %}{% translate "Voir l'examen" %}</a></div>
+      {% endif %}
       <ol class="modules">
         {% for item in row.modules %}
           <li class="{% if item.done %}done{% endif %}">
@@ -25,9 +32,6 @@
           </li>
         {% endfor %}
       </ol>
-      {% if row.next_module %}
-        <div class="cta-row spaced"><a class="btn" href="{% url 'module_detail' row.next_module.public_id %}">{% include "icons/player-play.svg" %}{% translate "Continuer" %}<span class="visually-hidden"> : {{ row.next_module.title }}</span></a></div>
-      {% endif %}
     </section>
     <aside class="panel exam-card" aria-labelledby="examen-{{ row.partie.public_id }}">
       <span class="exam-icon">{% if row.exam_unlocked %}{% include "icons/player-play.svg" %}{% else %}{% include "icons/lock.svg" %}{% endif %}</span>

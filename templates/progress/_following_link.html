@@ -1,0 +1,2 @@
+{% load i18n %}{# Étape qui suit un module terminé : progress.services.following_step #}
+{% if following.kind == "module" %}<a class="btn" href="{% url 'module_detail' following.module.public_id %}">{% translate "Module suivant" %}<span class="visually-hidden"> : {{ following.module.title }}</span>{% include "icons/chevron-right.svg" %}</a>{% else %}<a class="btn" href="{% url 'exam' following.partie.public_id %}">{% include "icons/player-play.svg" %}{% translate "Voir l'examen" %}</a>{% endif %}

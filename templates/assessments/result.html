@@ -14,22 +14,28 @@
       <p class="muted">{% translate "Ce quiz ne compte pas dans la note. Refaites-le autant que vous voulez." %}</p>
     {% endif %}
     {% if attempt.auto_submitted %}<div class="notice" role="status">{% include "icons/clock.svg" %}<div>{% translate "Temps écoulé : vos réponses ont été envoyées automatiquement." %}</div></div>{% endif %}
-    <div class="cta-row spaced">
-      {% if a.is_exam %}
-        <a class="btn" href="{% url 'dashboard' %}">{% translate "Retour à mes cours" %}</a>
-      {% else %}
-        <a class="btn" href="{% url 'module_detail' a.module.public_id %}">{% translate "Retour au module" %}</a>
-        <form class="inline-form" method="post" action="{% url 'start_quiz' a.module.public_id %}">{% csrf_token %}<button class="btn btn-ghost" type="submit">{% translate "Refaire le quiz" %}</button></form>
-      {% endif %}
-    </div>
+    {% if a.is_exam %}
+      <div class="cta-row spaced">
+        {% if next_partie %}
+          <a class="btn" href="{% url 'module_detail' next_partie_module.public_id %}">{% translate "Commencer la partie suivante" %}<span class="visually-hidden"> : {{ next_partie.title }}</span>{% include "icons/chevron-right.svg" %}</a>
+          <a class="btn btn-ghost" href="{% url 'dashboard' %}">{% translate "Retour à mes cours" %}</a>
+        {% else %}
+          <a class="btn" href="{% url 'dashboard' %}">{% translate "Retour à mes cours" %}</a>
+        {% endif %}
+      </div>
+    {% else %}
+      {% if following %}<div class="notice notice-done spaced" role="status">{% include "icons/circle-check.svg" %}<div>{% if following.kind == "exam" %}{% translate "Module terminé. L'examen de la partie est ouvert." %}{% else %}{% translate "Module terminé." %}{% endif %}</div></div>{% endif %}
+      {% include "assessments/_quiz_actions.html" with module=a.module spaced=True %}
+    {% endif %}
   </div>
 </section>
 
 {% if module_scores %}
   <section class="panel spaced" aria-labelledby="par-module">
     <h2 id="par-module">{% translate "Score par module" %}</h2>
+    {% if not attempt.passed and attempts_left %}<p class="muted">{% blocktranslate with t=a.pass_threshold %}Revoyez les modules sous {{ t }} % avant votre prochaine tentative.{% endblocktranslate %}</p>{% endif %}
     <table class="breakdown">
-      {% for module, score in module_scores.items %}<tr><th scope="row">{{ module.title }}</th><td>{{ score|floatformat:0 }} %</td></tr>{% endfor %}
+      {% for module, score in module_scores.items %}<tr><th scope="row"><a href="{% url 'module_detail' module.public_id %}">{{ module.title }}</a></th><td>{{ score|floatformat:0 }} %</td></tr>{% endfor %}
     </table>
   </section>
 {% endif %}
@@ -56,6 +62,7 @@
       </section>
     {% endfor %}
   </div>
+  {% include "assessments/_quiz_actions.html" with module=a.module spaced=True %}
 {% endif %}
 {% endwith %}
 {% endblock %}
