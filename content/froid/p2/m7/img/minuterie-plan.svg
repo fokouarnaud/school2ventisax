@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 196.9" font-family="Arial, sans-serif">
-<rect width="420" height="196.9" fill="#fff"/>
-<path d="M13.1 13.1H406.9V183.8H13.1Z" fill="none" stroke="#13212c" stroke-width="8.1"/>
-<rect x="177.2" y="7.9" width="59.1" height="10.5" fill="#fff"/>
-<path d="M177.2 13.1H236.2" fill="none" stroke="#5b6b76" stroke-width="1.6"/>
-<rect x="7.9" y="131.2" width="10.5" height="39.4" fill="#fff"/>
-<path d="M13.1 131.2A39.4 39.4 0 0 1 52.5 170.6" fill="none" stroke="#5b6b76" stroke-width="1.2"/>
-<path d="M367.5 183.8V164.1M357.7 170.6H377.3" fill="none" stroke="#13212c" stroke-width="2"/>
-<text x="367.5" y="154.9" font-size="14" text-anchor="middle" fill="#13212c" font-weight="bold">230V</text>
-<circle cx="39.4" cy="105" r="5.9" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<circle cx="39.4" cy="105" r="4" fill="none" stroke="#13212c" stroke-width="1.6"/>
-<circle cx="380.6" cy="105" r="5.9" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<circle cx="380.6" cy="105" r="4" fill="none" stroke="#13212c" stroke-width="1.6"/>
-<rect x="85.3" y="149.6" width="26.2" height="15.8" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<text x="98.4" y="161.4" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">t</text>
-<path d="M203.4 72.2L216.6 85.3M216.6 72.2L203.4 85.3" fill="none" stroke="#13212c" stroke-width="2.4"/>
-<path d="M45.3 105H98.4V149.6M374.7 105H328.1V157.5H111.6M210 157.5V85.3" fill="none" stroke="#5b6b76" stroke-width="1.2" stroke-dasharray="7 5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" font-family="Arial, sans-serif">
+<rect width="640" height="300" fill="#fff"/>
+<path d="M20 20H620V280H20Z" fill="none" stroke="#13212c" stroke-width="10"/>
+<rect x="270" y="12" width="90" height="16" fill="#fff"/>
+<path d="M270 20H360" fill="none" stroke="#5b6b76" stroke-width="2"/>
+<rect x="12" y="200" width="16" height="60" fill="#fff"/>
+<path d="M20 200A60 60 0 0 1 80 260" fill="none" stroke="#5b6b76" stroke-width="1.5"/>
+<path d="M560 280V250M545 260H575" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="560" y="236" font-size="14" text-anchor="middle" fill="#13212c" font-weight="bold">230V</text>
+<circle cx="60" cy="160" r="9" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<circle cx="60" cy="160" r="4" fill="none" stroke="#13212c" stroke-width="2"/>
+<circle cx="580" cy="160" r="9" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<circle cx="580" cy="160" r="4" fill="none" stroke="#13212c" stroke-width="2"/>
+<rect x="130" y="228" width="40" height="24" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<text x="150" y="246" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">t</text>
+<path d="M310 110L330 130M330 110L310 130" fill="none" stroke="#13212c" stroke-width="3"/>
+<path d="M69 160H150V228M571 160H500V240H170M320 240V130" fill="none" stroke="#5b6b76" stroke-width="1.5" stroke-dasharray="7 5"/>
 </svg>
