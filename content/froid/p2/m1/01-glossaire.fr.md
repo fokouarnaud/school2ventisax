@@ -25,6 +25,11 @@ Le cours est bilingue. Ce glossaire donne le terme anglais employé dans la vers
 | Télérupteur | Impulse relay |
 | Minuterie | Staircase timer |
 | Horloge, interrupteur horaire | Time switch |
+| Interrupteur crépusculaire | Twilight switch |
+| Cellule photoélectrique | Photocell |
+| Capteur de mouvement | Motion detector (PIR) |
+| Temporisation | Time delay |
+| Seuil de luminosité | Light threshold (lux) |
 | Boîte de dérivation | Junction box |
 | Goulotte | Cable trunking |
 | Schéma architectural | Architectural (layout) plan |

@@ -99,3 +99,17 @@ Journal destiné au formateur (décision Q29 du 2026-10-20). Le texte servi à l
 - **Texte d'origine** : schéma de câblage d'un réfrigérateur légendé en indonésien (« Kontak Defrost Thermo terhubung saat temperatur body Defrost Thermo -2°C ») et schéma frigorifique tiré d'un site internet.
 - **Correction** : schéma redessiné et simplifié en SVG, repères neutres (TH, M, C, K, R, TD, FT, P, E1) et légende bilingue dans le texte.
 - **Justification** : décision Q26 (aucune image d'internet en Partie 2) ; la légende indonésienne n'était pas lisible par les apprenants.
+
+## 15. Conducteur de protection PE de l'interrupteur crépusculaire et du capteur de mouvement (module 9)
+
+- **Page** : 39 (tableau des bornes), 40 et 42 (schémas de principe, raccordement)
+- **Texte d'origine** : « PE : Terre : Protection du luminaire si nécessaire » ; « Raccorder le conducteur de protection au luminaire lorsqu'il est requis » ; « Terre du luminaire si nécessaire ».
+- **Correction** : le conducteur de protection (PE) est présent à chaque point d'éclairage et se raccorde à la borne de terre du luminaire de classe I.
+- **Justification** : la NF C 15-100 impose un conducteur de protection à chaque point d'éclairage, que le luminaire posé soit de classe I ou de classe II ; seul son raccordement dépend du luminaire (un luminaire de classe II n'a pas de borne de terre).
+
+## 16. Activité pratique du module 9 (ajout)
+
+- **Page** : 39 à 44
+- **Texte d'origine** : aucune page « TAF » dans le module 9.
+- **Correction** : activité pratique rédigée sur le modèle commun des modules 3 à 8 (matériel, séquence, temps estimé, éléments d'évaluation), appliquée au câblage et au réglage d'un interrupteur crépusculaire et d'un capteur de mouvement d'après les schémas de principe du module.
+- **Justification** : chaque module de la partie doit présenter une activité pratique (US-25) ; la section est classée « pratique » et ne peut pas porter le badge « Complément », d'où cette mention au journal.

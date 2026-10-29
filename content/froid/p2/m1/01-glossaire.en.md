@@ -25,6 +25,11 @@ The course is bilingual. This glossary gives the English term used in the Englis
 | <span lang="fr">Télérupteur</span> | Impulse relay |
 | <span lang="fr">Minuterie</span> | Staircase timer |
 | <span lang="fr">Horloge, interrupteur horaire</span> | Time switch |
+| <span lang="fr">Interrupteur crépusculaire</span> | Twilight switch |
+| <span lang="fr">Cellule photoélectrique</span> | Photocell |
+| <span lang="fr">Capteur de mouvement</span> | Motion detector (PIR) |
+| <span lang="fr">Temporisation</span> | Time delay |
+| <span lang="fr">Seuil de luminosité</span> | Light threshold (lux) |
 | <span lang="fr">Boîte de dérivation</span> | Junction box |
 | <span lang="fr">Goulotte</span> | Cable trunking |
 | <span lang="fr">Schéma architectural</span> | Architectural (layout) plan |

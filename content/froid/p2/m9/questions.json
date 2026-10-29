@@ -1,0 +1,714 @@
+[
+  {
+    "id": "p2-m9-q01",
+    "section": "01-crepusculaire",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Sur quelle grandeur l'interrupteur crépusculaire commande-t-il l'éclairage ?",
+      "en": "What quantity does a twilight switch use to control the lighting?"
+    },
+    "explanation": {
+      "fr": "La luminosité ambiante, mesurée par une cellule photosensible.",
+      "en": "The ambient light level, measured by a light-sensitive cell."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La luminosité ambiante",
+          "en": "The ambient light level"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le passage d'une personne",
+          "en": "A person passing by"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "L'heure de la journée",
+          "en": "The time of day"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "La température extérieure",
+          "en": "The outdoor temperature"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q02",
+    "section": "01-crepusculaire",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Un seuil de luminosité plus élevé fait en général allumer la lampe alors qu'il fait encore relativement clair.",
+      "en": "A higher light threshold usually switches the lamp on while it is still fairly light."
+    },
+    "explanation": {
+      "fr": "Vrai : un seuil plus bas attend une obscurité plus importante.",
+      "en": "True: a lower threshold waits for darker conditions."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q03",
+    "section": "01-crepusculaire",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelles bornes trouve-t-on couramment sur un interrupteur crépusculaire ?",
+      "en": "Which terminals are commonly found on a twilight switch?"
+    },
+    "explanation": {
+      "fr": "L et N pour l'alimentation, L' (OUT) pour la sortie commandée vers la lampe.",
+      "en": "L and N for the supply, L' (OUT) for the switched output to the lamp."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "L (phase)",
+          "en": "L (line)"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "N (neutre)",
+          "en": "N (neutral)"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "L' / OUT (sortie commandée)",
+          "en": "L' / OUT (switched output)"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "A1 / A2 (bobine)",
+          "en": "A1 / A2 (coil)"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q04",
+    "section": "02-detecteur",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelle technologie utilisent les capteurs de mouvement courants pour l'éclairage ?",
+      "en": "What technology do common motion detectors for lighting use?"
+    },
+    "explanation": {
+      "fr": "L'infrarouge passif (PIR), qui détecte les variations du rayonnement infrarouge.",
+      "en": "Passive infrared (PIR), which detects changes in infrared radiation."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "L'infrarouge passif (PIR)",
+          "en": "Passive infrared (PIR)"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Une cellule photosensible seule",
+          "en": "A light-sensitive cell alone"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Un contact de porte",
+          "en": "A door contact"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Un thermostat",
+          "en": "A thermostat"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q05",
+    "section": "02-detecteur",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel réglage d'un capteur de mouvement fixe le temps d'allumage après une détection ?",
+      "en": "Which motion detector setting fixes how long the lamp stays on after a detection?"
+    },
+    "explanation": {
+      "fr": "TIME règle la durée ; LUX la luminosité de fonctionnement ; SENS la sensibilité.",
+      "en": "TIME sets the duration; LUX the operating light level; SENS the sensitivity."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "TIME",
+          "en": "TIME"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "LUX",
+          "en": "LUX"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "SENS",
+          "en": "SENS"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "OUT",
+          "en": "OUT"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q06",
+    "section": "02-detecteur",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Pour les essais, on règle TIME sur une durée courte.",
+      "en": "For testing, TIME is set to a short duration."
+    },
+    "explanation": {
+      "fr": "Vrai : on voit ainsi rapidement l'extinction, puis on règle LUX et SENS.",
+      "en": "True: this shows the switch-off quickly, before setting LUX and SENS."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q07",
+    "section": "03-comparaison",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "La lampe commandée par un capteur de mouvement s'éteint trop vite. Quelle est la cause probable ?",
+      "en": "The lamp controlled by a motion detector switches off too soon. What is the likely cause?"
+    },
+    "explanation": {
+      "fr": "TIME est réglé trop court : il faut augmenter la temporisation.",
+      "en": "TIME is set too short: increase the time delay."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "TIME réglé trop court",
+          "en": "TIME set too short"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Lampe défectueuse",
+          "en": "Faulty lamp"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Absence de neutre",
+          "en": "No neutral"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "SENS réglé trop haut",
+          "en": "SENS set too high"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q08",
+    "section": "03-comparaison",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "En associant un interrupteur crépusculaire et un capteur de mouvement, quand la lampe s'allume-t-elle ?",
+      "en": "When a twilight switch and a motion detector are combined, when does the lamp switch on?"
+    },
+    "explanation": {
+      "fr": "Seulement quand il fait sombre et qu'un mouvement est détecté ; en journée elle reste éteinte.",
+      "en": "Only when it is dark and movement is detected; during the day it stays off."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Quand il fait sombre et qu'un mouvement est détecté",
+          "en": "When it is dark and movement is detected"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Dès qu'il fait sombre",
+          "en": "As soon as it is dark"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "À chaque mouvement, de jour comme de nuit",
+          "en": "At every movement, day or night"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "À heure fixe",
+          "en": "At a fixed time"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q09",
+    "section": "01-crepusculaire",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "À quoi servent la temporisation ou l'hystérésis d'un interrupteur crépusculaire ?",
+      "en": "What are the time delay or hysteresis of a twilight switch for?"
+    },
+    "explanation": {
+      "fr": "Elles évitent les commutations répétées lors de variations momentanées de lumière.",
+      "en": "They prevent repeated switching when the light changes for a moment."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Éviter les commutations répétées lors de variations brèves de lumière",
+          "en": "Avoiding repeated switching when the light changes briefly"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Augmenter la puissance admissible",
+          "en": "Increasing the permitted load"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Remplacer la protection du circuit",
+          "en": "Replacing the circuit protection"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Programmer une heure d'allumage",
+          "en": "Programming a switch-on time"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q10",
+    "section": "01-crepusculaire",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Sur un interrupteur crépusculaire, où raccorde-t-on la sortie commandée L' ?",
+      "en": "On a twilight switch, where is the switched output L' connected?"
+    },
+    "explanation": {
+      "fr": "À la borne de phase de la lampe ; l'autre borne de la lampe va au neutre.",
+      "en": "To the line terminal of the lamp; the other lamp terminal goes to neutral."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "À la borne de phase de la lampe",
+          "en": "To the line terminal of the lamp"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Au neutre de l'alimentation",
+          "en": "To the supply neutral"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "À la terre du luminaire",
+          "en": "To the luminaire earth"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "À la borne L de l'appareil",
+          "en": "To terminal L of the device"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q11",
+    "section": "01-crepusculaire",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Le conducteur de protection (PE) n'est amené au point d'éclairage que si le luminaire le demande.",
+      "en": "The protective conductor (PE) is only taken to the lighting point if the luminaire needs it."
+    },
+    "explanation": {
+      "fr": "Faux : la NF C 15-100 exige un conducteur de protection à chaque point d'éclairage ; on le raccorde au luminaire de classe I.",
+      "en": "False: NF C 15-100 requires a protective conductor at every lighting point; it is connected to class I luminaires."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q12",
+    "section": "02-detecteur",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que se passe-t-il après la dernière détection d'un capteur de mouvement ?",
+      "en": "What happens after a motion detector's last detection?"
+    },
+    "explanation": {
+      "fr": "La temporisation commence ou se réinitialise selon le modèle, puis la lampe s'éteint si aucun nouveau mouvement n'est détecté.",
+      "en": "The time delay starts or restarts depending on the model, then the lamp switches off if no new movement is detected."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La temporisation commence ou se réinitialise",
+          "en": "The time delay starts or restarts"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La lampe s'éteint à la fin de la durée si aucun mouvement n'est détecté",
+          "en": "The lamp switches off at the end of the time if no movement is detected"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La lampe reste allumée jusqu'au lever du jour",
+          "en": "The lamp stays on until daybreak"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le capteur se met hors tension",
+          "en": "The detector switches itself off"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q13",
+    "section": "02-detecteur",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quel est le rôle du réglage LUX d'un capteur de mouvement ?",
+      "en": "What is the role of the LUX setting on a motion detector?"
+    },
+    "explanation": {
+      "fr": "Il autorise ou limite le fonctionnement selon la lumière ambiante.",
+      "en": "It allows or limits operation according to the ambient light."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Autoriser ou limiter le fonctionnement selon la lumière ambiante",
+          "en": "Allowing or limiting operation according to the ambient light"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Régler la durée d'allumage",
+          "en": "Setting the switch-on time"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Régler la portée de détection",
+          "en": "Setting the detection range"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Choisir la puissance de la lampe",
+          "en": "Choosing the lamp power"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q14",
+    "section": "02-detecteur",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelle est la première étape de la procédure pratique sur un capteur de mouvement ?",
+      "en": "What is the first step of the practical procedure on a motion detector?"
+    },
+    "explanation": {
+      "fr": "Couper l'alimentation et vérifier l'absence de tension avant de toucher aux conducteurs.",
+      "en": "Switch off the supply and check that the circuit is dead before touching any conductor."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Couper l'alimentation et vérifier l'absence de tension",
+          "en": "Switch off and check that the circuit is dead"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Régler SENS au maximum",
+          "en": "Set SENS to maximum"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Tester la zone en marchant",
+          "en": "Test the area by walking"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Refermer le boîtier",
+          "en": "Close the housing"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q15",
+    "section": "03-comparaison",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "La lampe s'allume en journée. Que faut-il vérifier ?",
+      "en": "The lamp switches on in daytime. What should be checked?"
+    },
+    "explanation": {
+      "fr": "Le réglage LUX peut être inadapté ou la fonction absente : vérifier la notice et le réglage.",
+      "en": "The LUX setting may be wrong or the function missing: check the instructions and the setting."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le réglage LUX",
+          "en": "The LUX setting"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La notice de l'appareil",
+          "en": "The device instructions"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La section du câble d'alimentation",
+          "en": "The supply cable size"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le calibre du disjoncteur de branchement",
+          "en": "The rating of the main circuit breaker"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p2-m9-q16",
+    "section": "03-comparaison",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Pour associer un interrupteur crépusculaire et un capteur de mouvement, on peut toujours les câbler en série sans autre vérification.",
+      "en": "To combine a twilight switch and a motion detector, they can always be wired in series without further checks."
+    },
+    "explanation": {
+      "fr": "Faux : il faut vérifier la compatibilité des sorties, les schémas du fabricant et la puissance ; un relais ou un contacteur peut être nécessaire.",
+      "en": "False: check that the outputs are compatible, the manufacturers' diagrams and the load; a relay or contactor may be needed."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  }
+]
