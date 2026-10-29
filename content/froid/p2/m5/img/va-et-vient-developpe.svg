@@ -1,34 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 210" font-family="Arial, sans-serif">
-<rect width="640" height="210" fill="#fff"/>
-<text x="50" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">L</text>
-<text x="560" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">N</text>
-<path d="M560 34V180" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
-<text x="600" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">PE</text>
-<path d="M600 34V180" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
-<path d="M50 34V54" fill="none" stroke="#b3261e" stroke-width="2.5"/>
-<rect x="43" y="54" width="14" height="28" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
-<path d="M50 54V82" fill="none" stroke="#13212c" stroke-width="2.5"/>
-<text x="36" y="74" font-size="16" text-anchor="end" fill="#13212c" font-weight="bold">F1</text>
-<path d="M50 82V130H160" fill="none" stroke="#b3261e" stroke-width="2.5"/>
-<circle cx="160" cy="130" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<circle cx="200" cy="116" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<circle cx="200" cy="144" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<path d="M163 128L196 117" fill="none" stroke="#13212c" stroke-width="2.5"/>
-<text x="180" y="104" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">S1</text>
-<path d="M200 116H300M200 144H300" fill="none" stroke="#b3261e" stroke-width="2.5"/>
-<text x="250" y="110" font-size="13" text-anchor="middle" fill="#5b6b76">1</text>
-<text x="250" y="162" font-size="13" text-anchor="middle" fill="#5b6b76">2</text>
-<circle cx="340" cy="130" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<circle cx="300" cy="116" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<circle cx="300" cy="144" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<path d="M337 128L304 117" fill="none" stroke="#13212c" stroke-width="2.5"/>
-<text x="320" y="104" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">S2</text>
-<path d="M340 130H385" fill="none" stroke="#b3261e" stroke-width="2.5"/>
-<circle cx="400" cy="130" r="15" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
-<path d="M389.5 119.5L410.5 140.5M410.5 119.5L389.5 140.5" fill="none" stroke="#13212c" stroke-width="2.5"/>
-<text x="400" y="107" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">L1</text>
-<path d="M415 130H560" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
-<circle cx="560" cy="130" r="3.5" fill="#13212c"/>
-<path d="M400 145V180H600" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
-<circle cx="600" cy="180" r="3.5" fill="#13212c"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 137.8" font-family="Arial, sans-serif">
+<rect width="420" height="137.8" fill="#fff"/>
+<text x="32.8" y="15.8" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">L</text>
+<text x="367.5" y="15.8" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">N</text>
+<path d="M367.5 22.3V118.1" fill="none" stroke="#1d4f91" stroke-width="2"/>
+<text x="393.8" y="15.8" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">PE</text>
+<path d="M393.8 22.3V118.1" fill="none" stroke="#2e7d32" stroke-width="2"/>
+<path d="M32.8 22.3V35.4" fill="none" stroke="#b3261e" stroke-width="2"/>
+<rect x="28.2" y="35.4" width="9.2" height="18.4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M32.8 35.4V53.8" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="23.6" y="48.6" font-size="16" text-anchor="end" fill="#13212c" font-weight="bold">F1</text>
+<path d="M32.8 53.8V85.3H105" fill="none" stroke="#b3261e" stroke-width="2"/>
+<circle cx="105" cy="85.3" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
+<circle cx="131.2" cy="76.1" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
+<circle cx="131.2" cy="94.5" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
+<path d="M107 84L128.6 76.8" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="118.1" y="68.2" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">S1</text>
+<path d="M131.2 76.1H196.9M131.2 94.5H196.9" fill="none" stroke="#b3261e" stroke-width="2"/>
+<text x="164.1" y="72.2" font-size="13" text-anchor="middle" fill="#5b6b76">1</text>
+<text x="164.1" y="106.3" font-size="13" text-anchor="middle" fill="#5b6b76">2</text>
+<circle cx="223.1" cy="85.3" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
+<circle cx="196.9" cy="76.1" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
+<circle cx="196.9" cy="94.5" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
+<path d="M221.2 84L199.5 76.8" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="210" y="68.2" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">S2</text>
+<path d="M223.1 85.3H252.7" fill="none" stroke="#b3261e" stroke-width="2"/>
+<circle cx="262.5" cy="85.3" r="9.8" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M255.6 78.4L269.4 92.2M269.4 78.4L255.6 92.2" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="262.5" y="70.2" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">L1</text>
+<path d="M272.3 85.3H367.5" fill="none" stroke="#1d4f91" stroke-width="2"/>
+<circle cx="367.5" cy="85.3" r="3.5" fill="#13212c"/>
+<path d="M262.5 95.2V118.1H393.8" fill="none" stroke="#2e7d32" stroke-width="2"/>
+<circle cx="393.8" cy="118.1" r="3.5" fill="#13212c"/>
 </svg>

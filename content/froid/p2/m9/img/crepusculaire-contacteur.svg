@@ -1,49 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 316" font-family="Arial, sans-serif">
-<rect width="640" height="316" fill="#fff"/>
-<text x="50" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">L</text>
-<text x="560" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">N</text>
-<text x="600" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">PE</text>
-<path d="M560 34V296" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
-<path d="M600 34V296" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
-<path d="M50 34V54" fill="none" stroke="#b3261e" stroke-width="2.5"/>
-<rect x="43" y="54" width="14" height="28" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
-<path d="M50 54V82" fill="none" stroke="#13212c" stroke-width="2.5"/>
-<text x="36" y="74" font-size="16" text-anchor="end" fill="#13212c" font-weight="bold">F1</text>
-<rect x="120" y="40" width="200" height="110" rx="8" fill="none" stroke="#5b6b76" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="134" y="64" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">B1</text>
-<circle cx="220" cy="95" r="12" fill="#eef3f6" stroke="#13212c" stroke-width="2"/>
-<path d="M186 73L206 87M200 87H206V81" fill="none" stroke="#13212c" stroke-width="2"/>
-<path d="M194 63L214 77M208 77H214V71" fill="none" stroke="#13212c" stroke-width="2"/>
-<circle cx="150" cy="150" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<text x="150" y="138" font-size="13" text-anchor="middle" fill="#13212c" font-weight="bold">L</text>
-<circle cx="220" cy="150" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<text x="220" y="138" font-size="13" text-anchor="middle" fill="#13212c" font-weight="bold">L'</text>
-<circle cx="290" cy="150" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<text x="290" y="138" font-size="13" text-anchor="middle" fill="#13212c" font-weight="bold">N</text>
-<path d="M50 82V176H150V154" fill="none" stroke="#b3261e" stroke-width="2.5"/>
-<path d="M290 154V168H560" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
-<circle cx="560" cy="168" r="3.5" fill="#13212c"/>
-<path d="M220 154V190H380V200" fill="none" stroke="#b3261e" stroke-width="2.5"/>
-<rect x="368" y="200" width="24" height="34" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
-<text x="404" y="222" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">KM1</text>
-<text x="366" y="212" font-size="12" text-anchor="end" fill="#13212c" font-weight="bold">A1</text>
-<text x="366" y="236" font-size="12" text-anchor="end" fill="#13212c" font-weight="bold">A2</text>
-<path d="M380 234V246H560" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
-<circle cx="560" cy="246" r="3.5" fill="#13212c"/>
-<path d="M50 176V286H130" fill="none" stroke="#b3261e" stroke-width="2.5"/>
-<circle cx="50" cy="176" r="3.5" fill="#13212c"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 316" font-family="Arial, sans-serif">
+<rect width="420" height="316" fill="#fff"/>
+<text x="30" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">L</text>
+<text x="350" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">N</text>
+<text x="390" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">PE</text>
+<path d="M350 34V296" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<path d="M390 34V296" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<path d="M30 34V54" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<rect x="23" y="54" width="14" height="28" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M30 54V82" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="44" y="74" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">F1</text>
+<rect x="72" y="40" width="172" height="110" rx="8" fill="none" stroke="#5b6b76" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="86" y="64" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">B1</text>
+<circle cx="162" cy="95" r="12" fill="#eef3f6" stroke="#13212c" stroke-width="2"/>
+<path d="M128 73L148 87M142 87H148V81" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M136 63L156 77M150 77H156V71" fill="none" stroke="#13212c" stroke-width="2"/>
+<circle cx="100" cy="150" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="100" y="138" font-size="14" text-anchor="middle" fill="#13212c" font-weight="bold">L</text>
+<circle cx="162" cy="150" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="162" y="138" font-size="14" text-anchor="middle" fill="#13212c" font-weight="bold">L'</text>
+<circle cx="224" cy="150" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="224" y="138" font-size="14" text-anchor="middle" fill="#13212c" font-weight="bold">N</text>
+<path d="M30 82V176H100V154" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<path d="M224 154V168H350" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<circle cx="350" cy="168" r="3.5" fill="#13212c"/>
+<path d="M162 154V190H270V200" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<rect x="258" y="200" width="24" height="34" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<text x="290" y="222" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">KM1</text>
+<text x="254" y="212" font-size="13" text-anchor="end" fill="#13212c" font-weight="bold">A1</text>
+<text x="254" y="236" font-size="13" text-anchor="end" fill="#13212c" font-weight="bold">A2</text>
+<path d="M270 234V246H350" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<circle cx="350" cy="246" r="3.5" fill="#13212c"/>
+<path d="M30 176V286H90" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<circle cx="30" cy="176" r="3.5" fill="#13212c"/>
+<circle cx="90" cy="286" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
 <circle cx="130" cy="286" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<circle cx="170" cy="286" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<path d="M133 284L166 272" fill="none" stroke="#13212c" stroke-width="2.5"/>
-<text x="150" y="268" font-size="13" text-anchor="middle" fill="#13212c" font-weight="bold">KM1</text>
-<text x="130" y="306" font-size="12" text-anchor="middle" fill="#13212c" font-weight="bold">1</text>
-<text x="170" y="306" font-size="12" text-anchor="middle" fill="#13212c" font-weight="bold">2</text>
-<path d="M174 286H425" fill="none" stroke="#b3261e" stroke-width="2.5"/>
-<circle cx="440" cy="286" r="15" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
-<path d="M429.5 275.5L450.5 296.5M450.5 275.5L429.5 296.5" fill="none" stroke="#13212c" stroke-width="2.5"/>
-<text x="460" y="269" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">E1</text>
-<path d="M455 286H560" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
-<circle cx="560" cy="286" r="3.5" fill="#13212c"/>
-<path d="M440 301V306H600" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
-<circle cx="600" cy="306" r="3.5" fill="#13212c"/>
+<path d="M93 284L126 272" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="110" y="266" font-size="14" text-anchor="middle" fill="#13212c" font-weight="bold">KM1</text>
+<text x="90" y="307" font-size="13" text-anchor="middle" fill="#13212c" font-weight="bold">1</text>
+<text x="130" y="307" font-size="13" text-anchor="middle" fill="#13212c" font-weight="bold">2</text>
+<path d="M134 286H285" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<circle cx="300" cy="286" r="15" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M289.5 275.5L310.5 296.5M310.5 275.5L289.5 296.5" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="320" y="269" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">E1</text>
+<path d="M315 286H350" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<circle cx="350" cy="286" r="3.5" fill="#13212c"/>
+<path d="M300 301V306H390" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<circle cx="390" cy="306" r="3.5" fill="#13212c"/>
 </svg>
