@@ -893,6 +893,61 @@
               }
             }
           ]
+        },
+        {
+          "order": 9,
+          "dir": "p2/m9",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Câblage et réglage de l'interrupteur crépusculaire et du capteur de mouvement",
+            "en": "Wiring and setting the twilight switch and the motion detector"
+          },
+          "competence": {
+            "fr": "L'apprenant sera compétent pour définir, câbler, régler et dépanner un interrupteur crépusculaire et un capteur de mouvement.",
+            "en": "The learner will be competent in describing, wiring, setting and troubleshooting a twilight switch and a motion detector."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier et QCM.",
+            "en": "Practical work assessed in the workshop and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-crepusculaire",
+              "kind": "content",
+              "title": {
+                "fr": "L'interrupteur crépusculaire",
+                "en": "The twilight switch"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-detecteur",
+              "kind": "content",
+              "title": {
+                "fr": "Le capteur de mouvement",
+                "en": "The motion detector"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-comparaison",
+              "kind": "content",
+              "title": {
+                "fr": "Comparaison, association et pannes courantes",
+                "en": "Comparison, combined use and common faults"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
         }
       ]
     }

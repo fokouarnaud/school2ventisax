@@ -186,6 +186,7 @@ PART_TWO_MODULES = [
     "Montage télérupteur",
     "Montage d'une minuterie",
     "Montage et réglage d'une horloge",
+    "Câblage et réglage de l'interrupteur crépusculaire et du capteur de mouvement",  # Q31
 ]
 
 
@@ -193,7 +194,7 @@ def part_two():
     return next(p for p in manifest()["parties"] if p["slug"] == "p2")
 
 
-def test_part_two_has_the_eight_modules_and_its_exam_setting():
+def test_part_two_has_the_nine_modules_and_its_exam_setting():
     partie = part_two()
     assert [m["title"]["fr"] for m in partie["modules"]] == PART_TWO_MODULES
     assert partie["exam"] == {"questions_per_module": 5}
@@ -215,7 +216,7 @@ def test_part_two_bank_has_eight_reviewed_quiz_and_exam_questions_per_module():
 
 
 @pytest.mark.django_db
-def test_part_two_exam_draws_forty_questions_five_per_module():
+def test_part_two_exam_draws_forty_five_questions_five_per_module():
     import random
     from collections import Counter
 
@@ -225,7 +226,7 @@ def test_part_two_exam_draws_forty_questions_five_per_module():
     call_command("import_content", str(CONTENT / "formation.json"), publish=True, verbosity=0)
     exam = Assessment.exam_for(Partie.objects.get(slug="p2"))
     first = exam.question_pool(random.Random(1))
-    assert len(first) == 40
+    assert len(first) == 45  # 9 modules × 5 (Q38)
     assert set(Counter(q.module_id for q in first).values()) == {5}
     assert {q.pk for q in first} != {q.pk for q in exam.question_pool(random.Random(2))}
 
