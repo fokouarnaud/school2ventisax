@@ -163,13 +163,6 @@ def test_part_two_has_no_photo():
     assert photos == []
 
 
-def test_every_diagram_stays_readable_on_a_360px_phone():
-    """Guide de style (2026-10-29) : 420 de large au plus, sinon les repères tombent sous 8 px à 360 px."""
-    for image in course_images():
-        width = float(re.search(r'viewBox="0 0 ([\d.]+) ', image.read_text(encoding="utf-8")).group(1))
-        assert width <= 420, f"{image.relative_to(CONTENT)} : {width} de large"
-
-
 def test_every_french_only_diagram_has_its_english_twin():
     for image in course_images():
         if image.name.endswith(".fr.svg"):

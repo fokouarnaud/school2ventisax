@@ -1,24 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 164.1" font-family="Arial, sans-serif" font-size="17" font-weight="bold">
-<rect width="420" height="164.1" fill="#fff"/>
-<g fill="none" stroke="#13212c" stroke-width="2">
-<path d="M26.2 73.5V32.8H196.9V131.2H26.2V90.6"/>
-<path d="M17.1 73.5H35.4M21.7 90.6H30.8" stroke-width="2.4"/>
-<path d="M21.7 90.6H30.8" stroke-width="4.9"/>
-<circle cx="111.6" cy="32.8" r="13.1" fill="#fff"/>
-<circle cx="196.9" cy="82" r="13.1" fill="#fff"/>
-<path d="M187.7 72.8L206.1 91.2M206.1 72.8L187.7 91.2"/>
-<path d="M236.2 73.5V32.8H393.8V131.2H236.2V90.6M315 32.8V131.2"/>
-<path d="M227.1 73.5H245.4" stroke-width="2.4"/>
-<path d="M231.7 90.6H240.8" stroke-width="4.9"/>
-<circle cx="315" cy="82" r="13.1" fill="#fff"/>
-<path d="M305.8 72.8L324.2 91.2M324.2 72.8L305.8 91.2"/>
-<circle cx="393.8" cy="82" r="13.1" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+<rect width="640" height="250" fill="#fff"/>
+<g fill="none" stroke="#13212c" stroke-width="2.5">
+<path d="M40 112V50H300V200H40V138"/>
+<path d="M26 112H54M33 138H47" stroke-width="3"/>
+<path d="M33 138H47" stroke-width="6"/>
+<circle cx="170" cy="50" r="20" fill="#fff"/>
+<circle cx="300" cy="125" r="20" fill="#fff"/>
+<path d="M286 111L314 139M314 111L286 139"/>
+<path d="M360 112V50H600V200H360V138M480 50V200"/>
+<path d="M346 112H374" stroke-width="3"/>
+<path d="M353 138H367" stroke-width="6"/>
+<circle cx="480" cy="125" r="20" fill="#fff"/>
+<path d="M466 111L494 139M494 111L466 139"/>
+<circle cx="600" cy="125" r="20" fill="#fff"/>
 </g>
 <g fill="#13212c">
-<circle cx="315" cy="32.8" r="4"/><circle cx="315" cy="131.2" r="4"/>
-<text x="111.6" y="38.8" text-anchor="middle">A</text><text x="393.8" y="88" text-anchor="middle">V</text>
-<text x="178" y="88" text-anchor="end">E1</text><text x="296" y="88" text-anchor="end">E1</text>
-<text x="40.7" y="86.6">U</text><text x="250.7" y="86.6">U</text>
-<text x="13.1" y="70.9">+</text><text x="223.1" y="70.9">+</text>
+<circle cx="480" cy="50" r="4"/><circle cx="480" cy="200" r="4"/>
+<text x="163" y="57">A</text><text x="593" y="132">V</text>
+<text x="286" y="95">E1</text><text x="430" y="132">E1</text>
+<text x="62" y="132">U</text><text x="382" y="132">U</text>
+<text x="20" y="108">+</text><text x="340" y="108">+</text>
 </g>
 </svg>

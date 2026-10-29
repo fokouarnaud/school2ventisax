@@ -1,58 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 196.9" font-family="Arial, sans-serif">
-<rect width="420" height="196.9" fill="#fff"/>
-<text x="19.7" y="15.8" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">L</text>
-<text x="19.7" y="186.4" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">N</text>
-<path d="M32.8 19.7V39.4H78.8" fill="none" stroke="#b3261e" stroke-width="2"/>
-<path d="M32.8 183.8H393.8V39.4" fill="none" stroke="#1d4f91" stroke-width="2"/>
-<circle cx="78.8" cy="39.4" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
-<circle cx="105" cy="39.4" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
-<path d="M80.7 38.1L102.4 30.2" fill="none" stroke="#13212c" stroke-width="2"/>
-<text x="91.9" y="26.2" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">TH</text>
-<path d="M105 39.4H150.9" fill="none" stroke="#b3261e" stroke-width="2"/>
-<rect x="152.2" y="30.8" width="23.6" height="17.1" fill="#eef3f6" stroke="#13212c" stroke-width="2"/>
-<text x="164.1" y="25.6" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">M</text>
-<path d="M152.2 39.4V39.4M175.9 39.4H393.8" fill="none" stroke="#1d4f91" stroke-width="0"/>
-<path d="M175.9 39.4H393.8" fill="none" stroke="#1d4f91" stroke-width="2"/>
-<path d="M131.2 39.4V85.3H157.5" fill="none" stroke="#b3261e" stroke-width="2"/>
-<circle cx="131.2" cy="39.4" r="3.5" fill="#13212c"/>
-<circle cx="157.5" cy="85.3" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
-<circle cx="183.8" cy="76.1" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
-<circle cx="183.8" cy="94.5" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
-<path d="M159.5 84L181.1 76.8" fill="none" stroke="#13212c" stroke-width="2"/>
-<text x="170.6" y="68.2" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">C</text>
-<text x="190.3" y="70.9" font-size="13" text-anchor="middle" fill="#13212c">4</text>
-<text x="190.3" y="106.3" font-size="13" text-anchor="middle" fill="#13212c">2</text>
-<path d="M186.4 76.1H275.6" fill="none" stroke="#b3261e" stroke-width="2"/>
-<circle cx="288.8" cy="76.1" r="11.8" fill="#eef3f6" stroke="#13212c" stroke-width="2"/>
-<text x="288.8" y="80.1" font-size="15" text-anchor="middle" fill="#13212c" font-weight="bold">K</text>
-<path d="M300.6 76.1H393.8" fill="none" stroke="#1d4f91" stroke-width="2"/>
-<circle cx="393.8" cy="76.1" r="3.5" fill="#13212c"/>
-<path d="M186.4 94.5H216.6" fill="none" stroke="#b3261e" stroke-width="2"/>
-<circle cx="216.6" cy="94.5" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
-<circle cx="242.8" cy="94.5" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
-<path d="M218.5 93.2L240.2 85.3" fill="none" stroke="#13212c" stroke-width="2"/>
-<text x="229.7" y="81.4" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">TD</text>
-<path d="M242.8 94.5H262.5" fill="none" stroke="#b3261e" stroke-width="2"/>
-<rect x="262.5" y="87.9" width="28.9" height="13.1" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<text x="276.9" y="117" font-size="15" text-anchor="middle" fill="#13212c" font-weight="bold">R</text>
-<path d="M291.4 94.5H315" fill="none" stroke="#13212c" stroke-width="2"/>
-<rect x="323.5" y="85.3" width="9.2" height="18.4" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<path d="M328.1 85.3V103.7" fill="none" stroke="#13212c" stroke-width="2"/>
-<text x="318.9" y="98.4" font-size="16" text-anchor="end" fill="#13212c" font-weight="bold"></text>
-<path d="M318.9 94.5H322.9M337.3 94.5H341.2" fill="none" stroke="#13212c" stroke-width="2"/>
-<text x="328.1" y="120" font-size="15" text-anchor="middle" fill="#13212c" font-weight="bold">FT</text>
-<path d="M337.3 94.5H393.8" fill="none" stroke="#1d4f91" stroke-width="2"/>
-<circle cx="393.8" cy="94.5" r="3.5" fill="#13212c"/>
-<path d="M32.8 39.4V150.9H131.2" fill="none" stroke="#b3261e" stroke-width="2"/>
-<circle cx="32.8" cy="39.4" r="3.5" fill="#13212c"/>
-<circle cx="131.2" cy="150.9" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
-<circle cx="157.5" cy="150.9" r="4" fill="#fff" stroke="#13212c" stroke-width="1.6"/>
-<path d="M133.2 149.6L154.9 141.8" fill="none" stroke="#13212c" stroke-width="2"/>
-<text x="144.4" y="137.8" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">P</text>
-<path d="M157.5 150.9H275.6" fill="none" stroke="#b3261e" stroke-width="2"/>
-<circle cx="288.8" cy="150.9" r="9.8" fill="#fff" stroke="#13212c" stroke-width="2"/>
-<path d="M281.9 144L295.6 157.8M295.6 144L281.9 157.8" fill="none" stroke="#13212c" stroke-width="2"/>
-<text x="288.8" y="135.8" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">E1</text>
-<path d="M298.6 150.9H393.8" fill="none" stroke="#1d4f91" stroke-width="2"/>
-<circle cx="393.8" cy="150.9" r="3.5" fill="#13212c"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" font-family="Arial, sans-serif">
+<rect width="640" height="300" fill="#fff"/>
+<text x="30" y="24" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">L</text>
+<text x="30" y="284" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">N</text>
+<path d="M50 30V60H120" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<path d="M50 280H600V60" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<circle cx="120" cy="60" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<circle cx="160" cy="60" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M123 58L156 46" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="140" y="40" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">TH</text>
+<path d="M160 60H230" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<rect x="232" y="47" width="36" height="26" fill="#eef3f6" stroke="#13212c" stroke-width="2.5"/>
+<text x="250" y="39" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">M</text>
+<path d="M232 60V60M268 60H600" fill="none" stroke="#1d4f91" stroke-width="0"/>
+<path d="M268 60H600" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<path d="M200 60V130H240" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<circle cx="200" cy="60" r="3.5" fill="#13212c"/>
+<circle cx="240" cy="130" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<circle cx="280" cy="116" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<circle cx="280" cy="144" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M243 128L276 117" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="260" y="104" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">C</text>
+<text x="290" y="108" font-size="13" text-anchor="middle" fill="#13212c">4</text>
+<text x="290" y="162" font-size="13" text-anchor="middle" fill="#13212c">2</text>
+<path d="M284 116H420" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<circle cx="440" cy="116" r="18" fill="#eef3f6" stroke="#13212c" stroke-width="2.5"/>
+<text x="440" y="122" font-size="15" text-anchor="middle" fill="#13212c" font-weight="bold">K</text>
+<path d="M458 116H600" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<circle cx="600" cy="116" r="3.5" fill="#13212c"/>
+<path d="M284 144H330" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<circle cx="330" cy="144" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<circle cx="370" cy="144" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M333 142L366 130" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="350" y="124" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">TD</text>
+<path d="M370 144H400" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<rect x="400" y="134" width="44" height="20" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<text x="422" y="172" font-size="15" text-anchor="middle" fill="#13212c" font-weight="bold">R</text>
+<path d="M444 144H480" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="493" y="130" width="14" height="28" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M500 130V158" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="486" y="150" font-size="16" text-anchor="end" fill="#13212c" font-weight="bold"></text>
+<path d="M486 144H492M514 144H520" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="500" y="176" font-size="15" text-anchor="middle" fill="#13212c" font-weight="bold">FT</text>
+<path d="M514 144H600" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<circle cx="600" cy="144" r="3.5" fill="#13212c"/>
+<path d="M50 60V230H200" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<circle cx="50" cy="60" r="3.5" fill="#13212c"/>
+<circle cx="200" cy="230" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<circle cx="240" cy="230" r="4" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M203 228L236 216" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="220" y="210" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">P</text>
+<path d="M240 230H420" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<circle cx="440" cy="230" r="15" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M429.5 219.5L450.5 240.5M450.5 219.5L429.5 240.5" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="440" y="207" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">E1</text>
+<path d="M455 230H600" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<circle cx="600" cy="230" r="3.5" fill="#13212c"/>
 </svg>
