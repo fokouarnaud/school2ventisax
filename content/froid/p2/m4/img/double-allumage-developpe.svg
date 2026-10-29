@@ -4,7 +4,7 @@
 <text x="560" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">N</text>
 <path d="M560 34V240" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
 <text x="600" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">PE</text>
-<path d="M600 34V240" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<path d="M600 34V251" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
 <path d="M50 34V54" fill="none" stroke="#b3261e" stroke-width="2.5"/>
 <rect x="43" y="54" width="14" height="28" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
 <path d="M50 54V82" fill="none" stroke="#13212c" stroke-width="2.5"/>
@@ -37,4 +37,10 @@
 <text x="400" y="207" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">L3</text>
 <path d="M415 230H560" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
 <circle cx="560" cy="230" r="3.5" fill="#13212c"/>
+<path d="M400 125V131H600" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<circle cx="600" cy="131" r="3.5" fill="#13212c"/>
+<path d="M400 185V191H600" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<circle cx="600" cy="191" r="3.5" fill="#13212c"/>
+<path d="M400 245V251H600" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<circle cx="600" cy="251" r="3.5" fill="#13212c"/>
 </svg>

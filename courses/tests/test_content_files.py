@@ -163,6 +163,29 @@ def test_part_two_has_no_photo():
     assert photos == []
 
 
+PE_GREEN = 'stroke="#2e7d32"'
+LAMP = re.compile(r'<circle cx="([\d.]+)" cy="([\d.]+)" r="15"')
+
+
+def test_every_lamp_is_connected_to_the_protective_earth_rail():
+    """NF C 15-100 : PE à chaque point d'éclairage ; chaque liaison verte aboutit sur le rail PE, jonction comprise."""
+    for image in course_images():
+        svg = image.read_text(encoding="utf-8")
+        greens = [re.search(r'd="([^"]+)"', line).group(1) for line in svg.splitlines() if "<path" in line and PE_GREEN in line]
+        rail = next((d for d in greens if re.fullmatch(r"M([\d.]+) 34V([\d.]+)", d)), None)
+        if rail is None:
+            continue
+        rail_x, rail_end = (float(v) for v in re.fullmatch(r"M([\d.]+) 34V([\d.]+)", rail).groups())
+        links = [d for d in greens if d != rail]
+        for d in links:
+            end_y = float(re.search(r"V([\d.]+)H[\d.]+$", d).group(1))
+            end_x = float(re.search(r"H([\d.]+)$", d).group(1))
+            assert end_x == rail_x and end_y <= rail_end, f"{image.name} : liaison PE {d} hors du rail (fin {rail_end})"
+        starts = {(float(x), float(y)) for x, y in (re.match(r"M([\d.]+) ([\d.]+)", d).groups() for d in links)}
+        for cx, cy in LAMP.findall(svg):
+            assert (float(cx), float(cy) + 15) in starts, f"{image.name} : lampe ({cx}, {cy}) sans liaison PE"
+
+
 def test_every_french_only_diagram_has_its_english_twin():
     for image in course_images():
         if image.name.endswith(".fr.svg"):
