@@ -4,7 +4,7 @@
 <text x="560" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">N</text>
 <path d="M560 34V270" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
 <text x="600" y="24" font-size="16" text-anchor="middle" fill="#13212c" font-weight="bold">PE</text>
-<path d="M600 34V270" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<path d="M600 34V275" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
 <path d="M50 34V54" fill="none" stroke="#b3261e" stroke-width="2.5"/>
 <rect x="43" y="54" width="14" height="28" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
 <path d="M50 54V82" fill="none" stroke="#13212c" stroke-width="2.5"/>
@@ -46,17 +46,21 @@
 <text x="300" y="274" font-size="12" text-anchor="middle" fill="#13212c">1</text>
 <text x="340" y="274" font-size="12" text-anchor="middle" fill="#13212c">2</text>
 <text x="320" y="228" font-size="13" text-anchor="middle" fill="#13212c" font-weight="bold">K1</text>
-<path d="M344 250H440M400 250V210H440" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<path d="M344 250H440M400 250V196H440" fill="none" stroke="#b3261e" stroke-width="2.5"/>
 <circle cx="400" cy="250" r="3.5" fill="#13212c"/>
-<circle cx="455" cy="210" r="15" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
-<path d="M444.5 199.5L465.5 220.5M465.5 199.5L444.5 220.5" fill="none" stroke="#13212c" stroke-width="2.5"/>
-<text x="480" y="198" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">L1</text>
-<path d="M470 210H560" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
-<circle cx="560" cy="210" r="3.5" fill="#13212c"/>
+<circle cx="455" cy="196" r="15" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M444.5 185.5L465.5 206.5M465.5 185.5L444.5 206.5" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="480" y="184" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">L1</text>
+<path d="M470 196H560" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<circle cx="560" cy="196" r="3.5" fill="#13212c"/>
 <circle cx="455" cy="250" r="15" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
 <path d="M444.5 239.5L465.5 260.5M465.5 239.5L444.5 260.5" fill="none" stroke="#13212c" stroke-width="2.5"/>
 <text x="480" y="238" font-size="16" text-anchor="start" fill="#13212c" font-weight="bold">L2</text>
 <path d="M470 250H560" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
 <circle cx="560" cy="250" r="3.5" fill="#13212c"/>
 <path d="M350 163V250" fill="none" stroke="#5b6b76" stroke-width="1.5" stroke-dasharray="5 4"/>
+<path d="M455 211V221H600" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<circle cx="600" cy="221" r="3.5" fill="#13212c"/>
+<path d="M455 265V275H600" fill="none" stroke="#2e7d32" stroke-width="2.5"/>
+<circle cx="600" cy="275" r="3.5" fill="#13212c"/>
 </svg>
