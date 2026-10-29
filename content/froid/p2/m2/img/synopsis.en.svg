@@ -1,24 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" font-family="Arial, sans-serif" font-size="15">
-<rect width="640" height="420" fill="#fff"/>
-
-<g fill="#eef3f6" stroke="#13212c" stroke-width="2">
-<rect x="360" y="20" width="220" height="70" rx="6"/>
-<rect x="360" y="120" width="220" height="70" rx="6"/>
-<rect x="360" y="220" width="220" height="70" rx="6"/>
-<rect x="360" y="320" width="220" height="70" rx="6"/>
-<rect x="40" y="150" width="220" height="110" rx="6"/></g>
-<g stroke="#13212c" stroke-width="2" fill="none"><path d="M470 90V120M470 190V220M470 290V320"/><path d="M40 205H260"/><path d="M260 205H320V155H360M320 205V255H360M320 205V355H360"/></g>
-<g fill="#13212c"><path d="M465 112L470 122L475 112ZM465 212L470 222L475 212ZM465 312L470 322L475 312Z"/><path d="M352 150L362 155L352 160ZM352 250L362 255L352 260ZM352 350L362 355L352 360Z"/></g>
-<g font-weight="bold">
-<text x="470" y="50" text-anchor="middle">ENERGY</text>
-<text x="470" y="70" text-anchor="middle">SOURCE</text>
-<text x="470" y="150" text-anchor="middle">PROTECTIVE</text>
-<text x="470" y="170" text-anchor="middle">EQUIPMENT</text>
-<text x="470" y="250" text-anchor="middle">CONTROL</text>
-<text x="470" y="270" text-anchor="middle">EQUIPMENT</text>
-<text x="470" y="350" text-anchor="middle">CURRENT-USING</text>
-<text x="470" y="370" text-anchor="middle">EQUIPMENT</text>
-<text x="150" y="180" text-anchor="middle">CONNECTION</text>
-<text x="150" y="198" text-anchor="middle">EQUIPMENT</text>
-<text x="150" y="238" text-anchor="middle">WIRING SYSTEMS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 272" font-family="Arial, sans-serif" font-size="14">
+<rect width="420" height="272" fill="#fff"/>
+<g fill="#eef3f6" stroke="#13212c" stroke-width="1.6">
+<rect x="214" y="10" width="196" height="48" rx="4"/>
+<rect x="214" y="78" width="196" height="48" rx="4"/>
+<rect x="214" y="146" width="196" height="48" rx="4"/>
+<rect x="214" y="214" width="196" height="48" rx="4"/>
+<rect x="8" y="82" width="168" height="108" rx="4"/></g>
+<g stroke="#13212c" stroke-width="1.6" fill="none"><path d="M312.0 58V78M312.0 126V146M312.0 194V214"/><path d="M8 132H176"/><path d="M176 132H194M194 132V102.0H214M194 132V170.0H214M194 132V238.0H214"/></g>
+<g fill="#13212c"><path d="M308.0 71L312.0 78L316.0 71ZM308.0 139L312.0 146L316.0 139ZM308.0 207L312.0 214L316.0 207ZM207 98.0L214 102.0L207 106.0ZM207 166.0L214 170.0L207 174.0ZM207 234.0L214 238.0L207 242.0Z"/></g>
+<g font-weight="bold" text-anchor="middle" fill="#13212c">
+<text x="312.0" y="31">ENERGY</text>
+<text x="312.0" y="48">SOURCE</text>
+<text x="312.0" y="99">PROTECTIVE</text>
+<text x="312.0" y="116">EQUIPMENT</text>
+<text x="312.0" y="167">CONTROL</text>
+<text x="312.0" y="184">EQUIPMENT</text>
+<text x="312.0" y="235">CURRENT-USING</text>
+<text x="312.0" y="252">EQUIPMENT</text>
+<text x="92.0" y="104">CONNECTION</text>
+<text x="92.0" y="121">EQUIPMENT</text>
+<text x="92.0" y="162">WIRING SYSTEMS</text>
 </g></svg>

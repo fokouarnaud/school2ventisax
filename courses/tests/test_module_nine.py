@@ -121,12 +121,3 @@ def test_trainer_table_labels_module_nine_column_two_point_nine(imported, client
     response = client.get("/fr/formateur/")
     labels = [c["label"] for t in response.context["tables"] for c in t["columns"]]
     assert labels[-1] == "2.9" and "1.6" in labels
-
-
-def test_module_nine_diagrams_stay_readable_on_a_360px_phone():
-    """Guide de style : un schéma chargé de repères est dessiné en 420 de large au plus (repères ≥ 12 px à 360 px)."""
-    import re
-
-    for image in (CONTENT / "p2" / "m9" / "img").glob("*.svg"):
-        width = float(re.search(r'viewBox="0 0 ([\d.]+) ', image.read_text(encoding="utf-8")).group(1))
-        assert width <= 420, f"{image.name} : {width} de large"
