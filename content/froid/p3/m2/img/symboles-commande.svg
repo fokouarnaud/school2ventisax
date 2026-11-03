@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 290" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#13212c">
+<rect width="420" height="290" fill="#fff"/>
+<rect x="10" y="10" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="22" y="30" font-size="13" text-anchor="start" fill="#5b6b76">1</text>
+<text x="126" y="30" font-size="14" text-anchor="end">KM</text>
+<rect x="146" y="10" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="158" y="30" font-size="13" text-anchor="start" fill="#5b6b76">2</text>
+<text x="262" y="30" font-size="14" text-anchor="end"></text>
+<rect x="282" y="10" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="294" y="30" font-size="13" text-anchor="start" fill="#5b6b76">3</text>
+<text x="398" y="30" font-size="14" text-anchor="end"></text>
+<rect x="10" y="150" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="22" y="170" font-size="13" text-anchor="start" fill="#5b6b76">4</text>
+<text x="126" y="170" font-size="14" text-anchor="end">S</text>
+<rect x="146" y="150" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="158" y="170" font-size="13" text-anchor="start" fill="#5b6b76">5</text>
+<text x="262" y="170" font-size="14" text-anchor="end">S</text>
+<rect x="282" y="150" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="294" y="170" font-size="13" text-anchor="start" fill="#5b6b76">6</text>
+<text x="398" y="170" font-size="14" text-anchor="end">H</text>
+<path d="M74 40V58M74 80V118" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="57" y="58" width="34" height="22" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<text x="98" y="74" font-size="14" text-anchor="start"></text>
+<text x="48" y="56" font-size="12" font-weight="normal" text-anchor="end">A1</text>
+<text x="48" y="94" font-size="12" font-weight="normal" text-anchor="end">A2</text>
+<path d="M210 40V60M210 90V118" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M210 90L198 65" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M346 40V60M346 90V118" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M346 60H359M346 90L360 64" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M84 180V200M84 230V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M84 230L72 205" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M78 217H60" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M60 210V224M60 210H55M60 224H55" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M220 180V200M220 230V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M220 200H233M220 230L234 204" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M227 217H196" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M196 210V224M196 210H191M196 224H191" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M346 180V208M346 240V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<circle cx="346" cy="224" r="16" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M335 213L357 235M357 213L335 235" fill="none" stroke="#13212c" stroke-width="2"/>
+</svg>

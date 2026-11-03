@@ -72,7 +72,7 @@ def test_csv_export_has_one_line_per_visible_learner(client, trainer, scored, ou
     response = client.get("/fr/formateur/export.csv")
     assert response["Content-Type"].startswith("text/csv")
     rows = list(csv.reader(io.StringIO(response.content.decode("utf-8-sig")), delimiter=";"))
-    assert rows[0] == ["Promotion", "Identifiant", "Nom", "Sécurité dans les travaux", "Examen Habilitation et sécurité (%)", "Tentatives Habilitation et sécurité"]
+    assert rows[0] == ["Promotion", "Identifiant", "Nom", "1.1 Sécurité dans les travaux", "Examen Habilitation et sécurité (%)", "Tentatives Habilitation et sécurité"]
     assert rows[1:] == [["Oct 2026", "awa", "", "oui", "100.00", "1"]]
 
 

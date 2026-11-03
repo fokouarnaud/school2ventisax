@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#13212c">
+<rect width="320" height="420" fill="#fff"/>
+<text x="54" y="39" font-size="14" text-anchor="end">L1</text>
+<text x="54" y="405" font-size="14" text-anchor="end">N</text>
+<path d="M60 34H280" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<path d="M60 400H280" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<path d="M140 34V60M140 90V112M140 142V170H220V186M140 170V186M140 216V232H220V216M140 232V330M140 352V400" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M140 60H153M140 90L154 64" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M147 77H118" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M118 83V71H108V83" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="149" y="66" font-size="12" font-weight="normal" text-anchor="start">95</text>
+<text x="149" y="94" font-size="12" font-weight="normal" text-anchor="start">96</text>
+<text x="98" y="80" font-size="14" text-anchor="end">F1</text>
+<path d="M140 112H153M140 142L154 116" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M147 129H116" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M116 122V136M116 122H111M116 136H111" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="104" y="132" font-size="14" text-anchor="end">S1</text>
+<path d="M140 216L128 191" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M134 203H116" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M116 196V210M116 196H111M116 210H111" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="104" y="206" font-size="14" text-anchor="end">S2</text>
+<path d="M220 216L208 191" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="229" y="192" font-size="12" font-weight="normal" text-anchor="start">13</text>
+<text x="229" y="220" font-size="12" font-weight="normal" text-anchor="start">14</text>
+<text x="248" y="206" font-size="14" text-anchor="start">KM1</text>
+<circle cx="140" cy="170" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<circle cx="140" cy="232" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<rect x="123" y="330" width="34" height="22" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<text x="164" y="346" font-size="14" text-anchor="start">KM1</text>
+<text x="118" y="328" font-size="12" font-weight="normal" text-anchor="end">A1</text>
+<text x="118" y="366" font-size="12" font-weight="normal" text-anchor="end">A2</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 470" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#13212c">
+<rect width="400" height="470" fill="#fff"/>
+<text x="34" y="39" font-size="14" text-anchor="end">L1</text>
+<text x="34" y="455" font-size="14" text-anchor="end">N</text>
+<path d="M40 34H370" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<path d="M40 450H370" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<path d="M80 34V48M80 78V92M80 122V136M80 166V180M80 210V226H140V242M80 226V242M80 272V288H140V272M80 288V300H330" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M80 78L68 53" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M74 65H54" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="36" y="56" width="18" height="18" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="30" y="70" font-size="14" text-anchor="end">B1</text>
+<path d="M80 92H93M80 122L94 96" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M87 109H58" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M58 115V103H48V115" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="89" y="98" font-size="12" font-weight="normal" text-anchor="start">95</text>
+<text x="89" y="126" font-size="12" font-weight="normal" text-anchor="start">96</text>
+<text x="44" y="112" font-size="14" text-anchor="end">F1</text>
+<path d="M80 136H93M80 166L94 140" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M87 153H58" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M58 159V147H48V159" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="44" y="156" font-size="14" text-anchor="end">F2</text>
+<path d="M80 180H93M80 210L94 184" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M87 197H56" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M56 190V204M56 190H51M56 204H51" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="48" y="200" font-size="14" text-anchor="end">S0</text>
+<path d="M80 272L68 247" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M74 259H56" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M56 252V266M56 252H51M56 266H51" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="48" y="262" font-size="14" text-anchor="end">S1</text>
+<path d="M140 272L128 247" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="149" y="248" font-size="12" font-weight="normal" text-anchor="start">13</text>
+<text x="149" y="276" font-size="12" font-weight="normal" text-anchor="start">14</text>
+<text x="160" y="262" font-size="14" text-anchor="start">K1</text>
+<circle cx="80" cy="226" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<circle cx="80" cy="288" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<circle cx="80" cy="300" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<circle cx="210" cy="300" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<path d="M80 300V384M80 406V450M210 300V384M210 406V450M330 300V330M330 360V384M330 406V450" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="63" y="384" width="34" height="22" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<text x="102" y="400" font-size="14" text-anchor="start">K1</text>
+<rect x="193" y="384" width="34" height="22" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M193 384L227 406M227 384L193 406" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<text x="232" y="400" font-size="14" text-anchor="start">K1T</text>
+<path d="M330 360L318 335" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M324 347H356" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M360 339A9 9 0 0 0 360 355" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="314" y="350" font-size="14" text-anchor="end">K1T</text>
+<rect x="313" y="384" width="34" height="22" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<text x="306" y="400" font-size="14" text-anchor="end">K2</text>
+</svg>

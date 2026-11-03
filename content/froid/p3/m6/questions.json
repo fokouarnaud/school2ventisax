@@ -1,0 +1,644 @@
+[
+  {
+    "id": "p3-m6-q01",
+    "section": "01-principe",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Qu'est-ce qui caractérise un moteur à démarrage fractionné (part winding) ?",
+      "en": "What characterises a part-winding motor?"
+    },
+    "explanation": {
+      "fr": "Deux bobinages électriquement indépendants, chacun en étoile.",
+      "en": "Two electrically independent windings, each in star."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Deux bobinages électriquement indépendants",
+          "en": "Two electrically independent windings"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un rotor bobiné",
+          "en": "A wound rotor"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Un seul enroulement couplé en triangle",
+          "en": "A single delta-connected winding"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q02",
+    "section": "01-principe",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel est le rôle du démarrage fractionné ?",
+      "en": "What is part-winding starting for?"
+    },
+    "explanation": {
+      "fr": "Limiter l'intensité de démarrage d'un compresseur de forte puissance.",
+      "en": "Limiting the starting current of a high-power compressor."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Limiter le courant de démarrage d'un compresseur puissant",
+          "en": "Limit the starting current of a powerful compressor"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Inverser le sens de rotation",
+          "en": "Reverse the direction of rotation"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faire varier la vitesse",
+          "en": "Vary the speed"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q03",
+    "section": "01-principe",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Au bout de combien de temps le deuxième bobinage doit-il être alimenté ?",
+      "en": "After how long must the second winding be supplied?"
+    },
+    "explanation": {
+      "fr": "Après une très courte temporisation : 1 s au maximum.",
+      "en": "After a very short delay: 1 s at most."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "1 s au maximum",
+          "en": "1 s at most"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "10 s environ",
+          "en": "About 10 s"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "1 min",
+          "en": "1 min"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q04",
+    "section": "01-principe",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Le moteur peut fonctionner longtemps sur son seul premier bobinage.",
+      "en": "The motor can run for a long time on its first winding alone."
+    },
+    "explanation": {
+      "fr": "Faux : il peut être endommagé s'il ne passe pas à l'alimentation de la totalité du bobinage.",
+      "en": "False: it can be damaged if it does not move on to the whole winding."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q05",
+    "section": "01-principe",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelles répartitions de puissance entre les deux bobinages existent ?",
+      "en": "Which power splits between the two windings exist?"
+    },
+    "explanation": {
+      "fr": "50 % / 50 % et deux tiers / un tiers.",
+      "en": "50% / 50% and two thirds / one third."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "50 % / 50 %",
+          "en": "50% / 50%"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "66 % / 33 %",
+          "en": "66% / 33%"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "90 % / 10 %",
+          "en": "90% / 10%"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q06",
+    "section": "02-reperage",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Sur un moteur 66 % / 33 %, les résistances du premier bobinage (U1, V1, W1) sont :",
+      "en": "On a 66% / 33% motor, the resistances of the first winding (U1, V1, W1) are:"
+    },
+    "explanation": {
+      "fr": "Inférieures à celles du second : le bobinage le plus puissant a la plus faible résistance.",
+      "en": "Lower than those of the second: the more powerful winding has the lower resistance."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Inférieures à celles du second",
+          "en": "Lower than the second's"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Supérieures à celles du second",
+          "en": "Higher than the second's"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Identiques",
+          "en": "Equal"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q07",
+    "section": "02-reperage",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Dans le schéma de démarrage fractionné, K1T est :",
+      "en": "In the part-winding starter, K1T is:"
+    },
+    "explanation": {
+      "fr": "La temporisation qui commande K2.",
+      "en": "The timer that controls K2."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La temporisation de K2",
+          "en": "The timer for K2"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le contacteur du premier bobinage",
+          "en": "The first winding contactor"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Un relais thermique",
+          "en": "A thermal overload relay"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q08",
+    "section": "02-reperage",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Pour un démarrage fractionné à deux contacteurs (cas H), combien de barrettes reste-t-il sur la plaque à bornes ?",
+      "en": "For a two-contactor part-winding start (case H), how many links stay on the terminal board?"
+    },
+    "explanation": {
+      "fr": "Aucune : chaque bobinage est raccordé à son contacteur.",
+      "en": "None: each winding goes to its own contactor."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Aucune",
+          "en": "None"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Trois",
+          "en": "Three"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Une",
+          "en": "One"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q09",
+    "section": "01-principe",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quel point faut-il vérifier au câblage des deux bobinages ?",
+      "en": "What must be checked when wiring the two windings?"
+    },
+    "explanation": {
+      "fr": "Qu'ils tournent dans le même sens une fois sous tension.",
+      "en": "That they turn in the same direction once switched on."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Qu'ils tournent dans le même sens",
+          "en": "That they turn the same way"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Qu'ils soient couplés l'un en étoile, l'autre en triangle",
+          "en": "That one is in star and the other in delta"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Qu'ils aient des sens opposés",
+          "en": "That they turn opposite ways"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q10",
+    "section": "01-principe",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quel courant d'appel un moteur à démarrage direct engendre-t-il ?",
+      "en": "What inrush current does a motor started direct-on-line draw?"
+    },
+    "explanation": {
+      "fr": "De l'ordre de 3 à 8 fois le courant nominal.",
+      "en": "About 3 to 8 times the rated current."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "3 à 8 fois le courant nominal",
+          "en": "3 to 8 times the rated current"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le courant nominal",
+          "en": "The rated current"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "20 fois le courant nominal",
+          "en": "20 times the rated current"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q11",
+    "section": "02-reperage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Plaque à bornes avec trois barrettes 1-4, 2-5 et 3-6 (cas G) : de quel démarrage s'agit-il ?",
+      "en": "Terminal board with three links 1-4, 2-5 and 3-6 (case G): which start is this?"
+    },
+    "explanation": {
+      "fr": "Les deux bobinages sont en parallèle : démarrage direct avec un seul contacteur.",
+      "en": "Both windings are in parallel: direct-on-line start with one contactor."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un démarrage direct à un contacteur",
+          "en": "A direct-on-line start with one contactor"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un démarrage fractionné à deux contacteurs",
+          "en": "A two-contactor part-winding start"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Un démarrage étoile-triangle",
+          "en": "A star-delta start"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q12",
+    "section": "02-reperage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Sur un moteur 50 % / 50 %, les résistances des deux bobinages sont :",
+      "en": "On a 50% / 50% motor, the resistances of the two windings are:"
+    },
+    "explanation": {
+      "fr": "Identiques.",
+      "en": "Equal."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Identiques",
+          "en": "Equal"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Dans un rapport de 2 à 1",
+          "en": "In a 2 to 1 ratio"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Nulles",
+          "en": "Zero"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q13",
+    "section": "02-reperage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quel est le rôle de F1 et F2 dans le démarrage fractionné ?",
+      "en": "What are F1 and F2 for in the part-winding starter?"
+    },
+    "explanation": {
+      "fr": "La protection thermique de chacun des deux enroulements.",
+      "en": "Thermal protection of each of the two windings."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Protéger chaque enroulement contre les surcharges",
+          "en": "Protect each winding against overloads"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Temporiser K2",
+          "en": "Delay K2"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Isoler le moteur",
+          "en": "Isolate the motor"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q14",
+    "section": "02-reperage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "À quoi est relié le module de protection contre la surchauffe ?",
+      "en": "What is the overheating protection module connected to?"
+    },
+    "explanation": {
+      "fr": "Aux sondes PTC placées dans les enroulements.",
+      "en": "The PTC sensors in the windings."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Aux sondes PTC des enroulements",
+          "en": "The PTC sensors in the windings"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Au neutre du réseau",
+          "en": "The supply neutral"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "À la plaque signalétique",
+          "en": "The rating plate"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q15",
+    "section": "02-reperage",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Plus un enroulement est puissant, plus sa résistance est faible.",
+      "en": "The more powerful a winding, the lower its resistance."
+    },
+    "explanation": {
+      "fr": "Vrai : c'est ce qui permet de repérer le bobinage 66 % à l'ohmmètre.",
+      "en": "True: this is how the 66% winding is found with an ohmmeter."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m6-q16",
+    "section": "02-reperage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Le repérage des bobinages à l'ohmmètre se fait :",
+      "en": "Identifying the windings with an ohmmeter is done:"
+    },
+    "explanation": {
+      "fr": "Hors tension : l'ohmmètre fournit lui-même son courant de mesure.",
+      "en": "With no voltage applied: the ohmmeter supplies its own measuring current."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Hors tension",
+          "en": "With no voltage applied"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Sous tension, moteur à l'arrêt",
+          "en": "Live, with the motor stopped"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Moteur en marche",
+          "en": "With the motor running"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

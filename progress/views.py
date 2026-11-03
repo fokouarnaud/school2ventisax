@@ -80,7 +80,7 @@ def export_csv(request):
     response.write("﻿")  # BOM : Excel ouvre l'UTF-8 correctement
     writer = csv.writer(response, delimiter=";")
     for table in _tables(request.user):
-        header = [_("Promotion"), _("Identifiant"), _("Nom")] + [m.title for m in table["modules"]]
+        header = [_("Promotion"), _("Identifiant"), _("Nom")] + [f"{c['label']} {c['module'].title}" for c in table["columns"]]
         for partie in table["parties"]:
             header += [_("Examen %(partie)s (%%)") % {"partie": partie.title}, _("Tentatives %(partie)s") % {"partie": partie.title}]
         writer.writerow([_csv_cell(cell) for cell in header])

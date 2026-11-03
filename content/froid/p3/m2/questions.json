@@ -1,0 +1,679 @@
+[
+  {
+    "id": "p3-m2-q01",
+    "section": "01-isolement",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Un sectionneur peut être ouvert en charge.",
+      "en": "An isolator can be opened on load."
+    },
+    "explanation": {
+      "fr": "Faux : il n'a aucun pouvoir de coupure ; on ne l'ouvre jamais en charge.",
+      "en": "False: it has no breaking capacity; never open it on load."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q02",
+    "section": "01-isolement",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel est le pouvoir de coupure d'un sectionneur ?",
+      "en": "What is the breaking capacity of an isolator?"
+    },
+    "explanation": {
+      "fr": "Aucun : le sectionneur isole, il ne coupe pas un courant.",
+      "en": "None: an isolator isolates, it does not break a current."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Aucun",
+          "en": "None"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le courant nominal du moteur",
+          "en": "The motor's rated current"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le courant de court-circuit",
+          "en": "The short-circuit current"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q03",
+    "section": "02-protection",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Contre quoi le fusible protège-t-il les circuits ?",
+      "en": "What do fuses protect circuits against?"
+    },
+    "explanation": {
+      "fr": "Contre les courts-circuits et les surcharges.",
+      "en": "Short circuits and overloads."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Les courts-circuits et les surcharges",
+          "en": "Short circuits and overloads"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les fuites à la terre seulement",
+          "en": "Earth leakage only"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Les baisses de tension",
+          "en": "Voltage drops"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q04",
+    "section": "02-protection",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel appareil protège un moteur contre les surcharges de longue durée ?",
+      "en": "Which device protects a motor against long overloads?"
+    },
+    "explanation": {
+      "fr": "Le relais thermique, grâce à ses bilames.",
+      "en": "The thermal overload relay, thanks to its bimetal strips."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le relais thermique",
+          "en": "The thermal overload relay"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le sectionneur",
+          "en": "The isolator"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le contacteur",
+          "en": "The contactor"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le bouton poussoir arrêt",
+          "en": "The stop push button"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q05",
+    "section": "02-protection",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel contact du relais thermique coupe le circuit de commande en cas de surcharge ?",
+      "en": "Which thermal overload relay contact cuts the control circuit on an overload?"
+    },
+    "explanation": {
+      "fr": "Le contact à ouverture 95-96 ; le 97-98 sert à la signalisation.",
+      "en": "The normally closed contact 95-96; 97-98 is used for signalling."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "95-96",
+          "en": "95-96"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "97-98",
+          "en": "97-98"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "13-14",
+          "en": "13-14"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "A1-A2",
+          "en": "A1-A2"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q06",
+    "section": "03-commande",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quels repères portent les bornes de la bobine d'un contacteur ?",
+      "en": "What marks are on the coil terminals of a contactor?"
+    },
+    "explanation": {
+      "fr": "A1 et A2.",
+      "en": "A1 and A2."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "A1-A2",
+          "en": "A1-A2"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "1-2",
+          "en": "1-2"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "13-14",
+          "en": "13-14"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "95-96",
+          "en": "95-96"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q07",
+    "section": "03-commande",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Dans un relais statique, le contact est assuré par :",
+      "en": "In a solid-state relay, switching is done by:"
+    },
+    "explanation": {
+      "fr": "Un triac piloté par un optocoupleur, sans pièce mécanique.",
+      "en": "A triac driven by an optocoupler, with no mechanical part."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un triac piloté par un optocoupleur",
+          "en": "A triac driven by an optocoupler"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Une bobine et des contacts",
+          "en": "A coil and contacts"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Un bilame",
+          "en": "A bimetal strip"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q08",
+    "section": "04-tableau",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelle lettre repère désigne un contacteur dans un schéma ?",
+      "en": "Which letter code identifies a contactor on a diagram?"
+    },
+    "explanation": {
+      "fr": "KM, suivi du numéro du contacteur.",
+      "en": "KM, followed by the contactor number."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "KM",
+          "en": "KM"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Q",
+          "en": "Q"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "F",
+          "en": "F"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "H",
+          "en": "H"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q09",
+    "section": "01-isolement",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "À quoi servent les contacts de pré-coupure d'un sectionneur ?",
+      "en": "What are the early-break contacts of an isolator for?"
+    },
+    "explanation": {
+      "fr": "Ils coupent le circuit de commande avant l'ouverture des contacts de puissance : le courant est coupé par les contacteurs.",
+      "en": "They cut the control circuit before the power contacts open: the contactors break the current."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Couper le circuit de commande avant l'ouverture des contacts de puissance",
+          "en": "Cut the control circuit before the power contacts open"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Augmenter le pouvoir de coupure du sectionneur",
+          "en": "Increase the breaking capacity of the isolator"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Protéger le moteur contre les surcharges",
+          "en": "Protect the motor against overloads"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q10",
+    "section": "01-isolement",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Un interrupteur tétrapolaire coupe :",
+      "en": "A four-pole switch cuts:"
+    },
+    "explanation": {
+      "fr": "Les trois phases et le neutre.",
+      "en": "The three phases and the neutral."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Les trois phases et le neutre",
+          "en": "The three phases and the neutral"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Une phase et le neutre",
+          "en": "One phase and the neutral"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Les trois phases seulement",
+          "en": "The three phases only"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q11",
+    "section": "02-protection",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que détecte un disjoncteur différentiel ?",
+      "en": "What does a residual current device (RCD) detect?"
+    },
+    "explanation": {
+      "fr": "Une différence entre le courant qui part par la phase et celui qui revient par le neutre : une fuite à la terre.",
+      "en": "A difference between the current leaving through the phase and the one returning through the neutral: earth leakage."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Une différence entre le courant de phase et le courant de neutre",
+          "en": "A difference between phase current and neutral current"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Une surtension du réseau",
+          "en": "A supply overvoltage"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "La température du moteur",
+          "en": "The motor temperature"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q12",
+    "section": "02-protection",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Un discontacteur regroupe :",
+      "en": "A contactor-breaker combines:"
+    },
+    "explanation": {
+      "fr": "Un contacteur et un relais de protection thermique, magnétique ou magnétothermique.",
+      "en": "A contactor and a thermal, magnetic or thermal-magnetic protective relay."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un contacteur et un relais de protection",
+          "en": "A contactor and a protective relay"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un sectionneur et des fusibles",
+          "en": "An isolator and fuses"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Deux contacteurs verrouillés",
+          "en": "Two interlocked contactors"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q13",
+    "section": "02-protection",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Un fusible seul est une protection sûre d'un moteur contre les surcharges.",
+      "en": "A fuse on its own is reliable overload protection for a motor."
+    },
+    "explanation": {
+      "fr": "Faux : le fusible ne protège pas sûrement contre les surcharges ; le moteur a besoin d'un relais de protection.",
+      "en": "False: a fuse does not reliably protect against overloads; the motor needs a protective relay."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q14",
+    "section": "03-commande",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que signifie SPDT pour un relais ?",
+      "en": "What does SPDT mean for a relay?"
+    },
+    "explanation": {
+      "fr": "Single Pole Double Throw : un seul contact inverseur.",
+      "en": "Single Pole Double Throw: one changeover contact."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un contact inverseur",
+          "en": "One changeover contact"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Deux contacts simples",
+          "en": "Two simple contacts"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Deux contacts inverseurs",
+          "en": "Two changeover contacts"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q15",
+    "section": "03-commande",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quels éléments trouve-t-on dans un contacteur ?",
+      "en": "Which parts are found in a contactor?"
+    },
+    "explanation": {
+      "fr": "Bobine, ressort de rappel et bague de déphasage ; le bilame appartient au relais thermique.",
+      "en": "Coil, return spring and shading ring; the bimetal strip belongs to the thermal overload relay."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Une bobine",
+          "en": "A coil"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un ressort de rappel",
+          "en": "A return spring"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Une bague de déphasage",
+          "en": "A shading ring"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un bilame",
+          "en": "A bimetal strip"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m2-q16",
+    "section": "04-tableau",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "À quelle famille appartiennent les boutons poussoirs et les voyants ?",
+      "en": "Which family do push buttons and indicator lamps belong to?"
+    },
+    "explanation": {
+      "fr": "Aux éléments de dialogue : ils donnent des ordres ou signalent.",
+      "en": "Dialogue devices: they give commands or signal."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Les éléments de dialogue",
+          "en": "Dialogue devices"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les actionneurs",
+          "en": "Actuators"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Les auxiliaires de raccordement",
+          "en": "Connection accessories"
+        },
+        "correct": false
+      }
+    ]
+  }
+]
