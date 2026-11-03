@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 270" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#13212c">
+<rect width="420" height="270" fill="#fff"/>
+<path d="M105 165L105 80" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="87" y="115.5" width="36" height="14" fill="#c76b16" stroke="#13212c" stroke-width="1.5" transform="rotate(-90 105 122)"/>
+<circle cx="105" cy="80" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<path d="M105 165L40 212" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="54.5" y="181.5" width="36" height="14" fill="#c76b16" stroke="#13212c" stroke-width="1.5" transform="rotate(144 72 188)"/>
+<circle cx="40" cy="212" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<path d="M105 165L170 212" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="119.5" y="181.5" width="36" height="14" fill="#c76b16" stroke="#13212c" stroke-width="1.5" transform="rotate(36 138 188)"/>
+<circle cx="170" cy="212" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<circle cx="105" cy="165" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<text x="96" y="150" font-size="12" font-weight="normal" text-anchor="end">U2 V2 W2</text>
+<path d="M105 80V40M40 212V240M170 212V240" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<text x="105" y="34" font-size="14">L1</text>
+<text x="40" y="258" font-size="14">L2</text>
+<text x="170" y="258" font-size="14">L3</text>
+<text x="120" y="74" font-size="12" font-weight="normal" text-anchor="start">U1</text>
+<text x="18" y="140" font-size="18" text-anchor="start">Y</text>
+<path d="M315 80L245 212" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="262" y="139" width="36" height="14" fill="#c76b16" stroke="#13212c" stroke-width="1.5" transform="rotate(118 280 146)"/>
+<path d="M245 212L385 212" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="297" y="205" width="36" height="14" fill="#c76b16" stroke="#13212c" stroke-width="1.5" transform="rotate(0 315 212)"/>
+<path d="M385 212L315 80" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="332" y="139" width="36" height="14" fill="#c76b16" stroke="#13212c" stroke-width="1.5" transform="rotate(-118 350 146)"/>
+<circle cx="315" cy="80" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<circle cx="245" cy="212" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<circle cx="385" cy="212" r="3.5" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<path d="M315 80V40M245 212V240M385 212V240" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<text x="315" y="34" font-size="14">L1</text>
+<text x="245" y="258" font-size="14">L2</text>
+<text x="385" y="258" font-size="14">L3</text>
+<text x="228" y="140" font-size="18" text-anchor="start">Δ</text>
+<text x="315" y="160" font-size="14" fill="#5b6b76">400 V</text>
+</svg>

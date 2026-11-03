@@ -1,0 +1,700 @@
+[
+  {
+    "id": "p3-m1-q01",
+    "section": "02-constitution",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Un moteur électrique transforme :",
+      "en": "An electric motor converts:"
+    },
+    "explanation": {
+      "fr": "L'énergie électrique en énergie mécanique de rotation.",
+      "en": "Electrical energy into rotating mechanical energy."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "L'énergie électrique en énergie mécanique de rotation",
+          "en": "Electrical energy into rotating mechanical energy"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "L'énergie mécanique en énergie électrique",
+          "en": "Mechanical energy into electrical energy"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "L'énergie électrique en chaleur",
+          "en": "Electrical energy into heat"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Une tension alternative en tension continue",
+          "en": "An AC voltage into a DC voltage"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q02",
+    "section": "02-constitution",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Comment s'appelle la partie fixe d'un moteur électrique ?",
+      "en": "What is the fixed part of an electric motor called?"
+    },
+    "explanation": {
+      "fr": "La partie fixe est le stator ; la partie mobile est le rotor.",
+      "en": "The fixed part is the stator; the moving part is the rotor."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le stator",
+          "en": "The stator"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le rotor",
+          "en": "The rotor"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "L'entrefer",
+          "en": "The air gap"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "L'arbre",
+          "en": "The shaft"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q03",
+    "section": "02-constitution",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Sur le plan physique, la différence entre un moteur synchrone et un moteur asynchrone se trouve au niveau du rotor.",
+      "en": "Physically, the difference between a synchronous motor and an induction motor lies in the rotor."
+    },
+    "explanation": {
+      "fr": "Vrai : rotor à aimant ou électroaimant pour le synchrone, cage d'écureuil pour l'asynchrone.",
+      "en": "True: magnet or electromagnet rotor for the synchronous motor, squirrel cage for the induction motor."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q04",
+    "section": "03-couplage",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Que crée la composition des trois champs magnétiques du stator alimenté en triphasé ?",
+      "en": "What do the three magnetic fields of a stator supplied with three-phase current create together?"
+    },
+    "explanation": {
+      "fr": "Un champ magnétique tournant, qui entraîne le rotor.",
+      "en": "A rotating magnetic field, which drives the rotor."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un champ magnétique tournant",
+          "en": "A rotating magnetic field"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un champ magnétique fixe",
+          "en": "A fixed magnetic field"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Un courant continu dans le rotor",
+          "en": "A direct current in the rotor"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Une tension de 690 V",
+          "en": "A 690 V voltage"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q05",
+    "section": "03-couplage",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Un moteur 230/400 V est raccordé à un réseau dont la tension entre phases est 400 V. Quel couplage choisir ?",
+      "en": "A 230/400 V motor is connected to a supply with a 400 V line voltage. Which connection should be used?"
+    },
+    "explanation": {
+      "fr": "La plus grande tension de la plaque (400 V) correspond à la tension entre phases : couplage étoile.",
+      "en": "The higher plate voltage (400 V) matches the line voltage: star connection."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Étoile",
+          "en": "Star"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Triangle",
+          "en": "Delta"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Étoile puis triangle obligatoirement",
+          "en": "Star then delta, always"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q06",
+    "section": "03-couplage",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Combien de barrettes faut-il sur la plaque à bornes pour un couplage triangle ?",
+      "en": "How many links are needed on the terminal board for a delta connection?"
+    },
+    "explanation": {
+      "fr": "3 barrettes = triangle ; une seule barrette pour l'étoile.",
+      "en": "3 links = delta; a single link for star."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "3",
+          "en": "3"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "1",
+          "en": "1"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "2",
+          "en": "2"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "6",
+          "en": "6"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q07",
+    "section": "04-plaque",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quelles informations trouve-t-on sur la plaque signalétique d'un moteur ?",
+      "en": "Which information is found on a motor rating plate?"
+    },
+    "explanation": {
+      "fr": "Vitesse nominale, puissance utile et cos φ y figurent ; pas le nom de l'installateur.",
+      "en": "Rated speed, output power and cos φ are on it; not the installer's name."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La vitesse nominale",
+          "en": "The rated speed"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La puissance utile",
+          "en": "The output power"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le facteur de puissance cos φ",
+          "en": "The power factor cos φ"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le nom de l'installateur",
+          "en": "The installer's name"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q08",
+    "section": "01-glossaire",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel est le terme anglais (IEC) pour « plaque signalétique » ?",
+      "en": "Which English (IEC) term means « plaque signalétique »?"
+    },
+    "explanation": {
+      "fr": "Rating plate.",
+      "en": "Rating plate."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Rating plate",
+          "en": "Rating plate"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Terminal board",
+          "en": "Terminal board"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Name tag",
+          "en": "Name tag"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Limit switch",
+          "en": "Limit switch"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q09",
+    "section": "02-constitution",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "De quoi se compose le rotor d'un moteur asynchrone ?",
+      "en": "What is the rotor of an induction motor made of?"
+    },
+    "explanation": {
+      "fr": "De barres reliées par deux anneaux : la cage d'écureuil.",
+      "en": "Bars joined by two rings: the squirrel cage."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "De barres reliées par des anneaux (cage d'écureuil)",
+          "en": "Bars joined by rings (squirrel cage)"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "D'un aimant permanent",
+          "en": "A permanent magnet"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "D'un collecteur et de balais",
+          "en": "A commutator and brushes"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Du bobinage du stator",
+          "en": "The stator winding"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q10",
+    "section": "02-constitution",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Dans un moteur synchrone, le rotor tourne :",
+      "en": "In a synchronous motor, the rotor turns:"
+    },
+    "explanation": {
+      "fr": "Aussi vite que le champ tournant du stator.",
+      "en": "As fast as the stator's rotating field."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Aussi vite que le champ tournant",
+          "en": "As fast as the rotating field"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un peu moins vite que le champ tournant",
+          "en": "Slightly slower than the rotating field"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Deux fois plus vite que le champ tournant",
+          "en": "Twice as fast as the rotating field"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q11",
+    "section": "02-constitution",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Lesquels sont des moteurs à courant alternatif ?",
+      "en": "Which are AC motors?"
+    },
+    "explanation": {
+      "fr": "Asynchrones (à induction) et synchrones ; le moteur à courant continu n'en fait pas partie.",
+      "en": "Induction and synchronous motors; the DC motor is not one of them."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le moteur asynchrone (à induction)",
+          "en": "The induction motor"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le moteur synchrone",
+          "en": "The synchronous motor"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le moteur à courant continu",
+          "en": "The DC motor"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q12",
+    "section": "03-couplage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Un moteur 230/400 V est raccordé à un réseau dont la tension entre phases est 230 V. Quel couplage choisir ?",
+      "en": "A 230/400 V motor is connected to a supply with a 230 V line voltage. Which connection should be used?"
+    },
+    "explanation": {
+      "fr": "La plus petite tension de la plaque correspond à la tension entre phases : couplage triangle.",
+      "en": "The lower plate voltage matches the line voltage: delta connection."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Triangle",
+          "en": "Delta"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Étoile",
+          "en": "Star"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Aucun, le moteur ne convient pas",
+          "en": "None, the motor is not suitable"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q13",
+    "section": "03-couplage",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "En couplage étoile, quelles bornes la barrette relie-t-elle ?",
+      "en": "In a star connection, which terminals does the link join?"
+    },
+    "explanation": {
+      "fr": "Les trois bornes du bas, W2, U2 et V2, qui forment le point neutre.",
+      "en": "The three bottom terminals, W2, U2 and V2, which form the star point."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "W2, U2 et V2",
+          "en": "W2, U2 and V2"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "U1, V1 et W1",
+          "en": "U1, V1 and W1"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "U1 et W2 seulement",
+          "en": "U1 and W2 only"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q14",
+    "section": "04-plaque",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "La puissance indiquée sur la plaque signalétique d'un moteur est :",
+      "en": "The power shown on a motor rating plate is:"
+    },
+    "explanation": {
+      "fr": "La puissance utile, délivrée sur l'arbre.",
+      "en": "The output power, delivered on the shaft."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La puissance utile délivrée sur l'arbre",
+          "en": "The output power delivered on the shaft"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La puissance absorbée au réseau",
+          "en": "The power drawn from the supply"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "La puissance au démarrage",
+          "en": "The starting power"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q15",
+    "section": "04-plaque",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Une plaque porte « Δ 230 V / Y 400 V » et « 6,5 A / 3,8 A ». Sur un réseau 400 V entre phases, quel courant le moteur absorbe-t-il ?",
+      "en": "A plate shows \"Δ 230 V / Y 400 V\" and \"6.5 A / 3.8 A\". On a 400 V line-voltage supply, what current does the motor draw?"
+    },
+    "explanation": {
+      "fr": "Sur 400 V il est couplé en étoile et absorbe 3,8 A.",
+      "en": "On 400 V it is connected in star and draws 3.8 A."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "3,8 A",
+          "en": "3.8 A"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "6,5 A",
+          "en": "6.5 A"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "10,3 A",
+          "en": "10.3 A"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m1-q16",
+    "section": "01-glossaire",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Le terme anglais « star-delta starting » désigne :",
+      "en": "The English term \"star-delta starting\" means:"
+    },
+    "explanation": {
+      "fr": "Le démarrage étoile-triangle.",
+      "en": "Démarrage étoile-triangle."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le démarrage étoile-triangle",
+          "en": "Démarrage étoile-triangle"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le démarrage direct",
+          "en": "Démarrage direct"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le démarrage fractionné",
+          "en": "Démarrage fractionné"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

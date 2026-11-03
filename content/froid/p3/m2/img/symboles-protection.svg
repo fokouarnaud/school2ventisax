@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 290" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#13212c">
+<rect width="420" height="290" fill="#fff"/>
+<rect x="10" y="10" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="22" y="30" font-size="13" text-anchor="start" fill="#5b6b76">1</text>
+<text x="126" y="30" font-size="14" text-anchor="end">Q</text>
+<rect x="146" y="10" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="158" y="30" font-size="13" text-anchor="start" fill="#5b6b76">2</text>
+<text x="262" y="30" font-size="14" text-anchor="end">Q</text>
+<rect x="282" y="10" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="294" y="30" font-size="13" text-anchor="start" fill="#5b6b76">3</text>
+<text x="398" y="30" font-size="14" text-anchor="end">F</text>
+<rect x="10" y="150" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="22" y="170" font-size="13" text-anchor="start" fill="#5b6b76">4</text>
+<text x="126" y="170" font-size="14" text-anchor="end">Q</text>
+<rect x="146" y="150" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="158" y="170" font-size="13" text-anchor="start" fill="#5b6b76">5</text>
+<text x="262" y="170" font-size="14" text-anchor="end">F</text>
+<rect x="282" y="150" width="128" height="128" rx="8" fill="none" stroke="#d5dde2" stroke-width="1.5"/>
+<text x="294" y="170" font-size="13" text-anchor="start" fill="#5b6b76">6</text>
+<text x="398" y="170" font-size="14" text-anchor="end">F</text>
+<path d="M40 40V54M40 84V128" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M40 84L28 59" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="34" y="92" width="12" height="24" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M40 92V116" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M64 40V54M64 84V128" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M64 84L52 59" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="58" y="92" width="12" height="24" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M64 92V116" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M88 40V54M88 84V128" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M88 84L76 59" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="82" y="92" width="12" height="24" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M88 92V116" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M34 71H82" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M210 40V64M210 94V128" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M210 94L198 69" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M240 40V64M240 94V128" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M240 94L228 69" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M204 81H234" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M346 40V58M346 82V118" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="340" y="58" width="12" height="24" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M346 58V82" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M52 180V204M52 234V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M52 234L40 209" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M47 199L57 209M57 199L47 209" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M82 180V204M82 234V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M82 234L70 209" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M77 199L87 209M87 199L77 209" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M46 221H76" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M180 180V202M180 226V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="172" y="202" width="16" height="24" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M176 219V210H184V219" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M206 180V202M206 226V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="198" y="202" width="16" height="24" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M202 219V210H210V219" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M232 180V202M232 226V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="224" y="202" width="16" height="24" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M228 219V210H236V219" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<rect x="170" y="196" width="72" height="36" fill="none" stroke="#5b6b76" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M318 180V202M318 226V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="310" y="202" width="16" height="24" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M313 220C313 206 323 206 323 220" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M346 180V202M346 226V268" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<rect x="338" y="202" width="16" height="24" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M341 220C341 206 351 206 351 220" fill="none" stroke="#13212c" stroke-width="1.5"/>
+</svg>

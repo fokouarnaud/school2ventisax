@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#13212c">
+<rect width="420" height="240" fill="#fff"/>
+<rect x="20" y="70" width="170" height="120" rx="10" fill="#eef3f6" stroke="#13212c" stroke-width="2"/>
+<path d="M55 40V99" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<text x="55" y="34" font-size="14">L1</text>
+<circle cx="55" cy="108" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="67" y="96" font-size="12" font-weight="normal" text-anchor="start">U1</text>
+<circle cx="55" cy="162" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="67" y="188" font-size="12" font-weight="normal" text-anchor="start">W2</text>
+<path d="M105 40V99" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<text x="105" y="34" font-size="14">L2</text>
+<circle cx="105" cy="108" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="117" y="96" font-size="12" font-weight="normal" text-anchor="start">V1</text>
+<circle cx="105" cy="162" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="117" y="188" font-size="12" font-weight="normal" text-anchor="start">U2</text>
+<path d="M155 40V99" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<text x="155" y="34" font-size="14">L3</text>
+<circle cx="155" cy="108" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="167" y="96" font-size="12" font-weight="normal" text-anchor="start">W1</text>
+<circle cx="155" cy="162" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="167" y="188" font-size="12" font-weight="normal" text-anchor="start">V2</text>
+<rect x="44" y="156" width="122" height="12" rx="6" fill="#7b8a95" stroke="#13212c" stroke-width="1.5"/>
+<rect x="230" y="70" width="170" height="120" rx="10" fill="#eef3f6" stroke="#13212c" stroke-width="2"/>
+<path d="M265 40V99" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<text x="265" y="34" font-size="14">L1</text>
+<circle cx="265" cy="108" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="277" y="96" font-size="12" font-weight="normal" text-anchor="start">U1</text>
+<circle cx="265" cy="162" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="277" y="188" font-size="12" font-weight="normal" text-anchor="start">W2</text>
+<path d="M315 40V99" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<text x="315" y="34" font-size="14">L2</text>
+<circle cx="315" cy="108" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="327" y="96" font-size="12" font-weight="normal" text-anchor="start">V1</text>
+<circle cx="315" cy="162" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="327" y="188" font-size="12" font-weight="normal" text-anchor="start">U2</text>
+<path d="M365 40V99" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<text x="365" y="34" font-size="14">L3</text>
+<circle cx="365" cy="108" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="377" y="96" font-size="12" font-weight="normal" text-anchor="start">W1</text>
+<circle cx="365" cy="162" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="377" y="188" font-size="12" font-weight="normal" text-anchor="start">V2</text>
+<rect x="259" y="102" width="12" height="66" rx="6" fill="#7b8a95" stroke="#13212c" stroke-width="1.5"/>
+<rect x="309" y="102" width="12" height="66" rx="6" fill="#7b8a95" stroke="#13212c" stroke-width="1.5"/>
+<rect x="359" y="102" width="12" height="66" rx="6" fill="#7b8a95" stroke="#13212c" stroke-width="1.5"/>
+<text x="105" y="222" font-size="18">Y</text>
+<text x="315" y="222" font-size="18">Δ</text>
+</svg>

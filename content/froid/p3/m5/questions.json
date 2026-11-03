@@ -1,0 +1,651 @@
+[
+  {
+    "id": "p3-m5-q01",
+    "section": "01-prerequis",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Dans un bloc temporisé travail, quand la temporisation commence-t-elle ?",
+      "en": "In an on-delay timer block, when does timing start?"
+    },
+    "explanation": {
+      "fr": "À la mise sous tension de la bobine.",
+      "en": "When the coil is energised."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "À la mise sous tension de la bobine",
+          "en": "When the coil is energised"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "À la mise hors tension de la bobine",
+          "en": "When the coil is de-energised"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "À l'appui sur S0",
+          "en": "When S0 is pressed"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q02",
+    "section": "01-prerequis",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel est le contact à ouverture temporisé d'un bloc temporisé travail ?",
+      "en": "Which is the delayed normally closed contact of an on-delay block?"
+    },
+    "explanation": {
+      "fr": "55-56 ; le 67-68 est le contact à fermeture.",
+      "en": "55-56; 67-68 is the normally open contact."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "55-56",
+          "en": "55-56"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "67-68",
+          "en": "67-68"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "13-14",
+          "en": "13-14"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "95-96",
+          "en": "95-96"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q03",
+    "section": "02-principe",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel est le rôle du démarrage étoile-triangle ?",
+      "en": "What is star-delta starting for?"
+    },
+    "explanation": {
+      "fr": "Réduire l'appel de courant au démarrage.",
+      "en": "Reducing the inrush current at start-up."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Réduire l'appel de courant au démarrage",
+          "en": "Reduce the inrush current at start-up"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Augmenter le couple de démarrage",
+          "en": "Increase the starting torque"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Inverser le sens de rotation",
+          "en": "Reverse the direction of rotation"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q04",
+    "section": "02-principe",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "En démarrage étoile, le courant de démarrage est divisé par :",
+      "en": "In star starting, the starting current is divided by:"
+    },
+    "explanation": {
+      "fr": "3 (et le couple aussi).",
+      "en": "3 (and so is the torque)."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "3",
+          "en": "3"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "√3",
+          "en": "√3"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "2",
+          "en": "2"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q05",
+    "section": "03-schemas",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Dans le démarrage étoile-triangle étudié, KM2 est :",
+      "en": "In the star-delta starter studied, KM2 is:"
+    },
+    "explanation": {
+      "fr": "Le contacteur étoile ; KM1 est le contacteur de ligne et KM3 le contacteur triangle.",
+      "en": "The star contactor; KM1 is the line contactor and KM3 the delta contactor."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le contacteur étoile",
+          "en": "The star contactor"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le contacteur de ligne",
+          "en": "The line contactor"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le contacteur triangle",
+          "en": "The delta contactor"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q06",
+    "section": "03-schemas",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Que relie le contacteur triangle KM3 ?",
+      "en": "What does delta contactor KM3 connect?"
+    },
+    "explanation": {
+      "fr": "U2 à V1, V2 à W1 et W2 à U1.",
+      "en": "U2 to V1, V2 to W1 and W2 to U1."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "U2-V1, V2-W1, W2-U1",
+          "en": "U2-V1, V2-W1, W2-U1"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "U2, V2 et W2 entre elles",
+          "en": "U2, V2 and W2 together"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "L1, L2, L3 à U1, V1, W1",
+          "en": "L1, L2, L3 to U1, V1, W1"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q07",
+    "section": "04-plaques",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Réseau 230/400 V. La plaque A indique « 230 V en triangle, 400 V en étoile ». Comment coupler le moteur ?",
+      "en": "230/400 V supply. Plate A shows \"230 V in delta, 400 V in star\". How should the motor be connected?"
+    },
+    "explanation": {
+      "fr": "En étoile : la plus grande tension, 400 V, est la tension entre phases.",
+      "en": "In star: the higher voltage, 400 V, is the line voltage."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "En étoile",
+          "en": "In star"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "En triangle",
+          "en": "In delta"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "En étoile-triangle",
+          "en": "Star-delta"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q08",
+    "section": "04-plaques",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Réseau 230/400 V. La plaque B indique « Δ 400 V / Y 690 V ». Un démarrage étoile-triangle est-il possible ?",
+      "en": "230/400 V supply. Plate B shows \"Δ 400 V / Y 690 V\". Is star-delta starting possible?"
+    },
+    "explanation": {
+      "fr": "Oui : le moteur fonctionne en triangle sur ce réseau.",
+      "en": "Yes: the motor runs in delta on this supply."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Oui",
+          "en": "Yes"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Non",
+          "en": "No"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q09",
+    "section": "01-prerequis",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Sur un réseau 220/380 V, quelle tension admet un moteur couplé en triangle ?",
+      "en": "On a 220/380 V supply, what voltage does a delta-connected motor accept?"
+    },
+    "explanation": {
+      "fr": "220 V (et 380 V en étoile).",
+      "en": "220 V (and 380 V in star)."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "220 V",
+          "en": "220 V"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "380 V",
+          "en": "380 V"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "660 V",
+          "en": "660 V"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q10",
+    "section": "02-principe",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Le démarrage étoile-triangle est utilisé pour des moteurs couplés, en fonctionnement normal :",
+      "en": "Star-delta starting is used for motors that, in normal running, are connected:"
+    },
+    "explanation": {
+      "fr": "En triangle.",
+      "en": "In delta."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "En triangle",
+          "en": "In delta"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "En étoile",
+          "en": "In star"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Indifféremment",
+          "en": "Either way"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q11",
+    "section": "02-principe",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quelles conditions doit remplir un démarrage étoile-triangle ?",
+      "en": "Which conditions must star-delta starting meet?"
+    },
+    "explanation": {
+      "fr": "Triangle adapté à la tension du réseau, démarrage en deux temps et temporisation ; le moteur fonctionne en triangle, pas en étoile.",
+      "en": "Delta matching the supply voltage, two-step start and a timer; the motor runs in delta, not in star."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le couplage triangle correspond à la tension du réseau",
+          "en": "The delta connection matches the supply voltage"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le démarrage se fait en deux temps",
+          "en": "Starting takes two steps"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Une temporisation commande le passage en triangle",
+          "en": "A timer controls the switch to delta"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le moteur fonctionne en étoile en marche normale",
+          "en": "The motor runs in star in normal operation"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q12",
+    "section": "03-schemas",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que se passe-t-il à la fin de la temporisation du bloc monté sur KM1 ?",
+      "en": "What happens when the timer block on KM1 times out?"
+    },
+    "explanation": {
+      "fr": "55-56 s'ouvre et KM2 retombe ; 67-68 se ferme et alimente KM3 : le moteur passe en triangle.",
+      "en": "55-56 opens and KM2 drops out; 67-68 closes and energises KM3: the motor switches to delta."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "KM2 retombe, puis KM3 est alimenté",
+          "en": "KM2 drops out, then KM3 is energised"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "KM1 retombe et le moteur s'arrête",
+          "en": "KM1 drops out and the motor stops"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "KM3 retombe et KM2 est alimenté",
+          "en": "KM3 drops out and KM2 is energised"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q13",
+    "section": "03-schemas",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Le relais thermique est placé dans la boucle des enroulements. À quelle valeur le régler ?",
+      "en": "The thermal overload relay sits in the winding loop. What value should it be set to?"
+    },
+    "explanation": {
+      "fr": "In / √3, soit environ 0,58 fois le courant nominal en triangle : il voit le courant d'un enroulement.",
+      "en": "In / √3, about 0.58 times the rated delta current: it carries the current of one winding."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "In / √3",
+          "en": "In / √3"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "In",
+          "en": "In"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "3 × In",
+          "en": "3 × In"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q14",
+    "section": "03-schemas",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quels sont les inconvénients du démarrage étoile-triangle ?",
+      "en": "What are the drawbacks of star-delta starting?"
+    },
+    "explanation": {
+      "fr": "Couple de démarrage faible, coupure et transitoires au passage ; son courant de démarrage est plus faible qu'en direct.",
+      "en": "Low starting torque, break and transients at changeover; its starting current is lower than DOL."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un couple de démarrage faible",
+          "en": "A low starting torque"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Une coupure et des courants transitoires au passage étoile-triangle",
+          "en": "A break and transient currents at star-delta changeover"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un courant de démarrage plus élevé qu'en direct",
+          "en": "A higher starting current than DOL"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q15",
+    "section": "04-plaques",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Réseau 230/400 V. Peut-on faire un démarrage étoile-triangle avec le moteur de la plaque A (230 V en triangle, 400 V en étoile) ?",
+      "en": "230/400 V supply. Can the motor of plate A (230 V in delta, 400 V in star) be started star-delta?"
+    },
+    "explanation": {
+      "fr": "Non : il fonctionne en étoile sur ce réseau ; il démarre en direct.",
+      "en": "No: it runs in star on this supply; it is started direct-on-line."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Non",
+          "en": "No"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Oui",
+          "en": "Yes"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m5-q16",
+    "section": "04-plaques",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Réseau 230/400 V : le moteur de la plaque B (Δ 400 V / Y 690 V) peut fonctionner en permanence en étoile.",
+      "en": "230/400 V supply: the motor of plate B (Δ 400 V / Y 690 V) can run permanently in star."
+    },
+    "explanation": {
+      "fr": "Faux : chaque enroulement ne recevrait que 230 V au lieu de 400 V ; l'étoile ne sert qu'au premier temps du démarrage.",
+      "en": "False: each winding would only get 230 V instead of 400 V; star is only used for the first starting step."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  }
+]

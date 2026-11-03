@@ -950,6 +950,350 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "p3",
+      "order": 3,
+      "title": {
+        "fr": "Les bases de l'électricité industrielle",
+        "en": "Fundamentals of industrial electricity"
+      },
+      "exam": {
+        "questions_per_module": 5
+      },
+      "modules": [
+        {
+          "order": 1,
+          "dir": "p3/m1",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Les moteurs électriques",
+            "en": "Electric motors"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de décrire un moteur électrique, de donner son principe de fonctionnement, de distinguer les différents types de moteurs, de décoder la plaque signalétique d'un moteur et de réaliser les couplages des enroulements des moteurs asynchrones triphasés.",
+            "en": "The learner will be able to describe an electric motor, explain how it works, tell the different types of motors apart, read a motor rating plate and connect the windings of three-phase induction motors."
+          },
+          "evaluation_note": {
+            "fr": "QCM et identification des moteurs, des enroulements et des couplages en atelier.",
+            "en": "Multiple-choice test and identification of motors, windings and connections in the workshop."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-glossaire",
+              "kind": "content",
+              "title": {
+                "fr": "Glossaire français ↔ anglais",
+                "en": "French ↔ English glossary"
+              },
+              "supplement": true
+            },
+            {
+              "order": 2,
+              "file": "02-constitution",
+              "kind": "content",
+              "title": {
+                "fr": "Définition, types et constitution des moteurs",
+                "en": "Definition, types and construction of motors"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-couplage",
+              "kind": "content",
+              "title": {
+                "fr": "Principe de fonctionnement et couplage",
+                "en": "Operating principle and winding connection"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-plaque",
+              "kind": "content",
+              "title": {
+                "fr": "La plaque signalétique",
+                "en": "The rating plate"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "dir": "p3/m2",
+          "duration_hours": 4,
+          "title": {
+            "fr": "Appareillages électriques industriels",
+            "en": "Industrial electrical equipment"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'identifier les appareillages électriques utilisés en électricité industrielle, de donner leur rôle et de décrire leur principe de fonctionnement.",
+            "en": "The learner will be able to identify the electrical equipment used in industrial installations, state its role and describe how it works."
+          },
+          "evaluation_note": {
+            "fr": "QCM et identification des appareillages en atelier.",
+            "en": "Multiple-choice test and identification of equipment in the workshop."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-isolement",
+              "kind": "content",
+              "title": {
+                "fr": "Appareils d'isolement",
+                "en": "Isolating devices"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-protection",
+              "kind": "content",
+              "title": {
+                "fr": "Éléments de protection des circuits",
+                "en": "Circuit protection devices"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-commande",
+              "kind": "content",
+              "title": {
+                "fr": "Contacteurs et relais de commande",
+                "en": "Contactors and control relays"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-tableau",
+              "kind": "content",
+              "title": {
+                "fr": "Tableau récapitulatif des appareillages",
+                "en": "Summary table of equipment"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "dir": "p3/m3",
+          "duration_hours": 12,
+          "title": {
+            "fr": "Démarrage direct des moteurs asynchrones triphasés, un sens de marche",
+            "en": "Direct-on-line starting of three-phase induction motors, one direction of rotation"
+          },
+          "competence": {
+            "fr": "Au sortir de ce module, l'apprenant devra être capable de réaliser le câblage pour un démarrage direct d'un moteur asynchrone triphasé avec un sens de marche.",
+            "en": "At the end of this module, the learner will be able to wire a direct-on-line starter for a three-phase induction motor with one direction of rotation."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, fonctionnement 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-prerequis",
+              "kind": "content",
+              "title": {
+                "fr": "Prérequis : moteur, procédés de démarrage et couplages",
+                "en": "Prerequisites: motor, starting methods and connections"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-demarrage-direct",
+              "kind": "content",
+              "title": {
+                "fr": "Le démarrage direct, un sens de marche",
+                "en": "Direct-on-line starting, one direction"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "dir": "p3/m4",
+          "duration_hours": 16,
+          "title": {
+            "fr": "Démarrage semi-automatique des moteurs, deux sens de rotation",
+            "en": "Semi-automatic starting of motors, two directions of rotation"
+          },
+          "competence": {
+            "fr": "L'apprenant sera compétent pour démarrer un moteur asynchrone triphasé dans deux sens de rotation : arrêt par le bouton poussoir S0, marche dans le sens 1 par S1 et marche dans le sens 2 par S2.",
+            "en": "The learner will be competent in starting a three-phase induction motor in both directions of rotation: stop with push button S0, run in direction 1 with S1 and in direction 2 with S2."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, fonctionnement 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-schemas",
+              "kind": "content",
+              "title": {
+                "fr": "Schémas de puissance et de commande, verrouillages",
+                "en": "Power and control circuits, interlocks"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-fins-de-course",
+              "kind": "content",
+              "title": {
+                "fr": "Butées de fin de course, fonctionnement et utilisations",
+                "en": "Limit switches, operation and uses"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "dir": "p3/m5",
+          "duration_hours": 16,
+          "title": {
+            "fr": "Démarrage étoile-triangle",
+            "en": "Star-delta starting"
+          },
+          "competence": {
+            "fr": "Au sortir de cette séquence, l'apprenant sera capable de réaliser le démarrage étoile-triangle des moteurs asynchrones triphasés.",
+            "en": "At the end of this sequence, the learner will be able to carry out the star-delta starting of three-phase induction motors."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, fonctionnement 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-prerequis",
+              "kind": "content",
+              "title": {
+                "fr": "Prérequis : couplages et relais temporisé",
+                "en": "Prerequisites: connections and timer relay"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-principe",
+              "kind": "content",
+              "title": {
+                "fr": "Principe du démarrage étoile-triangle",
+                "en": "Principle of star-delta starting"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-schemas",
+              "kind": "content",
+              "title": {
+                "fr": "Schémas, fonctionnement, avantages et inconvénients",
+                "en": "Circuits, operation, advantages and drawbacks"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-plaques",
+              "kind": "content",
+              "title": {
+                "fr": "Exercice : lire les plaques A et B",
+                "en": "Exercise: reading rating plates A and B"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "dir": "p3/m6",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Démarrage fractionné (part winding)",
+            "en": "Part-winding starting"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'expliquer le démarrage fractionné, de repérer les enroulements d'un moteur à bobinage fractionné et de câbler son démarrage.",
+            "en": "The learner will be able to explain part-winding starting, identify the windings of a part-winding motor and wire its starter."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, fonctionnement 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-principe",
+              "kind": "content",
+              "title": {
+                "fr": "Principe, rôle et fonctionnement",
+                "en": "Principle, role and operation"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-reperage",
+              "kind": "content",
+              "title": {
+                "fr": "Repérage des enroulements et schémas",
+                "en": "Identifying the windings and circuits"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

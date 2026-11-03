@@ -120,7 +120,8 @@ def test_trainer_table_labels_module_nine_column_two_point_nine(imported, client
     client.force_login(trainer)
     response = client.get("/fr/formateur/")
     labels = [c["label"] for t in response.context["tables"] for c in t["columns"]]
-    assert labels[-1] == "2.9" and "1.6" in labels
+    assert "2.9" in labels and "1.6" in labels
+    assert labels.index("2.9") == labels.index("2.8") + 1  # la Partie 3 suit (US-47)
 
 
 def test_module_nine_diagrams_stay_readable_on_a_360px_phone():

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 330" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle" fill="#13212c">
+<rect width="360" height="330" fill="#fff"/>
+<text x="110" y="22" font-size="16">L</text>
+<text x="210" y="22" font-size="16">N</text>
+<path d="M110 30V300" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<path d="M210 30V300" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<path d="M110 90L98 65" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M210 90L198 65" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<path d="M104 77H204" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<ellipse cx="160" cy="200" rx="80" ry="26" fill="none" stroke="#5b6b76" stroke-width="10"/>
+<path d="M110 30V300" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<path d="M210 30V300" fill="none" stroke="#1d4f91" stroke-width="2.5"/>
+<path d="M244 190C262 196 262 210 244 214" fill="none" stroke="#c76b16" stroke-width="3"/>
+<path d="M258 200H300V140" fill="none" stroke="#13212c" stroke-width="2"/>
+<rect x="286" y="110" width="28" height="30" fill="#eef3f6" stroke="#13212c" stroke-width="2"/>
+<path d="M300 110V77H218" fill="none" stroke="#13212c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="80" y="80" font-size="13" font-weight="normal">1</text>
+<text x="66" y="236" font-size="13" font-weight="normal">2</text>
+<text x="300" y="102" font-size="13" font-weight="normal">3</text>
+<text x="276" y="228" font-size="13" font-weight="normal">4</text>
+</svg>

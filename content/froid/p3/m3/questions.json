@@ -1,0 +1,658 @@
+[
+  {
+    "id": "p3-m3-q01",
+    "section": "01-prerequis",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Qu'appelle-t-on le glissement d'un moteur asynchrone ?",
+      "en": "What is the slip of an induction motor?"
+    },
+    "explanation": {
+      "fr": "Le rotor tourne un peu moins vite que le champ tournant.",
+      "en": "The rotor turns slightly slower than the rotating field."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le rotor tourne un peu moins vite que le champ tournant",
+          "en": "The rotor turns slightly slower than the rotating field"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le rotor tourne plus vite que le champ tournant",
+          "en": "The rotor turns faster than the rotating field"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "La courroie patine sur la poulie",
+          "en": "The belt slips on the pulley"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q02",
+    "section": "01-prerequis",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Lesquels sont des procédés de démarrage des moteurs asynchrones triphasés ?",
+      "en": "Which are starting methods for three-phase induction motors?"
+    },
+    "explanation": {
+      "fr": "Direct, étoile-triangle et par élimination de résistances ; permuter deux phases inverse le sens, ce n'est pas un procédé de démarrage.",
+      "en": "Direct-on-line, star-delta and cutting out resistors; swapping two phases reverses the direction, it is not a starting method."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le démarrage direct",
+          "en": "Direct-on-line starting"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le démarrage étoile-triangle",
+          "en": "Star-delta starting"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "L'élimination des résistances statoriques ou rotoriques",
+          "en": "Cutting out stator or rotor resistors"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La permutation de deux phases",
+          "en": "Swapping two phases"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q03",
+    "section": "01-prerequis",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Un moteur 400/690 V est alimenté par un réseau 230/400 V. Quel couplage ?",
+      "en": "A 400/690 V motor is supplied by a 230/400 V network. Which connection?"
+    },
+    "explanation": {
+      "fr": "La plus petite tension (400 V) est la tension entre phases du réseau : triangle.",
+      "en": "The lower voltage (400 V) is the supply line voltage: delta."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Triangle",
+          "en": "Delta"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Étoile",
+          "en": "Star"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le moteur ne peut pas être raccordé",
+          "en": "The motor cannot be connected"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q04",
+    "section": "02-demarrage-direct",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Le démarrage direct est réservé aux moteurs de puissance :",
+      "en": "Direct-on-line starting is kept for motors with a power:"
+    },
+    "explanation": {
+      "fr": "Inférieure à 5 kW environ.",
+      "en": "Below about 5 kW."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Inférieure à 5 kW",
+          "en": "Below 5 kW"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Supérieure à 50 kW",
+          "en": "Above 50 kW"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Quelconque",
+          "en": "Of any size"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q05",
+    "section": "02-demarrage-direct",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel est le rôle du contact 13-14 de KM1 placé en parallèle sur le bouton marche S2 ?",
+      "en": "What is the role of KM1 contact 13-14 wired in parallel with start button S2?"
+    },
+    "explanation": {
+      "fr": "C'est l'auto-maintien : la bobine reste alimentée quand on relâche S2.",
+      "en": "It is the hold-in contact: the coil stays energised when S2 is released."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Maintenir la bobine alimentée après le relâchement de S2",
+          "en": "Keep the coil energised after S2 is released"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Protéger le moteur contre les surcharges",
+          "en": "Protect the motor against overloads"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Arrêter le moteur",
+          "en": "Stop the motor"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q06",
+    "section": "02-demarrage-direct",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "En démarrage direct, la pointe de courant à la mise sous tension vaut :",
+      "en": "With direct-on-line starting, the current peak at switch-on is:"
+    },
+    "explanation": {
+      "fr": "4 à 8 fois le courant nominal.",
+      "en": "4 to 8 times the rated current."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "4 à 8 fois le courant nominal",
+          "en": "4 to 8 times the rated current"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le courant nominal",
+          "en": "The rated current"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "La moitié du courant nominal",
+          "en": "Half the rated current"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q07",
+    "section": "02-demarrage-direct",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Le démarrage direct offre un couple de démarrage important.",
+      "en": "Direct-on-line starting gives a high starting torque."
+    },
+    "explanation": {
+      "fr": "Vrai : c'est l'un de ses avantages, avec la simplicité et la rapidité.",
+      "en": "True: it is one of its advantages, with simplicity and speed."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q08",
+    "section": "02-demarrage-direct",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Dans le schéma du démarrage direct, F1 est :",
+      "en": "In the direct-on-line circuit, F1 is:"
+    },
+    "explanation": {
+      "fr": "Le relais thermique de protection.",
+      "en": "The thermal overload relay."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le relais thermique de protection",
+          "en": "The thermal overload relay"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le sectionneur porte-fusibles",
+          "en": "The fuse switch-disconnector"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le bouton poussoir marche",
+          "en": "The start push button"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q09",
+    "section": "01-prerequis",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Un moteur couplé en étoile est alimenté par un réseau 400 V entre phases. Quelle tension reçoit chaque enroulement ?",
+      "en": "A star-connected motor is supplied by a 400 V line-voltage network. What voltage does each winding receive?"
+    },
+    "explanation": {
+      "fr": "400 / √3 = 230 V.",
+      "en": "400 / √3 = 230 V."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "230 V",
+          "en": "230 V"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "400 V",
+          "en": "400 V"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "690 V",
+          "en": "690 V"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q10",
+    "section": "01-prerequis",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Sur la plaque d'un moteur triphasé, la plus petite des deux tensions indique :",
+      "en": "On a three-phase motor plate, the lower of the two voltages gives:"
+    },
+    "explanation": {
+      "fr": "La tension nominale d'un enroulement.",
+      "en": "The rated voltage of one winding."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "La tension nominale d'un enroulement",
+          "en": "The rated voltage of one winding"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "La tension minimale de démarrage",
+          "en": "The minimum starting voltage"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "La tension du circuit de commande",
+          "en": "The control circuit voltage"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q11",
+    "section": "01-prerequis",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quels repères portent les extrémités des enroulements d'un moteur asynchrone triphasé ?",
+      "en": "How are the winding ends of a three-phase induction motor marked?"
+    },
+    "explanation": {
+      "fr": "U1-U2, V1-V2 et W1-W2 (U-V-W et X-Y-Z sur les moteurs anciens).",
+      "en": "U1-U2, V1-V2 and W1-W2 (U-V-W and X-Y-Z on older motors)."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "U1-U2, V1-V2, W1-W2",
+          "en": "U1-U2, V1-V2, W1-W2"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "L1-L2, L3-N",
+          "en": "L1-L2, L3-N"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "A1-A2, 13-14",
+          "en": "A1-A2, 13-14"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q12",
+    "section": "02-demarrage-direct",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Dans quel ordre se suivent les appareils de la chaîne de puissance d'un démarreur direct ?",
+      "en": "In which order are the devices of a DOL starter power chain?"
+    },
+    "explanation": {
+      "fr": "Sectionnement et protection contre les courts-circuits, contacteur, relais thermique, moteur.",
+      "en": "Isolation and short-circuit protection, contactor, thermal overload relay, motor."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Sectionneur, contacteur, relais thermique, moteur",
+          "en": "Isolator, contactor, thermal overload relay, motor"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Contacteur, sectionneur, moteur, relais thermique",
+          "en": "Contactor, isolator, motor, thermal overload relay"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Relais thermique, moteur, contacteur, sectionneur",
+          "en": "Thermal overload relay, motor, contactor, isolator"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q13",
+    "section": "02-demarrage-direct",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que se passe-t-il quand le relais thermique F1 détecte une surcharge ?",
+      "en": "What happens when thermal overload relay F1 detects an overload?"
+    },
+    "explanation": {
+      "fr": "Son contact 95-96 s'ouvre, la bobine de KM1 n'est plus alimentée et le moteur s'arrête.",
+      "en": "Its contact 95-96 opens, KM1 coil is de-energised and the motor stops."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Son contact 95-96 s'ouvre et KM1 retombe",
+          "en": "Its contact 95-96 opens and KM1 drops out"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le fusible fond",
+          "en": "The fuse blows"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le moteur passe en étoile",
+          "en": "The motor switches to star"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q14",
+    "section": "02-demarrage-direct",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quels sont les inconvénients du démarrage direct ?",
+      "en": "What are the drawbacks of direct-on-line starting?"
+    },
+    "explanation": {
+      "fr": "Pointe de courant élevée et démarrage brusque ; l'appareillage est simple et le couple important.",
+      "en": "High current peak and abrupt start; the equipment is simple and the torque high."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Une pointe de courant très élevée",
+          "en": "A very high current peak"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un démarrage brusque",
+          "en": "An abrupt start"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un appareillage de commande complexe",
+          "en": "Complex control equipment"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Un couple de démarrage faible",
+          "en": "A low starting torque"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q15",
+    "section": "02-demarrage-direct",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Dans le schéma de commande du démarrage direct étudié, S1 est :",
+      "en": "In the direct-on-line control circuit studied, S1 is:"
+    },
+    "explanation": {
+      "fr": "Le bouton poussoir arrêt ; S2 est le bouton marche.",
+      "en": "The stop push button; S2 is the start button."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le bouton poussoir arrêt",
+          "en": "The stop push button"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le bouton poussoir marche",
+          "en": "The start push button"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le relais thermique",
+          "en": "The thermal overload relay"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m3-q16",
+    "section": "02-demarrage-direct",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Sans contact d'auto-maintien, le moteur s'arrête dès que l'on relâche le bouton marche.",
+      "en": "Without a hold-in contact, the motor stops as soon as the start button is released."
+    },
+    "explanation": {
+      "fr": "Vrai : la bobine n'est alimentée que tant que le bouton est enfoncé.",
+      "en": "True: the coil is only energised while the button is held down."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  }
+]

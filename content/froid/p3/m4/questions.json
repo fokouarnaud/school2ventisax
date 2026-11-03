@@ -1,0 +1,644 @@
+[
+  {
+    "id": "p3-m4-q01",
+    "section": "01-schemas",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Comment inverse-t-on le sens de rotation d'un moteur asynchrone triphasé ?",
+      "en": "How do you reverse a three-phase induction motor?"
+    },
+    "explanation": {
+      "fr": "En permutant deux phases de l'alimentation.",
+      "en": "By swapping two supply phases."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "En permutant deux phases",
+          "en": "By swapping two phases"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "En inversant la phase et le neutre",
+          "en": "By swapping phase and neutral"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "En passant du couplage étoile au triangle",
+          "en": "By changing from star to delta"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q02",
+    "section": "01-schemas",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel est le rôle du verrouillage mécanique entre KM1 et KM2 ?",
+      "en": "What is the role of the mechanical interlock between KM1 and KM2?"
+    },
+    "explanation": {
+      "fr": "Empêcher qu'ils soient fermés en même temps, ce qui ferait un court-circuit entre phases.",
+      "en": "Stop them from being closed at the same time, which would short-circuit two phases."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Empêcher la fermeture simultanée de KM1 et KM2",
+          "en": "Prevent KM1 and KM2 from closing together"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Maintenir KM1 fermé",
+          "en": "Keep KM1 closed"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Protéger le moteur contre les surcharges",
+          "en": "Protect the motor against overloads"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q03",
+    "section": "01-schemas",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel bouton poussoir arrête le moteur ?",
+      "en": "Which push button stops the motor?"
+    },
+    "explanation": {
+      "fr": "S0.",
+      "en": "S0."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "S0",
+          "en": "S0"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "S1",
+          "en": "S1"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "S2",
+          "en": "S2"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q04",
+    "section": "01-schemas",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quand KM2 est fermé, comment les bornes du moteur sont-elles alimentées ?",
+      "en": "When KM2 is closed, how are the motor terminals supplied?"
+    },
+    "explanation": {
+      "fr": "U1 par L1, V1 par L3, W1 par L2 : L2 et L3 sont permutées.",
+      "en": "U1 by L1, V1 by L3, W1 by L2: L2 and L3 are swapped."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "U1-L1, V1-L3, W1-L2",
+          "en": "U1-L1, V1-L3, W1-L2"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "U1-L1, V1-L2, W1-L3",
+          "en": "U1-L1, V1-L2, W1-L3"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "U1-L2, V1-L3, W1-L1",
+          "en": "U1-L2, V1-L3, W1-L1"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q05",
+    "section": "01-schemas",
+    "type": "truefalse",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Le contact 21-22 de KM1 est placé en série avec la bobine de KM2.",
+      "en": "Contact 21-22 of KM1 is wired in series with the coil of KM2."
+    },
+    "explanation": {
+      "fr": "Vrai : c'est le verrouillage électrique.",
+      "en": "True: this is the electrical interlock."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q06",
+    "section": "02-fins-de-course",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Quel type de contact sont les butées de fin de course S3 et S4 ?",
+      "en": "What type of contact are limit switches S3 and S4?"
+    },
+    "explanation": {
+      "fr": "Des contacts à ouverture, en série avec les bobines.",
+      "en": "Normally closed contacts, in series with the coils."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Des contacts à ouverture",
+          "en": "Normally closed contacts"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Des contacts à fermeture",
+          "en": "Normally open contacts"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Des contacts temporisés",
+          "en": "Timed contacts"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q07",
+    "section": "02-fins-de-course",
+    "type": "single",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Que se passe-t-il quand la charge atteint la butée S3 en sens 1 ?",
+      "en": "What happens when the load reaches limit switch S3 in direction 1?"
+    },
+    "explanation": {
+      "fr": "S3 s'ouvre, KM1 retombe et le moteur s'arrête.",
+      "en": "S3 opens, KM1 drops out and the motor stops."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "KM1 retombe et le moteur s'arrête",
+          "en": "KM1 drops out and the motor stops"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le moteur repart en sens 2",
+          "en": "The motor restarts in direction 2"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le relais thermique déclenche",
+          "en": "The thermal overload relay trips"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q08",
+    "section": "02-fins-de-course",
+    "type": "multiple",
+    "usage": "quiz",
+    "prompt": {
+      "fr": "Dans quelles installations trouve-t-on un démarrage deux sens de marche ?",
+      "en": "Where is two-direction starting found?"
+    },
+    "explanation": {
+      "fr": "Ascenseurs, monte-charges, portails motorisés ; un ventilateur qui tourne toujours dans le même sens n'en a pas besoin.",
+      "en": "Lifts, goods lifts, motorised gates; a fan that always turns the same way does not need it."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Les ascenseurs",
+          "en": "Lifts"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les monte-charges",
+          "en": "Goods lifts"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Les portails motorisés",
+          "en": "Motorised gates"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Un ventilateur qui tourne toujours dans le même sens",
+          "en": "A fan that always turns the same way"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q09",
+    "section": "01-schemas",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Que se passerait-il si KM1 et KM2 se fermaient en même temps ?",
+      "en": "What would happen if KM1 and KM2 closed at the same time?"
+    },
+    "explanation": {
+      "fr": "Un court-circuit entre les phases permutées.",
+      "en": "A short circuit between the swapped phases."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Un court-circuit entre phases",
+          "en": "A phase-to-phase short circuit"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le moteur tournerait deux fois plus vite",
+          "en": "The motor would run twice as fast"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Rien de particulier",
+          "en": "Nothing special"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q10",
+    "section": "01-schemas",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Le moteur tourne dans le sens 1. Comment le faire tourner dans le sens 2 ?",
+      "en": "The motor runs in direction 1. How do you make it run in direction 2?"
+    },
+    "explanation": {
+      "fr": "Appuyer d'abord sur S0, puis sur S2 : le verrouillage électrique bloque S2 tant que KM1 est fermé.",
+      "en": "Press S0 first, then S2: the electrical interlock blocks S2 while KM1 is closed."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Appuyer sur S0, puis sur S2",
+          "en": "Press S0, then S2"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Appuyer directement sur S2",
+          "en": "Press S2 straight away"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Appuyer sur S1 et S2 ensemble",
+          "en": "Press S1 and S2 together"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q11",
+    "section": "01-schemas",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Où est placé le contact de maintien de KM2 ?",
+      "en": "Where is the hold-in contact of KM2?"
+    },
+    "explanation": {
+      "fr": "Le contact 13-14 de KM2, en parallèle sur le bouton S2.",
+      "en": "Contact 13-14 of KM2, in parallel with button S2."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "En parallèle sur S2",
+          "en": "In parallel with S2"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "En série avec la bobine de KM1",
+          "en": "In series with the KM1 coil"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "En parallèle sur S0",
+          "en": "In parallel with S0"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q12",
+    "section": "01-schemas",
+    "type": "multiple",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Quels dispositifs empêchent KM1 et KM2 d'être fermés ensemble ?",
+      "en": "Which devices prevent KM1 and KM2 from closing together?"
+    },
+    "explanation": {
+      "fr": "Le verrouillage mécanique et le verrouillage électrique ; le relais thermique protège contre les surcharges.",
+      "en": "The mechanical interlock and the electrical interlock; the thermal overload relay protects against overloads."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Le verrouillage mécanique",
+          "en": "The mechanical interlock"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le verrouillage électrique",
+          "en": "The electrical interlock"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le relais thermique",
+          "en": "The thermal overload relay"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q13",
+    "section": "01-schemas",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Relier L1 à V1, L2 à W1 et L3 à U1 inverse le sens de rotation.",
+      "en": "Connecting L1 to V1, L2 to W1 and L3 to U1 reverses the direction of rotation."
+    },
+    "explanation": {
+      "fr": "Faux : décaler les trois phases dans le même ordre garde le même sens ; il faut permuter deux phases seulement.",
+      "en": "False: shifting all three phases in the same order keeps the same direction; only two phases must be swapped."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q14",
+    "section": "02-fins-de-course",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Où est placée la butée S3 ?",
+      "en": "Where is limit switch S3 wired?"
+    },
+    "explanation": {
+      "fr": "En série dans la branche de la bobine de KM1, avant le verrouillage électrique.",
+      "en": "In series in the KM1 coil branch, before the electrical interlock."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "En série dans la branche de KM1",
+          "en": "In series in the KM1 branch"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "En parallèle sur S1",
+          "en": "In parallel with S1"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Dans le circuit de puissance",
+          "en": "In the power circuit"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q15",
+    "section": "02-fins-de-course",
+    "type": "single",
+    "usage": "exam",
+    "prompt": {
+      "fr": "La butée S3 est actionnée. On appuie sur S1. Que se passe-t-il ?",
+      "en": "Limit switch S3 is operated. S1 is pressed. What happens?"
+    },
+    "explanation": {
+      "fr": "Rien : S3 ouverte empêche KM1 d'être alimenté.",
+      "en": "Nothing: open S3 stops KM1 from being energised."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Rien, KM1 ne peut pas s'enclencher",
+          "en": "Nothing, KM1 cannot pull in"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Le moteur repart en sens 1",
+          "en": "The motor restarts in direction 1"
+        },
+        "correct": false
+      },
+      {
+        "text": {
+          "fr": "Le moteur repart en sens 2",
+          "en": "The motor restarts in direction 2"
+        },
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "p3-m4-q16",
+    "section": "02-fins-de-course",
+    "type": "truefalse",
+    "usage": "exam",
+    "prompt": {
+      "fr": "Après un arrêt par la butée S3, on peut repartir dans le sens 2 avec S2.",
+      "en": "After a stop by limit switch S3, the motor can restart in direction 2 with S2."
+    },
+    "explanation": {
+      "fr": "Vrai : S3 n'est que dans la branche de KM1 ; la charge quitte alors la butée.",
+      "en": "True: S3 is only in the KM1 branch; the load then moves away from the switch."
+    },
+    "reviewed": {
+      "fr": true,
+      "en": true
+    },
+    "choices": [
+      {
+        "text": {
+          "fr": "Vrai",
+          "en": "True"
+        },
+        "correct": true
+      },
+      {
+        "text": {
+          "fr": "Faux",
+          "en": "False"
+        },
+        "correct": false
+      }
+    ]
+  }
+]
