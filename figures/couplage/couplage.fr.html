@@ -818,13 +818,15 @@ const TX = {plate:(m) => `3~ ${m.lo}/${m.hi} V`,plate2:(m) => `${m.kw} kW · ${m
 
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 const C = FIG, T = TX, P = C.P;
-const root = document.querySelector(".iso-plate");
+// dans le site, la figure vit dans son emplacement ; seule dans une page, dans le document
+const scope = document.querySelector('.live-figure[data-figure="couplage"]') || document;
+const root = scope.querySelector(".iso-plate");
 const stage = root.querySelector(".iso-stage");
 const svg = stage.querySelector("svg");
 const readout = root.querySelector("[data-readout]");
-const feedback = document.querySelector(".cp-feedback");
-const scoreEl = document.querySelector(".cp-score");
-const buttons = Object.fromEntries([...document.querySelectorAll(".cp-controls button")].map((b) => [b.dataset.act, b]));
+const feedback = scope.querySelector(".cp-feedback");
+const scoreEl = scope.querySelector(".cp-score");
+const buttons = Object.fromEntries([...scope.querySelectorAll(".cp-controls button")].map((b) => [b.dataset.act, b]));
 const sets = Object.fromEntries([...svg.querySelectorAll(".cp-bars")].map((g) => [g.dataset.set, g]));
 const needle = svg.querySelector(".cp-needle");
 const mark = svg.querySelector(".cp-mark");

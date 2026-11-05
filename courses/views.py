@@ -7,6 +7,7 @@ from progress.services import following_step, mark_section_viewed, module_comple
 
 from .access import accessible_formations
 from .models import Module, Section
+from .figures import has_figures
 from .rendering import render_markdown
 
 
@@ -47,9 +48,11 @@ def section_detail(request, public_id):
     index = siblings.index(section)
     lang = get_language()
     rows = outline(request.user, section.module.partie, current_section=section)
+    body_html = render_markdown(section.body_md)
     return render(request, "courses/section_detail.html", {
         "section": section,
-        "body_html": render_markdown(section.body_md),
+        "body_html": body_html,
+        "has_figures": has_figures(body_html),
         "previous": siblings[index - 1] if index > 0 else None,
         "next": siblings[index + 1] if index + 1 < len(siblings) else None,
         "fallback_fr": lang != "fr" and not getattr(section, f"body_md_{lang}", ""),

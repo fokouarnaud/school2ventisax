@@ -6,6 +6,8 @@ import markdown
 from django.templatetags.static import static
 from django.utils.html import escape
 
+from .figures import render_figures
+
 ALLOWED_TAGS = {
     "p", "br", "strong", "em", "ul", "ol", "li", "h2", "h3", "h4", "blockquote", "code", "pre",
     "table", "thead", "tbody", "tr", "th", "td", "a", "img", "hr",
@@ -19,7 +21,8 @@ COURSE_IMAGE = re.compile(r'<img ([^>]*?)src="(cours/[^"]+)"([^>]*)>')
 def render_markdown(text):
     html = markdown.markdown(text or "", extensions=["tables"])
     html = bleach.clean(html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRIBUTES, protocols={"http", "https"}, strip=True)
-    return COURSE_IMAGE.sub(_static_src, html)
+    # Les figures interactives sont posées après bleach : seul un marqueur reconnu devient un emplacement (courses.figures).
+    return render_figures(COURSE_IMAGE.sub(_static_src, html))
 
 
 def _static_src(match):

@@ -34,9 +34,13 @@ A coil-and-contact relay is an **electromechanical** relay: a switch controlled 
 | DPST | Double Pole Single Throw | 2 simple contacts switched together |
 | DPDT | Double Pole Double Throw | 2 changeover contacts switched together |
 
+[[figure:relais]]
+
 ## Solid-state relays
 
 These components do the same job as a coil-and-contact relay, but without any mechanical part. Switching is done by a **triac** driven by an **optocoupler**, which keeps the control side electrically isolated from the power side.
+
+[[figure:relais-statique]]
 
 ### Uses of electronic relays or micro-relays
 

@@ -28,3 +28,5 @@ The six ends of the three windings come to the terminal board (plaque à bornes)
 To remember it: **3 links = delta**.
 
 ![Terminal boards: on the left, star connection Y, one link joins W2, U2 and V2; on the right, delta connection Δ, three vertical links join U1 to W2, V1 to U2 and W1 to V2](img/barrettes-etoile-triangle.svg)
+
+[[figure:couplage]]

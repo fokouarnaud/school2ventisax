@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as k from "../_kit/iso-kit.mjs";
+import { publish } from "../_kit/publish.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const KIT_SOURCE = readFileSync(join(HERE, "..", "_kit", "iso-kit.mjs"), "utf8").replace(/^export /gm, "");
@@ -501,6 +502,8 @@ const READ = {
 };
 for (const stage of document.querySelectorAll(".iso-stage[data-ssr]")) {
   const C = FIG;
+  if (stage.dataset.ready) continue;
+  stage.dataset.ready = "1";
   const svg = stage.querySelector("svg");
   const readout = stage.closest(".iso-plate").querySelector("[data-readout]");
   const cap = svg.querySelector('[data-move="s1"]');
@@ -599,6 +602,7 @@ for (const stage of document.querySelectorAll(".iso-stage[data-ssr]")) {
 
 // ---------------------------------------------------------------- pages
 const written = [];
+const site = { fragments: {}, scripts: {} };
 for (const lang of ["fr", "en"]) {
   const T = TEXT[lang];
   const { svg, config } = buildFigure(lang);
@@ -611,6 +615,8 @@ for (const lang of ["fr", "en"]) {
     caption: T.caption,
     body: `<div class="iso-stage" data-ssr tabindex="0" role="button" aria-pressed="false" aria-label="${T.stageLabel}">${svg}</div>`,
   });
+  site.fragments[lang] = plate;
+  site.scripts[lang] = `const FIG = ${JSON.stringify(config)};` + LIVE;
   for (const theme of ["dark", "light"]) {
     const name = `relais-statique.${lang}${theme === "light" ? "-light" : ""}.html`;
     const html = k.pageHtml({ title: T.pageTitle, theme, body: `<style>${CSS}</style>${plate}`, script: KIT_SOURCE + `const FIG = ${JSON.stringify(config)};` + LIVE, width: 760 }).replace('<html lang="en">', `<html lang="${lang}">`);
@@ -618,4 +624,5 @@ for (const lang of ["fr", "en"]) {
     written.push(name);
   }
 }
+written.push(...publish("relais-statique", { ...site, css: CSS }));
 console.log("wrote", written.join(", "));

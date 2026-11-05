@@ -28,3 +28,5 @@ Les six extrémités des trois enroulements arrivent sur la plaque à bornes : U
 Pour s'en souvenir : **3 barrettes = triangle**.
 
 ![Plaques à bornes : à gauche, couplage étoile Y, une barrette relie W2, U2 et V2 ; à droite, couplage triangle Δ, trois barrettes verticales relient U1 à W2, V1 à U2 et W1 à V2](img/barrettes-etoile-triangle.svg)
+
+[[figure:couplage]]

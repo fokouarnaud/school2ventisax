@@ -814,6 +814,8 @@ const READ = {
 };
 for (const stage of document.querySelectorAll(".iso-stage[data-ssr]")) {
   const C = FIG;
+  if (stage.dataset.ready) continue;
+  stage.dataset.ready = "1";
   const svg = stage.querySelector("svg");
   const readout = stage.closest(".iso-plate").querySelector("[data-readout]");
   const cap = svg.querySelector('[data-move="s1"]');

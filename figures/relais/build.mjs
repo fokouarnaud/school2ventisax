@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as k from "../_kit/iso-kit.mjs";
+import { publish } from "../_kit/publish.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const KIT_SOURCE = readFileSync(join(HERE, "..", "_kit", "iso-kit.mjs"), "utf8").replace(/^export /gm, "");
@@ -581,6 +582,8 @@ const LIVE = `
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 for (const stage of document.querySelectorAll(".iso-stage[data-relay]")) {
   const C = FIGS[stage.dataset.relay];
+  if (!C || stage.dataset.ready) continue;
+  stage.dataset.ready = "1";
   const P = C.PR; // pièces du relais (échelle RS)
   const svg = stage.querySelector("svg");
   const readout = stage.closest(".iso-plate").querySelector("[data-readout]");
@@ -753,4 +756,12 @@ for (const lang of ["fr", "en"]) {
     written.push(name);
   }
 }
-console.log("wrote", written.length, "pages:", written.join(", "));
+// publication dans le site : les 4 figures ensemble, dans la section « Commande » du module 2 de la Partie 3
+const site = { fragments: {}, scripts: {} };
+for (const lang of ["fr", "en"]) {
+  const plates = Object.keys(TYPES).map((type, i) => plateOf(type, lang, i + 1));
+  site.fragments[lang] = plates.map((p) => p.html).join("");
+  site.scripts[lang] = READOUT_SRC + `const FIGS = ${JSON.stringify(Object.fromEntries(plates.map((p) => [p.config.type, p.config])))};` + LIVE;
+}
+written.push(...publish("relais", { ...site, css: CSS }));
+console.log("wrote", written.length, "files:", written.join(", "));

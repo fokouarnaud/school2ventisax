@@ -830,6 +830,8 @@ const FIGS = {"dpdt":{"type":"dpdt","lang":"fr","P":{"origin":[344.9887417858524
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 for (const stage of document.querySelectorAll(".iso-stage[data-relay]")) {
   const C = FIGS[stage.dataset.relay];
+  if (!C || stage.dataset.ready) continue;
+  stage.dataset.ready = "1";
   const P = C.PR; // pièces du relais (échelle RS)
   const svg = stage.querySelector("svg");
   const readout = stage.closest(".iso-plate").querySelector("[data-readout]");
