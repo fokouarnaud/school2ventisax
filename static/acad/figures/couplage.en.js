@@ -1,8 +1,8 @@
 (() => {
-const FIG = {"lang":"en","P":{"origin":[254.9434852891998,277.270495895503],"scale":1.3735948132826241,"azimuth":28,"elevation":38},"F":{"o":[0,-66,46],"a":[0,1,0],"u":[1,0,0],"v":[0,0,1]},"markS":68,"dial":{"x":-6,"y":-154,"z":70,"r":11,"max":800},"flagMove":3,"trayOffset":{"Y":[45,6,-86],"D":[75,6,-86]},"lift":40,"networks":[{"id":"n400","v":230,"u":400},{"id":"n690","v":400,"u":690}],"motors":[{"id":"m230","lo":230,"hi":400,"kw":"4","rpm":1440,"amps":"14,8/8,5","ampsEn":"14.8/8.5"},{"id":"m400","lo":400,"hi":690,"kw":"4","rpm":1440,"amps":"8,5/4,9","ampsEn":"8.5/4.9"}],"scenarios":[{"m":"m230","n":"n400"},{"m":"m230","n":"n690"},{"m":"m400","n":"n400"},{"m":"m400","n":"n690"}]};
+const FIG = {"lang":"en","P":{"origin":[254.9434852891998,277.270495895503],"scale":1.3735948132826241,"azimuth":28,"elevation":38},"F":{"o":[0,-66,46],"a":[0,1,0],"u":[1,0,0],"v":[0,0,1]},"markS":68,"dial":{"x":-6,"y":-154,"z":70,"r":11,"max":800},"knob":{"x":-1,"y":-152,"z":22,"a0":2.827433388230814,"step":-0.5026548245743669},"meters":["L1-L2","L2-L3","L3-L1","L1-N","L2-N","L3-N"],"flagMove":3,"trayOffset":{"Y":[45,6,-88],"D":[75,6,-88]},"lift":40,"networks":[{"id":"n400","v":230,"u":400},{"id":"n690","v":400,"u":690}],"motors":[{"id":"m230","lo":230,"hi":400,"kw":"4","rpm":1440,"amps":"14,8/8,5","ampsEn":"14.8/8.5"},{"id":"m400","lo":400,"hi":690,"kw":"4","rpm":1440,"amps":"8,5/4,9","ampsEn":"8.5/4.9"}],"scenarios":[{"m":"m230","n":"n400"},{"m":"m230","n":"n690"},{"m":"m400","n":"n400"},{"m":"m400","n":"n690"}]};
 const winding0 = (u, c) => (c === "Y" ? u / Math.sqrt(3) : u);
 function expected(m, n) { for (const c of ["Y", "D"]) if (Math.abs(winding0(n.u, c) - m.lo) / m.lo < 0.05) return c; return "none"; }
-const TX = {plate:(m) => `3~ ${m.lo}/${m.hi} V`,plate2:(m) => `${m.kw} kW · ${m.rpm} rpm`,net:(n) => `Supply ${n.v}/${n.u} V`,readIdle:(m, n, c) => `plate ${m.lo}/${m.hi} V · supply ${n.v}/${n.u} V · ${c === "Y" ? "star" : c === "D" ? "delta" : c === "none" ? "no connection" : "fit the links"}`,readRun:(w, m, verdict) => `winding ${Math.round(w / 10) * 10} V for ${m.lo} V · ${verdict}`,verdict:{"ok":"normal running ✓","over":"overvoltage ×√3: tripped","under":"undervoltage ÷√3: torque ÷3","noneOk":"correct ✓","noneBad":"wrong ✗","noCoupling":"fit the links or declare the motor unsuitable"},feedback:{ok:(m, n, c) => `Correct. ${c === "Y" ? `Star: each winding gets ${n.u} / √3 ≈ ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V` : `Delta: each winding gets ${n.u} V`}, the lower plate voltage (${m.lo} V). The motor runs normally.`,over:(m, n, c) => `Wrong. ${c === "Y" ? `In star each winding gets about ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V` : `In delta each winding gets ${n.u} V`}, but it is rated ${m.lo} V: the windings overheat and the thermal overload relay trips. ${expected(m, n) === "none" ? "No connection fits: this motor is unsuitable for this supply." : `The right answer was ${expected(m, n) === "Y" ? "star" : "delta"}.`}`,under:(m, n) => `Wrong. In star each winding only gets about ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V instead of ${m.lo} V: torque drops to a third, the motor struggles, heats up and the thermal overload relay ends up tripping. The right answer was delta.`,noneOk:(m, n) => `Correct. Plate ${m.lo}/${m.hi} V, supply ${n.v}/${n.u} V: even in star each winding would get about ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V instead of ${m.lo} V. This motor must not be connected to this supply.`,noneBad:(m, n) => `Wrong. This motor suits this supply: the right answer was ${expected(m, n) === "Y" ? `star (${n.u} / √3 ≈ ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V per winding)` : `delta (${n.u} V per winding)`}.`,noCoupling:"First fit the links (star or delta), or declare the motor unsuitable."},score:(good, total) => `Score: ${good} / ${total}`,start:"Read the motor's rating plate (on the terminal box) and the supply voltage (on the cabinet), then choose."};
+const TX = {plate:(m) => `3~ ${m.lo}/${m.hi} V`,plate2:(m) => `${m.kw} kW · ${m.rpm} rpm`,net:(n) => `${n.v}/${n.u} V`,meterBtn:(pos) => `Voltmeter: ${pos.replace("-", "‑")}`,readIdle:(m, n, c, pos, val) => `plate ${m.lo}/${m.hi} V · voltmeter ${pos}: ${val} V · ${c === "Y" ? "star" : c === "D" ? "delta" : c === "none" ? "no connection" : "fit the links"}`,readRun:(w, m, verdict) => `winding ${Math.round(w / 10) * 10} V for ${m.lo} V · ${verdict}`,verdict:{"ok":"normal running ✓","over":"overvoltage ×√3: tripped","under":"undervoltage ÷√3: torque ÷3","noneOk":"correct ✓","noneBad":"wrong ✗","noCoupling":"fit the links or declare the motor unsuitable"},feedback:{ok:(m, n, c) => `Correct. ${c === "Y" ? `Star: each winding gets ${n.u} / √3 ≈ ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V` : `Delta: each winding gets ${n.u} V`}, the lower plate voltage (${m.lo} V). The motor runs normally.`,over:(m, n, c) => `Wrong. ${c === "Y" ? `In star each winding gets about ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V` : `In delta each winding gets ${n.u} V`}, but it is rated ${m.lo} V: the windings overheat and the thermal overload relay trips. ${expected(m, n) === "none" ? "No connection fits: this motor is unsuitable for this supply." : `The right answer was ${expected(m, n) === "Y" ? "star" : "delta"}.`}`,under:(m, n) => `Wrong. In star each winding only gets about ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V instead of ${m.lo} V: torque drops to a third, the motor struggles, heats up and the thermal overload relay ends up tripping. The right answer was delta.`,noneOk:(m, n) => `Correct. Plate ${m.lo}/${m.hi} V, supply ${n.v}/${n.u} V: even in star each winding would get about ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V instead of ${m.lo} V. This motor must not be connected to this supply.`,noneBad:(m, n) => `Wrong. This motor suits this supply: the right answer was ${expected(m, n) === "Y" ? `star (${n.u} / √3 ≈ ${Math.round(n.u / Math.sqrt(3) / 10) * 10} V per winding)` : `delta (${n.u} V per winding)`}.`,noCoupling:"First fit the links (star or delta), or declare the motor unsuitable."},score:(good, total) => `Score: ${good} / ${total}`,start:(n) => `Read the motor's rating plate (on the terminal box) and the supply voltage (on the cabinet). A ${n.v}/${n.u} V supply gives ${n.v} V between one phase and neutral and ${n.u} V between two phases; they are not added up. The line voltage (${n.u} V) is what you compare with the plate. The Voltmeter button changes the measurement.`};
 
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 const C = FIG, T = TX, P = C.P;
@@ -18,6 +18,7 @@ const buttons = Object.fromEntries([...scope.querySelectorAll(".cp-controls butt
 const sets = Object.fromEntries([...svg.querySelectorAll(".cp-bars")].map((g) => [g.dataset.set, g]));
 const needle = svg.querySelector(".cp-needle");
 const mark = svg.querySelector(".cp-mark");
+const knob = svg.querySelector(".cp-knob");
 const flag = svg.querySelector(".cp-flag");
 const runGlow = svg.querySelector(".cp-run-glow");
 const runLamp = svg.querySelector(".cp-run");
@@ -26,6 +27,8 @@ const txt = (name) => svg.querySelector('[data-text="' + name + '"]');
 const winding = (u, c) => (c === "Y" ? u / Math.sqrt(3) : u);
 let sc = 0, choice = null, phase = "idle", verdict = null, good = 0, total = 0, answered = false;
 const place = { Y: 0, D: 0 }; // 1 = sur les bornes, 0 = dans le bac
+let meter = 0;
+const meterValue = () => (C.meters[meter].endsWith("N") ? net().v : net().u);
 let angle = 0, speed = 0, targetSpeed = 0, volts = 0, flagAt = 0, runAt = 0, runTimer = 0, frame = 0, last = 0, visible = false;
 const scen = () => C.scenarios[sc];
 const motor = () => C.motors.find((m) => m.id === scen().m);
@@ -35,7 +38,8 @@ function setScenario(i) {
   txt("plate").textContent = T.plate(motor());
   txt("plate2").textContent = T.plate2(motor());
   txt("net").textContent = T.net(net());
-  feedback.textContent = T.start;
+  meter = 0;
+  feedback.textContent = T.start(net());
   svg.removeAttribute("data-heat"); svg.removeAttribute("data-smoke");
   sync(); run();
 }
@@ -44,7 +48,9 @@ function sync() {
   for (const k of ["Y", "D", "none"]) buttons[k].disabled = phase === "running";
   buttons.test.disabled = phase === "running";
   scoreEl.textContent = T.score(good, total);
-  readout.textContent = phase === "idle" ? T.readIdle(motor(), net(), choice) : readout.textContent;
+  txt("meter").textContent = C.meters[meter];
+  buttons.meter.textContent = T.meterBtn(C.meters[meter]);
+  readout.textContent = phase === "idle" ? T.readIdle(motor(), net(), choice, C.meters[meter], meterValue()) : readout.textContent;
 }
 function choose(c) {
   if (phase === "running") return;
@@ -104,6 +110,9 @@ function draw() {
   const a = Math.PI * (1.25 - 1.5 * Math.min(volts, C.dial.max) / C.dial.max);
   const dp = (r) => iso([C.dial.x + 0.2, C.dial.y - Math.cos(a) * r, C.dial.z + Math.sin(a) * r], P);
   needle.setAttribute("d", pathOf([dp(-2), dp(C.dial.r - 2)]));
+  const ka = C.knob.a0 + meter * C.knob.step;
+  const kp = (r) => iso([C.knob.x, C.knob.y - Math.cos(ka) * r, C.knob.z + Math.sin(ka) * r], P);
+  knob.setAttribute("d", pathOf([kp(0.6), kp(4)]));
   flag.setAttribute("transform", translateAlong(P, [C.flagMove * flagAt, 0, 0]));
   runGlow.style.opacity = runAt.toFixed(3);
   if (runAt > 0.5) runLamp.setAttribute("data-lit", ""); else runLamp.removeAttribute("data-lit");
@@ -119,12 +128,12 @@ function tick(now) {
   const powered = phase === "running" || phase === "idle-ok";
   speed = ease(speed, powered ? targetSpeed : 0, powered ? 0.5 : 0.9);
   angle += speed * dt * 2 * Math.PI * 0.8; // 1440 tr/min montrés très ralentis
-  volts = ease(volts, net().u, 0.4);
+  volts = ease(volts, meterValue(), 0.4);
   flagAt = ease(flagAt, phase === "tripped" ? 1 : 0, 0.08);
   runAt = ease(runAt, powered ? 1 : 0, 0.1);
   if (phase === "tripped") { svg.removeAttribute("data-smoke"); readout.textContent = T.readRun(winding(net().u, choice), motor(), T.verdict[verdict]); }
   draw();
-  const settled = !powered && speed < 1e-3 && ["Y", "D"].every((k) => Math.abs(place[k] - (choice === k ? 1 : 0)) < 1e-3) && Math.abs(volts - net().u) < 0.5 && Math.abs(flagAt - (phase === "tripped" ? 1 : 0)) < 1e-3 && runAt < 1e-3;
+  const settled = !powered && speed < 1e-3 && ["Y", "D"].every((k) => Math.abs(place[k] - (choice === k ? 1 : 0)) < 1e-3) && Math.abs(volts - meterValue()) < 0.5 && Math.abs(flagAt - (phase === "tripped" ? 1 : 0)) < 1e-3 && runAt < 1e-3;
   frame = visible && !settled ? requestAnimationFrame(tick) : 0;
 }
 function run() { if (!frame && visible) { last = 0; frame = requestAnimationFrame(tick); } }
@@ -134,6 +143,7 @@ buttons.D.addEventListener("click", () => choose("D"));
 buttons.none.addEventListener("click", () => choose("none"));
 buttons.test.addEventListener("click", test);
 buttons.next.addEventListener("click", nextScenario);
+buttons.meter.addEventListener("click", () => { meter = (meter + 1) % C.meters.length; sync(); run(); });
 window.__cp = { choose, test, setScenario, state: () => ({ sc, choice, phase, verdict, good, total }) };
 setScenario(Math.floor(Math.random() * C.scenarios.length));
 draw();

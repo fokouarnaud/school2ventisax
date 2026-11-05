@@ -42,13 +42,15 @@ const TEXT = {
       { mark: "raised", label: "Moteur, boîte à bornes (U1 V1 W1 en haut, W2 U2 V2 en bas) et coffret du réseau" },
       { mark: "dashed", label: "Câble sous tension" },
     ],
-    caption: "La plus petite tension de la plaque signalétique est la tension d'un enroulement. Couplage triangle Δ : chaque enroulement reçoit la tension entre phases du réseau ; on le choisit quand celle-ci est égale à la plus petite tension de la plaque (moteur 400/690 V sur réseau 230/400 V : 400 V par enroulement). Couplage étoile Y : chaque enroulement reçoit la tension entre phases divisée par √3 ; on le choisit quand celle-ci est égale à la plus grande tension de la plaque (moteur 230/400 V sur réseau 230/400 V : 400 / √3 = 230 V). Si aucune des deux tensions de la plaque n'est celle du réseau, le moteur ne peut pas y être branché. Rappel : 3 barrettes = triangle, 1 barrette sur la rangée du bas = étoile.",
+    caption: "Lire la tension du réseau : un réseau triphasé « 230/400 V » donne 230 V entre une phase et le neutre (tension simple V) et 400 V entre deux phases (tension composée U = V × √3). Cette tension entre phases est la même entre L1-L2, L2-L3 et L3-L1 : on ne fait pas la somme des phases, on la mesure entre deux d'entre elles, et c'est elle que l'on compare à la plaque du moteur. La plus petite tension de la plaque signalétique est la tension d'un enroulement. Couplage triangle Δ : chaque enroulement reçoit la tension entre phases du réseau ; on le choisit quand celle-ci est égale à la plus petite tension de la plaque (moteur 400/690 V sur réseau 230/400 V : 400 V par enroulement). Couplage étoile Y : chaque enroulement reçoit la tension entre phases divisée par √3 ; on le choisit quand celle-ci est égale à la plus grande tension de la plaque (moteur 230/400 V sur réseau 230/400 V : 400 / √3 = 230 V). Si aucune des deux tensions de la plaque n'est celle du réseau, le moteur ne peut pas y être branché. Rappel : 3 barrettes = triangle, 1 barrette sur la rangée du bas = étoile.",
     stageLabel: "Exercice de couplage : un moteur asynchrone triphasé, sa boîte à bornes ouverte et le coffret du réseau. Lisez la plaque du moteur et la tension du réseau, posez les barrettes en étoile ou en triangle, ou déclarez le moteur incompatible, puis mettez sous tension.",
     svgLabel: "Moteur asynchrone triphasé sur un banc, boîte à bornes ouverte avec six bornes U1 V1 W1 et W2 U2 V2, bac de barrettes, coffret du réseau avec voltmètre, relais thermique et voyant de marche.",
     plate: (m) => `3~ ${m.lo}/${m.hi} V`,
     plate2: (m) => `${m.kw} kW · ${m.rpm} tr/min`,
-    net: (n) => `Réseau ${n.v}/${n.u} V`,
-    readIdle: (m, n, c) => `plaque ${m.lo}/${m.hi} V · réseau ${n.v}/${n.u} V · ${c === "Y" ? "étoile" : c === "D" ? "triangle" : c === "none" ? "aucun couplage" : "barrettes à poser"}`,
+    net: (n) => `${n.v}/${n.u} V`,
+    netTitle: "Réseau 3~ 50 Hz",
+    meterBtn: (pos) => `Voltmètre : ${pos.replace("-", "‑")}`,
+    readIdle: (m, n, c, pos, val) => `plaque ${m.lo}/${m.hi} V · voltmètre ${pos} : ${val} V · ${c === "Y" ? "étoile" : c === "D" ? "triangle" : c === "none" ? "aucun couplage" : "barrettes à poser"}`,
     readRun: (w, m, verdict) => `enroulement ${Math.round(w / 10) * 10} V pour ${m.lo} V · ${verdict}`,
     verdict: { ok: "marche normale ✓", over: "surtension ×√3 : déclenchement", under: "sous-tension ÷√3 : couple ÷3", noneOk: "bonne réponse ✓", noneBad: "mauvaise réponse ✗", noCoupling: "posez les barrettes ou déclarez le moteur incompatible" },
     feedback: {
@@ -60,7 +62,7 @@ const TEXT = {
       noCoupling: "Posez d'abord les barrettes (étoile ou triangle), ou déclarez le moteur incompatible.",
     },
     score: (good, total) => `Score : ${good} / ${total}`,
-    start: "Lisez la plaque du moteur (sur la boîte à bornes) et la tension du réseau (sur le coffret), puis choisissez.",
+    start: (n) => `Lisez la plaque du moteur (sur la boîte à bornes) et la tension du réseau (sur le coffret). Réseau ${n.v}/${n.u} V : ${n.v} V entre une phase et le neutre, ${n.u} V entre deux phases ; on ne les additionne pas. C'est la tension entre phases (${n.u} V) que l'on compare à la plaque. Le bouton « Voltmètre » change la mesure.`,
   },
   en: {
     title: "Choosing the connection",
@@ -72,13 +74,15 @@ const TEXT = {
       { mark: "raised", label: "Motor, terminal box (U1 V1 W1 top, W2 U2 V2 bottom) and supply cabinet" },
       { mark: "dashed", label: "Live cable" },
     ],
-    caption: "The lower voltage on the rating plate is the voltage of one winding. Delta Δ connection: each winding gets the line voltage of the supply; choose it when that equals the lower plate voltage (400/690 V motor on a 230/400 V supply: 400 V per winding). Star Y connection: each winding gets the line voltage divided by √3; choose it when the line voltage equals the higher plate voltage (230/400 V motor on a 230/400 V supply: 400 / √3 = 230 V). If neither plate voltage is the supply's line voltage, the motor cannot be connected to it. Remember: 3 links = delta, 1 link across the bottom row = star.",
+    caption: "Reading the supply voltage: a three-phase 230/400 V supply gives 230 V between one phase and neutral (phase voltage V) and 400 V between two phases (line voltage U = V × √3). The line voltage is the same between L1-L2, L2-L3 and L3-L1: the phases are not added up, the voltage is measured between two of them, and that is the voltage compared with the motor's rating plate. The lower voltage on the rating plate is the voltage of one winding. Delta Δ connection: each winding gets the line voltage of the supply; choose it when that equals the lower plate voltage (400/690 V motor on a 230/400 V supply: 400 V per winding). Star Y connection: each winding gets the line voltage divided by √3; choose it when the line voltage equals the higher plate voltage (230/400 V motor on a 230/400 V supply: 400 / √3 = 230 V). If neither plate voltage is the supply's line voltage, the motor cannot be connected to it. Remember: 3 links = delta, 1 link across the bottom row = star.",
     stageLabel: "Connection exercise: a three-phase induction motor, its open terminal box and the supply cabinet. Read the motor's rating plate and the supply voltage, fit the links in star or delta, or declare the motor unsuitable, then switch on.",
     svgLabel: "Three-phase induction motor on a bench, open terminal box with six terminals U1 V1 W1 and W2 U2 V2, link tray, supply cabinet with voltmeter, thermal overload relay and run light.",
     plate: (m) => `3~ ${m.lo}/${m.hi} V`,
     plate2: (m) => `${m.kw} kW · ${m.rpm} rpm`,
-    net: (n) => `Supply ${n.v}/${n.u} V`,
-    readIdle: (m, n, c) => `plate ${m.lo}/${m.hi} V · supply ${n.v}/${n.u} V · ${c === "Y" ? "star" : c === "D" ? "delta" : c === "none" ? "no connection" : "fit the links"}`,
+    net: (n) => `${n.v}/${n.u} V`,
+    netTitle: "Supply 3~ 50 Hz",
+    meterBtn: (pos) => `Voltmeter: ${pos.replace("-", "‑")}`,
+    readIdle: (m, n, c, pos, val) => `plate ${m.lo}/${m.hi} V · voltmeter ${pos}: ${val} V · ${c === "Y" ? "star" : c === "D" ? "delta" : c === "none" ? "no connection" : "fit the links"}`,
     readRun: (w, m, verdict) => `winding ${Math.round(w / 10) * 10} V for ${m.lo} V · ${verdict}`,
     verdict: { ok: "normal running ✓", over: "overvoltage ×√3: tripped", under: "undervoltage ÷√3: torque ÷3", noneOk: "correct ✓", noneBad: "wrong ✗", noCoupling: "fit the links or declare the motor unsuitable" },
     feedback: {
@@ -90,7 +94,7 @@ const TEXT = {
       noCoupling: "First fit the links (star or delta), or declare the motor unsuitable.",
     },
     score: (good, total) => `Score: ${good} / ${total}`,
-    start: "Read the motor's rating plate (on the terminal box) and the supply voltage (on the cabinet), then choose.",
+    start: (n) => `Read the motor's rating plate (on the terminal box) and the supply voltage (on the cabinet). A ${n.v}/${n.u} V supply gives ${n.v} V between one phase and neutral and ${n.u} V between two phases; they are not added up. The line voltage (${n.u} V) is what you compare with the plate. The Voltmeter button changes the measurement.`,
   },
 };
 
@@ -110,7 +114,7 @@ const F = G.frameOf([0, Y0, CZ], [0, 1, 0], [1, 0, 0], [0, 0, 1]);
 
 const BOX = { x: -24, y: -20, w: 48, d: 56, r: 2.5 };
 const BOX_Z = CZ + R - 2; // dessous de la boîte (posée sur la carcasse)
-const BOX_H = 10;
+const BOX_H = 12;
 const BOARD = { x: -20.5, y: -15, w: 41, d: 46, r: 1.8 };
 const BOARD_Z = BOX_Z + BOX_H;
 const BOARD_T = 3;
@@ -131,6 +135,7 @@ const CFX = CAB.x + CAB.w; // face avant du coffret
 const DIAL = { y: -154, z: 70, r: 11 };
 const RELAY = { y: -170, z: 42 };
 const LAMP = { y: -138, z: 42 };
+const KNOB = { y: -152, z: 22, a0: Math.PI * 0.9, step: -Math.PI * 0.16 };
 
 function buildFigure(lang) {
   const T = TEXT[lang];
@@ -177,8 +182,8 @@ function buildFigure(lang) {
     // étiquette du réseau sur le dessus
     const lab = { x: CAB.x + 6, y: CAB.y + 6, w: 28, d: 32, r: 1.5 };
     o.push(S(k.slabOf(lab, CAB_H, 0.8, P, 3), { tone: "mid", crease: "none" }));
-    o.push(k.faceTextSvg(k.topMatrix([CAB.x + 17, CAB.y + 34], CAB_H + 0.8, P, "y"), "", { size: 4.4, tone: "hi" }).replace("<text ", '<text data-text="net" '));
-    o.push(k.faceTextSvg(k.topMatrix([CAB.x + 26, CAB.y + 34], CAB_H + 0.8, P, "y"), "3~ 50 Hz", { size: 3.2, tone: "lo" }));
+    o.push(k.faceTextSvg(k.topMatrix([CAB.x + 15, CAB.y + 22], CAB_H + 0.8, P, "y"), T.netTitle, { size: 2.8, tone: "mid", anchor: "middle" }));
+    o.push(k.faceTextSvg(k.topMatrix([CAB.x + 26, CAB.y + 22], CAB_H + 0.8, P, "y"), "", { size: 4.8, tone: "hi", anchor: "middle" }).replace("<text ", '<text data-text="net" '));
     // voltmètre (cadran dans le plan de la face avant)
     const ring = (r) => k.sideRing([CFX, DIAL.y, DIAL.z], r, "x", P, 48);
     o.push(`<path class="cp-dial" d="${ring(DIAL.r)}"/>`);
@@ -190,6 +195,13 @@ function buildFigure(lang) {
       ticks.push(k.pathOf([onCab(DIAL.y - Math.cos(a) * r0, DIAL.z + Math.sin(a) * r0), onCab(DIAL.y - Math.cos(a) * DIAL.r, DIAL.z + Math.sin(a) * DIAL.r)]));
     }
     o.push(L(ticks.join(""), { tone: "lo" }));
+    for (const [v, i] of [[0, 0], [400, 8], [800, 16]]) {
+      const a = Math.PI * (1.25 - (1.5 * i) / 16);
+      const r = DIAL.r - 5.6;
+      o.push(k.faceTextSvg(k.sideMatrix([CFX + 0.1, DIAL.y - Math.cos(a) * r], DIAL.z + Math.sin(a) * r - 0.9, P, "right"), String(v), { size: 2.2, tone: "lo", anchor: "middle" }));
+    }
+    o.push(k.faceTextSvg(k.sideMatrix([CFX + 0.1, DIAL.y], DIAL.z - 5, P, "right"), "V", { size: 2.4, tone: "mid", anchor: "middle" }));
+    o.push(k.faceTextSvg(k.sideMatrix([CFX + 0.1, DIAL.y], DIAL.z - DIAL.r - 6, P, "right"), "", { size: 3.6, tone: "hi", anchor: "middle" }).replace("<text ", '<text data-text="meter" '));
     o.push(`<path class="iso-line cp-needle" data-tone="lit" data-free="both" d=""/>`);
     o.push(D([onCab(DIAL.y, DIAL.z)], { size: 0.9, tone: "hi" }));
     // relais thermique : boîtier, voyant de déclenchement (drapeau) et bouton de réarmement
@@ -202,10 +214,16 @@ function buildFigure(lang) {
     const lc = at([CFX + 2.4, LAMP.y, LAMP.z]);
     o.push(`<circle class="cp-run-glow" cx="${lc[0].toFixed(1)}" cy="${lc[1].toFixed(1)}" r="${(P.scale * 14).toFixed(1)}" fill="url(#cp-run)"/>`);
     o.push(`<g class="cp-run">${S(G.disc(2.4, 3.4, 2.2, G.frameOf([CFX, LAMP.y, LAMP.z], [1, 0, 0], [0, 1, 0], [0, 0, 1]), P, { steps: 20 }), { tone: "hi" })}</g>`);
-    // interrupteur rotatif
-    const KF = G.frameOf([CFX, -144, 20], [1, 0, 0], [0, 1, 0], [0, 0, 1]);
-    o.push(S(G.disc(0, 2, 7, KF, P, { steps: 36 }), { tone: "lo" }) + S(G.disc(2, 6, 4.2, KF, P, { steps: 28 }), { tone: "mid" }));
-    o.push(S(k.slabOf({ x: CFX + 6, y: -153, w: 3, d: 18, r: 1.2 }, 18.4, 3.2, P, 3), { tone: "hi" }));
+    // commutateur du voltmètre (L1-L2, L2-L3, L3-L1, L1-N, L2-N, L3-N) : son index tourne avec la mesure choisie
+    const KF = G.frameOf([CFX, KNOB.y, KNOB.z], [1, 0, 0], [0, 1, 0], [0, 0, 1]);
+    o.push(S(G.disc(0, 1.6, 8.4, KF, P, { steps: 40 }), { tone: "lo" }) + S(G.disc(1.6, 5, 4.6, KF, P, { steps: 28, bevel: 0.3 }), { tone: "mid" }));
+    const marks = [];
+    for (let i = 0; i < 6; i++) {
+      const a = KNOB.a0 + i * KNOB.step;
+      marks.push(k.pathOf([at([CFX + 1.7, KNOB.y - Math.cos(a) * 5.6, KNOB.z + Math.sin(a) * 5.6]), at([CFX + 1.7, KNOB.y - Math.cos(a) * 8.4, KNOB.z + Math.sin(a) * 8.4])]));
+    }
+    o.push(L(marks.join(""), { tone: "mid" }));
+    o.push(`<path class="iso-line cp-knob" data-tone="hi" data-free="both" d=""/>`);
     return o.join("");
   }
 
@@ -246,8 +264,8 @@ function buildFigure(lang) {
     const fx = BOX.x + BOX.w + 0.2;
     o.push(`<path class="cp-plate" d="${k.pathOf([[fx, pl.y0, pl.z0], [fx, pl.y1, pl.z0], [fx, pl.y1, pl.z1], [fx, pl.y0, pl.z1]].map(at), true)}"/>`);
     o.push(L(k.pathOf([[fx, pl.y0, pl.z0], [fx, pl.y1, pl.z0], [fx, pl.y1, pl.z1], [fx, pl.y0, pl.z1]].map(at), true), { tone: "mid" }));
-    o.push(sideText(fx, pl.y1 - 1.6, pl.z1 - 2.8, "", 3.4, "hi", "plate"));
-    o.push(sideText(fx, pl.y1 - 1.6, pl.z0 + 2.4, "", 2.2, "mid", "plate2"));
+    o.push(sideText(fx, pl.y1 - 2.8, pl.z1 - 2.8, "", 3.4, "hi", "plate"));
+    o.push(sideText(fx, pl.y1 - 2.8, pl.z0 + 2.4, "", 2.2, "mid", "plate2"));
     o.push(D([at([fx, pl.y1 - 0.8, (pl.z0 + pl.z1) / 2]), at([fx, pl.y0 + 0.8, (pl.z0 + pl.z1) / 2])], { size: 0.4 }));
     // plaque à bornes
     o.push(S(k.slabOf(BOARD, BOARD_Z, BOARD_T, P, 2, 0.4), { tone: "lo" }));
@@ -330,6 +348,8 @@ function buildFigure(lang) {
     F,
     markS: Y0 + LEN + 30,
     dial: { x: CFX, ...DIAL, max: 800 },
+    knob: { x: CFX + 5, ...KNOB },
+    meters: ["L1-L2", "L2-L3", "L3-L1", "L1-N", "L2-N", "L3-N"],
     flagMove: 3,
     trayOffset,
     lift: 40,
@@ -365,7 +385,7 @@ const CSS = `
 .cp-feedback{margin:12px 0 0;min-height:3em;color:var(--anatomy-text);font-size:13px;line-height:1.55}
 .cp-score{color:var(--anatomy-muted);font:11px/1 var(--anatomy-mono);margin-top:6px}
 @media (prefers-reduced-motion:reduce){.rl-wire[data-live] .iso-line,[data-smoke] .cp-wisp{animation:none}[data-smoke] .cp-wisp{opacity:.5}}
-@media (max-width:560px){.iso-plate-corner[data-corner="readout"]{white-space:normal;left:0;text-align:right;line-height:1.4}.iso-plate-corner[data-corner="hint"]{bottom:auto;top:16px}.iso-plate{padding:56px 12px 64px}.cp-controls button{flex:1 1 40%}}
+@media (max-width:560px){.iso-plate-corner[data-corner="readout"]{white-space:normal;left:0;text-align:right;line-height:1.4}.iso-plate-corner[data-corner="hint"]{bottom:auto;top:16px;right:0;white-space:normal;line-height:1.35}.iso-plate{padding:76px 12px 64px}.cp-controls button{flex:1 1 40%}}
 `;
 
 const LIVE = `
@@ -383,6 +403,7 @@ const buttons = Object.fromEntries([...scope.querySelectorAll(".cp-controls butt
 const sets = Object.fromEntries([...svg.querySelectorAll(".cp-bars")].map((g) => [g.dataset.set, g]));
 const needle = svg.querySelector(".cp-needle");
 const mark = svg.querySelector(".cp-mark");
+const knob = svg.querySelector(".cp-knob");
 const flag = svg.querySelector(".cp-flag");
 const runGlow = svg.querySelector(".cp-run-glow");
 const runLamp = svg.querySelector(".cp-run");
@@ -392,6 +413,8 @@ const winding = (u, c) => (c === "Y" ? u / Math.sqrt(3) : u);
 const expected = (m, n) => { for (const c of ["Y", "D"]) if (Math.abs(winding(n.u, c) - m.lo) / m.lo < 0.05) return c; return "none"; };
 let sc = 0, choice = null, phase = "idle", verdict = null, good = 0, total = 0, answered = false;
 const place = { Y: 0, D: 0 }; // 1 = sur les bornes, 0 = dans le bac
+let meter = 0;
+const meterValue = () => (C.meters[meter].endsWith("N") ? net().v : net().u);
 let angle = 0, speed = 0, targetSpeed = 0, volts = 0, flagAt = 0, runAt = 0, runTimer = 0, frame = 0, last = 0, visible = false;
 const scen = () => C.scenarios[sc];
 const motor = () => C.motors.find((m) => m.id === scen().m);
@@ -401,7 +424,8 @@ function setScenario(i) {
   txt("plate").textContent = T.plate(motor());
   txt("plate2").textContent = T.plate2(motor());
   txt("net").textContent = T.net(net());
-  feedback.textContent = T.start;
+  meter = 0;
+  feedback.textContent = T.start(net());
   svg.removeAttribute("data-heat"); svg.removeAttribute("data-smoke");
   sync(); run();
 }
@@ -410,7 +434,9 @@ function sync() {
   for (const k of ["Y", "D", "none"]) buttons[k].disabled = phase === "running";
   buttons.test.disabled = phase === "running";
   scoreEl.textContent = T.score(good, total);
-  readout.textContent = phase === "idle" ? T.readIdle(motor(), net(), choice) : readout.textContent;
+  txt("meter").textContent = C.meters[meter];
+  buttons.meter.textContent = T.meterBtn(C.meters[meter]);
+  readout.textContent = phase === "idle" ? T.readIdle(motor(), net(), choice, C.meters[meter], meterValue()) : readout.textContent;
 }
 function choose(c) {
   if (phase === "running") return;
@@ -470,6 +496,9 @@ function draw() {
   const a = Math.PI * (1.25 - 1.5 * Math.min(volts, C.dial.max) / C.dial.max);
   const dp = (r) => iso([C.dial.x + 0.2, C.dial.y - Math.cos(a) * r, C.dial.z + Math.sin(a) * r], P);
   needle.setAttribute("d", pathOf([dp(-2), dp(C.dial.r - 2)]));
+  const ka = C.knob.a0 + meter * C.knob.step;
+  const kp = (r) => iso([C.knob.x, C.knob.y - Math.cos(ka) * r, C.knob.z + Math.sin(ka) * r], P);
+  knob.setAttribute("d", pathOf([kp(0.6), kp(4)]));
   flag.setAttribute("transform", translateAlong(P, [C.flagMove * flagAt, 0, 0]));
   runGlow.style.opacity = runAt.toFixed(3);
   if (runAt > 0.5) runLamp.setAttribute("data-lit", ""); else runLamp.removeAttribute("data-lit");
@@ -485,12 +514,12 @@ function tick(now) {
   const powered = phase === "running" || phase === "idle-ok";
   speed = ease(speed, powered ? targetSpeed : 0, powered ? 0.5 : 0.9);
   angle += speed * dt * 2 * Math.PI * 0.8; // 1440 tr/min montrés très ralentis
-  volts = ease(volts, net().u, 0.4);
+  volts = ease(volts, meterValue(), 0.4);
   flagAt = ease(flagAt, phase === "tripped" ? 1 : 0, 0.08);
   runAt = ease(runAt, powered ? 1 : 0, 0.1);
   if (phase === "tripped") { svg.removeAttribute("data-smoke"); readout.textContent = T.readRun(winding(net().u, choice), motor(), T.verdict[verdict]); }
   draw();
-  const settled = !powered && speed < 1e-3 && ["Y", "D"].every((k) => Math.abs(place[k] - (choice === k ? 1 : 0)) < 1e-3) && Math.abs(volts - net().u) < 0.5 && Math.abs(flagAt - (phase === "tripped" ? 1 : 0)) < 1e-3 && runAt < 1e-3;
+  const settled = !powered && speed < 1e-3 && ["Y", "D"].every((k) => Math.abs(place[k] - (choice === k ? 1 : 0)) < 1e-3) && Math.abs(volts - meterValue()) < 0.5 && Math.abs(flagAt - (phase === "tripped" ? 1 : 0)) < 1e-3 && runAt < 1e-3;
   frame = visible && !settled ? requestAnimationFrame(tick) : 0;
 }
 function run() { if (!frame && visible) { last = 0; frame = requestAnimationFrame(tick); } }
@@ -500,6 +529,7 @@ buttons.D.addEventListener("click", () => choose("D"));
 buttons.none.addEventListener("click", () => choose("none"));
 buttons.test.addEventListener("click", test);
 buttons.next.addEventListener("click", nextScenario);
+buttons.meter.addEventListener("click", () => { meter = (meter + 1) % C.meters.length; sync(); run(); });
 window.__cp = { choose, test, setScenario, state: () => ({ sc, choice, phase, verdict, good, total }) };
 setScenario(Math.floor(Math.random() * C.scenarios.length));
 draw();
@@ -511,10 +541,10 @@ for (const lang of ["fr", "en"]) {
   const T = TEXT[lang];
   const { svg, config } = buildFigure(lang);
   const B = T.buttons;
-  const controls = `<div class="cp-controls" role="group" aria-label="${lang === "fr" ? "Votre réponse" : "Your answer"}"><button type="button" data-act="Y" aria-pressed="false">${B.Y}</button><button type="button" data-act="D" aria-pressed="false">${B.D}</button><button type="button" data-act="none" aria-pressed="false">${B.none}</button><button type="button" class="cp-go" data-act="test">${B.test}</button><button type="button" data-act="next">${B.next}</button></div><p class="cp-feedback" aria-live="polite"></p><p class="cp-score" aria-live="polite"></p>`;
+  const controls = `<div class="cp-controls" role="group" aria-label="${lang === "fr" ? "Votre réponse" : "Your answer"}"><button type="button" class="cp-meter" data-act="meter">${T.meterBtn("L1-L2")}</button><button type="button" data-act="Y" aria-pressed="false">${B.Y}</button><button type="button" data-act="D" aria-pressed="false">${B.D}</button><button type="button" data-act="none" aria-pressed="false">${B.none}</button><button type="button" class="cp-go" data-act="test">${B.test}</button><button type="button" data-act="next">${B.next}</button></div><p class="cp-feedback" aria-live="polite"></p><p class="cp-score" aria-live="polite"></p>`;
   const plate = k.plateHtml({ fig: "Fig 6", title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body: `<div class="iso-stage" role="img" aria-label="${T.stageLabel}">${svg}</div>${controls}` });
   // fonctions de texte sérialisées pour le navigateur
-  const TX = `{plate:${T.plate},plate2:${T.plate2},net:${T.net},readIdle:${T.readIdle},readRun:${T.readRun},verdict:${JSON.stringify(T.verdict)},feedback:{ok:${T.feedback.ok},over:${T.feedback.over},under:${T.feedback.under},noneOk:${T.feedback.noneOk},noneBad:${T.feedback.noneBad},noCoupling:${JSON.stringify(T.feedback.noCoupling)}},score:${T.score},start:${JSON.stringify(T.start)}}`;
+  const TX = `{plate:${T.plate},plate2:${T.plate2},net:${T.net},meterBtn:${T.meterBtn},readIdle:${T.readIdle},readRun:${T.readRun},verdict:${JSON.stringify(T.verdict)},feedback:{ok:${T.feedback.ok},over:${T.feedback.over},under:${T.feedback.under},noneOk:${T.feedback.noneOk},noneBad:${T.feedback.noneBad},noCoupling:${JSON.stringify(T.feedback.noCoupling)}},score:${T.score},start:${T.start}}`;
   const pageScript = `const FIG = ${JSON.stringify(config)};\nconst winding0 = (u, c) => (c === "Y" ? u / Math.sqrt(3) : u);\nfunction expected(m, n) { for (const c of ["Y", "D"]) if (Math.abs(winding0(n.u, c) - m.lo) / m.lo < 0.05) return c; return "none"; }\nconst TX = ${TX};\n` + LIVE.replace("const expected = (m, n) => { for (const c of [\"Y\", \"D\"]) if (Math.abs(winding(n.u, c) - m.lo) / m.lo < 0.05) return c; return \"none\"; };\n", "");
   site.fragments[lang] = plate;
   site.scripts[lang] = pageScript;

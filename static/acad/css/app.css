@@ -368,5 +368,6 @@ dl.table-legend dd { margin: 0; }
 .prose .live-figure-status { margin: .5rem 0 0; color: var(--muted); font-size: .9rem; }
 .prose .live-figure-body { margin-top: .5rem; overflow-x: auto; }
 .prose .live-figure .iso-plate { padding: 44px 8px 56px; }
+@media (max-width: 560px) { .prose .live-figure .iso-plate { padding-top: 76px; } }
 .prose .live-figure .iso-figure + .iso-figure { margin-top: 1.5rem; }
 @media (max-width: 479px) { .prose .live-figure { padding: .75rem; } .prose .live-figure-load { width: 100%; } }
