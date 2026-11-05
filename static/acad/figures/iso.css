@@ -109,3 +109,5 @@
 .live-figure .iso{color:var(--anatomy-text);font:14px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
 .live-figure .iso-figure{margin:0}
 .live-figure .iso-legend{margin-bottom:0}
+.live-figure .iso-plate-corner[data-corner="hint"]{top:20px;bottom:auto;left:0;right:0;white-space:normal;line-height:1.35}
+.live-figure .iso-plate-corner[data-corner="readout"]{left:0;right:0;white-space:normal;text-align:right;line-height:1.4}

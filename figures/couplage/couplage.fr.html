@@ -127,6 +127,10 @@ body{margin:0;background:var(--anatomy-page);color:var(--anatomy-text);font:14px
 .rl-wire[data-live] .iso-line{stroke:var(--anatomy-lit);stroke-dasharray:2 4;animation:iso-flow 1600ms linear infinite}
 .cp-cable .iso-line{stroke-width:2.4}
 .iso-stage{touch-action:manipulation}
+/* consigne longue et lecture longue : la consigne passe sous « Fig 6 », la lecture prend toute la largeur en bas */
+.iso-plate-corner[data-corner="hint"]{top:20px;bottom:auto;right:0;white-space:normal;line-height:1.35}
+.iso-plate-corner[data-corner="readout"]{left:0;white-space:normal;text-align:right;line-height:1.4}
+.iso-plate{padding-top:80px}
 .cp-controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .cp-controls button{font:12px/1 var(--anatomy-mono);letter-spacing:.04em;color:var(--anatomy-strong);background:var(--anatomy-card);border:1px solid var(--anatomy-mid);border-radius:999px;padding:10px 14px;min-height:44px;cursor:pointer}
 .cp-controls button[aria-pressed="true"]{border-color:var(--anatomy-lit);box-shadow:inset 0 0 0 1px var(--anatomy-lit)}
