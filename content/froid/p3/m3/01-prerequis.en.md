@@ -42,3 +42,5 @@ There are two ways of connecting three-phase induction motors, chosen according 
 - **Star Y connection**: when the line voltage of the supply equals the higher operating voltage. Example: 230/400 V motor on a 230/400 V supply. Each winding receives 400 / √3 = 230 V.
 
 ![On the left, windings connected in star Y between L1, L2 and L3, ends U2, V2, W2 joined at the centre; on the right, windings connected in delta Δ, each between two phases at 400 V](img/couplages.svg)
+
+[[figure:couplage]]
