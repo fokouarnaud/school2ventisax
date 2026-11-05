@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% load i18n acad_i18n %}
+{% extends "base.html" %}{% load i18n acad_i18n static %}
 {% block title %}{{ section.title }}{% endblock %}
 {% block content %}
 <div class="reader">
@@ -33,3 +33,4 @@
   </article>
 </div>
 {% endblock %}
+{% block scripts %}{% if has_figures %}<script src="{% static 'acad/js/figures.js' %}" defer></script>{% endif %}{% endblock %}

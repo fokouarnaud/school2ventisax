@@ -34,9 +34,13 @@ Le relais à bobine et contacts est un relais **électromécanique** : c'est un 
 | DPST | Double Pole Single Throw | 2 contacts simples commandés ensemble |
 | DPDT | Double Pole Double Throw | 2 contacts inverseurs commandés ensemble |
 
+[[figure:relais]]
+
 ## Les relais statiques
 
 Ce sont des composants qui ont la même fonction qu'un relais à bobine et contacts, mais sans élément mécanique. Le contact est assuré par la conduction d'un **triac** piloté par un **optocoupleur**, qui garantit l'isolement électrique entre la commande et la puissance.
+
+[[figure:relais-statique]]
 
 ### Applications des relais électroniques ou micro-relais
 

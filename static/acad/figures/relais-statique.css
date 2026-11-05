@@ -1,0 +1,21 @@
+
+.rl-glass{fill:var(--anatomy-paper);fill-opacity:.6;stroke:var(--anatomy-hi);stroke-width:var(--anatomy-weight);vector-effect:non-scaling-stroke}
+.rl-glow,.sr-ir-glow,.sr-ind-glow{opacity:0;pointer-events:none;mix-blend-mode:var(--rl-blend,screen)}
+.rl-stop-0{stop-color:var(--rl-glow-0)}.rl-stop-1{stop-color:var(--rl-glow-1)}.rl-stop-2{stop-color:var(--rl-glow-2)}
+.sr-ir-0{stop-color:var(--sr-ir-0)}.sr-ir-1{stop-color:var(--sr-ir-1)}.sr-ir-2{stop-color:var(--sr-ir-2)}
+.sr-ind-0{stop-color:var(--sr-ind-0)}.sr-ind-1{stop-color:var(--sr-ind-1)}.sr-ind-2{stop-color:var(--sr-ind-2)}
+.iso{--rl-glow-0:#ffd98a;--rl-glow-1:#ffb84a55;--rl-glow-2:#ff9d2a00;--rl-hot:#ffd98a;--sr-ir-0:#ff6a5a;--sr-ir-1:#d0303055;--sr-ir-2:#a0101000;--sr-ind-0:#9dffb0;--sr-ind-1:#40d06a55;--sr-ind-2:#20a04000;--sr-screen:#0a120d;--sr-beam:#ff5a4a}
+.iso[data-theme="light"]{--rl-glow-0:#ffcf6a;--rl-glow-1:#ffb84a40;--rl-glow-2:#ff9d2a00;--rl-hot:#c77a0a;--rl-blend:multiply;--sr-ir-0:#ff7a6a;--sr-ir-1:#e0404040;--sr-ir-2:#c0202000;--sr-ind-0:#7ee69a;--sr-ind-1:#30b05a40;--sr-ind-2:#20904000;--sr-screen:#eef3ef;--sr-beam:#e0483a}
+.rl-lens[data-on] .rl-glass{fill:var(--rl-glow-0);fill-opacity:.55;stroke:var(--rl-hot)}
+.rl-wire[data-live] .iso-line{stroke:var(--anatomy-lit);stroke-dasharray:2 4;animation:iso-flow 1600ms linear infinite}
+.rl-wire[data-live] .iso-wire-end{stroke:var(--anatomy-lit)}
+.sr-screen{fill:var(--sr-screen);stroke:none}
+.sr-window{fill:var(--anatomy-paper);stroke:none}
+.sr-beam{fill:var(--sr-beam);opacity:0;stroke:none;mix-blend-mode:var(--rl-blend,screen)}
+.sr-trace{stroke-width:1.1}
+[data-on] .sr-led .iso-edge,[data-on] .sr-photo .iso-edge,.sr-triac[data-on] .iso-edge,[data-on] .sr-ind .iso-edge{stroke:var(--anatomy-lit)}
+.sr-triac[data-on] .iso-top{fill:var(--anatomy-lit-top)}
+.iso-stage{cursor:pointer;touch-action:manipulation;outline-offset:6px;-webkit-user-select:none;user-select:none}
+.iso-stage:focus-visible{outline:2px solid var(--anatomy-hi)}
+@media (prefers-reduced-motion:reduce){.rl-wire[data-live] .iso-line{animation:none}}
+@media (max-width:560px){.iso-plate-corner[data-corner="readout"]{white-space:normal;left:0;text-align:right;line-height:1.4}.iso-plate-corner[data-corner="hint"]{bottom:auto;top:16px}.iso-plate{padding:56px 12px 64px}}

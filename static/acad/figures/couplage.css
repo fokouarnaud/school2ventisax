@@ -1,0 +1,26 @@
+
+.cp-dial{fill:var(--anatomy-top)}
+.cp-plate{fill:var(--anatomy-top)}
+.cp-needle{stroke-width:1}
+.cp-run-glow{opacity:0;pointer-events:none;mix-blend-mode:var(--cp-blend,screen)}
+.cp-run-0{stop-color:var(--cp-run-0)}.cp-run-1{stop-color:var(--cp-run-1)}.cp-run-2{stop-color:var(--cp-run-2)}
+.iso{--cp-run-0:#9dffb0;--cp-run-1:#40d06a55;--cp-run-2:#20a04000;--cp-hot:#ff6a3a}
+.iso[data-theme="light"]{--cp-run-0:#7ee69a;--cp-run-1:#30b05a40;--cp-run-2:#20904000;--cp-blend:multiply;--cp-hot:#d9481a}
+.cp-hot .iso-line{transition:stroke .6s}
+[data-heat="1"] .cp-hot .iso-line{stroke:var(--cp-hot)}
+.cp-wisp{fill:none;stroke:var(--anatomy-mid);stroke-width:1.4;stroke-linecap:round;opacity:0}
+[data-smoke] .cp-wisp{animation:cp-wisp 1.8s ease-out infinite;animation-delay:calc(var(--i) * .6s)}
+@keyframes cp-wisp{0%{opacity:0;transform:translateY(4px)}30%{opacity:.7}100%{opacity:0;transform:translateY(-14px)}}
+.rl-wire[data-live] .iso-line{stroke:var(--anatomy-lit);stroke-dasharray:2 4;animation:iso-flow 1600ms linear infinite}
+.cp-cable .iso-line{stroke-width:2.4}
+.iso-stage{touch-action:manipulation}
+.cp-controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.cp-controls button{font:12px/1 var(--anatomy-mono);letter-spacing:.04em;color:var(--anatomy-strong);background:var(--anatomy-card);border:1px solid var(--anatomy-mid);border-radius:999px;padding:10px 14px;min-height:44px;cursor:pointer}
+.cp-controls button[aria-pressed="true"]{border-color:var(--anatomy-lit);box-shadow:inset 0 0 0 1px var(--anatomy-lit)}
+.cp-controls button:focus-visible{outline:2px solid var(--anatomy-hi);outline-offset:2px}
+.cp-controls button:disabled{opacity:.45;cursor:default}
+.cp-controls .cp-go{background:var(--anatomy-strong);color:var(--anatomy-card);border-color:var(--anatomy-strong)}
+.cp-feedback{margin:12px 0 0;min-height:3em;color:var(--anatomy-text);font-size:13px;line-height:1.55}
+.cp-score{color:var(--anatomy-muted);font:11px/1 var(--anatomy-mono);margin-top:6px}
+@media (prefers-reduced-motion:reduce){.rl-wire[data-live] .iso-line,[data-smoke] .cp-wisp{animation:none}[data-smoke] .cp-wisp{opacity:.5}}
+@media (max-width:560px){.iso-plate-corner[data-corner="readout"]{white-space:normal;left:0;text-align:right;line-height:1.4}.iso-plate-corner[data-corner="hint"]{bottom:auto;top:16px}.iso-plate{padding:56px 12px 64px}.cp-controls button{flex:1 1 40%}}

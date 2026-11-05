@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Acad Ventisax\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-21 04:28+0100\n"
+"POT-Creation-Date: 2026-11-05 02:09+0100\n"
 "PO-Revision-Date: 2026-10-17 12:00+0100\n"
 "Last-Translator: Acad Ventisax\n"
 "Language-Team: English\n"
@@ -213,6 +213,36 @@ msgstr "English"
 msgid "Ce SVG contient du script ou un lien actif : il est refusé."
 msgstr "This SVG contains a script or an active link: it is rejected."
 
+#: .\courses\figures.py:22
+msgid "Relais à bobine et contacts : SPST, SPDT, DPST, DPDT"
+msgstr "Coil-and-contact relays: SPST, SPDT, DPST, DPDT"
+
+#: .\courses\figures.py:23
+msgid "Relais statique : optocoupleur et triac"
+msgstr "Solid-state relay: optocoupler and triac"
+
+#: .\courses\figures.py:24
+msgid "Exercice : choisir le couplage étoile ou triangle"
+msgstr "Exercise: choosing the star or delta connection"
+
+#: .\courses\figures.py:65
+msgid "Chargement de la figure…"
+msgstr "Loading the figure…"
+
+#: .\courses\figures.py:66
+msgid ""
+"La figure n'a pas pu être chargée. Vérifiez la connexion, puis réessayez."
+msgstr "The figure could not be loaded. Check your connection, then try again."
+
+#: .\courses\figures.py:69
+#, python-format
+msgid "%(size)s Ko à télécharger"
+msgstr "%(size)s KB to download"
+
+#: .\courses\figures.py:73
+msgid "Afficher la figure interactive"
+msgstr "Show the interactive figure"
+
 #: .\courses\models.py:11 .\courses\models.py:26 .\courses\models.py:41
 #: .\courses\models.py:69 .\courses\models.py:86
 msgid "titre"
@@ -360,7 +390,7 @@ msgstr[0] "%(n)s module"
 msgstr[1] "%(n)s modules"
 
 #: .\templates\accounts\dashboard.html:12
-#: .\templates\accounts\dashboard.html:23
+#: .\templates\accounts\dashboard.html:30
 #, python-format
 msgid "%(h)s h"
 msgstr "%(h)s h"
@@ -369,47 +399,47 @@ msgstr "%(h)s h"
 msgid "Progression"
 msgstr "Progress"
 
-#: .\templates\accounts\dashboard.html:21
-#: .\templates\accounts\dashboard.html:23
-msgid "Terminé"
-msgstr "Completed"
-
-#: .\templates\accounts\dashboard.html:29
+#: .\templates\accounts\dashboard.html:19
 msgid "Continuer"
 msgstr "Continue"
 
-#: .\templates\accounts\dashboard.html:32
-#: .\templates\accounts\dashboard.html:40
+#: .\templates\accounts\dashboard.html:22
+#: .\templates\accounts\dashboard.html:41
 #: .\templates\progress\_following_link.html:2
 msgid "Voir l'examen"
 msgstr "View the exam"
 
-#: .\templates\accounts\dashboard.html:37
+#: .\templates\accounts\dashboard.html:28
+#: .\templates\accounts\dashboard.html:30
+msgid "Terminé"
+msgstr "Completed"
+
+#: .\templates\accounts\dashboard.html:38
 #: .\templates\assessments\attempt.html:11 .\templates\assessments\exam.html:7
 #, python-format
 msgid "Examen : %(p)s"
 msgstr "Exam: %(p)s"
 
-#: .\templates\accounts\dashboard.html:39
+#: .\templates\accounts\dashboard.html:40
 msgid "Tous les modules sont terminés. L'examen est ouvert."
 msgstr "All modules are completed. The exam is open."
 
-#: .\templates\accounts\dashboard.html:42
+#: .\templates\accounts\dashboard.html:43
 msgid ""
 "Il s'ouvre quand tous les modules sont terminés : sections lues et quiz "
 "envoyé."
 msgstr ""
 "It opens once every module is completed: sections read and quiz submitted."
 
-#: .\templates\accounts\dashboard.html:43
+#: .\templates\accounts\dashboard.html:44
 msgid "Ce qu'il reste à faire"
 msgstr "What is left to do"
 
-#: .\templates\accounts\dashboard.html:49
+#: .\templates\accounts\dashboard.html:50
 msgid "Aucune formation pour le moment"
 msgstr "No course yet"
 
-#: .\templates\accounts\dashboard.html:50
+#: .\templates\accounts\dashboard.html:51
 msgid ""
 "Votre compte n'est rattaché à aucune promotion. Le centre vous inscrira "
 "avant le début des cours."

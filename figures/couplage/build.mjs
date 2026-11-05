@@ -6,6 +6,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as k from "../_kit/iso-kit.mjs";
 import * as G from "../_kit/lathe.mjs";
+import { publish } from "../_kit/publish.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const KIT_SOURCE = readFileSync(join(HERE, "..", "_kit", "iso-kit.mjs"), "utf8").replace(/^export /gm, "");
@@ -370,13 +371,15 @@ const CSS = `
 const LIVE = `
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 const C = FIG, T = TX, P = C.P;
-const root = document.querySelector(".iso-plate");
+// dans le site, la figure vit dans son emplacement ; seule dans une page, dans le document
+const scope = document.querySelector('.live-figure[data-figure="couplage"]') || document;
+const root = scope.querySelector(".iso-plate");
 const stage = root.querySelector(".iso-stage");
 const svg = stage.querySelector("svg");
 const readout = root.querySelector("[data-readout]");
-const feedback = document.querySelector(".cp-feedback");
-const scoreEl = document.querySelector(".cp-score");
-const buttons = Object.fromEntries([...document.querySelectorAll(".cp-controls button")].map((b) => [b.dataset.act, b]));
+const feedback = scope.querySelector(".cp-feedback");
+const scoreEl = scope.querySelector(".cp-score");
+const buttons = Object.fromEntries([...scope.querySelectorAll(".cp-controls button")].map((b) => [b.dataset.act, b]));
 const sets = Object.fromEntries([...svg.querySelectorAll(".cp-bars")].map((g) => [g.dataset.set, g]));
 const needle = svg.querySelector(".cp-needle");
 const mark = svg.querySelector(".cp-mark");
@@ -503,6 +506,7 @@ draw();
 `;
 
 const written = [];
+const site = { fragments: {}, scripts: {} };
 for (const lang of ["fr", "en"]) {
   const T = TEXT[lang];
   const { svg, config } = buildFigure(lang);
@@ -511,11 +515,15 @@ for (const lang of ["fr", "en"]) {
   const plate = k.plateHtml({ fig: "Fig 6", title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body: `<div class="iso-stage" role="img" aria-label="${T.stageLabel}">${svg}</div>${controls}` });
   // fonctions de texte sérialisées pour le navigateur
   const TX = `{plate:${T.plate},plate2:${T.plate2},net:${T.net},readIdle:${T.readIdle},readRun:${T.readRun},verdict:${JSON.stringify(T.verdict)},feedback:{ok:${T.feedback.ok},over:${T.feedback.over},under:${T.feedback.under},noneOk:${T.feedback.noneOk},noneBad:${T.feedback.noneBad},noCoupling:${JSON.stringify(T.feedback.noCoupling)}},score:${T.score},start:${JSON.stringify(T.start)}}`;
+  const pageScript = `const FIG = ${JSON.stringify(config)};\nconst winding0 = (u, c) => (c === "Y" ? u / Math.sqrt(3) : u);\nfunction expected(m, n) { for (const c of ["Y", "D"]) if (Math.abs(winding0(n.u, c) - m.lo) / m.lo < 0.05) return c; return "none"; }\nconst TX = ${TX};\n` + LIVE.replace("const expected = (m, n) => { for (const c of [\"Y\", \"D\"]) if (Math.abs(winding(n.u, c) - m.lo) / m.lo < 0.05) return c; return \"none\"; };\n", "");
+  site.fragments[lang] = plate;
+  site.scripts[lang] = pageScript;
   for (const theme of ["dark", "light"]) {
     const name = `couplage.${lang}${theme === "light" ? "-light" : ""}.html`;
-    const script = KIT_SOURCE + `const FIG = ${JSON.stringify(config)};\nconst winding0 = (u, c) => (c === "Y" ? u / Math.sqrt(3) : u);\nfunction expected(m, n) { for (const c of ["Y", "D"]) if (Math.abs(winding0(n.u, c) - m.lo) / m.lo < 0.05) return c; return "none"; }\nconst TX = ${TX};\n` + LIVE.replace("const expected = (m, n) => { for (const c of [\"Y\", \"D\"]) if (Math.abs(winding(n.u, c) - m.lo) / m.lo < 0.05) return c; return \"none\"; };\n", "");
+    const script = KIT_SOURCE + pageScript;
     writeFileSync(join(HERE, name), k.pageHtml({ title: T.pageTitle, theme, body: `<style>${CSS}</style>${plate}`, script, width: 760 }).replace('<html lang="en">', `<html lang="${lang}">`));
     written.push(name);
   }
 }
+written.push(...publish("couplage", { ...site, css: CSS }));
 console.log("wrote", written.join(", "));
