@@ -42,3 +42,5 @@ Il existe deux types de couplage des moteurs asynchrones triphasés, choisis en 
 - **Couplage étoile Y** : lorsque la tension entre phases du réseau est égale à la plus haute tension de fonctionnement. Exemple : moteur 230/400 V sur un réseau 230/400 V. Chaque enroulement reçoit 400 / √3 = 230 V.
 
 ![À gauche, enroulements couplés en étoile Y entre L1, L2 et L3, extrémités U2, V2, W2 réunies au centre ; à droite, enroulements couplés en triangle Δ, chacun entre deux phases sous 400 V](img/couplages.svg)
+
+[[figure:couplage]]

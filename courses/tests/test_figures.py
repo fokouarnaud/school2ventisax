@@ -12,12 +12,13 @@ from courses.models import Section
 from courses.rendering import render_markdown
 
 CONTENT = Path(__file__).resolve().parents[2] / "content" / "froid"
-# Chaque figure est publiée dans la section qu'elle illustre.
-PUBLISHED = {
-    "relais": "p3/m2/03-commande",
-    "relais-statique": "p3/m2/03-commande",
-    "couplage": "p3/m1/03-couplage",
-}
+# Chaque figure est publiée dans la ou les sections qu'elle illustre.
+PUBLISHED = [
+    ("relais", "p3/m2/03-commande"),
+    ("relais-statique", "p3/m2/03-commande"),
+    ("couplage", "p3/m1/03-couplage"),
+    ("couplage", "p3/m3/01-prerequis"),  # « Couplage des moteurs asynchrones triphasés », prérequis du démarrage direct
+]
 
 
 def test_a_figure_marker_becomes_a_placeholder_loaded_on_demand():
@@ -80,7 +81,7 @@ def test_figure_fragments_respect_the_content_security_policy(name):
         assert f'lang="{lang}"' in html
 
 
-@pytest.mark.parametrize(("name", "section"), sorted(PUBLISHED.items()))
+@pytest.mark.parametrize(("name", "section"), PUBLISHED)
 def test_each_figure_is_published_in_its_section_in_both_languages(name, section):
     for lang in ("fr", "en"):
         text = (CONTENT / f"{section}.{lang}.md").read_text(encoding="utf-8")
