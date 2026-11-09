@@ -346,7 +346,7 @@ function buildFigure(lang) {
     lang,
     P,
     F,
-    markS: Y0 + LEN + 30,
+    markS: LEN + 30,
     dial: { x: CFX, ...DIAL, max: 800 },
     knob: { x: CFX + 5, ...KNOB },
     meters: ["L1-L2", "L2-L3", "L3-L1", "L1-N", "L2-N", "L3-N"],

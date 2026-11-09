@@ -25,3 +25,5 @@ Le but de cet artifice est de limiter l'intensité de démarrage d'un **compress
 Notons que le moteur peut être endommagé s'il fonctionne sur le seul enroulement de démarrage (1er temps) sans passer à l'alimentation de la totalité du bobinage (2e temps).
 
 Comme les deux bobinages sont indépendants, leurs câblages le sont aussi. Pour éviter tout problème, il faut veiller à les câbler de façon qu'une fois sous tension **ils tournent dans le même sens**.
+
+[[figure:fractionne]]

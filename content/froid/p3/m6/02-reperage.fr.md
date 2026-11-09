@@ -25,6 +25,8 @@ Sur le bornier numéroté de 1 à 6 :
 
 ![Plaques à bornes numérotées de 1 à 6 : E, bobinages 1/2 - 1/2 ; F, bobinages 2/3 - 1/3 ; G, trois barrettes 1-4, 2-5, 3-6 ; H, sans barrette, bornes 1, 2, 3 vers K1 et 4, 5, 6 vers K2](img/plaques-fractionne.svg)
 
+[[figure:reperage-fractionne]]
+
 ## Schéma de démarrage fractionné
 
 | Repère | Appareil |

@@ -25,3 +25,5 @@ The purpose of this arrangement is to limit the starting current of a **high-pow
 Note that the motor can be damaged if it runs on the starting winding alone (first step) without moving on to the whole winding (second step).
 
 Because the two windings are independent, so is their wiring. To avoid trouble, make sure they are wired so that, once switched on, **they turn in the same direction**.
+
+[[figure:fractionne]]

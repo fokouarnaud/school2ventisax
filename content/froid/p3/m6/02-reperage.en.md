@@ -25,6 +25,8 @@ On the terminal block numbered 1 to 6:
 
 ![Terminal boards numbered 1 to 6: E, windings 1/2 - 1/2; F, windings 2/3 - 1/3; G, three links 1-4, 2-5, 3-6; H, no links, terminals 1, 2, 3 to K1 and 4, 5, 6 to K2](img/plaques-fractionne.svg)
 
+[[figure:reperage-fractionne]]
+
 ## Part-winding starter circuit
 
 | Code | Device |
