@@ -1,0 +1,29 @@
+
+.rf-plate,.rf-lcd{fill:var(--anatomy-top)}
+.rf-sel{opacity:0;transition:opacity .2s}
+.rf-term[data-on] .rf-sel{opacity:1}
+.rf-hit{fill:transparent;stroke:none;cursor:pointer;pointer-events:all}
+.rf-term:hover .rf-sel{opacity:.5}
+.rf-lead{fill:none;stroke-width:1.5;stroke-linecap:round}
+.rf-handle{fill:none;stroke-width:4.2;stroke-linecap:round}
+.rf-lead[data-tone="lit"],.rf-handle[data-tone="lit"]{stroke:var(--anatomy-lit)}
+.rf-lead[data-tone="mid"],.rf-handle[data-tone="mid"]{stroke:var(--anatomy-mid)}
+.rf-tip{fill:none;stroke:var(--anatomy-hi);stroke-width:1;stroke-linecap:round}
+.rf-cable{transition:opacity .4s}
+.rf-cable[data-off]{opacity:0}
+.rf-cable .iso-line{stroke-width:1.2}
+.rf-cable.rf-outer .iso-line{stroke-width:2.4}
+.iso-stage{touch-action:manipulation}
+.iso-plate-corner[data-corner="hint"]{top:20px;bottom:auto;right:0;white-space:normal;line-height:1.35}
+.iso-plate-corner[data-corner="readout"]{left:0;white-space:normal;text-align:right;line-height:1.4}
+.iso-plate{padding-top:80px}
+.rf-controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;align-items:center}
+.rf-controls button{font:12px/1.2 var(--anatomy-mono);letter-spacing:.04em;color:var(--anatomy-strong);background:var(--anatomy-card);border:1px solid var(--anatomy-mid);border-radius:999px;padding:10px 14px;min-height:44px;min-width:44px;cursor:pointer}
+.rf-controls button[aria-pressed="true"]{border-color:var(--anatomy-lit);box-shadow:inset 0 0 0 1px var(--anatomy-lit)}
+.rf-controls button:focus-visible{outline:2px solid var(--anatomy-hi);outline-offset:2px}
+.rf-controls button:disabled{opacity:.45;cursor:default}
+.rf-controls .rf-label{font:11px/1.2 var(--anatomy-mono);color:var(--anatomy-muted);width:100%}
+.rf-controls[hidden]{display:none}
+.rf-feedback{margin:12px 0 0;min-height:3em;color:var(--anatomy-text);font-size:13px;line-height:1.55}
+.rf-log,.rf-score{color:var(--anatomy-muted);font:11px/1.5 var(--anatomy-mono);margin:6px 0 0}
+@media (max-width:560px){.iso-plate{padding:76px 12px 64px}.rf-controls button{flex:1 1 40%}.rf-controls .rf-term-btn{flex:1 1 12%}}

@@ -225,6 +225,12 @@ msgstr "Solid-state relay: optocoupler and triac"
 msgid "Exercice : choisir le couplage étoile ou triangle"
 msgstr "Exercise: choosing the star or delta connection"
 
+msgid "Démarrage fractionné : 1er temps, 2e temps"
+msgstr "Part-winding starting: first step, second step"
+
+msgid "Exercice : repérer les bobinages à l'ohmmètre et choisir la plaque à bornes"
+msgstr "Exercise: identifying the windings with an ohmmeter and choosing the terminal board"
+
 #: .\courses\figures.py:65
 msgid "Chargement de la figure…"
 msgstr "Loading the figure…"
