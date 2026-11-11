@@ -1294,6 +1294,1061 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "p4",
+      "order": 4,
+      "title": {
+        "fr": "Assemblage et montage frigorifiques",
+        "en": "Refrigeration assembly and installation"
+      },
+      "exam": {
+        "questions_per_module": 3,
+        "duration_minutes": 90
+      },
+      "modules": [
+        {
+          "order": 1,
+          "dir": "p4/m1",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Outillage et appareils de mesure du monteur frigoriste",
+            "en": "Tools and measuring instruments of the refrigeration fitter"
+          },
+          "competence": {
+            "fr": "L'apprenant devra acquérir la compétence de maîtriser le mode opératoire et d'utiliser convenablement l'outillage et tous les appareils de mesure du monteur frigoriste.",
+            "en": "The learner will master the operating procedures and correctly use all the tools and measuring instruments of the refrigeration fitter."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-glossaire",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Glossaire français-anglais",
+                "en": "French-English glossary"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-manifold-vide",
+              "kind": "content",
+              "title": {
+                "fr": "Manifold, pompe à vide et vacuomètre",
+                "en": "Manifold, vacuum pump and vacuum gauge"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-poste-tube",
+              "kind": "content",
+              "title": {
+                "fr": "Poste oxyacétylénique et façonnage du tube",
+                "en": "Oxy-acetylene set and shaping tube"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-recuperation-charge",
+              "kind": "content",
+              "title": {
+                "fr": "Récupération, charge et recherche de fuite",
+                "en": "Recovery, charging and leak detection"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-appareils-electriques",
+              "kind": "content",
+              "title": {
+                "fr": "Appareils de mesure électriques",
+                "en": "Electrical measuring instruments"
+              }
+            },
+            {
+              "order": 6,
+              "file": "06-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "dir": "p4/m2",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Différents raccords utilisés en froid",
+            "en": "Fittings used in refrigeration"
+          },
+          "competence": {
+            "fr": "L'apprenant aura une maîtrise parfaite des différents raccords utilisés en froid et climatisation.",
+            "en": "The learner will fully master the fittings used in refrigeration and air conditioning."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-cuivre-laiton",
+              "kind": "content",
+              "title": {
+                "fr": "Généralités, raccords en cuivre et en laiton",
+                "en": "General points, copper and brass fittings"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-acier-pvc-mixtes",
+              "kind": "content",
+              "title": {
+                "fr": "Raccords en acier, en PVC et mixtes",
+                "en": "Steel, PVC and mixed fittings"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-sans-flamme",
+              "kind": "content",
+              "title": {
+                "fr": "Raccords sans flamme et étanchéité",
+                "en": "Flameless fittings and sealing"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "dir": "p4/m3",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Différentes tuyauteries utilisées en froid",
+            "en": "Pipework used in refrigeration"
+          },
+          "competence": {
+            "fr": "L'apprenant devra maîtriser les différentes tuyauteries utilisées en froid, leurs propriétés et les différentes dimensions.",
+            "en": "The learner will master the pipework used in refrigeration, its properties and its dimensions."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-role-cuivre",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle, fonctions et tubes en cuivre",
+                "en": "Purpose, functions and copper tube"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-acier",
+              "kind": "content",
+              "title": {
+                "fr": "Tubes en acier",
+                "en": "Steel tube"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-pvc-multicouche-alu",
+              "kind": "content",
+              "title": {
+                "fr": "PVC, multicouche et aluminium",
+                "en": "PVC, multilayer and aluminium"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "dir": "p4/m4",
+          "duration_hours": 16,
+          "title": {
+            "fr": "Travail sur les tuyauteries",
+            "en": "Working on pipework"
+          },
+          "competence": {
+            "fr": "Être capable de calculer les longueurs, de mesurer, couper, ébavurer et fixer un tube, de différencier et réaliser un biseautage et un piquage, et de fileter un tube.",
+            "en": "To be able to calculate lengths, to measure, cut, deburr and fix a tube, to tell apart and make a bevel and a branch, and to thread a tube."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-calcul",
+              "kind": "content",
+              "title": {
+                "fr": "Calcul des longueurs",
+                "en": "Calculating lengths"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-coupe",
+              "kind": "content",
+              "title": {
+                "fr": "Mesure, coupe, ébavurage, fixation, biseautage et piquage",
+                "en": "Measuring, cutting, deburring, fixing, bevelling and branching"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-evasements",
+              "kind": "content",
+              "title": {
+                "fr": "Les évasements",
+                "en": "Flaring and swaging"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-cintrage",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Le cintrage du tube",
+                "en": "Bending tube"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-acier",
+              "kind": "content",
+              "title": {
+                "fr": "Tuyauterie en acier : coupe, filetage et mise en œuvre",
+                "en": "Steel pipework: cutting, threading and installation"
+              }
+            },
+            {
+              "order": 6,
+              "file": "06-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "dir": "p4/m5",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Manodétendeur, chalumeau, réglage de la flamme",
+            "en": "Pressure regulator, torch and flame adjustment"
+          },
+          "competence": {
+            "fr": "L'apprenant devra avoir la pleine maîtrise de l'utilisation du poste de soudure oxyacétylénique.",
+            "en": "The learner will fully master the use of the oxy-acetylene welding set."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-manodetendeurs",
+              "kind": "content",
+              "title": {
+                "fr": "Les manodétendeurs",
+                "en": "Pressure regulators"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-chalumeau-flamme",
+              "kind": "content",
+              "title": {
+                "fr": "Chalumeau mélangeur et réglage de la flamme",
+                "en": "Mixing torch and flame adjustment"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-mise-en-service",
+              "kind": "content",
+              "title": {
+                "fr": "Mise en service et hors service du poste",
+                "en": "Starting up and shutting down the set"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "dir": "p4/m6",
+          "duration_hours": 16,
+          "title": {
+            "fr": "Soudo-brasage et brasage",
+            "en": "Braze welding and brazing"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer des joints de tuyauteries par soudo-brasage et brasage avec le poste de soudure oxyacétylénique.",
+            "en": "The learner will be able to make pipe joints by braze welding and brazing with the oxy-acetylene set."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-soudo-brasage",
+              "kind": "content",
+              "title": {
+                "fr": "Le soudo-brasage",
+                "en": "Braze welding"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-brasage",
+              "kind": "content",
+              "title": {
+                "fr": "Le brasage et les conditions d'une bonne soudure",
+                "en": "Brazing and the conditions for a good joint"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "dir": "p4/m7",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Brasage sous azote",
+            "en": "Brazing under nitrogen"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer le brasage sous azote des tuyauteries frigorifiques.",
+            "en": "The learner will be able to braze refrigeration pipework under nitrogen."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-rappels",
+              "kind": "content",
+              "title": {
+                "fr": "Rappel : soudage, brasage et calamine",
+                "en": "Reminder: welding, brazing and scale"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-mise-en-oeuvre",
+              "kind": "content",
+              "title": {
+                "fr": "Brasage sous azote : mise en œuvre",
+                "en": "Brazing under nitrogen: procedure"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "dir": "p4/m8",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Le circuit frigorifique de base",
+            "en": "The basic refrigeration circuit"
+          },
+          "competence": {
+            "fr": "L'apprenant doit être capable de nommer et reconnaître les différents éléments de base d'un circuit fluidique, de donner le rôle de chacun et de décrire l'état du fluide frigorigène dans le circuit, et de les schématiser.",
+            "en": "The learner must be able to name and recognise the basic components of a refrigeration circuit, give the role of each, describe the state of the refrigerant in the circuit, and draw them."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-elements",
+              "kind": "content",
+              "title": {
+                "fr": "Les éléments d'un circuit frigorifique",
+                "en": "The components of a refrigeration circuit"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-roles",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle de chaque élément",
+                "en": "The role of each component"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-etats",
+              "kind": "content",
+              "title": {
+                "fr": "État du fluide sur chaque partie du circuit",
+                "en": "State of the refrigerant around the circuit"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 9,
+          "dir": "p4/m9",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Identification des enroulements des moteurs électriques, monophasés et triphasés",
+            "en": "Identifying the windings of single-phase and three-phase electric motors"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'identifier les enroulements des moteurs électriques monophasés et triphasés, et de tester un moteur défectueux.",
+            "en": "The learner will be able to identify the windings of single-phase and three-phase electric motors, and test a faulty motor."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-monophases",
+              "kind": "content",
+              "title": {
+                "fr": "Moteurs monophasés : principe et bornier",
+                "en": "Single-phase motors: principle and terminals"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-triphases",
+              "kind": "content",
+              "title": {
+                "fr": "Moteurs triphasés",
+                "en": "Three-phase motors"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-tests",
+              "kind": "content",
+              "title": {
+                "fr": "Test d'un moteur",
+                "en": "Testing a motor"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 10,
+          "dir": "p4/m10",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Démarrage des moto-compresseurs, relevé des paramètres de fonctionnement et analyse",
+            "en": "Starting motor-compressors, recording and analysing operating parameters"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer le démarrage des moto-compresseurs et de relever les paramètres de fonctionnement.",
+            "en": "The learner will be able to start motor-compressors and record their operating parameters."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-relais",
+              "kind": "content",
+              "title": {
+                "fr": "Démarrage par relais d'intensité et de tension",
+                "en": "Starting with current and voltage relays"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-ctp-condensateurs",
+              "kind": "content",
+              "title": {
+                "fr": "Démarrage par CTP et par condensateurs",
+                "en": "Starting with a PTC and with capacitors"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-triphases",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Démarrage des moto-compresseurs triphasés",
+                "en": "Starting three-phase motor-compressors"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-parametres",
+              "kind": "content",
+              "title": {
+                "fr": "Paramètres à relever et analyse",
+                "en": "Parameters to record and analysis"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 11,
+          "dir": "p4/m11",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Les manifolds",
+            "en": "Manifold gauge sets"
+          },
+          "competence": {
+            "fr": "À la fin de ce module, l'apprenant doit être capable d'utiliser parfaitement le manifold sur tout type d'intervention.",
+            "en": "By the end of this module, the learner will be able to use the manifold gauge set for any type of job."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-description",
+              "kind": "content",
+              "title": {
+                "fr": "Description générale d'un manifold",
+                "en": "General description of a manifold"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-operations",
+              "kind": "content",
+              "title": {
+                "fr": "Les tâches effectuées avec un manifold",
+                "en": "Jobs done with a manifold"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-technologies",
+              "kind": "content",
+              "title": {
+                "fr": "Les technologies des manifolds",
+                "en": "Manifold technologies"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 12,
+          "dir": "p4/m12",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Démontage, montage d'un compresseur",
+            "en": "Removing and installing a compressor"
+          },
+          "competence": {
+            "fr": "À la fin de ce module, l'apprenant doit être capable d'effectuer le montage d'un moto-compresseur sur un circuit frigorifique.",
+            "en": "By the end of this module, the learner will be able to fit a motor-compressor to a refrigeration circuit."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-avec-vannes",
+              "kind": "content",
+              "title": {
+                "fr": "Circuit avec vannes de service",
+                "en": "Circuit with service valves"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-sans-vannes",
+              "kind": "content",
+              "title": {
+                "fr": "Installation sans vannes de service au compresseur",
+                "en": "System without compressor service valves"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-refrigerateur",
+              "kind": "content",
+              "title": {
+                "fr": "Réfrigérateur avec un compresseur défectueux",
+                "en": "Refrigerator with a faulty compressor"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 13,
+          "dir": "p4/m13",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Vidange et remplissage d'huile dans les compresseurs frigorifiques",
+            "en": "Draining and refilling oil in refrigeration compressors"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer la vidange et le remplissage de l'huile de lubrification d'un compresseur frigorifique en toute sécurité.",
+            "en": "The learner will be able to drain and refill the lubricating oil of a refrigeration compressor safely."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-qualites-choix",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle, qualités et choix de l'huile",
+                "en": "Role, qualities and choice of oil"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-vidange",
+              "kind": "content",
+              "title": {
+                "fr": "Vidange de l'huile frigorifique",
+                "en": "Draining refrigeration oil"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-remplissage",
+              "kind": "content",
+              "title": {
+                "fr": "Remplissage de l'huile",
+                "en": "Filling with oil"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 14,
+          "dir": "p4/m14",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Test d'acidité et d'humidité des installations frigorifiques",
+            "en": "Acidity and moisture testing of refrigeration systems"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de conduire les tests d'acidité et d'humidité de l'huile de lubrification d'un compresseur frigorifique.",
+            "en": "The learner will be able to carry out acidity and moisture tests on a refrigeration compressor's lubricating oil."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-rappel-huile",
+              "kind": "content",
+              "title": {
+                "fr": "Rappel : l'huile dans une installation frigorifique",
+                "en": "Reminder: oil in a refrigeration system"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-acidite",
+              "kind": "content",
+              "title": {
+                "fr": "Prélèvement et test d'acidité",
+                "en": "Sampling and acid test"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-humidite-laboratoire",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Test d'humidité et analyse en laboratoire",
+                "en": "Moisture test and laboratory analysis"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 15,
+          "dir": "p4/m15",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Mise sous vide d'une installation frigorifique",
+            "en": "Evacuating a refrigeration system"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de faire le vide de tout type d'installation frigorifique.",
+            "en": "The learner will be able to evacuate any type of refrigeration system."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (raccordements 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (connections 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-role",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle, conditions de départ et matériel",
+                "en": "Purpose, starting conditions and equipment"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-mode-operatoire",
+              "kind": "content",
+              "title": {
+                "fr": "Mode opératoire du tirage au vide",
+                "en": "Evacuation procedure"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-casse-azote",
+              "kind": "content",
+              "title": {
+                "fr": "Casser le vide à l'azote",
+                "en": "Breaking the vacuum with nitrogen"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 16,
+          "dir": "p4/m16",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Test de pression et d'étanchéité d'une installation frigorifique, détecteurs de fuite",
+            "en": "Pressure and leak testing of a refrigeration system, leak detectors"
+          },
+          "competence": {
+            "fr": "Au sortir de cette séquence, l'apprenant saura identifier les différentes méthodes de contrôle de l'étanchéité des installations frigorifiques et les mettre en pratique sur des circuits réels.",
+            "en": "By the end of this sequence the learner will be able to identify the methods for checking the tightness of refrigeration systems and apply them on real circuits."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-origines",
+              "kind": "content",
+              "title": {
+                "fr": "Enjeux et origines des fuites",
+                "en": "Why leaks matter and where they come from"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-tests-calculs",
+              "kind": "content",
+              "title": {
+                "fr": "Méthodes indirectes et calcul du taux de fuite",
+                "en": "Indirect methods and leak rate calculation"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-detection",
+              "kind": "content",
+              "title": {
+                "fr": "Méthodes de détection des fuites",
+                "en": "Leak detection methods"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-test-pression",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Le test de pression à l'azote",
+                "en": "The nitrogen pressure test"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 17,
+          "dir": "p4/m17",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Remplissage d'une installation frigorifique par la masse et par la surchauffe",
+            "en": "Charging a refrigeration system by mass and by superheat"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer la charge en fluide frigorigène d'une installation frigorifique par la mesure de la masse et par la méthode de la surchauffe.",
+            "en": "The learner will be able to charge a refrigeration system by measuring the mass and by the superheat method."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-fluides",
+              "kind": "content",
+              "title": {
+                "fr": "Classification des fluides frigorigènes",
+                "en": "Classification of refrigerants"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-masse-surchauffe",
+              "kind": "content",
+              "title": {
+                "fr": "Charge par la masse et par la surchauffe",
+                "en": "Charging by mass and by superheat"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-liquide-vapeur",
+              "kind": "content",
+              "title": {
+                "fr": "Charge en phase liquide et en phase vapeur",
+                "en": "Liquid and vapour charging"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-melanges",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Mélanges zéotropes et azéotropes",
+                "en": "Zeotropic and azeotropic blends"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 18,
+          "dir": "p4/m18",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Soudure à l'arc électrique",
+            "en": "Electric arc welding"
+          },
+          "competence": {
+            "fr": "Réaliser la soudure à l'arc dans les règles de l'art.",
+            "en": "Carry out arc welding to a professional standard."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-principe",
+              "kind": "content",
+              "title": {
+                "fr": "Principe, intensité et polarité",
+                "en": "Principle, current and polarity"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-preparation",
+              "kind": "content",
+              "title": {
+                "fr": "Préparation, pointage et position de l'électrode",
+                "en": "Preparation, tacking and electrode position"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-controle-securite",
+              "kind": "content",
+              "title": {
+                "fr": "Contrôle de la soudure, sécurité et nettoyage",
+                "en": "Inspecting the weld, safety and cleaning"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

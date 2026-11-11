@@ -24,6 +24,13 @@ FIGURES = {
     "couplage": gettext_lazy("Exercice : choisir le couplage étoile ou triangle"),
     "fractionne": gettext_lazy("Démarrage fractionné : 1er temps, 2e temps"),
     "reperage-fractionne": gettext_lazy("Exercice : repérer les bobinages à l'ohmmètre et choisir la plaque à bornes"),
+    "manifold-vide": gettext_lazy("Exercice : tirer au vide et diagnostiquer la tenue du vide"),
+    "flamme": gettext_lazy("Exercice : régler la flamme oxyacétylénique"),
+    "brasage-azote": gettext_lazy("Exercice : balayage d'azote pendant le brasage"),
+    "circuit-frigo": gettext_lazy("Exercice : état du fluide en chaque point du circuit"),
+    "enroulements": gettext_lazy("Exercice : identifier les enroulements d'un compresseur à l'ohmmètre"),
+    "demarrage-compresseur": gettext_lazy("Exercice : diagnostiquer le démarrage par relais d'un moto-compresseur"),
+    "manifold-charge": gettext_lazy("Exercice : charger une installation à la balance"),
 }
 SHARED = ("acad/figures/kit.js", "acad/figures/iso.css")
 # Un marqueur n'est reconnu que seul dans son paragraphe ; le nom est limité à [a-z0-9-] (aucun chemin, aucun attribut).

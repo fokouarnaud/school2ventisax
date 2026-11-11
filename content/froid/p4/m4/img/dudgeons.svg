@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" font-family="Arial, sans-serif">
+<rect width="420" height="220" fill="#fff"/>
+<path d="M57 180V124H83V180" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<rect x="34" y="92" width="72" height="50" rx="8" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<path d="M57 92L30 56H110L83 92" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M44 56H96" fill="none" stroke="#d7dde3" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="70" y="208" font-size="26" font-weight="bold" text-anchor="middle" fill="#b3261e">✗</text>
+<path d="M197 180V124H223V180" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<rect x="174" y="92" width="72" height="50" rx="8" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<path d="M197 92L192 56H228L223 92" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M184 56H236" fill="none" stroke="#d7dde3" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="210" y="208" font-size="26" font-weight="bold" text-anchor="middle" fill="#b3261e">✗</text>
+<path d="M337 180V124H363V180" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<rect x="314" y="92" width="72" height="50" rx="8" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<path d="M337 92L324 56H376L363 92" fill="#fff" stroke="#13212c" stroke-width="2.5"/>
+<path d="M324 56H376" fill="none" stroke="#d7dde3" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="350" y="208" font-size="26" font-weight="bold" text-anchor="middle" fill="#1f6f4a">✓</text>
+</svg>

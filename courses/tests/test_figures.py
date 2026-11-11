@@ -20,6 +20,13 @@ PUBLISHED = [
     ("couplage", "p3/m3/01-prerequis"),  # « Couplage des moteurs asynchrones triphasés », prérequis du démarrage direct
     ("fractionne", "p3/m6/01-principe"),  # « Fonctionnement » : 1er temps, 2e temps
     ("reperage-fractionne", "p3/m6/02-reperage"),  # 50/50, 66/33 et plaques à bornes
+    ("manifold-vide", "p4/m15/02-mode-operatoire"),  # tenue du vide : sec, humidité ou fuite
+    ("flamme", "p4/m5/02-chalumeau-flamme"),  # allumer, recoller, régler
+    ("brasage-azote", "p4/m7/02-mise-en-oeuvre"),  # azote avant la chauffe, jusqu'au refroidissement
+    ("circuit-frigo", "p4/m8/03-etats"),  # état du fluide aux points 1 à 9
+    ("enroulements", "p4/m9/01-monophases"),  # C, A, P à l'ohmmètre
+    ("demarrage-compresseur", "p4/m10/02-ctp-condensateurs"),  # relais d'intensité : normal, K ouvert, K collé
+    ("manifold-charge", "p4/m17/03-liquide-vapeur"),  # tare, phase, masse de la plaque
 ]
 
 

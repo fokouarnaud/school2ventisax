@@ -231,6 +231,27 @@ msgstr "Part-winding starting: first step, second step"
 msgid "Exercice : repérer les bobinages à l'ohmmètre et choisir la plaque à bornes"
 msgstr "Exercise: identifying the windings with an ohmmeter and choosing the terminal board"
 
+msgid "Exercice : tirer au vide et diagnostiquer la tenue du vide"
+msgstr "Exercise: evacuating and diagnosing the vacuum hold"
+
+msgid "Exercice : régler la flamme oxyacétylénique"
+msgstr "Exercise: adjusting the oxy-acetylene flame"
+
+msgid "Exercice : balayage d'azote pendant le brasage"
+msgstr "Exercise: nitrogen purge during brazing"
+
+msgid "Exercice : état du fluide en chaque point du circuit"
+msgstr "Exercise: state of the refrigerant at each point of the circuit"
+
+msgid "Exercice : identifier les enroulements d'un compresseur à l'ohmmètre"
+msgstr "Exercise: identifying a compressor's windings with an ohmmeter"
+
+msgid "Exercice : diagnostiquer le démarrage par relais d'un moto-compresseur"
+msgstr "Exercise: diagnosing a motor-compressor's relay start"
+
+msgid "Exercice : charger une installation à la balance"
+msgstr "Exercise: charging a system on scales"
+
 #: .\courses\figures.py:65
 msgid "Chargement de la figure…"
 msgstr "Loading the figure…"

@@ -111,7 +111,12 @@ def _apply_exam_settings(partie, settings):
         raise ContentError(f"{partie.slug} : exam.questions_per_module doit être un entier ≥ 1.")
     exam = Assessment.exam_for(partie)
     exam.questions_per_module = per_module
-    exam.save(update_fields=["questions_per_module"])
+    if "duration_minutes" in settings:  # sans la clé, la durée réglée dans l'admin est gardée
+        duration = settings["duration_minutes"]
+        if type(duration) is not int or duration < 1:  # type() : un booléen n'est pas une durée
+            raise ContentError(f"{partie.slug} : exam.duration_minutes doit être un entier ≥ 1.")
+        exam.duration_minutes = duration
+    exam.save(update_fields=["questions_per_module", "duration_minutes"])
 
 
 @transaction.atomic

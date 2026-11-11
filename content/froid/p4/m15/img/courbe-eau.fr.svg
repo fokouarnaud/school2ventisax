@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 310" font-family="Arial, sans-serif">
+<rect width="420" height="310" fill="#fff"/>
+<path d="M66.0 262V20" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="66.0" y="280" font-size="13" font-weight="normal" text-anchor="middle" fill="#13212c">0</text>
+<path d="M133.6 262V20" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="133.6" y="280" font-size="13" font-weight="normal" text-anchor="middle" fill="#13212c">10</text>
+<path d="M201.2 262V20" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="201.2" y="280" font-size="13" font-weight="normal" text-anchor="middle" fill="#13212c">20</text>
+<path d="M268.8 262V20" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="268.8" y="280" font-size="13" font-weight="normal" text-anchor="middle" fill="#13212c">30</text>
+<path d="M336.4 262V20" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="336.4" y="280" font-size="13" font-weight="normal" text-anchor="middle" fill="#13212c">40</text>
+<path d="M404.0 262V20" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="404.0" y="280" font-size="13" font-weight="normal" text-anchor="middle" fill="#13212c">50</text>
+<path d="M66 262.0H404" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="58" y="267.0" font-size="13" font-weight="normal" text-anchor="end" fill="#13212c">0</text>
+<path d="M66 213.6H404" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="58" y="218.6" font-size="13" font-weight="normal" text-anchor="end" fill="#13212c">20</text>
+<path d="M66 165.2H404" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="58" y="170.2" font-size="13" font-weight="normal" text-anchor="end" fill="#13212c">40</text>
+<path d="M66 116.8H404" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="58" y="121.8" font-size="13" font-weight="normal" text-anchor="end" fill="#13212c">60</text>
+<path d="M66 68.4H404" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="58" y="73.4" font-size="13" font-weight="normal" text-anchor="end" fill="#13212c">80</text>
+<path d="M66 20.0H404" fill="none" stroke="#d7dde3" stroke-width="1"/>
+<text x="58" y="25.0" font-size="13" font-weight="normal" text-anchor="end" fill="#13212c">100</text>
+<path d="M66 20V262H404" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M66.0 247.2L99.8 240.9L133.6 232.2L167.4 220.9L201.2 205.4L235.0 185.3L268.8 159.2L302.6 125.8L336.4 83.4L370.2 29.9" fill="none" stroke="#1f5fae" stroke-width="3"/>
+<path d="M201.2 262V205.4H66" fill="none" stroke="#b3261e" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="201.2" cy="205.4" r="4.5" fill="#b3261e"/>
+<text x="209.2" y="195.4" font-size="14" font-weight="bold" text-anchor="start" fill="#b3261e">20 °C : 23 mbar</text>
+<text x="153.9" y="87.8" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">Zone de liquide</text>
+<text x="329.6" y="233.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">Zone de vapeur</text>
+<text x="404" y="36.0" font-size="14" font-weight="bold" text-anchor="end" fill="#1f5fae">Courbe de saturation</text>
+<text x="235.0" y="300" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">Température en °C</text>
+<text x="16" y="141.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c" transform="rotate(-90 16 141.0)">Pression absolue en mbar</text>
+</svg>

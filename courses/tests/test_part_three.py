@@ -124,8 +124,9 @@ def test_trainer_table_shows_part_three_columns_and_exam(trainer_client):
     """US-47 : colonnes « 3.1 » à « 3.6 » après « 2.9 », et l'examen de la Partie 3, dans le tableau formateur."""
     response = trainer_client.get("/fr/formateur/")
     labels = [c["label"] for t in response.context["tables"] for c in t["columns"]]
-    assert labels[-7:] == ["2.9", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
-    assert [p.slug for t in response.context["tables"] for p in t["parties"]][-1] == "p3"
+    start = labels.index("2.9")  # d'autres parties peuvent suivre
+    assert labels[start:start + 7] == ["2.9", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
+    assert "p3" in [p.slug for t in response.context["tables"] for p in t["parties"]]
 
 
 @pytest.mark.django_db

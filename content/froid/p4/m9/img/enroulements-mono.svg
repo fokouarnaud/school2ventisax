@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" font-family="Arial, sans-serif">
+<rect width="420" height="260" fill="#fff"/>
+<path d="M210 50A14.1 14.1 0 0 1 190.0 70.0A14.1 14.1 0 0 1 170.0 90.0A14.1 14.1 0 0 1 150.0 110.0A14.1 14.1 0 0 1 130.0 130.0A14.1 14.1 0 0 1 110.0 150.0A14.1 14.1 0 0 1 90.0 170.0" fill="none" stroke="#13212c" stroke-width="2.2"/>
+<path d="M210 50A21.2 21.2 0 0 1 240.0 80.0A21.2 21.2 0 0 1 270.0 110.0A21.2 21.2 0 0 1 300.0 140.0A21.2 21.2 0 0 1 330.0 170.0" fill="none" stroke="#13212c" stroke-width="2.2"/>
+<circle cx="210" cy="50" r="4" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<circle cx="90" cy="170" r="4" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<circle cx="330" cy="170" r="4" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<text x="210" y="34" font-size="16" font-weight="bold" text-anchor="middle" fill="#13212c">C (1)</text>
+<text x="70" y="196" font-size="16" font-weight="bold" text-anchor="middle" fill="#13212c">A (2)</text>
+<text x="350" y="196" font-size="16" font-weight="bold" text-anchor="middle" fill="#13212c">P (3)</text>
+<text x="120" y="100" font-size="15" font-weight="bold" text-anchor="end" fill="#13212c">11 Ω</text>
+<text x="300" y="100" font-size="15" font-weight="bold" text-anchor="start" fill="#13212c">3 Ω</text>
+<path d="M90 210V226H330V210" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<text x="210" y="246" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">14 Ω</text>
+</svg>

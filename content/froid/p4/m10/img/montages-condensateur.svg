@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" font-family="Arial, sans-serif">
+<rect width="420" height="260" fill="#fff"/>
+<path d="M105 50A13.2 13.2 0 0 1 91.2 72.5A13.2 13.2 0 0 1 77.5 95.0A13.2 13.2 0 0 1 63.8 117.5A13.2 13.2 0 0 1 50.0 140.0" fill="none" stroke="#13212c" stroke-width="2.2"/>
+<path d="M105 50A17.6 17.6 0 0 1 123.3 80.0A17.6 17.6 0 0 1 141.7 110.0A17.6 17.6 0 0 1 160.0 140.0" fill="none" stroke="#13212c" stroke-width="2.2"/>
+<circle cx="105" cy="50" r="4" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<text x="105" y="36" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">C</text>
+<text x="35" y="150" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">A</text>
+<text x="175" y="150" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">P</text>
+<path d="M50 140V190H91" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M91 178V202M99 178V202" fill="none" stroke="#13212c" stroke-width="2.4"/>
+<text x="95" y="222" font-size="13" font-weight="bold" text-anchor="middle" fill="#13212c">Cp</text>
+<text x="105" y="248" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">PSC</text>
+<path d="M99 190H160V140" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M315 50A13.2 13.2 0 0 1 301.2 72.5A13.2 13.2 0 0 1 287.5 95.0A13.2 13.2 0 0 1 273.8 117.5A13.2 13.2 0 0 1 260.0 140.0" fill="none" stroke="#13212c" stroke-width="2.2"/>
+<path d="M315 50A17.6 17.6 0 0 1 333.3 80.0A17.6 17.6 0 0 1 351.7 110.0A17.6 17.6 0 0 1 370.0 140.0" fill="none" stroke="#13212c" stroke-width="2.2"/>
+<circle cx="315" cy="50" r="4" fill="#13212c" stroke="#13212c" stroke-width="1"/>
+<text x="315" y="36" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">C</text>
+<text x="245" y="150" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">A</text>
+<text x="385" y="150" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">P</text>
+<path d="M260 140V190H301" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M301 178V202M309 178V202" fill="none" stroke="#13212c" stroke-width="2.4"/>
+<text x="305" y="222" font-size="13" font-weight="bold" text-anchor="middle" fill="#13212c">Cd</text>
+<text x="315" y="248" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">CSIR</text>
+<path d="M309 190H327" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M327 190L347 178" fill="none" stroke="#13212c" stroke-width="2.2"/>
+<path d="M349 190H370V140" fill="none" stroke="#13212c" stroke-width="2"/>
+<text x="339" y="172" font-size="12" font-weight="bold" text-anchor="middle" fill="#13212c">K</text>
+</svg>

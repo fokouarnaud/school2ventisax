@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 290" font-family="Arial, sans-serif">
+<rect width="420" height="290" fill="#fff"/>
+<path d="M20 150H150L190 90H20Z" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<path d="M400 150H250L210 90H400Z" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<path d="M150 150L190 90M250 150L210 90" fill="none" stroke="#b3261e" stroke-width="2.5"/>
+<text x="200" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">75° à 90°</text>
+<path d="M20 240H140L170 210L140 180H20Z" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<path d="M400 240H280L250 210L280 180H400Z" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<text x="30" y="40" font-size="18" font-weight="bold" text-anchor="middle" fill="#13212c">V</text>
+<text x="30" y="274" font-size="18" font-weight="bold" text-anchor="middle" fill="#13212c">X</text>
+</svg>
