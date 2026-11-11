@@ -165,6 +165,41 @@ def test_import_applies_the_exam_questions_per_module_of_the_manifest(content_di
 
 
 @pytest.mark.django_db
+def test_import_writes_the_exam_duration_of_the_manifest_on_the_assessment(content_dir):
+    """US-72, Q58 : le modèle Assessment reçoit la durée du manifeste (ici 90 min, défaut 60)."""
+    edit_manifest(content_dir, lambda m: m["parties"][0].update(exam={"questions_per_module": 3, "duration_minutes": 90}))
+    run_import(content_dir)
+    exam = Assessment.exam_for(Partie.objects.get())
+    exam.refresh_from_db()
+    assert (exam.questions_per_module, exam.duration_minutes) == (3, 90)
+
+
+@pytest.mark.django_db
+def test_import_keeps_the_exam_duration_when_the_manifest_does_not_set_it(content_dir):
+    """US-72 : sans `duration_minutes`, la durée réglée dans l'admin est gardée."""
+    edit_manifest(content_dir, lambda m: m["parties"][0].update(exam={"questions_per_module": 3}))
+    run_import(content_dir)
+    exam = Assessment.exam_for(Partie.objects.get())
+    exam.duration_minutes = 45
+    exam.save()
+    run_import(content_dir)
+    exam.refresh_from_db()
+    assert exam.duration_minutes == 45
+
+
+@pytest.mark.django_db
+@pytest.mark.parametrize("bad_duration", [0, -5, "90", True, 1.5, None])
+def test_import_refuses_an_exam_duration_that_is_not_a_positive_integer(content_dir, bad_duration):
+    """US-72 : valeur invalide = import annulé avec une erreur qui nomme le champ."""
+    edit_manifest(
+        content_dir, lambda m: m["parties"][0].update(exam={"questions_per_module": 3, "duration_minutes": bad_duration})
+    )
+    with pytest.raises(CommandError, match="duration_minutes"):
+        run_import(content_dir)
+    assert not Partie.objects.exists()
+
+
+@pytest.mark.django_db
 def test_import_keeps_the_exam_setting_when_the_manifest_has_none(content_dir):
     run_import(content_dir)
     exam = Assessment.exam_for(Partie.objects.get())

@@ -231,6 +231,9 @@ msgstr "Part-winding starting: first step, second step"
 msgid "Exercice : repérer les bobinages à l'ohmmètre et choisir la plaque à bornes"
 msgstr "Exercise: identifying the windings with an ohmmeter and choosing the terminal board"
 
+msgid "Exercice : tirer au vide et diagnostiquer la tenue du vide"
+msgstr "Exercise: evacuating and diagnosing the vacuum hold"
+
 #: .\courses\figures.py:65
 msgid "Chargement de la figure…"
 msgstr "Loading the figure…"

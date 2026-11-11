@@ -1294,6 +1294,75 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "p4",
+      "order": 4,
+      "title": {
+        "fr": "Assemblage et montage frigorifiques",
+        "en": "Refrigeration assembly and installation"
+      },
+      "exam": {
+        "questions_per_module": 3,
+        "duration_minutes": 90
+      },
+      "modules": [
+        {
+          "order": 15,
+          "dir": "p4/m15",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Mise sous vide d'une installation frigorifique",
+            "en": "Evacuating a refrigeration system"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de faire le vide de tout type d'installation frigorifique.",
+            "en": "The learner will be able to evacuate any type of refrigeration system."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (raccordements 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (connections 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-role",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle, conditions de départ et matériel",
+                "en": "Purpose, starting conditions and equipment"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-mode-operatoire",
+              "kind": "content",
+              "title": {
+                "fr": "Mode opératoire du tirage au vide",
+                "en": "Evacuation procedure"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-casse-azote",
+              "kind": "content",
+              "title": {
+                "fr": "Casser le vide à l'azote",
+                "en": "Breaking the vacuum with nitrogen"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

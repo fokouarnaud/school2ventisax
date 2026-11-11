@@ -20,6 +20,7 @@ PUBLISHED = [
     ("couplage", "p3/m3/01-prerequis"),  # « Couplage des moteurs asynchrones triphasés », prérequis du démarrage direct
     ("fractionne", "p3/m6/01-principe"),  # « Fonctionnement » : 1er temps, 2e temps
     ("reperage-fractionne", "p3/m6/02-reperage"),  # 50/50, 66/33 et plaques à bornes
+    ("manifold-vide", "p4/m15/02-mode-operatoire"),  # tenue du vide : sec, humidité ou fuite
 ]
 
 

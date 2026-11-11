@@ -68,23 +68,43 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 | Q52 | Quels schémas ? | ≈ 19 SVG : m1 coupe simplifiée du moteur (vue éclatée → tableau des pièces), barrettes étoile/triangle ; m2 2 planches de symboles, principe du différentiel ; m3 couplages, puissance et commande du démarrage direct ; m4 puissance, commande, commande avec fins de course ; m5 symboles du relais temporisé, courbe Id/In, puissance, commande ; m6 plaques à bornes E à H, puissance et commande. Commande verticale entre deux rails (L1 ou Ph en haut, N en bas), puissance et commande dans deux SVG séparés, 420 de large au plus, `.fr/.en.svg` seulement pour la courbe Id/In |
 | Q53 | Jalons de la Partie 3 ? | J1 module 3 (essai du style des schémas industriels) puis arrêt pour validation ; J2 modules 1, 2, 4, 5, 6, 96 questions, glossaire, journal ; J3 tests, Playwright 360 px clair et sombre, docs, commit sur `develop` ; push et déploiement (`deploy.sh` puis `import_content … --publish`) seulement sur demande |
 | Q54 | Tests et Definition of Done ? | `courses/tests/test_part_three.py` (6 titres et durées, une TAF par module, ≥ 1 question par section `content`, 8 + 8 questions publiables par module, examen de 30 questions et deux tirages différents, glossaire Q49, format de `p3/CORRECTIONS.md`, SVG inertes ≤ 6 Ko, aucun fichier matriciel sous `p3/`, aucune marque dans le contenu servi) ; garde-fous de `test_content_files.py` étendus à la Partie 3 ; point 17 « Partie 3 » dans la Definition of Done |
+| Q55 | Structure de la Partie 4 (`reference/cours/04_partie4`, pages 1 à 81) ? | Partie `p4` « Assemblage et montage frigorifiques » / « Refrigeration assembly and installation », 18 modules `p4/m1` à `p4/m18` numérotés 1 à 18 (numéros 20 à 37 du support abandonnés), durées imprimées : 160 h (modules 4 et 6 à 16 h, les autres à 8 h) ; écart avec les 120 h du programme hors app (Q5) (2026-11-11) |
+| Q56 | Découpage ? | 77 sections, un sujet par section : 53 transcrites, 18 TAF, 6 compléments (glossaire m1, cintrage m4, triphasés m10, humidité et laboratoire m14, test de pression m16, mélanges zéotropes et azéotropes m17) |
+| Q57 | Page 63 et module 33 du support ? | Page 63 reçue le 2026-11-11 (rappel sur l'huile) ; pages 62 et 63 transcrites dans l'ordre logique ; test d'humidité et analyse en laboratoire, absents du support, en section « Complément » |
+| Q58 | Examen de la Partie 4 ? | 3 questions par module, soit 54 questions en 90 min, 70 %, 3 tentatives, mélange ; `"exam": {"questions_per_module": 3, "duration_minutes": 90}` appliqué par l'import ; Parties 1 à 3 inchangées (60 min) |
+| Q59 | Banque de la Partie 4 ? | 8 questions de quiz et 8 d'examen par module (≥ 1 par section `content`), soit 288 |
+| Q60 | Publication des questions de la Partie 4 ? | Dérogation Q23/Q24 étendue à la Partie 4 : `reviewed` fr/en à `true`, publiées par `import_content --publish` |
+| Q61 | Corrections de fond de la Partie 4 ? | Q29 étendu : corrigé dans le texte sans note à l'apprenant, consignes de sécurité manquantes ajoutées, journal `content/froid/p4/CORRECTIONS.md` signalant au formateur les valeurs issues de la pratique courante et de l'EN 378 ; bloc absent du support = section « Complément » |
+| Q62 | Images et marques de la Partie 4 ? | Q26 et Q42 étendus : aucune photo, SVG redessinés (inertes, ≤ 6 Ko, 420 de large au plus, repères neutres), outils en tableaux (outil, usage, précautions), marques remplacées par des termes génériques (raccord à sertir sans flamme, protecteur thermique, fluide frigorigène) ; désignations R134a, R404A… conservées |
+| Q63 | Hors sujet et doublons (modules 21 à 23 du support) ? | Plomberie Geberit retirée ; PVC gardé pour les condensats ; multicouche « eau uniquement, jamais de fluide frigorigène » ; doublons fusionnés ; retraits journalisés |
+| Q64 | Activités pratiques de la Partie 4 ? | Q48 étendu : 18 TAF `practical` sans badge (matériel par poste, séquence, barème 15/60/10/15), chaque TAF rédigée journalisée ; affichées, non notées (Q10) |
+| Q65 | Fluides frigorigènes ? | Statuts datés du tableau p. 59 remplacés par famille, classe de sécurité ISO 817 et huile compatible, avec « respecter la réglementation locale » ; consignes ajoutées pour les fluides inflammables (R290, R600a) ; journalisé |
+| Q66 | Exercices chiffrés faux ou insolubles ? | Recalculés avec des données cohérentes, en gardant leur intention ; journalisés |
+| Q67 | Pages illisibles ? | Plans cotés p. 37 et flamme p. 34 reconstitués, cotes signalées au journal ; diagramme R404A p. 73 retiré, activité 3 recalculée depuis la pression et le volume |
+| Q68 | Glossaire et anglais de la Partie 4 ? | Glossaire fr ↔ en en tête de `p4/m1` (« Complément ») ; anglais britannique du métier (manifold gauge set, flaring, swaging, brazing, oxygen-free nitrogen purge, vacuum gauge, refrigerant recovery, pressure test, superheat, subcooling) ; terme français à la 1re occurrence |
+| Q69 | Figures interactives de la Partie 4 ? | Dans ce chantier, 7 figures téléchargées au toucher : `circuit-frigo` (m8), `manifold-vide` (m15), `manifold-charge` (m17), `flamme` (m5), `brasage-azote` (m7), `enroulements` (m9), `demarrage-compresseur` (m10) ; m11 y renvoie par lien |
+| Q70 | Jalons de la Partie 4 ? | J1 `p4/m15` (module 34 du support) avec schémas et figure `manifold-vide`, arrêt pour validation du style ; J2 trois lots (m1-m7, m8-m12, m13-m18), commit local sur `develop` par lot, sans arrêt ; J3 tests, Playwright 360 px, docs, commit ; push et déploiement seulement sur demande |
+| Q71 | Tests et Definition of Done de la Partie 4 ? | `courses/tests/test_part_four.py`, garde-fous de `test_content_files.py` étendus à la Partie 4, point 18 « Partie 4 » dans la Definition of Done |
+| Q72 | Documentation de la Partie 4 ? | AGENTS.md et CLAUDE.md mis à jour : grill et GOALS d'abord ; PRD, évolutions de données et Definition of Done avec le contenu |
 
 ## GOALS
 
 ### 1. Objectifs fonctionnels prioritaires
 1. **Lecteur de cours** : Formation → Partie → Module → Section, avec un sommaire repliable et une barre de progression par module et par partie.
 2. **Quiz de module** : entraînement illimité, correction et explication affichées après envoi.
-3. **Examen de partie** : banque séparée, 70 % pour réussir, 3 tentatives, 60 min chronométrées côté serveur, reprise après coupure, envoi automatique.
+3. **Examen de partie** : banque séparée, 70 % pour réussir, 3 tentatives, 60 min chronométrées côté serveur (90 min en Partie 4, Q58), reprise après coupure, envoi automatique.
 4. **Progression** : navigation libre ; l'examen se débloque quand tous les modules de la partie sont terminés.
 5. **Comptes et promotions** : créés par l'admin (import CSV) ; trois rôles ; cloisonnement par promotion.
 6. **Tableau formateur** : apprenants × modules (progression, meilleur score d'examen) et export CSV.
-7. **Workflow éditorial** : questions brouillon → publiées par un formateur, seulement quand fr et en sont relus. Dérogation pour la Partie 2 : questions approuvées d'avance par le propriétaire et publiées par `import_content --publish` (Q23, Q24), dérogation étendue à la Partie 3 (Q43).
+7. **Workflow éditorial** : questions brouillon → publiées par un formateur, seulement quand fr et en sont relus. Dérogation pour la Partie 2 : questions approuvées d'avance par le propriétaire et publiées par `import_content --publish` (Q23, Q24), dérogation étendue à la Partie 3 (Q43) et à la Partie 4 (Q60).
 8. **Contenu v1, Partie 1** : 6 modules transcrits et bilingues, avec ≈ 12 questions de quiz et ≈ 10 questions d'examen par module.
 9. **Contenu, Partie 2 « Les bases de l'électricité domestique »** : 9 modules (Q17, Q31) transcrits et bilingues, chacun avec sa section d'activités pratiques (TAF) ; module 2 développé d'après la NF C 15-100 sur le cas du tableau noir (Q21) ; module 9 « Câblage et réglage de l'interrupteur crépusculaire et du capteur de mouvement » en 4 sections (Q32) ; banque de 8 questions de quiz et 8 d'examen par module, examen de 45 questions tirées (5 par module) en 60 min (Q25, Q38) ; glossaire fr ↔ en (Q27, Q36).
 10. **Contenu, Partie 3 « Les bases de l'électricité industrielle »** (Q41) : 6 modules transcrits et bilingues (moteurs électriques 8 h, appareillages industriels 4 h, démarrage direct un sens 12 h, deux sens de rotation 16 h, étoile-triangle 16 h, démarrage fractionné 8 h), 24 sections dont une activité pratique (TAF) par module, rédigée quand le support n'en a pas (Q48, Q51) ; banque de 8 questions de quiz et 8 d'examen par module (96), examen de 30 questions tirées (5 par module) en 60 min, exercice de lecture des plaques A et B (Q44) ; glossaire fr ↔ en propre en tête du module 1 (Q49).
-11. **Schémas de cours** : schémas électriques redessinés en SVG, aucune photo en Parties 2 et 3 ; repères normalisés dans le dessin, légende et texte alternatif traduits (Q19, Q26, Q28) ; module 9 de la Partie 2 : 4 schémas de principe (crépusculaire et capteur, en direct ou avec relais / forçage) (Q33) ; Partie 3 : ≈ 19 schémas industriels (couplages, plaques à bornes, symboles, circuits de puissance et de commande du démarrage direct, de l'inverseur, de l'étoile-triangle et du démarrage fractionné, courbe Id/In) (Q42, Q52).
-12. **Provenance visible** : toute section rédigée par Claude (et non transcrite) porte le badge « Complément » et se filtre dans l'admin ; les corrections de fond du support sont journalisées dans `content/froid/p2/CORRECTIONS.md` et `content/froid/p3/CORRECTIONS.md` (Q22, Q29, Q45), dont l'harmonisation des contacteurs de l'étoile-triangle (KM1 ligne, KM2 étoile, KM3 triangle) (Q46).
-13. **Interface** : bilingue /fr/ et /en/, mobile d'abord, patterns NetAcad, charte Ventisax.
+11. **Contenu, Partie 4 « Assemblage et montage frigorifiques »** (Q55) : 18 modules transcrits et bilingues (160 h) : outillage, raccords, tuyauteries, travail sur les tuyauteries, manodétendeur et flamme, soudo-brasage et brasage, brasage sous azote, circuit frigorifique, enroulements des moteurs, démarrage des moto-compresseurs, manifolds, compresseur, huile, acidité et humidité, mise sous vide, pression et étanchéité, remplissage, soudure à l'arc ; 77 sections dont une activité pratique (TAF) par module (Q56, Q64) ; banque de 8 questions de quiz et 8 d'examen par module (288), examen de 54 questions tirées (3 par module) en 90 min (Q58, Q59) ; glossaire fr ↔ en en tête du module 1 (Q68).
+12. **Figures interactives de la Partie 4** (Q69) : 7 figures téléchargées au toucher : circuit frigorifique, manifold (vide, charge), flamme, brasage sous azote, enroulements à l'ohmmètre, démarrage du compresseur.
+13. **Schémas de cours** : schémas électriques et frigorifiques redessinés en SVG, aucune photo en Parties 2, 3 et 4 ; repères normalisés dans le dessin, légende et texte alternatif traduits (Q19, Q26, Q28) ; module 9 de la Partie 2 : 4 schémas de principe (crépusculaire et capteur, en direct ou avec relais / forçage) (Q33) ; Partie 3 : ≈ 19 schémas industriels (couplages, plaques à bornes, symboles, circuits de puissance et de commande du démarrage direct, de l'inverseur, de l'étoile-triangle et du démarrage fractionné, courbe Id/In) (Q42, Q52) ; Partie 4 : schémas à vannes numérotées, circuits, raccordements et défauts de cordon redessinés, outils en tableaux (Q62, Q67).
+14. **Provenance visible** : toute section rédigée par Claude (et non transcrite) porte le badge « Complément » et se filtre dans l'admin ; les corrections de fond du support sont journalisées dans `content/froid/p2/CORRECTIONS.md`, `content/froid/p3/CORRECTIONS.md` et `content/froid/p4/CORRECTIONS.md` (Q22, Q29, Q45, Q61), dont l'harmonisation des contacteurs de l'étoile-triangle (KM1 ligne, KM2 étoile, KM3 triangle) (Q46) ; la Partie 4 compte 6 sections « Complément » (Q56).
+15. **Interface** : bilingue /fr/ et /en/, mobile d'abord, patterns NetAcad, charte Ventisax.
 
 ### 2. Contraintes techniques
 - Python le plus récent proposé par PythonAnywhere ; **Django 5.2 LTS** ; **SQLite** (un seul fichier, sauvegardé chaque jour).
@@ -92,10 +112,12 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 - Dépendances autorisées : `django`, `django-modeltranslation`, `markdown`, `bleach`. Toute autre dépendance demande un accord explicite.
 - **Disque < 150 Mo** (code + venv + base + médias) sur un quota de 512 Mo ; photos en WebP, schémas en SVG ; **pages < 200 Ko** à la première visite.
 - Images de cours : fichiers statiques versionnés dans `content/<formation>/<partie>/<module>/img/`, appelés en chemin relatif dans le Markdown et réécrits en URL `{% static %}` au rendu ; SVG de 2 à 6 Ko, inertes (`validate_inert_svg`), sur fond clair fixe ; `.fr.svg` / `.en.svg` seulement pour les schémas dont le texte est le contenu (Q20, Q28).
-- Manifeste `formation.json` : `"supplement": true` par section et `"exam": {"questions_per_module": N}` par partie, appliqués par l'import idempotent (Q22, Q25).
-- Normes : la NF C 15-100 sert de source de travail, reformulée et citée, jamais versionnée ni servie (Q18) ; anglais technique IEC / britannique, contexte camerounais conservé (Eneo, couleurs de fils du support) (Q27, Q49) ; tensions du support gardées, avec la correspondance IEC 60038 (230/400 V, 400/690 V) à la 1re mention (Q47).
+- Manifeste `formation.json` : `"supplement": true` par section et `"exam": {"questions_per_module": N, "duration_minutes": M}` par partie (`duration_minutes` facultatif), appliqués par l'import idempotent (Q22, Q25, Q58) ; avec les 7 figures enregistrées dans `FIGURES`, seul code à modifier pour la Partie 4.
+- Normes : la NF C 15-100 sert de source de travail, reformulée et citée, jamais versionnée ni servie (Q18) ; anglais technique IEC / britannique, contexte camerounais conservé (Eneo, couleurs de fils du support) (Q27, Q49) ; tensions du support gardées, avec la correspondance IEC 60038 (230/400 V, 400/690 V) à la 1re mention (Q47) ; en Partie 4, l'EN 378 et la pratique courante servent de source de travail, reformulées, les chiffres concernés signalés au formateur dans le journal (Q61), classes ISO 817 sans calendrier réglementaire européen (Q65), anglais britannique du métier (Q68).
 - Schémas industriels (Partie 3) : repères IEC neutres (L1 à L3, N, PE, Q, KM, F, S, M1, U1/U2…), circuit de commande vertical entre deux rails, puissance et commande dans deux SVG séparés, 420 de large au plus ; `.fr/.en.svg` seulement pour la courbe Id/In (Q42, Q52).
 - Jalons de la Partie 3 (Q53) : J1 module 3 puis arrêt pour validation du style des schémas ; J2 modules 1, 2, 4, 5, 6 ; J3 tests (`courses/tests/test_part_three.py`, Q54), Playwright 360 px, docs, commit sur `develop` ; push et déploiement seulement sur demande.
+- Schémas frigorifiques (Partie 4) : SVG inertes ≤ 6 Ko, 420 de large au plus, repères neutres (vannes numérotées, HP, BP), `.fr/.en.svg` seulement quand le texte est le contenu (Q28, Q62).
+- Jalons de la Partie 4 (Q70) : J1 `p4/m15` (module 34 du support) avec schémas et figure `manifold-vide`, puis arrêt pour validation du style ; J2 trois lots (m1-m7, m8-m12, m13-m18), commit local sur `develop` par lot, sans arrêt ; J3 tests (`courses/tests/test_part_four.py`, Q71), Playwright 360 px, docs, commit ; push et déploiement seulement sur demande.
 - i18n : `i18n_patterns`, préfixes /fr/ (par défaut) et /en/, gettext pour l'interface, modeltranslation pour le contenu, repli sur le fr.
 - Plan gratuit PythonAnywhere : une web app, internet sortant sur liste blanche, aucune tâche planifiée ni permanente (constaté le 2026-10-17 : réservées aux comptes payants).
 - Sécurité : DEBUG=False en production, HTTPS forcé, CSRF actif, HTML Markdown nettoyé par bleach, secrets dans `.env`, identifiants publics UUID dans les URL et les formulaires, en-tête CSP sans script en ligne (voir « Audit de sécurité et tests d'intrusion »).
@@ -109,11 +131,16 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 - Questions d'appariement, glisser-déposer, zone cliquable sur image, réponse libre.
 - Parcours séquentiel bloquant.
 - Mode hors ligne / PWA, application mobile native.
-- Parties 4 et suivantes de la formation.
+- Parties 5 et suivantes de la formation.
 - Schéma de câblage associant interrupteur crépusculaire et capteur de mouvement (décrit en texte seulement, le support déconseillant d'improviser un montage en série) (Q33).
 - Toute reprise de textes, questions, logos ou assets de NetAcad/Cisco.
-- Photos ou images tirées d'internet ou de catalogues dans le contenu des Parties 2 et 3 ; republication du texte ou du PDF de la NF C 15-100.
+- Photos ou images tirées d'internet ou de catalogues dans le contenu des Parties 2, 3 et 4 ; republication du texte ou du PDF de la NF C 15-100.
 - Noms et logos de fabricants dans le contenu de la Partie 3 (Leroy-Somer, Kriwan, Schneider, Legrand) : plaques et appareils présentés de façon générique (Q42).
+- Noms et logos de fabricants dans le contenu de la Partie 4 (Geberit, Lokring, Nicoll, Testo, Klixon, Fréon comme nom commun, ABCCLIM) (Q62).
+- Plomberie sanitaire (Geberit, multi skin) dans le contenu de la Partie 4 (Q63).
+- Diagramme enthalpique du R404A (Q67).
+- Calendrier réglementaire des fluides frigorigènes et textes réglementaires camerounais (Q65).
+- Alignement des durées de la Partie 4 sur les 120 h du programme (Q55).
 - Vue éclatée dessinée du moteur (remplacée par un tableau des pièces) (Q52).
 - Note visible par l'apprenant sur les erreurs corrigées du support (journal formateur seulement).
 - Paiement, messagerie, forum, notifications.
@@ -202,6 +229,36 @@ Le contenu source est dans `reference/` : photos du support de cours « Froid et
 *Admin*
 - US-49 : En tant qu'admin, un `deploy.sh` suivi de `import_content content/froid/formation.json --publish` crée la Partie 3, son examen à 5 questions par module et publie ses 96 questions sans autre manipulation (Q43, Q53).
 
+**Partie 4 : assemblage et montage frigorifiques (2026-11-11)**
+*Apprenant*
+- US-50 : En tant qu'apprenant, je vois sur « Mes cours » la Partie 4 « Assemblage et montage frigorifiques » avec ses 18 modules (160 h) et son bouton « Continuer », et je la suis dans le même lecteur, avec la même progression, que les Parties 1 à 3 (Q55).
+- US-51 : En tant qu'apprenant, je reconnais l'outillage et les appareils de mesure du frigoriste dans des tableaux lisibles à 360 px (outil, usage, précautions), sans photo ni marque (module 1, Q62).
+- US-52 : En tant qu'apprenant, je choisis un raccord et une tuyauterie selon l'usage (cuivre, laiton, acier, aluminium, PVC pour les condensats) et je sais que le multicouche est réservé à l'eau, jamais au fluide frigorigène (modules 2 et 3, Q63).
+- US-53 : En tant qu'apprenant, je calcule une longueur développée, je coupe, j'ébavure, j'évase, je cintre et je filète, avec des exercices dont les données sont réalisables et les résultats justes (module 4, Q56, Q66).
+- US-54 : En tant qu'apprenant, je mets en service et hors service un poste oxyacétylénique dans le bon ordre, je règle la flamme et je réalise un soudo-brasage ou un brasage (modules 5 et 6, Q61, Q69).
+- US-55 : En tant qu'apprenant, je brase sous azote en lançant le balayage avant la chauffe et en le maintenant au refroidissement, avec un manodétendeur (module 7, Q61, Q69).
+- US-56 : En tant qu'apprenant, je nomme les organes du circuit frigorifique, je donne leur rôle et je suis l'état du fluide en chaque point, y compris sur la figure interactive (module 8, Q69).
+- US-57 : En tant qu'apprenant, j'identifie les enroulements d'un moteur monophasé ou triphasé à l'ohmmètre, je teste un moteur défectueux, je câble le démarrage d'un moto-compresseur par relais et condensateurs, et je relève puis j'analyse ses paramètres (modules 9 et 10, Q56, Q61, Q69).
+- US-58 : En tant qu'apprenant, j'utilise un manifold pour lire les pressions, faire le vide, casser le vide à l'azote et charger une installation, avec un critère de fin de vide mesuré au vacuomètre (modules 11, 15 et 17, Q61, Q69).
+- US-59 : En tant qu'apprenant, je remplace un compresseur en contrôlant l'acidité de l'huile et en changeant le filtre déshydrateur dans la procédure, je vidange et je remplis l'huile, je réalise un test d'acidité et je comprends le test d'humidité et l'analyse en laboratoire (modules 12 à 14, Q57, Q61).
+- US-60 : En tant qu'apprenant, je recherche une fuite, je réalise un test de pression à l'azote dans des conditions sûres et je calcule un taux de fuite à partir de données cohérentes (module 16, Q56, Q61, Q66, Q67).
+- US-61 : En tant qu'apprenant, je classe un fluide frigorigène par famille, classe de sécurité ISO 817 et huile compatible, je charge par la masse ou par la surchauffe, et j'applique les consignes propres aux fluides inflammables (R290, R600a) (modules 12, 13 et 17, Q56, Q65).
+- US-62 : En tant qu'apprenant, je prépare et je contrôle une soudure à l'arc, avec des consignes de sécurité correctes sur le risque électrique, l'incendie et la protection des yeux (module 18, Q61).
+- US-63 : En tant qu'apprenant, je lis chaque schéma de la Partie 4 (vannes numérotées, HP/BP, circuits, raccordements, défauts de cordon) sur un téléphone de 360 px, en clair comme en sombre, avec une légende et un texte alternatif dans ma langue (Q62).
+- US-64 : En tant qu'apprenant, j'ouvre d'un toucher chacune des 7 figures interactives après avoir vu son poids annoncé, et rien de lourd n'est téléchargé avant ce toucher (Q69).
+- US-65 : En tant qu'apprenant, je consulte l'activité pratique (TAF) de chacun des 18 modules : consignes, matériel par poste, séquence de réalisation, barème (exactitude des fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) ; elle est évaluée en atelier (Q10, Q64).
+- US-66 : En tant qu'apprenant, je reconnais au badge « Complément » les 6 sections rédigées en plus du support : glossaire, cintrage, moto-compresseurs triphasés, humidité et laboratoire, test de pression, mélanges zéotropes et azéotropes (Q22, Q56).
+- US-67 : En tant qu'apprenant, je passe l'examen de la Partie 4 quand ses 18 modules sont terminés : 54 questions (3 par module) en 90 min, 70 %, 3 tentatives, un tirage qui écarte d'abord les questions de la tentative précédente (Q58, Q59).
+- US-68 : En tant qu'apprenant anglophone, je lis l'anglais britannique du métier (manifold gauge set, flaring, swaging, brazing, oxygen-free nitrogen purge, vacuum gauge, refrigerant recovery, pressure test, superheat, subcooling) avec le terme français entre parenthèses à la 1re occurrence, et je consulte le glossaire fr ↔ en en tête du module 1 de la Partie 4 (Q68).
+
+*Formateur*
+- US-69 : En tant que formateur, je vois les colonnes « 4.1 » à « 4.18 » et le meilleur score d'examen de la Partie 4 dans mon tableau apprenants × modules et dans l'export CSV ; le tableau défile dans son cadre, sans élargir la page.
+- US-70 : En tant que formateur, je lis dans `content/froid/p4/CORRECTIONS.md` chaque correction de fond (page, texte d'origine, correction, justification), chaque retrait, chaque exercice recalculé, chaque TAF rédigée, et la liste des valeurs à confirmer (pratique courante, EN 378, cotes reconstituées), et je filtre dans l'admin les 6 sections « Complément » (Q61, Q63, Q64, Q66, Q67).
+
+*Admin*
+- US-71 : En tant qu'admin, un `deploy.sh` suivi de `import_content content/froid/formation.json --publish` crée la Partie 4, son examen à 3 questions par module et 90 min, et publie ses 288 questions sans autre manipulation (Q58, Q60, Q70).
+- US-72 : En tant qu'admin, la durée d'un examen est lue dans `formation.json` (`exam.duration_minutes`) et réappliquée à chaque import ; sans cette clé, la valeur en base est gardée ; une valeur qui n'est pas un entier ≥ 1 annule l'import avec une erreur explicite (Q58).
+
 ### Modélisation logique des données
 | Entité | Attributs clés | Relations / contraintes |
 |---|---|---|
@@ -256,6 +313,42 @@ Règle dérivée : examen de la Partie 2 = 9 modules × 5 = 45 questions tirées
 | **SectionView** / **Attempt** | inchangés | la Partie 3 est indépendante : sa progression et son examen ne dépendent pas des Parties 1 et 2 (navigation libre, Q9) |
 
 Règle dérivée : examen de la Partie 3 = 6 modules × 5 = 30 questions tirées ; module terminé = ses sections vues (glossaire et TAF compris) + 1 tentative de quiz envoyée.
+
+**Évolutions pour la Partie 4 (2026-11-11)** : aucune entité ni migration nouvelle ; tout passe par le contenu (`formation.json`, `p4/m1` à `p4/m18`), plus deux changements de code : `_apply_exam_settings` lit `duration_minutes`, et `courses.figures.FIGURES` reçoit 7 entrées.
+| Entité | Changement | Contraintes |
+|---|---|---|
+| **Partie** | + 1 ligne : slug `p4`, `order` 4, title fr « Assemblage et montage frigorifiques » / en « Refrigeration assembly and installation », clé `"exam": {"questions_per_module": 3, "duration_minutes": 90}` | créée par l'import ; son examen (`Assessment` part_exam) est créé avec elle |
+| **Module** | + 18 lignes `p4/m1` à `p4/m18`, `order` 1 à 18, `duration_hours` 16 pour `m4` et `m6`, 8 pour les autres ; title, competence, evaluation_note fr et en | titres du tableau ci-dessous, dans l'ordre ; un quiz (`Assessment` module_quiz) par module |
+| **Section** | + 77 lignes : 53 `content` transcrites, 18 `practical` (une par module), 6 `content` avec `"supplement": true` | une TAF n'est jamais un complément, même rédigée (Q64) ; une section est soit transcrite, soit rédigée ; chaque fichier `NN-nom.fr.md` a son `.en.md` |
+| **Question** / **Choice** | + 288 questions `p4-mN-q01…q16` (8 quiz, 8 exam par module), `reviewed` fr/en vrai, champ `section` renseigné | ≥ 1 question par section `content`, compléments compris ; publiées par `Question.publish()` via `--publish` (Q60) |
+| **Image de cours** | + fichiers `content/froid/p4/m*/img/*.svg` ; `.fr.svg` / `.en.svg` seulement quand le texte est le contenu (courbe pression-température de l'eau) | inertes, ≤ 6 Ko, 420 de large au plus, aucune marque, aucun fichier matriciel (Q62) |
+| **Assessment** (part_exam p4) | `questions_per_module` = 3, `duration_minutes` = 90 (écrits par l'import), `pass_threshold` 70, `max_attempts` 3, `shuffle` vrai | `duration_minutes` facultatif dans le manifeste, entier ≥ 1, sinon `ContentError` ; sans la clé, valeur en base gardée ; `deadline` d'une tentative déjà ouverte inchangée |
+| **Figure interactive** | pas d'entité : 7 noms dans `FIGURES` (`circuit-frigo`, `manifold-vide`, `manifold-charge`, `flamme`, `brasage-azote`, `enroulements`, `demarrage-compresseur`), fichiers produits par `node figures/<nom>/build.mjs` dans `static/acad/figures/` | appelée par un paragraphe seul `[[figure:nom]]` ; fragment sans script ; publiée en fr et en en |
+| **SectionView** / **Attempt** | inchangés | la Partie 4 est indépendante : sa progression et son examen ne dépendent pas des Parties 1 à 3 (Q9) |
+
+Découpage des modules (Q55, Q56) ; `T` = TAF `practical`, `C` = complément (`"supplement": true`) :
+| Module | Support | Titre fr / en | Durée | Sections |
+|---|---|---|---|---|
+| `m1` | 20 | Outillage et appareils de mesure du monteur frigoriste / Tools and measuring instruments of the refrigeration fitter | 8 h | 01 Glossaire C ; 02 Manifold, pompe à vide, vacuomètre ; 03 Poste oxyacétylénique et façonnage du tube ; 04 Récupération, charge, détection de fuite ; 05 Appareils électriques ; 06 T |
+| `m2` | 21 | Différents raccords utilisés en froid / Fittings used in refrigeration | 8 h | 01 Cuivre et laiton ; 02 Acier, PVC, mixtes ; 03 Sans flamme et étanchéité ; 04 T |
+| `m3` | 22 | Différentes tuyauteries utilisées en froid / Pipework used in refrigeration | 8 h | 01 Rôle et cuivre ; 02 Acier ; 03 PVC, multicouche, aluminium ; 04 T |
+| `m4` | 23 | Travail sur les tuyauteries / Working on pipework | 16 h | 01 Calcul des longueurs ; 02 Coupe, ébavurage, biseautage, piquage ; 03 Évasements ; 04 Cintrage C ; 05 Acier : coupe, filetage, mise en œuvre ; 06 T |
+| `m5` | 24 | Manodétendeur, chalumeau, réglage de la flamme / Pressure regulator, torch and flame adjustment | 8 h | 01 Manodétendeurs ; 02 Chalumeau et flamme ; 03 Mise en service et hors service ; 04 T |
+| `m6` | 25 | Soudo-brasage et brasage / Braze welding and brazing | 16 h | 01 Soudo-brasage ; 02 Brasage ; 03 T (maquettes) |
+| `m7` | 26 | Brasage sous azote / Brazing under nitrogen | 8 h | 01 Rappels ; 02 Mise en œuvre ; 03 T |
+| `m8` | 27 | Le circuit frigorifique de base / The basic refrigeration circuit | 8 h | 01 Éléments ; 02 Rôles ; 03 États du fluide ; 04 T |
+| `m9` | 28 | Identification des enroulements des moteurs électriques, monophasés et triphasés / Identifying the windings of single-phase and three-phase electric motors | 8 h | 01 Monophasés ; 02 Triphasés ; 03 Tests ; 04 T |
+| `m10` | 29 | Démarrage des moto-compresseurs, relevé des paramètres de fonctionnement et analyse / Starting motor-compressors, recording and analysing operating parameters | 8 h | 01 Relais ; 02 CTP et condensateurs ; 03 Triphasés C ; 04 Paramètres et analyse ; 05 T |
+| `m11` | 30 | Les manifolds / Manifold gauge sets | 8 h | 01 Description ; 02 Opérations ; 03 Technologies ; 04 T |
+| `m12` | 31 | Démontage, montage d'un compresseur / Removing and installing a compressor | 8 h | 01 Avec vannes de service ; 02 Sans vannes de service ; 03 Réfrigérateur ; 04 T |
+| `m13` | 32 | Vidange et remplissage d'huile dans les compresseurs frigorifiques / Draining and refilling oil in refrigeration compressors | 8 h | 01 Qualités et choix ; 02 Vidange ; 03 Remplissage ; 04 T |
+| `m14` | 33 | Test d'acidité et d'humidité des installations frigorifiques / Acidity and moisture testing of refrigeration systems | 8 h | 01 Rappel sur l'huile ; 02 Prélèvement et acidité ; 03 Humidité et laboratoire C ; 04 T |
+| `m15` | 34 | Mise sous vide d'une installation frigorifique / Evacuating a refrigeration system | 8 h | 01 Rôle, conditions, matériel ; 02 Mode opératoire ; 03 Casse du vide à l'azote ; 04 T |
+| `m16` | 35 | Test de pression et d'étanchéité d'une installation frigorifique, détecteurs de fuite / Pressure and leak testing of a refrigeration system, leak detectors | 8 h | 01 Origines des fuites ; 02 Tests et calculs ; 03 Détection ; 04 Test de pression C ; 05 T |
+| `m17` | 36 | Remplissage d'une installation frigorifique par la masse et par la surchauffe / Charging a refrigeration system by mass and by superheat | 8 h | 01 Fluides ; 02 Par masse, par surchauffe ; 03 Liquide et vapeur ; 04 Mélanges zéotropes et azéotropes C ; 05 T |
+| `m18` | 37 | Soudure à l'arc électrique / Electric arc welding | 8 h | 01 Principe, intensité, polarité ; 02 Préparation et position ; 03 Contrôle et sécurité ; 04 T |
+
+Règle dérivée : examen de la Partie 4 = 18 modules × 3 = 54 questions tirées dans une banque de 8 questions d'examen par module ; module terminé = ses sections vues (glossaire, compléments et TAF compris) + 1 tentative de quiz envoyée.
 
 ### Écarts d'implémentation validés (backend, 2026-10-17)
 Décisions prises pendant l'implémentation TDD, qui priment sur le texte ci-dessus :
@@ -389,7 +482,7 @@ Une user story ou une fonctionnalité n'est **terminée** que si **tous** les po
 5. **Budget** : le poids du projet + venv reste < 150 Mo (`du -sh`) ; la page touchée transfère < 200 Ko (mesure Playwright).
 6. **Données** : les migrations sont créées et appliquées sur une base vide ; `import_content` est idempotent (deux exécutions, aucun doublon).
 7. **Interface** : relue avec la grille design-taste-frontend ; aucun texte ni asset NetAcad ; capture mobile jointe à la PR.
-8. **Contenu** (stories de contenu) : sections transcrites fidèles aux photos (relecture humaine cochée), questions au statut `draft` jusqu'à validation du formateur, sauf pour la Partie 2 (Q23, Q24) : questions publiées par `import_content --publish`.
+8. **Contenu** (stories de contenu) : sections transcrites fidèles aux photos (relecture humaine cochée), questions au statut `draft` jusqu'à validation du formateur, sauf pour les Parties 2 (Q23, Q24), 3 (Q43) et 4 (Q60) : questions publiées par `import_content --publish`.
 9. **Déploiement** (jalon de release) : `deploy.sh` exécuté sur PythonAnywhere ; /fr/ et /en/ répondent 200 ; l'admin est accessible ; une sauvegarde a été produite dans `DJANGO_BACKUP_DIR`.
 10. **Documentation** : AGENTS.md est mis à jour si une décision change ; pas de TODO non suivi dans le code livré.
 11. **Schémas** (Partie 2, vérifiés par des tests sauf la capture) : toute image citée dans un `.md` existe ; chaque SVG passe `validate_inert_svg` et pèse ≤ 6 Ko ; texte alternatif non vide en fr et en en ; tout `.fr.svg` a son `.en.svg` ; aucun fichier matriciel (jpg, png, webp) sous `content/froid/p2/` ; capture à 360 px en clair et en sombre pour au moins un schéma par module.
@@ -407,3 +500,14 @@ Une user story ou une fonctionnalité n'est **terminée** que si **tous** les po
    - **Langue** : le glossaire de `p3/m1` contient les termes de Q49 en fr et en en ; la correspondance IEC 60038 apparaît à la 1re mention des tensions (Q47).
    - **Parcours** : scénario Playwright 360×800 : « Mes cours » affiche la Partie 3 → module 3 → schéma → quiz → examen ouvert seulement après les 6 modules → bascule /fr/ ↔ /en/ ; le tableau formateur et l'export CSV ont les colonnes 3.1 à 3.6.
    - **Jalons** (Q53) : arrêt pour validation après J1 (module 3) ; commit sur `develop` après J3 ; push et déploiement seulement sur demande, puis `/fr/` et `/en/` répondent 200 et la Partie 3 s'affiche en production avec ses 96 questions publiées.
+18. **Partie 4** (tests `courses/tests/test_part_four.py`, une story par test de US-50 à US-72, chacun vu en échec, et contrôle) :
+   - **Structure** : le manifeste liste la partie `p4` et ses 18 modules avec les titres et durées du PRD, dans l'ordre (160 h) ; les 77 sections existent en fr et en en ; une section `practical` par module ; exactement les 6 compléments de Q56 ; `test_content_files.py` couvre la Partie 4 (aucun `.md` hors manifeste, aucune langue manquante).
+   - **Banque** : au moins 8 questions de quiz et 8 d'examen par module (288), toutes publiables (cohérence des choix) et relues fr/en ; chaque section `content` a au moins une question, compléments compris ; `import_content --publish` publie les 288 questions sans refus.
+   - **Examen** : `exam.duration_minutes` est appliqué par l'import, ignoré s'il est absent, et refusé par `ContentError` s'il n'est pas un entier ≥ 1 ; l'examen de `p4` tire exactement 54 questions, 3 par module, en 90 min ; deux tirages successifs diffèrent ; les examens des Parties 1 à 3 restent à 60 min ; la page d'examen transfère < 200 Ko.
+   - **Schémas** : toute image citée existe ; chaque SVG de `p4/` passe `validate_inert_svg`, pèse ≤ 6 Ko et a une `viewBox` de 420 de large au plus ; tout `.fr.svg` a son `.en.svg` ; texte alternatif non vide en fr et en en ; aucun fichier matriciel sous `content/froid/p4/` ; capture Playwright à 360 px en clair et en sombre d'au moins un schéma par module qui en porte un, sans défilement horizontal de la page.
+   - **Figures** : les 7 figures de Q69 sont enregistrées dans `FIGURES`, présentes en fr et en en, sans script dans le fragment, appelées chacune dans sa section ; aucun octet de figure n'est téléchargé avant le toucher ; aucune violation CSP ; vérifiées dans Chromium à 360 px, clair et sombre, fr et en, sans défilement horizontal.
+   - **Fidélité et corrections** : `content/froid/p4/CORRECTIONS.md` donne, pour chaque entrée, la page, le texte d'origine, la correction et la justification ; il couvre les corrections de sécurité (Q61), les retraits (Q63), une entrée par TAF rédigée (Q64), le tableau des fluides (Q65), les exercices recalculés (Q66), les cotes reconstituées et le diagramme retiré (Q67), et liste les valeurs à confirmer par un formateur. Le texte servi ne contient ni note de correction, ni « R13a », ni « risque électrique faible », ni « 10 bar de détente », ni critère de fin de vide à « -1 bar » ; le balayage d'azote y précède toujours la chauffe.
+   - **Licences et marques** : aucun « Geberit », « Lokring », « Nicoll », « Maxipro », « Testo », « Prestobul », « Climalife », « Mingori », « Primagaz », « Dehon », « Elf », « Isceon », « Poulenc », « Klixon », « Gazotest », « ABCCLIM » ni « Fréon » dans le contenu servi, les questions et les SVG ; `git ls-files` ne contient aucune photo du support.
+   - **Langue** : le glossaire de `p4/m1` contient les termes de Q68 en fr et en en ; aucune chaîne d'interface nouvelle sans traduction dans le `.po`.
+   - **Parcours** : scénario Playwright 360×800 : « Mes cours » affiche la Partie 4 → module 15 → schéma → figure interactive → quiz → examen ouvert seulement après les 18 modules, chrono à 90 min → bascule /fr/ ↔ /en/ ; le tableau formateur et l'export CSV ont les colonnes 4.1 à 4.18, sans élargir la page à 360 px.
+   - **Jalons** (Q70) : arrêt pour validation après J1 (`p4/m15`, schémas et figure `manifold-vide`) ; commit local sur `develop` à la fin de chacun des trois lots de J2 et après J3 ; push et déploiement seulement sur demande, puis `/fr/` et `/en/` répondent 200 et la Partie 4 s'affiche en production avec ses 288 questions publiées.
