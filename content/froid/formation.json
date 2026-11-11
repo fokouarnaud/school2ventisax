@@ -1308,6 +1308,411 @@
       },
       "modules": [
         {
+          "order": 1,
+          "dir": "p4/m1",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Outillage et appareils de mesure du monteur frigoriste",
+            "en": "Tools and measuring instruments of the refrigeration fitter"
+          },
+          "competence": {
+            "fr": "L'apprenant devra acquérir la compétence de maîtriser le mode opératoire et d'utiliser convenablement l'outillage et tous les appareils de mesure du monteur frigoriste.",
+            "en": "The learner will master the operating procedures and correctly use all the tools and measuring instruments of the refrigeration fitter."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-glossaire",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Glossaire français-anglais",
+                "en": "French-English glossary"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-manifold-vide",
+              "kind": "content",
+              "title": {
+                "fr": "Manifold, pompe à vide et vacuomètre",
+                "en": "Manifold, vacuum pump and vacuum gauge"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-poste-tube",
+              "kind": "content",
+              "title": {
+                "fr": "Poste oxyacétylénique et façonnage du tube",
+                "en": "Oxy-acetylene set and shaping tube"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-recuperation-charge",
+              "kind": "content",
+              "title": {
+                "fr": "Récupération, charge et recherche de fuite",
+                "en": "Recovery, charging and leak detection"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-appareils-electriques",
+              "kind": "content",
+              "title": {
+                "fr": "Appareils de mesure électriques",
+                "en": "Electrical measuring instruments"
+              }
+            },
+            {
+              "order": 6,
+              "file": "06-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "dir": "p4/m2",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Différents raccords utilisés en froid",
+            "en": "Fittings used in refrigeration"
+          },
+          "competence": {
+            "fr": "L'apprenant aura une maîtrise parfaite des différents raccords utilisés en froid et climatisation.",
+            "en": "The learner will fully master the fittings used in refrigeration and air conditioning."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-cuivre-laiton",
+              "kind": "content",
+              "title": {
+                "fr": "Généralités, raccords en cuivre et en laiton",
+                "en": "General points, copper and brass fittings"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-acier-pvc-mixtes",
+              "kind": "content",
+              "title": {
+                "fr": "Raccords en acier, en PVC et mixtes",
+                "en": "Steel, PVC and mixed fittings"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-sans-flamme",
+              "kind": "content",
+              "title": {
+                "fr": "Raccords sans flamme et étanchéité",
+                "en": "Flameless fittings and sealing"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "dir": "p4/m3",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Différentes tuyauteries utilisées en froid",
+            "en": "Pipework used in refrigeration"
+          },
+          "competence": {
+            "fr": "L'apprenant devra maîtriser les différentes tuyauteries utilisées en froid, leurs propriétés et les différentes dimensions.",
+            "en": "The learner will master the pipework used in refrigeration, its properties and its dimensions."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-role-cuivre",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle, fonctions et tubes en cuivre",
+                "en": "Purpose, functions and copper tube"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-acier",
+              "kind": "content",
+              "title": {
+                "fr": "Tubes en acier",
+                "en": "Steel tube"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-pvc-multicouche-alu",
+              "kind": "content",
+              "title": {
+                "fr": "PVC, multicouche et aluminium",
+                "en": "PVC, multilayer and aluminium"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "dir": "p4/m4",
+          "duration_hours": 16,
+          "title": {
+            "fr": "Travail sur les tuyauteries",
+            "en": "Working on pipework"
+          },
+          "competence": {
+            "fr": "Être capable de calculer les longueurs, de mesurer, couper, ébavurer et fixer un tube, de différencier et réaliser un biseautage et un piquage, et de fileter un tube.",
+            "en": "To be able to calculate lengths, to measure, cut, deburr and fix a tube, to tell apart and make a bevel and a branch, and to thread a tube."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-calcul",
+              "kind": "content",
+              "title": {
+                "fr": "Calcul des longueurs",
+                "en": "Calculating lengths"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-coupe",
+              "kind": "content",
+              "title": {
+                "fr": "Mesure, coupe, ébavurage, fixation, biseautage et piquage",
+                "en": "Measuring, cutting, deburring, fixing, bevelling and branching"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-evasements",
+              "kind": "content",
+              "title": {
+                "fr": "Les évasements",
+                "en": "Flaring and swaging"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-cintrage",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Le cintrage du tube",
+                "en": "Bending tube"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-acier",
+              "kind": "content",
+              "title": {
+                "fr": "Tuyauterie en acier : coupe, filetage et mise en œuvre",
+                "en": "Steel pipework: cutting, threading and installation"
+              }
+            },
+            {
+              "order": 6,
+              "file": "06-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "dir": "p4/m5",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Manodétendeur, chalumeau, réglage de la flamme",
+            "en": "Pressure regulator, torch and flame adjustment"
+          },
+          "competence": {
+            "fr": "L'apprenant devra avoir la pleine maîtrise de l'utilisation du poste de soudure oxyacétylénique.",
+            "en": "The learner will fully master the use of the oxy-acetylene welding set."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-manodetendeurs",
+              "kind": "content",
+              "title": {
+                "fr": "Les manodétendeurs",
+                "en": "Pressure regulators"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-chalumeau-flamme",
+              "kind": "content",
+              "title": {
+                "fr": "Chalumeau mélangeur et réglage de la flamme",
+                "en": "Mixing torch and flame adjustment"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-mise-en-service",
+              "kind": "content",
+              "title": {
+                "fr": "Mise en service et hors service du poste",
+                "en": "Starting up and shutting down the set"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "dir": "p4/m6",
+          "duration_hours": 16,
+          "title": {
+            "fr": "Soudo-brasage et brasage",
+            "en": "Braze welding and brazing"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer des joints de tuyauteries par soudo-brasage et brasage avec le poste de soudure oxyacétylénique.",
+            "en": "The learner will be able to make pipe joints by braze welding and brazing with the oxy-acetylene set."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-soudo-brasage",
+              "kind": "content",
+              "title": {
+                "fr": "Le soudo-brasage",
+                "en": "Braze welding"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-brasage",
+              "kind": "content",
+              "title": {
+                "fr": "Le brasage et les conditions d'une bonne soudure",
+                "en": "Brazing and the conditions for a good joint"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "dir": "p4/m7",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Brasage sous azote",
+            "en": "Brazing under nitrogen"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer le brasage sous azote des tuyauteries frigorifiques.",
+            "en": "The learner will be able to braze refrigeration pipework under nitrogen."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-rappels",
+              "kind": "content",
+              "title": {
+                "fr": "Rappel : soudage, brasage et calamine",
+                "en": "Reminder: welding, brazing and scale"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-mise-en-oeuvre",
+              "kind": "content",
+              "title": {
+                "fr": "Brasage sous azote : mise en œuvre",
+                "en": "Brazing under nitrogen: procedure"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
           "order": 15,
           "dir": "p4/m15",
           "duration_hours": 8,

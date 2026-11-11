@@ -234,6 +234,12 @@ msgstr "Exercise: identifying the windings with an ohmmeter and choosing the ter
 msgid "Exercice : tirer au vide et diagnostiquer la tenue du vide"
 msgstr "Exercise: evacuating and diagnosing the vacuum hold"
 
+msgid "Exercice : régler la flamme oxyacétylénique"
+msgstr "Exercise: adjusting the oxy-acetylene flame"
+
+msgid "Exercice : balayage d'azote pendant le brasage"
+msgstr "Exercise: nitrogen purge during brazing"
+
 #: .\courses\figures.py:65
 msgid "Chargement de la figure…"
 msgstr "Loading the figure…"

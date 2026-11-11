@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 262" font-family="Arial, sans-serif">
+<rect width="420" height="262" fill="#fff"/>
+<rect x="60" y="150" width="300" height="24" rx="0" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<rect x="120" y="134" width="180" height="56" rx="0" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<rect x="146" y="72" width="16" height="62" rx="0" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<rect x="258" y="190" width="16" height="62" rx="0" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<path d="M60 32H120M120 32H170M170 32H360" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M60 24V40M120 24V40M170 24V40M360 24V40" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<text x="90" y="22" font-size="13" font-weight="bold" text-anchor="middle" fill="#13212c">150</text>
+<text x="145" y="22" font-size="13" font-weight="bold" text-anchor="middle" fill="#13212c">50</text>
+<text x="265" y="22" font-size="13" font-weight="bold" text-anchor="middle" fill="#13212c">150</text>
+<text x="210" y="160" font-size="13" font-weight="bold" text-anchor="middle" fill="#13212c">1</text>
+<text x="186" y="110" font-size="13" font-weight="bold" text-anchor="middle" fill="#13212c">3/8</text>
+<text x="316" y="226" font-size="13" font-weight="bold" text-anchor="middle" fill="#13212c">3/8</text>
+<text x="390" y="166" font-size="13" font-weight="bold" text-anchor="middle" fill="#13212c">1/2</text>
+</svg>

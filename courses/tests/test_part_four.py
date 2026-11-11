@@ -310,6 +310,111 @@ BRANDS = re.compile(
 )
 
 
+# Découpage du PRD (Q55, Q56) : (titre fr, heures, sections) ; T = TAF, C = complément, sinon section de cours transcrite.
+MODULES = {
+    1: ("Outillage et appareils de mesure du monteur frigoriste", 8, "01-glossaire:C 02-manifold-vide 03-poste-tube 04-recuperation-charge 05-appareils-electriques 06-taf:T"),
+    2: ("Différents raccords utilisés en froid", 8, "01-cuivre-laiton 02-acier-pvc-mixtes 03-sans-flamme 04-taf:T"),
+    3: ("Différentes tuyauteries utilisées en froid", 8, "01-role-cuivre 02-acier 03-pvc-multicouche-alu 04-taf:T"),
+    4: ("Travail sur les tuyauteries", 16, "01-calcul 02-coupe 03-evasements 04-cintrage:C 05-acier 06-taf:T"),
+    5: ("Manodétendeur, chalumeau, réglage de la flamme", 8, "01-manodetendeurs 02-chalumeau-flamme 03-mise-en-service 04-taf:T"),
+    6: ("Soudo-brasage et brasage", 16, "01-soudo-brasage 02-brasage 03-taf:T"),
+    7: ("Brasage sous azote", 8, "01-rappels 02-mise-en-oeuvre 03-taf:T"),
+    8: ("Le circuit frigorifique de base", 8, "01-elements 02-roles 03-etats 04-taf:T"),
+    9: ("Identification des enroulements des moteurs électriques, monophasés et triphasés", 8, "01-monophases 02-triphases 03-tests 04-taf:T"),
+    10: ("Démarrage des moto-compresseurs, relevé des paramètres de fonctionnement et analyse", 8, "01-relais 02-ctp-condensateurs 03-triphases:C 04-parametres 05-taf:T"),
+    11: ("Les manifolds", 8, "01-description 02-operations 03-technologies 04-taf:T"),
+    12: ("Démontage, montage d'un compresseur", 8, "01-avec-vannes 02-sans-vannes 03-refrigerateur 04-taf:T"),
+    13: ("Vidange et remplissage d'huile dans les compresseurs frigorifiques", 8, "01-qualites-choix 02-vidange 03-remplissage 04-taf:T"),
+    14: ("Test d'acidité et d'humidité des installations frigorifiques", 8, "01-rappel-huile 02-acidite 03-humidite-laboratoire:C 04-taf:T"),
+    15: ("Mise sous vide d'une installation frigorifique", 8, "01-role 02-mode-operatoire 03-casse-azote 04-taf:T"),
+    16: ("Test de pression et d'étanchéité d'une installation frigorifique, détecteurs de fuite", 8, "01-origines 02-tests-calculs 03-detection 04-test-pression:C 05-taf:T"),
+    17: ("Remplissage d'une installation frigorifique par la masse et par la surchauffe", 8, "01-fluides 02-masse-surchauffe 03-liquide-vapeur 04-melanges:C 05-taf:T"),
+    18: ("Soudure à l'arc électrique", 8, "01-principe 02-preparation 03-controle-securite 04-taf:T"),
+}
+FIGURES_OF = {5: "flamme", 7: "brasage-azote", 8: "circuit-frigo", 9: "enroulements", 10: "demarrage-compresseur", 15: "manifold-vide", 17: "manifold-charge"}
+DELIVERED = [1, 2, 3, 4, 5, 6, 7, 15]  # s'allonge à chaque lot, jusqu'aux 18 modules
+
+
+def module_files(number):
+    return [s.split(":") + [""] for s in MODULES[number][2].split()]
+
+
+def delivered(number):
+    return next(m for m in real_part_four()["modules"] if m["order"] == number)
+
+
+@pytest.mark.parametrize("number", DELIVERED)
+def test_module_matches_the_prd_structure_in_both_languages(number):
+    """US-50, Q55, Q56 : titre, durée, ordre, nature de chaque section, texte fr et en."""
+    entry = delivered(number)
+    title, hours, _ = MODULES[number]
+    assert (entry["title"]["fr"], entry["duration_hours"], entry["dir"]) == (title, hours, f"p4/m{number}")
+    expected = [(name, {"T": "practical"}.get(flag, "content"), flag == "C") for name, flag, *_ in module_files(number)]
+    assert [(s["file"], s["kind"], bool(s.get("supplement"))) for s in entry["sections"]] == expected
+    for name, *_ in module_files(number):
+        for lang in ("fr", "en"):
+            assert (CONTENT / "p4" / f"m{number}" / f"{name}.{lang}.md").read_text(encoding="utf-8").strip()
+
+
+@pytest.mark.parametrize("number", DELIVERED)
+def test_module_bank_has_eight_quiz_and_eight_exam_questions_covering_each_section(number):
+    """US-67, Q59, Q60 : 8 + 8 questions relues, au moins une par section `content`."""
+    questions = json.loads((CONTENT / "p4" / f"m{number}" / "questions.json").read_text(encoding="utf-8"))
+    assert Counter(q["usage"] for q in questions) == {"quiz": 8, "exam": 8}
+    assert all(q["reviewed"] == {"fr": True, "en": True} for q in questions)
+    content = {name for name, flag, *_ in module_files(number) if flag != "T"}
+    assert {q["section"] for q in questions} == content
+
+
+@pytest.mark.parametrize("number", DELIVERED)
+def test_module_practical_activity_gives_equipment_sequence_and_scale(number):
+    """US-65, Q64 : matériel par poste, séquence, barème 15/60/10/15."""
+    taf = next(name for name, flag, *_ in module_files(number) if flag == "T")
+    for lang, headings in (("fr", ("Matériel", "Séquence", "Évaluation")), ("en", ("Equipment", "Sequence", "Assessment"))):
+        text = (CONTENT / "p4" / f"m{number}" / f"{taf}.{lang}.md").read_text(encoding="utf-8")
+        assert all(f"## {h}" in text for h in headings), lang
+        assert re.findall(r"(\d+) ?%", text) == ["15", "60", "10", "15"], lang
+
+
+@pytest.mark.parametrize("number", DELIVERED)
+def test_module_english_gives_french_terms_and_every_image_has_a_text_alternative(number):
+    """US-63, US-68 : terme français cité en anglais ; images citées existantes, texte alternatif dans les deux langues."""
+    folder = CONTENT / "p4" / f"m{number}"
+    english = "".join(p.read_text(encoding="utf-8") for p in folder.glob("*.en.md"))
+    assert '<span lang="fr">' in english
+    for lang in ("fr", "en"):
+        for path in folder.glob(f"*.{lang}.md"):
+            for alt, name in re.findall(r"!\[([^\]]*)\]\(img/([^)]+)\)", path.read_text(encoding="utf-8")):
+                assert alt.strip() and (folder / "img" / name).exists(), f"{path.name} : {name}"
+
+
+@pytest.mark.parametrize("number", sorted(set(DELIVERED) & set(FIGURES_OF)))
+def test_module_section_publishes_its_figure_in_both_languages(number):
+    """US-64, Q69 : la figure est enregistrée et appelée une fois dans chaque langue."""
+    from courses.figures import FIGURES
+
+    name = FIGURES_OF[number]
+    assert name in FIGURES
+    for lang in ("fr", "en"):
+        text = "".join(p.read_text(encoding="utf-8") for p in (CONTENT / "p4" / f"m{number}").glob(f"*.{lang}.md"))
+        assert text.count(f"[[figure:{name}]]") == 1, lang
+
+
+def test_glossary_lists_the_trade_terms_in_both_languages():
+    """US-68, Q68 : termes britanniques du métier en tête du module 1."""
+    terms = ("manifold gauge set", "flaring", "swaging", "brazing", "oxygen-free nitrogen", "vacuum gauge", "refrigerant recovery", "pressure test", "superheat", "subcooling")
+    for lang in ("fr", "en"):
+        text = (CONTENT / "p4" / "m1" / f"01-glossaire.{lang}.md").read_text(encoding="utf-8").lower()
+        assert all(term in text for term in terms), lang
+
+
+def test_corrections_log_records_a_written_practical_activity_for_each_module():
+    """US-70, Q64 : une entrée par TAF rédigée, chaque module livré y figure."""
+    log = (CONTENT / "p4" / "CORRECTIONS.md").read_text(encoding="utf-8")
+    written = re.findall(r"^## \d+\. Activités pratiques rédigées \(module (\d+)", log, flags=re.M)
+    assert {int(n) for n in written} >= set(DELIVERED)
+
+
 def real_manifest():
     return json.loads((CONTENT / "formation.json").read_text(encoding="utf-8"))
 
@@ -400,7 +505,7 @@ def test_import_with_publish_puts_the_evacuation_questions_online():
     call_command("import_content", str(CONTENT / "formation.json"), publish=True, stdout=stats_out)
     assert "Refusée" not in stats_out.getvalue()
     partie = Partie.objects.get(slug="p4")
-    assert Question.objects.filter(module__partie=partie, status=Question.Status.PUBLISHED).count() == 16
+    assert Question.objects.filter(module__partie=partie, status=Question.Status.PUBLISHED).count() == 16 * len(DELIVERED)
     assert Assessment.exam_for(partie).duration_minutes == 90
 
 
