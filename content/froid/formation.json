@@ -1998,6 +1998,117 @@
           ]
         },
         {
+          "order": 13,
+          "dir": "p4/m13",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Vidange et remplissage d'huile dans les compresseurs frigorifiques",
+            "en": "Draining and refilling oil in refrigeration compressors"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer la vidange et le remplissage de l'huile de lubrification d'un compresseur frigorifique en toute sécurité.",
+            "en": "The learner will be able to drain and refill the lubricating oil of a refrigeration compressor safely."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-qualites-choix",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle, qualités et choix de l'huile",
+                "en": "Role, qualities and choice of oil"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-vidange",
+              "kind": "content",
+              "title": {
+                "fr": "Vidange de l'huile frigorifique",
+                "en": "Draining refrigeration oil"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-remplissage",
+              "kind": "content",
+              "title": {
+                "fr": "Remplissage de l'huile",
+                "en": "Filling with oil"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 14,
+          "dir": "p4/m14",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Test d'acidité et d'humidité des installations frigorifiques",
+            "en": "Acidity and moisture testing of refrigeration systems"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable de conduire les tests d'acidité et d'humidité de l'huile de lubrification d'un compresseur frigorifique.",
+            "en": "The learner will be able to carry out acidity and moisture tests on a refrigeration compressor's lubricating oil."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-rappel-huile",
+              "kind": "content",
+              "title": {
+                "fr": "Rappel : l'huile dans une installation frigorifique",
+                "en": "Reminder: oil in a refrigeration system"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-acidite",
+              "kind": "content",
+              "title": {
+                "fr": "Prélèvement et test d'acidité",
+                "en": "Sampling and acid test"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-humidite-laboratoire",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Test d'humidité et analyse en laboratoire",
+                "en": "Moisture test and laboratory analysis"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
           "order": 15,
           "dir": "p4/m15",
           "duration_hours": 8,
@@ -2039,6 +2150,191 @@
               "title": {
                 "fr": "Casser le vide à l'azote",
                 "en": "Breaking the vacuum with nitrogen"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 16,
+          "dir": "p4/m16",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Test de pression et d'étanchéité d'une installation frigorifique, détecteurs de fuite",
+            "en": "Pressure and leak testing of a refrigeration system, leak detectors"
+          },
+          "competence": {
+            "fr": "Au sortir de cette séquence, l'apprenant saura identifier les différentes méthodes de contrôle de l'étanchéité des installations frigorifiques et les mettre en pratique sur des circuits réels.",
+            "en": "By the end of this sequence the learner will be able to identify the methods for checking the tightness of refrigeration systems and apply them on real circuits."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-origines",
+              "kind": "content",
+              "title": {
+                "fr": "Enjeux et origines des fuites",
+                "en": "Why leaks matter and where they come from"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-tests-calculs",
+              "kind": "content",
+              "title": {
+                "fr": "Méthodes indirectes et calcul du taux de fuite",
+                "en": "Indirect methods and leak rate calculation"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-detection",
+              "kind": "content",
+              "title": {
+                "fr": "Méthodes de détection des fuites",
+                "en": "Leak detection methods"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-test-pression",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Le test de pression à l'azote",
+                "en": "The nitrogen pressure test"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 17,
+          "dir": "p4/m17",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Remplissage d'une installation frigorifique par la masse et par la surchauffe",
+            "en": "Charging a refrigeration system by mass and by superheat"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer la charge en fluide frigorigène d'une installation frigorifique par la mesure de la masse et par la méthode de la surchauffe.",
+            "en": "The learner will be able to charge a refrigeration system by measuring the mass and by the superheat method."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-fluides",
+              "kind": "content",
+              "title": {
+                "fr": "Classification des fluides frigorigènes",
+                "en": "Classification of refrigerants"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-masse-surchauffe",
+              "kind": "content",
+              "title": {
+                "fr": "Charge par la masse et par la surchauffe",
+                "en": "Charging by mass and by superheat"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-liquide-vapeur",
+              "kind": "content",
+              "title": {
+                "fr": "Charge en phase liquide et en phase vapeur",
+                "en": "Liquid and vapour charging"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-melanges",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Mélanges zéotropes et azéotropes",
+                "en": "Zeotropic and azeotropic blends"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 18,
+          "dir": "p4/m18",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Soudure à l'arc électrique",
+            "en": "Electric arc welding"
+          },
+          "competence": {
+            "fr": "Réaliser la soudure à l'arc dans les règles de l'art.",
+            "en": "Carry out arc welding to a professional standard."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-principe",
+              "kind": "content",
+              "title": {
+                "fr": "Principe, intensité et polarité",
+                "en": "Principle, current and polarity"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-preparation",
+              "kind": "content",
+              "title": {
+                "fr": "Préparation, pointage et position de l'électrode",
+                "en": "Preparation, tacking and electrode position"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-controle-securite",
+              "kind": "content",
+              "title": {
+                "fr": "Contrôle de la soudure, sécurité et nettoyage",
+                "en": "Inspecting the weld, safety and cleaning"
               }
             },
             {

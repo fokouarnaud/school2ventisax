@@ -30,6 +30,7 @@ FIGURES = {
     "circuit-frigo": gettext_lazy("Exercice : état du fluide en chaque point du circuit"),
     "enroulements": gettext_lazy("Exercice : identifier les enroulements d'un compresseur à l'ohmmètre"),
     "demarrage-compresseur": gettext_lazy("Exercice : diagnostiquer le démarrage par relais d'un moto-compresseur"),
+    "manifold-charge": gettext_lazy("Exercice : charger une installation à la balance"),
 }
 SHARED = ("acad/figures/kit.js", "acad/figures/iso.css")
 # Un marqueur n'est reconnu que seul dans son paragraphe ; le nom est limité à [a-z0-9-] (aucun chemin, aucun attribut).

@@ -249,6 +249,9 @@ msgstr "Exercise: identifying a compressor's windings with an ohmmeter"
 msgid "Exercice : diagnostiquer le démarrage par relais d'un moto-compresseur"
 msgstr "Exercise: diagnosing a motor-compressor's relay start"
 
+msgid "Exercice : charger une installation à la balance"
+msgstr "Exercise: charging a system on scales"
+
 #: .\courses\figures.py:65
 msgid "Chargement de la figure…"
 msgstr "Loading the figure…"

@@ -541,6 +541,216 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Correction** : TAF rédigée (matériel, séquence, barème 15/60/10/15).
 - **Justification** : décision Q64.
 
+## 78. Tableau des fluides (module 13, imprimé 32)
+
+- **Page** : 59
+- **Texte d'origine** : colonne « Qualificatif » (« Ancien », « Transition / 2015 », « Définitif ») ; noms commerciaux et fabricants ; R413A « 6 % R218, 88 % R134a, 6 % 600a », classé HFC.
+- **Correction** : colonnes famille et classe de sécurité ISO 817, « respecter la réglementation locale » ; noms commerciaux retirés ; R413A : R218 9 %, R134a 88 %, R600a 3 %, mélange HFC, PFC et HC, classe A2 ; R290 et R600a ajoutés.
+- **Justification** : décision Q65 ; calendrier européen daté ; Q62.
+
+## 79. Huiles et fluides naturels (module 13, imprimé 32)
+
+- **Page** : 61
+- **Texte d'origine** : « les huiles Polyoester pour les HFC, HFO et fluides naturels »
+- **Correction** : POE pour HFC et HFO ; pour les hydrocarbures et l'ammoniac, huile prescrite par le fabricant.
+- **Justification** : l'ammoniac et les hydrocarbures s'emploient généralement avec des huiles minérales, PAO ou PAG.
+
+## 80. Hygroscopie et huile usagée (module 13, imprimé 32)
+
+- **Page** : 58 à 61
+- **Texte d'origine** : « Hygroscopie (ou teneur en eau nul) » ; aucune précaution pour les huiles POE ; aucun devenir de l'huile usagée.
+- **Correction** : définition seule ; POE et PAG très hygroscopiques, bidon refermé aussitôt ; huile usagée en filière de déchets dangereux.
+- **Justification** : exactitude et environnement.
+
+## 81. Pressions (module 13, imprimé 32)
+
+- **Page** : 61
+- **Texte d'origine** : azote « en maîtrisant bien la pression » ; arrêt « entre 0,3 et 0,1 bar ».
+- **Correction** : azote détendu à environ 0,5 bar par un manodétendeur ; « bar relatif ».
+- **Justification** : sécurité ; la référence de pression n'était pas précisée.
+
+## 82. Schémas filigranés (module 13, imprimé 32)
+
+- **Page** : 60 et 61
+- **Texte d'origine** : figures portant le filigrane d'un site internet.
+- **Correction** : vidange par dépression redessinée ; vidange sous pression décrite en tableau.
+- **Justification** : décision Q62.
+
+## 83. Activités pratiques rédigées (module 13, imprimé 32)
+
+- **Page** : 58 à 61
+- **Texte d'origine** : aucune TAF.
+- **Correction** : TAF rédigée (matériel, séquence, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
+## 84. Prélèvement d'un échantillon (module 14, imprimé 33)
+
+- **Page** : 62
+- **Texte d'origine** : prélèvement décrit comme une vidange par dépression (« Quand toute l'huile est retirée »).
+- **Correction** : prélèvement d'un échantillon dans un flacon propre et sec, puis complément du niveau, tirage au vide et remise en service.
+- **Justification** : un test n'exige qu'un échantillon ; le support ne remettait pas l'installation en état.
+
+## 85. Couleurs du test (module 14, imprimé 33)
+
+- **Page** : 62
+- **Texte d'origine** : « Couleur violette = acidité correcte ; Couleur jaune = acidité élevée », sans réserve.
+- **Correction** : rappel que les couleurs varient selon le kit et se lisent sur sa notice.
+- **Justification** : conventions différentes selon les fabricants.
+
+## 86. Test d'humidité et laboratoire ajoutés (module 14, imprimé 33)
+
+- **Page** : 62 et 63
+- **Texte d'origine** : titre « Test d'acidité et d'humidité » ; aucun test d'humidité ; étude en laboratoire annoncée mais non décrite.
+- **Correction** : section « Complément » sur le test d'humidité, l'analyse en laboratoire et les remèdes.
+- **Justification** : décisions Q56 et Q57.
+
+## 87. Ordre des pages (module 14, imprimé 33)
+
+- **Page** : 62 et 63
+- **Texte d'origine** : le rappel sur l'huile (p. 63) suit le prélèvement et l'analyse (p. 62).
+- **Correction** : rappel placé en première section.
+- **Justification** : décision Q57.
+
+## 88. Activités pratiques rédigées (module 14, imprimé 33)
+
+- **Page** : 62 et 63
+- **Texte d'origine** : aucune TAF.
+- **Correction** : TAF rédigée (matériel, séquence, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
+## 89. Pressions en phase vapeur impossibles (module 16, imprimé 35)
+
+- **Page** : 68 et 69
+- **Texte d'origine** : « On charge l'installation sous 8 bars de fluide frigorigène » ; « 25 bars de R134a » ; « 13 bars de R134a ».
+- **Correction** : pressions d'azote ; le taux de fuite est exprimé en équivalent R134a.
+- **Justification** : à 20 °C, le R134a ne peut pas exister en vapeur au-dessus d'environ 5,7 bar absolus.
+
+## 90. Calcul du cas 2 (module 16, imprimé 35)
+
+- **Page** : 69
+- **Texte d'origine** : « Le taux de fuite de R134a est de 13.3 Kg/an. »
+- **Correction** : 15,3 kg/an (765 kg/an pour 1 m³ multiplié par 0,02 m³) ; formule de calcul ajoutée.
+- **Justification** : Q66.
+
+## 91. Remontée de pression (module 16, imprimé 35)
+
+- **Page** : 68
+- **Texte d'origine** : vide « de l'ordre de 1 mbar absolu », puis exemple « On réalise un vide dans l'installation jusqu'à environ 10 mbar » ; « R13a ».
+- **Correction** : vide à 1 mbar et remontée de 10 mbar en 24 heures ; « R134a ».
+- **Justification** : cohérence de l'exemple ; coquille.
+
+## 92. Vitesse de la sonde (module 16, imprimé 35)
+
+- **Page** : 70
+- **Texte d'origine** : « environ 20m/s » pour le détecteur-mesureur, contre « 20 mm/s » pour le détecteur électronique.
+- **Correction** : 20 mm/s au plus pour les deux.
+- **Justification** : 20 m/s est irréaliste.
+
+## 93. Tension superficielle et vocabulaire (module 16, imprimé 35)
+
+- **Page** : 68, 69 et 71
+- **Texte d'origine** : « il faut que la pression interne de la bulle soit supérieure à la tension superficielle » ; « perte de charge » pour une perte de fluide ; nom commercial « Gazotest » ; détecteurs photographiés.
+- **Correction** : les tensio-actifs abaissent la tension superficielle ; « perte de fluide » ; « produit moussant de détection » ; tableau des méthodes et schéma de sonde.
+- **Justification** : grandeurs différentes ; Q62.
+
+## 94. Diagramme enthalpique retiré (module 16, imprimé 35)
+
+- **Page** : 72 et 73
+- **Texte d'origine** : activité 3 « Utilisation du diagramme enthalpie dans l'évaluation du taux de fuite », diagramme R404A tourné et non expliqué.
+- **Correction** : diagramme retiré ; activité 3 recalculée à partir de la pression et du volume (0,5 m³, 25 °C, 20 mbar en 24 h : environ 15 kg/an).
+- **Justification** : Q67.
+
+## 95. Test de pression ajouté (module 16, imprimé 35)
+
+- **Page** : 67 à 72
+- **Texte d'origine** : titre « Test de pression » sans procédure de test de pression (PS, paliers, sécurité).
+- **Correction** : section « Complément » sur le test de pression à l'azote.
+- **Justification** : décisions Q56 et Q61.
+
+## 96. Activités pratiques rédigées (module 16, imprimé 35)
+
+- **Page** : 72
+- **Texte d'origine** : activités 1 à 5 et matière d'œuvre, sans séquence chiffrée ni barème.
+- **Correction** : TAF complétée (séquence, calcul de l'activité 3, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
+## 97. Classification des fluides (module 17, imprimé 36)
+
+- **Page** : 74 et 75
+- **Texte d'origine** : CFC « nécessaires pour le fonctionnement de toutes installations qui doivent être rechargées » ; halogénés « interdits » puis HFC « les plus utilisés » ; fluides naturels sans « action sur l'ozone et l'effet de serre ».
+- **Correction** : tableau par famille, avec la situation de chaque famille ; CO2 de PRG 1 et ammoniac toxique ; « respecter la réglementation locale ».
+- **Justification** : affirmations fausses ou contradictoires ; Q65.
+
+## 98. Surchauffe (module 17, imprimé 36)
+
+- **Page** : 75
+- **Texte d'origine** : « La bonne surchauffe est entre 4 à 8°c », sans procédure.
+- **Correction** : écart en kelvins, exemple chiffré, valeur du constructeur, lecture à la rosée pour un zéotrope, contrôle au sous-refroidissement avec un détendeur thermostatique.
+- **Justification** : un écart de température s'exprime en kelvins ; la valeur dépend de l'installation.
+
+## 99. Charge liquide compresseur en marche (module 17, imprimé 36)
+
+- **Page** : 76
+- **Texte d'origine** : pré-charge « en agissant sur les différents robinets (HP) », puis charge en marche sans précaution.
+- **Correction** : pré-charge liquide dans la ligne liquide compresseur à l'arrêt ; complément liquide côté BP par petites quantités seulement.
+- **Justification** : du liquide envoyé en masse vers le compresseur peut le détruire par coup de liquide.
+
+## 100. Mélanges et fluides inflammables (module 17, imprimé 36)
+
+- **Page** : 74 à 77
+- **Texte d'origine** : titre annonçant les fluides azéotropiques, non traités ; zéotropes absents ; photo de chiller au R290 sans consigne ; « fréon ».
+- **Correction** : section « Complément » sur les mélanges ; consignes pour les hydrocarbures ; photos retirées ; « fluide frigorigène ».
+- **Justification** : décisions Q56, Q62 et Q65.
+
+## 101. Activités pratiques rédigées (module 17, imprimé 36)
+
+- **Page** : 74 à 77
+- **Texte d'origine** : aucune TAF.
+- **Correction** : TAF rédigée (matériel, séquence, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
+## 102. Risque électrique (module 18, imprimé 37)
+
+- **Page** : 81
+- **Texte d'origine** : « Risque électrique faible car la tension l'est aussi. »
+- **Correction** : la tension à vide peut être dangereuse, surtout en milieu humide ; consignes de travail au sec, gants secs, électrode jamais changée à mains nues, poste coupé avant intervention.
+- **Justification** : sécurité des personnes.
+
+## 103. Polarité (module 18, imprimé 37)
+
+- **Page** : 79
+- **Texte d'origine** : « L'électrode est reliée au pôle négatif (polarité directe) [...] Cette polarité favorise la pénétration et c'est la plus utilisée. »
+- **Correction** : polarité choisie d'après l'indication du fabricant de l'électrode ; électrode au positif pour une bonne pénétration avec les électrodes basiques, électrode au négatif pour une fusion rapide sur tôle fine.
+- **Justification** : avec l'électrode enrobée, l'effet de la polarité dépend de l'électrode.
+
+## 104. Incendie et protection des yeux (module 18, imprimé 37)
+
+- **Page** : 81
+- **Texte d'origine** : aucune consigne contre l'incendie ; masque sans filtre précisé.
+- **Correction** : combustibles éloignés, extincteur, surveillance après travail ; filtre teinté adapté à l'intensité ; écrans pour les voisins.
+- **Justification** : sécurité.
+
+## 105. Angle et vocabulaire (module 18, imprimé 37)
+
+- **Page** : 78 et 80
+- **Texte d'origine** : « angle d'environ 70° » contre « 70° à 80° » sur la figure ; « court-circuit entretenu » ; « dans le sens du cordon 9 ».
+- **Correction** : 70° à 80° ; « arc électrique entretenu » ; renvoi « 9 » retiré.
+- **Justification** : cohérence et exactitude.
+
+## 106. Photos de défauts (module 18, imprimé 37)
+
+- **Page** : 80 et 81
+- **Texte d'origine** : photos de cordons défectueux.
+- **Correction** : tableau des défauts ; schémas de chanfreins et de position de l'électrode redessinés.
+- **Justification** : décision Q62.
+
+## 107. Activités pratiques rédigées (module 18, imprimé 37)
+
+- **Page** : 78 à 81
+- **Texte d'origine** : aucune TAF.
+- **Correction** : TAF rédigée (matériel, séquence, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
 ## Valeurs à confirmer par un formateur
 
 Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :
@@ -565,3 +775,10 @@ Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :
 - Module 9 : seuils d'isolement (1 MΩ, 500 kΩ) repris du support, à confirmer selon le constructeur.
 - Module 10 : seuils de puissance (500 W, 600 W) repris du support.
 - Module 10 : tolérance de tension de 10 % dans le tableau d'analyse (pratique courante).
+- Module 13 : classes ISO 817 et huiles des fluides du tableau, d'après la pratique courante.
+- Module 13 : pression d'azote de 0,5 bar environ pour la vidange sous pression.
+- Module 14 : lecture du voyant après une demi-heure de fonctionnement stable (pratique courante).
+- Module 16 : taux de fuite de 23 kg/an pour la remontée de pression (valeur du support, facteur de correction non donné).
+- Module 16 : pression d'essai de résistance de 1,1 × PS à l'azote (EN 378, à confirmer selon le constructeur).
+- Module 17 : surchauffe courante de 4 à 8 K (support), à remplacer par la valeur du constructeur.
+- Module 18 : effets de la polarité selon le type d'électrode, à confirmer selon les électrodes de l'atelier.

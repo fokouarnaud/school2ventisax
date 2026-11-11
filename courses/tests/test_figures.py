@@ -26,6 +26,7 @@ PUBLISHED = [
     ("circuit-frigo", "p4/m8/03-etats"),  # état du fluide aux points 1 à 9
     ("enroulements", "p4/m9/01-monophases"),  # C, A, P à l'ohmmètre
     ("demarrage-compresseur", "p4/m10/02-ctp-condensateurs"),  # relais d'intensité : normal, K ouvert, K collé
+    ("manifold-charge", "p4/m17/03-liquide-vapeur"),  # tare, phase, masse de la plaque
 ]
 
 
