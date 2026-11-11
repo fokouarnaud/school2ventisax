@@ -1713,6 +1713,291 @@
           ]
         },
         {
+          "order": 8,
+          "dir": "p4/m8",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Le circuit frigorifique de base",
+            "en": "The basic refrigeration circuit"
+          },
+          "competence": {
+            "fr": "L'apprenant doit être capable de nommer et reconnaître les différents éléments de base d'un circuit fluidique, de donner le rôle de chacun et de décrire l'état du fluide frigorigène dans le circuit, et de les schématiser.",
+            "en": "The learner must be able to name and recognise the basic components of a refrigeration circuit, give the role of each, describe the state of the refrigerant in the circuit, and draw them."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-elements",
+              "kind": "content",
+              "title": {
+                "fr": "Les éléments d'un circuit frigorifique",
+                "en": "The components of a refrigeration circuit"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-roles",
+              "kind": "content",
+              "title": {
+                "fr": "Rôle de chaque élément",
+                "en": "The role of each component"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-etats",
+              "kind": "content",
+              "title": {
+                "fr": "État du fluide sur chaque partie du circuit",
+                "en": "State of the refrigerant around the circuit"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 9,
+          "dir": "p4/m9",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Identification des enroulements des moteurs électriques, monophasés et triphasés",
+            "en": "Identifying the windings of single-phase and three-phase electric motors"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'identifier les enroulements des moteurs électriques monophasés et triphasés, et de tester un moteur défectueux.",
+            "en": "The learner will be able to identify the windings of single-phase and three-phase electric motors, and test a faulty motor."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-monophases",
+              "kind": "content",
+              "title": {
+                "fr": "Moteurs monophasés : principe et bornier",
+                "en": "Single-phase motors: principle and terminals"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-triphases",
+              "kind": "content",
+              "title": {
+                "fr": "Moteurs triphasés",
+                "en": "Three-phase motors"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-tests",
+              "kind": "content",
+              "title": {
+                "fr": "Test d'un moteur",
+                "en": "Testing a motor"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 10,
+          "dir": "p4/m10",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Démarrage des moto-compresseurs, relevé des paramètres de fonctionnement et analyse",
+            "en": "Starting motor-compressors, recording and analysing operating parameters"
+          },
+          "competence": {
+            "fr": "L'apprenant sera capable d'effectuer le démarrage des moto-compresseurs et de relever les paramètres de fonctionnement.",
+            "en": "The learner will be able to start motor-compressors and record their operating parameters."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-relais",
+              "kind": "content",
+              "title": {
+                "fr": "Démarrage par relais d'intensité et de tension",
+                "en": "Starting with current and voltage relays"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-ctp-condensateurs",
+              "kind": "content",
+              "title": {
+                "fr": "Démarrage par CTP et par condensateurs",
+                "en": "Starting with a PTC and with capacitors"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-triphases",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Démarrage des moto-compresseurs triphasés",
+                "en": "Starting three-phase motor-compressors"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-parametres",
+              "kind": "content",
+              "title": {
+                "fr": "Paramètres à relever et analyse",
+                "en": "Parameters to record and analysis"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 11,
+          "dir": "p4/m11",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Les manifolds",
+            "en": "Manifold gauge sets"
+          },
+          "competence": {
+            "fr": "À la fin de ce module, l'apprenant doit être capable d'utiliser parfaitement le manifold sur tout type d'intervention.",
+            "en": "By the end of this module, the learner will be able to use the manifold gauge set for any type of job."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-description",
+              "kind": "content",
+              "title": {
+                "fr": "Description générale d'un manifold",
+                "en": "General description of a manifold"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-operations",
+              "kind": "content",
+              "title": {
+                "fr": "Les tâches effectuées avec un manifold",
+                "en": "Jobs done with a manifold"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-technologies",
+              "kind": "content",
+              "title": {
+                "fr": "Les technologies des manifolds",
+                "en": "Manifold technologies"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
+          "order": 12,
+          "dir": "p4/m12",
+          "duration_hours": 8,
+          "title": {
+            "fr": "Démontage, montage d'un compresseur",
+            "en": "Removing and installing a compressor"
+          },
+          "competence": {
+            "fr": "À la fin de ce module, l'apprenant doit être capable d'effectuer le montage d'un moto-compresseur sur un circuit frigorifique.",
+            "en": "By the end of this module, the learner will be able to fit a motor-compressor to a refrigeration circuit."
+          },
+          "evaluation_note": {
+            "fr": "Réalisation pratique évaluée en atelier (fixations 15 %, opérationnalité 60 %, normes et matériel 10 %, compte rendu 15 %) et QCM.",
+            "en": "Practical work assessed in the workshop (mounting 15%, operation 60%, standards and equipment 10%, report 15%) and multiple-choice test."
+          },
+          "sections": [
+            {
+              "order": 1,
+              "file": "01-avec-vannes",
+              "kind": "content",
+              "title": {
+                "fr": "Circuit avec vannes de service",
+                "en": "Circuit with service valves"
+              }
+            },
+            {
+              "order": 2,
+              "file": "02-sans-vannes",
+              "kind": "content",
+              "title": {
+                "fr": "Installation sans vannes de service au compresseur",
+                "en": "System without compressor service valves"
+              }
+            },
+            {
+              "order": 3,
+              "file": "03-refrigerateur",
+              "kind": "content",
+              "title": {
+                "fr": "Réfrigérateur avec un compresseur défectueux",
+                "en": "Refrigerator with a faulty compressor"
+              }
+            },
+            {
+              "order": 4,
+              "file": "04-taf",
+              "kind": "practical",
+              "title": {
+                "fr": "Activités pratiques (TAF)",
+                "en": "Practical activities"
+              }
+            }
+          ]
+        },
+        {
           "order": 15,
           "dir": "p4/m15",
           "duration_hours": 8,

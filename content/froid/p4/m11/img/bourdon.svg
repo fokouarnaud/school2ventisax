@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" font-family="Arial, sans-serif">
+<rect width="420" height="300" fill="#fff"/>
+<path d="M70 210A140 140 0 1 1 350 210" fill="none" stroke="#13212c" stroke-width="2"/>
+<path d="M350.0 210.0L336.0 210.0" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M343.1 166.7L329.8 171.1" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M323.3 127.7L311.9 135.9" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M292.3 96.7L284.1 108.1" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M253.3 76.9L248.9 90.2" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M210.0 70.0L210.0 84.0" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M166.7 76.9L171.1 90.2" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M127.7 96.7L135.9 108.1" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M96.7 127.7L108.1 135.9" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M76.9 166.7L90.2 171.1" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M70.0 210.0L84.0 210.0" fill="none" stroke="#13212c" stroke-width="1.5"/>
+<path d="M150 250V210A60 60 0 1 1 270 210" fill="none" stroke="#b3261e" stroke-width="6"/>
+<rect x="140" y="250" width="20" height="30" rx="0" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<text x="178" y="278" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">1</text>
+<path d="M270 210L240 196" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<circle cx="230" cy="192" r="12" fill="#eef2f5" stroke="#13212c" stroke-width="2"/>
+<text x="290" y="210" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">2</text>
+<text x="250" y="222" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">3</text>
+<path d="M230 192L130 120" fill="none" stroke="#13212c" stroke-width="2.5"/>
+<text x="118" y="112" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">4</text>
+<text x="360" y="216" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">5</text>
+</svg>

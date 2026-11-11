@@ -373,6 +373,174 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Correction** : TAF complétée (séquence, barème 15/60/10/15, poste oxyacétylénique et EPI ajoutés).
 - **Justification** : décision Q64.
 
+## 54. Zones du condenseur (module 8, imprimé 27)
+
+- **Page** : 44
+- **Texte d'origine** : « Les points 4 et 6 représentent la zone de condensation du fluide frigorigène. »
+- **Correction** : points 4 à 5 pour la condensation, points 5 à 6 pour le sous-refroidissement.
+- **Justification** : le support annonce trois zones au condenseur (p. 43), mais le point 5 n'est pas décrit.
+
+## 55. Évaporateur et froid (module 8, imprimé 27)
+
+- **Page** : 43
+- **Texte d'origine** : « le fluide frigorigène va céder de son froid à l'évaporateur et l'évaporateur va renvoyer le froid dans l'habitacle »
+- **Correction** : le fluide absorbe la chaleur de l'air, qui se refroidit.
+- **Justification** : le froid n'est pas transmis : c'est la chaleur qui passe de l'air au fluide.
+
+## 56. Détente (module 8, imprimé 27)
+
+- **Page** : 43
+- **Texte d'origine** : « changement brusque d'état du fluide. Ce changement d'état est dû à un changement de section de la tuyauterie. »
+- **Correction** : vaporisation partielle provoquée par le passage dans un orifice réduit.
+- **Justification** : une partie seulement du fluide se vaporise, comme l'indique le 80/20 du schéma p. 43.
+
+## 57. Noms et schéma (module 8, imprimé 27)
+
+- **Page** : 41 à 44
+- **Texte d'origine** : photos de composants ; évaporateur et condenseur inversés entre les p. 42 et 44 ; « fréon » ; titre du sommaire différent.
+- **Correction** : tableau et schéma unique avec l'évaporateur à gauche ; « fluide frigorigène » (Q62).
+- **Justification** : une seule disposition facilite la lecture ; marque.
+
+## 58. Activités pratiques rédigées (module 8, imprimé 27)
+
+- **Page** : 44
+- **Texte d'origine** : quatre tâches, sans matériel, séquence ni barème.
+- **Correction** : TAF complétée (matériel, relevés, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
+## 59. Tension d'alimentation (module 9, imprimé 28)
+
+- **Page** : 45
+- **Texte d'origine** : « alimentés en monophasé 240V »
+- **Correction** : « monophasé 230 V ».
+- **Justification** : tension normalisée (IEC 60038), cohérente avec le module suivant.
+
+## 60. Sécurité des mesures (module 9, imprimé 28)
+
+- **Page** : 47
+- **Texte d'origine** : aucune consignation ; aucun avertissement sur le mégohmmètre et les compresseurs sous vide.
+- **Correction** : consignation et vérification d'absence de tension avant mesure ; interdiction de mesurer l'isolement d'un compresseur hermétique sous vide.
+- **Justification** : sécurité des personnes et du matériel.
+
+## 61. Protecteur et vocabulaire (module 9, imprimé 28)
+
+- **Page** : 45 et 47
+- **Texte d'origine** : « klixon » ; « ohmmètre à Mégohmmètre » ; numérotation « II » répétée, sans III.
+- **Correction** : « protecteur thermique » ; « mégohmmètre » ; sections renumérotées.
+- **Justification** : terme générique (Q62) et coquilles.
+
+## 62. Activités pratiques rédigées (module 9, imprimé 28)
+
+- **Page** : 45 à 47
+- **Texte d'origine** : aucune TAF, malgré une compétence de test.
+- **Correction** : TAF rédigée (matériel, séquence, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
+## 63. Schéma CSIR (module 10, imprimé 29)
+
+- **Page** : 50
+- **Texte d'origine** : sous le titre « LE MONTAGE C.S.I.R », schéma « Montage PSC » ; « le condensateur aura atteint sa charge et va se comporte comme un interrupteur ouvert ».
+- **Correction** : deux montages distincts (PSC et CSIR), le condensateur de démarrage coupé par le relais ; tableau PSC, CSIR, CSR.
+- **Justification** : un condensateur en alternatif ne se comporte pas comme un interrupteur ouvert.
+
+## 64. Puissance des moteurs à CTP (module 10, imprimé 29)
+
+- **Page** : 49
+- **Texte d'origine** : « moteurs de petite puissance > a 500w »
+- **Correction** : « moins de 500 W environ ».
+- **Justification** : contradiction avec « petite puissance ».
+
+## 65. Repérage des condensateurs (module 10, imprimé 29)
+
+- **Page** : 49
+- **Texte d'origine** : identification par la couleur (noir pour le démarrage, blanc ou aluminium pour le permanent).
+- **Correction** : identification par le marquage (capacité, service, tension).
+- **Justification** : la couleur varie selon le fabricant.
+
+## 66. Démarrage triphasé (module 10, imprimé 29)
+
+- **Page** : 48
+- **Texte d'origine** : triphasé annoncé (« démarrage direct, semi-automatique deux sens de marche, étoile triangle ») mais non développé.
+- **Correction** : section « Complément » sur les moto-compresseurs triphasés ; le démarrage à deux sens de marche est retiré, un compresseur ne tournant que dans un sens.
+- **Justification** : décision Q56.
+
+## 67. Analyse et matériel (module 10, imprimé 29)
+
+- **Page** : 50 et 51
+- **Texte d'origine** : listes de paramètres sans analyse ; pince ampèremétrique absente ; « 5 fiches mal ».
+- **Correction** : tableau d'analyse ajouté ; pinces ampèremétriques ajoutées ; « 5 fiches mâles ».
+- **Justification** : le titre annonce une analyse ; les courants se mesurent à la pince.
+
+## 68. Activités pratiques rédigées (module 10, imprimé 29)
+
+- **Page** : 51
+- **Texte d'origine** : maquettes et matériel, sans séquence ni barème.
+- **Correction** : TAF complétée (séquence, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
+## 69. Désignations du manifold (module 11, imprimé 30)
+
+- **Page** : 52 et 54
+- **Texte d'origine** : « Le manifold encore appeler by-pass ou manomètre » ; « une aiguille munie d'un cadran ».
+- **Correction** : vannes bypass et manomètres présentés comme des éléments du manifold ; aiguille qui se déplace devant un cadran.
+- **Justification** : termes impropres.
+
+## 70. Tâches du manifold (module 11, imprimé 30)
+
+- **Page** : 53 et 54
+- **Texte d'origine** : vide « dans le but de retirer l'impureté » ; azote sans manodétendeur ni pression d'épreuve ; charge sans phase ni pesée ; récupération sans consigne.
+- **Correction** : air et humidité, contrôle au vacuomètre ; azote détendu, sans dépasser PS ; pesée et charge liquide des zéotropes ; aucun relâchement à l'atmosphère.
+- **Justification** : sécurité et pratique courante.
+
+## 71. Schémas filigranés (module 11, imprimé 30)
+
+- **Page** : 53 et 54
+- **Texte d'origine** : schémas de vide, d'azote et de récupération portant le filigrane d'un site internet.
+- **Correction** : retirés ; renvoi aux modules de mise sous vide et de remplissage et à leurs figures ; manifold et tube de Bourdon redessinés.
+- **Justification** : décision Q62.
+
+## 72. Activités pratiques rédigées (module 11, imprimé 30)
+
+- **Page** : 54
+- **Texte d'origine** : « Réaliser la manipulation de chacune de ces opérations », sans matériel ni barème.
+- **Correction** : TAF rédigée (matériel, séquence, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
+## 73. Brasage du compresseur (module 12, imprimé 31)
+
+- **Page** : 56 et 57
+- **Texte d'origine** : « Poser le nouveau compresseur en brasant » ; azote sans manodétendeur.
+- **Correction** : brasage sous balayage d'azote ; bouteille munie d'un manodétendeur.
+- **Justification** : la calamine encrasse le circuit ; une bouteille d'azote ne se raccorde jamais sans manodétendeur.
+
+## 74. Filtre et acidité (module 12, imprimé 31)
+
+- **Page** : 55 à 57
+- **Texte d'origine** : changement du filtre en NB final ; « Si le fluide frigorigène lors de la récupération n'est pas contaminé on recharge après », sans test.
+- **Correction** : test d'acidité de l'huile et remplacement du filtre intégrés à chaque procédure.
+- **Justification** : un compresseur défectueux laisse souvent de l'acide dans le circuit.
+
+## 75. Fluides inflammables (module 12, imprimé 31)
+
+- **Page** : 57
+- **Texte d'origine** : cas du réfrigérateur sans mention des fluides R600a et R290.
+- **Correction** : consignes de ventilation, absence de flamme, brasage après récupération et balayage.
+- **Justification** : décision Q65.
+
+## 76. Doublons et vocabulaire (module 12, imprimé 31)
+
+- **Page** : 55 et 56
+- **Texte d'origine** : raccordement électrique cité deux fois ; « fréon » ; schéma de chambre froide peu exploité.
+- **Correction** : une seule étape ; « fluide frigorigène » ; schéma remplacé par celui des positions de la vanne de service.
+- **Justification** : Q62.
+
+## 77. Activités pratiques rédigées (module 12, imprimé 31)
+
+- **Page** : 56
+- **Texte d'origine** : exercice d'une ligne, sans matériel ni barème.
+- **Correction** : TAF rédigée (matériel, séquence, barème 15/60/10/15).
+- **Justification** : décision Q64.
+
 ## Valeurs à confirmer par un formateur
 
 Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :
@@ -393,3 +561,7 @@ Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :
 - Module 6 : cotes des maquettes de collecteur et de siphon, reconstituées d'après la p. 37.
 - Module 6 : diamètres de tube des maquettes (3/4 et 1 1/4) lus sur la p. 37.
 - Module 7 : pression du balayage de 0,2 à 0,5 bar et débit d'environ 6 l/min (support), à confirmer selon le manodétendeur de l'atelier.
+- Module 8 : 6 h de pratique dans la TAF (durée estimée).
+- Module 9 : seuils d'isolement (1 MΩ, 500 kΩ) repris du support, à confirmer selon le constructeur.
+- Module 10 : seuils de puissance (500 W, 600 W) repris du support.
+- Module 10 : tolérance de tension de 10 % dans le tableau d'analyse (pratique courante).

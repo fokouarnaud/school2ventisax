@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 230" font-family="Arial, sans-serif">
+<rect width="420" height="230" fill="#fff"/>
+<circle cx="90" cy="130" r="70" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<circle cx="90" cy="90" r="10" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<circle cx="60" cy="150" r="10" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<circle cx="120" cy="150" r="10" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="90" y="72" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">1</text>
+<text x="40" y="178" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">2</text>
+<text x="140" y="178" font-size="14" font-weight="bold" text-anchor="middle" fill="#13212c">3</text>
+<rect x="220" y="50" width="180" height="170" rx="6" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<circle cx="250" cy="85" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="250" y="68" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">U</text>
+<circle cx="310" cy="85" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="310" y="68" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">V</text>
+<circle cx="370" cy="85" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="370" y="68" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">W</text>
+<circle cx="250" cy="185" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="250" y="212" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">Z</text>
+<circle cx="310" cy="185" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="310" y="212" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">X</text>
+<circle cx="370" cy="185" r="9" fill="#fff" stroke="#13212c" stroke-width="2"/>
+<text x="370" y="212" font-size="15" font-weight="bold" text-anchor="middle" fill="#13212c">Y</text>
+<path d="M250 94A10.2 10.2 0 0 1 262.0 110.4A10.2 10.2 0 0 1 274.0 126.8A10.2 10.2 0 0 1 286.0 143.2A10.2 10.2 0 0 1 298.0 159.6A10.2 10.2 0 0 1 310.0 176.0" fill="none" stroke="#1f5fae" stroke-width="2.2"/>
+<path d="M310 94A10.2 10.2 0 0 1 322.0 110.4A10.2 10.2 0 0 1 334.0 126.8A10.2 10.2 0 0 1 346.0 143.2A10.2 10.2 0 0 1 358.0 159.6A10.2 10.2 0 0 1 370.0 176.0" fill="none" stroke="#1f6f4a" stroke-width="2.2"/>
+<path d="M370 94V120L250 160V176" fill="none" stroke="#b3261e" stroke-width="2.2"/>
+</svg>

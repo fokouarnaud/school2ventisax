@@ -27,6 +27,9 @@ FIGURES = {
     "manifold-vide": gettext_lazy("Exercice : tirer au vide et diagnostiquer la tenue du vide"),
     "flamme": gettext_lazy("Exercice : régler la flamme oxyacétylénique"),
     "brasage-azote": gettext_lazy("Exercice : balayage d'azote pendant le brasage"),
+    "circuit-frigo": gettext_lazy("Exercice : état du fluide en chaque point du circuit"),
+    "enroulements": gettext_lazy("Exercice : identifier les enroulements d'un compresseur à l'ohmmètre"),
+    "demarrage-compresseur": gettext_lazy("Exercice : diagnostiquer le démarrage par relais d'un moto-compresseur"),
 }
 SHARED = ("acad/figures/kit.js", "acad/figures/iso.css")
 # Un marqueur n'est reconnu que seul dans son paragraphe ; le nom est limité à [a-z0-9-] (aucun chemin, aucun attribut).

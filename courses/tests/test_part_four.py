@@ -332,7 +332,7 @@ MODULES = {
     18: ("Soudure à l'arc électrique", 8, "01-principe 02-preparation 03-controle-securite 04-taf:T"),
 }
 FIGURES_OF = {5: "flamme", 7: "brasage-azote", 8: "circuit-frigo", 9: "enroulements", 10: "demarrage-compresseur", 15: "manifold-vide", 17: "manifold-charge"}
-DELIVERED = [1, 2, 3, 4, 5, 6, 7, 15]  # s'allonge à chaque lot, jusqu'aux 18 modules
+DELIVERED = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15]  # s'allonge à chaque lot, jusqu'aux 18 modules
 
 
 def module_files(number):
