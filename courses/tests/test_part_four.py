@@ -578,3 +578,31 @@ def test_evacuation_section_publishes_the_manifold_figure_in_both_languages():
     assert "manifold-vide" in FIGURES
     for lang in ("fr", "en"):
         assert "[[figure:manifold-vide]]" in (M15 / f"02-mode-operatoire.{lang}.md").read_text(encoding="utf-8")
+
+
+# ---------------------------------------------------------------- jalon J3 : contrôles sur l'ensemble de la Partie 4
+@pytest.mark.django_db
+def test_real_part_four_exam_draws_fifty_four_questions_in_ninety_minutes_and_spares_other_parts():
+    """US-67, US-71, DoD 18 : contenu réel importé, 54 questions (3 × 18) en 90 min ; Parties 1 à 3 à 60 min."""
+    import random
+
+    call_command("import_content", str(CONTENT / "formation.json"), publish=True, verbosity=0)
+    exam = Assessment.exam_for(Partie.objects.get(slug="p4"))
+    drawn = exam.question_pool(random.Random(4))
+    assert (len(drawn), exam.duration_minutes) == (54, 90)
+    assert set(Counter(q.module_id for q in drawn).values()) == {3}
+    assert {Assessment.exam_for(p).duration_minutes for p in Partie.objects.exclude(slug="p4")} == {60}
+
+
+def test_part_four_has_seventy_seven_sections_with_exactly_six_supplements():
+    """Q56 : 77 sections, 18 TAF, 6 compléments."""
+    sections = [s for m in real_part_four()["modules"] for s in m["sections"]]
+    assert (len(sections), sum(s["kind"] == "practical" for s in sections), sum(bool(s.get("supplement")) for s in sections)) == (77, 18, 6)
+
+
+def test_served_part_four_text_never_carries_the_handout_errors():
+    """DoD 18 : ni R13a, ni risque électrique faible, ni détente à 10 bar, ni fin de vide à -1 bar."""
+    forbidden = ("R13a", "risque électrique faible", "10 bar de détente", "indiqueront -1 bar", "13.3 Kg", "13,3 kg")
+    for md in (CONTENT / "p4").rglob("*.??.md"):
+        text = md.read_text(encoding="utf-8")
+        assert not [w for w in forbidden if w in text], md.name
