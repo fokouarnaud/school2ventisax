@@ -1796,15 +1796,31 @@ function recognitionSituations(fittings) {
   const modes = Object.keys(MODES);
   const materials = Object.keys(MATERIAL_MODES);
   const nameOf = (f) => ({ type: f.type, angle: f.angle, ends: f.ends });
+  // Deux noms qui s'affichent pareil (genres masqués hors filetage) ne sont jamais proposés ensemble ; les leurres sont
+  // des noms de raccords qui existent dans le même mode d'assemblage (coude avec son angle, té à trois extrémités).
+  const shownAs = (n, mode) => JSON.stringify([n.type, n.angle, THREADED.has(mode) || n.ends.includes("M") ? n.ends : []]);
+  const namesByMode = {};
+  fittings.forEach((f) => {
+    const names = (namesByMode[f.mode] ||= new Map());
+    if (!names.has(shownAs(nameOf(f), f.mode))) names.set(shownAs(nameOf(f), f.mode), nameOf(f));
+  });
+  const namePool = (f) => {
+    const seen = new Set([shownAs(nameOf(f), f.mode)]);
+    return [...variants(f).map(nameOf), ...namesByMode[f.mode].values()].filter((n) => {
+      const key = shownAs(n, f.mode);
+      return !seen.has(key) && seen.add(key);
+    });
+  };
   const out = [];
   fittings.forEach((f, i) => {
     const kinds = {
       fonction: [1, FUNCTION_OF[f.type], Object.keys(FUNCTIONS)],
       materiau: [2, f.material, materials],
       assemblage: [3, f.mode, modes],
-      nom: [4, nameOf(f), variants(f).map(nameOf).concat(Object.keys(TYPES).map((type) => ({ type, angle: null, ends: f.ends })))],
+      nom: [4, nameOf(f), namePool(f)],
     };
     for (const [kind, [level, answer, pool]] of Object.entries(kinds)) {
+      if (kind === "nom" && pool.length < 2) continue; // gaine : un seul nom possible (manchon), pas de question de nom
       out.push({ key: `${kind}|${keyOf(f)}`, level, kind, fitting: f, answer, options: options(answer, pool, i) });
     }
   });
