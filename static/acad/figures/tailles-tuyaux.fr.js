@@ -1824,7 +1824,9 @@ function sizeSituations() {
   const inch = MATERIALS["cuivre-pouce"].sizes;
   inch.forEach((s, i) => {
     push("seiziemes", 1, { size: s.id, answer: `${s.sixteenths}/16`, options: neighbours([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19].map((n) => `${n}/16`), `${s.sixteenths}/16`, i) });
-    push("pouce-mm", 2, { size: s.id, answer: s.od, options: neighbours(inch.map((x) => x.od), s.od, i) });
+    // Une mesure au pied à coulisse se lit au centième : 7,94 mm et non 7,9375 mm.
+    const hundredth = (v) => Math.round(v * 100) / 100;
+    push("pouce-mm", 2, { size: s.id, answer: hundredth(s.od), options: neighbours(inch.map((x) => hundredth(x.od)), hundredth(s.od), i) });
     push("mm-pouce", 1, { size: s.id, answer: s.id, options: neighbours(inch.map((x) => x.id), s.id, i) });
   });
   const tubes = Object.entries(MATERIALS).flatMap(([material, m]) => m.sizes.map((s) => ({ material, size: s.id, od: s.od, usage: s.usage })));
@@ -1853,9 +1855,18 @@ function sizeSituations() {
       }
     }
   }
+  // Outils : l'énoncé donne la mesure du tube au pied à coulisse, jamais sa désignation. Quand l'outil existe dans les
+  // deux séries, la taille la plus proche de l'autre série est proposée aussi (3/8 = 9,53 mm, à ne pas confondre avec 10 mm).
   for (const [tool, { sizes }] of Object.entries(TOOLS)) {
     for (const [material, list] of Object.entries(sizes)) {
-      list.forEach((id, i) => push(`outil-${tool}`, 3, { tube: { material, size: id }, answer: id, options: neighbours(list, id, i) }));
+      list.forEach((id, i) => {
+        const od = sizeOf(material, id).od;
+        const tube = { material, size: id };
+        const same = neighbours(list, id, i).filter((x) => x !== id).map((size) => ({ material, size }));
+        const other = Object.entries(sizes).filter(([m]) => m !== material).map(([m, ids]) => ({ material: m, size: ids.reduce((a, b) => (Math.abs(sizeOf(m, b).od - od) < Math.abs(sizeOf(m, a).od - od) ? b : a)) }));
+        const options = [tube, ...other, ...same].slice(0, 4).sort((a, b) => sizeOf(a.material, a.size).od - sizeOf(b.material, b.size).od);
+        push(`outil-${tool}`, 3, { measured: Math.round(od * 100) / 100, tube, answer: tube, options });
+      });
     }
   }
   return out;
@@ -2118,7 +2129,7 @@ return { makeDraw };
 const FIG = {};
 const LANG = "fr";
 const PROJ = {"origin":[340,209.2090290072364],"scale":2.1858981224157286,"azimuth":70,"elevation":28};
-const TX = {ask:{"seiziemes":(t) => `Combien de seizièmes de pouce fait un tube ${t} ?`,"pouce-mm":(t) => `Quel est le diamètre extérieur d'un tube ${t} ?`,"mm-pouce":(mm) => `Au pied à coulisse, par-dessus la paroi, un tube de cuivre frigorifique mesure ${mm} mm (diamètre extérieur). Quelle est sa désignation ?`,"regle":(m) => `Lisez la règle : quel est ce tube (${m}) ?`,"usage":(t) => `À quoi sert le tube ${t} ?`,"tube-pour-usage":(u) => `Quel tube pour : ${u.toLowerCase()} ?`,"plus-gros":() => "Lequel de ces trois tubes a le plus gros diamètre extérieur ?","plus-petit":() => "Lequel de ces trois tubes a le plus petit diamètre extérieur ?","outil":(tool, t) => `${tool} : quelle taille pour le tube ${t} ?`},sixteenths:(id, parts, sum, n, od) => `${id} = ${parts} ≈ ${sum} mm ; en seizièmes : ${n}/16 ; valeur exacte : ${od} mm.`,measured:(t, od) => `${t} : ${od} mm de diamètre extérieur.`,use:(t, u) => `${t} : ${u.toLowerCase()}.`,tool:(t) => `L'outil porte la taille du tube : ${t}.`,mm:(v) => `${v} mm`,right:"Juste.",wrong:(answer) => `Non : la bonne réponse est « ${answer} ».`,done:(g, t) => `Série terminée : ${g} / ${t}. Lancez une nouvelle série pour d'autres situations.`,step:(i, n) => `situation ${i} / ${n}`,score:(g, t) => `Score de la série : ${g} / ${t}`,marks:{"right":"Bonne réponse","wrong":"Votre réponse, fausse"}};
+const TX = {ask:{"seiziemes":(t) => `Combien de seizièmes de pouce fait un tube ${t} ?`,"pouce-mm":(t) => `Quel est le diamètre extérieur d'un tube ${t} ?`,"mm-pouce":(mm) => `Au pied à coulisse, par-dessus la paroi, un tube de cuivre frigorifique mesure ${mm} mm (diamètre extérieur). Quelle est sa désignation ?`,"regle":(m) => `Lisez la règle : quel est ce tube (${m}) ?`,"usage":(t) => `À quoi sert le tube ${t} ?`,"tube-pour-usage":(u) => `Quel tube pour : ${u.toLowerCase()} ?`,"plus-gros":() => "Lequel de ces trois tubes a le plus gros diamètre extérieur ?","plus-petit":() => "Lequel de ces trois tubes a le plus petit diamètre extérieur ?","outil":(tool, mm) => `Au pied à coulisse, le tube de cuivre mesure ${mm} mm. ${tool} : quelle taille choisir ?`},sixteenths:(id, parts, sum, n, od) => `${id} = ${parts} ≈ ${sum} mm ; en seizièmes : ${n}/16 ; valeur exacte : ${od} mm.`,measured:(t, od) => `${t} : ${od} mm de diamètre extérieur.`,use:(t, u) => `${t} : ${u.toLowerCase()}.`,tool:(mm, t) => `${mm} mm, c'est un tube ${t} : l'outil porte la taille du tube.`,metric:(mm) => `${mm} mm, c'est un tube de la série métrique : l'outil porte la même taille.`,confuse:(o, omm) => ` Ne pas confondre avec ${o} (${omm} mm) : les deux séries ne se mélangent pas.`,single:{"1/2":"la moitié du pouce","1/4":"le quart du pouce"},mm:(v) => `${v} mm`,right:"Juste.",wrong:(answer) => `Non : la bonne réponse est « ${answer} ».`,done:(g, t) => `Série terminée : ${g} / ${t}. Lancez une nouvelle série pour d'autres situations.`,step:(i, n) => `situation ${i} / ${n}`,score:(g, t) => `Score de la série : ${g} / ${t}`,marks:{"right":"Bonne réponse","wrong":"Votre réponse, fausse"}};
 
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 const scope = document.querySelector('.live-figure[data-figure="tailles-tuyaux"]') || document;
@@ -2156,10 +2167,18 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 function ready() { for (const b of scope.querySelectorAll(".mv-controls button")) b.disabled = false; }
 function makeSeries(pool, hooks) {
   let list = [], i = 0, good = 0, answered = false;
+  // Dans un niveau, on tire d'abord le type de situation, puis une situation de ce type : un type très nombreux
+  // (les comparaisons de tubes) n'écrase pas les autres (les usages).
   function pick(level) {
-    const choices = pool[level];
-    for (let tries = 0; tries < 40; tries++) { const s = choices[Math.floor(Math.random() * choices.length)]; if (!list.includes(s)) return s; }
-    return choices[0];
+    const kinds = {};
+    pool[level].forEach((s) => (kinds[s.kind || "-"] ||= []).push(s));
+    const groups = Object.values(kinds);
+    for (let tries = 0; tries < 40; tries++) {
+      const group = groups[Math.floor(Math.random() * groups.length)];
+      const s = group[Math.floor(Math.random() * group.length)];
+      if (!list.includes(s)) return s;
+    }
+    return pool[level][0];
   }
   function start() { list = []; for (const level of PLAN) list.push(pick(level)); i = 0; good = 0; show(); }
   function show() {
@@ -2249,16 +2268,16 @@ function tubesScene(tubes, labels, litIndex = -1) {
 }
 function toolScene(s, lit) {
   const tube = s.tube, sizes = s.options;
-  const most = Math.max(...sizes.map((id) => odOf(tube.material, id)), od(tube));
+  const most = Math.max(...sizes.map((o) => od(o)), od(tube));
   const sc = Math.min(4, 24 / most);
   const bar = { x: -100, y: -36, w: 152, d: 32, r: 3 };
   let out = solidSvg(slabOf(bar, 0, 9, PROJ, 4, 0.8), { tone: "mid" });
-  sizes.forEach((id, i) => {
-    const cx = bar.x + 19 + i * 38, r = (odOf(tube.material, id) * sc) / 2;
-    out += '<path class="' + (lit && id === s.answer ? 'rc-hole rc-hole-lit' : 'rc-hole') + '" d="' + ring(cx, bar.y + 13, r, 9, PROJ, 40) + '"/>';
-    out += faceTextSvg(topMatrix([cx, bar.y + 26], 9, PROJ, "x"), X.sizeLabel(tube.material, id), { size: 6, tone: "hi", anchor: "middle" });
+  sizes.forEach((o, i) => {
+    const cx = bar.x + 19 + i * 38, r = (od(o) * sc) / 2;
+    out += '<path class="' + (lit && same(o, s.answer) ? 'rc-hole rc-hole-lit' : 'rc-hole') + '" d="' + ring(cx, bar.y + 13, r, 9, PROJ, 40) + '"/>';
+    out += faceTextSvg(topMatrix([cx, bar.y + 26], 9, PROJ, "x"), X.sizeLabel(o.material, o.size), { size: 6, tone: "hi", anchor: "middle" });
   });
-  const t = tubeSvg(tube, 80, sc, lit ? X.sizeLabel(tube.material, tube.size) : "?", false, 10);
+  const t = tubeSvg(tube, 80, sc, lit ? X.sizeLabel(tube.material, tube.size) : X.num(s.measured) + " mm", false, 10);
   live.innerHTML = out + t.svg;
 }
 function show(s, answered) {
@@ -2275,8 +2294,8 @@ function show(s, answered) {
 }
 function ask(s) {
   const A = TX.ask;
-  if (isTool(s)) return A.outil(R.TOOLS[s.kind.slice(6)].label[LANG], X.tubeLabel(s.tube));
-  if (s.kind === "mm-pouce") return A["mm-pouce"](X.num(odOf("cuivre-pouce", s.size)));
+  if (isTool(s)) return A.outil(R.TOOLS[s.kind.slice(6)].label[LANG], X.num(s.measured));
+  if (s.kind === "mm-pouce") return A["mm-pouce"](X.num(Math.round(odOf("cuivre-pouce", s.size) * 100) / 100));
   if (s.kind === "seiziemes" || s.kind === "pouce-mm") return A[s.kind](s.size);
   if (s.kind === "regle") return A.regle(R.MATERIALS[s.tube.material].label[LANG]);
   if (s.kind === "usage") return A.usage(X.tubeLabel(s.tube));
@@ -2284,21 +2303,25 @@ function ask(s) {
   return A[s.kind]();
 }
 function label(s, o) {
-  if (isTool(s)) return X.sizeLabel(s.tube.material, o);
+  if (isTool(s)) return X.sizeLabel(o.material, o.size);
   if (s.kind === "seiziemes" || s.kind === "mm-pouce") return o;
   if (s.kind === "pouce-mm") return mm(o);
   if (s.kind === "usage") return R.USAGES[o][LANG];
   return X.tubeLabel(o);
 }
 function explain(s) {
-  if (isTool(s)) return TX.tool(X.sizeLabel(s.tube.material, s.answer));
+  if (isTool(s)) {
+    const a = s.answer, other = s.options.find((o) => o.material !== a.material);
+    const base = a.material === "cuivre-pouce" ? TX.tool(X.num(s.measured), a.size) : TX.metric(X.num(s.measured));
+    return base + (other ? TX.confuse(X.sizeLabel(other.material, other.size), X.num(Math.round(od(other) * 100) / 100)) : "");
+  }
   if (["seiziemes", "pouce-mm", "mm-pouce"].includes(s.kind)) {
     const ref = R.MATERIALS["cuivre-pouce"].sizes.find((x) => x.id === s.size);
     const short = (f) => X.num(+R.LADDER[f].toFixed(f === "1/4" || f === "1/2" ? 2 : 1));
     const fr = ref.halves.map(([sign, f], i) => (i ? " " + (sign === "+" ? "+" : "−") + " " : "") + f).join("");
     const mm = ref.halves.map(([sign, f], i) => (i ? " " + (sign === "+" ? "+" : "−") + " " : "") + short(f)).join("");
     const sum = ref.halves.reduce((a, [sign, f]) => a + (sign === "+" ? 1 : -1) * R.LADDER[f], 0);
-    const parts = ref.halves.length > 1 ? fr + " = " + mm : mm;
+    const parts = ref.halves.length > 1 ? fr + " = " + mm : TX.single[ref.halves[0][1]];
     return TX.sixteenths(ref.id, parts, X.num(Math.round(sum * 100 + 1e-6) / 100), ref.sixteenths, X.num(ref.od));
   }
   if (s.kind === "regle") return TX.measured(X.tubeLabel(s.tube), X.num(od(s.tube)));
