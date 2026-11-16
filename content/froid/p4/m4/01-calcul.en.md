@@ -32,4 +32,8 @@ This table applies to steel tube: its designation in inches differs from copper'
 
 LD = 199 + 109 + 111.47 = 419.47 mm
 
+To practise on other tubes, other angles and two bends, work it out step by step with the figure below.
+
+[[figure:longueur-developpee]]
+
 During bending, one part of the tube is neither compressed nor stretched: the neutral fibre. It separates the stretched fibre, on the outside of the bend, from the compressed fibre on the inside.

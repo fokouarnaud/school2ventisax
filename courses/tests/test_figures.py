@@ -30,6 +30,7 @@ PUBLISHED = [
     ("raccords", "p4/m2/01-cuivre-laiton"),  # explorer puis reconnaître les raccords
     ("choix-raccord", "p4/m2/04-choisir-raccord"),  # choisir le raccord qui relie les bouts donnés
     ("tailles-tuyaux", "p4/m3/04-retenir-tailles"),  # seizièmes, mm, usages
+    ("longueur-developpee", "p4/m4/01-calcul"),  # droites, arcs, LD pas à pas
 ]
 
 
