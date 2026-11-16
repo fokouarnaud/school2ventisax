@@ -22,3 +22,13 @@ Trade vocabulary used in this part, in French and British English.
 | surchauffe | superheat |
 | sous-refroidissement | subcooling |
 | moto-compresseur | motor-compressor |
+| manchon | coupling |
+| té | tee |
+| coude | elbow |
+| réduction | reducer |
+| mâle | male |
+| femelle | female |
+| raccord union | union |
+| écrou dudgeon | flare nut |
+| diamètre extérieur | outside diameter (OD) |
+| gaine ICTA | flexible conduit |

@@ -1427,7 +1427,17 @@
             },
             {
               "order": 4,
-              "file": "04-taf",
+              "file": "04-choisir-raccord",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Choisir un raccord",
+                "en": "Choosing a fitting"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
               "kind": "practical",
               "title": {
                 "fr": "Activités pratiques (TAF)",
@@ -1482,7 +1492,17 @@
             },
             {
               "order": 4,
-              "file": "04-taf",
+              "file": "04-retenir-tailles",
+              "kind": "content",
+              "supplement": true,
+              "title": {
+                "fr": "Retenir les tailles de tubes",
+                "en": "Remembering tube sizes"
+              }
+            },
+            {
+              "order": 5,
+              "file": "05-taf",
               "kind": "practical",
               "title": {
                 "fr": "Activités pratiques (TAF)",

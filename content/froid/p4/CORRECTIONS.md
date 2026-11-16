@@ -751,6 +751,34 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Correction** : TAF rédigée (matériel, séquence, barème 15/60/10/15).
 - **Justification** : décision Q64.
 
+## 108. Choisir un raccord (module 2, imprimé 21)
+
+- **Page** : 14
+- **Texte d'origine** : « L'utilisation de l'un ou de l'autre dépend du circuit sur lequel on travaille et des objectifs à atteindre. » Aucun critère n'est détaillé.
+- **Correction** : section « Complément » « Choisir un raccord » : cinq critères (matériau, diamètre, fonction, mode d'assemblage, fluide et pression), gamme des raccords (manchon, réduction, coudes 45°, 90°, 180° et laiton 135°, té), règle mâle/femelle, exemples d'atelier et figure d'entraînement `choix-raccord`. La phrase du support reste transcrite dans « Raccords sans flamme et étanchéité ».
+- **Justification** : décisions Q76 et Q82 ; la phrase du support ne permet pas de choisir un raccord.
+
+## 109. Retenir les tailles de tubes (module 3, imprimé 22)
+
+- **Page** : 16
+- **Texte d'origine** : tableau de conversion pouces / mm, sans moyen de le retenir ni d'usage par taille.
+- **Correction** : section « Complément » « Retenir les tailles de tubes » : compte en seizièmes de pouce (n × 1,6 mm), diamètres exacts, usage courant par taille, tubes réels du frigoriste (cuivre métrique, acier fileté, PVC, gaine ICTA, multicouche), confusions courantes, outils marqués à la taille du tube, figure d'entraînement `tailles-tuyaux`. Le tableau de la section « Rôle des tuyauteries et tubes en cuivre » garde les valeurs tronquées du support (9,52 ; 15,87) ; le Complément donne les valeurs exactes (9,525 ; 15,875).
+- **Justification** : décisions Q74, Q77 et Q82.
+
+## 110. Question sur le choix d'un raccord (module 2, imprimé 21)
+
+- **Page** : 14
+- **Texte d'origine** : question de quiz `p4-m2-q08`, « De quoi dépend le choix d'un type de raccord ? », réponse unique « Du circuit et des objectifs à atteindre ».
+- **Correction** : QCM à plusieurs réponses : matériau, diamètre, fonction, mode d'assemblage, fluide et pression ; question rattachée au Complément « Choisir un raccord ». Vingt-quatre questions ajoutées aux modules 2 à 4 (`q17` à `q24`, 4 de quiz et 4 d'examen par module), publiées d'office.
+- **Justification** : décisions Q76 et Q81 (dérogation Q60 étendue).
+
+## 111. Sections vues des modules 2 et 3 (mise à jour du 2026-11-16)
+
+- **Page** : sans objet (application)
+- **Texte d'origine** : activité pratique (TAF) à l'ordre 4 des modules 2 et 3.
+- **Correction** : le Complément prend l'ordre 4 et la TAF passe à l'ordre 5. L'import associant une section à son ordre, un apprenant qui avait vu la TAF la voit à revoir, et le Complément est marqué vu. Ses tentatives de quiz et d'examen sont conservées.
+- **Justification** : décision Q83 ; Partie 4 en ligne depuis le 2026-11-11 seulement, effet limité à une section par module et par apprenant.
+
 ## Valeurs à confirmer par un formateur
 
 Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :
@@ -782,3 +810,6 @@ Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :
 - Module 16 : pression d'essai de résistance de 1,1 × PS à l'azote (EN 378, à confirmer selon le constructeur).
 - Module 17 : surchauffe courante de 4 à 8 K (support), à remplacer par la valeur du constructeur.
 - Module 18 : effets de la polarité selon le type d'électrode, à confirmer selon les électrodes de l'atelier.
+- Modules 2 à 4 : usages par taille du catalogue `figures/_data/raccords.mjs` (1/4 ligne liquide d'un split, 3/8 aspiration d'un split de 2,5 à 3,5 kW, 1/2 vers 5 kW, 5/8 de 7 à 10 kW...), repères de la pratique courante, à remplacer par la notice du constructeur.
+- Modules 2 à 4 : diamètres de PVC d'évacuation (16 et 20 pour les condensats d'un split, 32, 40, 50, 63, 100) et de gaine ICTA (16, 20, 25) et leurs usages, d'après la pratique courante.
+- Modules 2 à 4 : plages des raccords du catalogue (dudgeon de 1/4 à 3/4, sertissage frigorifique de 1/4 à 1 1/8 et de 6 à 28 mm, réduction sur trois tailles au plus, coude laiton 135° en 1/4 seulement), à confirmer selon le matériel de l'atelier.

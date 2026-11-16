@@ -31,9 +31,14 @@ FIGURES = {
     "enroulements": gettext_lazy("Exercice : identifier les enroulements d'un compresseur à l'ohmmètre"),
     "demarrage-compresseur": gettext_lazy("Exercice : diagnostiquer le démarrage par relais d'un moto-compresseur"),
     "manifold-charge": gettext_lazy("Exercice : charger une installation à la balance"),
+    "raccords": gettext_lazy("Exercice : explorer et reconnaître les raccords"),
+    "choix-raccord": gettext_lazy("Exercice : choisir le raccord qui relie les bouts de tube"),
+    "tailles-tuyaux": gettext_lazy("Exercice : retenir les tailles de tubes, leurs usages et les outils"),
 }
 SHARED = ("acad/figures/kit.js", "acad/figures/iso.css")
 # Un marqueur n'est reconnu que seul dans son paragraphe ; le nom est limité à [a-z0-9-] (aucun chemin, aucun attribut).
+# Un mode facultatif suit le nom après « # » (`[[figure:tailles-tuyaux#outils]]`), limité à [a-z] : la figure le lit
+# dans l'attribut data-mode de son emplacement.
 MARKER = re.compile(r"<p>\[\[figure:([^\]<>]*)\]\]</p>")
 
 
@@ -59,8 +64,10 @@ def _lang():
 
 
 def _placeholder(match):
-    name = match.group(1)
+    name, hashed, mode = match.group(1).partition("#")
     if not re.fullmatch(r"[a-z0-9-]+", name) or name not in FIGURES:
+        return ""
+    if hashed and not re.fullmatch(r"[a-z]+", mode):
         return ""
     lang = _lang()
     html, js, css, kit, iso_css = figure_files(name, lang)
@@ -74,6 +81,8 @@ def _placeholder(match):
         "data-loading": _("Chargement de la figure…"),
         "data-error": _("La figure n'a pas pu être chargée. Vérifiez la connexion, puis réessayez."),
     }
+    if mode:
+        attrs["data-mode"] = mode
     attr_html = "".join(f' {key}="{escape(value)}"' for key, value in attrs.items())
     size = _("%(size)s Ko à télécharger") % {"size": _download_kb(name, lang)}
     return (

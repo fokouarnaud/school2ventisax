@@ -43,3 +43,5 @@ Le diamètre nominal des raccords coniques est donné par le diamètre de perça
 | 1/4 C | 6,35 | 13,7 |
 | 3/8 C | 9,52 | 17,1 |
 | 1/2 C | 12,7 | 21,3 |
+
+[[figure:raccords]]

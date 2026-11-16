@@ -313,8 +313,8 @@ BRANDS = re.compile(
 # Découpage du PRD (Q55, Q56) : (titre fr, heures, sections) ; T = TAF, C = complément, sinon section de cours transcrite.
 MODULES = {
     1: ("Outillage et appareils de mesure du monteur frigoriste", 8, "01-glossaire:C 02-manifold-vide 03-poste-tube 04-recuperation-charge 05-appareils-electriques 06-taf:T"),
-    2: ("Différents raccords utilisés en froid", 8, "01-cuivre-laiton 02-acier-pvc-mixtes 03-sans-flamme 04-taf:T"),
-    3: ("Différentes tuyauteries utilisées en froid", 8, "01-role-cuivre 02-acier 03-pvc-multicouche-alu 04-taf:T"),
+    2: ("Différents raccords utilisés en froid", 8, "01-cuivre-laiton 02-acier-pvc-mixtes 03-sans-flamme 04-choisir-raccord:C 05-taf:T"),
+    3: ("Différentes tuyauteries utilisées en froid", 8, "01-role-cuivre 02-acier 03-pvc-multicouche-alu 04-retenir-tailles:C 05-taf:T"),
     4: ("Travail sur les tuyauteries", 16, "01-calcul 02-coupe 03-evasements 04-cintrage:C 05-acier 06-taf:T"),
     5: ("Manodétendeur, chalumeau, réglage de la flamme", 8, "01-manodetendeurs 02-chalumeau-flamme 03-mise-en-service 04-taf:T"),
     6: ("Soudo-brasage et brasage", 16, "01-soudo-brasage 02-brasage 03-taf:T"),
@@ -358,9 +358,10 @@ def test_module_matches_the_prd_structure_in_both_languages(number):
 
 @pytest.mark.parametrize("number", DELIVERED)
 def test_module_bank_has_eight_quiz_and_eight_exam_questions_covering_each_section(number):
-    """US-67, Q59, Q60 : 8 + 8 questions relues, au moins une par section `content`."""
+    """US-67, Q59, Q60, Q81 : 8 + 8 questions relues (12 + 12 aux modules 2 à 4), au moins une par section `content`."""
     questions = json.loads((CONTENT / "p4" / f"m{number}" / "questions.json").read_text(encoding="utf-8"))
-    assert Counter(q["usage"] for q in questions) == {"quiz": 8, "exam": 8}
+    per_usage = 12 if number in (2, 3, 4) else 8
+    assert Counter(q["usage"] for q in questions) == {"quiz": per_usage, "exam": per_usage}
     assert all(q["reviewed"] == {"fr": True, "en": True} for q in questions)
     content = {name for name, flag, *_ in module_files(number) if flag != "T"}
     assert {q["section"] for q in questions} == content
@@ -505,7 +506,7 @@ def test_import_with_publish_puts_the_evacuation_questions_online():
     call_command("import_content", str(CONTENT / "formation.json"), publish=True, stdout=stats_out)
     assert "Refusée" not in stats_out.getvalue()
     partie = Partie.objects.get(slug="p4")
-    assert Question.objects.filter(module__partie=partie, status=Question.Status.PUBLISHED).count() == 16 * len(DELIVERED)
+    assert Question.objects.filter(module__partie=partie, status=Question.Status.PUBLISHED).count() == 16 * len(DELIVERED) + 24
     assert Assessment.exam_for(partie).duration_minutes == 90
 
 
@@ -594,10 +595,10 @@ def test_real_part_four_exam_draws_fifty_four_questions_in_ninety_minutes_and_sp
     assert {Assessment.exam_for(p).duration_minutes for p in Partie.objects.exclude(slug="p4")} == {60}
 
 
-def test_part_four_has_seventy_seven_sections_with_exactly_six_supplements():
-    """Q56 : 77 sections, 18 TAF, 6 compléments."""
+def test_part_four_has_seventy_nine_sections_with_exactly_eight_supplements():
+    """Q56, Q82 : 79 sections, 18 TAF, 8 compléments (dont « Choisir un raccord » et « Retenir les tailles de tubes »)."""
     sections = [s for m in real_part_four()["modules"] for s in m["sections"]]
-    assert (len(sections), sum(s["kind"] == "practical" for s in sections), sum(bool(s.get("supplement")) for s in sections)) == (77, 18, 6)
+    assert (len(sections), sum(s["kind"] == "practical" for s in sections), sum(bool(s.get("supplement")) for s in sections)) == (79, 18, 8)
 
 
 def test_served_part_four_text_never_carries_the_handout_errors():
