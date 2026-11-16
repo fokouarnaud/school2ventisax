@@ -763,7 +763,7 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Page** : 16
 - **Texte d'origine** : tableau de conversion pouces / mm, sans moyen de le retenir ni d'usage par taille.
 - **Correction** : section « Complément » « Retenir les tailles de tubes » : compte en seizièmes de pouce (n × 1,6 mm), diamètres exacts, usage courant par taille, tubes réels du frigoriste (cuivre métrique, acier fileté, PVC, gaine ICTA, multicouche), confusions courantes, outils marqués à la taille du tube, figure d'entraînement `tailles-tuyaux`. Le tableau de la section « Rôle des tuyauteries et tubes en cuivre » garde les valeurs tronquées du support (9,52 ; 15,87) ; le Complément donne les valeurs exactes (9,525 ; 15,875).
-- **Justification** : décisions Q74, Q77 et Q82.
+- **Justification** : décisions Q74, Q77 et Q82 ; méthode des moitiés (1 pouce = 25,4 mm coupé en deux jusqu'à 1,6 mm) placée en premier et diamètre extérieur défini sur retour du propriétaire (Q91), le n × 1,6 restant en vérification.
 
 ## 110. Question sur le choix d'un raccord (module 2, imprimé 21)
 
@@ -778,6 +778,13 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Texte d'origine** : activité pratique (TAF) à l'ordre 4 des modules 2 et 3.
 - **Correction** : le Complément prend l'ordre 4 et la TAF passe à l'ordre 5. L'import associant une section à son ordre, un apprenant qui avait vu la TAF la voit à revoir, et le Complément est marqué vu. Ses tentatives de quiz et d'examen sont conservées.
 - **Justification** : décision Q83 ; Partie 4 en ligne depuis le 2026-11-11 seulement, effet limité à une section par module et par apprenant.
+
+## 112. Manodétendeurs : figure et questions (module 5, imprimé 24)
+
+- **Page** : 32 à 34
+- **Texte d'origine** : tableaux de caractéristiques des détendeurs, sans exercice de lecture ni de réglage.
+- **Correction** : figure d'entraînement `manodetendeur` (lecture des manomètres amont et aval, détente admise par gaz, bon détendeur, réglage admis ou trop haut, ordre de mise en service et hors service) d'après le tableau du support et la section « Mise en service » ; huit questions ajoutées (`p4-m5-q17` à `q24`), publiées d'office.
+- **Justification** : décisions Q92 et Q93.
 
 ## Valeurs à confirmer par un formateur
 
@@ -813,4 +820,5 @@ Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :
 - Modules 2 à 4 : usages par taille du catalogue `figures/_data/raccords.mjs` (1/4 ligne liquide d'un split, 3/8 aspiration d'un split de 2,5 à 3,5 kW, 1/2 vers 5 kW, 5/8 de 7 à 10 kW...), repères de la pratique courante, à remplacer par la notice du constructeur.
 - Modules 2 à 4 : diamètres de PVC d'évacuation (16 et 20 pour les condensats d'un split, 32, 40, 50, 63, 100) et de gaine ICTA (16, 20, 25) et leurs usages, d'après la pratique courante.
 - Module 4 : rayons de cintreuse du cuivre de la figure de longueur développée (`figures/_data/longueurs.mjs` : 1/4 14,3 mm, 5/16 17,5 mm, 3/8 23,8 mm, 1/2 38,1 mm, 5/8 47,6 mm, 3/4 57,2 mm, 7/8 66,7 mm), d'après les cintreuses à levier courantes ; le support ne donne que l'abaque de l'acier.
+- Module 5 : pressions de bouteille du mode « Explorer » de la figure du manodétendeur (acétylène 15 bar, propane 7 bar, oxygène et azote 200 bar, CO2 57 bar), ordres de grandeur à 20 °C.
 - Modules 2 à 4 : plages des raccords du catalogue (dudgeon de 1/4 à 3/4, sertissage frigorifique de 1/4 à 1 1/8 et de 6 à 28 mm, réduction sur trois tailles au plus, coude laiton 135° en 1/4 seulement), à confirmer selon le matériel de l'atelier.

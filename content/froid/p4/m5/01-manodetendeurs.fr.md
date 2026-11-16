@@ -4,6 +4,10 @@ Chaque bouteille est équipée d'un manodétendeur qui permet de lire la pressio
 
 Tous les chalumeaux mélangeurs fonctionnent avec de l'oxygène (ou de l'air comprimé) et du gaz combustible à pression de service constante. Mais la pression dans les bouteilles et les conduites de distribution est variable et généralement trop élevée : un manodétendeur est nécessaire. Le type de gaz est indiqué sur l'appareil. Il comporte une embase monobloc avec filtre interne, une soupape de sécurité interne, un manomètre haute pression (pression de la bouteille), un manomètre basse pression (pression de service), une entrée de gaz haute pression, une sortie basse pression et une vis de détente.
 
+Pour lire les deux manomètres, régler la vis de détente et vous entraîner sur chaque gaz, utilisez la figure ci-dessous.
+
+[[figure:manodetendeur]]
+
 ## Manodétendeurs à un étage compact pour bouteille de gaz
 
 Ils sont utilisés pour des travaux légers comme des coupes, soudages et brasages.

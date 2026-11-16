@@ -35,6 +35,7 @@ FIGURES = {
     "choix-raccord": gettext_lazy("Exercice : choisir le raccord qui relie les bouts de tube"),
     "tailles-tuyaux": gettext_lazy("Exercice : retenir les tailles de tubes, leurs usages et les outils"),
     "longueur-developpee": gettext_lazy("Exercice : calculer pas à pas la longueur développée d'un tube cintré"),
+    "manodetendeur": gettext_lazy("Exercice : lire et régler un manodétendeur"),
 }
 SHARED = ("acad/figures/kit.js", "acad/figures/iso.css")
 # Un marqueur n'est reconnu que seul dans son paragraphe ; le nom est limité à [a-z0-9-] (aucun chemin, aucun attribut).

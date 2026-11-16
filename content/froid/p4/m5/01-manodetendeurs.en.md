@@ -4,6 +4,10 @@ Each cylinder has a pressure regulator (<span lang="fr">manodétendeur</span>) t
 
 All mixing torches work with oxygen (or compressed air) and fuel gas at constant working pressure. But pressure in cylinders and distribution lines varies and is generally too high: a regulator is needed. The gas type is marked on the regulator. It has a one-piece base with internal filter, an internal safety valve, a high-pressure gauge (cylinder pressure), a low-pressure gauge (working pressure), a high-pressure gas inlet, a low-pressure outlet and a regulating screw.
 
+To read both gauges, set the adjusting screw and practise with each gas, use the figure below.
+
+[[figure:manodetendeur]]
+
 ## Compact single-stage regulators for gas cylinders
 
 Used for light work such as cutting, welding and brazing.

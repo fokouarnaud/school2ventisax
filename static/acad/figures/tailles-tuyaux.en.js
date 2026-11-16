@@ -1547,6 +1547,15 @@ const PVC_USAGE = {
 };
 const SHEATH_USAGE = { 16: "gaine-liaison", 20: "gaine-alimentation", 25: "gaine-forte-section" };
 
+// Méthode des moitiés : 1 pouce = 25,4 mm, puis on coupe en deux (12,7 ; 6,35 ; 3,2 ; 1,6). Chaque taille de la série
+// est une ou deux de ces fractions, ajoutées ou retirées (3/8 = 1/4 + 1/8 ; 7/8 = 1 - 1/8).
+const LADDER = { 1: 25.4, "1/2": 12.7, "1/4": 6.35, "1/8": 3.175, "1/16": 1.5875 };
+const HALVES = {
+  3: [["+", "1/8"], ["+", "1/16"]], 4: [["+", "1/4"]], 5: [["+", "1/4"], ["+", "1/16"]], 6: [["+", "1/4"], ["+", "1/8"]],
+  8: [["+", "1/2"]], 10: [["+", "1/2"], ["+", "1/8"]], 12: [["+", "1/2"], ["+", "1/4"]], 14: [["+", "1"], ["-", "1/8"]],
+  18: [["+", "1"], ["+", "1/8"]],
+};
+
 // ------------------------------------------------------------------ matériaux et séries de diamètres (Q74, Q77)
 const metric = (od, di) => ({ id: String(od), od, label: L(`${di} × ${od} mm`, `${di} × ${od} mm`) });
 
@@ -1555,7 +1564,7 @@ const MATERIALS = {
     label: L("Cuivre frigorifique, série pouce", "Refrigeration copper, inch series"),
     fluid: "frigorigene",
     sizes: [3, 4, 5, 6, 8, 10, 12, 14, 18].map((n) => ({
-      id: inchLabel(n), sixteenths: n, od: (n * 254) / 160, usage: INCH_USAGE[n],
+      id: inchLabel(n), sixteenths: n, od: (n * 254) / 160, usage: INCH_USAGE[n], halves: HALVES[n],
     })),
   },
   "cuivre-metrique": {
@@ -1867,7 +1876,7 @@ function buildCatalogue() {
   };
 }
 
-return { USAGES, MATERIALS, MODES, TYPES, FUNCTIONS, TOOLS, isValid, buildCatalogue };
+return { USAGES, LADDER, MATERIALS, MODES, TYPES, FUNCTIONS, TOOLS, isValid, buildCatalogue };
 })();
 const XT = (() => {
 // Libellés fr/en des raccords et des tubes, communs aux figures raccords, choix-raccord et tailles-tuyaux.
@@ -2109,7 +2118,7 @@ return { makeDraw };
 const FIG = {};
 const LANG = "en";
 const PROJ = {"origin":[340,209.2090290072364],"scale":2.1858981224157286,"azimuth":70,"elevation":28};
-const TX = {ask:{"seiziemes":(t) => `How many sixteenths of an inch is a ${t} tube?`,"pouce-mm":(t) => `What is the outside diameter of a ${t} tube?`,"mm-pouce":(mm) => `A refrigeration copper tube is ${mm} mm outside diameter. What is its size?`,"regle":(m) => `Read the rule: which tube is this (${m})?`,"usage":(t) => `What is the ${t} tube used for?`,"tube-pour-usage":(u) => `Which tube for: ${u.toLowerCase()}?`,"plus-gros":() => "Which of these three tubes has the largest outside diameter?","plus-petit":() => "Which of these three tubes has the smallest outside diameter?","outil":(tool, t) => `${tool}: which size for the ${t} tube?`},sixteenths:(id, n, est, od) => `${id} = ${n}/16; ${n} × 1.6 ≈ ${est} mm; exact value: ${od} mm.`,measured:(t, od) => `${t}: ${od} mm outside diameter.`,use:(t, u) => `${t}: ${u.toLowerCase()}.`,tool:(t) => `The tool carries the tube size: ${t}.`,mm:(v) => `${v} mm`,right:"Correct.",wrong:(answer) => `No: the right answer is "${answer}".`,done:(g, t) => `Series finished: ${g} / ${t}. Start a new series for other situations.`,step:(i, n) => `situation ${i} / ${n}`,score:(g, t) => `Series score: ${g} / ${t}`,marks:{"right":"Right answer","wrong":"Your answer, wrong"}};
+const TX = {ask:{"seiziemes":(t) => `How many sixteenths of an inch is a ${t} tube?`,"pouce-mm":(t) => `What is the outside diameter of a ${t} tube?`,"mm-pouce":(mm) => `Measured with a caliper over the wall, a refrigeration copper tube is ${mm} mm (outside diameter). What is its size?`,"regle":(m) => `Read the rule: which tube is this (${m})?`,"usage":(t) => `What is the ${t} tube used for?`,"tube-pour-usage":(u) => `Which tube for: ${u.toLowerCase()}?`,"plus-gros":() => "Which of these three tubes has the largest outside diameter?","plus-petit":() => "Which of these three tubes has the smallest outside diameter?","outil":(tool, t) => `${tool}: which size for the ${t} tube?`},sixteenths:(id, parts, sum, n, od) => `${id} = ${parts} ≈ ${sum} mm; in sixteenths: ${n}/16; exact value: ${od} mm.`,measured:(t, od) => `${t}: ${od} mm outside diameter.`,use:(t, u) => `${t}: ${u.toLowerCase()}.`,tool:(t) => `The tool carries the tube size: ${t}.`,mm:(v) => `${v} mm`,right:"Correct.",wrong:(answer) => `No: the right answer is "${answer}".`,done:(g, t) => `Series finished: ${g} / ${t}. Start a new series for other situations.`,step:(i, n) => `situation ${i} / ${n}`,score:(g, t) => `Series score: ${g} / ${t}`,marks:{"right":"Right answer","wrong":"Your answer, wrong"}};
 
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 const scope = document.querySelector('.live-figure[data-figure="tailles-tuyaux"]') || document;
@@ -2220,6 +2229,14 @@ function rule(x0, x1, s) {
   for (let v = 0; v * s <= x1 - x0 + 0.01; v += every) out += faceTextSvg(topMatrix([x0 + v * s, RY + 9], 0.8, PROJ, "x"), String(v), { size: 5, tone: "mid", anchor: "middle" });
   return out;
 }
+// Pied à coulisse : règle derrière le tube, deux becs qui touchent le tube par-dessus la paroi (diamètre extérieur).
+function caliper(xl, xr, y, h) {
+  const z = h * 0.55, front = y + (xr - xl) / 2 + 10;
+  const S = (plan, z0, hh, tone) => solidSvg(slabOf(plan, z0, hh, PROJ, 3, 0.3), { tone });
+  return S({ x: xl - 3.4, y, w: 3, d: front - y + 5, r: 0.5 }, z, 4, "lo")
+    + S({ x: xr + 0.4, y, w: 3, d: front - y + 5, r: 0.5 }, z, 4, "hi")
+    + S({ x: xl - 10, y: front, w: xr - xl + 34, d: 5, r: 0.8 }, z, 5, "mid");
+}
 function tubesScene(tubes, labels, litIndex = -1) {
   const sum = tubes.reduce((a, t) => a + od(t), 0), most = Math.max(...tubes.map(od));
   const gap = 0.35 * most;
@@ -2227,7 +2244,8 @@ function tubesScene(tubes, labels, litIndex = -1) {
   let x = -((sum + gap * (tubes.length - 1)) * s) / 2;
   const x0 = x;
   const items = tubes.map((t, i) => { const cx = x + (od(t) * s) / 2; x += (od(t) + gap) * s; return tubeSvg(t, cx, s, labels[i], i === litIndex); });
-  live.innerHTML = rule(x0, x, s) + items.sort((a, b) => depthOf(a.at, PROJ) - depthOf(b.at, PROJ)).map((i) => i.svg).join("");
+  const jaws = tubes.length === 1 ? caliper(x0, x0 + od(tubes[0]) * s, TY, 30) : "";
+  live.innerHTML = rule(x0, x, s) + items.sort((a, b) => depthOf(a.at, PROJ) - depthOf(b.at, PROJ)).map((i) => i.svg).join("") + jaws;
 }
 function toolScene(s, lit) {
   const tube = s.tube, sizes = s.options;
@@ -2276,7 +2294,12 @@ function explain(s) {
   if (isTool(s)) return TX.tool(X.sizeLabel(s.tube.material, s.answer));
   if (["seiziemes", "pouce-mm", "mm-pouce"].includes(s.kind)) {
     const ref = R.MATERIALS["cuivre-pouce"].sizes.find((x) => x.id === s.size);
-    return TX.sixteenths(ref.id, ref.sixteenths, X.num(+(ref.sixteenths * 1.6).toFixed(1)), X.num(ref.od));
+    const short = (f) => X.num(+R.LADDER[f].toFixed(f === "1/4" || f === "1/2" ? 2 : 1));
+    const fr = ref.halves.map(([sign, f], i) => (i ? " " + (sign === "+" ? "+" : "−") + " " : "") + f).join("");
+    const mm = ref.halves.map(([sign, f], i) => (i ? " " + (sign === "+" ? "+" : "−") + " " : "") + short(f)).join("");
+    const sum = ref.halves.reduce((a, [sign, f]) => a + (sign === "+" ? 1 : -1) * R.LADDER[f], 0);
+    const parts = ref.halves.length > 1 ? fr + " = " + mm : mm;
+    return TX.sixteenths(ref.id, parts, X.num(Math.round(sum * 100 + 1e-6) / 100), ref.sixteenths, X.num(ref.od));
   }
   if (s.kind === "regle") return TX.measured(X.tubeLabel(s.tube), X.num(od(s.tube)));
   if (s.kind === "usage") return TX.use(X.tubeLabel(s.tube), R.USAGES[s.answer][LANG]);
@@ -2293,6 +2316,8 @@ function setMode(next) {
   series.start();
 }
 buttons.sizes.addEventListener("click", () => setMode("sizes"));
+const memo = scope.querySelector(".tt-memo");
+buttons.memo.addEventListener("click", () => { memo.hidden = !memo.hidden; buttons.memo.setAttribute("aria-expanded", String(!memo.hidden)); });
 buttons.tools.addEventListener("click", () => setMode("tools"));
 const run = () => {};
 window.__tt = { series, setMode };

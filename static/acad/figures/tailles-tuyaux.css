@@ -36,3 +36,6 @@ g[data-tint="gaine"]{filter:sepia(.7) saturate(2.6) hue-rotate(-30deg) brightnes
 .rc-tag rect{fill:var(--anatomy-card);stroke:var(--anatomy-mid);stroke-width:.8}
 .rc-tag-lit rect{stroke:var(--anatomy-lit);stroke-width:1.4}
 .rc-hole-lit{stroke:var(--anatomy-lit);stroke-width:1.6}
+.tt-memo{margin:12px 0 0;padding:10px 14px;border:1px solid var(--anatomy-mid);border-radius:14px;font-size:13px;line-height:1.55;color:var(--anatomy-text)}
+.tt-memo[hidden]{display:none}
+.tt-memo p{margin:4px 0}

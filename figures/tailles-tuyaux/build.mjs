@@ -19,7 +19,8 @@ const TEXT = {
     title: "Tailles de tubes",
     pageTitle: "Retenir les tailles de tubes : exercice",
     hint: "Seizièmes de pouce, millimètres, usages et outils",
-    buttons: { sizes: "Tailles et usages", tools: "Outils", again: "Situation suivante", series: "Nouvelle série" },
+    buttons: { sizes: "Tailles et usages", tools: "Outils", memo: "Mémo", again: "Situation suivante", series: "Nouvelle série" },
+    memo: "<p><strong>1 pouce = 25,4 mm</strong>, puis on coupe en deux : 1/2 = 12,7 ; 1/4 = 6,35 ; 1/8 = 3,2 ; 1/16 = 1,6.</p><p>3/16 = 3,2 + 1,6 · 5/16 = 6,35 + 1,6 · 3/8 = 6,35 + 3,2 · 5/8 = 12,7 + 3,2 · 3/4 = 12,7 + 6,35 · 7/8 = 25,4 − 3,2</p><p>Diamètre extérieur : mesuré au pied à coulisse, par-dessus la paroi.</p>",
     keys: [
       { mark: "raised", label: "Tubes debout, à l'échelle, sur une règle en mm" },
       { mark: "lit", label: "Bonne réponse après le choix" },
@@ -30,7 +31,7 @@ const TEXT = {
     ask: {
       seiziemes: (t) => `Combien de seizièmes de pouce fait un tube ${t} ?`,
       "pouce-mm": (t) => `Quel est le diamètre extérieur d'un tube ${t} ?`,
-      "mm-pouce": (mm) => `Un tube de cuivre frigorifique mesure ${mm} mm de diamètre extérieur. Quelle est sa désignation ?`,
+      "mm-pouce": (mm) => `Au pied à coulisse, par-dessus la paroi, un tube de cuivre frigorifique mesure ${mm} mm (diamètre extérieur). Quelle est sa désignation ?`,
       regle: (m) => `Lisez la règle : quel est ce tube (${m}) ?`,
       usage: (t) => `À quoi sert le tube ${t} ?`,
       "tube-pour-usage": (u) => `Quel tube pour : ${u.toLowerCase()} ?`,
@@ -38,7 +39,7 @@ const TEXT = {
       "plus-petit": () => "Lequel de ces trois tubes a le plus petit diamètre extérieur ?",
       outil: (tool, t) => `${tool} : quelle taille pour le tube ${t} ?`,
     },
-    sixteenths: (id, n, est, od) => `${id} = ${n}/16 ; ${n} × 1,6 ≈ ${est} mm ; valeur exacte : ${od} mm.`,
+    sixteenths: (id, parts, sum, n, od) => `${id} = ${parts} ≈ ${sum} mm ; en seizièmes : ${n}/16 ; valeur exacte : ${od} mm.`,
     measured: (t, od) => `${t} : ${od} mm de diamètre extérieur.`,
     use: (t, u) => `${t} : ${u.toLowerCase()}.`,
     tool: (t) => `L'outil porte la taille du tube : ${t}.`,
@@ -54,7 +55,8 @@ const TEXT = {
     title: "Tube sizes",
     pageTitle: "Remembering tube sizes: an exercise",
     hint: "Sixteenths of an inch, millimetres, uses and tools",
-    buttons: { sizes: "Sizes and uses", tools: "Tools", again: "Next situation", series: "New series" },
+    buttons: { sizes: "Sizes and uses", tools: "Tools", memo: "Memo", again: "Next situation", series: "New series" },
+    memo: "<p><strong>1 inch = 25.4 mm</strong>, then halve: 1/2 = 12.7; 1/4 = 6.35; 1/8 = 3.2; 1/16 = 1.6.</p><p>3/16 = 3.2 + 1.6 · 5/16 = 6.35 + 1.6 · 3/8 = 6.35 + 3.2 · 5/8 = 12.7 + 3.2 · 3/4 = 12.7 + 6.35 · 7/8 = 25.4 − 3.2</p><p>Outside diameter: measured with a caliper, over the wall.</p>",
     keys: [
       { mark: "raised", label: "Tubes standing, to scale, on a mm rule" },
       { mark: "lit", label: "Right answer after the choice" },
@@ -65,7 +67,7 @@ const TEXT = {
     ask: {
       seiziemes: (t) => `How many sixteenths of an inch is a ${t} tube?`,
       "pouce-mm": (t) => `What is the outside diameter of a ${t} tube?`,
-      "mm-pouce": (mm) => `A refrigeration copper tube is ${mm} mm outside diameter. What is its size?`,
+      "mm-pouce": (mm) => `Measured with a caliper over the wall, a refrigeration copper tube is ${mm} mm (outside diameter). What is its size?`,
       regle: (m) => `Read the rule: which tube is this (${m})?`,
       usage: (t) => `What is the ${t} tube used for?`,
       "tube-pour-usage": (u) => `Which tube for: ${u.toLowerCase()}?`,
@@ -73,7 +75,7 @@ const TEXT = {
       "plus-petit": () => "Which of these three tubes has the smallest outside diameter?",
       outil: (tool, t) => `${tool}: which size for the ${t} tube?`,
     },
-    sixteenths: (id, n, est, od) => `${id} = ${n}/16; ${n} × 1.6 ≈ ${est} mm; exact value: ${od} mm.`,
+    sixteenths: (id, parts, sum, n, od) => `${id} = ${parts} ≈ ${sum} mm; in sixteenths: ${n}/16; exact value: ${od} mm.`,
     measured: (t, od) => `${t}: ${od} mm outside diameter.`,
     use: (t, u) => `${t}: ${u.toLowerCase()}.`,
     tool: (t) => `The tool carries the tube size: ${t}.`,
@@ -115,6 +117,14 @@ function rule(x0, x1, s) {
   for (let v = 0; v * s <= x1 - x0 + 0.01; v += every) out += faceTextSvg(topMatrix([x0 + v * s, RY + 9], 0.8, PROJ, "x"), String(v), { size: 5, tone: "mid", anchor: "middle" });
   return out;
 }
+// Pied à coulisse : règle derrière le tube, deux becs qui touchent le tube par-dessus la paroi (diamètre extérieur).
+function caliper(xl, xr, y, h) {
+  const z = h * 0.55, front = y + (xr - xl) / 2 + 10;
+  const S = (plan, z0, hh, tone) => solidSvg(slabOf(plan, z0, hh, PROJ, 3, 0.3), { tone });
+  return S({ x: xl - 3.4, y, w: 3, d: front - y + 5, r: 0.5 }, z, 4, "lo")
+    + S({ x: xr + 0.4, y, w: 3, d: front - y + 5, r: 0.5 }, z, 4, "hi")
+    + S({ x: xl - 10, y: front, w: xr - xl + 34, d: 5, r: 0.8 }, z, 5, "mid");
+}
 function tubesScene(tubes, labels, litIndex = -1) {
   const sum = tubes.reduce((a, t) => a + od(t), 0), most = Math.max(...tubes.map(od));
   const gap = 0.35 * most;
@@ -122,7 +132,8 @@ function tubesScene(tubes, labels, litIndex = -1) {
   let x = -((sum + gap * (tubes.length - 1)) * s) / 2;
   const x0 = x;
   const items = tubes.map((t, i) => { const cx = x + (od(t) * s) / 2; x += (od(t) + gap) * s; return tubeSvg(t, cx, s, labels[i], i === litIndex); });
-  live.innerHTML = rule(x0, x, s) + items.sort((a, b) => depthOf(a.at, PROJ) - depthOf(b.at, PROJ)).map((i) => i.svg).join("");
+  const jaws = tubes.length === 1 ? caliper(x0, x0 + od(tubes[0]) * s, TY, 30) : "";
+  live.innerHTML = rule(x0, x, s) + items.sort((a, b) => depthOf(a.at, PROJ) - depthOf(b.at, PROJ)).map((i) => i.svg).join("") + jaws;
 }
 function toolScene(s, lit) {
   const tube = s.tube, sizes = s.options;
@@ -171,7 +182,12 @@ function explain(s) {
   if (isTool(s)) return TX.tool(X.sizeLabel(s.tube.material, s.answer));
   if (["seiziemes", "pouce-mm", "mm-pouce"].includes(s.kind)) {
     const ref = R.MATERIALS["cuivre-pouce"].sizes.find((x) => x.id === s.size);
-    return TX.sixteenths(ref.id, ref.sixteenths, X.num(+(ref.sixteenths * 1.6).toFixed(1)), X.num(ref.od));
+    const short = (f) => X.num(+R.LADDER[f].toFixed(f === "1/4" || f === "1/2" ? 2 : 1));
+    const fr = ref.halves.map(([sign, f], i) => (i ? " " + (sign === "+" ? "+" : "−") + " " : "") + f).join("");
+    const mm = ref.halves.map(([sign, f], i) => (i ? " " + (sign === "+" ? "+" : "−") + " " : "") + short(f)).join("");
+    const sum = ref.halves.reduce((a, [sign, f]) => a + (sign === "+" ? 1 : -1) * R.LADDER[f], 0);
+    const parts = ref.halves.length > 1 ? fr + " = " + mm : mm;
+    return TX.sixteenths(ref.id, parts, X.num(Math.round(sum * 100 + 1e-6) / 100), ref.sixteenths, X.num(ref.od));
   }
   if (s.kind === "regle") return TX.measured(X.tubeLabel(s.tube), X.num(od(s.tube)));
   if (s.kind === "usage") return TX.use(X.tubeLabel(s.tube), R.USAGES[s.answer][LANG]);
@@ -188,6 +204,8 @@ function setMode(next) {
   series.start();
 }
 buttons.sizes.addEventListener("click", () => setMode("sizes"));
+const memo = scope.querySelector(".tt-memo");
+buttons.memo.addEventListener("click", () => { memo.hidden = !memo.hidden; buttons.memo.setAttribute("aria-expanded", String(!memo.hidden)); });
 buttons.tools.addEventListener("click", () => setMode("tools"));
 const run = () => {};
 window.__tt = { series, setMode };
@@ -201,7 +219,7 @@ const langs = {};
 for (const lang of ["fr", "en"]) {
   const T = TEXT[lang], B = T.buttons;
   const svg = k.figureSvg({ width: WIDTH, height: HEIGHT, label: T.svgLabel, body: [bench(P, PLATE), `<g class="rc-live"></g>`] });
-  const modes = `<div class="mv-controls" role="group" aria-label="${lang === "fr" ? "Thème des situations" : "Situation theme"}"><button type="button" data-act="sizes">${B.sizes}</button><button type="button" data-act="tools">${B.tools}</button></div>`;
+  const modes = `<div class="mv-controls" role="group" aria-label="${lang === "fr" ? "Thème des situations" : "Situation theme"}"><button type="button" data-act="sizes">${B.sizes}</button><button type="button" data-act="tools">${B.tools}</button><button type="button" data-act="memo" aria-expanded="false">${B.memo}</button></div><div class="tt-memo" hidden>${T.memo}</div>`;
   const quiz = `<div class="rc-quiz"><div class="mv-controls rc-options" role="group" aria-label="${lang === "fr" ? "Réponses proposées" : "Possible answers"}"></div><div class="mv-controls"><button type="button" data-act="again">${B.again}</button><button type="button" data-act="series">${B.series}</button></div></div>`;
   const body = `<div class="iso-stage" role="img" aria-label="${T.stageLabel}">${svg}</div>${modes}<p class="rc-prompt" aria-live="polite"></p>${quiz}<p class="mv-feedback" aria-live="polite"></p><p class="mv-score" aria-live="polite"></p>`;
   const plate = k.plateHtml({ fig: "Fig 4", title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body });
@@ -213,4 +231,7 @@ writeFigure(HERE, NAME, langs, CONTROLS_CSS + FITTINGS_CSS + `
 .rc-tag rect{fill:var(--anatomy-card);stroke:var(--anatomy-mid);stroke-width:.8}
 .rc-tag-lit rect{stroke:var(--anatomy-lit);stroke-width:1.4}
 .rc-hole-lit{stroke:var(--anatomy-lit);stroke-width:1.6}
+.tt-memo{margin:12px 0 0;padding:10px 14px;border:1px solid var(--anatomy-mid);border-radius:14px;font-size:13px;line-height:1.55;color:var(--anatomy-text)}
+.tt-memo[hidden]{display:none}
+.tt-memo p{margin:4px 0}
 `);
