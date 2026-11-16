@@ -31,6 +31,7 @@ PUBLISHED = [
     ("choix-raccord", "p4/m2/04-choisir-raccord"),  # choisir le raccord qui relie les bouts donnés
     ("tailles-tuyaux", "p4/m3/04-retenir-tailles"),  # seizièmes, mm, usages
     ("longueur-developpee", "p4/m4/01-calcul"),  # droites, arcs, LD pas à pas
+    ("manodetendeur", "p4/m5/01-manodetendeurs"),  # lire HP et BP, détente admise, ordre de mise en service
 ]
 
 
