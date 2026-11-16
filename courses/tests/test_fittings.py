@@ -524,10 +524,10 @@ def test_bending_section_sends_the_learner_to_the_tool_figure():
         assert words in text and ("figure" in text.lower()), lang
 
 
-def test_part_four_now_calls_ten_figures():
-    """Q78 : 7 figures de Q69 + 3 figures d'entraînement."""
+def test_part_four_now_calls_eleven_figures():
+    """Q78, Q89 : 7 figures de Q69 + 3 figures d'entraînement aux raccords et aux tailles + la longueur développée."""
     names = {m.split("#")[0] for md in (CONTENT / "p4").rglob("*.fr.md") for m in re.findall(r"\[\[figure:([^\]]*)\]\]", md.read_text(encoding="utf-8"))}
-    assert len(names) == 10 and set(TRAINING) <= names
+    assert len(names) == 11 and set(TRAINING) | {"longueur-developpee"} <= names
 
 
 @pytest.mark.parametrize("name", TRAINING)

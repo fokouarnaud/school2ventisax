@@ -32,4 +32,8 @@ Ce tableau vaut pour les tubes en acier : leur désignation en pouces n'est pas 
 
 LD = 199 + 109 + 111,47 = 419,47 mm
 
+Pour vous entraîner sur d'autres tubes, d'autres angles et deux coudes, calculez pas à pas avec la figure ci-dessous.
+
+[[figure:longueur-developpee]]
+
 Lors du cintrage, une partie du tube n'est ni comprimée ni tendue : c'est la fibre neutre. Elle sépare la fibre tendue, à l'extérieur du coude, de la fibre comprimée, à l'intérieur.
