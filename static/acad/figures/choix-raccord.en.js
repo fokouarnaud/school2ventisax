@@ -1547,6 +1547,15 @@ const PVC_USAGE = {
 };
 const SHEATH_USAGE = { 16: "gaine-liaison", 20: "gaine-alimentation", 25: "gaine-forte-section" };
 
+// Méthode des moitiés : 1 pouce = 25,4 mm, puis on coupe en deux (12,7 ; 6,35 ; 3,2 ; 1,6). Chaque taille de la série
+// est une ou deux de ces fractions, ajoutées ou retirées (3/8 = 1/4 + 1/8 ; 7/8 = 1 - 1/8).
+const LADDER = { 1: 25.4, "1/2": 12.7, "1/4": 6.35, "1/8": 3.175, "1/16": 1.5875 };
+const HALVES = {
+  3: [["+", "1/8"], ["+", "1/16"]], 4: [["+", "1/4"]], 5: [["+", "1/4"], ["+", "1/16"]], 6: [["+", "1/4"], ["+", "1/8"]],
+  8: [["+", "1/2"]], 10: [["+", "1/2"], ["+", "1/8"]], 12: [["+", "1/2"], ["+", "1/4"]], 14: [["+", "1"], ["-", "1/8"]],
+  18: [["+", "1"], ["+", "1/8"]],
+};
+
 // ------------------------------------------------------------------ matériaux et séries de diamètres (Q74, Q77)
 const metric = (od, di) => ({ id: String(od), od, label: L(`${di} × ${od} mm`, `${di} × ${od} mm`) });
 
@@ -1555,7 +1564,7 @@ const MATERIALS = {
     label: L("Cuivre frigorifique, série pouce", "Refrigeration copper, inch series"),
     fluid: "frigorigene",
     sizes: [3, 4, 5, 6, 8, 10, 12, 14, 18].map((n) => ({
-      id: inchLabel(n), sixteenths: n, od: (n * 254) / 160, usage: INCH_USAGE[n],
+      id: inchLabel(n), sixteenths: n, od: (n * 254) / 160, usage: INCH_USAGE[n], halves: HALVES[n],
     })),
   },
   "cuivre-metrique": {
@@ -1815,7 +1824,9 @@ function sizeSituations() {
   const inch = MATERIALS["cuivre-pouce"].sizes;
   inch.forEach((s, i) => {
     push("seiziemes", 1, { size: s.id, answer: `${s.sixteenths}/16`, options: neighbours([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19].map((n) => `${n}/16`), `${s.sixteenths}/16`, i) });
-    push("pouce-mm", 2, { size: s.id, answer: s.od, options: neighbours(inch.map((x) => x.od), s.od, i) });
+    // Une mesure au pied à coulisse se lit au centième : 7,94 mm et non 7,9375 mm.
+    const hundredth = (v) => Math.round(v * 100) / 100;
+    push("pouce-mm", 2, { size: s.id, answer: hundredth(s.od), options: neighbours(inch.map((x) => hundredth(x.od)), hundredth(s.od), i) });
     push("mm-pouce", 1, { size: s.id, answer: s.id, options: neighbours(inch.map((x) => x.id), s.id, i) });
   });
   const tubes = Object.entries(MATERIALS).flatMap(([material, m]) => m.sizes.map((s) => ({ material, size: s.id, od: s.od, usage: s.usage })));
@@ -1844,9 +1855,18 @@ function sizeSituations() {
       }
     }
   }
+  // Outils : l'énoncé donne la mesure du tube au pied à coulisse, jamais sa désignation. Quand l'outil existe dans les
+  // deux séries, la taille la plus proche de l'autre série est proposée aussi (3/8 = 9,53 mm, à ne pas confondre avec 10 mm).
   for (const [tool, { sizes }] of Object.entries(TOOLS)) {
     for (const [material, list] of Object.entries(sizes)) {
-      list.forEach((id, i) => push(`outil-${tool}`, 3, { tube: { material, size: id }, answer: id, options: neighbours(list, id, i) }));
+      list.forEach((id, i) => {
+        const od = sizeOf(material, id).od;
+        const tube = { material, size: id };
+        const same = neighbours(list, id, i).filter((x) => x !== id).map((size) => ({ material, size }));
+        const other = Object.entries(sizes).filter(([m]) => m !== material).map(([m, ids]) => ({ material: m, size: ids.reduce((a, b) => (Math.abs(sizeOf(m, b).od - od) < Math.abs(sizeOf(m, a).od - od) ? b : a)) }));
+        const options = [tube, ...other, ...same].slice(0, 4).sort((a, b) => sizeOf(a.material, a.size).od - sizeOf(b.material, b.size).od);
+        push(`outil-${tool}`, 3, { measured: Math.round(od * 100) / 100, tube, answer: tube, options });
+      });
     }
   }
   return out;
@@ -1867,7 +1887,7 @@ function buildCatalogue() {
   };
 }
 
-return { USAGES, MATERIALS, MODES, TYPES, FUNCTIONS, TOOLS, isValid, buildCatalogue };
+return { USAGES, LADDER, MATERIALS, MODES, TYPES, FUNCTIONS, TOOLS, isValid, buildCatalogue };
 })();
 const XT = (() => {
 // Libellés fr/en des raccords et des tubes, communs aux figures raccords, choix-raccord et tailles-tuyaux.
@@ -2147,10 +2167,18 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 function ready() { for (const b of scope.querySelectorAll(".mv-controls button")) b.disabled = false; }
 function makeSeries(pool, hooks) {
   let list = [], i = 0, good = 0, answered = false;
+  // Dans un niveau, on tire d'abord le type de situation, puis une situation de ce type : un type très nombreux
+  // (les comparaisons de tubes) n'écrase pas les autres (les usages).
   function pick(level) {
-    const choices = pool[level];
-    for (let tries = 0; tries < 40; tries++) { const s = choices[Math.floor(Math.random() * choices.length)]; if (!list.includes(s)) return s; }
-    return choices[0];
+    const kinds = {};
+    pool[level].forEach((s) => (kinds[s.kind || "-"] ||= []).push(s));
+    const groups = Object.values(kinds);
+    for (let tries = 0; tries < 40; tries++) {
+      const group = groups[Math.floor(Math.random() * groups.length)];
+      const s = group[Math.floor(Math.random() * group.length)];
+      if (!list.includes(s)) return s;
+    }
+    return pool[level][0];
   }
   function start() { list = []; for (const level of PLAN) list.push(pick(level)); i = 0; good = 0; show(); }
   function show() {

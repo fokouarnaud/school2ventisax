@@ -324,7 +324,9 @@ function sizeSituations() {
   const inch = MATERIALS["cuivre-pouce"].sizes;
   inch.forEach((s, i) => {
     push("seiziemes", 1, { size: s.id, answer: `${s.sixteenths}/16`, options: neighbours([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19].map((n) => `${n}/16`), `${s.sixteenths}/16`, i) });
-    push("pouce-mm", 2, { size: s.id, answer: s.od, options: neighbours(inch.map((x) => x.od), s.od, i) });
+    // Une mesure au pied à coulisse se lit au centième : 7,94 mm et non 7,9375 mm.
+    const hundredth = (v) => Math.round(v * 100) / 100;
+    push("pouce-mm", 2, { size: s.id, answer: hundredth(s.od), options: neighbours(inch.map((x) => hundredth(x.od)), hundredth(s.od), i) });
     push("mm-pouce", 1, { size: s.id, answer: s.id, options: neighbours(inch.map((x) => x.id), s.id, i) });
   });
   const tubes = Object.entries(MATERIALS).flatMap(([material, m]) => m.sizes.map((s) => ({ material, size: s.id, od: s.od, usage: s.usage })));
@@ -353,9 +355,18 @@ function sizeSituations() {
       }
     }
   }
+  // Outils : l'énoncé donne la mesure du tube au pied à coulisse, jamais sa désignation. Quand l'outil existe dans les
+  // deux séries, la taille la plus proche de l'autre série est proposée aussi (3/8 = 9,53 mm, à ne pas confondre avec 10 mm).
   for (const [tool, { sizes }] of Object.entries(TOOLS)) {
     for (const [material, list] of Object.entries(sizes)) {
-      list.forEach((id, i) => push(`outil-${tool}`, 3, { tube: { material, size: id }, answer: id, options: neighbours(list, id, i) }));
+      list.forEach((id, i) => {
+        const od = sizeOf(material, id).od;
+        const tube = { material, size: id };
+        const same = neighbours(list, id, i).filter((x) => x !== id).map((size) => ({ material, size }));
+        const other = Object.entries(sizes).filter(([m]) => m !== material).map(([m, ids]) => ({ material: m, size: ids.reduce((a, b) => (Math.abs(sizeOf(m, b).od - od) < Math.abs(sizeOf(m, a).od - od) ? b : a)) }));
+        const options = [tube, ...other, ...same].slice(0, 4).sort((a, b) => sizeOf(a.material, a.size).od - sizeOf(b.material, b.size).od);
+        push(`outil-${tool}`, 3, { measured: Math.round(od * 100) / 100, tube, answer: tube, options });
+      });
     }
   }
   return out;

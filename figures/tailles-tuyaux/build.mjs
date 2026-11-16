@@ -37,12 +37,15 @@ const TEXT = {
       "tube-pour-usage": (u) => `Quel tube pour : ${u.toLowerCase()} ?`,
       "plus-gros": () => "Lequel de ces trois tubes a le plus gros diamètre extérieur ?",
       "plus-petit": () => "Lequel de ces trois tubes a le plus petit diamètre extérieur ?",
-      outil: (tool, t) => `${tool} : quelle taille pour le tube ${t} ?`,
+      outil: (tool, mm) => `Au pied à coulisse, le tube de cuivre mesure ${mm} mm. ${tool} : quelle taille choisir ?`,
     },
     sixteenths: (id, parts, sum, n, od) => `${id} = ${parts} ≈ ${sum} mm ; en seizièmes : ${n}/16 ; valeur exacte : ${od} mm.`,
     measured: (t, od) => `${t} : ${od} mm de diamètre extérieur.`,
     use: (t, u) => `${t} : ${u.toLowerCase()}.`,
-    tool: (t) => `L'outil porte la taille du tube : ${t}.`,
+    tool: (mm, t) => `${mm} mm, c'est un tube ${t} : l'outil porte la taille du tube.`,
+    metric: (mm) => `${mm} mm, c'est un tube de la série métrique : l'outil porte la même taille.`,
+    confuse: (o, omm) => ` Ne pas confondre avec ${o} (${omm} mm) : les deux séries ne se mélangent pas.`,
+    single: { "1/2": "la moitié du pouce", "1/4": "le quart du pouce" },
     mm: (v) => `${v} mm`,
     right: "Juste.",
     wrong: (answer) => `Non : la bonne réponse est « ${answer} ».`,
@@ -73,12 +76,15 @@ const TEXT = {
       "tube-pour-usage": (u) => `Which tube for: ${u.toLowerCase()}?`,
       "plus-gros": () => "Which of these three tubes has the largest outside diameter?",
       "plus-petit": () => "Which of these three tubes has the smallest outside diameter?",
-      outil: (tool, t) => `${tool}: which size for the ${t} tube?`,
+      outil: (tool, mm) => `With a caliper, the copper tube measures ${mm} mm. ${tool}: which size?`,
     },
     sixteenths: (id, parts, sum, n, od) => `${id} = ${parts} ≈ ${sum} mm; in sixteenths: ${n}/16; exact value: ${od} mm.`,
     measured: (t, od) => `${t}: ${od} mm outside diameter.`,
     use: (t, u) => `${t}: ${u.toLowerCase()}.`,
-    tool: (t) => `The tool carries the tube size: ${t}.`,
+    tool: (mm, t) => `${mm} mm is a ${t} tube: the tool carries the tube size.`,
+    metric: (mm) => `${mm} mm is a metric-series tube: the tool carries the same size.`,
+    confuse: (o, omm) => ` Do not confuse it with ${o} (${omm} mm): the two series do not mix.`,
+    single: { "1/2": "half an inch", "1/4": "a quarter of an inch" },
     mm: (v) => `${v} mm`,
     right: "Correct.",
     wrong: (answer) => `No: the right answer is "${answer}".`,
@@ -137,16 +143,16 @@ function tubesScene(tubes, labels, litIndex = -1) {
 }
 function toolScene(s, lit) {
   const tube = s.tube, sizes = s.options;
-  const most = Math.max(...sizes.map((id) => odOf(tube.material, id)), od(tube));
+  const most = Math.max(...sizes.map((o) => od(o)), od(tube));
   const sc = Math.min(4, 24 / most);
   const bar = { x: -100, y: -36, w: 152, d: 32, r: 3 };
   let out = solidSvg(slabOf(bar, 0, 9, PROJ, 4, 0.8), { tone: "mid" });
-  sizes.forEach((id, i) => {
-    const cx = bar.x + 19 + i * 38, r = (odOf(tube.material, id) * sc) / 2;
-    out += '<path class="' + (lit && id === s.answer ? 'rc-hole rc-hole-lit' : 'rc-hole') + '" d="' + ring(cx, bar.y + 13, r, 9, PROJ, 40) + '"/>';
-    out += faceTextSvg(topMatrix([cx, bar.y + 26], 9, PROJ, "x"), X.sizeLabel(tube.material, id), { size: 6, tone: "hi", anchor: "middle" });
+  sizes.forEach((o, i) => {
+    const cx = bar.x + 19 + i * 38, r = (od(o) * sc) / 2;
+    out += '<path class="' + (lit && same(o, s.answer) ? 'rc-hole rc-hole-lit' : 'rc-hole') + '" d="' + ring(cx, bar.y + 13, r, 9, PROJ, 40) + '"/>';
+    out += faceTextSvg(topMatrix([cx, bar.y + 26], 9, PROJ, "x"), X.sizeLabel(o.material, o.size), { size: 6, tone: "hi", anchor: "middle" });
   });
-  const t = tubeSvg(tube, 80, sc, lit ? X.sizeLabel(tube.material, tube.size) : "?", false, 10);
+  const t = tubeSvg(tube, 80, sc, lit ? X.sizeLabel(tube.material, tube.size) : X.num(s.measured) + " mm", false, 10);
   live.innerHTML = out + t.svg;
 }
 function show(s, answered) {
@@ -163,8 +169,8 @@ function show(s, answered) {
 }
 function ask(s) {
   const A = TX.ask;
-  if (isTool(s)) return A.outil(R.TOOLS[s.kind.slice(6)].label[LANG], X.tubeLabel(s.tube));
-  if (s.kind === "mm-pouce") return A["mm-pouce"](X.num(odOf("cuivre-pouce", s.size)));
+  if (isTool(s)) return A.outil(R.TOOLS[s.kind.slice(6)].label[LANG], X.num(s.measured));
+  if (s.kind === "mm-pouce") return A["mm-pouce"](X.num(Math.round(odOf("cuivre-pouce", s.size) * 100) / 100));
   if (s.kind === "seiziemes" || s.kind === "pouce-mm") return A[s.kind](s.size);
   if (s.kind === "regle") return A.regle(R.MATERIALS[s.tube.material].label[LANG]);
   if (s.kind === "usage") return A.usage(X.tubeLabel(s.tube));
@@ -172,21 +178,25 @@ function ask(s) {
   return A[s.kind]();
 }
 function label(s, o) {
-  if (isTool(s)) return X.sizeLabel(s.tube.material, o);
+  if (isTool(s)) return X.sizeLabel(o.material, o.size);
   if (s.kind === "seiziemes" || s.kind === "mm-pouce") return o;
   if (s.kind === "pouce-mm") return mm(o);
   if (s.kind === "usage") return R.USAGES[o][LANG];
   return X.tubeLabel(o);
 }
 function explain(s) {
-  if (isTool(s)) return TX.tool(X.sizeLabel(s.tube.material, s.answer));
+  if (isTool(s)) {
+    const a = s.answer, other = s.options.find((o) => o.material !== a.material);
+    const base = a.material === "cuivre-pouce" ? TX.tool(X.num(s.measured), a.size) : TX.metric(X.num(s.measured));
+    return base + (other ? TX.confuse(X.sizeLabel(other.material, other.size), X.num(Math.round(od(other) * 100) / 100)) : "");
+  }
   if (["seiziemes", "pouce-mm", "mm-pouce"].includes(s.kind)) {
     const ref = R.MATERIALS["cuivre-pouce"].sizes.find((x) => x.id === s.size);
     const short = (f) => X.num(+R.LADDER[f].toFixed(f === "1/4" || f === "1/2" ? 2 : 1));
     const fr = ref.halves.map(([sign, f], i) => (i ? " " + (sign === "+" ? "+" : "−") + " " : "") + f).join("");
     const mm = ref.halves.map(([sign, f], i) => (i ? " " + (sign === "+" ? "+" : "−") + " " : "") + short(f)).join("");
     const sum = ref.halves.reduce((a, [sign, f]) => a + (sign === "+" ? 1 : -1) * R.LADDER[f], 0);
-    const parts = ref.halves.length > 1 ? fr + " = " + mm : mm;
+    const parts = ref.halves.length > 1 ? fr + " = " + mm : TX.single[ref.halves[0][1]];
     return TX.sixteenths(ref.id, parts, X.num(Math.round(sum * 100 + 1e-6) / 100), ref.sixteenths, X.num(ref.od));
   }
   if (s.kind === "regle") return TX.measured(X.tubeLabel(s.tube), X.num(od(s.tube)));
@@ -224,7 +234,7 @@ for (const lang of ["fr", "en"]) {
   const body = `<div class="iso-stage" role="img" aria-label="${T.stageLabel}">${svg}</div>${modes}<p class="rc-prompt" aria-live="polite"></p>${quiz}<p class="mv-feedback" aria-live="polite"></p><p class="mv-score" aria-live="polite"></p>`;
   const plate = k.plateHtml({ fig: "Fig 4", title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body });
   const fns = (o) => `{${Object.entries(o).map(([key, f]) => `${JSON.stringify(key)}:${f}`).join(",")}}`;
-  const TX = `{ask:${fns(T.ask)},sixteenths:${T.sixteenths},measured:${T.measured},use:${T.use},tool:${T.tool},mm:${T.mm},right:${JSON.stringify(T.right)},wrong:${T.wrong},done:${T.done},step:${T.step},score:${T.score},marks:${JSON.stringify(T.marks)}}`;
+  const TX = `{ask:${fns(T.ask)},sixteenths:${T.sixteenths},measured:${T.measured},use:${T.use},tool:${T.tool},metric:${T.metric},confuse:${T.confuse},single:${JSON.stringify(T.single)},mm:${T.mm},right:${JSON.stringify(T.right)},wrong:${T.wrong},done:${T.done},step:${T.step},score:${T.score},marks:${JSON.stringify(T.marks)}}`;
   langs[lang] = { plate: waitingButtons(plate), title: T.pageTitle, script: fittingsScript({ lang, P, TX }) + LIVE };
 }
 writeFigure(HERE, NAME, langs, CONTROLS_CSS + FITTINGS_CSS + `

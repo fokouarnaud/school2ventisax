@@ -60,10 +60,18 @@ const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 function ready() { for (const b of scope.querySelectorAll(".mv-controls button")) b.disabled = false; }
 function makeSeries(pool, hooks) {
   let list = [], i = 0, good = 0, answered = false;
+  // Dans un niveau, on tire d'abord le type de situation, puis une situation de ce type : un type très nombreux
+  // (les comparaisons de tubes) n'écrase pas les autres (les usages).
   function pick(level) {
-    const choices = pool[level];
-    for (let tries = 0; tries < 40; tries++) { const s = choices[Math.floor(Math.random() * choices.length)]; if (!list.includes(s)) return s; }
-    return choices[0];
+    const kinds = {};
+    pool[level].forEach((s) => (kinds[s.kind || "-"] ||= []).push(s));
+    const groups = Object.values(kinds);
+    for (let tries = 0; tries < 40; tries++) {
+      const group = groups[Math.floor(Math.random() * groups.length)];
+      const s = group[Math.floor(Math.random() * group.length)];
+      if (!list.includes(s)) return s;
+    }
+    return pool[level][0];
   }
   function start() { list = []; for (const level of PLAN) list.push(pick(level)); i = 0; good = 0; show(); }
   function show() {

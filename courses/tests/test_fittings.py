@@ -248,7 +248,9 @@ def test_size_answers_follow_the_catalogue():
         kinds.add(kind)
         if kind in ("pouce-mm", "mm-pouce", "seiziemes"):
             ref = size("cuivre-pouce", s["size"])
-            expected = {"pouce-mm": ref["od"], "mm-pouce": ref["id"], "seiziemes": f"{ref['sixteenths']}/16"}[kind]
+            if kind == "pouce-mm":
+                assert abs(s["answer"] - ref["od"]) <= 0.005 + 1e-9, s["key"]
+            expected = {"pouce-mm": s["answer"], "mm-pouce": ref["id"], "seiziemes": f"{ref['sixteenths']}/16"}[kind]
         elif kind in ("plus-gros", "plus-petit"):
             ods = [size(t["material"], t["size"])["od"] for t in s["tubes"]]
             assert len(ods) == 3 and len(set(ods)) == 3 and max(ods) / min(ods) <= 2, s["key"]
@@ -267,7 +269,8 @@ def test_size_answers_follow_the_catalogue():
         elif kind.startswith("outil-"):
             tool = catalogue()["tools"][kind.removeprefix("outil-")]
             assert s["tube"]["size"] in tool["sizes"][s["tube"]["material"]], s["key"]
-            expected = s["tube"]["size"]
+            assert all(o["size"] in tool["sizes"].get(o["material"], []) for o in s["options"]), s["key"]
+            expected = s["tube"]
         else:
             pytest.fail(f"type de situation inconnu : {kind}")
         assert s["answer"] == expected, s["key"]
@@ -571,3 +574,22 @@ def test_size_figure_offers_a_memo_and_explains_by_halving():
         assert re.search(r'class="tt-memo"[^>]*hidden', fragment)
         assert "25" in fragment and "6" in fragment
         assert "halves" in (STATIC / f"tailles-tuyaux.{lang}.js").read_text(encoding="utf-8")
+
+
+def test_tool_situations_give_a_caliper_reading_not_the_size():
+    """Correction du 2026-11-16 : l'énoncé donnait la taille de l'outil. Il donne la mesure au pied à coulisse
+    (au centième), et les propositions mêlent les séries quand l'outil existe dans les deux (3/8 et 10 mm)."""
+    tools = [s for s in situations("tailles-tuyaux") if s["kind"].startswith("outil-")]
+    for s in tools:
+        assert abs(s["measured"] - size(s["tube"]["material"], s["tube"]["size"])["od"]) <= 0.005 + 1e-9, s["key"]
+        if s["tube"]["material"] == "cuivre-pouce":  # en métrique, la désignation est la mesure elle-même
+            assert s["tube"]["size"] not in json.dumps({k: v for k, v in s.items() if k not in ("tube", "answer", "options", "key")}), s["key"]
+    mixed = [s for s in tools if s["kind"] == "outil-cintreuse" and s["tube"] == {"material": "cuivre-pouce", "size": "3/8"}]
+    assert mixed and {"material": "cuivre-metrique", "size": "10"} in mixed[0]["options"]
+
+
+def test_size_situations_never_show_more_than_two_decimals():
+    """Correction du 2026-11-16 : « 7,9375 mm » dans un énoncé ou une proposition ; un pied à coulisse lit au centième."""
+    for s in situations("tailles-tuyaux"):
+        if s["kind"] == "pouce-mm":
+            assert all(abs(round(o, 2) - o) < 1e-9 for o in s["options"]), s["key"]
