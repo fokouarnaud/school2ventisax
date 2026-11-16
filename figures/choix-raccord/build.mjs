@@ -6,7 +6,7 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as k from "../_kit/iso-kit.mjs";
 import { bench, CONTROLS_CSS, LIVE_HEAD, LIVE_WATCH, writeFigure } from "../_kit/acad-bench.mjs";
-import { FITTINGS_CSS, FITTINGS_LIVE, fittingsScript } from "../_kit/raccords-live.mjs";
+import { FITTINGS_CSS, FITTINGS_LIVE, fittingsScript, waitingButtons } from "../_kit/raccords-live.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const NAME = "choix-raccord";
@@ -101,6 +101,7 @@ const series = makeSeries(pool, {
 const run = () => {};
 window.__cr = { series };
 quizBox.hidden = false;
+ready();
 series.start();
 ` + LIVE_WATCH;
 
@@ -113,6 +114,6 @@ for (const lang of ["fr", "en"]) {
   const plate = k.plateHtml({ fig: "Fig 3", title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body });
   const why = T.why;
   const TX = `{ask:${T.ask},end:${T.end},join:${T.join},right:${JSON.stringify(T.right)},wrong:${T.wrong},why:{material:${why.material},mode:${why.mode},shape:${why.shape},size:${why.size},gender:${JSON.stringify(why.gender)}},done:${T.done},step:${T.step},score:${T.score},marks:${JSON.stringify(T.marks)}}`;
-  langs[lang] = { plate, title: T.pageTitle, script: fittingsScript({ lang, P, TX }) + LIVE };
+  langs[lang] = { plate: waitingButtons(plate), title: T.pageTitle, script: fittingsScript({ lang, P, TX }) + LIVE };
 }
 writeFigure(HERE, NAME, langs, CONTROLS_CSS + FITTINGS_CSS);

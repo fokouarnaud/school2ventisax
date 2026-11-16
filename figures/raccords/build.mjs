@@ -6,7 +6,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as k from "../_kit/iso-kit.mjs";
 import { bench, CONTROLS_CSS, LIVE_HEAD, LIVE_WATCH, writeFigure } from "../_kit/acad-bench.mjs";
-import { FITTINGS_CSS, FITTINGS_LIVE, fittingsScript } from "../_kit/raccords-live.mjs";
+import { FITTINGS_CSS, FITTINGS_LIVE, fittingsScript, waitingButtons } from "../_kit/raccords-live.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const NAME = "raccords";
@@ -129,6 +129,7 @@ buttons.prev.addEventListener("click", () => { at = (at + tour.length - 1) % tou
 buttons.next.addEventListener("click", () => { at = (at + 1) % tour.length; showTour(); });
 const run = () => {};
 window.__rc = { setMode, series, show: (i) => { at = i; showTour(); } };
+ready();
 setMode("explore");
 ` + LIVE_WATCH;
 
@@ -140,6 +141,6 @@ for (const lang of ["fr", "en"]) {
   const body = `<div class="iso-stage" role="img" aria-label="${T.stageLabel}">${buildFigure(lang)}</div><p class="rc-prompt" aria-live="polite"></p>${controls}${quiz}<p class="mv-feedback" aria-live="polite"></p><p class="mv-score" aria-live="polite"></p>`;
   const plate = k.plateHtml({ fig: "Fig 2", title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body });
   const TX = `{prompts:${JSON.stringify(T.prompts)},mark:${T.mark},explain:${T.explain},right:${JSON.stringify(T.right)},wrong:${T.wrong},done:${T.done},step:${T.step},score:${T.score},tour:${T.tour},marks:${JSON.stringify(T.marks)}}`;
-  langs[lang] = { plate, title: T.pageTitle, script: fittingsScript({ lang, P, TX, extra: { tour: TOUR } }) + LIVE };
+  langs[lang] = { plate: waitingButtons(plate), title: T.pageTitle, script: fittingsScript({ lang, P, TX, extra: { tour: TOUR } }) + LIVE };
 }
 writeFigure(HERE, NAME, langs, CONTROLS_CSS + FITTINGS_CSS);
