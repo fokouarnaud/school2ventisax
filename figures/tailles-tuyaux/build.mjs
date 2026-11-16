@@ -6,7 +6,7 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as k from "../_kit/iso-kit.mjs";
 import { bench, CONTROLS_CSS, LIVE_HEAD, LIVE_WATCH, writeFigure } from "../_kit/acad-bench.mjs";
-import { FITTINGS_CSS, FITTINGS_LIVE, fittingsScript } from "../_kit/raccords-live.mjs";
+import { FITTINGS_CSS, FITTINGS_LIVE, fittingsScript, waitingButtons } from "../_kit/raccords-live.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const NAME = "tailles-tuyaux";
@@ -193,6 +193,7 @@ const run = () => {};
 window.__tt = { series, setMode };
 quizBox.hidden = false;
 const wanted = (scope.dataset && scope.dataset.mode) || new URLSearchParams(location.search).get("mode");
+ready();
 setMode(wanted === "outils" ? "tools" : "sizes");
 ` + LIVE_WATCH;
 
@@ -206,7 +207,7 @@ for (const lang of ["fr", "en"]) {
   const plate = k.plateHtml({ fig: "Fig 4", title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body });
   const fns = (o) => `{${Object.entries(o).map(([key, f]) => `${JSON.stringify(key)}:${f}`).join(",")}}`;
   const TX = `{ask:${fns(T.ask)},sixteenths:${T.sixteenths},measured:${T.measured},use:${T.use},tool:${T.tool},mm:${T.mm},right:${JSON.stringify(T.right)},wrong:${T.wrong},done:${T.done},step:${T.step},score:${T.score},marks:${JSON.stringify(T.marks)}}`;
-  langs[lang] = { plate, title: T.pageTitle, script: fittingsScript({ lang, P, TX }) + LIVE };
+  langs[lang] = { plate: waitingButtons(plate), title: T.pageTitle, script: fittingsScript({ lang, P, TX }) + LIVE };
 }
 writeFigure(HERE, NAME, langs, CONTROLS_CSS + FITTINGS_CSS + `
 .rc-tag rect{fill:var(--anatomy-card);stroke:var(--anatomy-mid);stroke-width:.8}

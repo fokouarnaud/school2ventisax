@@ -528,3 +528,14 @@ def test_part_four_now_calls_ten_figures():
     """Q78 : 7 figures de Q69 + 3 figures d'entraînement."""
     names = {m.split("#")[0] for md in (CONTENT / "p4").rglob("*.fr.md") for m in re.findall(r"\[\[figure:([^\]]*)\]\]", md.read_text(encoding="utf-8"))}
     assert len(names) == 10 and set(TRAINING) <= names
+
+
+@pytest.mark.parametrize("name", TRAINING)
+def test_figure_buttons_wait_for_their_script(name):
+    """Q79 : un toucher avant la fin du chargement ne se perd pas ; les boutons du fragment partent désactivés,
+    le script les active quand la figure est prête."""
+    for lang in ("fr", "en"):
+        fragment = (STATIC / f"{name}.{lang}.html").read_text(encoding="utf-8")
+        buttons = re.findall(r"<button\b[^>]*>", fragment)
+        assert buttons and all(" disabled" in b for b in buttons), lang
+        assert "ready()" in (STATIC / f"{name}.{lang}.js").read_text(encoding="utf-8"), lang

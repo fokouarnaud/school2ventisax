@@ -2143,6 +2143,8 @@ function paint(f, options) { live.innerHTML = draw.scene(f, f.sizes.map((s) => o
 function byLevel(list) { const out = { 1: [], 2: [], 3: [], 4: [] }; list.forEach((s) => out[s.level].push(s)); return out; }
 const PLAN = [1, 1, 1, 2, 2, 2, 3, 3, 4, 4];
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+// Les boutons du fragment partent désactivés : un toucher avant la fin du chargement ne se perd pas.
+function ready() { for (const b of scope.querySelectorAll(".mv-controls button")) b.disabled = false; }
 function makeSeries(pool, hooks) {
   let list = [], i = 0, good = 0, answered = false;
   function pick(level) {
@@ -2234,6 +2236,7 @@ buttons.prev.addEventListener("click", () => { at = (at + tour.length - 1) % tou
 buttons.next.addEventListener("click", () => { at = (at + 1) % tour.length; showTour(); });
 const run = () => {};
 window.__rc = { setMode, series, show: (i) => { at = i; showTour(); } };
+ready();
 setMode("explore");
 new IntersectionObserver((e) => { visible = e[e.length - 1].isIntersecting; if (visible) run(); }, { rootMargin: "120px 0px" }).observe(stage);
 

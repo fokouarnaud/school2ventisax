@@ -13,6 +13,9 @@ const MODULES =
   namespaced(join(HERE, "raccords-text.mjs"), "XT") +
   namespaced(join(HERE, "raccords-draw.mjs"), "D");
 
+// Fragment : boutons désactivés jusqu'à ce que le script de la figure appelle ready().
+export const waitingButtons = (html) => html.replace(/<button type="button"/g, '<button type="button" disabled');
+
 export const fittingsScript = ({ lang, P, TX, extra = {} }) =>
   `${MODULES}const FIG = ${JSON.stringify(extra)};\nconst LANG = "${lang}";\nconst PROJ = ${JSON.stringify(P)};\nconst TX = ${TX};\n`;
 
@@ -53,6 +56,8 @@ function paint(f, options) { live.innerHTML = draw.scene(f, f.sizes.map((s) => o
 function byLevel(list) { const out = { 1: [], 2: [], 3: [], 4: [] }; list.forEach((s) => out[s.level].push(s)); return out; }
 const PLAN = [1, 1, 1, 2, 2, 2, 3, 3, 4, 4];
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+// Les boutons du fragment partent désactivés : un toucher avant la fin du chargement ne se perd pas.
+function ready() { for (const b of scope.querySelectorAll(".mv-controls button")) b.disabled = false; }
 function makeSeries(pool, hooks) {
   let list = [], i = 0, good = 0, answered = false;
   function pick(level) {
