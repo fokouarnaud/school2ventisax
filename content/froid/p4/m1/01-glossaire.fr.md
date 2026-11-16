@@ -22,3 +22,13 @@ Vocabulaire du métier utilisé dans cette partie, en français et en anglais br
 | surchauffe | superheat |
 | sous-refroidissement | subcooling |
 | moto-compresseur | motor-compressor |
+| manchon | coupling |
+| té | tee |
+| coude | elbow |
+| réduction | reducer |
+| mâle | male |
+| femelle | female |
+| raccord union | union |
+| écrou dudgeon | flare nut |
+| diamètre extérieur | outside diameter (OD) |
+| gaine ICTA | flexible conduit |

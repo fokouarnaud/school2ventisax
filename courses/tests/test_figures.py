@@ -27,6 +27,9 @@ PUBLISHED = [
     ("enroulements", "p4/m9/01-monophases"),  # C, A, P à l'ohmmètre
     ("demarrage-compresseur", "p4/m10/02-ctp-condensateurs"),  # relais d'intensité : normal, K ouvert, K collé
     ("manifold-charge", "p4/m17/03-liquide-vapeur"),  # tare, phase, masse de la plaque
+    ("raccords", "p4/m2/01-cuivre-laiton"),  # explorer puis reconnaître les raccords
+    ("choix-raccord", "p4/m2/04-choisir-raccord"),  # choisir le raccord qui relie les bouts donnés
+    ("tailles-tuyaux", "p4/m3/04-retenir-tailles"),  # seizièmes, mm, usages
 ]
 
 
@@ -99,8 +102,8 @@ def test_each_figure_is_published_in_its_section_in_both_languages(name, section
 
 def test_every_figure_marker_in_the_content_is_registered():
     for path in CONTENT.rglob("*.md"):
-        for name in re.findall(r"\[\[figure:([^\]]*)\]\]", path.read_text(encoding="utf-8")):
-            assert name in FIGURES, f"{path.name} : {name}"
+        for marker in re.findall(r"\[\[figure:([^\]]*)\]\]", path.read_text(encoding="utf-8")):
+            assert marker.split("#")[0] in FIGURES, f"{path.name} : {marker}"
 
 
 @pytest.mark.django_db

@@ -8,3 +8,5 @@ Le cintrage donne au tube sa forme sans raccord, donc sans brasure ni risque de 
 6. Contrôler l'angle à l'équerre ou au gabarit, puis vérifier que la section n'est ni aplatie ni plissée.
 
 Un tube aplati réduit le passage du fluide et crée une perte de charge : il doit être remplacé.
+
+La matrice de la cintreuse porte elle aussi la taille du tube : pour vous entraîner à choisir l'outil, utilisez la figure de la section « Évasements ».

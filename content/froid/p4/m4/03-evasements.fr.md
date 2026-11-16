@@ -11,3 +11,7 @@ Il consiste à réaliser un collet conique sur un tube, ayant au préalable mont
 Il se fait lorsqu'on veut réunir deux tubes de même diamètre sur une liaison frigorifique. Il se réalise à l'aide d'une pince à emboutir.
 
 **Réalisation** : fixer le cylindre du diamètre correspondant sur la pince, placer le tube à emboutir dans le cylindre et fermer légèrement la pince pour ne pas déchirer le tube. La liaison s'effectue ensuite par brasage.
+
+Chaque outil d'évasement porte la taille du tube : trou de la dudgeonnière, écrou, tête de l'élargisseur. La figure ci-dessous s'ouvre sur ces outils ; son autre thème entraîne aux tailles et aux usages.
+
+[[figure:tailles-tuyaux#outils]]

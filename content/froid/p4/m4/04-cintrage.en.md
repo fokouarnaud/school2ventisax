@@ -8,3 +8,5 @@ Bending shapes the tube without a fitting, so without a brazed joint or extra ri
 6. Check the angle with a square or template, then check that the section is neither flattened nor kinked.
 
 A flattened tube restricts the flow and creates a pressure drop: it must be replaced.
+
+The bender former also carries the tube size: to practise choosing the tool, use the figure in the Flaring section.

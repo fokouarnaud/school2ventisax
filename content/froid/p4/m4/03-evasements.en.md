@@ -11,3 +11,7 @@ This means forming a conical collar on a tube, having first slipped a nut onto i
 Swaging (<span lang="fr">emboutissage</span>) is done to join two tubes of the same diameter on a refrigeration line, with a swaging tool.
 
 **Method**: fit the die of the matching size on the tool, place the tube in the die and close the tool gently so as not to tear the tube. The joint is then brazed.
+
+Each flaring tool carries the tube size: flaring bar hole, flare nut, swaging tool head. The figure below opens on these tools; its other theme trains sizes and uses.
+
+[[figure:tailles-tuyaux#outils]]
