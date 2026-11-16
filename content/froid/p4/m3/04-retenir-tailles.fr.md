@@ -1,8 +1,38 @@
-## Compter en seizièmes de pouce
+## Le diamètre extérieur
 
-Les tubes de la série pouce sont désignés par leur diamètre extérieur. Pour ne plus se perdre entre 3/16, 1/4, 5/16 et 3/8, on ramène toutes les fractions en **seizièmes** : 1/4 = 4/16, 3/8 = 6/16, 1/2 = 8/16, 5/8 = 10/16, 3/4 = 12/16, 7/8 = 14/16. Les tailles se rangent alors comme des nombres entiers.
+Le cuivre frigorifique se désigne par son **diamètre extérieur** : la largeur du tube mesurée **par-dessus la paroi**, au pied à coulisse, d'un bord extérieur à l'autre. Un tube 1/2 mesure 12,7 mm de diamètre extérieur ; son diamètre intérieur est plus petit, de deux épaisseurs de paroi.
 
-Un seizième de pouce vaut 25,4 ÷ 16 = 1,5875 mm, **soit 1,6 mm environ**. Le nombre de seizièmes multiplié par 1,6 donne le diamètre à quelques dixièmes près : 5/16 ≈ 5 × 1,6 = 8 mm. La valeur exacte se lit dans le tableau.
+## Deux nombres, puis on coupe en deux
+
+Il suffit de retenir **1 pouce = 25,4 mm**, puis de couper en deux, encore et encore :
+
+| Fraction | Valeur | Ce qu'il faut retenir |
+|---|---|---|
+| 1 | 25,4 mm | le pouce |
+| 1/2 | 12,7 mm | la moitié |
+| 1/4 | 6,35 mm | le quart, la ligne liquide d'un split |
+| 1/8 | 3,2 mm | le huitième |
+| 1/16 | 1,6 mm | le seizième |
+
+Chaque tube du frigoriste est une addition de deux morceaux de cette échelle, faciles à faire de tête :
+
+| Tube | Calcul | Environ |
+|---|---|---|
+| 3/16 | 1/8 + 1/16 = 3,2 + 1,6 | 4,8 mm |
+| 1/4 | le quart | 6,35 mm |
+| 5/16 | 1/4 + 1/16 = 6,35 + 1,6 | 7,9 mm |
+| 3/8 | 1/4 + 1/8 = 6,35 + 3,2 | 9,5 mm |
+| 1/2 | la moitié | 12,7 mm |
+| 5/8 | 1/2 + 1/8 = 12,7 + 3,2 | 15,9 mm |
+| 3/4 | 1/2 + 1/4 = 12,7 + 6,35 | 19,05 mm |
+| 7/8 | 1 - 1/8 = 25,4 - 3,2 | 22,2 mm |
+| 1 1/8 | 1 + 1/8 = 25,4 + 3,2 | 28,6 mm |
+
+**Dans l'autre sens**, d'une mesure en mm à la désignation : partir de l'ancre la plus proche (6,35 ou 12,7), puis ajouter ou retirer un huitième (3,2) ou un seizième (1,6). 9,5 mm, c'est 6,35 + 3,2 : 1/4 + 1/8 = 3/8. 7,9 mm, c'est 6,35 + 1,6 : 5/16.
+
+## Vérifier en seizièmes
+
+Pour vérifier, on peut aussi tout compter en **seizièmes** : 1/4 = 4/16, 3/8 = 6/16, 1/2 = 8/16, 5/8 = 10/16, 3/4 = 12/16, 7/8 = 14/16. Un seizième valant 25,4 ÷ 16 = 1,5875 mm, soit 1,6 mm environ, le nombre de seizièmes × 1,6 donne le diamètre à quelques dixièmes près : 5/16 ≈ 5 × 1,6 = 8 mm.
 
 | Désignation | En seizièmes | Calcul rapide (n × 1,6) | Diamètre exact (mm) |
 |---|---|---|---|

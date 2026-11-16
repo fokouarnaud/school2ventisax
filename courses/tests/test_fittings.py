@@ -539,3 +539,35 @@ def test_figure_buttons_wait_for_their_script(name):
         buttons = re.findall(r"<button\b[^>]*>", fragment)
         assert buttons and all(" disabled" in b for b in buttons), lang
         assert "ready()" in (STATIC / f"{name}.{lang}.js").read_text(encoding="utf-8"), lang
+
+
+# ------------------------------------------------------------------ méthode des moitiés (retour du propriétaire, 2026-11-16)
+HALVES = {"1": 1, "1/2": Fraction(1, 2), "1/4": Fraction(1, 4), "1/8": Fraction(1, 8), "1/16": Fraction(1, 16)}
+
+
+def test_each_inch_size_is_two_halvings_at_most():
+    """Chaque taille = une ou deux fractions de l'échelle 1, 1/2, 1/4, 1/8, 1/16 (ajoutées ou retirées)."""
+    for s in catalogue()["materials"]["cuivre-pouce"]["sizes"]:
+        parts = s["halves"]
+        assert 1 <= len(parts) <= 2, s["id"]
+        total = sum((1 if sign == "+" else -1) * HALVES[frac] for sign, frac in parts)
+        assert total == Fraction(s["sixteenths"], 16), s["id"]
+
+
+def test_supplement_teaches_the_halving_ladder_and_the_outside_diameter():
+    """Deux ancres (25,4 et 6,35), on coupe en deux ; le diamètre extérieur se mesure au pied à coulisse."""
+    for lang, words in (("fr", ("25,4", "12,7", "6,35", "3,2", "1,6", "6,35 + 3,2", "pied à coulisse", "par-dessus la paroi")),
+                        ("en", ("25.4", "12.7", "6.35", "3.2", "1.6", "6.35 + 3.2", "caliper", "over the wall"))):
+        text = (CONTENT / "p4" / "m3" / f"04-retenir-tailles.{lang}.md").read_text(encoding="utf-8")
+        assert all(w in text for w in words), (lang, [w for w in words if w not in text])
+        assert text.index("25" + ("," if lang == "fr" else ".") + "4") < text.index("× 1" + ("," if lang == "fr" else ".") + "6")
+
+
+def test_size_figure_offers_a_memo_and_explains_by_halving():
+    """Bouton « Mémo » (échelle des moitiés, sans téléchargement en plus) et correction décomposée."""
+    for lang, memo in (("fr", "Mémo"), ("en", "Memo")):
+        fragment = (STATIC / f"tailles-tuyaux.{lang}.html").read_text(encoding="utf-8")
+        assert 'data-act="memo"' in fragment and memo in fragment
+        assert re.search(r'class="tt-memo"[^>]*hidden', fragment)
+        assert "25" in fragment and "6" in fragment
+        assert "halves" in (STATIC / f"tailles-tuyaux.{lang}.js").read_text(encoding="utf-8")

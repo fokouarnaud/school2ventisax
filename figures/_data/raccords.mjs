@@ -47,6 +47,15 @@ const PVC_USAGE = {
 };
 const SHEATH_USAGE = { 16: "gaine-liaison", 20: "gaine-alimentation", 25: "gaine-forte-section" };
 
+// Méthode des moitiés : 1 pouce = 25,4 mm, puis on coupe en deux (12,7 ; 6,35 ; 3,2 ; 1,6). Chaque taille de la série
+// est une ou deux de ces fractions, ajoutées ou retirées (3/8 = 1/4 + 1/8 ; 7/8 = 1 - 1/8).
+export const LADDER = { 1: 25.4, "1/2": 12.7, "1/4": 6.35, "1/8": 3.175, "1/16": 1.5875 };
+const HALVES = {
+  3: [["+", "1/8"], ["+", "1/16"]], 4: [["+", "1/4"]], 5: [["+", "1/4"], ["+", "1/16"]], 6: [["+", "1/4"], ["+", "1/8"]],
+  8: [["+", "1/2"]], 10: [["+", "1/2"], ["+", "1/8"]], 12: [["+", "1/2"], ["+", "1/4"]], 14: [["+", "1"], ["-", "1/8"]],
+  18: [["+", "1"], ["+", "1/8"]],
+};
+
 // ------------------------------------------------------------------ matériaux et séries de diamètres (Q74, Q77)
 const metric = (od, di) => ({ id: String(od), od, label: L(`${di} × ${od} mm`, `${di} × ${od} mm`) });
 
@@ -55,7 +64,7 @@ export const MATERIALS = {
     label: L("Cuivre frigorifique, série pouce", "Refrigeration copper, inch series"),
     fluid: "frigorigene",
     sizes: [3, 4, 5, 6, 8, 10, 12, 14, 18].map((n) => ({
-      id: inchLabel(n), sixteenths: n, od: (n * 254) / 160, usage: INCH_USAGE[n],
+      id: inchLabel(n), sixteenths: n, od: (n * 254) / 160, usage: INCH_USAGE[n], halves: HALVES[n],
     })),
   },
   "cuivre-metrique": {

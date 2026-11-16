@@ -763,7 +763,7 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Page** : 16
 - **Texte d'origine** : tableau de conversion pouces / mm, sans moyen de le retenir ni d'usage par taille.
 - **Correction** : section « Complément » « Retenir les tailles de tubes » : compte en seizièmes de pouce (n × 1,6 mm), diamètres exacts, usage courant par taille, tubes réels du frigoriste (cuivre métrique, acier fileté, PVC, gaine ICTA, multicouche), confusions courantes, outils marqués à la taille du tube, figure d'entraînement `tailles-tuyaux`. Le tableau de la section « Rôle des tuyauteries et tubes en cuivre » garde les valeurs tronquées du support (9,52 ; 15,87) ; le Complément donne les valeurs exactes (9,525 ; 15,875).
-- **Justification** : décisions Q74, Q77 et Q82.
+- **Justification** : décisions Q74, Q77 et Q82 ; méthode des moitiés (1 pouce = 25,4 mm coupé en deux jusqu'à 1,6 mm) placée en premier et diamètre extérieur défini sur retour du propriétaire (Q91), le n × 1,6 restant en vérification.
 
 ## 110. Question sur le choix d'un raccord (module 2, imprimé 21)
 

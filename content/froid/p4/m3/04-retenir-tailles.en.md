@@ -1,8 +1,38 @@
-## Counting in sixteenths of an inch
+## The outside diameter
 
-Inch-series tubes are named by their outside diameter, or OD (<span lang="fr">diamètre extérieur</span>). To stop mixing up 3/16, 1/4, 5/16 and 3/8, convert every fraction into **sixteenths**: 1/4 = 4/16, 3/8 = 6/16, 1/2 = 8/16, 5/8 = 10/16, 3/4 = 12/16, 7/8 = 14/16. The sizes then line up like whole numbers.
+Refrigeration copper is named by its **outside diameter** (OD, <span lang="fr">diamètre extérieur</span>): the width of the tube measured **over the wall** with a caliper, from one outer edge to the other. A 1/2 tube is 12.7 mm OD; its inside diameter is smaller by two wall thicknesses.
 
-One sixteenth of an inch is 25.4 ÷ 16 = 1.5875 mm, **about 1.6 mm**. The number of sixteenths multiplied by 1.6 gives the diameter to within a few tenths: 5/16 ≈ 5 × 1.6 = 8 mm. Read the exact value in the table.
+## Two numbers, then halve
+
+Remember **1 inch = 25.4 mm**, then halve, again and again:
+
+| Fraction | Value | What to remember |
+|---|---|---|
+| 1 | 25.4 mm | the inch |
+| 1/2 | 12.7 mm | the half |
+| 1/4 | 6.35 mm | the quarter, the liquid line of a split |
+| 1/8 | 3.2 mm | the eighth |
+| 1/16 | 1.6 mm | the sixteenth |
+
+Each refrigeration tube is the sum of two pieces of this ladder, easy to add in your head:
+
+| Tube | Working | About |
+|---|---|---|
+| 3/16 | 1/8 + 1/16 = 3.2 + 1.6 | 4.8 mm |
+| 1/4 | the quarter | 6.35 mm |
+| 5/16 | 1/4 + 1/16 = 6.35 + 1.6 | 7.9 mm |
+| 3/8 | 1/4 + 1/8 = 6.35 + 3.2 | 9.5 mm |
+| 1/2 | the half | 12.7 mm |
+| 5/8 | 1/2 + 1/8 = 12.7 + 3.2 | 15.9 mm |
+| 3/4 | 1/2 + 1/4 = 12.7 + 6.35 | 19.05 mm |
+| 7/8 | 1 - 1/8 = 25.4 - 3.2 | 22.2 mm |
+| 1 1/8 | 1 + 1/8 = 25.4 + 3.2 | 28.6 mm |
+
+**The other way round**, from a reading in mm to the size: start from the nearest anchor (6.35 or 12.7), then add or take away an eighth (3.2) or a sixteenth (1.6). 9.5 mm is 6.35 + 3.2: 1/4 + 1/8 = 3/8. 7.9 mm is 6.35 + 1.6: 5/16.
+
+## Checking in sixteenths
+
+To check, you can also count everything in **sixteenths**: 1/4 = 4/16, 3/8 = 6/16, 1/2 = 8/16, 5/8 = 10/16, 3/4 = 12/16, 7/8 = 14/16. One sixteenth being 25.4 ÷ 16 = 1.5875 mm, about 1.6 mm, the number of sixteenths × 1.6 gives the diameter to within a few tenths: 5/16 ≈ 5 × 1.6 = 8 mm.
 
 | Size | In sixteenths | Quick estimate (n × 1.6) | Exact diameter (mm) |
 |---|---|---|---|
