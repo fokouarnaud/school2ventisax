@@ -125,3 +125,14 @@ def test_a_section_without_figure_does_not_load_the_loader(client, enrolled, mod
     section = Section.objects.create(module=module, title_fr="Intro", order=1, body_md_fr="Texte.")
     client.force_login(enrolled)
     assert "figures.js" not in client.get(f"/fr/sections/{section.public_id}/").content.decode()
+
+
+def test_the_loader_keeps_a_figure_inert_until_its_script_has_run():
+    """Contrôle en ligne du 2026-11-17 : dans les figures anciennes, un toucher donné avant la fin du chargement du
+    script était perdu (bouteille de `manifold-charge` qui ne se retournait pas). Le chargeur insère le dessin inerte,
+    garde le message de chargement, puis le rend actif une fois le script exécuté."""
+    loader = (Path(__file__).resolve().parents[2] / "static" / "acad" / "js" / "figures.js").read_text(encoding="utf-8")
+    insert = loader.index("figure.appendChild(holder)")
+    run = loader.index("await script(figure.dataset.js)")
+    assert loader.index("holder.inert = true") < insert < run < loader.index("holder.inert = false")
+    assert loader.index('status.textContent = ""') > run
