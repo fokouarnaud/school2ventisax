@@ -2,13 +2,15 @@
 //   node figures/_data/export.mjs            catalogue des raccords (courses/tests/test_fittings.py)
 //   node figures/_data/export.mjs longueurs  situations de la longueur développée (courses/tests/test_lengths.py)
 //   node figures/_data/export.mjs manodetendeurs  situations du manodétendeur (courses/tests/test_regulator.py)
+//   node figures/_data/export.mjs mise-en-service  situations de la mise en service (courses/tests/test_startup.py)
 // Une situation par ligne, pour des sorties comparables. Aucun fichier n'est écrit.
 import { buildCatalogue } from "./raccords.mjs";
 import { buildLengths } from "./longueurs.mjs";
 import { buildRegulators } from "./manodetendeurs.mjs";
+import { buildStartup } from "./mise-en-service.mjs";
 
 const which = process.argv[2] || "raccords";
-const build = { longueurs: buildLengths, manodetendeurs: buildRegulators }[which] || buildCatalogue;
+const build = { longueurs: buildLengths, manodetendeurs: buildRegulators, "mise-en-service": buildStartup }[which] || buildCatalogue;
 const { situations, ...rest } = build();
 const head = JSON.stringify(rest).slice(0, -1);
 const lines = (list) => `[\n${list.map((s) => JSON.stringify(s)).join(",\n")}\n]`;

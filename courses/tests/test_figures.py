@@ -32,6 +32,7 @@ PUBLISHED = [
     ("tailles-tuyaux", "p4/m3/04-retenir-tailles"),  # seizièmes, mm, usages
     ("longueur-developpee", "p4/m4/01-calcul"),  # droites, arcs, LD pas à pas
     ("manodetendeur", "p4/m5/01-manodetendeurs"),  # lire HP et BP, détente admise, ordre de mise en service
+    ("mise-en-service", "p4/m5/03-mise-en-service"),  # réaliser la procédure dans l'ordre, erreurs dangereuses
 ]
 
 

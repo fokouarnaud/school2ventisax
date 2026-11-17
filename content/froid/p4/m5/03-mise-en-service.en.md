@@ -14,6 +14,10 @@
 3. Close the cylinder valves.
 4. Purge the hoses, then back off the regulating screws.
 
+To carry out the start-up and shut-down in order, and to spot the dangerous mistakes, use the figure below.
+
+[[figure:mise-en-service]]
+
 ## Welding equipment
 
 Oxygen cylinder and acetylene cylinder secured, two regulators, blue (oxygen) and red (acetylene) hoses, torch and nozzles, tinted goggles, lighter.
