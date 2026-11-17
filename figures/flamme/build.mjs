@@ -7,9 +7,40 @@ import { fileURLToPath } from "node:url";
 import * as k from "../_kit/iso-kit.mjs";
 import * as G from "../_kit/lathe.mjs";
 import { publish } from "../_kit/publish.mjs";
+import { namespaced } from "../_kit/bundle.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const KIT_SOURCE = readFileSync(join(HERE, "..", "_kit", "iso-kit.mjs"), "utf8").replace(/^export /gm, "");
+// Mode « S'entraîner » (Q96) : situations tirées de la section, catalogue figures/_data/chalumeau.mjs.
+const PRACTICE_MODULE = namespaced(join(HERE, "..", "_data", "chalumeau.mjs"), "CH");
+const PRACTICE = {
+  fr: {
+    modes: { tune: "Régler", practice: "S'entraîner", again: "Situation suivante", series: "Nouvelle série" },
+    ask: { flamme: "Quelle est cette flamme ?", aspect: (d) => `Quelle flamme correspond à cet aspect : « ${d} » ?`, plage: (g) => `Plage de réglage du manodétendeur ${g === "oxygene" ? "d'oxygène" : "d'acétylène"} ?`, temperature: "Température atteinte à la pointe du dard ?", decolle: "Après l'allumage, la flamme est décollée de la buse : que faire ?", recolle: "La flamme a recollé à la buse : que faire ensuite ?", repere: (n) => `Sur la coupe du chalumeau, quel élément porte le repère ${n} ?`, aspire: "Dans un chalumeau à injection, qu'est-ce qui aspire le gaz combustible ?", lance: "Qu'appelle-t-on la lance du chalumeau ?" },
+    flames: { neutral: "Flamme neutre", oxy: "Flamme oxydante", carb: "Flamme carburante" },
+    bars: { "0.2-0.5": "0,2 à 0,5 bar", "0.5-1.5": "0,5 à 1,5 bar", "1.5-3": "1,5 à 3 bar", "0-10": "0 à 10 bar" },
+    degrees: (v) => `Environ ${v} °C`,
+    right: "Juste.",
+    wrong: (a) => `Non : la bonne réponse est « ${a} ».`,
+    done: (g, t) => `Série terminée : ${g} / ${t}. Lancez une nouvelle série pour d'autres situations.`,
+    step: (i, n) => `situation ${i} / ${n}`,
+    score: (g, t) => `Score de la série : ${g} / ${t}`,
+    marks: { right: "Bonne réponse", wrong: "Votre réponse, fausse" },
+  },
+  en: {
+    modes: { tune: "Adjust", practice: "Practise", again: "Next situation", series: "New series" },
+    ask: { flamme: "What flame is this?", aspect: (d) => `Which flame matches this appearance: "${d}"?`, plage: (g) => `Setting range of the ${g === "oxygene" ? "oxygen" : "acetylene"} regulator?`, temperature: "Temperature reached at the tip of the inner cone?", decolle: "After lighting, the flame has lifted off the nozzle: what should be done?", recolle: "The flame is back on the nozzle: what comes next?", repere: (n) => `On the torch cross-section, which part carries mark ${n}?`, aspire: "In an injection torch, what draws in the fuel gas?", lance: "What is called the torch shank?" },
+    flames: { neutral: "Neutral flame", oxy: "Oxidising flame", carb: "Carburising flame" },
+    bars: { "0.2-0.5": "0.2 to 0.5 bar", "0.5-1.5": "0.5 to 1.5 bar", "1.5-3": "1.5 to 3 bar", "0-10": "0 to 10 bar" },
+    degrees: (v) => `About ${v} °C`,
+    right: "Correct.",
+    wrong: (a) => `No: the right answer is "${a}".`,
+    done: (g, t) => `Series finished: ${g} / ${t}. Start a new series for other situations.`,
+    step: (i, n) => `situation ${i} / ${n}`,
+    score: (g, t) => `Series score: ${g} / ${t}`,
+    marks: { right: "Right answer", wrong: "Your answer, wrong" },
+  },
+};
 
 // ---------------------------------------------------------------- modèle : rapport oxygène / acétylène
 const MODEL = {
@@ -164,6 +195,13 @@ const CSS = `
 .mv-feedback{margin:12px 0 0;min-height:3em;color:var(--anatomy-text);font-size:13px;line-height:1.55}
 .mv-score{color:var(--anatomy-muted);font:11px/1 var(--anatomy-mono);margin-top:6px}
 @media (max-width:560px){.iso-plate{padding:76px 12px 64px}.mv-controls button{flex:1 1 40%}}
+.fl-tune[hidden],.fl-quiz[hidden]{display:none}
+.rc-prompt{margin:16px 0 0;min-height:1.6em;color:var(--anatomy-strong);font-weight:600;line-height:1.45}
+.fl-quiz .rc-options{flex-direction:column}
+.fl-quiz .rc-options button{text-align:left;border-radius:14px}
+.fl-quiz .rc-options button[data-state="right"]{border-color:var(--anatomy-lit);box-shadow:inset 0 0 0 1px var(--anatomy-lit)}
+.fl-quiz .rc-options button[data-state="wrong"]{border-style:dashed}
+.fl-quiz .rc-options button:disabled{opacity:1;cursor:default}
 `;
 
 const LIVE = `
@@ -267,8 +305,90 @@ buttons.oMinus.addEventListener("click", () => adjust("o", -M.steps));
 buttons.oPlus.addEventListener("click", () => adjust("o", M.steps));
 buttons.check.addEventListener("click", check);
 buttons.next.addEventListener("click", nextGoal);
-window.__fl = { setGoal, light, adjust, check, state: () => ({ lit, a, o, kind: kind(), goal, good, total }) };
-setGoal(GOALS[Math.floor(Math.random() * GOALS.length)]);
+// ---------------------------------------------------------------- S'entraîner (Q96)
+const PX = PT, CAT = CH.buildTorch(), LANG = C.lang;
+const tuneBox = scope.querySelector(".fl-tune"), quizBox = scope.querySelector(".fl-quiz");
+const promptEl = scope.querySelector(".rc-prompt");
+// Les réponses vont dans la liste du mode « S'entraîner », jamais dans les commandes du mode « Régler ».
+const optionsBox = scope.querySelector(".fl-quiz .rc-options");
+const qpool = { 1: [], 2: [], 3: [] };
+CAT.situations.forEach((s) => qpool[s.level].push(s));
+const PLAN = [1, 1, 1, 1, 2, 2, 2, 3, 3, 3];
+let qlist = [], qi = 0, qgood = 0, qanswered = false;
+const same = (x, y) => JSON.stringify(x) === JSON.stringify(y);
+const strip = (s) => s.replace(/<[^>]+>/g, "");
+function qlabel(s, opt) {
+  if (s.kind === "flamme" || s.kind === "aspect") return PX.flames[opt];
+  if (s.kind === "plage") return PX.bars[opt];
+  if (s.kind === "temperature") return PX.degrees(opt);
+  if (s.kind === "repere") return CAT.marks[opt][LANG];
+  return CAT.texts[s.which][opt][LANG];
+}
+function qask(s) {
+  const A = PX.ask;
+  if (s.kind === "aspect") return A.aspect(strip(CAT.aspects[s.flame][LANG]));
+  if (s.kind === "plage") return A.plage(s.gas);
+  if (s.kind === "repere") return A.repere(s.mark);
+  if (s.kind === "decollement" || s.kind === "injecteur") return A[s.which];
+  return A[s.kind];
+}
+function qshow() {
+  qanswered = false;
+  const s = qlist[qi];
+  // Une flamme à reconnaître est allumée avec les débits de la situation ; sinon le chalumeau reste éteint.
+  if (s.kind === "flamme") { lit = true; a = s.a; o = s.o; } else { lit = false; a = 0; o = 0; }
+  sync(); run();
+  readout.textContent = "";
+  promptEl.textContent = qask(s);
+  optionsBox.replaceChildren(...s.options.slice().sort(() => Math.random() - 0.5).map((opt) => {
+    const b = document.createElement("button"); b.type = "button"; b.textContent = qlabel(s, opt); b._o = opt;
+    b.addEventListener("click", () => qanswer(opt)); return b;
+  }));
+  feedback.textContent = "";
+  buttons.again.disabled = true;
+  scoreEl.textContent = PX.score(qgood, qi) + " · " + PX.step(qi + 1, qlist.length);
+}
+function qanswer(opt) {
+  if (qanswered) return;
+  qanswered = true;
+  const s = qlist[qi], ok = same(opt, s.answer);
+  if (ok) qgood++;
+  for (const b of optionsBox.children) {
+    b.disabled = true;
+    if (same(b._o, s.answer)) { b.dataset.state = "right"; b.prepend("✓ "); b.setAttribute("aria-label", PX.marks.right + " : " + b.textContent.slice(2)); }
+    else if (same(b._o, opt)) { b.dataset.state = "wrong"; b.prepend("✗ "); b.setAttribute("aria-label", PX.marks.wrong + " : " + b.textContent.slice(2)); }
+  }
+  const why = s.kind === "flamme" || s.kind === "aspect" ? strip(CAT.aspects[s.answer][LANG]) + "." : "";
+  const last = qi === qlist.length - 1;
+  feedback.textContent = [ok ? PX.right : PX.wrong(qlabel(s, s.answer)), why, last ? PX.done(qgood, qlist.length) : ""].filter(Boolean).join(" ");
+  buttons.again.disabled = last;
+  scoreEl.textContent = PX.score(qgood, qi + 1) + " · " + PX.step(qi + 1, qlist.length);
+}
+function qstart() {
+  qlist = [];
+  for (const level of PLAN) {
+    const kinds = {};
+    qpool[level].forEach((x) => (kinds[x.kind] ||= []).push(x));
+    const groups = Object.values(kinds);
+    let s;
+    for (let i = 0; i < 40; i++) { const g = groups[Math.floor(Math.random() * groups.length)]; s = g[Math.floor(Math.random() * g.length)]; if (!qlist.includes(s)) break; }
+    qlist.push(s);
+  }
+  qi = 0; qgood = 0; qshow();
+}
+buttons.again.addEventListener("click", () => { if (qi < qlist.length - 1) { qi++; qshow(); } });
+buttons.series.addEventListener("click", qstart);
+function setMode(m) {
+  buttons.tune.setAttribute("aria-pressed", m === "tune");
+  buttons.practice.setAttribute("aria-pressed", m === "practice");
+  tuneBox.hidden = m !== "tune"; quizBox.hidden = m !== "practice";
+  promptEl.textContent = "";
+  if (m === "tune") setGoal(GOALS[Math.floor(Math.random() * GOALS.length)]); else qstart();
+}
+buttons.tune.addEventListener("click", () => setMode("tune"));
+buttons.practice.addEventListener("click", () => setMode("practice"));
+window.__fl = { setGoal, light, adjust, check, setMode, answer: (i) => qanswer(qlist[qi].options[i]), current: () => qlist[qi], state: () => ({ lit, a, o, kind: kind(), goal, good, total }) };
+setMode("tune");
 draw();
 `;
 
@@ -278,11 +398,18 @@ for (const lang of ["fr", "en"]) {
   const T = TEXT[lang], B = T.buttons;
   const { svg, config } = buildFigure(lang);
   const btn = (act, label) => `<button type="button" data-act="${act}">${label}</button>`;
-  const controls = `<div class="mv-controls" role="group" aria-label="${lang === "fr" ? "Commandes du chalumeau" : "Torch controls"}">${btn("light", B.light)}${btn("aMinus", B.aMinus)}${btn("aPlus", B.aPlus)}${btn("oMinus", B.oMinus)}${btn("oPlus", B.oPlus)}${btn("check", B.check)}${btn("next", B.next)}</div><p class="mv-feedback" aria-live="polite"></p><p class="mv-score" aria-live="polite"></p>`;
+  const X = PRACTICE[lang].modes;
+  const modes = `<div class="mv-controls" role="group" aria-label="${lang === "fr" ? "Mode de la figure" : "Figure mode"}">${btn("tune", X.tune)}${btn("practice", X.practice)}</div>`;
+  const tune = `<div class="fl-tune"><div class="mv-controls" role="group" aria-label="${lang === "fr" ? "Commandes du chalumeau" : "Torch controls"}">${btn("light", B.light)}${btn("aMinus", B.aMinus)}${btn("aPlus", B.aPlus)}${btn("oMinus", B.oMinus)}${btn("oPlus", B.oPlus)}${btn("check", B.check)}${btn("next", B.next)}</div></div>`;
+  const quiz = `<div class="fl-quiz" hidden><div class="mv-controls rc-options" role="group" aria-label="${lang === "fr" ? "Réponses proposées" : "Possible answers"}"></div><div class="mv-controls">${btn("again", X.again)}${btn("series", X.series)}</div></div>`;
+  const controls = `${modes}<p class="rc-prompt" aria-live="polite"></p>${tune}${quiz}<p class="mv-feedback" aria-live="polite"></p><p class="mv-score" aria-live="polite"></p>`;
   const plate = k.plateHtml({ fig: "Fig 10", title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body: `<div class="iso-stage" role="img" aria-label="${T.stageLabel}">${svg}</div>${controls}` });
   const f = T.feedback;
   const TX = `{read:${T.read},kinds:${JSON.stringify(T.kinds)},target:${JSON.stringify(T.target)},score:${T.score},feedback:{start:${f.start},lit:${JSON.stringify(f.lit)},attached:${JSON.stringify(f.attached)},needLight:${JSON.stringify(f.needLight)},oxygenFirst:${JSON.stringify(f.oxygenFirst)},lifted:${JSON.stringify(f.lifted)},good:${f.good},bad:${f.bad}}}`;
-  const pageScript = `const FIG = ${JSON.stringify(config)};\nconst TX = ${TX};\n` + LIVE;
+  const PXT = PRACTICE[lang];
+  const fns = (o) => `{${Object.entries(o).map(([key, f]) => `${JSON.stringify(key)}:${typeof f === "function" ? f : JSON.stringify(f)}`).join(",")}}`;
+  const PT = `{ask:${fns(PXT.ask)},flames:${JSON.stringify(PXT.flames)},bars:${JSON.stringify(PXT.bars)},degrees:${PXT.degrees},right:${JSON.stringify(PXT.right)},wrong:${PXT.wrong},done:${PXT.done},step:${PXT.step},score:${PXT.score},marks:${JSON.stringify(PXT.marks)}}`;
+  const pageScript = `${PRACTICE_MODULE}const FIG = ${JSON.stringify(config)};\nconst TX = ${TX};\nconst PT = ${PT};\n` + LIVE;
   site.fragments[lang] = plate; site.scripts[lang] = pageScript;
   for (const theme of ["dark", "light"]) {
     const name = `flamme.${lang}${theme === "light" ? "-light" : ""}.html`;
