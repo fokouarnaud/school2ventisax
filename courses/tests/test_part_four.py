@@ -360,7 +360,7 @@ def test_module_matches_the_prd_structure_in_both_languages(number):
 def test_module_bank_has_eight_quiz_and_eight_exam_questions_covering_each_section(number):
     """US-67, Q59, Q60, Q81 : 8 + 8 questions relues (12 + 12 aux modules 2 à 4), au moins une par section `content`."""
     questions = json.loads((CONTENT / "p4" / f"m{number}" / "questions.json").read_text(encoding="utf-8"))
-    per_usage = 12 if number in (2, 3, 4, 5) else 8
+    per_usage = {2: 12, 3: 12, 4: 12, 5: 16}.get(number, 8)
     assert Counter(q["usage"] for q in questions) == {"quiz": per_usage, "exam": per_usage}
     assert all(q["reviewed"] == {"fr": True, "en": True} for q in questions)
     content = {name for name, flag, *_ in module_files(number) if flag != "T"}
@@ -506,7 +506,7 @@ def test_import_with_publish_puts_the_evacuation_questions_online():
     call_command("import_content", str(CONTENT / "formation.json"), publish=True, stdout=stats_out)
     assert "Refusée" not in stats_out.getvalue()
     partie = Partie.objects.get(slug="p4")
-    assert Question.objects.filter(module__partie=partie, status=Question.Status.PUBLISHED).count() == 16 * len(DELIVERED) + 32
+    assert Question.objects.filter(module__partie=partie, status=Question.Status.PUBLISHED).count() == 16 * len(DELIVERED) + 40
     assert Assessment.exam_for(partie).duration_minutes == 90
 
 

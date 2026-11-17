@@ -844,8 +844,9 @@ const charged = () => (tare === null ? 0 : tare - mass);
 function sync() {
   buttons.valve.textContent = open ? T.buttons.close : T.buttons.open;
   buttons.valve.setAttribute("aria-pressed", open ? "true" : "false");
-  upright.hidden = inv; inverted.hidden = !inv;
-  for (const h of hoses) { h.hidden = (h.dataset.for === "inverted") !== inv; h.toggleAttribute("data-live", open); }
+  // Groupes SVG : la propriété hidden n'existe pas, l'attribut se pose et se retire à la main.
+  upright.toggleAttribute("hidden", inv); inverted.toggleAttribute("hidden", !inv);
+  for (const h of hoses) { h.toggleAttribute("hidden", (h.dataset.for === "inverted") !== inv); h.toggleAttribute("data-live", open); }
   buttons.check.disabled = done;
   scoreEl.textContent = T.score(good, total);
 }

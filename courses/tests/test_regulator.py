@@ -127,7 +127,7 @@ def test_regulator_figure_is_published_in_its_section():
 def test_module_five_gets_four_quiz_and_four_exam_questions_on_the_regulator():
     """Q93 : q17 à q24 sur le détendeur, 4 de quiz puis 4 d'examen, relues fr et en, publiables."""
     bank = json.loads((CONTENT / "p4" / "m5" / "questions.json").read_text(encoding="utf-8"))
-    new = [q for q in bank if int(q["id"].rsplit("q", 1)[1]) >= 17]
+    new = [q for q in bank if 17 <= int(q["id"].rsplit("q", 1)[1]) <= 24]
     assert [q["id"] for q in new] == [f"p4-m5-q{n}" for n in range(17, 25)]
     assert [q["usage"] for q in new] == ["quiz"] * 4 + ["exam"] * 4
     assert {q["section"] for q in new} == {"01-manodetendeurs"}

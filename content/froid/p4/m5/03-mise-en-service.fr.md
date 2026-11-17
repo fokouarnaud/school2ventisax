@@ -14,6 +14,10 @@
 3. Fermer les robinets des bouteilles.
 4. Purger les tuyaux, puis desserrer les vis de détente.
 
+Pour réaliser la mise en service puis la mise hors service dans l'ordre, et repérer les erreurs dangereuses, utilisez la figure ci-dessous.
+
+[[figure:mise-en-service]]
+
 ## Matériel de soudage
 
 Bouteille d'oxygène et bouteille d'acétylène arrimées, deux manodétendeurs, tuyaux bleu (oxygène) et rouge (acétylène), chalumeau et buses, lunettes teintées, allumeur.

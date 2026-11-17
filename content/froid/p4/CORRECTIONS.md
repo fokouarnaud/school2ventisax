@@ -786,6 +786,13 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Correction** : figure d'entraînement `manodetendeur` (lecture des manomètres amont et aval, détente admise par gaz, bon détendeur, réglage admis ou trop haut, ordre de mise en service et hors service) d'après le tableau du support et la section « Mise en service » ; huit questions ajoutées (`p4-m5-q17` à `q24`), publiées d'office.
 - **Justification** : décisions Q92 et Q93.
 
+## 113. Mise en service : figure et questions (module 5, imprimé 24)
+
+- **Page** : 34
+- **Texte d'origine** : procédures de mise en service et hors service en liste numérotée, sans exercice.
+- **Correction** : figure d'entraînement `mise-en-service` (réaliser la procédure dans l'ordre, actions dangereuses refusées et expliquées, étape suivante ou précédente, couleur des tuyaux, tenue du chalumeau), reprenant mot pour mot les étapes de la section ; huit questions ajoutées (`p4-m5-q25` à `q32`), publiées d'office.
+- **Justification** : décisions Q94 et Q95.
+
 ## Valeurs à confirmer par un formateur
 
 Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :
