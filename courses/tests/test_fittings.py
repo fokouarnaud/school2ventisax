@@ -593,3 +593,19 @@ def test_size_situations_never_show_more_than_two_decimals():
     for s in situations("tailles-tuyaux"):
         if s["kind"] == "pouce-mm":
             assert all(abs(round(o, 2) - o) < 1e-9 for o in s["options"]), s["key"]
+
+
+def test_recognition_names_are_real_and_distinct():
+    """Audit du 2026-11-16 : « Coude null° », « Réduction » proposée deux fois, té à deux extrémités. Chaque nom
+    proposé décrit un raccord possible (coude avec son angle, té à trois extrémités) et s'affiche différemment."""
+    for s in situations("raccords"):
+        if s["kind"] != "nom":
+            continue
+        shown = set()
+        threaded = s["fitting"]["mode"] in THREADED
+        for o in s["options"]:
+            assert (o["angle"] in ANGLES[s["fitting"]["mode"]]) if o["type"] == "coude" else o["angle"] is None, (s["key"], o)
+            assert len(o["ends"]) == (3 if o["type"] == "te" else 2), (s["key"], o)
+            label = (o["type"], o["angle"], tuple(o["ends"]) if threaded or "M" in o["ends"] else ())
+            assert label not in shown, (s["key"], o)
+            shown.add(label)
