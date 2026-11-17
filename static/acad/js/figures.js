@@ -51,11 +51,16 @@
       const holder = document.createElement("div");
       holder.className = "live-figure-body";
       holder.innerHTML = await response.text(); // fichier statique du site, produit par figures/<nom>/build.mjs
+      // Dessin inerte tant que son script n'a pas tourné : un toucher trop tôt ne se perd pas sans retour.
+      holder.inert = true;
+      holder.setAttribute("aria-busy", "true");
       button.remove();
-      status.textContent = "";
       figure.appendChild(holder);
       theme();
       await script(figure.dataset.js);
+      holder.inert = false;
+      holder.removeAttribute("aria-busy");
+      status.textContent = "";
     } catch (error) {
       button.disabled = false;
       button.removeAttribute("aria-busy");
