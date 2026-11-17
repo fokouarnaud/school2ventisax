@@ -49,7 +49,7 @@ const TEXT = {
     hint: "See each fitting alone then fitted, compare, then recognise",
     buttons: { explore: "Explore", compare: "Compare", quiz: "Recognise", prev: "Previous", next: "Next", mounted: "Show fitted", alone: "Show alone", again: "Next situation", series: "New series" },
     keys: [{ mark: "raised", label: "Brass fitting: threaded cones, hexagons, nuts" }, { mark: "lit", label: "Marks: M male cone, F female nut, V valve core" }],
-    caption: "Flare fitting (<span lang=\"fr\">dudgeon</span>): the copper tube is flared, and the nut (female) presses the flared face onto the threaded cone (male). The seal comes from the two cones in contact, never from tape or hemp. The nut goes on before flaring; tighten with two spanners, one as a backup. The access tee carries a valve core that the manifold hose opens as it is screwed on; a sealed cap closes it again. Nothing is recorded.",
+    caption: "Flare fitting (French: dudgeon): the copper tube is flared, and the nut (female) presses the flared face onto the threaded cone (male). The seal comes from the two cones in contact, never from tape or hemp. The nut goes on before flaring; tighten with two spanners, one as a backup. The access tee carries a valve core that the manifold hose opens as it is screwed on; a sealed cap closes it again. Nothing is recorded.",
     stageLabel: "Refrigeration flare fitting drawn in perspective on a workbench, alone with its marks, or fitted on its flared tubes. The explanations and questions are below the drawing.",
     svgLabel: "Workbench and refrigeration flare fitting drawn in perspective.",
     compareTitle: "The 5 fittings side by side: tap one to see it.",
