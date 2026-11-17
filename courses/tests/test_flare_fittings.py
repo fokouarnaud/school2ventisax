@@ -87,6 +87,7 @@ def test_flare_fittings_figure_is_published_in_its_section():
         fragment = (STATIC / f"raccords-flare.{lang}.html").read_text(encoding="utf-8")
         script = (STATIC / f"raccords-flare.{lang}.js").read_text(encoding="utf-8")
         assert "<script" not in fragment and "schrader" not in (fragment + script).lower()
+        assert "&lt;span" not in fragment  # aucune balise affichée en clair dans la légende
         assert len(fragment.encode()) + len(script.encode()) <= 160_000
         for act in ("explore", "compare", "quiz", "mounted"):
             assert f'data-act="{act}"' in fragment, act
