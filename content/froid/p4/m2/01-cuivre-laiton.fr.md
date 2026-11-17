@@ -35,6 +35,10 @@ Repères : 1 demi-raccord, 2 écrou, 3 surface évasée du tube. Faire correspon
 
 On trouve aussi l'écrou conique, le capuchon d'étanchéité conique, la jauge évasée, la croix, l'adaptateur pour cylindre de réfrigérant, la vis union et le coude conique.
 
+Pour voir ce qui distingue l'écrou, l'union double, la réduction, le té de prise de pression et le bouchon dudgeon, seuls puis montés, utilisez la figure ci-dessous.
+
+[[figure:raccords-flare]]
+
 Le diamètre nominal des raccords coniques est donné par le diamètre de perçage du raccord conique mâle.
 
 | Diamètre nominal | Diamètre de perçage (mm) | Diamètre extérieur du filetage (mm) |

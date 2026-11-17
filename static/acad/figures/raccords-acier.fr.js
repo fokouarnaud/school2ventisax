@@ -1661,12 +1661,13 @@ function makeDraw(k, G, TB) {
     }
     if (presents) {
       mouths.forEach((m, i) => {
+        if (!presents[i]) return; // bouche laissée libre (prise du té de la figure raccords-flare)
         const port = presents[i].startsWith("port");
         items.push(...tinted(port ? "laiton" : tintOf(material, ""), presented(m, presents[i], material, P)));
       });
     }
     items.sort((a, b) => k.depthOf(a.at, P) - k.depthOf(b.at, P));
-    const extent = mouths.map((m) => add(m.p, mul(m.d, presents ? 26 : 0)));
+    const extent = mouths.map((m, i) => add(m.p, mul(m.d, presents && presents[i] ? 26 : 0)));
     const xs = [...extent.map((p) => p[0]), 0], ys = [...extent.map((p) => p[1]), 0];
     const pad = Math.max(...mouths.map((m) => m.r)) * 0.6 + 4;
     const plan = { x: Math.min(...xs) - pad, y: Math.min(...ys) - pad, w: Math.max(...xs) - Math.min(...xs) + 2 * pad, d: Math.max(...ys) - Math.min(...ys) + 2 * pad, r: pad };
@@ -1674,6 +1675,7 @@ function makeDraw(k, G, TB) {
     let labels = "";
     if (tags) {
       mouths.forEach((m, i) => {
+        if (!tags[i]) return; // repère posé à part (valve du té de raccords-flare)
         const at = add(m.p, mul(m.d, presents ? 31 : 6));
         const xy = k.iso([at[0], at[1], at[2] + m.r + 4], P);
         labels += `<g class="rc-tag"><circle cx="${xy[0].toFixed(1)}" cy="${xy[1].toFixed(1)}" r="7"/><text x="${xy[0].toFixed(1)}" y="${(xy[1] + 2.6).toFixed(1)}" text-anchor="middle">${tags[i]}</text></g>`;
@@ -1694,7 +1696,7 @@ const SA = (() => {
 // repères M ou F à chaque bouche, ou monté sur ses tubes filetés et ses orifices femelles.
 // `k` = kit iso, `G` = lathe, `TB` = tube, `D` = raccords-draw.
 
-function makeSteelDraw(k, G, TB, D) {
+function makeDraw(k, G, TB, D) {
   const draw = D.makeDraw(k, G, TB);
   const TAU = Math.PI * 2;
   const DN20 = 26.9, DN15 = 21.3;
@@ -1783,7 +1785,7 @@ function makeSteelDraw(k, G, TB, D) {
   return { scene };
 }
 
-return { makeSteelDraw };
+return { makeDraw };
 })();
 const AC = (() => {
 // Raccords acier à visser de la figure `raccords-acier` (Partie 4, module 2, section « Acier, PVC, mixtes » ; Q101).
@@ -1873,7 +1875,7 @@ const CASES = [
 const rotate = (list, n) => [...list.slice(n % list.length), ...list.slice(0, n % list.length)];
 const keyOf = (fn) => ORDER.find((k) => FITTINGS[k].function === fn);
 
-function buildSteelFittings() {
+function build() {
   const out = [];
   const push = (kind, level, rest) => out.push({ key: `${kind}|${JSON.stringify(rest)}`, level, kind, ...rest });
   ORDER.forEach((key, i) => {
@@ -1895,11 +1897,13 @@ function buildSteelFittings() {
   return { functions: FUNCTIONS, fittings, order: ORDER, cases: CASES, situations: out };
 }
 
-return { FUNCTIONS, FITTINGS, ORDER, buildSteelFittings };
+const buildSteelFittings = build;
+
+return { FUNCTIONS, FITTINGS, ORDER, build, buildSteelFittings };
 })();
 const LANG = "fr";
 const PROJ = {"origin":[340,196.15784120898743],"scale":2.5233991200555423,"azimuth":120,"elevation":30};
-const TX = {buttons:{"explore":"Explorer","compare":"Comparer","quiz":"Reconnaître","prev":"Précédent","next":"Suivant","mounted":"Voir monté","alone":"Voir seul","again":"Situation suivante","series":"Nouvelle série"},tour:(i, n, view) => `raccord ${i} / ${n} · ${view}`,views:{"alone":"seul, repères M et F","mounted":"monté"},unionKey:"1 et 3 : embouts ; 2 : écrou libre.",ask:{"nom":"Comment s'appelle ce raccord ?","fonction":(fn) => `Quel raccord sert à : ${fn.toLowerCase()} ?`,"filetage":"Quels filetages a ce raccord ?","particularite":(f) => `Quel raccord se reconnaît à ceci : ${f.toLowerCase()} ?`,"situation":(c) => `${c} Quel raccord ?`},right:"Juste.",wrong:(a) => `Non : la bonne réponse est « ${a} ».`,done:(g, t) => `Série terminée : ${g} / ${t}. Lancez une nouvelle série pour d'autres situations.`,step:(i, n) => `situation ${i} / ${n}`,score:(g, t) => `Score de la série : ${g} / ${t}`,marks:{"right":"Bonne réponse","wrong":"Votre réponse, fausse"}};
+const TX = {buttons:{"explore":"Explorer","compare":"Comparer","quiz":"Reconnaître","prev":"Précédent","next":"Suivant","mounted":"Voir monté","alone":"Voir seul","again":"Situation suivante","series":"Nouvelle série"},tour:(i, n, view) => `raccord ${i} / ${n} · ${view}`,views:{"alone":"seul, repères M et F","mounted":"monté"},notes:{"union":"1 et 3 : embouts ; 2 : écrou libre."},ask:{"nom":"Comment s'appelle ce raccord ?","fonction":(fn) => `Quel raccord sert à : ${fn.toLowerCase()} ?`,"filetage":"Quels filetages a ce raccord ?","particularite":(f) => `Quel raccord se reconnaît à ceci : ${f.toLowerCase()} ?`,"situation":(c) => `${c} Quel raccord ?`},right:"Juste.",wrong:(a) => `Non : la bonne réponse est « ${a} ».`,done:(g, t) => `Série terminée : ${g} / ${t}. Lancez une nouvelle série pour d'autres situations.`,step:(i, n) => `situation ${i} / ${n}`,score:(g, t) => `Score de la série : ${g} / ${t}`,marks:{"right":"Bonne réponse","wrong":"Votre réponse, fausse"}};
 
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 const scope = document.querySelector('.live-figure[data-figure="raccords-acier"]') || document;
@@ -1921,8 +1925,8 @@ function loop(step, busy) {
 }
 
 const K = { iso, pathOf, depthOf, solidSvg, lineSvg, haloOf, cylinder };
-const SD = SA.makeSteelDraw(K, G, TB, D);
-const CAT = AC.buildSteelFittings();
+const SD = SA.makeDraw(K, G, TB, D);
+const CAT = AC.build();
 const F = CAT.fittings;
 const live = svg.querySelector(".rc-live");
 const prompt = scope.querySelector(".rc-prompt");
@@ -1934,7 +1938,7 @@ let mode = "explore", at = 0, mounted = false;
 function paint(key, asMounted) { live.innerHTML = key ? SD.scene(key, PROJ, { mounted: asMounted }) : ""; }
 function card(key) {
   const f = F[key];
-  return [f.name[LANG] + ".", f.threadsLabel[LANG] + ".", f.functionLabel[LANG] + ".", f.detail[LANG], key === "union" && !mounted ? TX.unionKey : ""].filter(Boolean).join(" ");
+  return [f.name[LANG] + ".", f.threadsLabel[LANG] + ".", f.functionLabel[LANG] + ".", f.detail[LANG], !mounted && TX.notes[key] ? TX.notes[key] : ""].filter(Boolean).join(" ");
 }
 function showTour() {
   const key = CAT.order[at];
@@ -2032,7 +2036,7 @@ buttons.next.addEventListener("click", () => { at = (at + 1) % CAT.order.length;
 buttons.mounted.addEventListener("click", () => { mounted = !mounted; showTour(); });
 for (const b of scope.querySelectorAll(".mv-controls button, .ra-compare button")) b.disabled = false;
 const run = () => {};
-window.__ra = { setMode, show: (i, m) => { at = i; mounted = !!m; showTour(); }, answer: (i) => answer(list[qi].options[i]), current: () => list[qi] };
+window.__fc = { setMode, show: (i, m) => { at = i; mounted = !!m; showTour(); }, answer: (i) => answer(list[qi].options[i]), current: () => list[qi] };
 setMode("explore");
 new IntersectionObserver((e) => { visible = e[e.length - 1].isIntersecting; if (visible) run(); }, { rootMargin: "120px 0px" }).observe(stage);
 

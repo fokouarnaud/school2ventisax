@@ -101,7 +101,7 @@ def test_steel_fittings_figure_is_published_in_its_section():
 
 def test_module_two_gets_four_quiz_and_four_exam_questions_on_steel_fittings():
     bank = json.loads((MODULE / "questions.json").read_text(encoding="utf-8"))
-    new = [q for q in bank if 25 <= int(q["id"].rsplit("q", 1)[1]) <= 32]
+    new = [q for q in bank if 25 <= int(q["id"].rsplit("q", 1)[1]) <= 32]  # q33 et suivantes : raccords dudgeon (Q105)
     assert [q["id"] for q in new] == [f"p4-m2-q{n}" for n in range(25, 33)]
     assert [q["usage"] for q in new] == ["quiz"] * 4 + ["exam"] * 4
     for q in new:

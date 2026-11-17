@@ -814,6 +814,13 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Correction** : figure `raccords-acier` (chaque raccord dessiné seul avec ses repères mâle et femelle, puis monté ; comparaison du filetage, de la fonction et de la particularité ; séries de 10 pour les reconnaître), rédigée d'après la pratique courante ; l'union 3 pièces est distinguée du raccord union dudgeon ; huit questions ajoutées (`p4-m2-q25` à `q32`), publiées d'office.
 - **Justification** : décisions Q101 à Q103, demande du propriétaire du 2026-11-17.
 
+## 117. Raccords frigorifiques dudgeon : figure et questions (module 2, imprimé 21)
+
+- **Page** : 12
+- **Texte d'origine** : « On trouve aussi l'écrou conique, le capuchon d'étanchéité conique, [...] la vis union et le coude conique », sans description.
+- **Correction** : figure `raccords-flare` (écrou dudgeon, union double, réduction dudgeon, té de prise de pression à valve à obus, bouchon dudgeon ; seuls avec leurs repères, puis montés ; fiches et séries de 10), rédigée d'après la pratique courante (écrou enfilé avant l'évasement, contre-clé, étanchéité par les cônes, bouchon à joint sur la prise) ; aucun nom de fabricant ; huit questions ajoutées (`p4-m2-q33` à `q40`), publiées d'office.
+- **Justification** : décisions Q104 à Q106, suite acceptée par le propriétaire le 2026-11-17.
+
 ## Valeurs à confirmer par un formateur
 
 Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :

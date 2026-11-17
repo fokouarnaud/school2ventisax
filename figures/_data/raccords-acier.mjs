@@ -85,7 +85,7 @@ const CASES = [
 const rotate = (list, n) => [...list.slice(n % list.length), ...list.slice(0, n % list.length)];
 const keyOf = (fn) => ORDER.find((k) => FITTINGS[k].function === fn);
 
-export function buildSteelFittings() {
+export function build() {
   const out = [];
   const push = (kind, level, rest) => out.push({ key: `${kind}|${JSON.stringify(rest)}`, level, kind, ...rest });
   ORDER.forEach((key, i) => {
@@ -106,3 +106,5 @@ export function buildSteelFittings() {
   const fittings = Object.fromEntries(ORDER.map((key) => [key, { ...FITTINGS[key], functionLabel: FUNCTIONS[FITTINGS[key].function] }]));
   return { functions: FUNCTIONS, fittings, order: ORDER, cases: CASES, situations: out };
 }
+
+export const buildSteelFittings = build;
