@@ -924,7 +924,8 @@ const prompt = scope.querySelector(".rc-prompt");
 const quizBox = scope.querySelector(".rc-quiz");
 const doBox = scope.querySelector(".ms-do");
 const actionsBox = scope.querySelector(".ms-actions");
-const optionsBox = scope.querySelector(".rc-options");
+// Les réponses vont dans la liste du mode « S'entraîner », pas dans celle des actions de « Réaliser ».
+const optionsBox = scope.querySelector(".rc-quiz .rc-options");
 const flame = svg.querySelector(".ms-flame");
 // Un élément SVG n'a pas de propriété hidden : l'attribut se pose et se retire à la main.
 const showFlame = (on) => flame.toggleAttribute("hidden", !on);
