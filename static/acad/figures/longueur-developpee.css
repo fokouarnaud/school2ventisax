@@ -35,3 +35,5 @@ g[data-tint="gaine"]{filter:sepia(.7) saturate(2.6) hue-rotate(-30deg) brightnes
 
 .rc-tag rect{fill:var(--anatomy-card);stroke:var(--anatomy-mid);stroke-width:.8}
 .rc-tag-lit rect{stroke:var(--anatomy-lit);stroke-width:1.6}
+.ld-tag text{font-size:16px}
+.rc-halo{opacity:.28}
