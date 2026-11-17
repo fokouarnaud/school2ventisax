@@ -800,6 +800,13 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Correction** : figure d'entraînement `brasage` (réaliser les 8 conditions dans l'ordre, gestes dangereux refusés et expliqués d'après la section, classer un procédé d'après la température du métal d'apport, la fusion des pièces et la capillarité, étape suivante ou précédente), reprenant mot pour mot les étapes de la section ; huit questions ajoutées (`p4-m6-q17` à `q24`), publiées d'office.
 - **Justification** : décisions Q97 et Q98.
 
+## 115. Brasage sous azote : entraînement et questions (module 7, imprimé 26)
+
+- **Page** : 38 et 39
+- **Texte d'origine** : rappels (brasage, brasure, flux, calamine) et mode opératoire en liste numérotée, sans exercice.
+- **Correction** : mode « S'entraîner » ajouté à la figure `brasage-azote` (étape suivante ou précédente du mode opératoire, plages de réglage, débit et moment du balayage, extrémité ouverte, calamine, flux, brasures, précaution des bouteilles), chaque correction reprenant une phrase des sections ; huit questions ajoutées (`p4-m7-q17` à `q24`), publiées d'office.
+- **Justification** : décisions Q99 et Q100.
+
 ## Valeurs à confirmer par un formateur
 
 Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :
