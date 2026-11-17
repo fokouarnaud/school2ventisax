@@ -9,4 +9,4 @@ A zeotrope charged as vapour does not keep its composition: the most volatile co
 
 After a large leak of a high-glide zeotrope, the remaining composition has changed: common practice is to recover the refrigerant and recharge completely.
 
-R410A has a very small glide (<span lang="fr">glissement</span>): it is charged as liquid but behaves almost like an azeotrope.
+R410A and R404A have a very small glide (<span lang="fr">glissement</span>), under 1 K: they are called near-azeotropic. They are charged as liquid, like any zeotrope, but behave almost like an azeotrope. R407C, by contrast, has a large glide (about 5 to 7 K).

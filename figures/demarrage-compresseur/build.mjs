@@ -52,7 +52,7 @@ const TEXT = {
     svgLabel: "Hermetic compressor, relay box with indicator, supply cable and current clamp with display.",
     read: (amps, k, run, tripped) => `${amps} A · K ${k ? "closed" : "open"} · ${tripped ? "protector tripped" : run ? "motor running" : "motor stopped"}`,
     good: { ok: "Correct: current peak, K closes then opens, rated current remains.", open: "Correct: K does not close, the motor hums at locked-rotor current and the protector trips.", stuck: "Correct: K stays closed, the current stays above rated and the protector eventually trips." },
-    bad: (right) => `No: it was « ${right} ». Watch the current after starting and the K indicator.`,
+    bad: (right) => `No: it was "${right}". Watch the current after starting and the K indicator.`,
     powerFirst: "First switch on and watch.",
     start: "Switch on the compressor and watch the clamp and the relay indicator.",
     score: (g, t) => `Score: ${g} / ${t}`,

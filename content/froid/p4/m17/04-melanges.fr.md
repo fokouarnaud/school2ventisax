@@ -9,4 +9,4 @@ Un zéotrope chargé en vapeur ne garde pas sa composition : le composant le plu
 
 Après une fuite importante d'un zéotrope à fort glissement, la composition restante est modifiée : la pratique courante consiste à récupérer le fluide et à refaire la charge complète.
 
-Le glissement du R410A est très faible : il se charge en liquide, mais se comporte presque comme un azéotrope.
+Le glissement du R410A et celui du R404A sont très faibles (moins de 1 K) : on les dit quasi azéotropes. Ils se chargent en liquide, comme tout zéotrope, mais se comportent presque comme un azéotrope. Le R407C, lui, a un fort glissement (environ 5 à 7 K).
