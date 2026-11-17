@@ -120,8 +120,9 @@ function shape(s) {
 }
 function tag(p3, text, lit) {
   const xy = iso(p3, PROJ);
-  const w = 8 + text.length * 6;
-  return '<g class="rc-tag' + (lit ? ' rc-tag-lit' : '') + '"><rect x="' + (xy[0] - w / 2).toFixed(1) + '" y="' + (xy[1] - 8).toFixed(1) + '" width="' + w + '" height="14" rx="7"/><text x="' + xy[0].toFixed(1) + '" y="' + (xy[1] + 2.5).toFixed(1) + '" text-anchor="middle">' + text + '</text></g>';
+  // Repères lisibles à 390 px : la carte réduit le dessin de moitié environ, le texte fait donc 16 unités.
+  const w = 14 + text.length * 9.6;
+  return '<g class="rc-tag ld-tag' + (lit ? ' rc-tag-lit' : '') + '"><rect x="' + (xy[0] - w / 2).toFixed(1) + '" y="' + (xy[1] - 13).toFixed(1) + '" width="' + w.toFixed(1) + '" height="24" rx="12"/><text x="' + xy[0].toFixed(1) + '" y="' + (xy[1] + 4.5).toFixed(1) + '" text-anchor="middle">' + text + '</text></g>';
 }
 function paint(s, highlight, unrolled) {
   const { sc, pts } = shape(s);
@@ -244,4 +245,6 @@ for (const lang of ["fr", "en"]) {
 writeFigure(HERE, NAME, langs, CONTROLS_CSS + FITTINGS_CSS + `
 .rc-tag rect{fill:var(--anatomy-card);stroke:var(--anatomy-mid);stroke-width:.8}
 .rc-tag-lit rect{stroke:var(--anatomy-lit);stroke-width:1.6}
+.ld-tag text{font-size:16px}
+.rc-halo{opacity:.28}
 `);
