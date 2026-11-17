@@ -99,6 +99,8 @@ def test_startup_figure_is_published_in_its_section():
         assert not [w for w in ("fetch(", "XMLHttpRequest", "localStorage") if w in script]
         assert all(" disabled" in b for b in re.findall(r"<button\b[^>]*>", fragment))
         assert 'data-act="do"' in fragment and 'data-act="quiz"' in fragment
+        # Deux listes de boutons (actions, réponses) : le script doit viser celle du mode « S'entraîner ».
+        assert 'querySelector(".rc-quiz .rc-options")' in script
 
 
 def test_section_gets_four_quiz_and_four_exam_questions():
