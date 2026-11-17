@@ -1,0 +1,2865 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Refrigeration flare fittings: differences, fitting and recognition</title><style>
+.iso{
+  --anatomy-page:#0b0b0b;--anatomy-card:#131313;--anatomy-text:#a3a3a3;--anatomy-strong:#e6e6e6;--anatomy-muted:#6e6e6e;
+  --anatomy-paper:#131313;--anatomy-face:#1b1b1b;--anatomy-top:#1c1c1c;
+  --anatomy-shade-0:#0f0f0f;--anatomy-shade-1:#121212;--anatomy-shade-2:#151515;--anatomy-shade-3:#181818;
+  --anatomy-lit-top:#262626;--anatomy-lit-shade:#1d1d1d;
+  --anatomy-hi:#d4d4d4;--anatomy-mid:#6a6a6a;--anatomy-lo:#3e3e3e;--anatomy-faint:#2a2a2a;--anatomy-lit:#ffffff;
+  --anatomy-halo:#050505;--anatomy-halo-opacity:.9;--anatomy-dot:#e6e6e6;
+  --anatomy-red:#ff6b6b;--anatomy-green:#6be0a0;--anatomy-blue:#6b9bff;
+  --anatomy-weight:.6px;--anatomy-ease:cubic-bezier(.32,.72,0,1);
+  --anatomy-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --anatomy-lift:inset 0 1px 0 0 #ffffff0a,inset 0 0 0 1px #ffffff06,0 0 0 1px #00000026,0 1px 1px -.5px #00000014,0 3px 3px -1.5px #00000014,0 6px 6px -3px #00000014,0 12px 12px -6px #00000014;
+}
+.iso[data-theme="light"]{
+  --anatomy-page:#f2f2ef;--anatomy-card:#fbfbfa;--anatomy-text:#57575a;--anatomy-strong:#18181a;--anatomy-muted:#8c8c90;
+  --anatomy-paper:#fbfbfa;--anatomy-face:#ffffff;--anatomy-top:#ffffff;
+  --anatomy-shade-0:#dcdcd9;--anatomy-shade-1:#e5e5e2;--anatomy-shade-2:#ededea;--anatomy-shade-3:#f4f4f1;
+  --anatomy-lit-top:#ffffff;--anatomy-lit-shade:#eeeeeb;
+  --anatomy-hi:#26262a;--anatomy-mid:#8a8a8f;--anatomy-lo:#b4b4b8;--anatomy-faint:#d4d4d6;--anatomy-lit:#000000;
+  --anatomy-halo:#8a8a80;--anatomy-halo-opacity:.32;--anatomy-dot:#3a3a3e;
+  --anatomy-red:#e5484d;--anatomy-green:#30a46c;--anatomy-blue:#3e63dd;
+  --anatomy-lift:inset 0 1px 0 0 #ffffff,0 0 0 1px #0000000f,0 1px 1px -.5px #0000000a,0 3px 3px -1.5px #0000000a,0 6px 6px -3px #0000000a,0 12px 12px -6px #0000000a;
+}
+.iso-svg{display:block;width:100%;height:auto;overflow:visible}
+.iso-svg path,.iso-svg circle{vector-effect:non-scaling-stroke}
+.iso-fill{fill:var(--anatomy-paper);stroke:none}
+.iso-solid[data-lit]>.iso-fill{fill:var(--anatomy-face)}
+.iso-shade,.iso-top{stroke:none}
+.iso-shade[data-shade="0"]{fill:var(--anatomy-shade-0)}
+.iso-shade[data-shade="1"]{fill:var(--anatomy-shade-1)}
+.iso-shade[data-shade="2"]{fill:var(--anatomy-shade-2)}
+.iso-shade[data-shade="3"]{fill:var(--anatomy-shade-3)}
+.iso-top{fill:var(--anatomy-top)}
+.iso-solid[data-lit]>.iso-top{fill:var(--anatomy-lit-top)}
+.iso-solid[data-lit]>.iso-shade{fill:var(--anatomy-lit-shade)}
+.iso-solid[data-seamless]>.iso-shade,.iso-solid[data-seamless]>.iso-top{stroke-width:.4;stroke-linejoin:round}
+.iso-solid[data-seamless]>.iso-shade[data-shade="0"]{stroke:var(--anatomy-shade-0)}
+.iso-solid[data-seamless]>.iso-shade[data-shade="1"]{stroke:var(--anatomy-shade-1)}
+.iso-solid[data-seamless]>.iso-shade[data-shade="2"]{stroke:var(--anatomy-shade-2)}
+.iso-solid[data-seamless]>.iso-shade[data-shade="3"]{stroke:var(--anatomy-shade-3)}
+.iso-solid[data-seamless]>.iso-top{stroke:var(--anatomy-top)}
+.iso-solid[data-seamless][data-lit]>.iso-top{stroke:var(--anatomy-lit-top)}
+.iso-solid[data-seamless][data-lit]>.iso-shade{stroke:var(--anatomy-lit-shade)}
+.iso-solid[data-lit]>.iso-edge{stroke:var(--anatomy-lit)}
+.iso-halo{fill:var(--anatomy-halo);stroke:none;filter:blur(9px);opacity:var(--anatomy-halo-opacity);transform:translateY(3px)}
+.iso-line{fill:none;stroke:var(--anatomy-lo);stroke-width:var(--anatomy-weight);stroke-linecap:round;stroke-linejoin:round}
+.iso-line[data-tone="hi"]{stroke:var(--anatomy-hi)}
+.iso-line[data-tone="mid"]{stroke:var(--anatomy-mid)}
+.iso-line[data-tone="lo"]{stroke:var(--anatomy-lo)}
+.iso-line[data-tone="faint"]{stroke:var(--anatomy-faint)}
+.iso-line[data-tone="lit"]{stroke:var(--anatomy-lit)}
+.iso-line[data-tone="red"]{stroke:var(--anatomy-red)}
+.iso-line[data-tone="green"]{stroke:var(--anatomy-green)}
+.iso-line[data-tone="blue"]{stroke:var(--anatomy-blue)}
+.iso-line[data-dotted]{stroke-dasharray:.01 3.5;stroke-width:1}
+.iso-line[data-dashed]{stroke-dasharray:3 3}
+.iso-line[data-flow]{stroke-dasharray:2 6}
+.iso-wire-end{fill:var(--anatomy-paper);stroke:var(--anatomy-lo);stroke-width:var(--anatomy-weight)}
+.iso-wire[data-tone="hi"] .iso-wire-end{stroke:var(--anatomy-hi)}
+.iso-wire[data-tone="mid"] .iso-wire-end{stroke:var(--anatomy-mid)}
+.iso-wire[data-tone="faint"] .iso-wire-end{stroke:var(--anatomy-faint)}
+.iso-wire[data-tone="lit"] .iso-wire-end{stroke:var(--anatomy-lit)}
+.iso-dots circle{fill:var(--anatomy-dot);stroke:none;opacity:.32}
+.iso-dots[data-tone="hi"] circle{opacity:.85}
+.iso-dots[data-tone="mid"] circle{opacity:.45}
+.iso-dots[data-tone="lo"] circle{opacity:.22}
+.iso-dots[data-tone="faint"] circle{opacity:.12}
+.iso-face-text{fill:var(--anatomy-mid);font-family:var(--anatomy-mono);letter-spacing:.04em}
+.iso-face-text[data-tone="hi"]{fill:var(--anatomy-hi)}
+.iso-face-text[data-tone="lo"]{fill:var(--anatomy-lo)}
+.iso-face-text[data-tone="faint"]{fill:var(--anatomy-faint)}
+.tb-body{fill:var(--anatomy-shade-2);stroke:none}
+.tb-shine{fill:var(--anatomy-top);stroke:none}
+.tb-shade{fill:var(--anatomy-shade-0);stroke:none}
+.tb-ring{fill:none;stroke:var(--anatomy-lo);stroke-width:.45;stroke-linecap:butt;stroke-linejoin:round}
+.tb-ring[data-tone="mid"]{stroke:var(--anatomy-mid)}
+.tb-ring[data-tone="faint"]{stroke:var(--anatomy-faint)}
+.tb-ring[data-tone="hi"]{stroke:var(--anatomy-hi)}
+@keyframes iso-flow{to{stroke-dashoffset:-32}}
+@keyframes iso-pulse{0%,100%{opacity:.18}12%{opacity:1}40%{opacity:.18}}
+.iso-line[data-flow]{animation:iso-flow 1600ms linear infinite}
+.iso-dots circle[data-pulse]{animation:iso-pulse 1600ms steps(1,end) infinite;animation-delay:var(--pulse-at,0ms)}
+.iso-figure{margin:32px 0 36px}
+.iso-plate{position:relative;padding:52px 24px;border-radius:0;background:var(--anatomy-card);box-shadow:0 0 0 1px var(--anatomy-mid);--anatomy-paper:var(--anatomy-card)}
+.iso-plate-corners{position:absolute;inset:18px 20px;pointer-events:none}
+.iso-plate-corner{position:absolute;color:var(--anatomy-muted);font-family:var(--anatomy-mono);font-size:10.5px;line-height:1;letter-spacing:.04em;white-space:nowrap}
+.iso-plate-corner[data-corner="fig"]{top:0;left:0;color:var(--anatomy-text)}
+.iso-plate-corner[data-corner="title"]{top:0;right:0;text-transform:uppercase;letter-spacing:.1em}
+.iso-plate-corner[data-corner="hint"]{bottom:0;left:0;text-transform:uppercase;letter-spacing:.1em}
+.iso-plate-corner[data-corner="readout"]{right:0;bottom:0;color:var(--anatomy-text);font-variant-numeric:tabular-nums}
+.iso-plate .iso-svg{margin:0 auto}
+.iso-legend{display:grid;gap:8px;margin-top:12px;color:var(--anatomy-muted);font-size:13px;line-height:1.55}
+.iso-keys{display:flex;flex-wrap:wrap;gap:6px 18px}
+.iso-key{display:inline-flex;align-items:center;gap:7px}
+.iso-swatch{width:16px;height:10px;flex:none;overflow:visible}
+.iso-swatch path{fill:none;stroke:var(--anatomy-hi);stroke-width:1;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+.iso-swatch[data-mark="raised"] path,.iso-swatch[data-mark="flat"] path{stroke:var(--anatomy-mid)}
+.iso-swatch[data-mark="lit"] path{stroke:var(--anatomy-lit)}
+.iso-swatch[data-mark="dim"] path{stroke:var(--anatomy-lo)}
+.iso-swatch[data-mark="dotted"] path{stroke-dasharray:.01 3;stroke-width:1.4}
+.iso-swatch[data-mark="dashed"] path{stroke-dasharray:3 2.5}
+.iso-swatch[data-mark="red"] path{stroke:var(--anatomy-red)}
+.iso-swatch[data-mark="green"] path{stroke:var(--anatomy-green)}
+.iso-swatch[data-mark="blue"] path{stroke:var(--anatomy-blue)}
+.iso-swatch-crease{stroke:var(--anatomy-lo)!important}
+@media (max-width:560px){.iso-plate{padding:48px 12px 70px}.iso-plate-corner[data-corner="hint"]{bottom:18px}}
+@media (prefers-reduced-motion:reduce){.iso-line[data-flow],.iso-dots circle[data-pulse]{animation:none}}
+
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body[data-theme="light"]{color-scheme:light}
+body{margin:0;background:var(--anatomy-page);color:var(--anatomy-text);font:14px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.iso-page{width:min(760px,100% - 32px);margin:64px auto 96px}
+</style></head><body class="iso" data-theme="dark"><main class="iso-page"><style>
+.iso-stage{touch-action:manipulation}
+.iso-plate-corner[data-corner="hint"]{top:20px;bottom:auto;right:0;white-space:normal;line-height:1.35}
+.iso-plate-corner[data-corner="readout"]{left:0;white-space:normal;text-align:right;line-height:1.4}
+.iso-plate{padding-top:80px}
+.mv-controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.mv-controls button{font:12px/1.2 var(--anatomy-mono);letter-spacing:.04em;color:var(--anatomy-strong);background:var(--anatomy-card);border:1px solid var(--anatomy-mid);border-radius:999px;padding:12px 14px;min-height:44px;cursor:pointer}
+.mv-controls button[aria-pressed="true"]{border-color:var(--anatomy-lit);box-shadow:inset 0 0 0 1px var(--anatomy-lit)}
+.mv-controls button:focus-visible{outline:2px solid var(--anatomy-hi);outline-offset:2px}
+.mv-controls button:disabled{opacity:.45;cursor:default}
+.mv-feedback{margin:12px 0 0;min-height:3em;color:var(--anatomy-text);font-size:13px;line-height:1.55}
+.mv-score{color:var(--anatomy-muted);font:11px/1 var(--anatomy-mono);margin-top:6px}
+@media (max-width:560px){.iso-plate{padding:76px 12px 64px}.mv-controls button{flex:1 1 40%}}
+
+.rc-hole{fill:var(--anatomy-page);stroke:var(--anatomy-mid);stroke-width:.5}
+.rc-halo{opacity:.7}
+g[data-tint="cuivre"]{filter:sepia(.8) saturate(2.4) hue-rotate(-14deg) brightness(1.9)}
+g[data-tint="laiton"]{filter:sepia(.9) saturate(1.7) hue-rotate(8deg) brightness(2)}
+g[data-tint="acier"]{filter:brightness(1.5)}
+g[data-tint="pvc"]{filter:brightness(2.1)}
+g[data-tint="gaine"]{filter:sepia(.7) saturate(2.6) hue-rotate(-30deg) brightness(1.8)}
+[data-theme="light"] g[data-tint="cuivre"]{filter:sepia(1) saturate(4) hue-rotate(-38deg) brightness(.78)}
+[data-theme="light"] g[data-tint="laiton"]{filter:sepia(1) saturate(2.2) hue-rotate(6deg) brightness(.85)}
+[data-theme="light"] g[data-tint="acier"],[data-theme="light"] g[data-tint="pvc"]{filter:none}
+[data-theme="light"] g[data-tint="gaine"]{filter:sepia(1) saturate(3) hue-rotate(-32deg) brightness(.85)}
+.rc-tag circle{fill:var(--anatomy-card);stroke:var(--anatomy-mid);stroke-width:.8}
+.rc-tag text{font:600 9px/1 var(--anatomy-mono);fill:var(--anatomy-strong)}
+.rc-prompt{margin:16px 0 0;min-height:1.6em;color:var(--anatomy-strong);font-weight:600;line-height:1.45}
+.rc-quiz[hidden],.mv-controls button[hidden]{display:none}
+.rc-options{flex-direction:column}
+.rc-options button{text-align:left;border-radius:14px}
+.rc-options button[data-state="right"]{border-color:var(--anatomy-lit);box-shadow:inset 0 0 0 1px var(--anatomy-lit)}
+.rc-options button[data-state="wrong"]{border-style:dashed}
+.rc-options button:disabled{opacity:1;cursor:default}
+
+.ra-compare[hidden]{display:none}
+.iso g[data-tint="acier"]{filter:brightness(2.4)}
+.iso[data-theme="light"] g[data-tint="acier"]{filter:brightness(1.15)}
+.ra-compare p{margin:14px 0 8px;color:var(--anatomy-muted);font-size:13px}
+.ra-compare ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.ra-compare button{width:100%;text-align:left;display:flex;flex-direction:column;gap:4px;padding:10px 12px;min-height:44px;border-radius:14px;border:1px solid var(--anatomy-mid);background:var(--anatomy-card);color:var(--anatomy-text);font:12px/1.4 var(--anatomy-sans,system-ui);cursor:pointer}
+.ra-compare button[aria-pressed="true"]{border-color:var(--anatomy-lit);box-shadow:inset 0 0 0 1px var(--anatomy-lit)}
+.ra-compare button:focus-visible{outline:2px solid var(--anatomy-hi);outline-offset:2px}
+.ra-compare strong{color:var(--anatomy-strong);font-size:13px}
+.ra-compare em{font-style:normal;color:var(--anatomy-muted);font:10px/1 var(--anatomy-mono);text-transform:uppercase;letter-spacing:.05em;margin-right:4px}
+
+.iso g[data-tint="laiton"]{filter:sepia(.9) saturate(1.7) hue-rotate(8deg) brightness(2.3)}
+.iso g[data-tint="flexible"]{filter:sepia(1) saturate(3) hue-rotate(185deg) brightness(1.6)}
+.iso[data-theme="light"] g[data-tint="flexible"]{filter:sepia(1) saturate(4) hue-rotate(185deg) brightness(.9)}
+</style><figure class="iso-figure"><div class="iso-plate"><div class="iso-plate-corners" aria-hidden="true"><span class="iso-plate-corner" data-corner="fig">Fig 2a</span><span class="iso-plate-corner" data-corner="title">Flare fittings</span><span class="iso-plate-corner" data-corner="hint">See each fitting alone then fitted, compare, then recognise</span><span class="iso-plate-corner" data-corner="readout" data-readout></span></div><div class="iso-stage" role="img" aria-label="Refrigeration flare fitting drawn in perspective on a workbench, alone with its marks, or fitted on its flared tubes. The explanations and questions are below the drawing."><svg xmlns="http://www.w3.org/2000/svg" class="iso-svg" viewBox="0 0 680 360" role="img" aria-label="Workbench and refrigeration flare fitting drawn in perspective."><path class="iso-halo" d="M107.8 220.4L108.7 217.6L110.7 215L113.6 212.6L117.5 210.6L122 208.9L443.7 116.1L448.8 114.9L454.3 114.3L459.9 114.2L465.4 114.6L470.6 115.6L475.4 117.1L479.5 119L482.7 121.3L568.5 195.5L570.8 198.1L572 200.8L572.2 203.6L572.2 234.6L571.3 237.3L569.3 239.9L566.4 242.3L562.5 244.4L558 246L236.3 338.9L231.2 340L225.7 340.6L220.1 340.7L214.6 340.3L209.4 339.3L204.6 337.8L200.5 335.9L197.3 333.6L111.5 259.4L109.2 256.8L108 254.1L107.8 251.3Z"/><g class="iso-solid"><path class="iso-fill" d="M412.1 194.4L412.3 191.6L413.8 188.9L416.4 186.4L420.1 184.3L424.6 182.6L429.7 181.5L435.2 181L440.8 181.1L446.2 181.8L451.2 183.1L455.4 185L458.7 187.2L461 189.8L462 192.5L462 197.5L461.8 200.3L460.3 203L457.7 205.5L454.1 207.6L449.6 209.2L444.4 210.4L438.9 210.9L433.3 210.8L427.9 210.1L423 208.7L418.7 206.9L415.4 204.7L413.2 202.1L412.1 199.3Z"/><path class="iso-shade" data-shade="0" d="M462 197.5L461.8 200.3L461.8 195.3L462 192.5ZM461.8 200.3L460.3 203L460.3 198L461.8 195.3ZM460.3 203L457.7 205.5L457.7 200.5L460.3 198ZM457.7 205.5L454.1 207.6L454.1 202.6L457.7 200.5ZM454.1 207.6L449.6 209.2L449.6 204.3L454.1 202.6Z"/><path class="iso-shade" data-shade="1" d="M449.6 209.2L444.4 210.4L444.4 205.4L449.6 204.3ZM444.4 210.4L438.9 210.9L438.9 205.9L444.4 205.4Z"/><path class="iso-shade" data-shade="2" d="M438.9 210.9L433.3 210.8L433.3 205.8L438.9 205.9ZM433.3 210.8L427.9 210.1L427.9 205.1L433.3 205.8ZM427.9 210.1L423 208.7L423 203.8L427.9 205.1Z"/><path class="iso-shade" data-shade="3" d="M423 208.7L418.7 206.9L418.7 202L423 203.8ZM418.7 206.9L415.4 204.7L415.4 199.7L418.7 202ZM415.4 204.7L413.2 202.1L413.2 197.1L415.4 199.7ZM413.2 202.1L412.1 199.3L412.1 194.4L413.2 197.1Z"/><path class="iso-top" d="M458.7 187.2L461 189.8L462 192.5L461.8 195.3L460.3 198L457.7 200.5L454.1 202.6L449.6 204.3L444.4 205.4L438.9 205.9L433.3 205.8L427.9 205.1L423 203.8L418.7 202L415.4 199.7L413.2 197.1L412.1 194.4L412.3 191.6L413.8 188.9L416.4 186.4L420.1 184.3L424.6 182.6L429.7 181.5L435.2 181L440.8 181.1L446.2 181.8L451.2 183.1L455.4 185Z"/><path class="iso-line iso-crease" data-tone="faint" d="M462 192.5L461.8 195.3L460.3 198L457.7 200.5L454.1 202.6L449.6 204.3L444.4 205.4L438.9 205.9L433.3 205.8L427.9 205.1L423 203.8L418.7 202L415.4 199.7L413.2 197.1L412.1 194.4"/><path class="iso-line iso-edge" data-tone="lo" d="M412.1 194.4L412.3 191.6L413.8 188.9L416.4 186.4L420.1 184.3L424.6 182.6L429.7 181.5L435.2 181L440.8 181.1L446.2 181.8L451.2 183.1L455.4 185L458.7 187.2L461 189.8L462 192.5M462 197.5L461.8 200.3L460.3 203L457.7 205.5L454.1 207.6L449.6 209.2L444.4 210.4L438.9 210.9L433.3 210.8L427.9 210.1L423 208.7L418.7 206.9L415.4 204.7L413.2 202.1L412.1 199.3M462 192.5L462 197.5M412.1 194.4L412.1 199.3"/></g><g class="iso-solid"><path class="iso-fill" d="M417.8 183.7L418 181.5L419.1 179.4L421.1 177.5L424 175.9L427.4 174.6L431.4 173.7L435.6 173.3L439.9 173.4L444.1 174L447.9 175L451.2 176.4L453.8 178.1L455.5 180.1L456.3 182.2L456.3 192.7L456.1 194.9L455 197L453 198.9L450.2 200.5L446.7 201.8L442.8 202.7L438.5 203.1L434.2 203L430 202.4L426.2 201.4L422.9 200L420.4 198.3L418.6 196.3L417.8 194.2Z"/><path class="iso-shade" data-shade="0" d="M456.3 192.7L456.1 194.9L456.1 184.4L456.3 182.2ZM456.1 194.9L455 197L455 186.5L456.1 184.4ZM455 197L453 198.9L453 188.4L455 186.5ZM453 198.9L450.2 200.5L450.2 190L453 188.4ZM450.2 200.5L446.7 201.8L446.7 191.3L450.2 190Z"/><path class="iso-shade" data-shade="1" d="M446.7 201.8L442.8 202.7L442.8 192.2L446.7 191.3ZM442.8 202.7L438.5 203.1L438.5 192.6L442.8 192.2Z"/><path class="iso-shade" data-shade="2" d="M438.5 203.1L434.2 203L434.2 192.5L438.5 192.6ZM434.2 203L430 202.4L430 191.9L434.2 192.5ZM430 202.4L426.2 201.4L426.2 190.9L430 191.9Z"/><path class="iso-shade" data-shade="3" d="M426.2 201.4L422.9 200L422.9 189.5L426.2 190.9ZM422.9 200L420.4 198.3L420.4 187.8L422.9 189.5ZM420.4 198.3L418.6 196.3L418.6 185.8L420.4 187.8ZM418.6 196.3L417.8 194.2L417.8 183.7L418.6 185.8Z"/><path class="iso-top" d="M453.8 178.1L455.5 180.1L456.3 182.2L456.1 184.4L455 186.5L453 188.4L450.2 190L446.7 191.3L442.8 192.2L438.5 192.6L434.2 192.5L430 191.9L426.2 190.9L422.9 189.5L420.4 187.8L418.6 185.8L417.8 183.7L418 181.5L419.1 179.4L421.1 177.5L424 175.9L427.4 174.6L431.4 173.7L435.6 173.3L439.9 173.4L444.1 174L447.9 175L451.2 176.4Z"/><path class="iso-line iso-crease" data-tone="faint" d="M456.3 182.2L456.1 184.4L455 186.5L453 188.4L450.2 190L446.7 191.3L442.8 192.2L438.5 192.6L434.2 192.5L430 191.9L426.2 190.9L422.9 189.5L420.4 187.8L418.6 185.8L417.8 183.7"/><path class="iso-line iso-edge" data-tone="mid" d="M417.8 183.7L418 181.5L419.1 179.4L421.1 177.5L424 175.9L427.4 174.6L431.4 173.7L435.6 173.3L439.9 173.4L444.1 174L447.9 175L451.2 176.4L453.8 178.1L455.5 180.1L456.3 182.2M456.3 192.7L456.1 194.9L455 197L453 198.9L450.2 200.5L446.7 201.8L442.8 202.7L438.5 203.1L434.2 203L430 202.4L426.2 201.4L422.9 200L420.4 198.3L418.6 196.3L417.8 194.2M456.3 182.2L456.3 192.7M417.8 183.7L417.8 194.2"/></g><g class="iso-solid"><path class="iso-fill" d="M440.7 219.1L440.9 216.3L442.4 213.6L445 211.2L448.6 209L453.1 207.4L458.3 206.3L463.8 205.7L469.4 205.8L474.8 206.6L479.7 207.9L484 209.7L487.3 212L489.5 214.5L490.6 217.3L490.6 222.2L490.4 225L488.9 227.7L486.3 230.2L482.6 232.3L478.1 234L473 235.1L467.5 235.6L461.9 235.5L456.5 234.8L451.6 233.5L447.3 231.7L444 229.4L441.8 226.8L440.7 224.1Z"/><path class="iso-shade" data-shade="0" d="M490.6 222.2L490.4 225L490.4 220.1L490.6 217.3ZM490.4 225L488.9 227.7L488.9 222.8L490.4 220.1ZM488.9 227.7L486.3 230.2L486.3 225.3L488.9 222.8ZM486.3 230.2L482.6 232.3L482.6 227.4L486.3 225.3ZM482.6 232.3L478.1 234L478.1 229L482.6 227.4Z"/><path class="iso-shade" data-shade="1" d="M478.1 234L473 235.1L473 230.2L478.1 229ZM473 235.1L467.5 235.6L467.5 230.7L473 230.2Z"/><path class="iso-shade" data-shade="2" d="M467.5 235.6L461.9 235.5L461.9 230.6L467.5 230.7ZM461.9 235.5L456.5 234.8L456.5 229.8L461.9 230.6ZM456.5 234.8L451.6 233.5L451.6 228.5L456.5 229.8Z"/><path class="iso-shade" data-shade="3" d="M451.6 233.5L447.3 231.7L447.3 226.7L451.6 228.5ZM447.3 231.7L444 229.4L444 224.5L447.3 226.7ZM444 229.4L441.8 226.8L441.8 221.9L444 224.5ZM441.8 226.8L440.7 224.1L440.7 219.1L441.8 221.9Z"/><path class="iso-top" d="M487.3 212L489.5 214.5L490.6 217.3L490.4 220.1L488.9 222.8L486.3 225.3L482.6 227.4L478.1 229L473 230.2L467.5 230.7L461.9 230.6L456.5 229.8L451.6 228.5L447.3 226.7L444 224.5L441.8 221.9L440.7 219.1L440.9 216.3L442.4 213.6L445 211.2L448.6 209L453.1 207.4L458.3 206.3L463.8 205.7L469.4 205.8L474.8 206.6L479.7 207.9L484 209.7Z"/><path class="iso-line iso-crease" data-tone="faint" d="M490.6 217.3L490.4 220.1L488.9 222.8L486.3 225.3L482.6 227.4L478.1 229L473 230.2L467.5 230.7L461.9 230.6L456.5 229.8L451.6 228.5L447.3 226.7L444 224.5L441.8 221.9L440.7 219.1"/><path class="iso-line iso-edge" data-tone="lo" d="M440.7 219.1L440.9 216.3L442.4 213.6L445 211.2L448.6 209L453.1 207.4L458.3 206.3L463.8 205.7L469.4 205.8L474.8 206.6L479.7 207.9L484 209.7L487.3 212L489.5 214.5L490.6 217.3M490.6 222.2L490.4 225L488.9 227.7L486.3 230.2L482.6 232.3L478.1 234L473 235.1L467.5 235.6L461.9 235.5L456.5 234.8L451.6 233.5L447.3 231.7L444 229.4L441.8 226.8L440.7 224.1M490.6 217.3L490.6 222.2M440.7 219.1L440.7 224.1"/></g><g class="iso-solid"><path class="iso-fill" d="M446.4 208.4L446.6 206.3L447.7 204.2L449.7 202.3L452.5 200.6L456 199.3L460 198.5L464.2 198.1L468.5 198.2L472.7 198.7L476.5 199.7L479.8 201.1L482.3 202.9L484.1 204.9L484.9 207L484.9 217.5L484.7 219.6L483.6 221.7L481.6 223.6L478.8 225.3L475.3 226.6L471.3 227.4L467.1 227.8L462.8 227.7L458.6 227.2L454.8 226.2L451.5 224.8L448.9 223L447.2 221.1L446.4 218.9Z"/><path class="iso-shade" data-shade="0" d="M484.9 217.5L484.7 219.6L484.7 209.1L484.9 207ZM484.7 219.6L483.6 221.7L483.6 211.2L484.7 209.1ZM483.6 221.7L481.6 223.6L481.6 213.1L483.6 211.2ZM481.6 223.6L478.8 225.3L478.8 214.8L481.6 213.1ZM478.8 225.3L475.3 226.6L475.3 216L478.8 214.8Z"/><path class="iso-shade" data-shade="1" d="M475.3 226.6L471.3 227.4L471.3 216.9L475.3 216ZM471.3 227.4L467.1 227.8L467.1 217.3L471.3 216.9Z"/><path class="iso-shade" data-shade="2" d="M467.1 227.8L462.8 227.7L462.8 217.2L467.1 217.3ZM462.8 227.7L458.6 227.2L458.6 216.7L462.8 217.2ZM458.6 227.2L454.8 226.2L454.8 215.7L458.6 216.7Z"/><path class="iso-shade" data-shade="3" d="M454.8 226.2L451.5 224.8L451.5 214.3L454.8 215.7ZM451.5 224.8L448.9 223L448.9 212.5L451.5 214.3ZM448.9 223L447.2 221.1L447.2 210.5L448.9 212.5ZM447.2 221.1L446.4 218.9L446.4 208.4L447.2 210.5Z"/><path class="iso-top" d="M482.3 202.9L484.1 204.9L484.9 207L484.7 209.1L483.6 211.2L481.6 213.1L478.8 214.8L475.3 216L471.3 216.9L467.1 217.3L462.8 217.2L458.6 216.7L454.8 215.7L451.5 214.3L448.9 212.5L447.2 210.5L446.4 208.4L446.6 206.3L447.7 204.2L449.7 202.3L452.5 200.6L456 199.3L460 198.5L464.2 198.1L468.5 198.2L472.7 198.7L476.5 199.7L479.8 201.1Z"/><path class="iso-line iso-crease" data-tone="faint" d="M484.9 207L484.7 209.1L483.6 211.2L481.6 213.1L478.8 214.8L475.3 216L471.3 216.9L467.1 217.3L462.8 217.2L458.6 216.7L454.8 215.7L451.5 214.3L448.9 212.5L447.2 210.5L446.4 208.4"/><path class="iso-line iso-edge" data-tone="mid" d="M446.4 208.4L446.6 206.3L447.7 204.2L449.7 202.3L452.5 200.6L456 199.3L460 198.5L464.2 198.1L468.5 198.2L472.7 198.7L476.5 199.7L479.8 201.1L482.3 202.9L484.1 204.9L484.9 207M484.9 217.5L484.7 219.6L483.6 221.7L481.6 223.6L478.8 225.3L475.3 226.6L471.3 227.4L467.1 227.8L462.8 227.7L458.6 227.2L454.8 226.2L451.5 224.8L448.9 223L447.2 221.1L446.4 218.9M484.9 207L484.9 217.5M446.4 208.4L446.4 218.9"/></g><g class="iso-solid"><path class="iso-fill" d="M189.4 258.7L189.6 255.9L191.1 253.2L193.7 250.7L197.4 248.6L201.9 246.9L207 245.8L212.5 245.3L218.1 245.4L223.5 246.1L228.4 247.4L232.7 249.3L236 251.5L238.2 254.1L239.3 256.8L239.3 261.8L239.1 264.6L237.6 267.3L235 269.7L231.4 271.9L226.9 273.5L221.7 274.7L216.2 275.2L210.6 275.1L205.2 274.3L200.3 273L196 271.2L192.7 269L190.5 266.4L189.4 263.6Z"/><path class="iso-shade" data-shade="0" d="M239.3 261.8L239.1 264.6L239.1 259.6L239.3 256.8ZM239.1 264.6L237.6 267.3L237.6 262.3L239.1 259.6ZM237.6 267.3L235 269.7L235 264.8L237.6 262.3ZM235 269.7L231.4 271.9L231.4 266.9L235 264.8ZM231.4 271.9L226.9 273.5L226.9 268.6L231.4 266.9Z"/><path class="iso-shade" data-shade="1" d="M226.9 273.5L221.7 274.7L221.7 269.7L226.9 268.6ZM221.7 274.7L216.2 275.2L216.2 270.2L221.7 269.7Z"/><path class="iso-shade" data-shade="2" d="M216.2 275.2L210.6 275.1L210.6 270.1L216.2 270.2ZM210.6 275.1L205.2 274.3L205.2 269.4L210.6 270.1ZM205.2 274.3L200.3 273L200.3 268.1L205.2 269.4Z"/><path class="iso-shade" data-shade="3" d="M200.3 273L196 271.2L196 266.3L200.3 268.1ZM196 271.2L192.7 269L192.7 264L196 266.3ZM192.7 269L190.5 266.4L190.5 261.4L192.7 264ZM190.5 266.4L189.4 263.6L189.4 258.7L190.5 261.4Z"/><path class="iso-top" d="M236 251.5L238.2 254.1L239.3 256.8L239.1 259.6L237.6 262.3L235 264.8L231.4 266.9L226.9 268.6L221.7 269.7L216.2 270.2L210.6 270.1L205.2 269.4L200.3 268.1L196 266.3L192.7 264L190.5 261.4L189.4 258.7L189.6 255.9L191.1 253.2L193.7 250.7L197.4 248.6L201.9 246.9L207 245.8L212.5 245.3L218.1 245.4L223.5 246.1L228.4 247.4L232.7 249.3Z"/><path class="iso-line iso-crease" data-tone="faint" d="M239.3 256.8L239.1 259.6L237.6 262.3L235 264.8L231.4 266.9L226.9 268.6L221.7 269.7L216.2 270.2L210.6 270.1L205.2 269.4L200.3 268.1L196 266.3L192.7 264L190.5 261.4L189.4 258.7"/><path class="iso-line iso-edge" data-tone="lo" d="M189.4 258.7L189.6 255.9L191.1 253.2L193.7 250.7L197.4 248.6L201.9 246.9L207 245.8L212.5 245.3L218.1 245.4L223.5 246.1L228.4 247.4L232.7 249.3L236 251.5L238.2 254.1L239.3 256.8M239.3 261.8L239.1 264.6L237.6 267.3L235 269.7L231.4 271.9L226.9 273.5L221.7 274.7L216.2 275.2L210.6 275.1L205.2 274.3L200.3 273L196 271.2L192.7 269L190.5 266.4L189.4 263.6M239.3 256.8L239.3 261.8M189.4 258.7L189.4 263.6"/></g><g class="iso-solid"><path class="iso-fill" d="M195.1 248L195.3 245.8L196.4 243.7L198.4 241.8L201.2 240.2L204.7 238.9L208.7 238L212.9 237.6L217.2 237.7L221.4 238.3L225.2 239.3L228.5 240.7L231.1 242.4L232.8 244.4L233.6 246.5L233.6 257L233.4 259.2L232.3 261.3L230.3 263.2L227.5 264.8L224 266.1L220 267L215.8 267.4L211.5 267.3L207.3 266.7L203.5 265.7L200.2 264.3L197.7 262.6L195.9 260.6L195.1 258.5Z"/><path class="iso-shade" data-shade="0" d="M233.6 257L233.4 259.2L233.4 248.7L233.6 246.5ZM233.4 259.2L232.3 261.3L232.3 250.8L233.4 248.7ZM232.3 261.3L230.3 263.2L230.3 252.7L232.3 250.8ZM230.3 263.2L227.5 264.8L227.5 254.3L230.3 252.7ZM227.5 264.8L224 266.1L224 255.6L227.5 254.3Z"/><path class="iso-shade" data-shade="1" d="M224 266.1L220 267L220 256.5L224 255.6ZM220 267L215.8 267.4L215.8 256.9L220 256.5Z"/><path class="iso-shade" data-shade="2" d="M215.8 267.4L211.5 267.3L211.5 256.8L215.8 256.9ZM211.5 267.3L207.3 266.7L207.3 256.2L211.5 256.8ZM207.3 266.7L203.5 265.7L203.5 255.2L207.3 256.2Z"/><path class="iso-shade" data-shade="3" d="M203.5 265.7L200.2 264.3L200.2 253.8L203.5 255.2ZM200.2 264.3L197.7 262.6L197.7 252.1L200.2 253.8ZM197.7 262.6L195.9 260.6L195.9 250.1L197.7 252.1ZM195.9 260.6L195.1 258.5L195.1 248L195.9 250.1Z"/><path class="iso-top" d="M231.1 242.4L232.8 244.4L233.6 246.5L233.4 248.7L232.3 250.8L230.3 252.7L227.5 254.3L224 255.6L220 256.5L215.8 256.9L211.5 256.8L207.3 256.2L203.5 255.2L200.2 253.8L197.7 252.1L195.9 250.1L195.1 248L195.3 245.8L196.4 243.7L198.4 241.8L201.2 240.2L204.7 238.9L208.7 238L212.9 237.6L217.2 237.7L221.4 238.3L225.2 239.3L228.5 240.7Z"/><path class="iso-line iso-crease" data-tone="faint" d="M233.6 246.5L233.4 248.7L232.3 250.8L230.3 252.7L227.5 254.3L224 255.6L220 256.5L215.8 256.9L211.5 256.8L207.3 256.2L203.5 255.2L200.2 253.8L197.7 252.1L195.9 250.1L195.1 248"/><path class="iso-line iso-edge" data-tone="mid" d="M195.1 248L195.3 245.8L196.4 243.7L198.4 241.8L201.2 240.2L204.7 238.9L208.7 238L212.9 237.6L217.2 237.7L221.4 238.3L225.2 239.3L228.5 240.7L231.1 242.4L232.8 244.4L233.6 246.5M233.6 257L233.4 259.2L232.3 261.3L230.3 263.2L227.5 264.8L224 266.1L220 267L215.8 267.4L211.5 267.3L207.3 266.7L203.5 265.7L200.2 264.3L197.7 262.6L195.9 260.6L195.1 258.5M233.6 246.5L233.6 257M195.1 248L195.1 258.5"/></g><g class="iso-solid"><path class="iso-fill" d="M218 283.4L218.2 280.6L219.7 277.9L222.3 275.5L225.9 273.3L230.4 271.7L235.6 270.6L241.1 270L246.7 270.1L252.1 270.9L257 272.2L261.3 274L264.6 276.3L266.8 278.8L267.9 281.6L267.9 286.5L267.7 289.3L266.2 292L263.6 294.5L259.9 296.6L255.4 298.3L250.3 299.4L244.8 299.9L239.2 299.8L233.8 299.1L228.8 297.8L224.6 296L221.3 293.7L219 291.1L218 288.4Z"/><path class="iso-shade" data-shade="0" d="M267.9 286.5L267.7 289.3L267.7 284.4L267.9 281.6ZM267.7 289.3L266.2 292L266.2 287.1L267.7 284.4ZM266.2 292L263.6 294.5L263.6 289.5L266.2 287.1ZM263.6 294.5L259.9 296.6L259.9 291.7L263.6 289.5ZM259.9 296.6L255.4 298.3L255.4 293.3L259.9 291.7Z"/><path class="iso-shade" data-shade="1" d="M255.4 298.3L250.3 299.4L250.3 294.4L255.4 293.3ZM250.3 299.4L244.8 299.9L244.8 295L250.3 294.4Z"/><path class="iso-shade" data-shade="2" d="M244.8 299.9L239.2 299.8L239.2 294.9L244.8 295ZM239.2 299.8L233.8 299.1L233.8 294.1L239.2 294.9ZM233.8 299.1L228.8 297.8L228.8 292.8L233.8 294.1Z"/><path class="iso-shade" data-shade="3" d="M228.8 297.8L224.6 296L224.6 291L228.8 292.8ZM224.6 296L221.3 293.7L221.3 288.8L224.6 291ZM221.3 293.7L219 291.1L219 286.2L221.3 288.8ZM219 291.1L218 288.4L218 283.4L219 286.2Z"/><path class="iso-top" d="M264.6 276.3L266.8 278.8L267.9 281.6L267.7 284.4L266.2 287.1L263.6 289.5L259.9 291.7L255.4 293.3L250.3 294.4L244.8 295L239.2 294.9L233.8 294.1L228.8 292.8L224.6 291L221.3 288.8L219 286.2L218 283.4L218.2 280.6L219.7 277.9L222.3 275.5L225.9 273.3L230.4 271.7L235.6 270.6L241.1 270L246.7 270.1L252.1 270.9L257 272.2L261.3 274Z"/><path class="iso-line iso-crease" data-tone="faint" d="M267.9 281.6L267.7 284.4L266.2 287.1L263.6 289.5L259.9 291.7L255.4 293.3L250.3 294.4L244.8 295L239.2 294.9L233.8 294.1L228.8 292.8L224.6 291L221.3 288.8L219 286.2L218 283.4"/><path class="iso-line iso-edge" data-tone="lo" d="M218 283.4L218.2 280.6L219.7 277.9L222.3 275.5L225.9 273.3L230.4 271.7L235.6 270.6L241.1 270L246.7 270.1L252.1 270.9L257 272.2L261.3 274L264.6 276.3L266.8 278.8L267.9 281.6M267.9 286.5L267.7 289.3L266.2 292L263.6 294.5L259.9 296.6L255.4 298.3L250.3 299.4L244.8 299.9L239.2 299.8L233.8 299.1L228.8 297.8L224.6 296L221.3 293.7L219 291.1L218 288.4M267.9 281.6L267.9 286.5M218 283.4L218 288.4"/></g><g class="iso-solid"><path class="iso-fill" d="M223.7 272.7L223.9 270.5L225 268.5L227 266.6L229.8 264.9L233.3 263.6L237.2 262.8L241.5 262.4L245.8 262.4L250 263L253.8 264L257.1 265.4L259.6 267.2L261.4 269.1L262.2 271.3L262.2 281.8L262 283.9L260.9 286L258.9 287.9L256 289.6L252.6 290.9L248.6 291.7L244.4 292.1L240.1 292L235.9 291.5L232.1 290.5L228.8 289.1L226.2 287.3L224.5 285.3L223.7 283.2Z"/><path class="iso-shade" data-shade="0" d="M262.2 281.8L262 283.9L262 273.4L262.2 271.3ZM262 283.9L260.9 286L260.9 275.5L262 273.4ZM260.9 286L258.9 287.9L258.9 277.4L260.9 275.5ZM258.9 287.9L256 289.6L256 279.1L258.9 277.4ZM256 289.6L252.6 290.9L252.6 280.3L256 279.1Z"/><path class="iso-shade" data-shade="1" d="M252.6 290.9L248.6 291.7L248.6 281.2L252.6 280.3ZM248.6 291.7L244.4 292.1L244.4 281.6L248.6 281.2Z"/><path class="iso-shade" data-shade="2" d="M244.4 292.1L240.1 292L240.1 281.5L244.4 281.6ZM240.1 292L235.9 291.5L235.9 281L240.1 281.5ZM235.9 291.5L232.1 290.5L232.1 280L235.9 281Z"/><path class="iso-shade" data-shade="3" d="M232.1 290.5L228.8 289.1L228.8 278.5L232.1 280ZM228.8 289.1L226.2 287.3L226.2 276.8L228.8 278.5ZM226.2 287.3L224.5 285.3L224.5 274.8L226.2 276.8ZM224.5 285.3L223.7 283.2L223.7 272.7L224.5 274.8Z"/><path class="iso-top" d="M259.6 267.2L261.4 269.1L262.2 271.3L262 273.4L260.9 275.5L258.9 277.4L256 279.1L252.6 280.3L248.6 281.2L244.4 281.6L240.1 281.5L235.9 281L232.1 280L228.8 278.5L226.2 276.8L224.5 274.8L223.7 272.7L223.9 270.5L225 268.5L227 266.6L229.8 264.9L233.3 263.6L237.2 262.8L241.5 262.4L245.8 262.4L250 263L253.8 264L257.1 265.4Z"/><path class="iso-line iso-crease" data-tone="faint" d="M262.2 271.3L262 273.4L260.9 275.5L258.9 277.4L256 279.1L252.6 280.3L248.6 281.2L244.4 281.6L240.1 281.5L235.9 281L232.1 280L228.8 278.5L226.2 276.8L224.5 274.8L223.7 272.7"/><path class="iso-line iso-edge" data-tone="mid" d="M223.7 272.7L223.9 270.5L225 268.5L227 266.6L229.8 264.9L233.3 263.6L237.2 262.8L241.5 262.4L245.8 262.4L250 263L253.8 264L257.1 265.4L259.6 267.2L261.4 269.1L262.2 271.3M262.2 281.8L262 283.9L260.9 286L258.9 287.9L256 289.6L252.6 290.9L248.6 291.7L244.4 292.1L240.1 292L235.9 291.5L232.1 290.5L228.8 289.1L226.2 287.3L224.5 285.3L223.7 283.2M262.2 271.3L262.2 281.8M223.7 272.7L223.7 283.2"/></g><g class="iso-solid"><path class="iso-fill" d="M107.8 204.9L108.7 202.2L110.7 199.5L113.6 197.2L117.5 195.1L122 193.5L443.7 100.6L448.8 99.5L454.3 98.8L459.9 98.7L465.4 99.2L470.6 100.2L475.4 101.6L479.5 103.6L482.7 105.8L568.5 180.1L570.8 182.6L572 185.4L572.2 188.2L572.2 219.1L571.3 221.9L569.3 224.5L566.4 226.8L562.5 228.9L558 230.5L236.3 323.4L231.2 324.5L225.7 325.2L220.1 325.3L214.6 324.8L209.4 323.8L204.6 322.4L200.5 320.4L197.3 318.2L111.5 243.9L109.2 241.4L108 238.6L107.8 235.8Z"/><path class="iso-shade" data-shade="0" d="M572.2 219.1L571.3 221.9L571.3 190.9L572.2 188.2ZM571.3 221.9L569.3 224.5L569.3 193.5L571.3 190.9ZM569.3 224.5L566.4 226.8L566.4 195.9L569.3 193.5ZM566.4 226.8L562.5 228.9L562.5 198L566.4 195.9ZM562.5 228.9L558 230.5L558 199.6L562.5 198Z"/><path class="iso-shade" data-shade="1" d="M558 230.5L236.3 323.4L236.3 292.5L558 199.6ZM236.3 323.4L231.2 324.5L231.2 293.6L236.3 292.5ZM231.2 324.5L225.7 325.2L225.7 294.3L231.2 293.6ZM225.7 325.2L220.1 325.3L220.1 294.3L225.7 294.3Z"/><path class="iso-shade" data-shade="2" d="M220.1 325.3L214.6 324.8L214.6 293.9L220.1 294.3ZM214.6 324.8L209.4 323.8L209.4 292.9L214.6 293.9Z"/><path class="iso-shade" data-shade="3" d="M209.4 323.8L204.6 322.4L204.6 291.4L209.4 292.9ZM204.6 322.4L200.5 320.4L200.5 289.5L204.6 291.4ZM200.5 320.4L197.3 318.2L197.3 287.2L200.5 289.5ZM197.3 318.2L111.5 243.9L111.5 213L197.3 287.2ZM111.5 243.9L109.2 241.4L109.2 210.4L111.5 213ZM109.2 241.4L108 238.6L108 207.7L109.2 210.4ZM108 238.6L107.8 235.8L107.8 204.9L108 207.7Z"/><path class="iso-top" d="M443.7 100.6L448.8 99.5L454.3 98.8L459.9 98.7L465.4 99.2L470.6 100.2L475.4 101.6L479.5 103.6L482.7 105.8L568.5 180.1L570.8 182.6L572 185.4L572.2 188.2L571.3 190.9L569.3 193.5L566.4 195.9L562.5 198L558 199.6L236.3 292.5L231.2 293.6L225.7 294.3L220.1 294.3L214.6 293.9L209.4 292.9L204.6 291.4L200.5 289.5L197.3 287.2L111.5 213L109.2 210.4L108 207.7L107.8 204.9L108.7 202.2L110.7 199.5L113.6 197.2L117.5 195.1L122 193.5Z"/><path class="iso-line iso-crease" data-tone="faint" d="M572.2 188.2L571.3 190.9L569.3 193.5L566.4 195.9L562.5 198L558 199.6L236.3 292.5L231.2 293.6L225.7 294.3L220.1 294.3L214.6 293.9L209.4 292.9L204.6 291.4L200.5 289.5L197.3 287.2L111.5 213L109.2 210.4L108 207.7L107.8 204.9"/><path class="iso-line iso-bevel" data-tone="faint" d="M572.2 188.2L565.8 190.2L564.2 192.3L561.8 194.2L558.8 195.8L554.9 197.2L233.7 289.9L229.4 290.9L225 291.4L220.5 291.5L216.1 291.1L211.9 290.3L208.1 289.2L204.8 287.6L202.1 285.7L116.6 211.7L114.6 209.5L113.6 207.3L107.8 204.9"/><path class="iso-line" data-tone="faint" d="M572.2 200.5L571.3 203.3L569.3 205.9L566.4 208.3L562.5 210.3L558 212L236.3 304.8L231.2 306L225.7 306.6L220.1 306.7L214.6 306.3L209.4 305.3L204.6 303.8L200.5 301.9L197.3 299.6L111.5 225.4L109.2 222.8L108 220.1L107.8 217.3"/><path class="iso-line iso-edge" data-tone="mid" d="M107.8 204.9L108.7 202.2L110.7 199.5L113.6 197.2L117.5 195.1L122 193.5L443.7 100.6L448.8 99.5L454.3 98.8L459.9 98.7L465.4 99.2L470.6 100.2L475.4 101.6L479.5 103.6L482.7 105.8L568.5 180.1L570.8 182.6L572 185.4L572.2 188.2M572.2 219.1L571.3 221.9L569.3 224.5L566.4 226.8L562.5 228.9L558 230.5L236.3 323.4L231.2 324.5L225.7 325.2L220.1 325.3L214.6 324.8L209.4 323.8L204.6 322.4L200.5 320.4L197.3 318.2L111.5 243.9L109.2 241.4L108 238.6L107.8 235.8M572.2 188.2L572.2 219.1M107.8 204.9L107.8 235.8"/></g><path class="iso-line" data-tone="lo" d="M452.6 108.3L454.5 107.9L456.6 107.7L458.7 107.6L460.8 107.8L462.7 108.2L464.5 108.7L466 109.5L467.3 110.3L553 184.5L553.9 185.5L554.3 186.5L554.4 187.6L554.1 188.6L553.3 189.6L552.2 190.5L550.8 191.2L549.1 191.9L227.4 284.7L225.5 285.2L223.4 285.4L221.3 285.4L219.2 285.3L217.3 284.9L215.5 284.3L214 283.6L212.7 282.8L127 208.5L126.1 207.6L125.7 206.5L125.6 205.5L125.9 204.5L126.7 203.5L127.8 202.6L129.2 201.8L130.9 201.2Z"/><path class="iso-line" data-tone="lo" d="M152.9 205.2L153.8 206.6L153.6 208.2L152.3 209.5L150 210.6L147.1 211.1L144 211L141.3 210.3L139.2 209.1L138.3 207.7L138.5 206.1L139.8 204.8L142.1 203.8L145 203.3L148.1 203.4L150.8 204ZM462.2 115.9L463.2 117.3L463 118.9L461.6 120.3L459.3 121.3L456.4 121.8L453.3 121.7L450.6 121L448.6 119.8L447.6 118.4L447.8 116.8L449.1 115.5L451.4 114.5L454.3 114L457.4 114.1L460.2 114.7ZM231.4 273.2L232.4 274.7L232.2 276.2L230.9 277.6L228.6 278.6L225.7 279.1L222.6 279L219.8 278.3L217.8 277.2L216.8 275.7L217 274.2L218.4 272.8L220.7 271.8L223.6 271.3L226.7 271.4L229.4 272.1ZM540.8 183.9L541.7 185.4L541.5 186.9L540.2 188.3L537.9 189.3L535 189.8L531.9 189.7L529.2 189L527.1 187.9L526.2 186.4L526.4 184.9L527.7 183.5L530 182.5L532.9 182L536 182.1L538.7 182.8Z"/><g class="iso-dots" data-tone="mid"><circle cx="146.1" cy="207.2" r="0.5"/><circle cx="455.4" cy="117.9" r="0.5"/><circle cx="224.6" cy="275.2" r="0.5"/><circle cx="533.9" cy="185.9" r="0.5"/></g><g class="rc-live"></g></svg></div><div class="mv-controls" role="group" aria-label="Figure mode"><button type="button" disabled data-act="explore">Explore</button><button type="button" disabled data-act="compare">Compare</button><button type="button" disabled data-act="quiz">Recognise</button><button type="button" disabled data-act="prev">Previous</button><button type="button" disabled data-act="next">Next</button><button type="button" disabled data-act="mounted" aria-pressed="false">Show fitted</button></div><p class="rc-prompt" aria-live="polite"></p><div class="ra-compare" hidden><p>The 5 fittings side by side: tap one to see it.</p><ul><li><button type="button" disabled data-fit="ecrou" aria-pressed="false"><strong>Flare nut</strong><span><em>Thread</em> Female (threaded inside), open at both ends</span><span><em>Function</em> Press the flared tube onto a male cone</span><span><em>Key feature</em> Goes onto the tube before flaring</span></button></li><li><button type="button" disabled data-fit="union" aria-pressed="false"><strong>Flare union (male / male)</strong><span><em>Thread</em> Male / male: two threaded cones</span><span><em>Function</em> Join two flared tubes and stay removable</span><span><em>Key feature</em> Two male cones and a hexagon in the middle</span></button></li><li><button type="button" disabled data-fit="reduction" aria-pressed="false"><strong>Flare reducer</strong><span><em>Thread</em> Female nut (large side) / male cone (small side)</span><span><em>Function</em> Change diameter</span><span><em>Key feature</em> A nut on one side, a smaller cone on the other</span></button></li><li><button type="button" disabled data-fit="te" aria-pressed="false"><strong>Access tee</strong><span><em>Thread</em> Three male cones, one of them the valve access</span><span><em>Function</em> Provide a pressure access point on the circuit</span><span><em>Key feature</em> One way fitted with a valve core and a cap</span></button></li><li><button type="button" disabled data-fit="bouchon" aria-pressed="false"><strong>Flare cap (bonnet)</strong><span><em>Thread</em> Female, solid end</span><span><em>Function</em> Close an outlet or an access point</span><span><em>Key feature</em> A closed nut, with no way through</span></button></li></ul></div><div class="rc-quiz" hidden><div class="mv-controls rc-options" role="group" aria-label="Possible answers"></div><div class="mv-controls"><button type="button" disabled data-act="again">Next situation</button><button type="button" disabled data-act="series">New series</button></div></div><p class="mv-feedback" aria-live="polite"></p><p class="mv-score" aria-live="polite"></p></div><figcaption class="iso-legend"><span class="iso-keys"><span class="iso-key"><svg class="iso-swatch" data-mark="raised" viewBox="0 0 16 10" aria-hidden="true"><path d="M2 4.5 8 1.5 14 4.5 14 6 8 9 2 6Z"/><path class="iso-swatch-crease" d="M2 4.5 8 7.5 14 4.5"/></svg>Brass fitting: threaded cones, hexagons, nuts</span><span class="iso-key"><svg class="iso-swatch" data-mark="lit" viewBox="0 0 16 10" aria-hidden="true"><path d="M2 4.5 8 1.5 14 4.5 14 6 8 9 2 6Z"/><path class="iso-swatch-crease" d="M2 4.5 8 7.5 14 4.5"/></svg>Marks: M male cone, F female nut, V valve core</span></span><span class="iso-caption">Flare fitting (&lt;span lang=&quot;fr&quot;&gt;dudgeon&lt;/span&gt;): the copper tube is flared, and the nut (female) presses the flared face onto the threaded cone (male). The seal comes from the two cones in contact, never from tape or hemp. The nut goes on before flaring; tighten with two spanners, one as a backup. The access tee carries a valve core that the manifold hose opens as it is screwed on; a sealed cap closes it again. Nothing is recorded.</span></figcaption></figure></main><script type="module">const AZIMUTH = 45;
+const ELEVATION = 30;
+const SHADES = 4;
+const RADIANS = Math.PI / 180;
+const UNIT = Math.sqrt(1.6);
+function cameraOf({ scale, azimuth = AZIMUTH, elevation = ELEVATION }) {
+    const a = azimuth * RADIANS;
+    const e = elevation * RADIANS;
+    return { sinA: Math.sin(a), cosA: Math.cos(a), sinE: Math.sin(e), cosE: Math.cos(e), k: scale * UNIT };
+}
+function iso([x, y, z], projection) {
+    const { origin } = projection;
+    const { sinA, cosA, sinE, cosE, k } = cameraOf(projection);
+    return [origin[0] + (x * sinA - y * cosA) * k, origin[1] + ((x * cosA + y * sinA) * sinE - z * cosE) * k];
+}
+function towardViewer(projection) {
+    const { sinA, cosA } = cameraOf(projection);
+    return [cosA, sinA];
+}
+function depthOf([x, y, z], projection) {
+    const { sinA, cosA, sinE, cosE } = cameraOf(projection);
+    return (x * cosA + y * sinA) * cosE + z * sinE;
+}
+const tenth = (value) => {
+    const text = (Math.round(value * 10) / 10).toFixed(1).replace(/\.0$/, "");
+    return text === "-0" ? "0" : text;
+};
+function pathOf(points, closed = false) {
+    if (!points.length)
+        return "";
+    return points.map(([x, y], at) => `${at ? "L" : "M"}${tenth(x)} ${tenth(y)}`).join("") + (closed ? "Z" : "");
+}
+const joinPaths = (paths) => paths.filter(Boolean).join("");
+function roundedPlan({ x, y, w, d, r }, steps = 8) {
+    const radius = Math.max(0, Math.min(r, w / 2, d / 2));
+    const corners = [
+        [x + w - radius, y + radius, -90],
+        [x + w - radius, y + d - radius, 0],
+        [x + radius, y + d - radius, 90],
+        [x + radius, y + radius, 180],
+    ];
+    const out = [];
+    for (const [cx, cy, start] of corners) {
+        const count = radius > 0 ? steps : 0;
+        for (let step = 0; step <= count; step++) {
+            const angle = (start + (count ? (90 * step) / count : 45)) * RADIANS;
+            out.push([cx + radius * Math.cos(angle), cy + radius * Math.sin(angle)]);
+        }
+    }
+    return out;
+}
+function signedArea(points) {
+    let area = 0;
+    for (let index = 0; index < points.length; index++) {
+        const [ax, ay] = points[index];
+        const [bx, by] = points[(index + 1) % points.length];
+        area += ax * by - bx * ay;
+    }
+    return area / 2;
+}
+const oriented = (points) => (signedArea(points) < 0 ? [...points].reverse() : points);
+function convexHull(points) {
+    const sorted = [...points].sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+    if (sorted.length < 3)
+        return sorted;
+    const cross = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+    const lower = [];
+    for (const point of sorted) {
+        while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], point) <= 0)
+            lower.pop();
+        lower.push(point);
+    }
+    const upper = [];
+    for (let index = sorted.length - 1; index >= 0; index--) {
+        const point = sorted[index];
+        while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], point) <= 0)
+            upper.pop();
+        upper.push(point);
+    }
+    return [...lower.slice(0, -1), ...upper.slice(0, -1)];
+}
+function runsOf(flags, want) {
+    const count = flags.length;
+    const runs = [];
+    const start = flags.findIndex((flag, index) => flag !== flags[(index + count - 1) % count]);
+    if (start < 0)
+        return flags[0] === want ? [Array.from({ length: count + 1 }, (_, index) => index % count)] : [];
+    let run = null;
+    for (let step = 0; step < count; step++) {
+        const index = (start + step) % count;
+        if (flags[index] === want) {
+            if (!run)
+                run = [index];
+            run.push((index + 1) % count);
+        }
+        else if (run) {
+            runs.push(run);
+            run = null;
+        }
+    }
+    if (run)
+        runs.push(run);
+    return runs;
+}
+function extrude(ring, z, height, projection, options = {}) {
+    const convex = options.convex ?? true;
+    const count = ring.length;
+    const counter = signedArea(ring) > 0;
+    const [vx, vy] = towardViewer(projection);
+    const { sinA, cosA } = cameraOf(projection);
+    const normals = ring.map(([ax, ay], index) => {
+        const [bx, by] = ring[(index + 1) % count];
+        const dx = bx - ax;
+        const dy = by - ay;
+        const length = Math.hypot(dx, dy) || 1;
+        return (counter ? [dy / length, -dx / length] : [-dy / length, dx / length]);
+    });
+    const facing = normals.map(([nx, ny]) => nx * vx + ny * vy > 1e-9);
+    const top = ring.map(([x, y]) => iso([x, y, z + height], projection));
+    const bottom = ring.map(([x, y]) => iso([x, y, z], projection));
+    const outline = [];
+    const crease = [];
+    for (const run of runsOf(facing, false))
+        outline.push(pathOf(run.map((index) => top[index])));
+    for (const run of runsOf(facing, true)) {
+        crease.push(pathOf(run.map((index) => top[index])));
+        if (height > 0)
+            outline.push(pathOf(run.map((index) => bottom[index])));
+    }
+    if (height > 0) {
+        for (let index = 0; index < count; index++) {
+            if (facing[(index + count - 1) % count] !== facing[index])
+                outline.push(pathOf([top[index], bottom[index]]));
+        }
+    }
+    let fill;
+    if (convex) {
+        fill = pathOf(convexHull([...top, ...bottom]), true);
+    }
+    else {
+        const parts = [pathOf(oriented(top), true), pathOf(oriented(bottom), true)];
+        for (let index = 0; index < count; index++) {
+            if (!facing[index])
+                continue;
+            const next = (index + 1) % count;
+            parts.push(pathOf(oriented([top[index], top[next], bottom[next], bottom[index]]), true));
+        }
+        fill = parts.join("");
+    }
+    const buckets = Array.from({ length: SHADES }, () => []);
+    if (height > 0) {
+        const [lx, ly] = [-sinA, cosA];
+        for (let index = 0; index < count; index++) {
+            if (!facing[index])
+                continue;
+            const [nx, ny] = normals[index];
+            const lit = (nx * lx + ny * ly + 1) / 2;
+            const shade = Math.min(SHADES - 1, Math.max(0, Math.floor(lit * SHADES)));
+            const next = (index + 1) % count;
+            buckets[shade].push(pathOf(oriented([top[index], top[next], bottom[next], bottom[index]]), true));
+        }
+    }
+    let bevel;
+    if (options.bevel && options.bevel > 0) {
+        const by = options.bevel;
+        const inset = ring.map(([x, y], index) => {
+            const [ax, ay] = normals[(index + count - 1) % count];
+            const [bx, by2] = normals[index];
+            const mx = ax + bx;
+            const my = ay + by2;
+            const length = Math.hypot(mx, my) || 1;
+            return [x - (mx / length) * by, y - (my / length) * by];
+        });
+        const insetTop = inset.map(([x, y]) => iso([x, y, z + height], projection));
+        bevel = runsOf(facing, true)
+            .map((run) => pathOf([top[run[0]], ...run.slice(1, -1).map((index) => insetTop[index]), top[run[run.length - 1]]]))
+            .join("");
+    }
+    return {
+        fill,
+        outline: outline.join(""),
+        crease: crease.join(""),
+        top: pathOf(oriented(top), true),
+        shades: buckets.map((paths) => paths.join("")),
+        bevel,
+    };
+}
+const ringOf = (plan, steps = 8) => roundedPlan(plan, steps);
+function slabOf(plan, z, height, projection, steps = 8, bevel = 0) {
+    return extrude(ringOf(plan, steps), z, height, projection, { convex: true, bevel });
+}
+function circleRing(cx, cy, radius, steps = 40) {
+    return Array.from({ length: steps }, (_, step) => {
+        const angle = (step / steps) * Math.PI * 2;
+        return [cx + radius * Math.cos(angle), cy + radius * Math.sin(angle)];
+    });
+}
+function cylinder(cx, cy, radius, z, height, projection, steps = 32, bevel = 0) {
+    return extrude(circleRing(cx, cy, radius, steps), z, height, projection, { convex: true, bevel });
+}
+const insetPlan = ({ x, y, w, d, r }, by) => ({ x: x + by, y: y + by, w: w - by * 2, d: d - by * 2, r: Math.max(0, r - by) });
+function onTop(points, z, projection, closed = false) {
+    return pathOf(points.map(([x, y]) => iso([x, y, z], projection)), closed);
+}
+const planOutline = (plan, z, projection, steps = 8) => onTop(ringOf(plan, steps), z, projection, true);
+const lineOnTop = (from, to, z, projection) => onTop([from, to], z, projection);
+const segment = (from, to, projection) => pathOf([iso(from, projection), iso(to, projection)]);
+const rise = (at, from, to, projection) => segment([at[0], at[1], from], [at[0], at[1], to], projection);
+const ring = (cx, cy, radius, z, projection, steps = 40) => onTop(circleRing(cx, cy, radius, steps), z, projection, true);
+const pointsAt = (points, projection) => points.map((point) => iso(point, projection));
+function dotGrid(x, y, columns, rows, gap, z, projection) {
+    const dots = [];
+    for (let row = 0; row < rows; row++) {
+        for (let column = 0; column < columns; column++)
+            dots.push(iso([x + column * gap, y + row * gap, z], projection));
+    }
+    return dots;
+}
+function corners({ x, y, w, d }, inset = 0) {
+    return [
+        [x + inset, y + inset],
+        [x + w - inset, y + inset],
+        [x + inset, y + d - inset],
+        [x + w - inset, y + d - inset],
+    ];
+}
+function boxCorners({ x, y, w, d }, z0, z1) {
+    const out = [];
+    for (const px of [x, x + w])
+        for (const py of [y, y + d])
+            for (const z of [z0, z1])
+                out.push([px, py, z]);
+    return out;
+}
+function knurl(cx, cy, radius, z0, z1, count, projection, inset = 0.4) {
+    const [vx, vy] = towardViewer(projection);
+    const lines = [];
+    for (let index = 0; index < count; index++) {
+        const angle = (index / count) * Math.PI * 2;
+        const nx = Math.cos(angle);
+        const ny = Math.sin(angle);
+        if (nx * vx + ny * vy < 0.15)
+            continue;
+        lines.push(segment([cx + radius * nx, cy + radius * ny, z0 + inset], [cx + radius * nx, cy + radius * ny, z1 - inset], projection));
+    }
+    return lines.join("");
+}
+function sideArc(cx, cy, radius, z, projection, steps = 24) {
+    const [vx, vy] = towardViewer(projection);
+    const facing = Math.atan2(vy, vx);
+    const points = [];
+    for (let step = 0; step <= steps; step++) {
+        const angle = facing - Math.PI / 2 + (step / steps) * Math.PI;
+        points.push(iso([cx + radius * Math.cos(angle), cy + radius * Math.sin(angle), z], projection));
+    }
+    return pathOf(points);
+}
+function ringSeam(ring, z, projection) {
+    const count = ring.length;
+    const counter = signedArea(ring) > 0;
+    const [vx, vy] = towardViewer(projection);
+    const facing = ring.map(([ax, ay], index) => {
+        const [bx, by] = ring[(index + 1) % count];
+        const dx = bx - ax;
+        const dy = by - ay;
+        const [nx, ny] = counter ? [dy, -dx] : [-dy, dx];
+        return nx * vx + ny * vy > 1e-9;
+    });
+    return runsOf(facing, true).map((run) => pathOf(run.map((index) => iso([ring[index][0], ring[index][1], z], projection)))).join("");
+}
+const sideSeam = (plan, z, projection, steps = 8) => ringSeam(ringOf(plan, steps), z, projection);
+function sideRing(center, radius, axis, projection, steps = 20) {
+    const [px, py, pz] = center;
+    const points = [];
+    for (let step = 0; step < steps; step++) {
+        const angle = (step / steps) * Math.PI * 2;
+        const u = radius * Math.cos(angle);
+        const v = radius * Math.sin(angle);
+        points.push(iso(axis === "x" ? [px, py + u, pz + v] : [px + u, py, pz + v], projection));
+    }
+    return pathOf(points, true);
+}
+function coil(from, to, center, radius, turns, axis, projection, perTurn = 16) {
+    const count = Math.max(1, Math.round(turns * perTurn));
+    const back = [];
+    const front = [];
+    let run = [];
+    let near = null;
+    for (let index = 0; index <= count; index++) {
+        const share = index / count;
+        const angle = share * turns * Math.PI * 2;
+        const u = radius * Math.cos(angle);
+        const v = radius * Math.sin(angle);
+        const along = from + (to - from) * share;
+        const point = axis === "x" ? [along, center[0] + u, center[1] + v] : [center[0] + u, along, center[1] + v];
+        const normal = axis === "x" ? [0, Math.cos(angle), Math.sin(angle)] : [Math.cos(angle), 0, Math.sin(angle)];
+        const facing = depthOf(normal, projection) > 0;
+        const flat = iso(point, projection);
+        if (near === null)
+            near = facing;
+        if (facing !== near) {
+            run.push(flat);
+            (near ? front : back).push(pathOf(run));
+            run = [flat];
+            near = facing;
+            continue;
+        }
+        run.push(flat);
+    }
+    if (run.length > 1)
+        (near ? front : back).push(pathOf(run));
+    return { back: back.join(""), front: front.join("") };
+}
+function topTicks(from, to, step, every, edge, z, lengths, projection, axis = "x") {
+    const minor = [];
+    const major = [];
+    const first = Math.ceil(from / step) * step;
+    for (let at = first, index = Math.round(first / step); at <= to + 1e-9; at += step, index++) {
+        const big = index % every === 0;
+        const length = big ? lengths[1] : lengths[0];
+        const a = axis === "x" ? [at, edge] : [edge, at];
+        const b = axis === "x" ? [at, edge + length] : [edge + length, at];
+        (big ? major : minor).push(lineOnTop(a, b, z, projection));
+    }
+    return { minor: minor.join(""), major: major.join("") };
+}
+function sideTicks(from, to, step, every, face, top, lengths, projection, axis = "x") {
+    const minor = [];
+    const major = [];
+    const first = Math.ceil(from / step) * step;
+    for (let at = first, index = Math.round(first / step); at <= to + 1e-9; at += step, index++) {
+        const big = index % every === 0;
+        const length = big ? lengths[1] : lengths[0];
+        const a = axis === "x" ? [at, face, top] : [face, at, top];
+        const b = axis === "x" ? [at, face, top - length] : [face, at, top - length];
+        (big ? major : minor).push(segment(a, b, projection));
+    }
+    return { minor: minor.join(""), major: major.join("") };
+}
+function radialTicks(cx, cy, radius, count, every, z, lengths, projection, from = 0, span = Math.PI * 2) {
+    const minor = [];
+    const major = [];
+    const closed = Math.abs(span - Math.PI * 2) < 1e-9;
+    const steps = closed ? count : count + 1;
+    for (let index = 0; index < steps; index++) {
+        const angle = from + (index / count) * span;
+        const big = index % every === 0;
+        const inner = radius - (big ? lengths[1] : lengths[0]);
+        const sx = Math.sin(angle);
+        const sy = -Math.cos(angle);
+        (big ? major : minor).push(lineOnTop([cx + sx * inner, cy + sy * inner], [cx + sx * radius, cy + sy * radius], z, projection));
+    }
+    return { minor: minor.join(""), major: major.join("") };
+}
+const haloOf = (plan, z, height, projection) => slabOf(plan, z, height, projection).fill;
+function axisVector(projection, [dx, dy, dz]) {
+    const origin = iso([0, 0, 0], projection);
+    const moved = iso([dx, dy, dz], projection);
+    return [moved[0] - origin[0], moved[1] - origin[1]];
+}
+const fine = (value) => Math.round(value * 100) / 100;
+function translateAlong(projection, by) {
+    const [x, y] = axisVector(projection, by);
+    return `translate(${fine(x)} ${fine(y)})`;
+}
+const thousandth = (value) => Math.round(value * 1000) / 1000;
+function axesAt(at, z, projection) {
+    const origin = iso([at[0], at[1], z], projection);
+    const along = (point) => {
+        const [px, py] = iso(point, projection);
+        return [px - origin[0], py - origin[1]];
+    };
+    return { origin, x: along([at[0] + 1, at[1], z]), y: along([at[0], at[1] + 1, z]), z: along([at[0], at[1], z + 1]) };
+}
+const matrixOf = (u, v, origin) => `matrix(${thousandth(u[0])} ${thousandth(u[1])} ${thousandth(v[0])} ${thousandth(v[1])} ${thousandth(origin[0])} ${thousandth(origin[1])})`;
+function holdStill(element, [dx, dy]) {
+    const text = dx || dy ? `translate(${-dx} ${-dy})` : "";
+    element.querySelectorAll("[data-hold]").forEach((node) => (text ? node.setAttribute("transform", text) : node.removeAttribute("transform")));
+}
+function topMatrix(at, z, projection, along = "x") {
+    const { origin, x, y } = axesAt(at, z, projection);
+    return along === "x" ? matrixOf(x, y, origin) : matrixOf([-y[0], -y[1]], x, origin);
+}
+function sideMatrix(at, z, projection, face) {
+    const { origin, x, y, z: up } = axesAt(at, z, projection);
+    const down = [-up[0], -up[1]];
+    return face === "left" ? matrixOf(x, down, origin) : matrixOf([-y[0], -y[1]], down, origin);
+}
+function screenRise(height, projection) {
+    const { cosE, k } = cameraOf(projection);
+    return height * cosE * k;
+}
+function fitProjection(points, width, height, { pad = 24, headroom = 0, azimuth = AZIMUTH, elevation = ELEVATION } = {}) {
+    const unit = { origin: [0, 0], scale: 1, azimuth, elevation };
+    const flat = points.map((point) => iso(point, unit));
+    const xs = flat.map(([x]) => x);
+    const ys = flat.map(([, y]) => y);
+    const left = Math.min(...xs);
+    const right = Math.max(...xs);
+    const up = Math.min(...ys);
+    const down = Math.max(...ys);
+    const scale = Math.min((width - pad * 2) / (right - left), (height - pad * 2 - headroom) / (down - up));
+    return {
+        origin: [width / 2 - ((left + right) / 2) * scale, headroom + (height - headroom) / 2 - ((up + down) / 2) * scale],
+        scale,
+        azimuth,
+        elevation,
+    };
+}
+const escape = (text) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const attrs = (pairs) => Object.entries(pairs)
+    .filter(([, value]) => value !== undefined && value !== false)
+    .map(([key, value]) => ` ${key}="${escape(String(value))}"`)
+    .join("");
+function solidSvg(paths, { tone = "hi", crease = "faint", halo = false, lit = false, flat = false, className, inner = "" } = {}) {
+    const parts = [];
+    if (halo)
+        parts.push(`<path class="iso-halo" d="${paths.fill}"/>`);
+    parts.push(`<path class="iso-fill" d="${paths.fill}"/>`);
+    if (!flat) {
+        paths.shades.forEach((d, shade) => {
+            if (d)
+                parts.push(`<path class="iso-shade" data-shade="${shade}" d="${d}"/>`);
+        });
+        parts.push(`<path class="iso-top" d="${paths.top}"/>`);
+    }
+    if (crease !== "none" && paths.crease)
+        parts.push(`<path class="iso-line iso-crease" data-tone="${crease}" d="${paths.crease}"/>`);
+    if (crease !== "none" && paths.bevel)
+        parts.push(`<path class="iso-line iso-bevel" data-tone="${crease}" d="${paths.bevel}"/>`);
+    if (inner)
+        parts.push(inner);
+    parts.push(`<path class="iso-line iso-edge" data-tone="${tone}" d="${paths.outline}"/>`);
+    return `<g${attrs({ class: className ? `iso-solid ${className}` : "iso-solid", "data-lit": lit ? "" : undefined, "data-seamless": paths.seamless ? "" : undefined })}>${parts.join("")}</g>`;
+}
+function lineSvg(d, { tone = "lo", dotted = false, dashed = false, flow = false, className, free } = {}) {
+    if (!d)
+        return "";
+    return `<path${attrs({
+        class: className ? `iso-line ${className}` : "iso-line",
+        "data-tone": tone,
+        "data-free": free === true ? "" : free || undefined,
+        "data-dotted": dotted ? "" : undefined,
+        "data-dashed": dashed ? "" : undefined,
+        "data-flow": flow ? "" : undefined,
+        d,
+    })}/>`;
+}
+function dotsSvg(points, { size = 0.5, tone = "mid", pulse = false } = {}) {
+    const dots = points
+        .map(([x, y, alpha], index) => `<circle cx="${tenth(x)}" cy="${tenth(y)}" r="${size}"${alpha !== undefined && alpha < 1 ? ` fill-opacity="${Math.max(0, alpha).toFixed(2)}"` : ""}${pulse ? ` data-pulse="" style="--pulse-at:${(index * 137) % 1600}ms"` : ""}/>`)
+        .join("");
+    return `<g class="iso-dots" data-tone="${tone}">${dots}</g>`;
+}
+function fadedSvg(list, style = {}) {
+    const groups = new Map();
+    for (const entry of list) {
+        const [d, alpha] = Array.isArray(entry) ? entry : [entry.d, entry.alpha];
+        if (!d || !(alpha > 0.02))
+            continue;
+        const level = Math.min(1, Math.round(alpha * 20) / 20);
+        groups.set(level, (groups.get(level) ?? "") + d);
+    }
+    return [...groups].map(([alpha, d]) => (alpha >= 1 ? lineSvg(d, style) : `<g opacity="${alpha.toFixed(2)}">${lineSvg(d, style)}</g>`)).join("");
+}
+function fadeLineSvg(points, { fade = [0, 0], tone = "lo", className, stops = 6 } = {}) {
+    if (points.length < 2)
+        return "";
+    const ease = (t) => t * t * (3 - 2 * t);
+    const hashOf = (text) => {
+        let hash = 2166136261;
+        for (let index = 0; index < text.length; index++)
+            hash = Math.imul(hash ^ text.charCodeAt(index), 16777619);
+        return (hash >>> 0).toString(36);
+    };
+    const lengths = [0];
+    for (let index = 1; index < points.length; index++)
+        lengths.push(lengths[index - 1] + Math.hypot(points[index][0] - points[index - 1][0], points[index][1] - points[index - 1][1]));
+    const at = (length) => {
+        let index = 1;
+        while (index < points.length - 1 && lengths[index] < length)
+            index++;
+        const span = lengths[index] - lengths[index - 1] || 1;
+        const t = Math.max(0, Math.min(1, (length - lengths[index - 1]) / span));
+        return [points[index - 1][0] + (points[index][0] - points[index - 1][0]) * t, points[index - 1][1] + (points[index][1] - points[index - 1][1]) * t];
+    };
+    const pieceOf = (from, to) => [at(from), ...points.filter((_, index) => lengths[index] > from + 1e-6 && lengths[index] < to - 1e-6), at(to)];
+    const total = lengths[lengths.length - 1];
+    if (total < 1e-6)
+        return "";
+    let [start, end] = Array.isArray(fade) ? fade : [fade, fade];
+    if (start + end > total) {
+        const share = total / (start + end);
+        start *= share;
+        end *= share;
+    }
+    const paint = `var(--anatomy-${tone})`;
+    const ramp = (piece, rising) => {
+        const d = pathOf(piece);
+        const [x1, y1] = piece[0];
+        const [x2, y2] = piece[piece.length - 1];
+        const id = `iso-fade-${hashOf(`${d}|${tone}|${rising}`)}`;
+        const marks = Array.from({ length: stops + 1 }, (_, index) => {
+            const t = index / stops;
+            const alpha = ease(rising ? t : 1 - t);
+            return `<stop offset="${t.toFixed(3)}" stop-opacity="${alpha.toFixed(3)}" style="stop-color:${paint}"/>`;
+        }).join("");
+        const gradient = `<linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="${tenth(x1)}" y1="${tenth(y1)}" x2="${tenth(x2)}" y2="${tenth(y2)}">${marks}</linearGradient>`;
+        return `<defs>${gradient}</defs><path${attrs({ class: className ? `iso-line ${className}` : "iso-line", "data-tone": tone, "data-free": rising ? "start" : "end", d, style: `stroke:url(#${id})` })}/>`;
+    };
+    const parts = [];
+    if (start > 0.05)
+        parts.push(ramp(pieceOf(0, start), true));
+    if (total - end - start > 0.05)
+        parts.push(lineSvg(pathOf(pieceOf(start, total - end)), { tone, className }));
+    if (end > 0.05)
+        parts.push(ramp(pieceOf(total - end, total), false));
+    return `<g class="iso-fade">${parts.join("")}</g>`;
+}
+function wireSvg(from, to, { via = [], tone = "lo", dotted = false, dashed = false, flow = false, ends = "both", size = 1.2 } = {}) {
+    const d = pathOf([from, ...via, to]);
+    const end = ([x, y]) => `<circle class="iso-wire-end" cx="${tenth(x)}" cy="${tenth(y)}" r="${size}"/>`;
+    return `<g class="iso-wire" data-tone="${tone}">${lineSvg(d, { tone, dotted, dashed, flow })}${ends === "both" || ends === "from" ? end(from) : ""}${ends === "both" || ends === "to" ? end(to) : ""}</g>`;
+}
+function faceTextSvg(transform, text, { size = 3, tone = "mid", anchor = "start" } = {}) {
+    return `<text class="iso-face-text" data-tone="${tone}" transform="${transform}" font-size="${size}" text-anchor="${anchor}">${escape(text)}</text>`;
+}
+function groupSvg(children, extra = {}) {
+    return `<g${attrs(extra)}>${Array.isArray(children) ? children.join("") : children}</g>`;
+}
+function figureSvg({ width, height, label, body, standalone = false, className }) {
+    const style = standalone ? `<style>${ISO_CSS}</style>` : "";
+    return `<svg${attrs({
+        xmlns: "http://www.w3.org/2000/svg",
+        class: `iso-svg${standalone ? " iso" : ""}${className ? ` ${className}` : ""}`,
+        "data-theme": standalone || undefined,
+        viewBox: `0 0 ${width} ${height}`,
+        role: "img",
+        "aria-label": label,
+    })}>${style}${Array.isArray(body) ? body.join("") : body}</svg>`;
+}
+function swatchSvg(mark) {
+    if (mark === "raised" || mark === "flat" || mark === "lit") {
+        const body = mark === "flat" ? "M2 6.5 8 3.5 14 6.5 8 9.5Z" : "M2 4.5 8 1.5 14 4.5 14 6 8 9 2 6Z";
+        const crease = mark === "flat" ? "" : `<path class="iso-swatch-crease" d="M2 4.5 8 7.5 14 4.5"/>`;
+        return `<svg class="iso-swatch" data-mark="${mark}" viewBox="0 0 16 10" aria-hidden="true"><path d="${body}"/>${crease}</svg>`;
+    }
+    return `<svg class="iso-swatch" data-mark="${mark}" viewBox="0 0 16 10" aria-hidden="true"><path d="M1.5 5h13"/></svg>`;
+}
+function plateHtml({ fig, title, hint, readout = "", keys = [], caption, body }) {
+    const corner = (name, text, extra = "") => `<span class="iso-plate-corner" data-corner="${name}"${extra}>${escape(text)}</span>`;
+    const legend = keys.length || caption
+        ? `<figcaption class="iso-legend">${keys.length ? `<span class="iso-keys">${keys.map((key) => `<span class="iso-key">${swatchSvg(key.mark)}${escape(key.label)}</span>`).join("")}</span>` : ""}${caption ? `<span class="iso-caption">${escape(caption)}</span>` : ""}</figcaption>`
+        : "";
+    return `<figure class="iso-figure"><div class="iso-plate"><div class="iso-plate-corners" aria-hidden="true">${corner("fig", fig)}${title ? corner("title", title) : ""}${hint ? corner("hint", hint) : ""}${corner("readout", readout, " data-readout")}</div>${body}</div>${legend}</figure>`;
+}
+function pageHtml({ title, theme = "dark", body, script = "", width = 650 }) {
+    return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escape(title)}</title><style>${ISO_CSS}${PAGE_CSS.replace("__WIDTH__", String(width))}</style></head><body class="iso" data-theme="${theme}"><main class="iso-page">${body}</main>${script ? `<script type="module">${script.replace(/<\/(script)/gi, "<\\/$1")}<\/script>` : ""}</body></html>`;
+}
+const PAGE_CSS = `
+*{box-sizing:border-box}
+html{color-scheme:dark}
+body[data-theme="light"]{color-scheme:light}
+body{margin:0;background:var(--anatomy-page);color:var(--anatomy-text);font:14px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.iso-page{width:min(__WIDTH__px,100% - 32px);margin:64px auto 96px}
+`;
+const ISO_CSS = `
+.iso{
+  --anatomy-page:#0b0b0b;--anatomy-card:#131313;--anatomy-text:#a3a3a3;--anatomy-strong:#e6e6e6;--anatomy-muted:#6e6e6e;
+  --anatomy-paper:#131313;--anatomy-face:#1b1b1b;--anatomy-top:#1c1c1c;
+  --anatomy-shade-0:#0f0f0f;--anatomy-shade-1:#121212;--anatomy-shade-2:#151515;--anatomy-shade-3:#181818;
+  --anatomy-lit-top:#262626;--anatomy-lit-shade:#1d1d1d;
+  --anatomy-hi:#d4d4d4;--anatomy-mid:#6a6a6a;--anatomy-lo:#3e3e3e;--anatomy-faint:#2a2a2a;--anatomy-lit:#ffffff;
+  --anatomy-halo:#050505;--anatomy-halo-opacity:.9;--anatomy-dot:#e6e6e6;
+  --anatomy-red:#ff6b6b;--anatomy-green:#6be0a0;--anatomy-blue:#6b9bff;
+  --anatomy-weight:.6px;--anatomy-ease:cubic-bezier(.32,.72,0,1);
+  --anatomy-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --anatomy-lift:inset 0 1px 0 0 #ffffff0a,inset 0 0 0 1px #ffffff06,0 0 0 1px #00000026,0 1px 1px -.5px #00000014,0 3px 3px -1.5px #00000014,0 6px 6px -3px #00000014,0 12px 12px -6px #00000014;
+}
+.iso[data-theme="light"]{
+  --anatomy-page:#f2f2ef;--anatomy-card:#fbfbfa;--anatomy-text:#57575a;--anatomy-strong:#18181a;--anatomy-muted:#8c8c90;
+  --anatomy-paper:#fbfbfa;--anatomy-face:#ffffff;--anatomy-top:#ffffff;
+  --anatomy-shade-0:#dcdcd9;--anatomy-shade-1:#e5e5e2;--anatomy-shade-2:#ededea;--anatomy-shade-3:#f4f4f1;
+  --anatomy-lit-top:#ffffff;--anatomy-lit-shade:#eeeeeb;
+  --anatomy-hi:#26262a;--anatomy-mid:#8a8a8f;--anatomy-lo:#b4b4b8;--anatomy-faint:#d4d4d6;--anatomy-lit:#000000;
+  --anatomy-halo:#8a8a80;--anatomy-halo-opacity:.32;--anatomy-dot:#3a3a3e;
+  --anatomy-red:#e5484d;--anatomy-green:#30a46c;--anatomy-blue:#3e63dd;
+  --anatomy-lift:inset 0 1px 0 0 #ffffff,0 0 0 1px #0000000f,0 1px 1px -.5px #0000000a,0 3px 3px -1.5px #0000000a,0 6px 6px -3px #0000000a,0 12px 12px -6px #0000000a;
+}
+.iso-svg{display:block;width:100%;height:auto;overflow:visible}
+.iso-svg path,.iso-svg circle{vector-effect:non-scaling-stroke}
+.iso-fill{fill:var(--anatomy-paper);stroke:none}
+.iso-solid[data-lit]>.iso-fill{fill:var(--anatomy-face)}
+.iso-shade,.iso-top{stroke:none}
+.iso-shade[data-shade="0"]{fill:var(--anatomy-shade-0)}
+.iso-shade[data-shade="1"]{fill:var(--anatomy-shade-1)}
+.iso-shade[data-shade="2"]{fill:var(--anatomy-shade-2)}
+.iso-shade[data-shade="3"]{fill:var(--anatomy-shade-3)}
+.iso-top{fill:var(--anatomy-top)}
+.iso-solid[data-lit]>.iso-top{fill:var(--anatomy-lit-top)}
+.iso-solid[data-lit]>.iso-shade{fill:var(--anatomy-lit-shade)}
+.iso-solid[data-seamless]>.iso-shade,.iso-solid[data-seamless]>.iso-top{stroke-width:.4;stroke-linejoin:round}
+.iso-solid[data-seamless]>.iso-shade[data-shade="0"]{stroke:var(--anatomy-shade-0)}
+.iso-solid[data-seamless]>.iso-shade[data-shade="1"]{stroke:var(--anatomy-shade-1)}
+.iso-solid[data-seamless]>.iso-shade[data-shade="2"]{stroke:var(--anatomy-shade-2)}
+.iso-solid[data-seamless]>.iso-shade[data-shade="3"]{stroke:var(--anatomy-shade-3)}
+.iso-solid[data-seamless]>.iso-top{stroke:var(--anatomy-top)}
+.iso-solid[data-seamless][data-lit]>.iso-top{stroke:var(--anatomy-lit-top)}
+.iso-solid[data-seamless][data-lit]>.iso-shade{stroke:var(--anatomy-lit-shade)}
+.iso-solid[data-lit]>.iso-edge{stroke:var(--anatomy-lit)}
+.iso-halo{fill:var(--anatomy-halo);stroke:none;filter:blur(9px);opacity:var(--anatomy-halo-opacity);transform:translateY(3px)}
+.iso-line{fill:none;stroke:var(--anatomy-lo);stroke-width:var(--anatomy-weight);stroke-linecap:round;stroke-linejoin:round}
+.iso-line[data-tone="hi"]{stroke:var(--anatomy-hi)}
+.iso-line[data-tone="mid"]{stroke:var(--anatomy-mid)}
+.iso-line[data-tone="lo"]{stroke:var(--anatomy-lo)}
+.iso-line[data-tone="faint"]{stroke:var(--anatomy-faint)}
+.iso-line[data-tone="lit"]{stroke:var(--anatomy-lit)}
+.iso-line[data-tone="red"]{stroke:var(--anatomy-red)}
+.iso-line[data-tone="green"]{stroke:var(--anatomy-green)}
+.iso-line[data-tone="blue"]{stroke:var(--anatomy-blue)}
+.iso-line[data-dotted]{stroke-dasharray:.01 3.5;stroke-width:1}
+.iso-line[data-dashed]{stroke-dasharray:3 3}
+.iso-line[data-flow]{stroke-dasharray:2 6}
+.iso-wire-end{fill:var(--anatomy-paper);stroke:var(--anatomy-lo);stroke-width:var(--anatomy-weight)}
+.iso-wire[data-tone="hi"] .iso-wire-end{stroke:var(--anatomy-hi)}
+.iso-wire[data-tone="mid"] .iso-wire-end{stroke:var(--anatomy-mid)}
+.iso-wire[data-tone="faint"] .iso-wire-end{stroke:var(--anatomy-faint)}
+.iso-wire[data-tone="lit"] .iso-wire-end{stroke:var(--anatomy-lit)}
+.iso-dots circle{fill:var(--anatomy-dot);stroke:none;opacity:.32}
+.iso-dots[data-tone="hi"] circle{opacity:.85}
+.iso-dots[data-tone="mid"] circle{opacity:.45}
+.iso-dots[data-tone="lo"] circle{opacity:.22}
+.iso-dots[data-tone="faint"] circle{opacity:.12}
+.iso-face-text{fill:var(--anatomy-mid);font-family:var(--anatomy-mono);letter-spacing:.04em}
+.iso-face-text[data-tone="hi"]{fill:var(--anatomy-hi)}
+.iso-face-text[data-tone="lo"]{fill:var(--anatomy-lo)}
+.iso-face-text[data-tone="faint"]{fill:var(--anatomy-faint)}
+.tb-body{fill:var(--anatomy-shade-2);stroke:none}
+.tb-shine{fill:var(--anatomy-top);stroke:none}
+.tb-shade{fill:var(--anatomy-shade-0);stroke:none}
+.tb-ring{fill:none;stroke:var(--anatomy-lo);stroke-width:.45;stroke-linecap:butt;stroke-linejoin:round}
+.tb-ring[data-tone="mid"]{stroke:var(--anatomy-mid)}
+.tb-ring[data-tone="faint"]{stroke:var(--anatomy-faint)}
+.tb-ring[data-tone="hi"]{stroke:var(--anatomy-hi)}
+@keyframes iso-flow{to{stroke-dashoffset:-32}}
+@keyframes iso-pulse{0%,100%{opacity:.18}12%{opacity:1}40%{opacity:.18}}
+.iso-line[data-flow]{animation:iso-flow 1600ms linear infinite}
+.iso-dots circle[data-pulse]{animation:iso-pulse 1600ms steps(1,end) infinite;animation-delay:var(--pulse-at,0ms)}
+.iso-figure{margin:32px 0 36px}
+.iso-plate{position:relative;padding:52px 24px;border-radius:0;background:var(--anatomy-card);box-shadow:0 0 0 1px var(--anatomy-mid);--anatomy-paper:var(--anatomy-card)}
+.iso-plate-corners{position:absolute;inset:18px 20px;pointer-events:none}
+.iso-plate-corner{position:absolute;color:var(--anatomy-muted);font-family:var(--anatomy-mono);font-size:10.5px;line-height:1;letter-spacing:.04em;white-space:nowrap}
+.iso-plate-corner[data-corner="fig"]{top:0;left:0;color:var(--anatomy-text)}
+.iso-plate-corner[data-corner="title"]{top:0;right:0;text-transform:uppercase;letter-spacing:.1em}
+.iso-plate-corner[data-corner="hint"]{bottom:0;left:0;text-transform:uppercase;letter-spacing:.1em}
+.iso-plate-corner[data-corner="readout"]{right:0;bottom:0;color:var(--anatomy-text);font-variant-numeric:tabular-nums}
+.iso-plate .iso-svg{margin:0 auto}
+.iso-legend{display:grid;gap:8px;margin-top:12px;color:var(--anatomy-muted);font-size:13px;line-height:1.55}
+.iso-keys{display:flex;flex-wrap:wrap;gap:6px 18px}
+.iso-key{display:inline-flex;align-items:center;gap:7px}
+.iso-swatch{width:16px;height:10px;flex:none;overflow:visible}
+.iso-swatch path{fill:none;stroke:var(--anatomy-hi);stroke-width:1;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+.iso-swatch[data-mark="raised"] path,.iso-swatch[data-mark="flat"] path{stroke:var(--anatomy-mid)}
+.iso-swatch[data-mark="lit"] path{stroke:var(--anatomy-lit)}
+.iso-swatch[data-mark="dim"] path{stroke:var(--anatomy-lo)}
+.iso-swatch[data-mark="dotted"] path{stroke-dasharray:.01 3;stroke-width:1.4}
+.iso-swatch[data-mark="dashed"] path{stroke-dasharray:3 2.5}
+.iso-swatch[data-mark="red"] path{stroke:var(--anatomy-red)}
+.iso-swatch[data-mark="green"] path{stroke:var(--anatomy-green)}
+.iso-swatch[data-mark="blue"] path{stroke:var(--anatomy-blue)}
+.iso-swatch-crease{stroke:var(--anatomy-lo)!important}
+@media (max-width:560px){.iso-plate{padding:48px 12px 70px}.iso-plate-corner[data-corner="hint"]{bottom:18px}}
+@media (prefers-reduced-motion:reduce){.iso-line[data-flow],.iso-dots circle[data-pulse]{animation:none}}
+`;
+const G = (() => {
+
+
+const TAU = Math.PI * 2;
+const LIGHT_UP = 1.2;
+const BANDS = [0, 0.2, 0.42, 0.62];
+
+const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+const add3 = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+const sub3 = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+const mul3 = (a, k) => [a[0] * k, a[1] * k, a[2] * k];
+const len3 = (a) => Math.hypot(a[0], a[1], a[2]);
+const unit3 = (a) => {
+  const length = len3(a) || 1;
+  return [a[0] / length, a[1] / length, a[2] / length];
+};
+const cross3 = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+const lerp3 = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
+
+function viewOf(P) {
+  const { sinA, cosA, sinE, cosE } = cameraOf(P);
+  return [cosA * cosE, sinA * cosE, sinE];
+}
+
+function lightOf(P) {
+  const { sinA, cosA } = cameraOf(P);
+  return unit3([-sinA, cosA, LIGHT_UP]);
+}
+
+const scaleOf = (P) => cameraOf(P).k;
+
+function bandOf(score) {
+  let tone = 0;
+  while (tone < BANDS.length && score >= BANDS[tone]) tone++;
+  return tone;
+}
+
+const toneOf = (normal, P) => bandOf(dot3(unit3(normal), lightOf(P)));
+
+function frameAlong(o, a) {
+  const axis = unit3(a);
+  const helper = Math.abs(axis[2]) > 0.9 ? [1, 0, 0] : [0, 0, 1];
+  const u = unit3(cross3(helper, axis));
+  const v = cross3(axis, u);
+  return { o, a: axis, u, v };
+}
+
+const frameOf = (o, a, u, v) => ({ o, a, u, v });
+
+function pointOf(F, s, r, angle) {
+  const c = Math.cos(angle);
+  const n = Math.sin(angle);
+  return [
+    F.o[0] + F.a[0] * s + r * (c * F.u[0] + n * F.v[0]),
+    F.o[1] + F.a[1] * s + r * (c * F.u[1] + n * F.v[1]),
+    F.o[2] + F.a[2] * s + r * (c * F.u[2] + n * F.v[2]),
+  ];
+}
+
+const radialOf = (F, angle) => {
+  const c = Math.cos(angle);
+  const n = Math.sin(angle);
+  return [c * F.u[0] + n * F.v[0], c * F.u[1] + n * F.v[1], c * F.u[2] + n * F.v[2]];
+};
+
+const tangentOf = (F, angle) => {
+  const c = Math.cos(angle);
+  const n = Math.sin(angle);
+  return [-n * F.u[0] + c * F.v[0], -n * F.u[1] + c * F.v[1], -n * F.u[2] + c * F.v[2]];
+};
+
+const angleToward = (F, direction) => Math.atan2(dot3(direction, F.v), dot3(direction, F.u));
+
+function hullTagged(points) {
+  const sorted = [...points].sort((a, b) => a.p[0] - b.p[0] || a.p[1] - b.p[1]);
+  if (sorted.length < 3) return sorted;
+  const cross = (o, a, b) => (a.p[0] - o.p[0]) * (b.p[1] - o.p[1]) - (a.p[1] - o.p[1]) * (b.p[0] - o.p[0]);
+  const lower = [];
+  for (const point of sorted) {
+    while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], point) <= 1e-9) lower.pop();
+    lower.push(point);
+  }
+  const upper = [];
+  for (let index = sorted.length - 1; index >= 0; index--) {
+    const point = sorted[index];
+    while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], point) <= 1e-9) upper.pop();
+    upper.push(point);
+  }
+  return [...lower.slice(0, -1), ...upper.slice(0, -1)];
+}
+
+const hullOf = (points) => hullTagged(points.map((p) => ({ p }))).map(({ p }) => p);
+
+function runsOf(flags) {
+  const count = flags.length;
+  const start = flags.findIndex((flag, index) => flag !== flags[(index + count - 1) % count]);
+  if (start < 0) return flags[0] ? [Array.from({ length: count + 1 }, (_, index) => index % count)] : [];
+  const runs = [];
+  let run = null;
+  for (let step = 0; step < count; step++) {
+    const index = (start + step) % count;
+    if (flags[index]) {
+      if (!run) run = [index];
+      run.push((index + 1) % count);
+    } else if (run) {
+      runs.push(run);
+      run = null;
+    }
+  }
+  if (run) runs.push(run);
+  return runs;
+}
+
+function groupsOf(keys) {
+  const count = keys.length;
+  const out = [];
+  const start = keys.findIndex((key, index) => key !== keys[(index + count - 1) % count]);
+  if (start < 0) {
+    if (keys[0] !== null) out.push({ key: keys[0], run: Array.from({ length: count + 1 }, (_, index) => index % count) });
+    return out;
+  }
+  let current = null;
+  for (let step = 0; step < count; step++) {
+    const index = (start + step) % count;
+    const key = keys[index];
+    if (current && current.key === key) {
+      current.run.push((index + 1) % count);
+      continue;
+    }
+    if (current && current.key !== null) out.push(current);
+    current = { key, run: [index, (index + 1) % count] };
+  }
+  if (current && current.key !== null) out.push(current);
+  return out;
+}
+
+const stepsFor = (radius, least = 16, most = 112, scale = 0) => Math.max(least, Math.min(most, scale ? Math.ceil((TAU * radius * scale) / 3) : Math.round((radius * 1.3) / 4) * 4));
+
+function chains(edges) {
+  const out = [];
+  let current = null;
+  for (const [a, b, keep] of edges) {
+    if (!keep) {
+      if (current) out.push(current);
+      current = null;
+      continue;
+    }
+    if (!current) current = [a];
+    current.push(b);
+  }
+  if (current) out.push(current);
+  if (out.length > 1 && edges[0][2] && edges[edges.length - 1][2]) {
+    const last = out.pop();
+    out[0] = [...last, ...out[0].slice(1)];
+  }
+  return out;
+}
+
+function labelledArcs(nr, na, view, light, gr = nr, ga = na) {
+  const cuts = [];
+  if (Math.abs(gr) > 1e-9) {
+    const visibleCut = -(ga * view.a) / (gr * view.flat);
+    if (visibleCut > -1 && visibleCut < 1) {
+      const d = Math.acos(visibleCut);
+      cuts.push(view.phi - d, view.phi + d);
+    }
+  }
+  if (Math.abs(nr) > 1e-9) {
+    for (const threshold of BANDS) {
+      const c = (threshold - na * light.a) / (nr * light.flat);
+      if (c > -1 && c < 1) {
+        const d = Math.acos(c);
+        cuts.push(light.phi - d, light.phi + d);
+      }
+    }
+  }
+  const wrap = (angle) => ((angle % TAU) + TAU) % TAU;
+  const sorted = [...new Set(cuts.map((angle) => Math.round(wrap(angle) * 1e9) / 1e9))].sort((a, b) => a - b);
+  const label = (angle) => {
+    const facing = gr * view.flat * Math.cos(angle - view.phi) + ga * view.a;
+    if (facing <= 1e-9) return -1;
+    return bandOf(nr * light.flat * Math.cos(angle - light.phi) + na * light.a);
+  };
+  if (!sorted.length) {
+    const tone = label(0);
+    return tone < 0 ? [] : [{ tone, from: 0, to: TAU, full: true }];
+  }
+  const arcs = sorted.map((from, index) => {
+    const to = index + 1 < sorted.length ? sorted[index + 1] : sorted[0] + TAU;
+    return { tone: label((from + to) / 2), from, to };
+  });
+  const merged = [];
+  for (const arc of arcs) {
+    const last = merged[merged.length - 1];
+    if (last && last.tone === arc.tone && Math.abs(last.to - arc.from) < 1e-9) last.to = arc.to;
+    else merged.push({ ...arc });
+  }
+  if (merged.length > 1 && merged[0].tone === merged[merged.length - 1].tone && Math.abs(merged[merged.length - 1].to - TAU - merged[0].from) < 1e-9) {
+    const last = merged.pop();
+    merged[0].from = last.from - TAU;
+  }
+  return merged.filter((arc) => arc.tone >= 0);
+}
+
+function hermiteSlopes(run) {
+  const n = run.length - 1;
+  const h = Array.from({ length: n }, (_, j) => run[j + 1][0] - run[j][0]);
+  const delta = h.map((value, j) => (run[j + 1][1] - run[j][1]) / value);
+  const d = new Array(n + 1).fill(0);
+  const end = (h0, h1, d0, d1) => {
+    let value = ((2 * h0 + h1) * d0 - h0 * d1) / (h0 + h1);
+    if (Math.sign(value) !== Math.sign(d0)) value = 0;
+    else if (Math.sign(d0) !== Math.sign(d1) && Math.abs(value) > Math.abs(3 * d0)) value = 3 * d0;
+    return value;
+  };
+  if (n === 1) d[0] = d[1] = delta[0];
+  else {
+    d[0] = end(h[0], h[1], delta[0], delta[1]);
+    d[n] = end(h[n - 1], h[n - 2], delta[n - 1], delta[n - 2]);
+  }
+  for (let k = 1; k < n; k++) {
+    if (delta[k - 1] * delta[k] <= 0) continue;
+    const w1 = 2 * h[k] + h[k - 1];
+    const w2 = h[k] + 2 * h[k - 1];
+    d[k] = (w1 + w2) / (w1 / delta[k - 1] + w2 / delta[k]);
+  }
+  return d;
+}
+
+function curveRuns(meridian) {
+  const m = meridian.length;
+  const segments = new Array(m - 1).fill(null);
+  let start = 0;
+  while (start < m - 1) {
+    let end = start + 1;
+    while (end < m - 1 && meridian[end][2] && Math.abs(meridian[end + 1][0] - meridian[end][0]) > 1e-9 && Math.abs(meridian[end][0] - meridian[end - 1][0]) > 1e-9) end++;
+    const run = meridian.slice(start, end + 1);
+    const n = run.length - 1;
+    if (n >= 2 && run.every((point, j) => j === 0 || Math.abs(point[0] - run[j - 1][0]) > 1e-9)) {
+      const d = hermiteSlopes(run);
+      for (let j = 0; j < n; j++) {
+        const [s0, r0] = run[j];
+        const [s1, r1] = run[j + 1];
+        const hj = s1 - s0;
+        const d0 = d[j];
+        const d1 = d[j + 1];
+        const radius = (s) => {
+          const t = (s - s0) / hj;
+          return (2 * t ** 3 - 3 * t ** 2 + 1) * r0 + (t ** 3 - 2 * t ** 2 + t) * hj * d0 + (-2 * t ** 3 + 3 * t ** 2) * r1 + (t ** 3 - t ** 2) * hj * d1;
+        };
+        const slope = (s) => {
+          const t = (s - s0) / hj;
+          return ((6 * t ** 2 - 6 * t) * r0 + (6 * t - 6 * t ** 2) * r1) / hj + (3 * t ** 2 - 4 * t + 1) * d0 + (3 * t ** 2 - 2 * t) * d1;
+        };
+        segments[start + j] = { radius, slope };
+      }
+    }
+    start = end;
+  }
+  return segments;
+}
+
+function curved(meridian, P, segments, { error = 0.2, depth = 6 } = {}) {
+  const k = scaleOf(P);
+  const out = [meridian[0]];
+  for (let i = 0; i < meridian.length - 1; i++) {
+    const curve = segments[i];
+    const [s0] = meridian[i];
+    const [s1] = meridian[i + 1];
+    if (curve) {
+      const split = (a, b, level) => {
+        const mid = (a + b) / 2;
+        const chord = (curve.radius(a) + curve.radius(b)) / 2;
+        if (level < depth && Math.abs(curve.radius(mid) - chord) * k > error) {
+          split(a, mid, level + 1);
+          out.push([mid, curve.radius(mid), 1]);
+          split(mid, b, level + 1);
+        }
+      };
+      split(s0, s1, 0);
+    }
+    out.push(meridian[i + 1]);
+  }
+  return out;
+}
+
+function smoothRows(meridian, F, P, { rows = 6, slope = null, radius = null, steps = 48, error = 0.35, depth: deepest = 8, fineness = 0.1 } = {}) {
+  const V = viewOf(P);
+  const L = lightOf(P);
+  const view = { a: dot3(F.a, V), flat: Math.hypot(dot3(F.u, V), dot3(F.v, V)), phi: Math.atan2(dot3(F.v, V), dot3(F.u, V)) };
+  const light = { a: dot3(F.a, L), flat: Math.hypot(dot3(F.u, L), dot3(F.v, L)), phi: Math.atan2(dot3(F.v, L), dot3(F.u, L)) };
+  const m = meridian.length;
+  const faces = [];
+  for (let i = 0; i < m - 1; i++) {
+    const ds = meridian[i + 1][0] - meridian[i][0];
+    const dr = meridian[i + 1][1] - meridian[i][1];
+    const length = Math.hypot(ds, dr) || 1;
+    faces.push([ds / length, -dr / length]);
+  }
+  const splines = slope ? null : curveRuns(meridian);
+  const vertexNormal = (k, own) => {
+    if (k <= 0 || k >= m - 1 || !meridian[k][2]) return own;
+    const a = faces[k - 1];
+    const b = faces[k];
+    const x = a[0] + b[0];
+    const y = a[1] + b[1];
+    const length = Math.hypot(x, y) || 1;
+    return [x / length, y / length];
+  };
+  const normalAt = (i, u) => {
+    const [s0] = meridian[i];
+    const [s1] = meridian[i + 1];
+    const s = s0 + (s1 - s0) * u;
+    const sign = Math.sign(s1 - s0) || 1;
+    const g = slope ? slope(s) : splines[i] ? splines[i].slope(s) : null;
+    if (g !== null) {
+      const length = Math.hypot(1, g);
+      return [sign / length, (-sign * g) / length];
+    }
+    const a = vertexNormal(i, faces[i]);
+    const b = vertexNormal(i + 1, faces[i]);
+    const x = a[0] + (b[0] - a[0]) * u;
+    const y = a[1] + (b[1] - a[1]) * u;
+    const length = Math.hypot(x, y) || 1;
+    return [x / length, y / length];
+  };
+  const pointAt = (i, u, angle) => {
+    const [s0, r0] = meridian[i];
+    const [s1, r1] = meridian[i + 1];
+    const s = s0 + (s1 - s0) * u;
+    return iso(pointOf(F, s, radius ? radius(s) : splines && splines[i] ? splines[i].radius(s) : r0 + (r1 - r0) * u, angle), P);
+  };
+  const buckets = [[], [], [], [], []];
+  const fine = TAU / Math.max(24, Math.min(192, steps * 1.5));
+  const arcPoints = (i, u, from, to) => {
+    const count = Math.max(1, Math.ceil((to - from) / fine));
+    return Array.from({ length: count + 1 }, (_, index) => pointAt(i, u, from + ((to - from) * index) / count));
+  };
+  const centreOf = (arc, reference) => {
+    let mid = (arc.from + arc.to) / 2 - reference;
+    mid = ((mid % TAU) + TAU) % TAU;
+    return mid;
+  };
+  const levelOf = (i, u) => {
+    const [nr, na] = normalAt(i, u);
+    const groups = new Map();
+    for (const arc of labelledArcs(nr, na, view, light, faces[i][0], faces[i][1])) {
+      if (!groups.has(arc.tone)) groups.set(arc.tone, []);
+      groups.get(arc.tone).push(arc);
+    }
+    for (const list of groups.values()) list.sort((x, y) => centreOf(x, light.phi) - centreOf(y, light.phi));
+    return { i, u, groups };
+  };
+  const same = (x, y) => {
+    if (x.groups.size !== y.groups.size) return false;
+    for (const [tone, list] of x.groups) if ((y.groups.get(tone) ?? []).length !== list.length) return false;
+    return true;
+  };
+  const align = (reference, arc) => {
+    const out = { ...arc };
+    const centre = (reference.from + reference.to) / 2;
+    while ((out.from + out.to) / 2 - centre > Math.PI) {
+      out.from -= TAU;
+      out.to -= TAU;
+    }
+    while (centre - (out.from + out.to) / 2 > Math.PI) {
+      out.from += TAU;
+      out.to += TAU;
+    }
+    return out;
+  };
+  const strayOf = (i, a, mid, b) => {
+    let worst = 0;
+    for (const [tone, list] of mid.groups) {
+      list.forEach((arc, index) => {
+        const lo = align(arc, a.groups.get(tone)[index]);
+        const hi = align(arc, b.groups.get(tone)[index]);
+        for (const key of ["from", "to"]) {
+          const p = pointAt(i, mid.u, arc[key]);
+          const p0 = pointAt(i, a.u, lo[key]);
+          const p1 = pointAt(i, b.u, hi[key]);
+          worst = Math.max(worst, Math.hypot(p[0] - (p0[0] + p1[0]) / 2, p[1] - (p0[1] + p1[1]) / 2));
+        }
+      });
+    }
+    return worst;
+  };
+  const sheet = (tone, levels) => {
+    levels[0].groups.get(tone).forEach((arc, index) => {
+      const chain = [arc];
+      for (let k = 1; k < levels.length; k++) chain.push(align(chain[k - 1], levels[k].groups.get(tone)[index]));
+      const last = levels.length - 1;
+      const points = [...arcPoints(levels[0].i, levels[0].u, chain[0].from, chain[0].to)];
+      for (let k = 1; k < last; k++) points.push(pointAt(levels[k].i, levels[k].u, chain[k].to));
+      points.push(...arcPoints(levels[last].i, levels[last].u, chain[last].from, chain[last].to).reverse());
+      for (let k = last - 1; k >= 1; k--) points.push(pointAt(levels[k].i, levels[k].u, chain[k].from));
+      buckets[tone].push(pathOf(oriented(points), true));
+    });
+  };
+  const overlap = (x, y) => Math.min(x.to, y.to) - Math.max(x.from, y.from);
+  const strip = (tone, a, b) => {
+    const below = a.groups.get(tone) ?? [];
+    const above = (b.groups.get(tone) ?? []).map((arc) => ({ arc, used: false }));
+    const quad = (lo, hi) => {
+      const points = [...arcPoints(a.i, a.u, lo.from, lo.to), ...arcPoints(b.i, b.u, hi.from, hi.to).reverse()];
+      buckets[tone].push(pathOf(oriented(points), true));
+    };
+    for (const arc of below) {
+      let best = null;
+      let score = -Infinity;
+      for (const entry of above) {
+        if (entry.used) continue;
+        const aligned = align(arc, entry.arc);
+        const value = overlap(arc, aligned);
+        if (value > score) (score = value), (best = entry);
+      }
+      if (best && score > -0.05) {
+        best.used = true;
+        quad(arc, align(arc, best.arc));
+      } else {
+        const centre = (arc.from + arc.to) / 2;
+        quad(arc, { from: centre, to: centre });
+      }
+    }
+    for (const entry of above) {
+      if (entry.used) continue;
+      const centre = (entry.arc.from + entry.arc.to) / 2;
+      quad({ from: centre, to: centre }, entry.arc);
+    }
+  };
+  const k = scaleOf(P);
+  let run = [];
+  const flush = () => {
+    const tones = [...new Set(run.flatMap((level) => [...level.groups.keys()]))].sort((x, y) => x - y);
+    for (const tone of tones) {
+      const countOf = (level) => (level.groups.get(tone) ?? []).length;
+      let start = 0;
+      for (let at = 1; at <= run.length; at++) {
+        if (at < run.length && countOf(run[at - 1]) === countOf(run[at])) continue;
+        if (at - 1 > start && countOf(run[start])) sheet(tone, run.slice(start, at));
+        if (at < run.length) strip(tone, run[at - 1], run[at]);
+        start = at;
+      }
+    }
+    run = [];
+  };
+  for (let i = 0; i < m - 1; i++) {
+    const ds = meridian[i + 1][0] - meridian[i][0];
+    if (Math.abs(ds) < 1e-9) {
+      flush();
+      continue;
+    }
+    const count = Math.max(1, rows);
+    const reach = (Math.hypot(ds, meridian[i + 1][1] - meridian[i][1]) * k) / count;
+    const limit = Math.max(1, Math.min(deepest, Math.ceil(Math.log2(Math.max(2, reach / fineness)))));
+    const coarse = Array.from({ length: count + 1 }, (_, index) => levelOf(i, index / count));
+    run.push(coarse[0]);
+    const refine = (a, b, depth) => {
+      const mid = levelOf(i, (a.u + b.u) / 2);
+      const split = depth < limit && (!same(a, b) || !same(a, mid) || (depth < 6 && strayOf(i, a, mid, b) > error));
+      if (!split) {
+        run.push(b);
+        return;
+      }
+      refine(a, mid, depth + 1);
+      refine(mid, b, depth + 1);
+    };
+    for (let index = 1; index <= count; index++) refine(coarse[index - 1], coarse[index], 0);
+  }
+  flush();
+  return buckets;
+}
+
+function sideOf(meridian) {
+  const m = meridian.length;
+  let first = 0;
+  let last = m - 1;
+  if (meridian[0][1] <= 1e-9) first = 1;
+  if (meridian[m - 1][1] <= 1e-9) last = m - 2;
+  const side = meridian.slice(first, last + 1);
+  for (let index = 1; index < side.length; index++) if (side[index][0] - side[index - 1][0] <= 1e-9) return null;
+  return side.length >= 3 ? side : null;
+}
+
+function surfaceOf(side, F, P, rims, { samples = 96, slope = null } = {}) {
+  const V = viewOf(P);
+  const aV = dot3(F.a, V);
+  const facing = Math.atan2(dot3(F.v, V), dot3(F.u, V));
+  const [left, right] = silhouettePoints(side, F, P, { samples, slope });
+  if (left.length <= samples || right.length <= samples) return null;
+  const s0 = side[0][0];
+  const s1 = side[side.length - 1][0];
+  const angleOf = (point) => angleToward(F, sub3(point, add3(F.o, mul3(F.a, dot3(sub3(point, F.o), F.a)))));
+  const wrap = (angle) => ((angle % TAU) + TAU) % TAU;
+  const arc = (s, r, from, to, through) => {
+    let sweep = wrap(to - from);
+    if (wrap(through - from) > sweep) sweep -= TAU;
+    const count = Math.max(4, Math.ceil(Math.abs(sweep) / (TAU / 96)), Math.ceil((Math.abs(sweep) * r * scaleOf(P)) / 1.5));
+    return Array.from({ length: count + 1 }, (_, index) => iso(pointOf(F, s, r, from + (sweep * index) / count), P));
+  };
+  const r0 = side[0][1];
+  const r1 = side[side.length - 1][1];
+  const bottom = -aV > 0 ? facing + Math.PI : facing;
+  const top = aV > 0 ? facing + Math.PI : facing;
+  const L = left.map((point) => iso(point, P));
+  const R = right.map((point) => iso(point, P));
+  const topArc = arc(s1, r1, angleOf(left[left.length - 1]), angleOf(right[right.length - 1]), top);
+  const bottomArc = arc(s0, r0, angleOf(right[0]), angleOf(left[0]), bottom);
+  const keepFirst = rims === "all" || rims === "first" || rims === "ends";
+  const keepLast = rims === "all" || rims === "last" || rims === "ends";
+  const fill = pathOf([...L, ...topArc, ...[...R].reverse(), ...bottomArc], true);
+  const outline = [pathOf(L), pathOf(R), keepLast ? pathOf(topArc) : "", keepFirst ? pathOf(bottomArc) : ""].join("");
+  const hull = hullOf([...arc(s0, r0, 0, TAU - 1e-6, Math.PI), ...arc(s1, r1, 0, TAU - 1e-6, Math.PI), ...L, ...R]);
+  let gap = 0;
+  for (const p of [...L, ...R]) {
+    let best = Infinity;
+    for (let index = 0; index < hull.length; index++) {
+      const a = hull[index];
+      const b = hull[(index + 1) % hull.length];
+      const dx = b[0] - a[0];
+      const dy = b[1] - a[1];
+      const t = Math.max(0, Math.min(1, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / (dx * dx + dy * dy || 1)));
+      best = Math.min(best, Math.hypot(p[0] - a[0] - dx * t, p[1] - a[1] - dy * t));
+    }
+    gap = Math.max(gap, best);
+  }
+  return { fill, outline, gap };
+}
+
+const softOf = (meridian) => meridian.some((point) => Boolean(point[2]));
+
+function lathe(meridian, F, P, { steps = stepsFor(Math.max(...meridian.map(([, r]) => r)), 32, 160, scaleOf(P)), fill = "auto", hole = null, bevel = 0, rims = "all", smooth: asked = "auto", waist = 0.5 } = {}) {
+  const smooth = asked === "auto" ? softOf(meridian) : asked;
+  const V = viewOf(P);
+  const L = lightOf(P);
+  const aV = dot3(F.a, V);
+  const uV = dot3(F.u, V);
+  const vV = dot3(F.v, V);
+  const aL = dot3(F.a, L);
+  const uL = dot3(F.u, L);
+  const vL = dot3(F.v, L);
+  const n = steps;
+  const m = meridian.length;
+  const rings = meridian.map(([s, r]) => Array.from({ length: n }, (_, j) => iso(pointOf(F, s, r, (j / n) * TAU), P)));
+  const midC = [];
+  const midS = [];
+  for (let j = 0; j < n; j++) {
+    const t = ((j + 0.5) / n) * TAU;
+    midC.push(Math.cos(t));
+    midS.push(Math.sin(t));
+  }
+  const seen = [];
+  const tones = [];
+  for (let i = 0; i < m - 1; i++) {
+    const ds = meridian[i + 1][0] - meridian[i][0];
+    const dr = meridian[i + 1][1] - meridian[i][1];
+    const length = Math.hypot(ds, dr);
+    const row = [];
+    const toneRow = [];
+    for (let j = 0; j < n; j++) {
+      if (length < 1e-9) {
+        row.push(false);
+        toneRow.push(0);
+        continue;
+      }
+      const facing = ds * (midC[j] * uV + midS[j] * vV) - dr * aV;
+      const lit = (ds * (midC[j] * uL + midS[j] * vL) - dr * aL) / length;
+      row.push(facing > 1e-6 * length);
+      toneRow.push(bandOf(lit));
+    }
+    seen.push(row);
+    tones.push(toneRow);
+  }
+  const buckets = [[], [], [], [], []];
+  const all = [];
+  const smoothed = smooth ? smoothRows(meridian, F, P, { steps, ...(smooth === true ? {} : smooth) }) : null;
+  if (smoothed) smoothed.forEach((list, tone) => list.forEach((d) => (buckets[tone].push(d), all.push(d))));
+  for (let i = 0; i < m - 1; i++) {
+    if (smoothed && Math.abs(meridian[i + 1][0] - meridian[i][0]) > 1e-9) continue;
+    const keys = seen[i].map((visible, j) => (visible ? tones[i][j] : null));
+    for (const { key, run } of groupsOf(keys)) {
+      const a = run.map((j) => rings[i][j]);
+      const b = run.map((j) => rings[i + 1][j]).reverse();
+      const d = pathOf(oriented([...a, ...b]), true);
+      buckets[key].push(d);
+      all.push(d);
+    }
+  }
+  const phi = Math.atan2(vV, uV);
+  const flatV = Math.hypot(uV, vV);
+  const rangeOf = (i) => {
+    const ds = meridian[i + 1][0] - meridian[i][0];
+    const dr = meridian[i + 1][1] - meridian[i][1];
+    if (Math.hypot(ds, dr) < 1e-9) return null;
+    if (Math.abs(ds) < 1e-9 || flatV < 1e-9) return -dr * aV > 1e-9 ? [-1, 1] : null;
+    const c = (dr * aV) / (ds * flatV);
+    return ds > 0 ? [Math.max(-1, c), 1] : [-1, Math.min(1, c)];
+  };
+  const arcsOf = (ranges) => {
+    if (ranges.some((range) => !range)) return [];
+    const lo = Math.max(...ranges.map(([x]) => x));
+    const hi = Math.min(...ranges.map(([, x]) => x));
+    if (lo >= hi - 1e-9) return [];
+    const near = Math.acos(Math.min(1, hi));
+    const far = Math.acos(Math.max(-1, lo));
+    if (hi >= 1 && lo <= -1) return [[phi, phi + TAU]];
+    if (hi >= 1) return [[phi - far, phi + far]];
+    if (lo <= -1) return [[phi + near, phi + TAU - near]];
+    return [[phi + near, phi + far], [phi - far, phi - near]];
+  };
+  const along = (s, r, [from, to]) => {
+    const count = Math.max(2, Math.ceil(((to - from) * Math.max(r, 1e-6) * scaleOf(P)) / 1.5));
+    return Array.from({ length: count + 1 }, (_, j) => iso(pointOf(F, s, r, from + ((to - from) * j) / count), P));
+  };
+  const creases = [];
+  for (let i = 1; i < m - 1; i++) {
+    if (meridian[i][2] || meridian[i][1] <= 1e-9) continue;
+    for (const arc of arcsOf([rangeOf(i - 1), rangeOf(i)])) creases.push(pathOf(along(meridian[i][0], meridian[i][1], arc)));
+  }
+  let bevelPath = "";
+  if (bevel > 0 && m > 2) {
+    const ends = [];
+    if (meridian[0][1] <= 1e-9) ends.push([0, 1, 1]);
+    if (meridian[m - 1][1] <= 1e-9) ends.push([m - 2, m - 2, m - 3]);
+    for (const [cap, rim, side] of ends) {
+      const [s, r] = meridian[rim];
+      for (const arc of arcsOf([rangeOf(cap), rangeOf(side)])) {
+        const inset = along(s, Math.max(0, r - bevel), arc);
+        const edge = along(s, r, arc);
+        bevelPath += pathOf([edge[0], ...inset.slice(1, -1), edge[edge.length - 1]]);
+      }
+    }
+  }
+  const { fill: fillPath, outline } = outlineOf(meridian, F, P, { steps: n, fill, hole, rims, smooth, waist, all });
+  return {
+    fill: fillPath,
+    outline,
+    crease: creases.join(""),
+    top: buckets[4].join(""),
+    shades: buckets.slice(0, 4).map((list) => list.join("")),
+    bevel: bevelPath || undefined,
+    seamless: Boolean(smoothed),
+  };
+}
+
+function shapeOf(meridian, P, smooth) {
+  if (smooth && smooth.radius) {
+    const segments = meridian.slice(0, -1).map(([s0], index) => (Math.abs(meridian[index + 1][0] - s0) > 1e-9 ? { radius: smooth.radius, slope: smooth.slope } : null));
+    return curved(meridian, P, segments);
+  }
+  const curves = smooth && !smooth.slope ? curveRuns(meridian) : null;
+  return curves && curves.some(Boolean) ? curved(meridian, P, curves) : meridian;
+}
+
+function outlineOf(meridian, F, P, { steps = stepsFor(Math.max(...meridian.map(([, r]) => r)), 32, 160, scaleOf(P)), fill = "auto", hole = null, rims = "all", smooth: asked = "auto", waist = 0.5, all = null } = {}) {
+  const smooth = asked === "auto" ? softOf(meridian) : asked;
+  const n = steps;
+  let fillPath;
+  let outline;
+  const shape = shapeOf(meridian, P, smooth);
+  const side = fill === "auto" || fill === "surface" ? sideOf(shape) : null;
+  const surface = side && !hole ? surfaceOf(side, F, P, rims, { slope: smooth && smooth.slope ? smooth.slope : null }) : null;
+  if (surface && (fill === "surface" || surface.gap > waist)) {
+    fillPath = surface.fill;
+    outline = surface.outline;
+  } else if (fill === "hull" || fill === "auto" || fill === "surface") {
+    const most = Math.max(...shape.map(([, r]) => r));
+    const around = Math.min(320, Math.max(n, Math.ceil((TAU * most * scaleOf(P)) / 1.5)));
+    const tagged = [];
+    shape.forEach(([s, r], index) => {
+      for (let j = 0; j < around; j++) tagged.push({ p: iso(pointOf(F, s, r, (j / around) * TAU), P), ring: index });
+    });
+    const hull = hullTagged(tagged);
+    const holePath = hole ? pathOf(Array.from({ length: around }, (_, j) => iso(pointOf(F, hole[0], hole[1], (j / around) * TAU), P)), true) : "";
+    fillPath = pathOf(hull.map(({ p }) => p), true) + holePath;
+    if (rims === "all") {
+      outline = pathOf(hull.map(({ p }) => p), true) + holePath;
+    } else {
+      const keepFirst = rims === "first" || rims === "ends";
+      const keepLast = rims === "last" || rims === "ends";
+      const edges = hull.map((a, index) => {
+        const b = hull[(index + 1) % hull.length];
+        const same = a.ring === b.ring;
+        const keep = !same || (a.ring !== 0 && a.ring !== shape.length - 1) || (keepFirst && a.ring === 0) || (keepLast && a.ring === shape.length - 1);
+        return [a.p, b.p, keep];
+      });
+      outline = chains(edges).map((points) => pathOf(points)).join("") + holePath;
+    }
+  } else {
+    fillPath = all ? all.join("") : (({ shades, top }) => [...shades, top].join(""))(lathe(meridian, F, P, { steps: n, fill: "auto", hole, rims, smooth, waist }));
+    outline = "";
+  }
+  return { fill: fillPath, outline };
+}
+
+const signedArea = (points) => points.reduce((sum, [x, y], index) => {
+  const [nx, ny] = points[(index + 1) % points.length];
+  return sum + x * ny - nx * y;
+}, 0);
+
+const oriented = (points) => (signedArea(points) < 0 ? [...points].reverse() : points);
+
+const saddleStart = (R, a, angle) => Math.sqrt(Math.max(0, R * R - a * a * Math.cos(angle) ** 2));
+
+function saddleOf(F, a, start, s1, P, { steps = stepsFor(a, 24) } = {}) {
+  const V = viewOf(P);
+  const L = lightOf(P);
+  const n = steps;
+  const angle = (j) => (j / n) * TAU;
+  const from = typeof start === "function" ? start : (t) => saddleStart(start, a, t);
+  const low = Array.from({ length: n }, (_, j) => iso(pointOf(F, from(angle(j)), a, angle(j)), P));
+  const high = Array.from({ length: n }, (_, j) => iso(pointOf(F, s1, a, angle(j)), P));
+  const seen = [];
+  const tones = [];
+  for (let j = 0; j < n; j++) {
+    const normal = radialOf(F, angle(j + 0.5));
+    seen.push(dot3(normal, V) > 1e-6);
+    tones.push(bandOf(dot3(normal, L)));
+  }
+  const buckets = [[], [], [], [], []];
+  const fills = [];
+  const keys = seen.map((visible, j) => (visible ? tones[j] : null));
+  for (const { key, run } of groupsOf(keys)) {
+    const d = pathOf(oriented([...run.map((j) => low[j]), ...run.map((j) => high[j]).reverse()]), true);
+    buckets[key].push(d);
+    fills.push(d);
+  }
+  const capSeen = dot3(F.a, V) > 1e-6;
+  if (capSeen) {
+    const d = pathOf(oriented(high), true);
+    buckets[bandOf(dot3(F.a, L))].push(d);
+    fills.push(d);
+  }
+  const front = runsOf(seen);
+  const back = runsOf(seen.map((visible) => !visible));
+  const edges = [];
+  for (const run of front) {
+    edges.push(pathOf(run.map((j) => low[j])));
+    edges.push(pathOf([low[run[0]], high[run[0]]]), pathOf([low[run[run.length - 1]], high[run[run.length - 1]]]));
+  }
+  for (const run of capSeen ? back : front) edges.push(pathOf(run.map((j) => high[j])));
+  return {
+    fill: fills.join(""),
+    outline: edges.join(""),
+    crease: capSeen ? front.map((run) => pathOf(run.map((j) => high[j]))).join("") : "",
+    top: buckets[4].join(""),
+    shades: buckets.slice(0, 4).map((list) => list.join("")),
+    seamless: true,
+  };
+}
+
+function prismOf(F, polygon, s0, s1, P) {
+  const V = viewOf(P);
+  const L = lightOf(P);
+  const ring = oriented(polygon.map(([x, y]) => [x, y]));
+  const n = ring.length;
+  const at = (s, [x, y]) => [F.o[0] + F.a[0] * s + F.u[0] * x + F.v[0] * y, F.o[1] + F.a[1] * s + F.u[1] * x + F.v[1] * y, F.o[2] + F.a[2] * s + F.u[2] * x + F.v[2] * y];
+  const low = ring.map((point) => iso(at(s0, point), P));
+  const high = ring.map((point) => iso(at(s1, point), P));
+  const buckets = [[], [], [], [], []];
+  const seen = [];
+  for (let j = 0; j < n; j++) {
+    const [x0, y0] = ring[j];
+    const [x1, y1] = ring[(j + 1) % n];
+    const normal = unit3(add3(mul3(F.u, y1 - y0), mul3(F.v, -(x1 - x0))));
+    const visible = dot3(normal, V) > 1e-6;
+    seen.push(visible);
+    if (visible) buckets[bandOf(dot3(normal, L))].push(pathOf([low[j], low[(j + 1) % n], high[(j + 1) % n], high[j]], true));
+  }
+  const ends = [[s0, low, mul3(F.a, -1)], [s1, high, F.a]];
+  const capSeen = ends.map(([, , normal]) => dot3(normal, V) > 1e-6);
+  ends.forEach(([, points, normal], index) => capSeen[index] && buckets[bandOf(dot3(normal, L))].push(pathOf(points, true)));
+  const hull = hullOf([...low, ...high]);
+  const creases = [];
+  for (let j = 0; j < n; j++) {
+    const prev = (j - 1 + n) % n;
+    const a = [ring[j][0] - ring[prev][0], ring[j][1] - ring[prev][1]];
+    const b = [ring[(j + 1) % n][0] - ring[j][0], ring[(j + 1) % n][1] - ring[j][1]];
+    const sharp = (a[0] * b[0] + a[1] * b[1]) / (Math.hypot(a[0], a[1]) * Math.hypot(b[0], b[1]) || 1) < Math.cos(0.35);
+    if (sharp && seen[j] && seen[prev]) creases.push(pathOf([low[j], high[j]]));
+    ends.forEach(([, points], index) => capSeen[index] && seen[j] && creases.push(pathOf([points[j], points[(j + 1) % n]])));
+  }
+  return { fill: pathOf(hull, true), outline: pathOf(hull, true), crease: creases.join(""), top: buckets[4].join(""), shades: buckets.slice(0, 4).map((list) => list.join("")) };
+}
+
+function stadium(r0, r1, offset, steps = 32) {
+  const circle = (cx, r) => Array.from({ length: steps }, (_, index) => [cx + r * Math.cos((index / steps) * TAU), r * Math.sin((index / steps) * TAU)]);
+  return hullOf([...circle(0, r0), ...circle(offset, r1)]);
+}
+
+function sphereOf(centre, r, P, { steps = 48 } = {}) {
+  const V = viewOf(P);
+  const L = lightOf(P);
+  const F = frameAlong(centre, V);
+  const flat = (p) => iso(p, P);
+  const rim = Array.from({ length: steps }, (_, index) => pointOf(F, 0, r, (index / steps) * TAU));
+  const outline = pathOf(rim.map(flat), true);
+  const capOf = (threshold) => {
+    const points = rim.filter((p) => dot3(sub3(p, centre), L) / r >= threshold).map(flat);
+    const c = dot3(L, V);
+    const LF = frameAlong(add3(centre, mul3(L, r * threshold)), L);
+    const radius = r * Math.sqrt(Math.max(0, 1 - threshold * threshold));
+    for (let index = 0; index < steps; index++) {
+      const p = pointOf(LF, 0, radius, (index / steps) * TAU);
+      if (dot3(sub3(p, centre), V) >= -1e-9) points.push(flat(p));
+    }
+    if (c > threshold) points.push(flat(add3(centre, mul3(V, r))));
+    return points.length > 2 ? pathOf(hullOf(points), true) : "";
+  };
+  const shades = [outline, capOf(BANDS[1]), capOf(BANDS[2]), capOf(BANDS[3])];
+  return { fill: outline, outline, crease: "", top: "", shades, seamless: true };
+}
+
+const disc = (s0, s1, r, F, P, options = {}) =>
+  lathe(
+    [
+      [s0, 0],
+      [s0, r],
+      [s1, r],
+      [s1, 0],
+    ],
+    F,
+    P,
+    { steps: stepsFor(r, 32, 160, scaleOf(P)), ...options },
+  );
+
+const ringBand = (s0, s1, rIn, rOut, F, P, options = {}) =>
+  lathe(
+    [
+      [s0, rIn],
+      [s0, rOut],
+      [s1, rOut],
+      [s1, rIn],
+    ],
+    F,
+    P,
+    { steps: stepsFor(rOut, 32, 160, scaleOf(P)), hole: null, ...options },
+  );
+
+function solidOf(profile, F, P, options = {}) {
+  const first = profile[0];
+  const last = profile[profile.length - 1];
+  const meridian = [[first[0], 0], ...profile, [last[0], 0]];
+  const most = Math.max(...profile.map(([, r]) => r));
+  return lathe(meridian, F, P, { steps: stepsFor(most, 32, 160, scaleOf(P)), ...options });
+}
+
+function bandOfProfile(profile, F, P, options = {}) {
+  const most = Math.max(...profile.map(([, r]) => r));
+  return lathe(profile, F, P, { steps: stepsFor(most, 32, 160, scaleOf(P)), ...options });
+}
+
+function silhouettePoints(profile, F, P, { samples = 72, slope: given = null, radius = null } = {}) {
+  const V = viewOf(P);
+  const aV = dot3(F.a, V);
+  const uV = dot3(F.u, V);
+  const vV = dot3(F.v, V);
+  const facing = Math.atan2(vV, uV);
+  const flat = Math.hypot(uV, vV) || 1e-9;
+  const s0 = profile[0][0];
+  const s1 = profile[profile.length - 1][0];
+  const radiusAt = radius ?? ((s) => {
+    let index = 1;
+    while (index < profile.length - 1 && profile[index][0] < s) index++;
+    const [sa, ra] = profile[index - 1];
+    const [sb, rb] = profile[index];
+    return ra + ((rb - ra) * (s - sa)) / (sb - sa || 1);
+  });
+  const side = (sign) => {
+    const points = [];
+    for (let step = 0; step <= samples; step++) {
+      const s = s0 + ((s1 - s0) * step) / samples;
+      const h = (s1 - s0) / samples / 2 || 0.01;
+      const slope = given ? given(s) : (radiusAt(Math.min(s1, s + h)) - radiusAt(Math.max(s0, s - h))) / (Math.min(s1, s + h) - Math.max(s0, s - h) || 1);
+      const c = (slope * aV) / flat;
+      if (Math.abs(c) > 1) continue;
+      points.push(pointOf(F, s, radiusAt(s), facing + sign * Math.acos(c)));
+    }
+    return points;
+  };
+  return [side(1), side(-1)];
+}
+
+const silhouetteOf = (profile, F, P, options = {}) =>
+  silhouettePoints(profile, F, P, options)
+    .map((points) => pathOf(points.map((point) => iso(point, P))))
+    .join("");
+
+function profileCurve(profile, { slope = null, radius = null } = {}) {
+  for (let index = 1; index < profile.length; index++) if (profile[index][0] - profile[index - 1][0] <= 1e-9) throw new Error(`profileCurve: s must rise along the profile (point ${index} at s = ${profile[index][0]})`);
+  const segments = curveRuns(profile);
+  const s0 = profile[0][0];
+  const s1 = profile[profile.length - 1][0];
+  const find = (s) => {
+    let lo = 0;
+    let hi = profile.length - 2;
+    while (lo < hi) {
+      const mid = (lo + hi + 1) >> 1;
+      if (profile[mid][0] <= s) lo = mid;
+      else hi = mid - 1;
+    }
+    return lo;
+  };
+  const linear = (index, s) => {
+    const [sa, ra] = profile[index];
+    const [sb, rb] = profile[index + 1];
+    return [ra + ((rb - ra) * (s - sa)) / (sb - sa), (rb - ra) / (sb - sa)];
+  };
+  const radiusAt = radius ?? ((s) => {
+    const at = Math.max(s0, Math.min(s1, s));
+    const index = find(at);
+    return segments[index] ? segments[index].radius(at) : linear(index, at)[0];
+  });
+  const slopeAt = slope ?? ((s) => {
+    const at = Math.max(s0, Math.min(s1, s));
+    const index = find(at);
+    return segments[index] ? segments[index].slope(at) : linear(index, at)[1];
+  });
+  return { s0, s1, radius: radiusAt, slope: slopeAt, analytic: Boolean(slope && radius) };
+}
+
+function bandsOf(profile, cuts, F, P, { slope = null, radius = null, steps, rows = 6, rims = "none", fill = "auto", samples = 72 } = {}) {
+  const curve = profileCurve(profile, { slope, radius });
+  const { s0, s1 } = curve;
+  const stops = [s0, ...[...new Set(cuts)].filter((s) => s > s0 + 1e-6 && s < s1 - 1e-6).sort((a, b) => a - b), s1];
+  const most = Math.max(...profile.map(([, r]) => r), ...stops.map((s) => curve.radius(s)));
+  const n = steps ?? stepsFor(most, 32, 160, scaleOf(P));
+  const knot = (s, soft) => (soft ? [s, curve.radius(s), 1] : [s, curve.radius(s)]);
+  const meridianOf = (a, b) => [knot(a), ...profile.filter(([s]) => s > a + 1e-9 && s < b - 1e-9).map(([s, , soft]) => knot(s, soft)), knot(b)];
+  const shading = { slope: curve.slope, radius: curve.radius, rows };
+  const bands = stops.slice(0, -1).map((a, index) => {
+    const b = stops[index + 1];
+    const meridian = meridianOf(a, b);
+    const paths = lathe(meridian, F, P, { steps: n, rims, fill, smooth: shading });
+    const seam = index < stops.length - 2 ? arcOf(F, b, curve.radius(b), P, { slope: curve.slope(b) }) : "";
+    return { s0: a, s1: b, profile: meridian, paths: { ...paths, outline: "" }, outline: paths.outline, seam };
+  });
+  const sidesOf = (from = s0, to = s1, { ends = false, count = samples } = {}) => {
+    const span = [Math.max(s0, from), Math.min(s1, to)];
+    const dense = Array.from({ length: count + 1 }, (_, index) => knot(span[0] + ((span[1] - span[0]) * index) / count, true));
+    const points = silhouettePoints(dense, F, P, { samples: count, slope: curve.slope, radius: curve.radius });
+    const rim = (s) => arcOf(F, s, curve.radius(s), P, { slope: curve.slope(s) });
+    const rimsAt = ends === true ? span : ends === "first" ? [span[0]] : ends === "last" ? [span[1]] : [];
+    return { d: points.map((list) => pathOf(list.map((point) => iso(point, P)))).join("") + rimsAt.map(rim).join(""), points };
+  };
+  return { bands, sidesOf, radius: curve.radius, slope: curve.slope, steps: n, s0, s1 };
+}
+
+function arcOf(F, s, r, P, { slope = 0, steps = 0, least = 0.02, inward = false, from = 0, to = TAU, trim = 0.3 } = {}) {
+  const V = viewOf(P);
+  const aV = dot3(F.a, V);
+  const uV = dot3(F.u, V);
+  const vV = dot3(F.v, V);
+  const flat = Math.hypot(uV, vV);
+  const phi = Math.atan2(vV, uV);
+  const norm = Math.hypot(1, slope);
+  const full = Math.abs(to - from - TAU) < 1e-9;
+  let visible;
+  if (flat < 1e-9) visible = (inward ? slope * aV / norm > least : -slope * aV / norm > least) ? [[phi, phi + TAU]] : [];
+  else if (inward) {
+    const c = (slope * aV - least * norm) / flat;
+    visible = c <= -1 ? [] : c >= 1 ? [[phi, phi + TAU]] : [[phi + Math.acos(c), phi + TAU - Math.acos(c)]];
+  } else {
+    const c = (least * norm + slope * aV) / flat;
+    visible = c >= 1 ? [] : c <= -1 ? [[phi, phi + TAU]] : [[phi - Math.acos(c), phi + Math.acos(c)]];
+  }
+  const at = (t) => iso(pointOf(F, s, r, t), P);
+  const speed = (t) => {
+    const a = at(t - 1e-3);
+    const b = at(t + 1e-3);
+    return Math.hypot(b[0] - a[0], b[1] - a[1]) / 2e-3;
+  };
+  const count = (span) => Math.max(2, Math.ceil(((steps || stepsFor(r, 24, 112)) * span) / TAU), Math.ceil((span * r * scaleOf(P)) / 1.5));
+  const out = [];
+  for (const [a, b] of visible) {
+    if (b - a >= TAU - 1e-9 && full) {
+      const n = count(TAU);
+      out.push(pathOf(Array.from({ length: n }, (_, j) => at(from + (j / n) * TAU)), true));
+      continue;
+    }
+    const pieces = full ? [[a, b, true, true]] : [];
+    if (!full)
+      for (let turn = -2; turn <= 2; turn++) {
+        const lo = Math.max(a + turn * TAU, from);
+        const hi = Math.min(b + turn * TAU, to);
+        if (hi - lo > 1e-6) pieces.push([lo, hi, lo > from + 1e-9, hi < to - 1e-9]);
+      }
+    for (const [lo, hi, limb0, limb1] of pieces) {
+      const span = hi - lo;
+      const cut0 = limb0 && trim > 0 ? Math.min(span * 0.25, trim / (speed(lo) || 1)) : 0;
+      const cut1 = limb1 && trim > 0 ? Math.min(span * 0.25, trim / (speed(hi) || 1)) : 0;
+      const t0 = lo + cut0;
+      const t1 = hi - cut1;
+      const n = count(t1 - t0);
+      out.push(pathOf(Array.from({ length: n + 1 }, (_, j) => at(t0 + ((t1 - t0) * j) / n))));
+    }
+  }
+  return out.join("");
+}
+
+function circleOf(F, s, r, P, steps = 0) {
+  const count = steps || stepsFor(r, 24, 112);
+  return pathOf(
+    Array.from({ length: count }, (_, j) => iso(pointOf(F, s, r, (j / count) * TAU), P)),
+    true,
+  );
+}
+
+function spokesOf(F, s, r0, r1, count, P, { phase = 0, sweep = 0, from = 0, to = TAU } = {}) {
+  const lines = [];
+  for (let index = 0; index < count; index++) {
+    const t = phase + from + (index / count) * (to - from);
+    lines.push(pathOf([iso(pointOf(F, s, r0, t), P), iso(pointOf(F, s, r1, t + sweep), P)]));
+  }
+  return lines.join("");
+}
+
+const fadeOf = (value, [lo, hi]) => {
+  const t = Math.max(0, Math.min(1, (value - lo) / (hi - lo || 1e-9)));
+  return t * t * (3 - 2 * t);
+};
+
+function ribsOf(F, s0, s1, r, count, P, { phase = 0, twist = 0, least = 0.12, r1 = r, fade = null, seams = false } = {}) {
+  const V = viewOf(P);
+  const lines = [];
+  const slope = (r1 - r) / (s1 - s0 || 1);
+  for (let index = 0; index < count; index++) {
+    const t = phase + (index / count) * TAU;
+    const radial = radialOf(F, t + twist / 2);
+    const normal = unit3([radial[0] - slope * F.a[0], radial[1] - slope * F.a[1], radial[2] - slope * F.a[2]]);
+    const facing = dot3(normal, V);
+    const d = pathOf([iso(pointOf(F, s0, r, t), P), iso(pointOf(F, s1, r1, t + twist), P)]);
+    if (fade) {
+      const alpha = fadeOf(facing, fade);
+      if (alpha > 0.02) lines.push({ d, alpha });
+      continue;
+    }
+    if (facing < least) continue;
+    lines.push(d);
+  }
+  const ends = seams ? [seams === "last" ? "" : arcOf(F, s0, r, P, { slope }), seams === "first" ? "" : arcOf(F, s1, r1, P, { slope })].filter(Boolean) : [];
+  if (fade) return [...lines, ...ends.map((d) => ({ d, alpha: 1 }))];
+  return [...lines, ...ends].join("");
+}
+
+function rodOut(F, from, to, r, P, { stroke = 0, ...options } = {}) {
+  const pad = 0.35 / scaleOf(P);
+  const ring = (s) => Array.from({ length: 48 }, (_, index) => iso(pointOf(F, s, r + pad, (index / 48) * TAU), P));
+  return {
+    paths: disc(from - stroke, to, r, F, P, options),
+    clip: pathOf(hullOf([...ring(from), ...ring(to + stroke)]), true),
+    from,
+    to,
+    stroke,
+    reach: to + stroke,
+  };
+}
+
+function dotsOf(F, s, r, count, P, { phase = 0, slope = 0, least = 0.08, all = false, fade = null } = {}) {
+  const V = viewOf(P);
+  const out = [];
+  for (let index = 0; index < count; index++) {
+    const t = phase + (index / count) * TAU;
+    let alpha = 1;
+    if (!all) {
+      const radial = radialOf(F, t);
+      const normal = unit3([radial[0] - slope * F.a[0], radial[1] - slope * F.a[1], radial[2] - slope * F.a[2]]);
+      const facing = dot3(normal, V);
+      if (fade) alpha = fadeOf(facing, fade);
+      else if (facing < least) continue;
+      if (alpha <= 0.02) continue;
+    }
+    const [x, y] = iso(pointOf(F, s, r, t), P);
+    out.push(alpha < 1 ? [x, y, alpha] : [x, y]);
+  }
+  return out;
+}
+
+function facingOf(F, angle, P, slope = 0) {
+  const radial = radialOf(F, angle);
+  return dot3(unit3([radial[0] - slope * F.a[0], radial[1] - slope * F.a[1], radial[2] - slope * F.a[2]]), viewOf(P));
+}
+
+function fillet(points, radius, perArc = 7, { P = null, tube = 0, margin = 1.3 } = {}) {
+  if (points.length < 3) return points.map((p) => [...p]);
+  const V = P && tube ? viewOf(P) : null;
+  const out = [[...points[0]]];
+  for (let index = 1; index < points.length - 1; index++) {
+    const prev = points[index - 1];
+    const here = points[index];
+    const next = points[index + 1];
+    const into = unit3(sub3(here, prev));
+    const outOf = unit3(sub3(next, here));
+    const cosTurn = Math.max(-1, Math.min(1, dot3(into, outOf)));
+    const turn = Math.acos(cosTurn);
+    if (turn < 1e-3) {
+      out.push([...here]);
+      continue;
+    }
+    const room = Math.min(len3(sub3(here, prev)), len3(sub3(next, here))) * 0.48;
+    const facing = V ? Math.abs(dot3(unit3(cross3(into, outOf)), V)) : 1;
+    const bend = V ? Math.max(radius, (margin * tube) / (0.7 * Math.max(0.05, facing) ** 2)) : radius;
+    const cut = Math.min(bend * Math.tan(turn / 2), room);
+    const a = sub3(here, mul3(into, cut));
+    const b = add3(here, mul3(outOf, cut));
+    const count = Math.max(2, Math.ceil((perArc * turn) / (Math.PI / 2)));
+    for (let step = 0; step <= count; step++) {
+      const t = step / count;
+      const p0 = lerp3(a, here, t);
+      const p1 = lerp3(here, b, t);
+      out.push(lerp3(p0, p1, t));
+    }
+  }
+  out.push([...points[points.length - 1]]);
+  return out;
+}
+
+function resample(points, spacing) {
+  const lengths = [0];
+  for (let index = 1; index < points.length; index++) lengths.push(lengths[index - 1] + len3(sub3(points[index], points[index - 1])));
+  const total = lengths[lengths.length - 1];
+  const count = Math.max(1, Math.round(total / spacing));
+  const out = [];
+  let segment = 1;
+  for (let step = 0; step <= count; step++) {
+    const at = (total * step) / count;
+    while (segment < points.length - 1 && lengths[segment] < at) segment++;
+    const a = points[segment - 1];
+    const b = points[segment];
+    const span = lengths[segment] - lengths[segment - 1] || 1;
+    out.push(lerp3(a, b, Math.min(1, Math.max(0, (at - lengths[segment - 1]) / span))));
+  }
+  return out;
+}
+
+function pathLength(points) {
+  let total = 0;
+  for (let index = 1; index < points.length; index++) total += len3(sub3(points[index], points[index - 1]));
+  return total;
+}
+
+function cut(points, from, to) {
+  const out = [];
+  let walked = 0;
+  for (let index = 1; index < points.length; index++) {
+    const a = points[index - 1];
+    const b = points[index];
+    const length = len3(sub3(b, a));
+    const start = walked;
+    const end = walked + length;
+    if (end >= from && start <= to) {
+      const t0 = Math.max(0, (from - start) / (length || 1));
+      const t1 = Math.min(1, (to - start) / (length || 1));
+      if (!out.length) out.push(lerp3(a, b, t0));
+      out.push(lerp3(a, b, t1));
+    }
+    walked = end;
+  }
+  return out;
+}
+
+const pointAlong = (points, at) => {
+  const piece = cut(points, at, at + 0.01);
+  return piece[0] ?? points[points.length - 1];
+};
+
+function tangentAlong(points, at) {
+  const total = pathLength(points);
+  const a = pointAlong(points, Math.max(0, at - 0.6));
+  const b = pointAlong(points, Math.min(total, at + 0.6));
+  return unit3(sub3(b, a));
+}
+
+function spiral(F, s, r0, r1, a0, a1, steps = 28) {
+  const out = [];
+  for (let index = 0; index <= steps; index++) {
+    const t = index / steps;
+    out.push(pointOf(F, s, r0 + (r1 - r0) * t, a0 + (a1 - a0) * t));
+  }
+  return out;
+}
+
+function arcPoints(F, s, r, a0, a1, steps = 24) {
+  return Array.from({ length: steps + 1 }, (_, index) => pointOf(F, s, r, a0 + ((a1 - a0) * index) / steps));
+}
+
+return { dot3, add3, sub3, mul3, len3, unit3, cross3, lerp3, viewOf, lightOf, scaleOf, bandOf, toneOf, frameAlong, frameOf, pointOf, radialOf, tangentOf, angleToward, hullOf, runsOf, stepsFor, curveRuns, softOf, lathe, outlineOf, saddleStart, saddleOf, prismOf, stadium, sphereOf, disc, ringBand, solidOf, bandOfProfile, silhouettePoints, silhouetteOf, profileCurve, bandsOf, arcOf, circleOf, spokesOf, fadeOf, ribsOf, rodOut, dotsOf, facingOf, fillet, resample, pathLength, cut, pointAlong, tangentAlong, spiral, arcPoints };
+})();
+const TB = (() => {
+
+
+
+const LIGHT = (() => {
+  const length = Math.hypot(-0.55, -0.835);
+  return [-0.55 / length, -0.835 / length];
+})();
+
+const poly = (points, closed = true) => pathOf(points, closed);
+
+const area = (points) => points.reduce((sum, [x, y], index) => {
+  const [nx, ny] = points[(index + 1) % points.length];
+  return sum + x * ny - nx * y;
+}, 0);
+
+function sideOf(frames) {
+  const out = { left: [], right: [], shineA: [], shineB: [], shadeA: [], shadeB: [] };
+  for (const { p, nx, ny, half } of frames) {
+    out.left.push([p[0] + nx * half, p[1] + ny * half]);
+    out.right.push([p[0] - nx * half, p[1] - ny * half]);
+    const toward = nx * LIGHT[0] + ny * LIGHT[1];
+    const shineAt = half * 0.44 * toward;
+    const shineHalf = half * 0.24;
+    out.shineA.push([p[0] + nx * (shineAt + shineHalf), p[1] + ny * (shineAt + shineHalf)]);
+    out.shineB.push([p[0] + nx * (shineAt - shineHalf), p[1] + ny * (shineAt - shineHalf)]);
+    const shadeAt = -half * 0.62 * toward;
+    const shadeHalf = half * 0.2;
+    out.shadeA.push([p[0] + nx * (shadeAt + shadeHalf), p[1] + ny * (shadeAt + shadeHalf)]);
+    out.shadeB.push([p[0] + nx * (shadeAt - shadeHalf), p[1] + ny * (shadeAt - shadeHalf)]);
+  }
+  return out;
+}
+
+function capOf(centre, tangent, radius, inward, P) {
+  const V = G.viewOf(P);
+  let n1 = G.cross3(tangent, V);
+  if (G.len3(n1) < 1e-6) n1 = G.frameAlong([0, 0, 0], tangent).u;
+  n1 = G.unit3(n1);
+  const n2 = G.unit3(G.cross3(tangent, n1));
+  const steps = 28;
+  const ring = Array.from({ length: steps }, (_, index) => {
+    const angle = (index / steps) * Math.PI * 2;
+    return iso(G.add3(centre, G.add3(G.mul3(n1, radius * Math.cos(angle)), G.mul3(n2, radius * Math.sin(angle)))), P);
+  });
+  const c = iso(centre, P);
+  const probe = iso(G.add3(centre, n2), P);
+  const along = (probe[0] - c[0]) * inward[0] + (probe[1] - c[1]) * inward[1];
+  const from = along > 0 ? steps / 2 : 0;
+  const half = (start) => Array.from({ length: steps / 2 + 1 }, (_, index) => ring[(start + index) % steps]);
+  return { ring, arc: half(from), inner: half((from + steps / 2) % steps) };
+}
+
+function stripeEnd(half, centre, nx, ny, from, to) {
+  const offset = (p) => (p[0] - centre[0]) * nx + (p[1] - centre[1]) * ny;
+  const values = half.map(offset);
+  const lo = Math.min(from, to);
+  const hi = Math.max(from, to);
+  const points = [];
+  const cross = (k, level) => {
+    const t = (level - values[k]) / (values[k + 1] - values[k] || 1e-9);
+    return [half[k][0] + (half[k + 1][0] - half[k][0]) * t, half[k][1] + (half[k + 1][1] - half[k][1]) * t];
+  };
+  for (let k = 0; k < half.length; k++) {
+    if (values[k] >= lo && values[k] <= hi) points.push(half[k]);
+    if (k < half.length - 1) for (const level of [lo, hi]) if ((values[k] - level) * (values[k + 1] - level) < 0) points.push(cross(k, level));
+  }
+  const order = points.map((p) => offset(p));
+  const sorted = points.map((p, index) => [p, order[index]]).sort((x, y) => (from > to ? y[1] - x[1] : x[1] - y[1]));
+  return sorted.map(([p]) => p);
+}
+
+function spansOf(total, gaps, breaks, maxLength, closed) {
+  const cuts = gaps
+    .map(([a, b]) => [Math.max(0, Math.min(a, b)), Math.min(total, Math.max(a, b))])
+    .filter(([a, b]) => b - a > 1e-6)
+    .sort((x, y) => x[0] - y[0]);
+  const runs = [];
+  let at = 0;
+  for (const [a, b] of cuts) {
+    if (a > at + 1e-6) runs.push([at, a, at > 0, true]);
+    at = Math.max(at, b);
+  }
+  if (total > at + 1e-6) runs.push([at, total, at > 0, cuts.length > 0 && cuts[cuts.length - 1][1] >= total - 1e-6]);
+  const pieces = [];
+  for (const [from, to, gapStart, gapEnd] of runs) {
+    const stops = [from, ...breaks.filter((b) => b > from + 1e-6 && b < to - 1e-6).sort((x, y) => x - y), to];
+    for (let index = 0; index < stops.length - 1; index++) {
+      const a = stops[index];
+      const b = stops[index + 1];
+      const count = Math.max(1, Math.ceil((b - a) / maxLength - 1e-9));
+      for (let c = 0; c < count; c++) {
+        pieces.push({
+          from: a + ((b - a) * c) / count,
+          to: a + ((b - a) * (c + 1)) / count,
+          open0: !(index === 0 && c === 0),
+          open1: !(index === stops.length - 2 && c === count - 1),
+          gap0: index === 0 && c === 0 && gapStart,
+          gap1: index === stops.length - 2 && c === count - 1 && gapEnd,
+        });
+      }
+    }
+  }
+  if (closed && !cuts.length && pieces.length) {
+    pieces[0].open0 = true;
+    pieces[pieces.length - 1].open1 = true;
+  }
+  return pieces;
+}
+
+function runsOf(total, gaps = []) {
+  const cuts = gaps
+    .map(([a, b]) => [Math.max(0, Math.min(a, b)), Math.min(total, Math.max(a, b))])
+    .filter(([a, b]) => b - a > 1e-6)
+    .sort((x, y) => x[0] - y[0]);
+  const runs = [];
+  let at = 0;
+  for (const [a, b] of cuts) {
+    if (a > at + 1e-6) runs.push([at, a]);
+    at = Math.max(at, b);
+  }
+  if (total > at + 1e-6) runs.push([at, total]);
+  return runs;
+}
+
+function crossingsOf(points, centre, axis, radius) {
+  const n = G.unit3(axis);
+  const out = [];
+  let walked = 0;
+  for (let index = 1; index < points.length; index++) {
+    const a = points[index - 1];
+    const b = points[index];
+    const length = G.len3(G.sub3(b, a));
+    const da = G.dot3(G.sub3(a, centre), n);
+    const db = G.dot3(G.sub3(b, centre), n);
+    if ((da <= 0 && db > 0) || (da >= 0 && db < 0)) {
+      const t = da / (da - db);
+      const p = G.lerp3(a, b, t);
+      if (G.len3(G.sub3(p, centre)) <= radius) out.push(walked + t * length);
+    }
+    walked += length;
+  }
+  return out;
+}
+
+function ringsOf(dense, total, radiusAt, P, span, { pitch = 3, twist = 0, cross = false, fade = [0.1, 0.55], phase = 0, steps = 16 } = {}) {
+  const V = G.viewOf(P);
+  const [lo, hi] = span;
+  const margin = twist ? 0 : Math.min(pitch * 0.35, (hi - lo) / 2);
+  const from = Math.max(lo, span.real0 ? lo + margin : lo);
+  const to = Math.min(hi, span.real1 ? hi - margin : hi);
+  if (to <= from) return [];
+  const out = [];
+  const hands = twist ? (cross ? [1, -1] : [1]) : [0];
+  const reach = Math.abs(twist) * Math.max(...[0, 0.5, 1].map(radiusAt));
+  const first = Math.ceil((from - reach - phase) / pitch);
+  const last = Math.floor((to + reach - phase) / pitch);
+  const surface = (t, theta) => {
+    const at = Math.max(0, Math.min(total, t));
+    const c = G.pointAlong(dense, at);
+    const T = G.tangentAlong(dense, at);
+    let n1 = G.cross3(T, V);
+    if (G.len3(n1) < 1e-6) return null;
+    n1 = G.unit3(n1);
+    let n2 = G.unit3(G.cross3(T, n1));
+    if (G.dot3(n2, V) < 0) n2 = G.mul3(n2, -1);
+    const r = radiusAt(at / (total || 1));
+    const normal = G.add3(G.mul3(n1, Math.cos(theta)), G.mul3(n2, Math.sin(theta)));
+    return { p: iso(G.add3(c, G.mul3(normal, r)), P), facing: G.dot3(normal, V), r };
+  };
+  for (let index = first; index <= last; index++) {
+    const station = phase + index * pitch;
+    for (const hand of hands) {
+      const samples = [];
+      for (let step = 0; step <= steps; step++) {
+        const theta = (step / steps) * Math.PI;
+        const t = station + hand * twist * radiusAt(Math.max(0, Math.min(1, station / (total || 1)))) * (step / steps - 0.5);
+        samples.push({ t, theta });
+      }
+      for (let step = 0; step < steps; step++) {
+        let a = samples[step];
+        let b = samples[step + 1];
+        if ((a.t < from && b.t < from) || (a.t > to && b.t > to)) continue;
+        const clipTo = (x, y, edge) => ({ t: edge, theta: x.theta + ((y.theta - x.theta) * (edge - x.t)) / (y.t - x.t || 1e-9) });
+        if (a.t < from) a = clipTo(a, b, from);
+        if (b.t < from) b = clipTo(b, a, from);
+        if (a.t > to) a = clipTo(a, b, to);
+        if (b.t > to) b = clipTo(b, a, to);
+        const pa = surface(a.t, a.theta);
+        const pb = surface(b.t, b.theta);
+        if (!pa || !pb) continue;
+        const alpha = fade ? G.fadeOf((pa.facing + pb.facing) / 2, fade) : 1;
+        if (alpha <= 0.02) continue;
+        out.push({ d: pathOf([pa.p, pb.p]), alpha });
+      }
+    }
+  }
+  return out;
+}
+
+function tubePieces(points3, radius, P, { maxLength = 30, spacing = 2.2, closed = false, breaks = [], gaps = [], caps = true, stripes = "auto", rings = null } = {}) {
+  const dense = G.resample(points3, spacing);
+  const total = G.pathLength(dense);
+  const radiusAt = typeof radius === "function" ? radius : () => radius;
+  const k = G.scaleOf(P);
+  const wide = stripes === "auto" ? Math.max(...Array.from({ length: 33 }, (_, index) => radiusAt(index / 32))) * k > 1.3 : Boolean(stripes);
+  const lead = 0.5;
+  const out = [];
+  const looped = closed && !gaps.length;
+  const wrap = (at) => (looped ? ((at % total) + total) % total : Math.max(0, Math.min(total, at)));
+  const step = Math.max(0.05, Math.min(spacing, total / 4) * 0.5);
+  const frameAt = (at, p, width) => {
+    const a = iso(G.pointAlong(dense, wrap(at - step)), P);
+    const b = iso(G.pointAlong(dense, wrap(at + step)), P);
+    let tx = b[0] - a[0];
+    let ty = b[1] - a[1];
+    const length = Math.hypot(tx, ty) || 1;
+    tx /= length;
+    ty /= length;
+    return { p, nx: -ty, ny: tx, half: width };
+  };
+  const partOf = (start, end) => {
+    let points = G.cut(dense, Math.max(0, start), Math.min(total, end));
+    if (looped && start < 0) points = [...G.cut(dense, total + start, total), ...points.slice(1)];
+    if (looped && end > total) points = [...points, ...G.cut(dense, 0, end - total).slice(1)];
+    let walked = looped ? start : Math.max(0, start);
+    const along = points.map((point, index) => {
+      if (index > 0) walked += G.len3(G.sub3(point, points[index - 1]));
+      return walked;
+    });
+    const flat = points.map((point) => iso(point, P));
+    const widths = along.map((at) => radiusAt(looped ? wrap(at) / total : Math.min(1, Math.max(0, at / total))) * k);
+    const frames = flat.map((p, index) => frameAt(along[index], p, widths[index]));
+    return { points, flat, widths, frames };
+  };
+  for (const piece of spansOf(total, gaps, breaks, maxLength, closed)) {
+    const openStart = piece.open0 && (piece.from > 0 || looped);
+    const openEnd = piece.open1 && (piece.to < total || looped);
+    const body = partOf(openStart ? piece.from - lead : piece.from, openEnd ? piece.to + lead : piece.to);
+    if (body.points.length < 2) continue;
+    const stripe = openStart || openEnd ? partOf(openStart ? piece.from - 2 * lead : piece.from, openEnd ? piece.to + 2 * lead : piece.to) : body;
+    const { points: part, flat, widths, frames } = body;
+    const sides = sideOf(frames);
+    const bands = stripe === body ? sides : sideOf(stripe.frames);
+    let bodyPath = poly([...sides.left, ...sides.right.slice().reverse()]);
+    let edges = pathOf(sides.left) + pathOf(sides.right);
+    const ends = [!piece.open0 && !looped && (piece.from <= 1e-6 || piece.gap0), !piece.open1 && !looped && (piece.to >= total - 1e-6 || piece.gap1)];
+    const capped = [ends[0] && (piece.gap0 || [caps].flat()[0]), ends[1] && (piece.gap1 || [caps].flat().at(-1))];
+    const sign = Math.sign(area([...sides.left, ...sides.right.slice().reverse()]));
+    const tips = [null, null];
+    [0, 1].forEach((side) => {
+      if (!capped[side]) return;
+      const at = side ? part.length - 1 : 0;
+      const other = side ? part.length - 2 : 1;
+      const tangent = G.unit3(G.sub3(part[side ? at : other], part[side ? other : at]));
+      const outward = side ? tangent : G.mul3(tangent, -1);
+      const inward = [flat[other][0] - flat[at][0], flat[other][1] - flat[at][1]];
+      const { ring, arc, inner } = capOf(part[at], tangent, widths[at] / k, inward, P);
+      const oriented = Math.sign(area(ring)) === sign ? ring : ring.slice().reverse();
+      bodyPath += poly(oriented);
+      edges += pathOf(arc);
+      const open = G.dot3(outward, G.viewOf(P)) > 0;
+      if (open) edges += pathOf(inner);
+      tips[side] = { half: open ? inner : arc, frame: frames[at] };
+    });
+    const band = (a, b, offsets) => {
+      const head = tips[1] ? stripeEnd(tips[1].half, tips[1].frame.p, tips[1].frame.nx, tips[1].frame.ny, offsets(tips[1].frame)[0], offsets(tips[1].frame)[1]) : [];
+      const tail = tips[0] ? stripeEnd(tips[0].half, tips[0].frame.p, tips[0].frame.nx, tips[0].frame.ny, offsets(tips[0].frame)[1], offsets(tips[0].frame)[0]) : [];
+      return poly([...a, ...head, ...b.slice().reverse(), ...tail]);
+    };
+    const toward = ({ nx, ny }) => nx * LIGHT[0] + ny * LIGHT[1];
+    const shineOffsets = (frame) => [frame.half * 0.44 * toward(frame) + frame.half * 0.24, frame.half * 0.44 * toward(frame) - frame.half * 0.24];
+    const shadeOffsets = (frame) => [-frame.half * 0.62 * toward(frame) + frame.half * 0.2, -frame.half * 0.62 * toward(frame) - frame.half * 0.2];
+    const ringSpan = Object.assign([openStart ? piece.from - 2 * lead : piece.from, openEnd ? piece.to + 2 * lead : piece.to], { real0: !openStart, real1: !openEnd });
+    out.push({
+      rings: rings ? ringsOf(dense, total, radiusAt, P, ringSpan, rings) : [],
+      ringTone: rings?.tone ?? "lo",
+      mid: G.pointAlong(dense, (piece.from + piece.to) / 2),
+      body: bodyPath,
+      shine: band(bands.shineA, bands.shineB, shineOffsets),
+      shade: band(bands.shadeA, bands.shadeB, shadeOffsets),
+      edges,
+      wide,
+      points: part,
+      radii: widths.map((width) => width / k),
+      ends,
+      from: piece.from,
+      to: piece.to,
+    });
+  }
+  return out;
+}
+
+function ringsSvg(rings, tone = "lo") {
+  const groups = new Map();
+  for (const { d, alpha } of rings ?? []) {
+    const level = Math.min(1, Math.round(alpha * 20) / 20);
+    if (level <= 0) continue;
+    groups.set(level, (groups.get(level) ?? "") + d);
+  }
+  return [...groups].map(([alpha, d]) => `<path class="tb-ring" data-tone="${tone}" d="${d}"${alpha < 1 ? ` opacity="${alpha.toFixed(2)}"` : ""}/>`).join("");
+}
+
+function tubeSvg(piece, { tone = "hi" } = {}) {
+  const shine = piece.wide ? `<path class="tb-shine" d="${piece.shine}"/><path class="tb-shade" d="${piece.shade}"/>` : "";
+  return `<g class="tb"><path class="tb-body" d="${piece.body}"/>${shine}${ringsSvg(piece.rings, piece.ringTone)}<path class="iso-line tb-edge" data-tone="${tone}" d="${piece.edges}"/></g>`;
+}
+
+return { runsOf, crossingsOf, tubePieces, ringsSvg, tubeSvg };
+})();
+const D = (() => {
+// Dessin des raccords et des bouts de tube, dans le navigateur comme dans Node (figures raccords, choix-raccord).
+// Un raccord du catalogue (figures/_data/raccords.mjs) : { material, mode, type, sizes, ends, angle }.
+// Corps tiré au tube (kit tube.mjs : coudes lisses), extrémités tournées (lathe.mjs), écrous en prismes hexagonaux,
+// peints par profondeur. Les tubes présentés (choix-raccord) partent de la bouche de chaque extrémité, à fleur.
+// `k` = fonctions du kit iso (iso, pathOf, depthOf, solidSvg, lineSvg, topMatrix, faceTextSvg), `G` = lathe, `TB` = tube.
+
+function makeDraw(k, G, TB) {
+  const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+  const mul = (a, s) => [a[0] * s, a[1] * s, a[2] * s];
+  const TAU = Math.PI * 2;
+  const dir = (deg) => [Math.cos((deg * Math.PI) / 180), Math.sin((deg * Math.PI) / 180), 0];
+
+  // Rayon affiché : croît comme la racine du diamètre réel, borné pour rester dans la carte.
+  const radiusOf = (od) => Math.max(7, Math.min(22, 5 + 12 * Math.sqrt(od / 28.575)));
+  const lengthOf = (r) => r + 9;
+
+  // Géométrie : bouches (point, direction sortante, rayon, longueur d'emboîture) et tracé du corps.
+  function layout(f, ods, z) {
+    const r = ods.map(radiusOf);
+    const C = [0, 0, z];
+    const mouths = [];
+    const routes = [];
+    const end = (inner, d, i) => {
+      const L = lengthOf(r[i]);
+      mouths.push({ inner, d, r: r[i], L, p: add(inner, mul(d, L)) });
+    };
+    if (f.type === "manchon" || f.type === "reduction") {
+      const half = f.type === "manchon" ? 1.5 : 4 + Math.abs(r[0] - r[1]);
+      end(add(C, [-half, 0, 0]), [-1, 0, 0], 0);
+      end(add(C, [half, 0, 0]), [1, 0, 0], 1);
+      routes.push({ points: [mouths[0].inner, mouths[1].inner], radius: (t) => r[0] + (r[1] - r[0]) * t });
+    } else if (f.type === "coude" && f.angle === 180) {
+      const rho = r[0] * 1.7;
+      end(add(C, [-2, -rho, 0]), [-1, 0, 0], 0);
+      end(add(C, [-2, rho, 0]), [-1, 0, 0], 1);
+      routes.push({ points: G.fillet([mouths[0].inner, add(C, [rho, -rho, 0]), add(C, [rho, rho, 0]), mouths[1].inner], rho * 0.98, 10), radius: () => r[0] });
+    } else if (f.type === "coude") {
+      const out = dir(-f.angle);
+      const rho = r[0] * 1.5;
+      const a = rho * Math.tan(((f.angle / 2) * Math.PI) / 180) + 2;
+      end(add(C, [-a, 0, 0]), [-1, 0, 0], 0);
+      end(add(C, mul(out, a)), out, 1);
+      routes.push({ points: G.fillet([mouths[0].inner, C, mouths[1].inner], rho, 10), radius: () => r[0] });
+    } else {
+      const a = r[0] + 4;
+      end(add(C, [-a, 0, 0]), [-1, 0, 0], 0);
+      end(add(C, [a, 0, 0]), [1, 0, 0], 1);
+      const b = Math.max(a, r[0] + 3);
+      end(add(C, [0, b, 0]), [0, 1, 0], 2);
+      routes.push({ points: [mouths[0].inner, mouths[1].inner], radius: () => r[0] });
+      routes.push({ points: [add(C, [0, r[0] * 0.8, 0]), mouths[2].inner], radius: () => r[2], branch: true });
+    }
+    return { mouths, routes };
+  }
+
+  // Style d'une extrémité selon le mode d'assemblage et le genre.
+  const styleOf = (mode, gender) =>
+    ({ braser: "socket", sertir: "press", coller: "pvc", emboiter: "sleeve" })[mode] ||
+    (mode === "dudgeon" ? (gender === "M" ? "flare" : "nut") : gender === "M" ? "thread" : "steel");
+
+  const hexagon = (R, turn = 0) => Array.from({ length: 6 }, (_, i) => [R * Math.cos(turn + (i * TAU) / 6), R * Math.sin(turn + (i * TAU) / 6)]);
+  const frameIn = (m) => G.frameAlong(m.p, mul(m.d, -1));
+
+  function hole(m, P, radius) {
+    const F = frameIn(m);
+    const V = G.viewOf(P);
+    const facing = m.d[0] * V[0] + m.d[1] * V[1] + m.d[2] * V[2];
+    if (facing <= 0.05) return "";
+    const pts = Array.from({ length: 28 }, (_, i) => k.iso(G.pointOf(F, 0, radius, (i * TAU) / 28), P));
+    return `<path class="rc-hole" d="${k.pathOf(pts, true)}"/>`;
+  }
+
+  function endPiece(m, style, P, tone) {
+    const F = frameIn(m);
+    const { r, L } = m;
+    const S = (paths, extra = {}) => k.solidSvg(paths, { tone, ...extra });
+    const lines = (d) => (d ? k.lineSvg(d, { tone: "faint" }) : "");
+    const threads = (s0, s1, radius) => {
+      let d = "";
+      for (let s = s0; s <= s1; s += 1.5) d += G.arcOf(F, s, radius, P);
+      return lines(d);
+    };
+    const rs = r * 1.1;
+    switch (style) {
+      case "press":
+        return S(G.solidOf([[0, rs - 0.5], [0.5, rs], [1.6, rs], [2.4, rs + 1.5, 1], [4.4, rs + 1.5, 1], [5.2, rs], [L, rs], [L, r]], F, P)) + hole(m, P, r * 0.86);
+      case "pvc":
+        return S(G.solidOf([[0, rs + 1], [2.6, rs + 1], [3, rs], [L, rs], [L, r]], F, P), { inner: lines(G.arcOf(F, L * 0.55, rs, P)) }) + hole(m, P, r * 0.9);
+      case "sleeve": {
+        let ribs = "";
+        for (let s = 2; s < L - 1; s += 2.4) ribs += G.arcOf(F, s, rs, P);
+        return S(G.solidOf([[0, rs], [L, rs], [L, r]], F, P), { inner: lines(ribs) }) + hole(m, P, r * 0.9);
+      }
+      case "flare": {
+        const rm = r * 0.8;
+        const spigot = S(G.solidOf([[0, rm * 0.5], [2.6, rm * 0.92], [3, rm], [L - 5, rm], [L - 5, r * 0.7], [L, r * 0.7]], F, P), { inner: threads(3.6, L - 6, rm) });
+        return spigot + S(G.prismOf(F, hexagon(r * 1.25, Math.PI / 6), L - 5, L, P), { tone: "mid" });
+      }
+      case "thread": {
+        const rm = r * 0.9;
+        const spigot = S(G.solidOf([[0, rm - 0.6], [0.6, rm], [L - 5, rm], [L - 5, r * 0.8], [L, r * 0.8]], F, P), { inner: threads(1.4, L - 6, rm) });
+        return spigot + S(G.prismOf(F, hexagon(r * 1.25, Math.PI / 6), L - 5, L, P), { tone: "mid" });
+      }
+      case "nut":
+        return S(G.prismOf(F, hexagon(r * 1.3, Math.PI / 6), 0, L, P), { tone: "mid" }) + hole(m, P, r * 0.8);
+      case "steel":
+        return S(G.solidOf([[0, rs + 1.2], [3, rs + 1.2], [3.2, rs], [L, rs], [L, r]], F, P)) + hole(m, P, r * 0.85);
+      default:
+        return S(G.solidOf([[0, rs - 0.5], [0.5, rs], [L - 1, rs], [L, r]], F, P), { inner: lines(G.arcOf(F, L - 2.4, rs, P)) }) + hole(m, P, r * 0.86);
+    }
+  }
+
+  // Tube présenté au bout `i` : il part de la bouche, à fleur, vers l'extérieur.
+  function presented(m, present, material, P, length = 24) {
+    const tone = "hi";
+    const rt = m.r * 0.94;
+    const far = add(m.p, mul(m.d, length));
+    const F = G.frameAlong(m.p, m.d);
+    const S = (paths, extra = {}) => k.solidSvg(paths, { tone, ...extra });
+    if (present === "port-male" || present === "port-femelle") {
+      const block = { x: -m.r * 1.6, y: -m.r * 1.6, w: m.r * 3.2, d: m.r * 3.2 };
+      const BF = G.frameAlong(add(m.p, mul(m.d, 9)), m.d);
+      const body = S(G.prismOf(BF, [[block.x, block.y], [block.x + block.w, block.y], [block.x + block.w, block.y + block.d], [block.x, block.y + block.d]], 0, 16, P), { tone: "mid" });
+      const boss = present === "port-male"
+        ? S(G.solidOf([[0, m.r * 0.5], [2.2, m.r * 0.8], [9, m.r * 0.8]], F, P), { inner: k.lineSvg([2.8, 4.3, 5.8, 7.3].map((s) => G.arcOf(F, s, m.r * 0.8, P)).join(""), { tone: "faint" }) })
+        : S(G.solidOf([[0, m.r * 1.15], [9, m.r * 1.15]], F, P)) + hole({ ...m, d: mul(m.d, -1), p: m.p }, P, m.r * 0.8);
+      return [{ at: add(m.p, mul(m.d, 17)), svg: body }, { at: add(m.p, mul(m.d, 4.5)), svg: boss }];
+    }
+    const pieces = TB.tubePieces([m.p, far], rt, P, { caps: [true, false] });
+    const out = pieces.map((piece) => ({ at: piece.mid, svg: TB.tubeSvg(piece, { tone }) }));
+    if (present === "tube-evase") {
+      out.push({ at: add(m.p, mul(m.d, 2.5)), svg: S(G.solidOf([[0, rt * 0.6], [2.4, rt * 1.05], [2.6, rt]], F, P)) });
+      out.push({ at: add(m.p, mul(m.d, 6)), svg: S(G.prismOf(F, hexagon(m.r * 1.3, Math.PI / 6), 3, 9, P), { tone: "mid" }) });
+    }
+    if (present === "tube-filete") {
+      let d = "";
+      for (let s = 1; s < 8; s += 1.5) d += G.arcOf(F, s, rt, P);
+      out.push({ at: add(m.p, mul(m.d, 4)), svg: k.lineSvg(d, { tone: "lo" }) });
+    }
+    return out;
+  }
+
+  // Teinte de matière (CSS) : laiton pour le dudgeon et les vannes, sinon celle du matériau.
+  const tintOf = (material, mode) => (mode === "dudgeon" ? "laiton" : material.startsWith("cuivre") ? "cuivre" : material);
+  const tinted = (tint, list) => list.map((item) => ({ ...item, svg: `<g data-tint="${tint}">${item.svg}</g>` }));
+
+  // Raccord seul, ou tubes seuls, ou les deux : renvoie le SVG peint par profondeur.
+  function scene(f, ods, P, { z = 30, fitting = true, presents = null, material = f.material, tags = null } = {}) {
+    const { mouths, routes } = layout(f, ods, z);
+    const items = [];
+    // Support tourné sous le centre du raccord : socle, colonne et berceau.
+    const low = z - Math.max(...mouths.map((m) => m.r)) - 1;
+    const post = k.solidSvg(k.cylinder(0, 0, 9, 0, 2.2, P, 36, 0.4), { tone: "lo" }) + k.solidSvg(k.cylinder(0, 0, 2.6, 2.2, low - 2.2, P, 20), { tone: "mid" }) + k.solidSvg(k.cylinder(0, 0, 6, low - 1.6, 1.6, P, 28, 0.3), { tone: "mid" });
+    items.push({ at: [0, 0, 0], svg: post });
+    if (fitting) {
+      const tint = tintOf(f.material, f.mode);
+      routes.forEach((route) => {
+        for (const piece of TB.tubePieces(route.points, route.radius, P, { caps: false, maxLength: 12 })) items.push(...tinted(tint, [{ at: piece.mid, svg: TB.tubeSvg(piece, { tone: "hi" }) }]));
+      });
+      mouths.forEach((m, i) => items.push(...tinted(tint, [{ at: add(m.p, mul(m.d, -m.L / 2)), svg: endPiece(m, styleOf(f.mode, f.ends[i]), P, "hi") }])));
+    }
+    if (presents) {
+      mouths.forEach((m, i) => {
+        if (!presents[i]) return; // bouche laissée libre (prise du té de la figure raccords-flare)
+        const port = presents[i].startsWith("port");
+        items.push(...tinted(port ? "laiton" : tintOf(material, ""), presented(m, presents[i], material, P)));
+      });
+    }
+    items.sort((a, b) => k.depthOf(a.at, P) - k.depthOf(b.at, P));
+    const extent = mouths.map((m, i) => add(m.p, mul(m.d, presents && presents[i] ? 26 : 0)));
+    const xs = [...extent.map((p) => p[0]), 0], ys = [...extent.map((p) => p[1]), 0];
+    const pad = Math.max(...mouths.map((m) => m.r)) * 0.6 + 4;
+    const plan = { x: Math.min(...xs) - pad, y: Math.min(...ys) - pad, w: Math.max(...xs) - Math.min(...xs) + 2 * pad, d: Math.max(...ys) - Math.min(...ys) + 2 * pad, r: pad };
+    const halo = `<path class="iso-halo rc-halo" d="${k.haloOf(plan, 0, 0.3, P)}"/>`;
+    let labels = "";
+    if (tags) {
+      mouths.forEach((m, i) => {
+        if (!tags[i]) return; // repère posé à part (valve du té de raccords-flare)
+        const at = add(m.p, mul(m.d, presents ? 31 : 6));
+        const xy = k.iso([at[0], at[1], at[2] + m.r + 4], P);
+        labels += `<g class="rc-tag"><circle cx="${xy[0].toFixed(1)}" cy="${xy[1].toFixed(1)}" r="7"/><text x="${xy[0].toFixed(1)}" y="${(xy[1] + 2.6).toFixed(1)}" text-anchor="middle">${tags[i]}</text></g>`;
+      });
+    }
+    return halo + items.map((item) => item.svg).join("") + labels;
+  }
+
+  return { radiusOf, layout, styleOf, tintOf, scene };
+}
+
+return { makeDraw };
+})();
+const SA = (() => {
+// Dessin des 5 raccords dudgeon (figure raccords-flare, Q104), dans le navigateur comme dans Node.
+// Union, réduction et té passent par raccords-draw en mode « dudgeon » (cône fileté mâle + six pans, écrou femelle) ;
+// l'écrou seul, le bouchon (capuchon conique) et la valve à obus de la prise de pression sont tournés ici.
+// `k` = kit iso, `G` = lathe, `TB` = tube, `D` = raccords-draw.
+
+function makeDraw(k, G, TB, D) {
+  const draw = D.makeDraw(k, G, TB);
+  const TAU = Math.PI * 2;
+  const Q38 = 9.525, Q14 = 6.35;
+  const hexagon = (R) => Array.from({ length: 6 }, (_, i) => [R * Math.cos(Math.PI / 6 + (i * TAU) / 6), R * Math.sin(Math.PI / 6 + (i * TAU) / 6)]);
+  const FLARE = { material: "cuivre-pouce", mode: "dudgeon" };
+  const SPECS = {
+    union: { type: "manchon", ends: ["M", "M"], ods: [Q38, Q38], presents: ["tube-evase", "tube-evase"] },
+    reduction: { type: "reduction", ends: ["F", "M"], ods: [Q38, Q14], presents: ["port-male", "tube-evase"] },
+    te: { type: "te", ends: ["M", "M", "M"], ods: [Q14, Q14, Q14], tags: ["M", "M", "V"] },
+  };
+  const S = (paths, tone = "hi", extra = {}) => k.solidSvg(paths, { tone, ...extra });
+  const brass = (svg) => `<g data-tint="laiton">${svg}</g>`;
+  const copper = (svg) => `<g data-tint="cuivre">${svg}</g>`;
+  const hose = (svg) => `<g data-tint="flexible">${svg}</g>`;
+  const threads = (F, s0, s1, r, P) => {
+    let d = "";
+    for (let s = s0; s <= s1; s += 1.3) d += G.arcOf(F, s, r, P);
+    return d ? k.lineSvg(d, { tone: "faint" }) : "";
+  };
+  const paintAll = (items, P) => items.sort((a, b) => k.depthOf(a.at, P) - k.depthOf(b.at, P)).map((i) => i.svg).join("");
+  const tag = (p, text, P) => {
+    const xy = k.iso(p, P);
+    return `<g class="rc-tag"><circle cx="${xy[0].toFixed(1)}" cy="${xy[1].toFixed(1)}" r="7"/><text x="${xy[0].toFixed(1)}" y="${(xy[1] + 2.6).toFixed(1)}" text-anchor="middle">${text}</text></g>`;
+  };
+  const post = (x, top, P) => ({ at: [x, 0, 0], svg: k.solidSvg(k.cylinder(x, 0, 9, 0, 2.2, P, 36, 0.4), { tone: "lo" }) + k.solidSvg(k.cylinder(x, 0, 2.6, 2.2, top - 2.2, P, 20), { tone: "mid" }) + k.solidSvg(k.cylinder(x, 0, 6, top - 1.6, 1.6, P, 28, 0.3), { tone: "mid" }) });
+  const hole = (F, s, r, P) => `<path class="rc-hole" d="${k.pathOf(Array.from({ length: 28 }, (_, i) => k.iso(G.pointOf(F, s, r, (i * TAU) / 28), P)), true)}"/>`;
+
+  // Tube de cuivre évasé, de x0 (bord évasé) à x1, dans l'axe x.
+  function flaredTube(x0, x1, r, z, P) {
+    const out = TB.tubePieces([[x0, 0, z], [x1, 0, z]], r, P, { caps: [true, true] }).map((piece) => ({ at: piece.mid, svg: copper(TB.tubeSvg(piece, { tone: "hi" })) }));
+    const F = G.frameAlong([x0, 0, z], [Math.sign(x1 - x0), 0, 0]);
+    out.push({ at: [x0 + Math.sign(x1 - x0) * 1.5, 0, z], svg: copper(S(G.solidOf([[0, r * 1.55], [2.6, r]], F, P))) });
+    return out;
+  }
+  // Orifice mâle conique sur un bloc (vanne, compresseur) ; le cône finit en x0 et pointe vers `dir` (+1 ou -1).
+  function malePort(x0, r, z, P, dir = 1) {
+    const s = r * 2.2;
+    const BF = G.frameAlong([x0 - 21.5 * dir, 0, z], [dir, 0, 0]);
+    return [
+      { at: [x0 - 15.5 * dir, 0, z], svg: brass(S(G.prismOf(BF, [[-s, -s], [s, -s], [s, s], [-s, s]], 0, 12, P), "mid")) },
+      { at: [x0 - 4 * dir, 0, z], svg: brass(S(G.solidOf([[12, r * 1.2], [20, r * 1.2], [21.5, r * 0.6]], BF, P), "hi", { inner: threads(BF, 13, 19.5, r * 1.2, P) })) },
+    ];
+  }
+
+  // Écrou seul : six pans percé, collerette conique visible à l'intérieur ; monté : sur tube évasé, contre un orifice mâle.
+  function ecrou(P, { mounted }) {
+    const z = 30, r = draw.radiusOf(Q38);
+    const items = [post(0, z - r * 1.4, P)];
+    const F = G.frameAlong([-6, 0, z], [1, 0, 0]);
+    if (!mounted) {
+      items.push({ at: [0, 0, z], svg: brass(S(G.prismOf(F, hexagon(r * 1.35), 0, 12, P), "mid") + hole(F, 0, r * 0.75, P)) });
+      return paintAll(items, P) + tag([0, 0, z + r * 1.35 + 7], "F", P);
+    }
+    items.push(...malePort(-14.5, r * 0.75, z, P));
+    items.push({ at: [-6, 0, z], svg: brass(S(G.prismOf(G.frameAlong([-14, 0, z], [1, 0, 0]), hexagon(r * 1.35), 0, 12, P), "mid")) });
+    items.push(...flaredTube(-12, 48, r * 0.62, z, P));
+    return paintAll(items, P);
+  }
+
+  // Bouchon dudgeon : écrou à fond bombé, tourné vers l'observateur (-x) ; monté : vissé sur un orifice mâle, derrière.
+  function bouchon(P, { mounted }) {
+    const z = 30, r = draw.radiusOf(Q14);
+    const x = mounted ? -4 : 6;
+    const items = [post(mounted ? 10 : 0, z - r * 1.4, P)];
+    const F = G.frameAlong([x, 0, z], [-1, 0, 0]);
+    items.push({ at: [x - 5, 0, z], svg: brass(S(G.prismOf(F, hexagon(r * 1.35), 0, 9, P), "mid")) });
+    items.push({ at: [x - 11, 0, z], svg: brass(S(G.solidOf([[9, r * 1.1], [11, r * 1.05, 1], [13, r * 0.6, 1], [13.6, 0]], F, P))) });
+    if (mounted) items.push(...malePort(x - 9, r * 0.75, z, P, -1));
+    return paintAll(items, P) + (mounted ? "" : tag([0, 0, z + r * 1.35 + 7], "F", P));
+  }
+
+  // Valve à obus et son bouchon, au bout de la voie de prise du té ; montée : bouchon ôté, flexible du manifold vissé.
+  function valve(m, P, mounted) {
+    const F = G.frameAlong(m.p, m.d);
+    if (!mounted) return [{ at: [m.p[0] + m.d[0] * 4, m.p[1] + m.d[1] * 4, m.p[2]], svg: brass(S(G.solidOf([[0, m.r * 0.78], [5, m.r * 0.78], [6, m.r * 0.6, 1], [6.5, 0]], F, P))) }];
+    const far = [m.p[0] + m.d[0] * 30, m.p[1] + m.d[1] * 30, m.p[2] + 10];
+    const tube = TB.tubePieces([m.p, [m.p[0] + m.d[0] * 10, m.p[1] + m.d[1] * 10, m.p[2]], far], m.r * 0.8, P, { caps: [false, true] });
+    return [
+      { at: [m.p[0] + m.d[0] * 3, m.p[1] + m.d[1] * 3, m.p[2]], svg: brass(S(G.prismOf(F, hexagon(m.r * 1.3), 0, 6, P), "mid")) },
+      ...tube.map((piece) => ({ at: piece.mid, svg: hose(TB.tubeSvg(piece, { tone: "mid" })) })),
+    ];
+  }
+
+  function scene(key, P, { mounted = false } = {}) {
+    if (key === "ecrou") return ecrou(P, { mounted });
+    if (key === "bouchon") return bouchon(P, { mounted });
+    const s = SPECS[key];
+    const f = { ...FLARE, type: s.type, ends: s.ends, angle: null, sizes: s.ods.map(String) };
+    if (key !== "te") return draw.scene(f, s.ods, P, mounted ? { presents: s.presents } : { tags: s.ends });
+    // Té : passage dessiné par raccords-draw, prise munie de sa valve ou du flexible du manifold.
+    const { mouths } = draw.layout(f, s.ods, 30);
+    const run = draw.scene(f, s.ods, P, mounted ? { presents: ["tube-evase", "tube-evase", null] } : { tags: s.tags.slice(0, 2).concat([""]) });
+    const extra = paintAll(valve(mouths[2], P, mounted), P);
+    const m = mouths[2];
+    return run + extra + (mounted ? "" : tag([m.p[0] + m.d[0] * 9, m.p[1] + m.d[1] * 9, m.p[2] + m.r + 6], s.tags[2], P));
+  }
+  return { scene };
+}
+
+return { makeDraw };
+})();
+const AC = (() => {
+// Raccords frigorifiques dudgeon de la figure `raccords-flare` (Partie 4, module 2, section « Cuivre et laiton » ; Q104).
+// Le tube de cuivre est évasé ; un écrou (femelle) plaque la surface évasée sur un cône fileté (mâle). L'étanchéité vient
+// du contact des deux cônes, sans ruban ni filasse (section « Sans flamme »). Aucun nom de fabricant (Q62). Rien en base (Q73).
+
+const L = (fr, en) => ({ fr, en });
+
+const FUNCTIONS = {
+  plaquer: L("Plaquer le tube évasé sur un cône mâle", "Press the flared tube onto a male cone"),
+  "relier-evases": L("Relier deux tubes évasés en restant démontable", "Join two flared tubes and stay removable"),
+  "changer-diametre": L("Changer de diamètre", "Change diameter"),
+  "prise-pression": L("Donner une prise de pression sur le circuit", "Provide a pressure access point on the circuit"),
+  fermer: L("Fermer une sortie ou une prise", "Close an outlet or an access point"),
+};
+
+const FITTINGS = {
+  ecrou: {
+    name: L("Écrou dudgeon", "Flare nut"),
+    threads: ["F"], threadsLabel: L("Femelle (taraudé), ouvert des deux côtés", "Female (threaded inside), open at both ends"),
+    function: "plaquer", ways: 1,
+    feature: L("S'enfile sur le tube avant l'évasement", "Goes onto the tube before flaring"),
+    detail: L("On l'enfile sur le tube avant de l'évaser ; vissé sur un raccord mâle conique, il plaque la surface évasée sur le cône. L'étanchéité vient du contact des deux cônes, sans ruban ni filasse.", "It goes onto the tube before the tube is flared; screwed onto a male flare fitting, it presses the flared face onto the cone. The seal comes from the two cones in contact, with no tape or hemp."),
+  },
+  union: {
+    name: L("Union double (mâle / mâle)", "Flare union (male / male)"),
+    threads: ["M/M"], threadsLabel: L("Mâle / mâle : deux cônes filetés", "Male / male: two threaded cones"),
+    function: "relier-evases", ways: 2,
+    feature: L("Deux cônes mâles et un six pans au milieu", "Two male cones and a hexagon in the middle"),
+    detail: L("Chaque tube évasé, avec son écrou, se visse sur l'un des deux cônes ; on serre avec deux clés, l'une tenant le six pans central en contre-clé, pour ne pas vriller le tube.", "Each flared tube, with its nut, screws onto one of the two cones; it is tightened with two spanners, one holding the central hexagon as a backup, so the tube is not twisted."),
+  },
+  reduction: {
+    name: L("Réduction dudgeon", "Flare reducer"),
+    threads: ["F/M"], threadsLabel: L("Écrou femelle (gros côté) / cône mâle (petit côté)", "Female nut (large side) / male cone (small side)"),
+    function: "changer-diametre", ways: 2,
+    feature: L("Un écrou d'un côté, un cône plus petit de l'autre", "A nut on one side, a smaller cone on the other"),
+    detail: L("Elle se visse par son écrou sur un raccord mâle, par exemple 3/8, et présente un cône mâle plus petit, 1/4, qui reçoit le tube évasé et son écrou.", "It screws by its nut onto a male fitting, for example 3/8, and offers a smaller male cone, 1/4, that takes the flared tube and its nut."),
+  },
+  te: {
+    name: L("Té de prise de pression", "Access tee"),
+    threads: ["M/M/M"], threadsLabel: L("Trois cônes mâles, dont la prise à valve", "Three male cones, one of them the valve access"),
+    function: "prise-pression", ways: 3,
+    feature: L("Une voie munie d'une valve à obus et d'un bouchon", "One way fitted with a valve core and a cap"),
+    detail: L("Monté sur la ligne, il offre une prise munie d'une valve à obus : le flexible du manifold, équipé d'un poussoir, ouvre la valve en se vissant. Hors intervention, le bouchon à joint ferme la prise.", "Fitted in the line, it offers an access point with a valve core: the manifold hose, with its depressor, opens the valve as it is screwed on. Between jobs, the sealed cap closes the access point."),
+  },
+  bouchon: {
+    name: L("Bouchon dudgeon (capuchon conique)", "Flare cap (bonnet)"),
+    threads: ["F-plein"], threadsLabel: L("Femelle, fond plein", "Female, solid end"),
+    function: "fermer", ways: 1,
+    feature: L("Un écrou fermé, sans passage", "A closed nut, with no way through"),
+    detail: L("Il se visse sur un cône mâle pour fermer une sortie inutilisée ou une prise de pression ; son fond plein appuie sur le cône et fait l'étanchéité.", "It screws onto a male cone to close an unused outlet or an access point; its solid end bears on the cone and makes the seal."),
+  },
+};
+
+const ORDER = ["ecrou", "union", "reduction", "te", "bouchon"];
+
+const CASES = [
+  { function: "relier-evases", ask: L("Relier deux tubes évasés 3/8 qu'il faudra pouvoir démonter.", "Join two 3/8 flared tubes that must stay removable.") },
+  { function: "prise-pression", ask: L("Lire la pression d'aspiration sur une ligne qui n'a pas de vanne de service.", "Read the suction pressure on a line that has no service valve.") },
+  { function: "fermer", ask: L("Fermer la prise de pression à la fin de l'intervention.", "Close the access point at the end of the job.") },
+  { function: "fermer", ask: L("Condamner une sortie mâle conique inutilisée.", "Seal an unused male flare outlet.") },
+  { function: "changer-diametre", ask: L("Passer d'une vanne à sortie mâle 3/8 à un tube évasé 1/4.", "Go from a valve with a 3/8 male outlet to a 1/4 flared tube.") },
+  { function: "plaquer", ask: L("Pièce à enfiler sur le tube avant de l'évaser.", "Part to slide onto the tube before flaring it.") },
+  { function: "plaquer", ask: L("Raccorder un tube évasé sur l'orifice mâle d'une vanne.", "Connect a flared tube to the male port of a valve.") },
+];
+
+const rotate = (list, n) => [...list.slice(n % list.length), ...list.slice(0, n % list.length)];
+const keyOf = (fn) => ORDER.find((k) => FITTINGS[k].function === fn);
+
+function build() {
+  const out = [];
+  const push = (kind, level, rest) => out.push({ key: `${kind}|${JSON.stringify(rest)}`, level, kind, ...rest });
+  ORDER.forEach((key, i) => {
+    const others = rotate(ORDER.filter((x) => x !== key), i).slice(0, 3);
+    const options = [key, ...others].sort();
+    push("nom", 1, { fitting: key, answer: key, options });
+    push("fonction", 1, { fitting: key, answer: key, options });
+    // Filetage : aucun leurre ne partage un filetage avec la bonne réponse.
+    const apart = ORDER.filter((x) => x !== key && !FITTINGS[x].threads.some((t) => FITTINGS[key].threads.includes(t)));
+    push("filetage", 2, { fitting: key, answer: key, options: [key, ...rotate(apart, i).slice(0, 3)].sort() });
+    push("particularite", 2, { fitting: key, answer: key, options });
+  });
+  CASES.forEach((c, i) => {
+    const key = keyOf(c.function);
+    const others = rotate(ORDER.filter((x) => x !== key), i + 1).slice(0, 3);
+    push("situation", 3, { case: i, function: c.function, answer: key, options: [key, ...others].sort() });
+  });
+  const fittings = Object.fromEntries(ORDER.map((key) => [key, { ...FITTINGS[key], functionLabel: FUNCTIONS[FITTINGS[key].function] }]));
+  return { functions: FUNCTIONS, fittings, order: ORDER, cases: CASES, situations: out };
+}
+
+return { FUNCTIONS, FITTINGS, ORDER, build };
+})();
+const LANG = "en";
+const PROJ = {"origin":[340,196.53417234078074],"scale":2.823708077768974,"azimuth":120,"elevation":30};
+const TX = {buttons:{"explore":"Explore","compare":"Compare","quiz":"Recognise","prev":"Previous","next":"Next","mounted":"Show fitted","alone":"Show alone","again":"Next situation","series":"New series"},tour:(i, n, view) => `fitting ${i} / ${n} · ${view}`,views:{"alone":"alone, marks","mounted":"fitted"},notes:{"te":"V: valve core, closed here by its cap."},ask:{"nom":"What is this fitting called?","fonction":(fn) => `Which fitting is used to: ${fn.toLowerCase()}?`,"filetage":"What threads does this fitting have?","particularite":(f) => `Which fitting is recognised by this: ${f.toLowerCase()}?`,"situation":(c) => `${c} Which fitting?`},right:"Correct.",wrong:(a) => `No: the right answer is "${a}".`,done:(g, t) => `Series finished: ${g} / ${t}. Start a new series for other situations.`,step:(i, n) => `situation ${i} / ${n}`,score:(g, t) => `Series score: ${g} / ${t}`,marks:{"right":"Right answer","wrong":"Your answer, wrong"}};
+
+const still = matchMedia("(prefers-reduced-motion: reduce)");
+const scope = document.querySelector('.live-figure[data-figure="raccords-flare"]') || document;
+const root = scope.querySelector(".iso-plate");
+const stage = root.querySelector(".iso-stage");
+const svg = stage.querySelector("svg");
+const readout = root.querySelector("[data-readout]");
+const feedback = scope.querySelector(".mv-feedback");
+const scoreEl = scope.querySelector(".mv-score");
+const buttons = Object.fromEntries([...scope.querySelectorAll(".mv-controls button")].map((b) => [b.dataset.act, b]));
+let frame = 0, last = 0, visible = false;
+function loop(step, busy) {
+  function tick(now) {
+    const dt = last ? Math.min((now - last) / 1000, 1 / 30) : 1 / 60; last = now;
+    step(still.matches ? dt * 6 : dt);
+    frame = visible && busy() ? requestAnimationFrame(tick) : 0;
+  }
+  return () => { if (!frame && visible) { last = 0; frame = requestAnimationFrame(tick); } };
+}
+
+const K = { iso, pathOf, depthOf, solidSvg, lineSvg, haloOf, cylinder };
+const SD = SA.makeDraw(K, G, TB, D);
+const CAT = AC.build();
+const F = CAT.fittings;
+const live = svg.querySelector(".rc-live");
+const prompt = scope.querySelector(".rc-prompt");
+const quizBox = scope.querySelector(".rc-quiz");
+const compareBox = scope.querySelector(".ra-compare");
+// Les réponses vont dans la liste du mode « Reconnaître ».
+const optionsBox = scope.querySelector(".rc-quiz .rc-options");
+let mode = "explore", at = 0, mounted = false;
+function paint(key, asMounted) { live.innerHTML = key ? SD.scene(key, PROJ, { mounted: asMounted }) : ""; }
+function card(key) {
+  const f = F[key];
+  return [f.name[LANG] + ".", f.threadsLabel[LANG] + ".", f.functionLabel[LANG] + ".", f.detail[LANG], !mounted && TX.notes[key] ? TX.notes[key] : ""].filter(Boolean).join(" ");
+}
+function showTour() {
+  const key = CAT.order[at];
+  paint(key, mounted);
+  prompt.textContent = TX.tour(at + 1, CAT.order.length, mounted ? TX.views.mounted : TX.views.alone);
+  readout.textContent = F[key].name[LANG];
+  feedback.textContent = card(key);
+  buttons.mounted.textContent = mounted ? TX.buttons.alone : TX.buttons.mounted;
+  buttons.mounted.setAttribute("aria-pressed", mounted);
+}
+// ---------------------------------------------------------------- Reconnaître
+const pool = { 1: [], 2: [], 3: [] };
+CAT.situations.forEach((s) => pool[s.level].push(s));
+const PLAN = [1, 1, 1, 1, 2, 2, 2, 3, 3, 3];
+let list = [], qi = 0, good = 0, answered = false;
+const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+const label = (s, o) => (s.kind === "filetage" ? F[o].threadsLabel[LANG] : F[o].name[LANG]);
+function ask(s) {
+  const f = F[s.fitting || s.answer];
+  if (s.kind === "fonction") return TX.ask.fonction(f.functionLabel[LANG]);
+  if (s.kind === "particularite") return TX.ask.particularite(f.feature[LANG]);
+  if (s.kind === "situation") return TX.ask.situation(CAT.cases[s.case].ask[LANG]);
+  return TX.ask[s.kind];
+}
+function qshow() {
+  answered = false;
+  const s = list[qi];
+  // Nom et filetage : le raccord est dessiné ; sinon il n'apparaît qu'à la correction.
+  paint(s.kind === "nom" || s.kind === "filetage" ? s.fitting : null, false);
+  readout.textContent = "";
+  prompt.textContent = ask(s);
+  optionsBox.replaceChildren(...s.options.slice().sort(() => Math.random() - 0.5).map((o) => {
+    const b = document.createElement("button"); b.type = "button"; b.textContent = label(s, o); b._o = o;
+    b.addEventListener("click", () => answer(o)); return b;
+  }));
+  feedback.textContent = "";
+  buttons.again.disabled = true;
+  scoreEl.textContent = TX.score(good, qi) + " · " + TX.step(qi + 1, list.length);
+}
+function answer(o) {
+  if (answered) return;
+  answered = true;
+  const s = list[qi], ok = same(o, s.answer);
+  if (ok) good++;
+  for (const b of optionsBox.children) {
+    b.disabled = true;
+    if (same(b._o, s.answer)) { b.dataset.state = "right"; b.prepend("✓ "); b.setAttribute("aria-label", TX.marks.right + " : " + b.textContent.slice(2)); }
+    else if (same(b._o, o)) { b.dataset.state = "wrong"; b.prepend("✗ "); b.setAttribute("aria-label", TX.marks.wrong + " : " + b.textContent.slice(2)); }
+  }
+  // Correction dessinée : le bon raccord, monté pour une situation d'atelier.
+  paint(s.answer, s.kind === "situation");
+  readout.textContent = F[s.answer].name[LANG];
+  const last = qi === list.length - 1;
+  feedback.textContent = [ok ? TX.right : TX.wrong(label(s, s.answer)), F[s.answer].name[LANG] + ". " + F[s.answer].detail[LANG], last ? TX.done(good, list.length) : ""].filter(Boolean).join(" ");
+  buttons.again.disabled = last;
+  scoreEl.textContent = TX.score(good, qi + 1) + " · " + TX.step(qi + 1, list.length);
+}
+function start() {
+  list = [];
+  for (const level of PLAN) {
+    const kinds = {};
+    pool[level].forEach((x) => (kinds[x.kind] ||= []).push(x));
+    const groups = Object.values(kinds);
+    let s;
+    for (let i = 0; i < 40; i++) { const g = groups[Math.floor(Math.random() * groups.length)]; s = g[Math.floor(Math.random() * g.length)]; if (!list.includes(s)) break; }
+    list.push(s);
+  }
+  qi = 0; good = 0; qshow();
+}
+buttons.again.addEventListener("click", () => { if (qi < list.length - 1) { qi++; qshow(); } });
+buttons.series.addEventListener("click", start);
+// ---------------------------------------------------------------- Comparer
+for (const b of compareBox.querySelectorAll("button[data-fit]")) b.addEventListener("click", () => {
+  for (const o of compareBox.querySelectorAll("button[data-fit]")) o.setAttribute("aria-pressed", o === b);
+  paint(b.dataset.fit, false);
+  readout.textContent = F[b.dataset.fit].name[LANG];
+  feedback.textContent = card(b.dataset.fit);
+});
+function setMode(next) {
+  mode = next;
+  for (const m of ["explore", "compare", "quiz"]) buttons[m].setAttribute("aria-pressed", m === mode);
+  for (const act of ["prev", "next", "mounted"]) buttons[act].hidden = mode !== "explore";
+  quizBox.hidden = mode !== "quiz";
+  compareBox.hidden = mode !== "compare";
+  scoreEl.textContent = ""; feedback.textContent = ""; prompt.textContent = "";
+  if (mode === "explore") showTour();
+  else if (mode === "compare") compareBox.querySelector("button[data-fit]").click();
+  else start();
+}
+buttons.explore.addEventListener("click", () => setMode("explore"));
+buttons.compare.addEventListener("click", () => setMode("compare"));
+buttons.quiz.addEventListener("click", () => setMode("quiz"));
+buttons.prev.addEventListener("click", () => { at = (at + CAT.order.length - 1) % CAT.order.length; showTour(); });
+buttons.next.addEventListener("click", () => { at = (at + 1) % CAT.order.length; showTour(); });
+buttons.mounted.addEventListener("click", () => { mounted = !mounted; showTour(); });
+for (const b of scope.querySelectorAll(".mv-controls button, .ra-compare button")) b.disabled = false;
+const run = () => {};
+window.__fc = { setMode, show: (i, m) => { at = i; mounted = !!m; showTour(); }, answer: (i) => answer(list[qi].options[i]), current: () => list[qi] };
+setMode("explore");
+new IntersectionObserver((e) => { visible = e[e.length - 1].isIntersecting; if (visible) run(); }, { rootMargin: "120px 0px" }).observe(stage);
+</script></body></html>

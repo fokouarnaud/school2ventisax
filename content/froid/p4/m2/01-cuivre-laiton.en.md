@@ -35,6 +35,10 @@ References: 1 half-union, 2 nut, 3 flared surface of the tube. Align the centres
 
 There are also flare nuts, flare sealing caps, flare gauges, crosses, refrigerant cylinder adaptors, union screws and flare elbows.
 
+To see what sets the flare nut, the flare union, the reducer, the access tee and the flare cap apart, alone and then fitted, use the figure below.
+
+[[figure:raccords-flare]]
+
 The nominal diameter of flare fittings is given by the bore of the male flare fitting.
 
 | Nominal diameter | Bore (mm) | Outside thread diameter (mm) |

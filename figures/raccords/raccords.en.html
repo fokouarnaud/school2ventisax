@@ -2936,12 +2936,13 @@ function makeDraw(k, G, TB) {
     }
     if (presents) {
       mouths.forEach((m, i) => {
+        if (!presents[i]) return; // bouche laissée libre (prise du té de la figure raccords-flare)
         const port = presents[i].startsWith("port");
         items.push(...tinted(port ? "laiton" : tintOf(material, ""), presented(m, presents[i], material, P)));
       });
     }
     items.sort((a, b) => k.depthOf(a.at, P) - k.depthOf(b.at, P));
-    const extent = mouths.map((m) => add(m.p, mul(m.d, presents ? 26 : 0)));
+    const extent = mouths.map((m, i) => add(m.p, mul(m.d, presents && presents[i] ? 26 : 0)));
     const xs = [...extent.map((p) => p[0]), 0], ys = [...extent.map((p) => p[1]), 0];
     const pad = Math.max(...mouths.map((m) => m.r)) * 0.6 + 4;
     const plan = { x: Math.min(...xs) - pad, y: Math.min(...ys) - pad, w: Math.max(...xs) - Math.min(...xs) + 2 * pad, d: Math.max(...ys) - Math.min(...ys) + 2 * pad, r: pad };
@@ -2949,6 +2950,7 @@ function makeDraw(k, G, TB) {
     let labels = "";
     if (tags) {
       mouths.forEach((m, i) => {
+        if (!tags[i]) return; // repère posé à part (valve du té de raccords-flare)
         const at = add(m.p, mul(m.d, presents ? 31 : 6));
         const xy = k.iso([at[0], at[1], at[2] + m.r + 4], P);
         labels += `<g class="rc-tag"><circle cx="${xy[0].toFixed(1)}" cy="${xy[1].toFixed(1)}" r="7"/><text x="${xy[0].toFixed(1)}" y="${(xy[1] + 2.6).toFixed(1)}" text-anchor="middle">${tags[i]}</text></g>`;

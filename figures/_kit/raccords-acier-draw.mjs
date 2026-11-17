@@ -4,7 +4,7 @@
 // repères M ou F à chaque bouche, ou monté sur ses tubes filetés et ses orifices femelles.
 // `k` = kit iso, `G` = lathe, `TB` = tube, `D` = raccords-draw.
 
-export function makeSteelDraw(k, G, TB, D) {
+export function makeDraw(k, G, TB, D) {
   const draw = D.makeDraw(k, G, TB);
   const TAU = Math.PI * 2;
   const DN20 = 26.9, DN15 = 21.3;
