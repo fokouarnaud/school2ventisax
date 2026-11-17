@@ -18,4 +18,8 @@ Le brasage est une technique qui consiste à assembler des pièces de même natu
 7. Dès la fusion du décapant, poser aussitôt la pointe de la baguette (brasure) sur le joint. La brasure fondue est aspirée par capillarité dans le jeu entre les pièces : la flamme chauffe le joint et non la baguette.
 8. Éliminer les résidus de décapant par un lavage à l'eau, chaude de préférence, afin d'éviter un refroidissement trop rapide.
 
+Pour réaliser le brasage dans l'ordre, repérer les gestes dangereux et classer les procédés d'assemblage, utilisez la figure ci-dessous.
+
+[[figure:brasage]]
+
 Il ne faut jamais chauffer une conduite contenant du fluide frigorigène sous pression : il y a risque d'explosion et de décomposition du fluide frigorigène.

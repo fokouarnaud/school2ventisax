@@ -18,4 +18,8 @@ Brazing joins parts, of the same material or not, with a molten filler metal. Du
 7. As soon as the flux melts, touch the tip of the filler rod to the joint. The molten filler is drawn by capillary action into the gap between the parts: the flame heats the joint, not the rod.
 8. Remove flux residue by washing with water, preferably hot, to avoid cooling too quickly.
 
+To carry out the brazing in order, spot the dangerous actions and classify the joining processes, use the figure below.
+
+[[figure:brasage]]
+
 Never heat a line containing refrigerant under pressure: there is a risk of explosion and of decomposition of the refrigerant.
