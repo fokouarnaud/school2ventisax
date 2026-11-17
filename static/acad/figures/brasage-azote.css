@@ -22,3 +22,11 @@
 .mv-score{color:var(--anatomy-muted);font:11px/1 var(--anatomy-mono);margin-top:6px}
 @media (prefers-reduced-motion:reduce){.bz-hose[data-live] .iso-line{animation:none}}
 @media (max-width:560px){.iso-plate{padding:76px 12px 64px}.mv-controls button{flex:1 1 40%}}
+.bz-braze[hidden],.bz-quiz[hidden]{display:none}
+.rc-prompt{margin:16px 0 0;min-height:1.6em;color:var(--anatomy-strong);font-weight:600;line-height:1.45}
+.rc-prompt:empty{display:none}
+.bz-quiz .rc-options{flex-direction:column}
+.bz-quiz .rc-options button{text-align:left;border-radius:14px}
+.bz-quiz .rc-options button[data-state="right"]{border-color:var(--anatomy-lit);box-shadow:inset 0 0 0 1px var(--anatomy-lit)}
+.bz-quiz .rc-options button[data-state="wrong"]{border-style:dashed}
+.bz-quiz .rc-options button:disabled{opacity:1;cursor:default}

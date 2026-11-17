@@ -7,9 +7,36 @@ import { fileURLToPath } from "node:url";
 import * as k from "../_kit/iso-kit.mjs";
 import * as G from "../_kit/lathe.mjs";
 import { publish } from "../_kit/publish.mjs";
+import { namespaced } from "../_kit/bundle.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const KIT_SOURCE = readFileSync(join(HERE, "..", "_kit", "iso-kit.mjs"), "utf8").replace(/^export /gm, "");
+// Mode « S'entraîner » (Q99) : situations tirées des deux sections, catalogue figures/_data/azote.mjs.
+const PRACTICE_MODULE = namespaced(join(HERE, "..", "_data", "azote.mjs"), "AZ");
+const PRACTICE = {
+  fr: {
+    modes: { braze: "Braser", practice: "S'entraîner", next: "Situation suivante", series: "Nouvelle série" },
+    ask: { suivante: (s) => `Mode opératoire : après « ${s} », que fait-on ?`, precedente: (s) => `Mode opératoire : quelle étape vient juste avant « ${s} » ?`, reglage: (g) => `Entre quelles pressions règle-t-on le manodétendeur ${{ azote: "d'azote", acetylene: "de l'acétylène", oxygene: "de l'oxygène" }[g]} ?` },
+    bars: { "0.2-0.5": "0,2 à 0,5 bar", "0.5-1.5": "0,5 à 1,5 bar", "1.5-3": "1,5 à 3 bar", "4-10": "4 à 10 bar" },
+    right: "Juste.",
+    wrong: (a) => `Non : la bonne réponse est « ${a} ».`,
+    done: (g, t) => `Série terminée : ${g} / ${t}. Lancez une nouvelle série pour d'autres situations.`,
+    step: (i, n) => `situation ${i} / ${n}`,
+    score: (g, t) => `Score de la série : ${g} / ${t}`,
+    marks: { right: "Bonne réponse", wrong: "Votre réponse, fausse" },
+  },
+  en: {
+    modes: { braze: "Braze", practice: "Practise", next: "Next situation", series: "New series" },
+    ask: { suivante: (s) => `Procedure: after "${s}", what comes next?`, precedente: (s) => `Procedure: which step comes just before "${s}"?`, reglage: (g) => `Between which pressures is the ${{ azote: "nitrogen", acetylene: "acetylene", oxygene: "oxygen" }[g]} regulator set?` },
+    bars: { "0.2-0.5": "0.2 to 0.5 bar", "0.5-1.5": "0.5 to 1.5 bar", "1.5-3": "1.5 to 3 bar", "4-10": "4 to 10 bar" },
+    right: "Correct.",
+    wrong: (a) => `No: the right answer is "${a}".`,
+    done: (g, t) => `Series finished: ${g} / ${t}. Start a new series for other situations.`,
+    step: (i, n) => `situation ${i} / ${n}`,
+    score: (g, t) => `Series score: ${g} / ${t}`,
+    marks: { right: "Right answer", wrong: "Your answer, wrong" },
+  },
+};
 
 // ---------------------------------------------------------------- modèle : en temps accéléré
 const MODEL = {
@@ -210,6 +237,14 @@ const CSS = `
 .mv-score{color:var(--anatomy-muted);font:11px/1 var(--anatomy-mono);margin-top:6px}
 @media (prefers-reduced-motion:reduce){.bz-hose[data-live] .iso-line{animation:none}}
 @media (max-width:560px){.iso-plate{padding:76px 12px 64px}.mv-controls button{flex:1 1 40%}}
+.bz-braze[hidden],.bz-quiz[hidden]{display:none}
+.rc-prompt{margin:16px 0 0;min-height:1.6em;color:var(--anatomy-strong);font-weight:600;line-height:1.45}
+.rc-prompt:empty{display:none}
+.bz-quiz .rc-options{flex-direction:column}
+.bz-quiz .rc-options button{text-align:left;border-radius:14px}
+.bz-quiz .rc-options button[data-state="right"]{border-color:var(--anatomy-lit);box-shadow:inset 0 0 0 1px var(--anatomy-lit)}
+.bz-quiz .rc-options button[data-state="wrong"]{border-style:dashed}
+.bz-quiz .rc-options button:disabled{opacity:1;cursor:default}
 `;
 
 const LIVE = `
@@ -293,8 +328,83 @@ buttons.n2.addEventListener("click", toggleN2);
 buttons.torch.addEventListener("click", toggleTorch);
 buttons.check.addEventListener("click", check);
 buttons.again.addEventListener("click", reset);
-window.__bz = { reset, toggleN2, toggleTorch, check, state: () => ({ n2, lit, purge, temp, oxide, brazed, done, good, total }) };
-reset();
+// ---------------------------------------------------------------- S'entraîner (Q99)
+const PX = PT, CAT = AZ.buildNitrogen(), LANG = FIG.lang;
+const brazeBox = scope.querySelector(".bz-braze"), quizBox = scope.querySelector(".bz-quiz");
+const promptEl = scope.querySelector(".rc-prompt");
+// Les réponses vont dans la liste du mode « S'entraîner », jamais dans les commandes du mode « Braser ».
+const optionsBox = scope.querySelector(".bz-quiz .rc-options");
+const qpool = { 1: [], 2: [], 3: [] };
+CAT.situations.forEach((s) => qpool[s.level].push(s));
+const PLAN = [1, 1, 1, 1, 2, 2, 2, 3, 3, 3];
+let qlist = [], qi = 0, qgood = 0, qanswered = false;
+const same = (x, y) => JSON.stringify(x) === JSON.stringify(y);
+const strip = (s) => s.replace(/<[^>]+>/g, "");
+const stepOf = (id) => CAT.steps.find((s) => s.id === id);
+function qlabel(s, opt) {
+  if (s.kind === "reglage") return PX.bars[opt];
+  if (s.kind === "notion") return CAT.notions[s.which].options[opt][LANG];
+  return stepOf(opt).short[LANG];
+}
+function qask(s) {
+  if (s.kind === "reglage") return PX.ask.reglage(s.gas);
+  if (s.kind === "notion") return CAT.notions[s.which].ask[LANG];
+  return PX.ask[s.kind](stepOf(s.from).short[LANG]);
+}
+function qshow() {
+  qanswered = false;
+  const s = qlist[qi];
+  promptEl.textContent = qask(s);
+  optionsBox.replaceChildren(...s.options.slice().sort(() => Math.random() - 0.5).map((opt) => {
+    const b = document.createElement("button"); b.type = "button"; b.textContent = qlabel(s, opt); b._o = opt;
+    b.addEventListener("click", () => qanswer(opt)); return b;
+  }));
+  feedback.textContent = "";
+  buttons.next.disabled = true;
+  scoreEl.textContent = PX.score(qgood, qi) + " · " + PX.step(qi + 1, qlist.length);
+}
+function qanswer(opt) {
+  if (qanswered) return;
+  qanswered = true;
+  const s = qlist[qi], ok = same(opt, s.answer);
+  if (ok) qgood++;
+  for (const b of optionsBox.children) {
+    b.disabled = true;
+    if (same(b._o, s.answer)) { b.dataset.state = "right"; b.prepend("✓ "); b.setAttribute("aria-label", PX.marks.right + " : " + b.textContent.slice(2)); }
+    else if (same(b._o, opt)) { b.dataset.state = "wrong"; b.prepend("✗ "); b.setAttribute("aria-label", PX.marks.wrong + " : " + b.textContent.slice(2)); }
+  }
+  const why = s.kind === "notion" ? strip(CAT.notions[s.which].source[LANG]).replaceAll("*", "") : s.kind === "reglage" ? "" : strip(stepOf(s.answer).label[LANG]);
+  const last = qi === qlist.length - 1;
+  feedback.textContent = [ok ? PX.right : PX.wrong(qlabel(s, s.answer)), why, last ? PX.done(qgood, qlist.length) : ""].filter(Boolean).join(" ");
+  buttons.next.disabled = last;
+  scoreEl.textContent = PX.score(qgood, qi + 1) + " · " + PX.step(qi + 1, qlist.length);
+}
+function qstart() {
+  qlist = [];
+  for (const level of PLAN) {
+    const kinds = {};
+    qpool[level].forEach((x) => (kinds[x.kind] ||= []).push(x));
+    const groups = Object.values(kinds);
+    let s;
+    for (let i = 0; i < 40; i++) { const g = groups[Math.floor(Math.random() * groups.length)]; s = g[Math.floor(Math.random() * g.length)]; if (!qlist.includes(s)) break; }
+    qlist.push(s);
+  }
+  qi = 0; qgood = 0; qshow();
+}
+buttons.next.addEventListener("click", () => { if (qi < qlist.length - 1) { qi++; qshow(); } });
+buttons.series.addEventListener("click", qstart);
+function setMode(m) {
+  buttons.braze.setAttribute("aria-pressed", m === "braze");
+  buttons.practice.setAttribute("aria-pressed", m === "practice");
+  brazeBox.hidden = m !== "braze"; quizBox.hidden = m !== "practice";
+  promptEl.textContent = "";
+  reset();
+  if (m === "practice") qstart();
+}
+buttons.braze.addEventListener("click", () => setMode("braze"));
+buttons.practice.addEventListener("click", () => setMode("practice"));
+window.__bz = { reset, toggleN2, toggleTorch, check, setMode, answer: (i) => qanswer(qlist[qi].options[i]), current: () => qlist[qi], state: () => ({ n2, lit, purge, temp, oxide, brazed, done, good, total }) };
+setMode("braze");
 draw();
 `;
 
@@ -303,12 +413,19 @@ const written = [];
 for (const lang of ["fr", "en"]) {
   const T = TEXT[lang], B = T.buttons;
   const { svg, config } = buildFigure(lang);
-  const controls = `<div class="mv-controls" role="group" aria-label="${lang === "fr" ? "Commandes du brasage" : "Brazing controls"}"><button type="button" data-act="n2" aria-pressed="false">${B.n2On}</button><button type="button" data-act="torch" aria-pressed="false">${B.lightOn}</button><button type="button" data-act="check">${B.check}</button><button type="button" data-act="again">${B.again}</button></div><p class="mv-feedback" aria-live="polite"></p><p class="mv-score" aria-live="polite"></p>`;
+  const X = PRACTICE[lang].modes;
+  const modes = `<div class="mv-controls" role="group" aria-label="${lang === "fr" ? "Mode de la figure" : "Figure mode"}"><button type="button" data-act="braze">${X.braze}</button><button type="button" data-act="practice">${X.practice}</button></div>`;
+  const braze = `<div class="bz-braze"><div class="mv-controls" role="group" aria-label="${lang === "fr" ? "Commandes du brasage" : "Brazing controls"}"><button type="button" data-act="n2" aria-pressed="false">${B.n2On}</button><button type="button" data-act="torch" aria-pressed="false">${B.lightOn}</button><button type="button" data-act="check">${B.check}</button><button type="button" data-act="again">${B.again}</button></div></div>`;
+  const quiz = `<div class="bz-quiz" hidden><div class="mv-controls rc-options" role="group" aria-label="${lang === "fr" ? "Réponses proposées" : "Possible answers"}"></div><div class="mv-controls"><button type="button" data-act="next">${X.next}</button><button type="button" data-act="series">${X.series}</button></div></div>`;
+  const controls = `${modes}<p class="rc-prompt" aria-live="polite"></p>${braze}${quiz}<p class="mv-feedback" aria-live="polite"></p><p class="mv-score" aria-live="polite"></p>`;
   const plate = k.plateHtml({ fig: "Fig 11", title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body: `<div class="iso-stage" role="img" aria-label="${T.stageLabel}">${svg}</div>${controls}` });
   const f = T.feedback;
   const plain = ["start", "purging", "tooEarly", "noN2", "brazing", "cooling", "cutHot", "notCool", "notBrazed", "good"].map((key) => `${key}:${JSON.stringify(f[key])}`).join(",");
   const TX = `{buttons:${JSON.stringify(T.buttons)},read:${T.read},score:${T.score},feedback:{${plain},bad:${f.bad}}}`;
-  const pageScript = `const FIG = ${JSON.stringify(config)};\nconst TX = ${TX};\n` + LIVE;
+  const PXT = PRACTICE[lang];
+  const fns = (o) => `{${Object.entries(o).map(([key, f]) => `${JSON.stringify(key)}:${typeof f === "function" ? f : JSON.stringify(f)}`).join(",")}}`;
+  const PT = `{ask:${fns(PXT.ask)},bars:${JSON.stringify(PXT.bars)},right:${JSON.stringify(PXT.right)},wrong:${PXT.wrong},done:${PXT.done},step:${PXT.step},score:${PXT.score},marks:${JSON.stringify(PXT.marks)}}`;
+  const pageScript = `${PRACTICE_MODULE}const FIG = ${JSON.stringify(config)};\nconst TX = ${TX};\nconst PT = ${PT};\n` + LIVE;
   site.fragments[lang] = plate; site.scripts[lang] = pageScript;
   for (const theme of ["dark", "light"]) {
     const name = `brasage-azote.${lang}${theme === "light" ? "-light" : ""}.html`;
