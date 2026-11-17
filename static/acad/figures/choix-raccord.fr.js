@@ -2224,11 +2224,10 @@ function makeSeries(pool, hooks) {
       if (same(b._option, s.answer)) { b.dataset.state = "right"; b.prepend("✓ "); b.setAttribute("aria-label", TX.marks.right + " : " + b.textContent.slice(2)); }
       else if (same(b._option, o)) { b.dataset.state = "wrong"; b.prepend("✗ "); b.setAttribute("aria-label", TX.marks.wrong + " : " + b.textContent.slice(2)); }
     }
-    let message = (ok ? TX.right : TX.wrong(hooks.label(s, s.answer))) + " " + (hooks.explain ? hooks.explain(s, o, ok) : "");
     if (hooks.after) hooks.after(s, o, ok);
     const last = i === list.length - 1;
-    if (last) message += " " + TX.done(good, list.length);
-    feedback.textContent = message;
+    // Message assemblé sans les parties vides : jamais de double espace.
+    feedback.textContent = [ok ? TX.right : TX.wrong(hooks.label(s, s.answer)), hooks.explain ? hooks.explain(s, o, ok) : "", last ? TX.done(good, list.length) : ""].filter(Boolean).join(" ");
     buttons.again.disabled = last;
     scoreEl.textContent = TX.score(good, i + 1) + " · " + TX.step(i + 1, list.length);
   }

@@ -242,14 +242,22 @@ function answer(o) {
     else if (same(b._o, o)) { b.dataset.state = "wrong"; b.prepend("✗ "); b.setAttribute("aria-label", TX.marks.wrong + " : " + b.textContent.slice(2)); }
   }
   const last = at === list.length - 1;
-  feedback.textContent = (ok ? TX.right : TX.wrong(label(s, s.answer))) + (s.gas ? " " + TX.why(CAT.gases[s.gas]) : "") + (last ? " " + TX.done(good, list.length) : "");
+  feedback.textContent = [ok ? TX.right : TX.wrong(label(s, s.answer)), s.gas ? TX.why(CAT.gases[s.gas]) : "", last ? TX.done(good, list.length) : ""].filter(Boolean).join(" ");
   if (s.kind === "manometre") lit(s.answer === "vis" ? null : s.answer);
   buttons.again.disabled = last;
   scoreEl.textContent = TX.score(good, at + 1) + " · " + TX.step(at + 1, list.length);
 }
 function start() {
   list = [];
-  for (const level of PLAN) { const p = pool[level]; let s; for (let i = 0; i < 40; i++) { s = p[Math.floor(Math.random() * p.length)]; if (!list.includes(s)) break; } list.push(s); }
+  // Dans un niveau, on tire d'abord le type de situation : les 173 réglages n'écrasent pas l'ordre ni le choix du détendeur.
+  for (const level of PLAN) {
+    const kinds = {};
+    pool[level].forEach((x) => (kinds[x.kind] ||= []).push(x));
+    const groups = Object.values(kinds);
+    let s;
+    for (let i = 0; i < 40; i++) { const g = groups[Math.floor(Math.random() * groups.length)]; s = g[Math.floor(Math.random() * g.length)]; if (!list.includes(s)) break; }
+    list.push(s);
+  }
   at = 0; good = 0; show();
 }
 buttons.again.addEventListener("click", () => { if (at < list.length - 1) { at++; show(); } });

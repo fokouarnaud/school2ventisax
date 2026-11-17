@@ -207,9 +207,7 @@ function answer(o) {
   }
   const lastStep = stepAt === s.steps.length - 1, lastTube = at === list.length - 1;
   if (lastStep) paint(s, "", true);
-  let message = (ok ? TX.right : TX.wrong(TX.mm(t.answer))) + " " + (ok ? "" : hintFor(s, t, o) + " ") + explain(s, t);
-  if (lastStep && lastTube) message += " " + TX.done(good, total);
-  feedback.textContent = message;
+  feedback.textContent = [ok ? TX.right : TX.wrong(TX.mm(t.answer)), ok ? "" : hintFor(s, t, o), explain(s, t), lastStep && lastTube ? TX.done(good, total) : ""].filter(Boolean).join(" ");
   buttons.again.textContent = lastStep ? TX.next : TX.buttons.again;
   buttons.again.disabled = lastStep && lastTube;
   scoreEl.textContent = TX.score(good, total, at + 1, list.length);
