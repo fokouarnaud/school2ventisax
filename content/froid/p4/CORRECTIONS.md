@@ -807,6 +807,13 @@ Journal destiné au formateur (décisions Q29 et Q61). Le texte servi à l'appre
 - **Correction** : mode « S'entraîner » ajouté à la figure `brasage-azote` (étape suivante ou précédente du mode opératoire, plages de réglage, débit et moment du balayage, extrémité ouverte, calamine, flux, brasures, précaution des bouteilles), chaque correction reprenant une phrase des sections ; huit questions ajoutées (`p4-m7-q17` à `q24`), publiées d'office.
 - **Justification** : décisions Q99 et Q100.
 
+## 116. Raccords acier à visser : figure et questions (module 2, imprimé 21)
+
+- **Page** : 12
+- **Texte d'origine** : tableau des raccords en acier citant, à visser, « manchon, réduction, mamelon, coude, union, té, bouchon », sans description.
+- **Correction** : figure `raccords-acier` (chaque raccord dessiné seul avec ses repères mâle et femelle, puis monté ; comparaison du filetage, de la fonction et de la particularité ; séries de 10 pour les reconnaître), rédigée d'après la pratique courante ; l'union 3 pièces est distinguée du raccord union dudgeon ; huit questions ajoutées (`p4-m2-q25` à `q32`), publiées d'office.
+- **Justification** : décisions Q101 à Q103, demande du propriétaire du 2026-11-17.
+
 ## Valeurs à confirmer par un formateur
 
 Ces valeurs viennent de la pratique courante et de l'EN 378, et non du support :

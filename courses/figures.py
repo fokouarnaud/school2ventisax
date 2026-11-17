@@ -37,6 +37,7 @@ FIGURES = {
     "longueur-developpee": gettext_lazy("Exercice : calculer pas à pas la longueur développée d'un tube cintré"),
     "manodetendeur": gettext_lazy("Exercice : lire et régler un manodétendeur"),
     "mise-en-service": gettext_lazy("Exercice : mettre en service et hors service un poste oxyacétylénique"),
+    "raccords-acier": gettext_lazy("Exercice : distinguer les sept raccords acier à visser"),
     "brasage": gettext_lazy("Exercice : braser deux tubes de cuivre et classer les procédés d'assemblage"),
 }
 SHARED = ("acad/figures/kit.js", "acad/figures/iso.css")

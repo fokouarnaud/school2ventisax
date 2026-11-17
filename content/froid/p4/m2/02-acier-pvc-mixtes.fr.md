@@ -6,6 +6,10 @@ Dans les raccords en acier, nous retrouvons aussi les raccords à souder et à v
 |---|---|
 | Manchon, réduction, mamelon, coude, union, té, bouchon | Coude, réduction, té |
 
+Pour voir ce qui distingue ces sept raccords à visser (filetage mâle ou femelle, fonction, particularité), seuls puis montés, utilisez la figure ci-dessous.
+
+[[figure:raccords-acier]]
+
 ## Raccords en PVC
 
 Les raccords en PVC sont destinés à l'évacuation des condensats d'une installation : coudes mâle/femelle et femelle/femelle (20°, 30°, 45°), culottes et embranchements à 45°. Ils ne conviennent jamais à la circulation du fluide frigorigène.
