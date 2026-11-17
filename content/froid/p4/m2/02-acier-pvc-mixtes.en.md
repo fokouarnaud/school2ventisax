@@ -6,6 +6,10 @@ Steel fittings are also brazed or screwed, but there is less variety.
 |---|---|
 | Coupling, reducer, nipple, elbow, union, tee, plug | Elbow, reducer, tee |
 
+To see what sets these seven screwed fittings apart (male or female thread, function, key feature), alone and then fitted, use the figure below.
+
+[[figure:raccords-acier]]
+
 ## PVC fittings
 
 PVC fittings are for draining condensate from a system: male/female and female/female elbows (20°, 30°, 45°), Y-branches and 45° junctions. They are never suitable for carrying refrigerant.

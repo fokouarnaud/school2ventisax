@@ -395,7 +395,7 @@ def test_choice_of_fitting_question_expects_the_five_criteria():
 @pytest.mark.parametrize("number", (2, 3, 4))
 def test_four_new_quiz_and_four_new_exam_questions_per_module(number):
     """US-82, Q81 : q17 à q24, 4 de quiz puis 4 d'examen, relues fr et en, publiables."""
-    new = [q for q in bank(number) if int(q["id"].rsplit("q", 1)[1]) >= 17]
+    new = [q for q in bank(number) if int(q["id"].rsplit("q", 1)[1]) >= 17 and int(q["id"].rsplit("q", 1)[1]) <= 24]
     assert [q["id"] for q in new] == [f"p4-m{number}-q{n}" for n in range(17, 25)]
     assert [q["usage"] for q in new] == ["quiz"] * 4 + ["exam"] * 4
     for q in new:
@@ -527,10 +527,10 @@ def test_bending_section_sends_the_learner_to_the_tool_figure():
         assert words in text and ("figure" in text.lower()), lang
 
 
-def test_part_four_now_calls_fourteen_figures():
+def test_part_four_now_calls_fifteen_figures():
     """Q78, Q89, Q92 : 7 figures de Q69 + 3 aux raccords et aux tailles + la longueur développée + le manodétendeur."""
     names = {m.split("#")[0] for md in (CONTENT / "p4").rglob("*.fr.md") for m in re.findall(r"\[\[figure:([^\]]*)\]\]", md.read_text(encoding="utf-8"))}
-    assert len(names) == 14 and set(TRAINING) | {"longueur-developpee", "manodetendeur", "mise-en-service", "brasage"} <= names
+    assert len(names) == 15 and set(TRAINING) | {"longueur-developpee", "manodetendeur", "mise-en-service", "brasage", "raccords-acier"} <= names
 
 
 @pytest.mark.parametrize("name", TRAINING)
