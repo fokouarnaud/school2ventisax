@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Acad Ventisax\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-17 05:15+0100\n"
+"POT-Creation-Date: 2026-11-17 05:46+0100\n"
 "PO-Revision-Date: 2026-10-17 12:00+0100\n"
 "Last-Translator: Acad Ventisax\n"
 "Language-Team: English\n"
@@ -288,21 +288,26 @@ msgstr "Exercise: reading and setting a pressure regulator"
 msgid "Exercice : mettre en service et hors service un poste oxyacétylénique"
 msgstr "Exercise: starting up and shutting down an oxy-acetylene set"
 
-#: .\courses\figures.py:84
+#: .\courses\figures.py:40
+msgid ""
+"Exercice : braser deux tubes de cuivre et classer les procédés d'assemblage"
+msgstr "Exercise: braze two copper tubes and classify joining processes"
+
+#: .\courses\figures.py:85
 msgid "Chargement de la figure…"
 msgstr "Loading the figure…"
 
-#: .\courses\figures.py:85
+#: .\courses\figures.py:86
 msgid ""
 "La figure n'a pas pu être chargée. Vérifiez la connexion, puis réessayez."
 msgstr "The figure could not be loaded. Check your connection, then try again."
 
-#: .\courses\figures.py:90
+#: .\courses\figures.py:91
 #, python-format
 msgid "%(size)s Ko à télécharger"
 msgstr "%(size)s KB to download"
 
-#: .\courses\figures.py:94
+#: .\courses\figures.py:95
 msgid "Afficher la figure interactive"
 msgstr "Show the interactive figure"
 
