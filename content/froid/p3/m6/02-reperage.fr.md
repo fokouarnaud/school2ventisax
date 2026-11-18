@@ -44,3 +44,7 @@ Sur le bornier numéroté de 1 à 6 :
 ![Circuit de commande du démarrage fractionné entre L1 et N : contact du module de protection B1, F1 et F2 95-96, S0, S1 avec maintien K1 13-14, bobines K1 et K1T, contact temporisé de K1T et bobine K2](img/fractionne-commande.svg)
 
 **Circuit de commande** : le contact du module de protection **B1**, puis les contacts 95-96 de F1 et de F2, sont en série en tête du circuit. La mise en marche alimente **K1** et le temporisateur **K1T** ; à la fin de la temporisation (1 s au maximum), le contact de K1T alimente **K2**. Un défaut thermique sur l'un des deux enroulements, ou une surchauffe détectée par les sondes, arrête tout le moteur.
+
+La figure ci-dessous fait fonctionner le démarreur : les schémas de commande et de puissance s'animent en même temps que le coffret et le compresseur.
+
+[[figure:fractionne-schemas]]

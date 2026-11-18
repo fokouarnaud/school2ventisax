@@ -57,6 +57,10 @@ Après la temporisation, le contact **55-56** s'ouvre et met hors tension **KM2*
 
 L'arrêt est obtenu par **S0**, ou par le contact 95-96 du relais thermique **F** en cas de surcharge : toutes les bobines retombent.
 
+La figure ci-dessous fait fonctionner le démarreur : les schémas de commande et de puissance s'animent en même temps que le coffret et le moteur.
+
+[[figure:etoile-triangle]]
+
 ## Avantages et inconvénients du démarrage étoile-triangle
 
 **Avantages**
