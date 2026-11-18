@@ -55,6 +55,7 @@ const ET_CONTROL = {
   ],
   dots: [[80, 142], [80, 204], [80, 220], [210, 220]],
   interlock: [[228, 372], [312, 372]], // verrouillage mécanique KM2 ▽ KM3
+  timerAt: [270, 206], // décompte du bloc temporisé, au-dessus de la dérivation
 };
 
 // ---------------------------------------------------------------- étoile-triangle, circuit de puissance (410 × 450)
@@ -157,6 +158,7 @@ const PW_CONTROL = {
     W("n3", "N", [[330, 406], [330, 450]]),
   ],
   dots: [[80, 226], [80, 288], [80, 300], [210, 300]],
+  timerAt: [262, 318], // décompte de K1T, sous la dérivation, entre K1T et K2
 };
 
 // ---------------------------------------------------------------- fractionné, circuit de puissance (380 × 380)

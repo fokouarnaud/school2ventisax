@@ -40,7 +40,15 @@
 .ld-wind[data-on]{fill:var(--anatomy-lit)}
 .ld-act{transition:transform .12s}
 .ld-coupling{fill:var(--anatomy-lit)}
-@media (prefers-reduced-motion:reduce){.ld-e[data-flow] .ld-dash{animation:none}}
+.ld-halo{fill:none;stroke:var(--anatomy-lit);stroke-width:2;opacity:0;transition:opacity .3s}
+.ld-e[data-changed] .ld-halo{opacity:1;animation:ld-pulse 1.1s ease-out infinite}
+.ld-e[data-changed] .ld-blade{stroke:var(--anatomy-lit);stroke-width:4}
+.ld-e[data-changed] .ld-coil{stroke-width:4}
+@keyframes ld-pulse{0%{stroke-width:4;opacity:1}100%{stroke-width:1;opacity:.35}}
+.ld-track{fill:var(--anatomy-faint)}
+.ld-bar{fill:var(--anatomy-lit)}
+.ld-timer{font-weight:normal}
+@media (prefers-reduced-motion:reduce){.ld-e[data-flow] .ld-dash,.ld-e[data-changed] .ld-halo{animation:none}}
 
 .st-dial{fill:var(--anatomy-top)}
 .st-needle,.st-timer-needle{stroke-width:1.1}
@@ -50,6 +58,8 @@
 .st-led[data-on]{opacity:1}
 .st-led[data-on] .iso-fill,.st-led[data-on] .iso-top,.st-led[data-on] .iso-shade{fill:var(--anatomy-lit)}
 .mv-controls .st-go{background:var(--anatomy-strong);color:var(--anatomy-card);border-color:var(--anatomy-strong)}
+.st-log{margin:12px 0 0;padding:10px 12px 10px 2.2em;border:1px solid var(--anatomy-faint);border-radius:14px;font:12px/1.55 var(--anatomy-mono);color:var(--anatomy-text)}
+.st-log li:last-child{color:var(--anatomy-strong);font-weight:600}
 .st-steps{margin:14px 0 0;padding:0 0 0 1.4em;color:var(--anatomy-muted);font-size:13px;line-height:1.5}
 .st-steps li{padding:3px 0}
 .st-steps li[data-on]{color:var(--anatomy-strong);font-weight:600}

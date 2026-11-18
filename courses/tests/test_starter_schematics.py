@@ -177,5 +177,8 @@ def test_starter_figure_is_published_in_its_section(name):
         assert "<script" not in fragment
         assert 'data-schema="control"' in fragment and 'data-schema="power"' in fragment
         assert 'data-act="start"' in fragment and 'data-act="stop"' in fragment
-        assert len(fragment.encode()) + len(script.encode()) <= 260_000
+        # chaque contact qui s'ouvre ou se ferme est mis en relief, écrit au journal et peut arrêter le pas à pas
+        assert 'data-act="step"' in fragment and 'data-act="next"' in fragment and 'class="st-log"' in fragment
+        assert "data-changed" in script and "ld-timer" in script and "evText" in script
+        assert len(fragment.encode()) + len(script.encode()) <= 160_000
         assert not [w for w in ("fetch(", "XMLHttpRequest", "localStorage") if w in script]

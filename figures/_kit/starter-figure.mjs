@@ -12,6 +12,7 @@ import { STARTERS } from "../_data/demarreurs.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA = join(HERE, "..", "_data", "demarreurs.mjs");
+const LADDER = join(HERE, "ladder.mjs");
 
 // ---------------------------------------------------------------- géométrie (az 28° : y horizontal à l'écran)
 const AZ = 28;
@@ -40,6 +41,35 @@ const ROW1 = -9;
 const ROW2 = 9;
 const COLS = [BOX.y + 40, BOX.y + 27, BOX.y + 14];
 
+// Chemins M/L/Z en coordonnées relatives, au dixième : même dessin, fragment nettement plus léger.
+function compactPath(d) {
+  if (!/^[MLZ0-9.\- ]+$/.test(d)) return d;
+  const out = [];
+  let cx = 0, cy = 0, sx = 0, sy = 0, prev = "";
+  const num = (v) => (v / 10).toString().replace(/^(-?)0\./, "$1.");
+  const pair = (dx, dy) => {
+    const a = num(dx), b = num(dy);
+    return a + (b.startsWith("-") ? "" : " ") + b;
+  };
+  for (const [, cmd, args] of d.matchAll(/([MLZ])([^MLZ]*)/g)) {
+    if (cmd === "Z") { out.push("z"); cx = sx; cy = sy; prev = "z"; continue; }
+    const v = args.trim().split(/[ ,]+|(?=-)/).filter(Boolean).map((x) => Math.round(parseFloat(x) * 10));
+    for (let i = 0; i + 1 < v.length; i += 2) {
+      const [x, y] = [v[i], v[i + 1]];
+      const c = cmd === "M" && i === 0 ? "m" : "l";
+      const body = pair(x - cx, y - cy);
+      // après un « m », le premier tracé porte son « l » (derrière le « M » absolu du début, un point nu serait absolu)
+      out.push(c === "l" && prev === "l" ? (body.startsWith("-") ? body : " " + body) : c + body);
+      prev = c;
+      cx = x; cy = y;
+      if (c === "m") { sx = x; sy = y; }
+    }
+  }
+  // le premier « m » d'un chemin est absolu
+  return out.join("").replace(/^m/, "M");
+}
+const compactSvg = (svg) => svg.replace(/ d="([^"]*)"/g, (m, d) => ` d="${compactPath(d)}"`);
+
 function buildIso(spec, T) {
   const F = G.frameOf([0, Y0, CZ], [0, 1, 0], [1, 0, 0], [0, 0, 1]);
   const P = k.fitProjection([...k.boxCorners(PLATE, -PLATE_H - FOOT_H, 0), [CAB.x, CAB.y, CAB_H], [CAB.x, CAB.y + CAB.d, CAB_H], [0, Y0 + LEN + 30, CZ + 14], [0, 40, ZB + 10]], WIDTH, HEIGHT, { pad: 12, azimuth: AZ, elevation: 38 });
@@ -57,8 +87,8 @@ function buildIso(spec, T) {
   function plate() {
     const o = [`<path class="iso-halo" d="${k.haloOf(PLATE, -PLATE_H - FOOT_H, PLATE_H, P)}"/>`];
     for (const [x, y] of k.corners(PLATE, 24).sort((a, b) => depth(...a) - depth(...b))) {
-      o.push(S(k.cylinder(x, y, 7, -PLATE_H - FOOT_H, 1.6, P, 28), { tone: "lo" }));
-      o.push(S(k.cylinder(x, y, 5.4, -PLATE_H - FOOT_H + 1.6, FOOT_H - 1.6, P, 28), { tone: "mid" }));
+      o.push(S(k.cylinder(x, y, 7, -PLATE_H - FOOT_H, 1.6, P, 16), { tone: "lo" }));
+      o.push(S(k.cylinder(x, y, 5.4, -PLATE_H - FOOT_H + 1.6, FOOT_H - 1.6, P, 16), { tone: "mid" }));
     }
     o.push(S(k.slabOf(PLATE, -PLATE_H, PLATE_H, P, 8, 1.6), { tone: "mid", inner: L(k.sideSeam(PLATE, -4, P, 8), { tone: "faint" }) }));
     o.push(L(k.planOutline(k.insetPlan(PLATE, 5), 0, P), { tone: "lo" }));
@@ -67,7 +97,7 @@ function buildIso(spec, T) {
     o.push(D(screws.map(([x, y]) => at([x, y, 0])), { size: 0.5 }));
     const strip = { x: PLATE.x + PLATE.w - 12, y: 0, w: 6, d: 150, r: 1 };
     o.push(S(k.slabOf(strip, 0, 0.6, P, 3), { tone: "lo", crease: "none" }));
-    const t = k.topTicks(strip.y + 4, strip.y + strip.d - 4, 4, 5, strip.x + 0.8, 0.6, [1.8, 3.4], P, "y");
+    const t = k.topTicks(strip.y + 5, strip.y + strip.d - 5, 5, 5, strip.x + 0.8, 0.6, [1.8, 3.4], P, "y");
     o.push(L(t.minor, { tone: "lo" }), L(t.major, { tone: "mid" }));
     for (const y of [Y0 + 10, Y0 + LEN - 20]) for (const x of [-25, 25]) o.push(S(k.cylinder(x, y + 5, 6, 0, 3, P, 24, 0.4), { tone: "lo" }));
     return o.join("");
@@ -222,6 +252,7 @@ function buildIso(spec, T) {
   const devices = [...spec.devices.map((d) => build[d.type](d)), buttons(), ammeter(), panel()].sort((a, b) => a.d - b.d).map((p) => p.s).join("");
 
   function motor() {
+
     const o = [];
     for (const y of [Y0 + 10, Y0 + LEN - 20]) {
       o.push(S(k.slabOf({ x: -30, y, w: 60, d: 10, r: 1 }, 3, CZ - R + 6 - 3, P, 2, 0.5), { tone: "lo" }));
@@ -291,7 +322,8 @@ function buildIso(spec, T) {
   };
 
   const body = [plate(), cabinet(), devices, motor(), cables(), box(), leads(), terminals()];
-  const svg = k.figureSvg({ width: WIDTH, height: HEIGHT, label: T.svgLabel, body });
+  if (process.env.ST_SIZES) console.log(body.map((b) => compactSvg(b).length));
+  const svg = compactSvg(k.figureSvg({ width: WIDTH, height: HEIGHT, label: T.svgLabel, body }));
   const config = { P, F: { o: F.o }, markS: LEN + 30, dial: { x: PFX + 3.2, ...DIAL, max: 8 }, timerFace: parts.timerFace, plungerMove: -2, flagMove: 2.4, btnMove: -1 };
   return { svg, config };
 }
@@ -305,6 +337,8 @@ const CSS = CONTROLS_CSS + LADDER_CSS + `
 .st-led[data-on]{opacity:1}
 .st-led[data-on] .iso-fill,.st-led[data-on] .iso-top,.st-led[data-on] .iso-shade{fill:var(--anatomy-lit)}
 .mv-controls .st-go{background:var(--anatomy-strong);color:var(--anatomy-card);border-color:var(--anatomy-strong)}
+.st-log{margin:12px 0 0;padding:10px 12px 10px 2.2em;border:1px solid var(--anatomy-faint);border-radius:14px;font:12px/1.55 var(--anatomy-mono);color:var(--anatomy-text)}
+.st-log li:last-child{color:var(--anatomy-strong);font-weight:600}
 .st-steps{margin:14px 0 0;padding:0 0 0 1.4em;color:var(--anatomy-muted);font-size:13px;line-height:1.5}
 .st-steps li{padding:3px 0}
 .st-steps li[data-on]{color:var(--anatomy-strong);font-weight:600}
@@ -336,7 +370,17 @@ const btns = Object.fromEntries([...svg.querySelectorAll(".st-btn")].map((g) => 
 const leds = Object.fromEntries([...svg.querySelectorAll(".st-led")].map((g) => [g.dataset.led, g]));
 const wires = [...svg.querySelectorAll(".st-wire")];
 const fmt = (v, d = 1) => v.toFixed(d).replace(".", T.dec);
-let sim, shown = 0, angle = 0, frame = 0, last = 0, visible = false, ended = null, stage0 = "rest";
+let sim, shown = 0, angle = 0, frame = 0, last = 0, visible = false, ended = null, stage0 = "rest", stepMode = false, paused = false;
+const log = scope.querySelector(".st-log");
+const timerText = scope.querySelector(".ld-timer");
+const timerBar = scope.querySelector(".ld-bar");
+// une ligne par contact qui bascule ou bobine qui change d'état : « KM1 13-14 se ferme », « KM1 55-56 (temporisé) s'ouvre »
+function evText(e, closed) {
+  if (e.kind === "coil") return T.ev.coil(e.coil, closed);
+  if (e.pole !== undefined) return T.ev.poles(e.by, closed);
+  const who = (e.name || e.by) + (e.nums ? " " + e.nums.join("-") : "") + (e.op === "delay" ? T.ev.timed : "") + (e.op === "push" ? T.ev.push : "");
+  return T.ev.contact(who, closed, e.kind === "nc");
+}
 const power = D.STARTERS[NAME].power;
 const CABLE = CABLES;
 function reset() { sim = D.createStarter(NAME); ended = null; }
@@ -352,7 +396,23 @@ function readText(s, st) {
 function draw() {
   const s = { ...sim.snapshot(), def: sim.def, contactors: sim.def.contactors };
   const cr = sim.solveControl(), pr = sim.solvePower();
-  ctrl(cr, sim.pos); pwr(pr, sim.pos);
+  const now = sim.st.t;
+  const evs = [...ctrl(cr, sim.pos, now), ...pwr(pr, sim.pos, now).filter((v) => v.e.pole === 0 && v.e.by !== "Q")];
+  if (evs.length) {
+    for (const v of evs) {
+      const li = document.createElement("li");
+      li.textContent = "t = " + fmt(now / sim.def.slow, 2) + " s · " + evText(v.e, v.closed);
+      log.appendChild(li);
+    }
+    while (log.children.length > 8) log.firstElementChild.remove();
+    log.hidden = false;
+    if (stepMode && !paused) { paused = true; buttons.next.disabled = false; }
+  }
+  if (timerText) {
+    const tt = Math.min(s.timer, s.def.timer.delay);
+    timerText.textContent = s.timer > 0 ? s.def.timer.name + " : " + fmt(tt, 1) + " / " + fmt(s.def.timer.delay, 0) + " s" : "";
+    timerBar.setAttribute("width", (68 * tt / s.def.timer.delay).toFixed(1));
+  }
   for (const c of sim.def.contactors) {
     const v = Math.min(1, sim.pos[c]);
     plunger[c].setAttribute("transform", translateAlong(P, [C.plungerMove * v, 0, 0]));
@@ -387,8 +447,11 @@ function draw() {
   if (buttons.fault2) { buttons.fault2.textContent = sim.st.tripped.B1 ? T.reset2 : T.fault2; buttons.fault2.setAttribute("aria-pressed", sim.st.tripped.B1 ? "true" : "false"); }
 }
 function step(dt) {
-  const n = 6;
-  for (let i = 0; i < n; i++) sim.step(dt / n);
+  // pas fins, arrêtés au premier basculement : chaque contact qui change est montré seul, dans l'ordre réel
+  const n = 12;
+  const sig = () => Object.keys(sim.pos).map((k) => (sim.pos[k] >= 0.999 ? 2 : sim.pos[k] <= 0.001 ? 0 : 1)).join("") + JSON.stringify(sim.snapshot().coils);
+  const before = sig();
+  for (let i = 0; i < n; i++) { sim.step(dt / n); if (sig() !== before) break; }
   shown += (sim.st.current - shown) * Math.min(1, dt / 0.12);
   angle += sim.st.speed * dt * 2 * Math.PI * 0.9 / sim.def.slow;
 }
@@ -399,13 +462,19 @@ function busy() {
 function tick(now) {
   const dt = last ? Math.min((now - last) / 1000, 1 / 30) : 1 / 60;
   last = now;
-  step(still.matches ? dt * 3 : dt);
+  if (!paused) step(still.matches ? dt * 3 : dt);
   draw();
-  frame = visible && busy() ? requestAnimationFrame(tick) : 0;
+  frame = visible && !paused && busy() ? requestAnimationFrame(tick) : 0;
   if (!frame) last = 0;
 }
 function run() { if (!frame && visible) { last = 0; frame = requestAnimationFrame(tick); } }
-function start() { ended = null; sim.press("S1"); run(); }
+function start() { if (!sim.def.contactors.some((c) => sim.pos[c] > 0)) { log.textContent = ""; log.hidden = true; } ended = null; sim.press("S1"); run(); }
+function resume() { paused = false; buttons.next.disabled = true; run(); }
+function toggleStep() {
+  stepMode = !stepMode;
+  buttons.step.setAttribute("aria-pressed", stepMode ? "true" : "false");
+  if (!stepMode && paused) resume();
+}
 function stop() { if (sim.def.contactors.some((c) => sim.pos[c] > 0)) ended = "stop"; sim.press("S0"); run(); }
 function fault(f, tag) {
   const on = !sim.st.tripped[f];
@@ -414,11 +483,13 @@ function fault(f, tag) {
   run(); draw();
 }
 buttons.start.addEventListener("click", start);
+buttons.step.addEventListener("click", toggleStep);
+buttons.next.addEventListener("click", resume);
 buttons.stop.addEventListener("click", stop);
 buttons.fault.addEventListener("click", () => fault(FAULTS[0], "trip"));
 if (buttons.fault2) buttons.fault2.addEventListener("click", () => fault(FAULTS[1], "trip2"));
 new IntersectionObserver((e) => { visible = e[e.length - 1].isIntersecting; if (visible) run(); }, { rootMargin: "120px 0px" }).observe(stage);
-window.__st = { start, stop, fault, sim: () => sim, state: () => ({ ...sim.snapshot(), stage: stageOf({ ...sim.snapshot(), def: sim.def, contactors: sim.def.contactors }) }) };
+window.__st = { start, stop, fault, toggleStep, resume, paused: () => paused, sim: () => sim, state: () => ({ ...sim.snapshot(), stage: stageOf({ ...sim.snapshot(), def: sim.def, contactors: sim.def.contactors }) }) };
 draw();
 `;
 
@@ -426,19 +497,34 @@ draw();
 export function buildStarterFigure(here, spec) {
   const def = STARTERS[spec.name];
   const cables = Object.fromEntries(Object.entries(spec.cables).map(([w, test]) => [w, def.power.edges.map((e, i) => (test(e) ? i : -1)).filter((i) => i >= 0)]));
-  const bundle = namespaced(DATA, "D");
+  // le script de la figure n'embarque que les schémas et la simulation : ni les scénarios des tests, ni les commentaires
+  const bundle = namespaced(DATA, "D")
+    // seules les données de ce démarreur, déjà calculées : les constructeurs des deux schémas restent au build
+    .replace(/\/\/ -+ constructeurs d'arêtes[\s\S]*?(?=\/\/ -+ résolution d'un schéma)/, `const STARTERS = ${JSON.stringify({ [spec.name]: def }, (key, v) => (v === "" ? undefined : v))};\n`)
+    .replace(/\n\/\/ -+ scénarios \(tests\)[\s\S]*?(?=\nreturn \{)/, "\n")
+    .replace(/^\s*\/\/.*$/gm, "")
+    .replace(/\n{2,}/g, "\n")
+    .replace(/return \{ (STARTERS[^}]*) \};/,(m, names) => `return { ${names.split(", ").filter((n) => !["runScenario", "build"].includes(n)).join(", ")} };`);
+  // dessin des schémas dans le navigateur : seules les fonctions de dessin, sans les feuilles ni le script en chaîne
+  const drawing = namespaced(LADDER, "Ld")
+    .replace(/const (LADDER_CSS|LADDER_LIVE) = `[\s\S]*?`;\n/g, "")
+    .replace(/, LADDER_CSS, LADDER_LIVE/, "")
+    .replace(/function schematicSvg\([\s\S]*?\n\}\n/, "")
+    .replace(/, schematicSvg/, "")
+    .replace(/^\s*\/\/.*$/gm, "")
+    .replace(/\n{2,}/g, "\n");
   const langs = {};
   for (const lang of ["fr", "en"]) {
     const T = spec.text[lang];
     const { svg, config } = buildIso(spec, T);
-    const ctrlSvg = schematicSvg(def.control, { label: T.controlLabel, title: T.controlTitle }).replace('class="ld-svg"', 'class="ld-svg" data-schema="control"');
-    const pwrSvg = schematicSvg(def.power, { label: T.powerLabel, title: T.powerTitle }).replace('class="ld-svg"', 'class="ld-svg" data-schema="power"');
-    const list = [["start", T.start, "st-go"], ["stop", T.stop], ["fault", T.fault], ...(T.fault2 ? [["fault2", T.fault2]] : [])];
-    const controls = `<div class="mv-controls" role="group" aria-label="${T.group}">${list.map(([act, label, cls]) => `<button type="button" data-act="${act}"${cls ? ` class="${cls}"` : ""}${act.startsWith("fault") ? ' aria-pressed="false"' : ""}>${label}</button>`).join("")}</div><p class="mv-feedback" aria-live="polite"></p>`;
+    const ctrlSvg = schematicSvg(def.control, { label: T.controlLabel, title: T.controlTitle, name: "control" });
+    const pwrSvg = schematicSvg(def.power, { label: T.powerLabel, title: T.powerTitle, name: "power" });
+    const list = [["start", T.start, "st-go"], ["stop", T.stop], ["fault", T.fault], ...(T.fault2 ? [["fault2", T.fault2]] : []), ["step", T.stepMode], ["next", T.next]];
+    const controls = `<div class="mv-controls" role="group" aria-label="${T.group}">${list.map(([act, label, cls]) => `<button type="button" data-act="${act}"${cls ? ` class="${cls}"` : ""}${act.startsWith("fault") || act === "step" ? ' aria-pressed="false"' : ""}${act === "next" ? " disabled" : ""}>${label}</button>`).join("")}</div><p class="mv-feedback" aria-live="polite"></p>`;
     const stepsHtml = `<ol class="st-steps">${Object.entries(T.stages).filter(([id]) => !T.offList.includes(id)).map(([id, s]) => `<li data-stage="${id}">${T.short[id]}</li>`).join("")}</ol>`;
-    const plate = k.plateHtml({ fig: spec.fig, title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body: `<div class="iso-stage" role="img" aria-label="${T.stageLabel}">${svg}</div>${controls}<div class="ld-grid">${ctrlSvg}${pwrSvg}</div>${stepsHtml}` });
-    const TX = `{dec:${JSON.stringify(lang === "fr" ? "," : ".")},read:${T.read},stages:${JSON.stringify(T.stages)},fault:${JSON.stringify(T.fault)},reset:${JSON.stringify(T.reset)},fault2:${JSON.stringify(T.fault2 || "")},reset2:${JSON.stringify(T.reset2 || "")}}`;
-    const script = `const FIG = ${JSON.stringify(config)};\nconst NAME = ${JSON.stringify(spec.name)};\nconst TX = ${TX};\nconst BLADE = ${JSON.stringify(BLADE)};\nconst FAULTS = ${JSON.stringify(spec.faults)};\nconst CABLES = ${JSON.stringify(cables)};\nconst STAGE = ${spec.stage};\nconst LAMPS = ${spec.lampsLive};\n${bundle}${LADDER_LIVE}${LIVE(spec.figure)}`;
+    const plate = k.plateHtml({ fig: spec.fig, title: T.title, hint: T.hint, readout: "", keys: T.keys, caption: T.caption, body: `<div class="iso-stage" role="img" aria-label="${T.stageLabel}">${svg}</div>${controls}<div class="ld-grid">${ctrlSvg}${pwrSvg}</div><ol class="st-log" aria-label="${T.logTitle}" aria-live="polite" hidden></ol>${stepsHtml}` });
+    const TX = `{dec:${JSON.stringify(lang === "fr" ? "," : ".")},read:${T.read},stages:${JSON.stringify(T.stages)},fault:${JSON.stringify(T.fault)},reset:${JSON.stringify(T.reset)},fault2:${JSON.stringify(T.fault2 || "")},reset2:${JSON.stringify(T.reset2 || "")},ev:${T.ev}}`;
+    const script = `const FIG = ${JSON.stringify(config, (key, v) => (typeof v === "number" ? Math.round(v * 1e5) / 1e5 : v))};\nconst NAME = ${JSON.stringify(spec.name)};\nconst TX = ${TX};\nconst BLADE = ${JSON.stringify(BLADE)};\nconst FAULTS = ${JSON.stringify(spec.faults)};\nconst CABLES = ${JSON.stringify(cables)};\nconst STAGE = ${spec.stage};\nconst LAMPS = ${spec.lampsLive};\n${`${bundle}${drawing}${LADDER_LIVE}${LIVE(spec.figure)}`.replace(/^[ \t]+/gm, "")}`; // indentation retirée : aucune chaîne multiligne
     langs[lang] = { plate, script, title: T.pageTitle };
   }
   writeFigure(here, spec.figure, langs, CSS);

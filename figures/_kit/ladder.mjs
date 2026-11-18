@@ -15,7 +15,7 @@ export const BLADE = { noOpen: -26, noClosed: 0, ncClosed: 28, ncOpen: -18 };
 function contact(e, i) {
   const [[x, ya], [, yb]] = e.pts;
   const top = Math.min(ya, yb), bot = Math.max(ya, yb), mid = (top + bot) / 2;
-  const o = [];
+  const o = [`<circle class="ld-halo" cx="${x}" cy="${mid}" r="19"/>`];
   if (e.kind === "nc") o.push(path(`M${x} ${top}H${x + 13}`));
   const rest = e.kind === "no" ? BLADE.noOpen : BLADE.ncClosed;
   o.push(`<path class="ld-s ld-blade" data-e="${i}" data-px="${x}" data-py="${bot}" d="M${x} ${bot}V${top}" transform="rotate(${rest} ${x} ${bot})"/>`);
@@ -78,7 +78,7 @@ function element(e, i) {
   return `<g class="ld-e" data-e="${i}" data-k="${e.kind}">${inner}</g>`;
 }
 
-export function schematicSvg(schema, { label, title }) {
+export function schematicBody(schema) {
   const [w, h] = schema.view;
   const o = [`<rect class="ld-paper" width="${w}" height="${h}" rx="10"/>`];
   // rails et sources
@@ -109,12 +109,23 @@ export function schematicSvg(schema, { label, title }) {
     o.push(path(`M${a[0]} ${a[1]}H${b[0]}`, "ld-s ld-link"));
     o.push(text(at[0], at[1], name));
   }
+  if (schema.timerAt) {
+    const [tx, ty] = schema.timerAt;
+    o.push(`<g class="ld-timerbox"><rect class="ld-track" x="${tx - 34}" y="${ty + 4}" width="68" height="5" rx="2.5"/><rect class="ld-bar" x="${tx - 34}" y="${ty + 4}" width="0" height="5" rx="2.5"/>${text(tx, ty, "", { size: 12, cls: "ld-timer" })}</g>`);
+  }
   if (schema.interlock) {
     const [[x0, y], [x1]] = schema.interlock;
     const m = (x0 + x1) / 2;
     o.push(path(`M${x0} ${y}H${x1}`, "ld-s ld-link"), `<path class="ld-s ld-thin ld-box" d="M${m - 7} ${y - 6}H${m + 7}L${m} ${y + 6}Z"/>`);
   }
-  return `<figure class="ld-fig"><figcaption class="ld-cap">${title}</figcaption><svg class="ld-svg" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}" font-family="Arial, sans-serif" font-weight="bold">${o.join("")}</svg></figure>`;
+  return o.join("");
+}
+
+// Le fragment ne porte que le cadre du schéma (viewBox réservée) : le script le dessine depuis les mêmes données,
+// qu'il embarque déjà pour la simulation. Le fragment reste léger (budget de 160 Ko par langue).
+export function schematicSvg(schema, { label, title, name }) {
+  const [w, h] = schema.view;
+  return `<figure class="ld-fig"><figcaption class="ld-cap">${title}</figcaption><svg class="ld-svg" data-schema="${name}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}" font-family="Arial, sans-serif" font-weight="bold"></svg></figure>`;
 }
 
 export const LADDER_CSS = `
@@ -146,12 +157,21 @@ export const LADDER_CSS = `
 .ld-wind[data-on]{fill:var(--anatomy-lit)}
 .ld-act{transition:transform .12s}
 .ld-coupling{fill:var(--anatomy-lit)}
-@media (prefers-reduced-motion:reduce){.ld-e[data-flow] .ld-dash{animation:none}}
+.ld-halo{fill:none;stroke:var(--anatomy-lit);stroke-width:2;opacity:0;transition:opacity .3s}
+.ld-e[data-changed] .ld-halo{opacity:1;animation:ld-pulse 1.1s ease-out infinite}
+.ld-e[data-changed] .ld-blade{stroke:var(--anatomy-lit);stroke-width:4}
+.ld-e[data-changed] .ld-coil{stroke-width:4}
+@keyframes ld-pulse{0%{stroke-width:4;opacity:1}100%{stroke-width:1;opacity:.35}}
+.ld-track{fill:var(--anatomy-faint)}
+.ld-bar{fill:var(--anatomy-lit)}
+.ld-timer{font-weight:normal}
+@media (prefers-reduced-motion:reduce){.ld-e[data-flow] .ld-dash,.ld-e[data-changed] .ld-halo{animation:none}}
 `;
 
 // Script (navigateur) : applique l'état résolu aux deux schémas. Attend D (module demarreurs) et BLADE dans la portée.
 export const LADDER_LIVE = `
 function ladder(svgEl, schema) {
+  svgEl.innerHTML = Ld.schematicBody(schema);
   const groups = [...svgEl.querySelectorAll(".ld-e")];
   const blades = [...svgEl.querySelectorAll(".ld-blade")];
   const coils = [...svgEl.querySelectorAll(".ld-coil")];
@@ -161,12 +181,23 @@ function ladder(svgEl, schema) {
   // tirets du courant : copie de chaque fil, ajoutée ici pour ne pas alourdir le fragment
   for (const g of groups) for (const p of g.querySelectorAll(".ld-w")) { const d = document.createElementNS(NS, "path"); d.setAttribute("class", "ld-dash"); d.setAttribute("d", p.getAttribute("d")); g.appendChild(d); }
   const angles = blades.map(() => null);
-  return function apply(res, pos) {
+  // état de chaque contact et de chaque bobine : un changement est mis en relief et rapporté (journal, pas à pas)
+  const was = new Map(), until = new Map();
+  const closedOf = (e, p) => (e.kind === "no" ? p >= 0.999 : p <= 0.001);
+  return function apply(res, pos, now) {
+    const events = [];
     groups.forEach((g, i) => {
       const e = schema.edges[i];
       const live = res.live.has(e.a) && res.live.has(e.b);
       g.toggleAttribute("data-live", live);
       g.toggleAttribute("data-flow", res.flow.has(i));
+      let state = null;
+      if (e.kind === "no" || e.kind === "nc") state = closedOf(e, pos[e.by] ?? 0);
+      else if (e.kind === "coil") state = !!res.coils[e.coil];
+      if (state === null) return;
+      if (was.has(i) && was.get(i) !== state) { until.set(i, now + 1.6); events.push({ e, closed: state }); }
+      was.set(i, state);
+      g.toggleAttribute("data-changed", (until.get(i) || 0) > now);
     });
     blades.forEach((b, j) => {
       const e = schema.edges[+b.dataset.e];
@@ -178,6 +209,7 @@ function ladder(svgEl, schema) {
     for (const c of coils) c.toggleAttribute("data-on", !!res.coils[c.dataset.coil]);
     for (const a of acts) a.setAttribute("transform", "translate(" + (5 * Math.max(0, Math.min(1, pos[a.dataset.by] || 0))).toFixed(2) + " 0)");
     for (const w of winds) w.toggleAttribute("data-on", res.flow.has(+w.closest(".ld-e").dataset.e));
+    return events;
   };
 }
 `;
