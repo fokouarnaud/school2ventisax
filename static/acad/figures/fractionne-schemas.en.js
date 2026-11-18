@@ -1,5 +1,5 @@
 (() => {
-const FIG = {"P":{"origin":[312.81912,291.74619],"scale":1.1082,"azimuth":28,"elevation":38},"F":{"o":[0,18,38]},"markS":118,"dial":{"x":-38.8,"y":-176,"z":98,"r":13,"max":8},"timerFace":{"x":-30.15,"y":-106,"z":49,"r":2.8},"plungerMove":-2,"flagMove":2.4,"btnMove":-1};
+const FIG = {"P":{"origin":[312.81912,291.74619],"scale":1.1082,"azimuth":28,"elevation":38},"F":{"o":[0,18,38]},"markS":118,"dial":{"x":-38.8,"y":-176,"z":98,"r":13,"max":8},"timerFace":{"x":-30.15,"y":-106,"z":49,"r":2.8},"plungerMove":-2,"flagMove":2.4,"btnMove":-1.6};
 const NAME = "fractionne";
 const TX = {dec:".",read:(st, v) => ({
       rest: "off · B1 closed",
@@ -19,7 +19,7 @@ const STAGE = (s, p) => {
   if (!s.contactors.some(p)) return s.pos.S1 > 0 ? "press" : "rest";
   if (p("K1") && p("K2")) return "full";
   if (p("K1") && s.pos.K1T > 0) return "timeout";
-  if (p("K1") && s.pos.S1 > 0) return "pull";
+  if (p("K1") && s.pos.S1 >= 0.999) return "pull"; // S1 encore enfoncé
   if (p("K1")) return "half";
   return "rest";
 };
@@ -341,16 +341,16 @@ if (stepMode && !paused) { paused = true; buttons.next.disabled = false; }
 }
 if (timerText) {
 const tt = Math.min(s.timer, s.def.timer.delay);
-timerText.textContent = s.timer > 0 ? s.def.timer.name + " : " + fmt(tt, 1) + " / " + fmt(s.def.timer.delay, 0) + " s" : "";
+timerText.textContent = s.def.timer.name + " : " + fmt(tt, 1) + " / " + fmt(s.def.timer.delay, 0) + " s";
 timerBar.setAttribute("width", (68 * tt / s.def.timer.delay).toFixed(1));
 }
 for (const c of sim.def.contactors) {
 const v = Math.min(1, sim.pos[c]);
 plunger[c].setAttribute("transform", translateAlong(P, [C.plungerMove * v, 0, 0]));
-plunger[c].querySelector(".iso-solid").toggleAttribute("data-lit", v > 0.5);
+plunger[c].toggleAttribute("data-on", v > 0.5);
 }
-for (const f of Object.keys(flags)) flags[f].setAttribute("transform", translateAlong(P, [C.flagMove * (sim.pos[f] || 0), 0, 0]));
-for (const b of ["S1", "S0"]) btns[b].setAttribute("transform", translateAlong(P, [C.btnMove * sim.pos[b], 0, 0]));
+for (const f of Object.keys(flags)) { flags[f].setAttribute("transform", translateAlong(P, [C.flagMove * (sim.pos[f] || 0), 0, 0])); flags[f].toggleAttribute("data-on", (sim.pos[f] || 0) > 0.5); }
+for (const b of ["S1", "S0"]) { btns[b].setAttribute("transform", translateAlong(P, [C.btnMove * sim.pos[b], 0, 0])); btns[b].toggleAttribute("data-on", sim.pos[b] > 0.5); }
 const tf = C.timerFace, frac = Math.min(1, s.timer / s.def.timer.delay);
 const a = Math.PI * (1.25 - 1.5 * frac);
 const tp = (r) => iso([tf.x, tf.y - Math.cos(a) * r, tf.z + Math.sin(a) * r], P);

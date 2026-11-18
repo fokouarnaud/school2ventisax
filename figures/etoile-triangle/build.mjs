@@ -13,7 +13,7 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 
 const STAGE = `(s, p) => {
   if (!s.contactors.some(p)) return s.pos.S1 > 0 && !s.st_trip ? "press" : "rest";
-  if (p("KM1") && s.pos.S1 > 0 && !p("KM3") && s.mode === "star") return "pull";
+  if (p("KM1") && s.pos.S1 >= 0.999 && !p("KM3") && s.mode === "star") return "pull"; // S1 encore enfoncé
   if (s.mode === "star") return "star";
   if (s.mode === "delta") return "delta";
   if (p("KM1")) return "switch";
@@ -65,7 +65,7 @@ const TEXT = {
       press: "Impulsion sur S1 : le courant passe par F (95-96), S0 et S1 et alimente la bobine de KM1.",
       pull: "KM1 colle : ses pôles amènent L1, L2, L3 sur U1, V1, W1, et son contact 13-14 se ferme. Par 55-56, encore fermé, et par 21-22 de KM3, la bobine de KM2 est alimentée : KM2 réunit U2, V2, W2.",
       star: "S1 est relâché : KM1 reste alimenté par son contact 13-14 (auto-maintien). 1er temps, couplage étoile : chaque enroulement est sous 230 V, le courant est environ trois fois plus faible qu'en direct. Le bloc temporisé de KM1 compte.",
-      switch: "Fin de la temporisation : 55-56 s'ouvre au travail, la bobine de KM2 n'est plus alimentée et KM2 retombe ; son contact 21-22 se referme. 67-68 s'est fermé : la bobine de KM3 sera alimentée dès que KM2 est ouvert (verrouillage électrique).",
+      switch: "Fin de la temporisation : 55-56 s'ouvre au travail, la bobine de KM2 n'est plus alimentée et KM2 retombe ; son contact 21-22 se referme. Puis 67-68 se ferme au travail : la bobine de KM3 est alimentée, puisque KM2 est ouvert (verrouillage électrique).",
       delta: "2e temps : KM3 colle et relie U2 à V1, V2 à W1, W2 à U1 : couplage triangle, chaque enroulement sous 400 V. Le contact 21-22 de KM3, désormais ouvert, empêche KM2 de recoller.",
       stop: "Arrêt par S0 : la tête du circuit est coupée, toutes les bobines retombent et 13-14 s'ouvre. Un nouveau démarrage repart en étoile.",
       trip: "Surcharge : le contact 95-96 du relais thermique F s'ouvre, toutes les bobines retombent. S1 reste sans effet tant que F n'est pas réarmé.",
@@ -75,7 +75,7 @@ const TEXT = {
       press: "S1 : la bobine KM1 est alimentée",
       pull: "KM1 colle : 13-14 se ferme, KM2 alimenté par 55-56",
       star: "Auto-maintien, étoile, temporisation",
-      switch: "55-56 s'ouvre au travail : KM2 retombe, 67-68 fermé",
+      switch: "55-56 s'ouvre au travail : KM2 retombe, puis 67-68 se ferme",
       delta: "KM3 colle : triangle, KM2 verrouillé",
     },
     offList: ["stop", "trip"],
@@ -123,7 +123,7 @@ const TEXT = {
       press: "Press on S1: current flows through F (95-96), S0 and S1 and energises the KM1 coil.",
       pull: "KM1 pulls in: its poles bring L1, L2, L3 to U1, V1, W1, and its 13-14 contact closes. Through 55-56, still closed, and KM3 21-22, the KM2 coil is energised: KM2 joins U2, V2, W2.",
       star: "S1 is released: KM1 stays energised through its 13-14 contact (hold-in). First step, star connection: each winding is at 230 V and the current is about three times lower than direct-on-line. The KM1 timer block is timing.",
-      switch: "Timer runs out: 55-56 opens, the KM2 coil is no longer energised and KM2 drops out; its 21-22 contact closes again. 67-68 has closed: the KM3 coil is energised as soon as KM2 is open (electrical interlock).",
+      switch: "Timer runs out: 55-56 opens, the KM2 coil is no longer energised and KM2 drops out; its 21-22 contact closes again. Then 67-68 closes: the KM3 coil is energised, since KM2 is open (electrical interlock).",
       delta: "Second step: KM3 pulls in and connects U2 to V1, V2 to W1, W2 to U1: delta connection, each winding at 400 V. The KM3 21-22 contact, now open, prevents KM2 from pulling in again.",
       stop: "Stopped by S0: the head of the circuit is broken, all coils drop out and 13-14 opens. A new start begins in star again.",
       trip: "Overload: the 95-96 contact of the thermal overload relay F opens and all coils drop out. S1 has no effect until F is reset.",
@@ -133,7 +133,7 @@ const TEXT = {
       press: "S1: KM1 coil energised",
       pull: "KM1 pulls in: 13-14 closes, KM2 fed through 55-56",
       star: "Hold-in, star, timing",
-      switch: "55-56 opens on timing: KM2 drops out, 67-68 closed",
+      switch: "55-56 opens on timing: KM2 drops out, then 67-68 closes",
       delta: "KM3 pulls in: delta, KM2 locked out",
     },
     offList: ["stop", "trip"],

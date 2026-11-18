@@ -324,7 +324,7 @@ function buildIso(spec, T) {
   const body = [plate(), cabinet(), devices, motor(), cables(), box(), leads(), terminals()];
   if (process.env.ST_SIZES) console.log(body.map((b) => compactSvg(b).length));
   const svg = compactSvg(k.figureSvg({ width: WIDTH, height: HEIGHT, label: T.svgLabel, body }));
-  const config = { P, F: { o: F.o }, markS: LEN + 30, dial: { x: PFX + 3.2, ...DIAL, max: 8 }, timerFace: parts.timerFace, plungerMove: -2, flagMove: 2.4, btnMove: -1 };
+  const config = { P, F: { o: F.o }, markS: LEN + 30, dial: { x: PFX + 3.2, ...DIAL, max: 8 }, timerFace: parts.timerFace, plungerMove: -2, flagMove: 2.4, btnMove: -1.6 };
   return { svg, config };
 }
 
@@ -335,7 +335,7 @@ const CSS = CONTROLS_CSS + LADDER_CSS + `
 .st-cable .iso-line{stroke-width:2.4}
 .st-led{opacity:.25;transition:opacity .15s}
 .st-led[data-on]{opacity:1}
-.st-led[data-on] .iso-fill,.st-led[data-on] .iso-top,.st-led[data-on] .iso-shade{fill:var(--anatomy-lit)}
+.st-led[data-on] .iso-fill,.st-led[data-on] .iso-top,.st-led[data-on] .iso-shade,.st-plunger[data-on] .iso-fill,.st-plunger[data-on] .iso-top,.st-plunger[data-on] .iso-shade,.st-btn[data-on] .iso-fill,.st-btn[data-on] .iso-top,.st-btn[data-on] .iso-shade,.st-flag[data-on] .iso-fill,.st-flag[data-on] .iso-top,.st-flag[data-on] .iso-shade{fill:var(--anatomy-lit)}
 .mv-controls .st-go{background:var(--anatomy-strong);color:var(--anatomy-card);border-color:var(--anatomy-strong)}
 .st-log{margin:12px 0 0;padding:10px 12px 10px 2.2em;border:1px solid var(--anatomy-faint);border-radius:14px;font:12px/1.55 var(--anatomy-mono);color:var(--anatomy-text)}
 .st-log li:last-child{color:var(--anatomy-strong);font-weight:600}
@@ -410,16 +410,16 @@ function draw() {
   }
   if (timerText) {
     const tt = Math.min(s.timer, s.def.timer.delay);
-    timerText.textContent = s.timer > 0 ? s.def.timer.name + " : " + fmt(tt, 1) + " / " + fmt(s.def.timer.delay, 0) + " s" : "";
+    timerText.textContent = s.def.timer.name + " : " + fmt(tt, 1) + " / " + fmt(s.def.timer.delay, 0) + " s";
     timerBar.setAttribute("width", (68 * tt / s.def.timer.delay).toFixed(1));
   }
   for (const c of sim.def.contactors) {
     const v = Math.min(1, sim.pos[c]);
     plunger[c].setAttribute("transform", translateAlong(P, [C.plungerMove * v, 0, 0]));
-    plunger[c].querySelector(".iso-solid").toggleAttribute("data-lit", v > 0.5);
+    plunger[c].toggleAttribute("data-on", v > 0.5);
   }
-  for (const f of Object.keys(flags)) flags[f].setAttribute("transform", translateAlong(P, [C.flagMove * (sim.pos[f] || 0), 0, 0]));
-  for (const b of ["S1", "S0"]) btns[b].setAttribute("transform", translateAlong(P, [C.btnMove * sim.pos[b], 0, 0]));
+  for (const f of Object.keys(flags)) { flags[f].setAttribute("transform", translateAlong(P, [C.flagMove * (sim.pos[f] || 0), 0, 0])); flags[f].toggleAttribute("data-on", (sim.pos[f] || 0) > 0.5); }
+  for (const b of ["S1", "S0"]) { btns[b].setAttribute("transform", translateAlong(P, [C.btnMove * sim.pos[b], 0, 0])); btns[b].toggleAttribute("data-on", sim.pos[b] > 0.5); }
   const tf = C.timerFace, frac = Math.min(1, s.timer / s.def.timer.delay);
   const a = Math.PI * (1.25 - 1.5 * frac);
   const tp = (r) => iso([tf.x, tf.y - Math.cos(a) * r, tf.z + Math.sin(a) * r], P);

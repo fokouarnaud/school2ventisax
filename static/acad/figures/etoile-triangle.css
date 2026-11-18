@@ -56,7 +56,7 @@
 .st-cable .iso-line{stroke-width:2.4}
 .st-led{opacity:.25;transition:opacity .15s}
 .st-led[data-on]{opacity:1}
-.st-led[data-on] .iso-fill,.st-led[data-on] .iso-top,.st-led[data-on] .iso-shade{fill:var(--anatomy-lit)}
+.st-led[data-on] .iso-fill,.st-led[data-on] .iso-top,.st-led[data-on] .iso-shade,.st-plunger[data-on] .iso-fill,.st-plunger[data-on] .iso-top,.st-plunger[data-on] .iso-shade,.st-btn[data-on] .iso-fill,.st-btn[data-on] .iso-top,.st-btn[data-on] .iso-shade,.st-flag[data-on] .iso-fill,.st-flag[data-on] .iso-top,.st-flag[data-on] .iso-shade{fill:var(--anatomy-lit)}
 .mv-controls .st-go{background:var(--anatomy-strong);color:var(--anatomy-card);border-color:var(--anatomy-strong)}
 .st-log{margin:12px 0 0;padding:10px 12px 10px 2.2em;border:1px solid var(--anatomy-faint);border-radius:14px;font:12px/1.55 var(--anatomy-mono);color:var(--anatomy-text)}
 .st-log li:last-child{color:var(--anatomy-strong);font-weight:600}

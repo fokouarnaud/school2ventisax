@@ -1,5 +1,5 @@
 (() => {
-const FIG = {"P":{"origin":[312.81912,291.74619],"scale":1.1082,"azimuth":28,"elevation":38},"F":{"o":[0,18,38]},"markS":118,"dial":{"x":-38.8,"y":-176,"z":98,"r":13,"max":8},"timerFace":{"x":-28.55,"y":-82,"z":65.5,"r":3.8},"plungerMove":-2,"flagMove":2.4,"btnMove":-1};
+const FIG = {"P":{"origin":[312.81912,291.74619],"scale":1.1082,"azimuth":28,"elevation":38},"F":{"o":[0,18,38]},"markS":118,"dial":{"x":-38.8,"y":-176,"z":98,"r":13,"max":8},"timerFace":{"x":-28.55,"y":-82,"z":65.5,"r":3.8},"plungerMove":-2,"flagMove":2.4,"btnMove":-1.6};
 const NAME = "etoile-triangle";
 const TX = {dec:",",read:(st, v) => ({
       rest: "repos · Q fermé",
@@ -10,13 +10,13 @@ const TX = {dec:",",read:(st, v) => ({
       delta: `triangle · I ≈ ${v.i} × In`,
       stop: "arrêt par S0",
       trip: "F déclenché · arrêt",
-    })[st],stages:{"rest":"Repos : le circuit est sous tension, le sectionneur Q est fermé. Les contacts sont dessinés au repos : 55-56 (à ouverture) est fermé, 67-68 (à fermeture) est ouvert. Appuyez sur « Marche S1 ».","press":"Impulsion sur S1 : le courant passe par F (95-96), S0 et S1 et alimente la bobine de KM1.","pull":"KM1 colle : ses pôles amènent L1, L2, L3 sur U1, V1, W1, et son contact 13-14 se ferme. Par 55-56, encore fermé, et par 21-22 de KM3, la bobine de KM2 est alimentée : KM2 réunit U2, V2, W2.","star":"S1 est relâché : KM1 reste alimenté par son contact 13-14 (auto-maintien). 1er temps, couplage étoile : chaque enroulement est sous 230 V, le courant est environ trois fois plus faible qu'en direct. Le bloc temporisé de KM1 compte.","switch":"Fin de la temporisation : 55-56 s'ouvre au travail, la bobine de KM2 n'est plus alimentée et KM2 retombe ; son contact 21-22 se referme. 67-68 s'est fermé : la bobine de KM3 sera alimentée dès que KM2 est ouvert (verrouillage électrique).","delta":"2e temps : KM3 colle et relie U2 à V1, V2 à W1, W2 à U1 : couplage triangle, chaque enroulement sous 400 V. Le contact 21-22 de KM3, désormais ouvert, empêche KM2 de recoller.","stop":"Arrêt par S0 : la tête du circuit est coupée, toutes les bobines retombent et 13-14 s'ouvre. Un nouveau démarrage repart en étoile.","trip":"Surcharge : le contact 95-96 du relais thermique F s'ouvre, toutes les bobines retombent. S1 reste sans effet tant que F n'est pas réarmé."},fault:"Surcharge (F)",reset:"Réarmer F",fault2:"",reset2:"",ev:{coil: (k, on) => "bobine " + k + (on ? " alimentée" : " n'est plus alimentée"), poles: (k, c) => "pôles de " + k + (c ? " fermés" : " ouverts"), timed: " (temporisé)", push: "", contact: (w, c, nc) => w + (c ? " se ferme" : " s'ouvre") + (nc ? " (contact à ouverture)" : " (contact à fermeture)")}};
+    })[st],stages:{"rest":"Repos : le circuit est sous tension, le sectionneur Q est fermé. Les contacts sont dessinés au repos : 55-56 (à ouverture) est fermé, 67-68 (à fermeture) est ouvert. Appuyez sur « Marche S1 ».","press":"Impulsion sur S1 : le courant passe par F (95-96), S0 et S1 et alimente la bobine de KM1.","pull":"KM1 colle : ses pôles amènent L1, L2, L3 sur U1, V1, W1, et son contact 13-14 se ferme. Par 55-56, encore fermé, et par 21-22 de KM3, la bobine de KM2 est alimentée : KM2 réunit U2, V2, W2.","star":"S1 est relâché : KM1 reste alimenté par son contact 13-14 (auto-maintien). 1er temps, couplage étoile : chaque enroulement est sous 230 V, le courant est environ trois fois plus faible qu'en direct. Le bloc temporisé de KM1 compte.","switch":"Fin de la temporisation : 55-56 s'ouvre au travail, la bobine de KM2 n'est plus alimentée et KM2 retombe ; son contact 21-22 se referme. Puis 67-68 se ferme au travail : la bobine de KM3 est alimentée, puisque KM2 est ouvert (verrouillage électrique).","delta":"2e temps : KM3 colle et relie U2 à V1, V2 à W1, W2 à U1 : couplage triangle, chaque enroulement sous 400 V. Le contact 21-22 de KM3, désormais ouvert, empêche KM2 de recoller.","stop":"Arrêt par S0 : la tête du circuit est coupée, toutes les bobines retombent et 13-14 s'ouvre. Un nouveau démarrage repart en étoile.","trip":"Surcharge : le contact 95-96 du relais thermique F s'ouvre, toutes les bobines retombent. S1 reste sans effet tant que F n'est pas réarmé."},fault:"Surcharge (F)",reset:"Réarmer F",fault2:"",reset2:"",ev:{coil: (k, on) => "bobine " + k + (on ? " alimentée" : " n'est plus alimentée"), poles: (k, c) => "pôles de " + k + (c ? " fermés" : " ouverts"), timed: " (temporisé)", push: "", contact: (w, c, nc) => w + (c ? " se ferme" : " s'ouvre") + (nc ? " (contact à ouverture)" : " (contact à fermeture)")}};
 const BLADE = {"noOpen":-26,"noClosed":0,"ncClosed":28,"ncOpen":-18};
 const FAULTS = ["F"];
 const CABLES = {"1":[21,22,23],"2":[27,28,29]};
 const STAGE = (s, p) => {
   if (!s.contactors.some(p)) return s.pos.S1 > 0 && !s.st_trip ? "press" : "rest";
-  if (p("KM1") && s.pos.S1 > 0 && !p("KM3") && s.mode === "star") return "pull";
+  if (p("KM1") && s.pos.S1 >= 0.999 && !p("KM3") && s.mode === "star") return "pull"; // S1 encore enfoncé
   if (s.mode === "star") return "star";
   if (s.mode === "delta") return "delta";
   if (p("KM1")) return "switch";
@@ -340,16 +340,16 @@ if (stepMode && !paused) { paused = true; buttons.next.disabled = false; }
 }
 if (timerText) {
 const tt = Math.min(s.timer, s.def.timer.delay);
-timerText.textContent = s.timer > 0 ? s.def.timer.name + " : " + fmt(tt, 1) + " / " + fmt(s.def.timer.delay, 0) + " s" : "";
+timerText.textContent = s.def.timer.name + " : " + fmt(tt, 1) + " / " + fmt(s.def.timer.delay, 0) + " s";
 timerBar.setAttribute("width", (68 * tt / s.def.timer.delay).toFixed(1));
 }
 for (const c of sim.def.contactors) {
 const v = Math.min(1, sim.pos[c]);
 plunger[c].setAttribute("transform", translateAlong(P, [C.plungerMove * v, 0, 0]));
-plunger[c].querySelector(".iso-solid").toggleAttribute("data-lit", v > 0.5);
+plunger[c].toggleAttribute("data-on", v > 0.5);
 }
-for (const f of Object.keys(flags)) flags[f].setAttribute("transform", translateAlong(P, [C.flagMove * (sim.pos[f] || 0), 0, 0]));
-for (const b of ["S1", "S0"]) btns[b].setAttribute("transform", translateAlong(P, [C.btnMove * sim.pos[b], 0, 0]));
+for (const f of Object.keys(flags)) { flags[f].setAttribute("transform", translateAlong(P, [C.flagMove * (sim.pos[f] || 0), 0, 0])); flags[f].toggleAttribute("data-on", (sim.pos[f] || 0) > 0.5); }
+for (const b of ["S1", "S0"]) { btns[b].setAttribute("transform", translateAlong(P, [C.btnMove * sim.pos[b], 0, 0])); btns[b].toggleAttribute("data-on", sim.pos[b] > 0.5); }
 const tf = C.timerFace, frac = Math.min(1, s.timer / s.def.timer.delay);
 const a = Math.PI * (1.25 - 1.5 * frac);
 const tp = (r) => iso([tf.x, tf.y - Math.cos(a) * r, tf.z + Math.sin(a) * r], P);

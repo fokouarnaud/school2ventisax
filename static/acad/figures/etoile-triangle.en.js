@@ -1,5 +1,5 @@
 (() => {
-const FIG = {"P":{"origin":[312.81912,291.74619],"scale":1.1082,"azimuth":28,"elevation":38},"F":{"o":[0,18,38]},"markS":118,"dial":{"x":-38.8,"y":-176,"z":98,"r":13,"max":8},"timerFace":{"x":-28.55,"y":-82,"z":65.5,"r":3.8},"plungerMove":-2,"flagMove":2.4,"btnMove":-1};
+const FIG = {"P":{"origin":[312.81912,291.74619],"scale":1.1082,"azimuth":28,"elevation":38},"F":{"o":[0,18,38]},"markS":118,"dial":{"x":-38.8,"y":-176,"z":98,"r":13,"max":8},"timerFace":{"x":-28.55,"y":-82,"z":65.5,"r":3.8},"plungerMove":-2,"flagMove":2.4,"btnMove":-1.6};
 const NAME = "etoile-triangle";
 const TX = {dec:".",read:(st, v) => ({
       rest: "off · Q closed",
@@ -10,13 +10,13 @@ const TX = {dec:".",read:(st, v) => ({
       delta: `delta · I ≈ ${v.i} × In`,
       stop: "stopped by S0",
       trip: "F tripped · stopped",
-    })[st],stages:{"rest":"Off: the circuit is live and the switch-disconnector Q is closed. Contacts are drawn at rest: 55-56 (normally closed) is closed, 67-68 (normally open) is open. Press “Start S1”.","press":"Press on S1: current flows through F (95-96), S0 and S1 and energises the KM1 coil.","pull":"KM1 pulls in: its poles bring L1, L2, L3 to U1, V1, W1, and its 13-14 contact closes. Through 55-56, still closed, and KM3 21-22, the KM2 coil is energised: KM2 joins U2, V2, W2.","star":"S1 is released: KM1 stays energised through its 13-14 contact (hold-in). First step, star connection: each winding is at 230 V and the current is about three times lower than direct-on-line. The KM1 timer block is timing.","switch":"Timer runs out: 55-56 opens, the KM2 coil is no longer energised and KM2 drops out; its 21-22 contact closes again. 67-68 has closed: the KM3 coil is energised as soon as KM2 is open (electrical interlock).","delta":"Second step: KM3 pulls in and connects U2 to V1, V2 to W1, W2 to U1: delta connection, each winding at 400 V. The KM3 21-22 contact, now open, prevents KM2 from pulling in again.","stop":"Stopped by S0: the head of the circuit is broken, all coils drop out and 13-14 opens. A new start begins in star again.","trip":"Overload: the 95-96 contact of the thermal overload relay F opens and all coils drop out. S1 has no effect until F is reset."},fault:"Overload (F)",reset:"Reset F",fault2:"",reset2:"",ev:{coil: (k, on) => k + " coil " + (on ? "energised" : "de-energised"), poles: (k, c) => k + " poles " + (c ? "closed" : "open"), timed: " (timed)", push: "", contact: (w, c, nc) => w + (c ? " closes" : " opens") + (nc ? " (NC contact)" : " (NO contact)")}};
+    })[st],stages:{"rest":"Off: the circuit is live and the switch-disconnector Q is closed. Contacts are drawn at rest: 55-56 (normally closed) is closed, 67-68 (normally open) is open. Press “Start S1”.","press":"Press on S1: current flows through F (95-96), S0 and S1 and energises the KM1 coil.","pull":"KM1 pulls in: its poles bring L1, L2, L3 to U1, V1, W1, and its 13-14 contact closes. Through 55-56, still closed, and KM3 21-22, the KM2 coil is energised: KM2 joins U2, V2, W2.","star":"S1 is released: KM1 stays energised through its 13-14 contact (hold-in). First step, star connection: each winding is at 230 V and the current is about three times lower than direct-on-line. The KM1 timer block is timing.","switch":"Timer runs out: 55-56 opens, the KM2 coil is no longer energised and KM2 drops out; its 21-22 contact closes again. Then 67-68 closes: the KM3 coil is energised, since KM2 is open (electrical interlock).","delta":"Second step: KM3 pulls in and connects U2 to V1, V2 to W1, W2 to U1: delta connection, each winding at 400 V. The KM3 21-22 contact, now open, prevents KM2 from pulling in again.","stop":"Stopped by S0: the head of the circuit is broken, all coils drop out and 13-14 opens. A new start begins in star again.","trip":"Overload: the 95-96 contact of the thermal overload relay F opens and all coils drop out. S1 has no effect until F is reset."},fault:"Overload (F)",reset:"Reset F",fault2:"",reset2:"",ev:{coil: (k, on) => k + " coil " + (on ? "energised" : "de-energised"), poles: (k, c) => k + " poles " + (c ? "closed" : "open"), timed: " (timed)", push: "", contact: (w, c, nc) => w + (c ? " closes" : " opens") + (nc ? " (NC contact)" : " (NO contact)")}};
 const BLADE = {"noOpen":-26,"noClosed":0,"ncClosed":28,"ncOpen":-18};
 const FAULTS = ["F"];
 const CABLES = {"1":[21,22,23],"2":[27,28,29]};
 const STAGE = (s, p) => {
   if (!s.contactors.some(p)) return s.pos.S1 > 0 && !s.st_trip ? "press" : "rest";
-  if (p("KM1") && s.pos.S1 > 0 && !p("KM3") && s.mode === "star") return "pull";
+  if (p("KM1") && s.pos.S1 >= 0.999 && !p("KM3") && s.mode === "star") return "pull"; // S1 encore enfoncé
   if (s.mode === "star") return "star";
   if (s.mode === "delta") return "delta";
   if (p("KM1")) return "switch";
@@ -340,16 +340,16 @@ if (stepMode && !paused) { paused = true; buttons.next.disabled = false; }
 }
 if (timerText) {
 const tt = Math.min(s.timer, s.def.timer.delay);
-timerText.textContent = s.timer > 0 ? s.def.timer.name + " : " + fmt(tt, 1) + " / " + fmt(s.def.timer.delay, 0) + " s" : "";
+timerText.textContent = s.def.timer.name + " : " + fmt(tt, 1) + " / " + fmt(s.def.timer.delay, 0) + " s";
 timerBar.setAttribute("width", (68 * tt / s.def.timer.delay).toFixed(1));
 }
 for (const c of sim.def.contactors) {
 const v = Math.min(1, sim.pos[c]);
 plunger[c].setAttribute("transform", translateAlong(P, [C.plungerMove * v, 0, 0]));
-plunger[c].querySelector(".iso-solid").toggleAttribute("data-lit", v > 0.5);
+plunger[c].toggleAttribute("data-on", v > 0.5);
 }
-for (const f of Object.keys(flags)) flags[f].setAttribute("transform", translateAlong(P, [C.flagMove * (sim.pos[f] || 0), 0, 0]));
-for (const b of ["S1", "S0"]) btns[b].setAttribute("transform", translateAlong(P, [C.btnMove * sim.pos[b], 0, 0]));
+for (const f of Object.keys(flags)) { flags[f].setAttribute("transform", translateAlong(P, [C.flagMove * (sim.pos[f] || 0), 0, 0])); flags[f].toggleAttribute("data-on", (sim.pos[f] || 0) > 0.5); }
+for (const b of ["S1", "S0"]) { btns[b].setAttribute("transform", translateAlong(P, [C.btnMove * sim.pos[b], 0, 0])); btns[b].toggleAttribute("data-on", sim.pos[b] > 0.5); }
 const tf = C.timerFace, frac = Math.min(1, s.timer / s.def.timer.delay);
 const a = Math.PI * (1.25 - 1.5 * frac);
 const tp = (r) => iso([tf.x, tf.y - Math.cos(a) * r, tf.z + Math.sin(a) * r], P);

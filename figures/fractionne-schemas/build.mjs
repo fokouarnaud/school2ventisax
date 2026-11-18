@@ -15,7 +15,7 @@ const STAGE = `(s, p) => {
   if (!s.contactors.some(p)) return s.pos.S1 > 0 ? "press" : "rest";
   if (p("K1") && p("K2")) return "full";
   if (p("K1") && s.pos.K1T > 0) return "timeout";
-  if (p("K1") && s.pos.S1 > 0) return "pull";
+  if (p("K1") && s.pos.S1 >= 0.999) return "pull"; // S1 encore enfoncé
   if (p("K1")) return "half";
   return "rest";
 }`;
