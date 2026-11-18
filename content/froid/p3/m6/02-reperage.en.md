@@ -44,3 +44,7 @@ On the terminal block numbered 1 to 6:
 ![Part-winding control circuit between L1 and N: protection module contact B1, F1 and F2 95-96, S0, S1 with K1 hold-in 13-14, K1 and K1T coils, K1T timed contact and K2 coil](img/fractionne-commande.svg)
 
 **Control circuit**: the contact of protection module **B1**, then contacts 95-96 of F1 and F2, are in series at the head of the circuit. Starting energises **K1** and timer **K1T**; at the end of the delay (1 s at most), the K1T contact energises **K2**. A thermal fault on either winding, or overheating detected by the sensors, stops the whole motor.
+
+The figure below operates the starter: the control and power diagrams move at the same time as the panel and the compressor.
+
+[[figure:fractionne-schemas]]

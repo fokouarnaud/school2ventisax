@@ -8,6 +8,7 @@
 //   node figures/_data/export.mjs azote  situations du brasage sous azote (courses/tests/test_nitrogen.py)
 //   node figures/_data/export.mjs raccords-acier  raccords acier à visser (courses/tests/test_steel_fittings.py)
 //   node figures/_data/export.mjs raccords-flare  raccords dudgeon (courses/tests/test_flare_fittings.py)
+//   node figures/_data/export.mjs demarreurs  démarreurs étoile-triangle et fractionné (courses/tests/test_starter_schematics.py)
 // Une situation par ligne, pour des sorties comparables. Aucun fichier n'est écrit.
 import { buildCatalogue } from "./raccords.mjs";
 import { buildLengths } from "./longueurs.mjs";
@@ -18,9 +19,10 @@ import { buildBrazing } from "./brasage.mjs";
 import { buildNitrogen } from "./azote.mjs";
 import { buildSteelFittings } from "./raccords-acier.mjs";
 import { build as buildFlareFittings } from "./raccords-flare.mjs";
+import { build as buildStarters } from "./demarreurs.mjs";
 
 const which = process.argv[2] || "raccords";
-const build = { longueurs: buildLengths, manodetendeurs: buildRegulators, "mise-en-service": buildStartup, chalumeau: buildTorch, brasage: buildBrazing, azote: buildNitrogen, "raccords-acier": buildSteelFittings, "raccords-flare": buildFlareFittings }[which] || buildCatalogue;
+const build = { longueurs: buildLengths, manodetendeurs: buildRegulators, "mise-en-service": buildStartup, chalumeau: buildTorch, brasage: buildBrazing, azote: buildNitrogen, "raccords-acier": buildSteelFittings, "raccords-flare": buildFlareFittings, demarreurs: buildStarters }[which] || buildCatalogue;
 const { situations, ...rest } = build();
 const head = JSON.stringify(rest).slice(0, -1);
 const lines = (list) => `[\n${list.map((s) => JSON.stringify(s)).join(",\n")}\n]`;

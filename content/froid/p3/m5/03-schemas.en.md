@@ -57,6 +57,10 @@ When the delay has elapsed, contact **55-56** opens and de-energises **KM2**. Co
 
 The motor stops when **S0** is pressed, or when contact 95-96 of thermal overload relay **F** opens on an overload: all the coils drop out.
 
+The figure below operates the starter: the control and power diagrams move at the same time as the panel and the motor.
+
+[[figure:etoile-triangle]]
+
 ## Advantages and drawbacks of star-delta starting
 
 **Advantages**

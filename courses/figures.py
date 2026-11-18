@@ -23,6 +23,8 @@ FIGURES = {
     "relais-statique": gettext_lazy("Relais statique : optocoupleur et triac"),
     "couplage": gettext_lazy("Exercice : choisir le couplage étoile ou triangle"),
     "fractionne": gettext_lazy("Démarrage fractionné : 1er temps, 2e temps"),
+    "etoile-triangle": gettext_lazy("Démarrage étoile-triangle : commande et puissance animées"),
+    "fractionne-schemas": gettext_lazy("Démarrage fractionné : commande et puissance animées"),
     "reperage-fractionne": gettext_lazy("Exercice : repérer les bobinages à l'ohmmètre et choisir la plaque à bornes"),
     "manifold-vide": gettext_lazy("Exercice : tirer au vide et diagnostiquer la tenue du vide"),
     "flamme": gettext_lazy("Exercice : régler la flamme oxyacétylénique"),
