@@ -102,3 +102,29 @@ def test_french_pages_never_add_a_language_override(client, enrolled, partie, mo
     client.force_login(enrolled)
     html = client.get("/fr/").content.decode()
     assert "<span>Sécurité dans les travaux</span>" in html
+
+
+@pytest.mark.parametrize("cookie, accept", [("fr", "fr"), ("", "fr"), ("en", "en"), ("", "en")])
+@pytest.mark.parametrize("current, wanted", [("en", "fr"), ("fr", "en")])
+def test_language_switch_always_reaches_the_chosen_language(client, cookie, accept, current, wanted):
+    # Le préfixe de la page fait foi, quels que soient le cookie et le navigateur.
+    if cookie:
+        client.cookies["django_language"] = cookie
+    response = client.post(
+        "/i18n/setlang/",
+        {"language": wanted, "next": f"/{current}/connexion/?next=/{current}/"},
+        HTTP_ACCEPT_LANGUAGE=accept,
+    )
+    assert response.status_code == 302
+    assert response["Location"] == f"/{wanted}/connexion/?next=/{current}/"
+    assert response.cookies["django_language"].value == wanted
+
+
+def test_language_switch_keeps_the_page_when_the_path_is_unknown(client):
+    response = client.post("/i18n/setlang/", {"language": "fr", "next": "/en/inconnue/"}, HTTP_ACCEPT_LANGUAGE="fr")
+    assert response["Location"] == "/fr/inconnue/"
+
+
+def test_language_switch_refuses_a_foreign_next(client):
+    response = client.post("/i18n/setlang/", {"language": "fr", "next": "https://evil.example/en/"})
+    assert response["Location"] == "/fr/"
